@@ -1,8 +1,9 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import LogosReplay from './icons/LogosReplay'
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <LogosReplay width={100} />,
   project: {
     link: 'https://github.com/shuding/nextra-docs-template',
   },
