@@ -1,0 +1,56 @@
+import { Steps, Callout, Cards, Card } from 'nextra/components'
+import RecButton from '../icons/RecButton'
+import Bug from '../icons/Bug'
+import StopButton from '../icons/StopButton'
+import Collaborate from '../icons/Collaborate'
+import TestGeneric from '../icons/TestGeneric'
+import Icon from '../components/Icon'
+
+There are just few simple steps to create your first recording:
+
+<Steps>
+### Go to [replay.io](https://replay.io) and download the browser
+
+<video autoPlay muted loop width="80%" className="p-4">
+  <source src='/media/download-replay.mp4' type="video/mp4" />
+</video>
+
+### Install Replay Browser on your computer
+<video autoPlay muted loop width="80%" className="p-4">
+  <source src='/media/install-replay.mp4' type="video/mp4" />
+</video>
+
+{/* TODO: add link */}
+<Callout type="info">
+Looking for Windows or Linux version? Click here to see the installation steps.
+</Callout>
+
+### Open Replay Browser, navigate to the page you want to record, and click <RecButton className="w-12 mb-0.5 mx-0.5 inline-block" /> button 
+
+Capture an issue, replicate a bug or simply interact with your app and then click on <StopButton className="w-14 mb-0.5 mx-0.5 inline-block" /> button
+
+<video autoPlay muted loop width="80%" className="p-4">
+  <source src='/media/record-replay.mp4' type="video/mp4" />
+</video>
+
+### Give your recording a name
+<video autoPlay muted loop width="80%" className="p-4">
+  <source src='/media/recording-save.mp4' type="video/mp4" />
+</video>
+
+### That’s it! You can now start debugging or share the recording.
+<video autoPlay muted loop width="80%" className="p-4">
+  <source src='/media/show-recording.mp4' type="video/mp4" />
+</video>
+</Steps>
+
+<Callout type="info">
+Did you know you can create Replays using your existing Test Automation Suite? You can pass Replay Browser as the browser of choice to Cypress, Playwright or Webdriver.io.
+</Callout>
+
+## What’s next?
+<Cards>
+  <Card icon={<Icon><Bug /></Icon>} title="Learn how to use Replay debugging tools" href="/docs/guide/built-ins/callout" />
+  <Card icon={<Icon><Collaborate /></Icon>} title="Collaborative tools in Replay" href="/docs/guide/built-ins/steps" />
+  <Card icon={<Icon><TestGeneric /></Icon>} title="How to set up Test Suite integration " href="/docs/guide/built-ins/tabs" />
+</Cards>
