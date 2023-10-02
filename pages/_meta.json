@@ -1,10 +1,18 @@
 {
-  "overview": {
-    "title": "Overview",
+  "guides": {
+    "title": "Guides",
     "type": "page"
   },
   "debugging-essentials": {
     "title": "Debugging essentials",
+    "type": "page"
+  },
+  "test-suites": {
+    "title": "Test Suites",
+    "type": "page"
+  },
+  "examples": {
+    "title": "Examples",
     "type": "page"
   }
 }
