@@ -1,16 +1,16 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
-import Logo from './components/header/Logo'
+import LogosReplay from './icons/LogosReplay'
 
 const config: DocsThemeConfig = {
-  logo: <Logo width={100} />,
+  logo: <LogosReplay width={100} />,
   project: {
     link: 'https://github.com/replayio/devtools',
   },
   chat: {
     link: 'https://discord.gg/replayio',
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://docs.replay.io',
   footer: {
     text: '® 2023 Replay, All rights reserved.',
   },
