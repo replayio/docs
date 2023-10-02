@@ -1,22 +1,15 @@
 {
-  "name": "nextra-docs-template",
+  "name": "replayio-documentation",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "Replay.io documentation",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
-  },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Filip Hric <filip@filiphric.sk>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
-  },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://replay.io",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "latest",
