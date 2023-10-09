@@ -1,0 +1,132 @@
+import { Callout } from 'nextra/components'
+import YouTubeVideo from '../../components/YouTubeVideo.tsx'
+import Video from '../../components/Video.tsx'
+import ReplayLogomark from '../../icons/ReplayLogomark.tsx' 
+
+# Test Suite integration
+
+## Overview
+
+[Replay.io](http://Replay.io) lets you record your browser tests in CI and debug them later with Browser DevTools. If you’ve ever struggled to understand why a test fails intermittently in CI, but passes when you run it locally, Replay can help. 
+
+<YouTubeVideo src="https://www.youtube.com/embed/nWh-uJBl3Oo" />
+
+<Callout emoji={<ReplayLogomark className="pt-1 w-6 h-6" />} type="info">
+**Join the waitlist**
+
+Replay for Test Suites was released in June as a beta so that we can help each team setup Replay and fix their flakes. If you’d like to start recording your tests, join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible. Also feel free joining our [**Discord**](https://replay.io/discord) #testing channel or emailing us at hey@replay.io.
+</Callout>
+
+## Replay DevTools
+
+Replay DevTools includes everything you need to retroactively debug your test with live print statements, the Cypress and Playwright Panel, and Browser DevTools.
+
+**Features**
+
+- Cypress Panel
+- Playwright Panel
+- React DevTools
+- Live Print Statements
+- Network Monitor
+- Console
+
+**Benefits**
+
+- Inspect **Cypress** **step details**
+- Add **console logs** to any line of application code
+- View **network request** and response bodies
+- Jump from a **Cypress step** into the React event handler
+- Jump from **console exceptions** into your application code.
+- Find **timing inconsistencies** between passing and failing tests.
+
+![Cypress Panel](/media/test-suite-integration/cypress-panel.png)
+
+## Test Suite Dashboard
+
+The **Test Suite Dashboard** provides insights into your test suite. For example, you can see how many tests failed in a given run, or view the history of a specific test to see when it started failing.
+
+The **Test Suite Dashboard** also serves as a launching off point. If you want to see why a recent change caused several tests to fail, you can go to the dashboard, and open each of the replays and begin debugging.
+
+**Features**
+
+- Test run view
+- Test run summary
+- Flaky test overview
+- Links to replays
+
+**Benefits**
+
+- See when tests began failing
+- See which tests are flaky tests
+- Debug flaky and failed tests
+
+![Test Suites dashboard](/media/test-suite-integration/dashboard.png)
+
+<Callout type="info" emoji="👉">
+Ready to get started? Join the [waitlist](https://replayio.typeform.com/to/jTudlerL) and we will get back to you as soon as possible.
+</Callout>
+
+## Pull Request Comments
+
+**Pull Request Comments** help you jump into a failed test and see what went wrong.
+
+**Features**
+
+- View failed, passed, and flaky tests
+- View test run in replay
+- Links to replays
+
+**Benefits**
+
+- Test result summary
+- Jump into failed tests
+
+![Pull request comments](/media/test-suite-integration/pull-request-comments.png)
+
+## Test Runners
+
+Because [Replay.io](http://Replay.io) has a fork of Chrome and Node that you can use to record your browser and unit tests, at a high level recording your tests is as simple as pointing your tests at the Replay runtime. 
+
+Because it can also be nice to see your test steps when you’re debugging your test in Replay DevTools we’ve built plugins for Cypress and Playwright that bring the Cypress App and Playwright Trace viewer debugging experience into Replay DevTools. 
+
+**Plugin Support**
+
+- [Cypress](Test-Suites/Test-Runners/Cypress.md)
+- [Playwright](Test-Suites/Test-Runners/Playwright.md)
+
+**Runtime support**
+
+- [Puppeteer](Test-Suites/Test-Runners/Puppeteer.md)
+- [WebdriverIO](Test-Suites/Test-Runners/Selenium-WebdriverIO.md)
+- [Jest](Test-Suites/Test-Runners/Jest.md) (alpha)
+
+<Video src="/media/test-suite-integration/debugging-cypress.mp4" width='100%' />
+
+<Callout type="info" emoji="👉">
+Ready to get started? Join the [waitlist](https://replayio.typeform.com/to/jTudlerL) and we will get back to you as soon as possible.
+</Callout>
+
+## CI Environments
+
+Because recording your tests is as simple as running them with the Replay browser, you can record your test suite in any environment. Because each environment is slightly different, we’re beginning to collect best practices which we are sharing below.
+
+- [CircleCI](Test-Suites/CI-Environments/CircleCI.md)
+- [Github Actions](Test-Suites/CI-Environments/Github-Actions.md)
+
+![CI output](/media/test-suite-integration/ci-output.png)
+
+## Test Suites FAQ
+
+If you have any questions that are not answered in the FAQ, feel free to email us at support@replay.io or join our [Discord](https://replay.io/discord) #testing channel.
+
+- [How do I include matrix strategy variables to my test run?](Test-Suites/Test-Suites-FAQ.md)
+- [How do I link tests to the same test run if I split my tests across jobs?](Test-Suites/Test-Suites-FAQ.md)
+- [What is the performance overhead when recording?](Test-Suites/Test-Suites-FAQ.md)
+- [Are only failed test replays uploaded?](Test-Suites/Test-Suites-FAQ.md)
+- [How do I update the Replay Browser?](Test-Suites/Test-Suites-FAQ.md)
+
+<Callout type="info" emoji="👉">
+Ready to get started? Join the [waitlist](https://replayio.typeform.com/to/jTudlerL) and we will get back to you as soon as possible.
+
+Email us at support@replay.io or join our [Discord](https://replay.io/discord) #testing channel.
+</Callout>

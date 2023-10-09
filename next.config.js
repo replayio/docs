@@ -8,7 +8,7 @@ module.exports = withNextra({
     return [
       {
         source: '/',
-        destination: '/guides/what-is-replay-io',
+        destination: '/getting-started/what-is-replay-io',
         permanent: true,
       },
     ];
