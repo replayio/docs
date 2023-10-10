@@ -1,0 +1,48 @@
+import { Callout } from 'nextra/components'
+import LoomVideo from '../../../components/LoomVideo.tsx'
+
+# Focus Mode
+
+![Focus Mode](/media/referrence-guide/debugging/focus-mode/focus-mode.png)
+
+Focus Mode lets you specify a region for your debugging. Setting the focused region filters information like hit counts, network requests, and comments to only the focused region.
+
+Click the Edit Focus icon to the right of the timeline to start **Focus Mode.**
+
+**There are three ways to specify the focus region:**
+
+1. Adjust the draggable handlebars to the left and right of the timeline
+2. Click and drag the blue highlighted portion on the timeline
+3. Use the timestamp input fields in the timeline next to the Focus Mode icon
+
+<Callout type="info" emoji="💡">
+You can still navigate while in Edit Focus mode to verify what the video looks like while at a particular pause point, and the viewer will update as you adjust the focus region.
+</Callout>
+
+<LoomVideo src="https://www.loom.com/embed/c9784dfddc6f460db6b8748e54d8c6dd" />
+
+- Once you're satisfied with your changes, click Save.
+- You can click “Discard Changes” or anywhere outside the modal or timeline to abandon updating the focus region.
+
+### Setting the focus window from the console
+
+You can update the focus window by right-clicking a log in the console and setting the focus start or end.
+
+![Set focus from the console](/media/referrence-guide/debugging/focus-mode/set-focus-from-console.png)
+
+### Setting the focus window from a print statement
+
+You can set the current paused point as the focus start or end from the print statement panel by clicking the badge and selecting  “set focus start” or “set focus end”.
+
+![Set Focus From Print Statement](/media/referrence-guide/debugging/focus-mode/set-focus-from-print-statement.png)
+
+**Notes:**
+
+- Focus Mode makes the replay DevTools behave as if you've cropped it. This means that information and comments will be filtered down to your focused region and you can't navigate outside of the focused region.
+- The console will indicate how many logs are outside your current focus window.
+
+![Hidden logs](/media/referrence-guide/debugging/focus-mode/hidden-logs.png)
+
+- Comments outside of the focus region will be dimmed and disabled.
+- You can still click outside the focus region in the timeline and playback the Viewer from a point outside the focus region.
+- Your focused region is temporary. It resets when you refresh the replay, and is not shared with other viewers of the replay when you share the replay with them.
