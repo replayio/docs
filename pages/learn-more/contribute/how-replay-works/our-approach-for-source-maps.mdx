@@ -1,15 +1,17 @@
+import { Callout } from 'nextra/components'
+
 # Our approach for source maps
 
 ### What are source maps
 
 Source maps are a file that build tools like [webpack](https://webpack.js.org/) create to map the "original" code you see in your editor to the "generated" code you see in browser DevTools. 
 
-<aside>
-💡 Evan Wallace's [Source Map Visualizer](https://evanw.github.io/source-map-visualization/) is a great tool for seeing how source maps work. And if you're curious about how maps are parsed and visualized, we recorded a [replay](https://app.replay.io/recording/dfa08836-dbcf-41c4-bd77-b3800d4f7e8b) of the visualizer 😉
+<Callout type="info" emoji="💡">
+Evan Wallace's [Source Map Visualizer](https://evanw.github.io/source-map-visualization/) is a great tool for seeing how source maps work. And if you're curious about how maps are parsed and visualized, we recorded a [replay](https://app.replay.io/recording/dfa08836-dbcf-41c4-bd77-b3800d4f7e8b) of the visualizer 😉
 
-</aside>
+</Callout>
 
-![Screen Shot 2021-10-05 at 8.57.12 PM.png](Our%20approach%20for%20source%20maps%201f5afb2cf5ad45a488369e65a821039d/Screen_Shot_2021-10-05_at_8.57.12_PM.png)
+![Screen Shot 2021-10-05 at 8.57.12 PM.png](/media/learn-more/workflows/how-replay-works/our-approach-for-source-maps/Screen_Shot_2021-10-05_at_8.57.12_PM.png)
 
 ### How do browser DevTools use source maps
 
@@ -21,7 +23,7 @@ Replay takes source maps one step further so that everything defaults to the ori
 
 From there, Replay uses source maps in the server so that the DevTools can have a seamless experience. When you are viewing a replay, you will always see the original file that's in your editor first and have the ability to jump back to the compiled file if you'd like. You can also add print statements and evaluate original expressions in the console.
 
-![Screen Shot 2021-10-05 at 8.56.12 PM.png](Our%20approach%20for%20source%20maps%201f5afb2cf5ad45a488369e65a821039d/Screen_Shot_2021-10-05_at_8.56.12_PM.png)
+![Screen Shot 2021-10-05 at 8.56.12 PM.png](/media/learn-more/workflows/how-replay-works/our-approach-for-source-maps/Screen_Shot_2021-10-05_at_8.56.12_PM.png)
 
 ### How Replay maps variables
 

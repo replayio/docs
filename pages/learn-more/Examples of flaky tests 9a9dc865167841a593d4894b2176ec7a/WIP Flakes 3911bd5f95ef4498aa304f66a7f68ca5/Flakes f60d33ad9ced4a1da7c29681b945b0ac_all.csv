@@ -1,4 +1,0 @@
-﻿Spec,Team,Case,Assert
-signup_extras.spec.ts (1),wandb-flakes,"redirects back to signup from app if signup incomplete, and redirects back to app if going to /signup after signup complete","Timed out retrying after 30000ms: Expected to find element: [data-test=""quickstart""], but never found it"
-signup_extras.spec.ts (3),wandb-flakes,streamlines onboarding for users already invited to team,assert expected http://localhost:9000/gs729zs7a9?newUser=true to include /signup
-,,,
