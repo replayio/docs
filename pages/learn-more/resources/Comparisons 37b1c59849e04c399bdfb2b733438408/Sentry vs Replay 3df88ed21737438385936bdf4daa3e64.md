@@ -1,0 +1,58 @@
+# Sentry vs Replay
+
+Replay is often compared with Sentry, but it’s not a case of one vs the other. They are complementary, and using them together will help you find, debug, and fix bugs/issues faster. 
+
+**TLDR;** Replay records your application’s runtime so you can debug it after the fact. Sentry monitors errors in production and gives you weekly reports providing a high-level overview of all the errors happening. Sentry does not have a debugger so in essence, if you see an error in Sentry and want to debug it, Replay is a great tool to reach for so you can capture the issue, reproduce and debug it on your machine. 
+
+Replay has a browser that records the runtime and then a debugger (DevTools view) which allow you to inspect elements and time-travel throughout the code’s execution to debug issues and land changes at every stage of development.
+
+In this post, we’ll break down how they’re different and when you’d use Replay vs. Sentry
+
+## What is Replay?
+
+### Replay records the entire browser session
+
+Replay is for recording everything happening in a particular **session** of the application. With Replay, we are recording **everything**, including the user events, network requests, the state of the application at every point in time, and what code was executing **during the recording**. This makes it particularly useful for reproducing issues and debugging.
+
+### Replay is a debugger
+
+Replay is a time-travel debugger that comes along with developer tools you’re familiar with from browsers and IDEs. While other debuggers require you to run your application again and again to debug, Replay provides all these tools in the **context of the recording**, so print statements can be added retroactively and you can inspect your application at any point in time from the session.
+
+### Replay is shareable via URL
+
+The output with Replay here is the shareable recording (called a replay) of the session that can be included on a support ticket, pull request, or anywhere else that context would be helpful. This replay serves as a single source of truth for collaborative debugging. You can add comments to the replay and store them in a team library for documentation of how bugs were reproduced and resolved.
+
+### Replay records runtimes and automated tests
+
+Chrome Recorder, as the name implies, is specific to the Chrome browser and records manual user flows. Replay has versions for Firefox and Chromium, and can be used to record automated tests in CI. There is also `[@replayio/node` for recording Node runtimes](https://www.npmjs.com/package/@replayio/node), no browser required.
+
+## What is Sentry?
+
+### Sentry is a monitoring service
+
+Sentry monitors your logs so you can see errors, performance issues, exceptions and other issues in a weekly report / dashboard.
+
+### Sentry has dynamic tracing
+
+In Sentry’s suite of services, you can trace through your code to identify issues, but you cannot debug them or do anything to your code. 
+
+## When to use each tool
+
+Sentry is primarily used for reporting application exceptions and capturing errors. Sentry’s full stack monitoring gives you full visibility into your code, so you can catch issues before they become downtime. Sentry allows you to see when errors are happening in production. 
+
+Replay is primarily used to capture errors, bugs, and any other issues in your stack. Once you record it, you have the full runtime in the recording that you can step through and debug afterwards. 
+
+## Playing well together
+
+Ultimately, if you are more interested **error monitoring**, Sentry is a great service. If you are interested in **debugging those errors**, reach for Replay.
+
+<aside>
+💡 To start recording with Replay, [download the Replay Browser](https://replay.io) and check out our [Getting Started guide](https://www.notion.so/Bug-Reports-5fc7ace7f3e449ce903e89e59d4b93ba?pvs=21).
+
+</aside>
+
+Funny metaphor: Sentry is a line in a webmd, it’s more of a symptom. Logrocket is like a fitness tracker, you can observe the steps a person did, you can’t see what’s happening inside the body but you can see some symptoms along the way.
+
+Replay is a full body scan. You’re watching it in real time and you can watch it again and again. It’s a diagnostic. 
+
+These tools solve different problems.

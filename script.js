@@ -79,4 +79,4 @@ function processDirectory(dir) {
 
 // Start the processing with the root directory
 // Replace './root-directory' with the path to your actual root directory
-processDirectory('./pages/learn-more');
+processDirectory('./pages/learn-more/resources');
