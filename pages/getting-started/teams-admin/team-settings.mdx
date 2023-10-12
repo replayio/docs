@@ -1,8 +1,11 @@
+import { Callout } from 'nextra/components'
+import Video from '../../../components/Video.tsx'
+
 # Team Settings
 
 Access team settings by clicking the gear icon next to the team name in the sidebar. You can also create a new team from the sidebar.
 
-![Screen Shot 2022-01-25 at 11.33.29 AM.png](Team%20Settings%20a2f6890352d540e0b114910a9e4c9ff7/Screen_Shot_2022-01-25_at_11.33.29_AM.png)
+![Screen Shot 2022-01-25 at 11.33.29 AM.png](/media/getting-started/teams-admin/team-settings/Screen_Shot_2022-01-25_at_11.33.29_AM.png)
 
 From the settings menu, you can:
 
@@ -10,8 +13,8 @@ From the settings menu, you can:
 - Add/update team logo
 - Update Organization settings ([Organization plan required](https://www.replay.io/pricing))
 - Manage member access
-- Update billing information ([Admin role only](Team%20Settings%20a2f6890352d540e0b114910a9e4c9ff7.md))
-- Generate [API Keys](Team%20Settings%20a2f6890352d540e0b114910a9e4c9ff7.md) for automated recordings
+- Update billing information ([Admin role only](/media/getting-started/teams-admin/team-settings.md))
+- Generate [API Keys](/media/getting-started/teams-admin/team-settings.md) for automated recordings
 - Delete team
 
 ## User Role Definitions
@@ -22,16 +25,16 @@ Replay users are either Users or Developers. Our plans charge by Developer seat.
 - **Users** can record replays and have some DevTools functionality, but they cannot edit a print statement or evaluate in the console
 - **Admins** have access to Billing information. Either role type can also be made an Admin, and you can have as many Admins on a team as you want
 
-<aside>
+<Callout type="info" emoji="👉">
 👉 While you are only charged for Developer seats, both Developers and Users contribute to the [user limits for our Team and Organization plans](https://www.replay.io/pricing) and recordings per month.
 
-</aside>
+</Callout>
 
 ## Updating user roles
 
 User roles can be updated any time in the Team Settings in your Replay Library. **Addition or removal of Developer seats will be automatically applied to your plan and your billing will updated on a prorated basis.**
 
-[userrolechange.mp4](Team%20Settings%20a2f6890352d540e0b114910a9e4c9ff7/userrolechange.mp4)
+<Video src="/media/getting-started/teams-admin/team-settings/userrolechange.mp4" />
 
 ## Organization Settings
 
@@ -40,5 +43,3 @@ Organization plans have additional features that can be enabled from the Organiz
 ## API Key Setup and Limits
 
 Teams can create API Keys for uploading [source maps](Uploading%20Source%20Maps%201923e679c1e4411db1bda29536eb1e31.md) during deploys or uploading replays of [automated tests](https://www.notion.so/Test-Suites-5bf7d91b65cd46deab1867b07bd12bdf?pvs=21). The number of recordings allowed is based on your plan.
-
-![Screen Shot 2021-09-23 at 3.20.11 PM.png](Setting%20up%20a%20team%20f5bd9ee853814d6f84e23fb535066199/Screen_Shot_2021-09-23_at_3.20.11_PM.png)

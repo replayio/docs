@@ -18,5 +18,19 @@
   },
   "test-suite-integration": {
     "title": "Test Suite integration"
+  },
+  "bug-reports-separator": {
+    "title": "Bug Reports",
+    "type": "separator"
+  },
+  "bug-reports": {
+    "title": "Bug Reports"
+  },
+  "teams-and-admin": {
+    "title": "Teams & Admin",
+    "type": "separator"
+  },
+  "teams-admin": {
+    "title": "Teams & Admin"
   }
 }
