@@ -14,5 +14,9 @@
   "learn-more": {
     "title": "Learn more",
     "type": "page"
+  },
+  "resources": {
+    "title": "Resources",
+    "type": "page"
   }
 }

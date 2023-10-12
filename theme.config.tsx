@@ -5,7 +5,7 @@ import LogosReplay from './icons/LogosReplay'
 const config: DocsThemeConfig = {
   logo: <LogosReplay width={100} />,
   project: {
-    link: 'https://github.com/replayio/devtools',
+    link: 'https://github.com/replayio-public/replay-documentation',
   },
   chat: {
     link: 'https://discord.gg/replayio',
