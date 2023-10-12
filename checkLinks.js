@@ -44,10 +44,8 @@ function processMarkdownFiles(directory, pagesDirectory) {
       validateLink(link, pagesDirectory);
     });
 
-    brokenLinksCount ? 
-      console.log('Number of broken links: ' + brokenLinksCount) && process.exit(1) :
-      console.log('All links work!') && process.exit(0)
   });
+  console.log('Number of broken links: ' + brokenLinksCount)
 }
 
 // Replace 'path/to/markdown' with the path to your markdown files directory
