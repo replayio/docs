@@ -2,6 +2,7 @@ name: Check for broken links
 on: [push]
 jobs:
   checklinks:
+    if: github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -15,7 +16,7 @@ jobs:
     - name: HashiCorp's Link Checker
       uses: hashicorp/gh-action-check-broken-links@v1
       with:
-        baseUrl: 'https://hashicorp.com'
+        baseUrl: ${{ github.event.deployment_status.target_url }}
         files: ${{ steps.findmdx.outputs.mdxfiles }}
         whitelist: |
           https://google.com/whitelist
