@@ -1,0 +1,37 @@
+# Linux Support
+
+# Dependencies
+
+To run, Replay requires the following shared libraries:
+
+- libgtk-3.so.0
+- libdbus-glib-1.so.2
+- Openssl 1.1
+
+Furthermore, it requires a current version of glibc, so Replay may not work on an older distribution. Currently, Ubuntu 20.04 is the only officially supported distribution, although others may work as well.
+
+## Installing Dependencies
+
+The easiest way to install the necessary dependencies is to install Firefox from your distribution's software repository, because Firefox has the same dependencies as the Replay browser. If you don't want to install Firefox, you may install the necessary dependencies separately:
+
+### Ubuntu
+
+These dependencies can be installed on Ubuntu using the command:
+
+```bash
+sudo apt-get install -y libgtk-3-0 libdbus-glib-1-2
+```
+
+# Running Replay
+
+Once you have installed the dependencies, you can download the Replay browser from [https://static.replay.io/downloads/linux-replay.tar.bz2](https://static.replay.io/downloads/linux-replay.tar.bz2), unzip it with
+
+```bash
+tar xjf linux-replay.tar.bz2
+```
+
+and run the executable file called replay.
+
+# Old versions of Replay
+
+[https://static.replay.io/downloads/linux-replay.tar.bz2](https://static.replay.io/downloads/linux-replay.tar.bz2) will always download the latest version of the Replay browser. If you need to download a specific version, open the "Help" → "About Replay" dialog to get the Build ID (which starts with "linux-gecko-"). You can download this version of Replay from `https://static.replay.io/downloads/<BuildID>.tar.bz2`.

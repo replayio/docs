@@ -1,0 +1,50 @@
+import { Callout } from 'nextra/components'
+
+# OSS Projects
+
+Replay helps the OSS community by making it easier for maintainers and contributors to debug user issues and automated test failures — all for free, support included.
+
+## Reproducible Bug Reports
+
+Imagine if every new GitHub issue came with a recording of the code’s execution at the time the bug occurred with familiar debugging tools built in. That’s what you get with Replay. 
+
+### Resources
+
+- [replay.io/record-bugs](http://replay.io/record-bugs) - a guide for end users that walks them through the recording process
+- [GitHub Issue template](https://github.com/replayio/devtools/blob/master/.github/ISSUE_TEMPLATE/bug_report.md) - encourage users to submit replays with this issue template
+- [**Blog:** Contributing to OSS with reproducible bug reports](https://medium.com/replay-io/contributing-to-oss-with-reproducible-bug-reports-7fd4b22130b1) - how we used Replay to contribute to the open source Excalidraw project by debugging an open GitHub issue
+
+### Source Maps
+
+Replay lets you upload source maps so recordings made from production applications are easier to debug. If you have any questions or a unique build process, we’ll walk you through the process.
+
+- **Guide:** [Uploading Source Maps](https://www.notion.so/Uploading-Source-Maps-1923e679c1e4411db1bda29536eb1e31?pvs=21)
+
+## Recording Automated Tests
+
+Test failures can derail a pull request, whether it’s from a maintainer or a contributor. Use Replay to automatically generate replays of failed tests so you can quickly debug. It even posts the replays back to the pull request so you have all the context needed when reviewing PRs.
+
+<Callout type="info" emoji="👉">
+Replay for Cypress and Playwright are in closed beta. We’d love to help your OSS project get set up, contact us on [Discord](https://replay.io/discord) or at support@replay.io!
+
+</Callout>
+
+### Resources
+
+- **[Guide**: Recording Browser Tests (Beta)](https://www.notion.so/Test-Suites-5bf7d91b65cd46deab1867b07bd12bdf?pvs=21)
+- [**Video:** Record Replays in CI](https://www.twitch.tv/videos/1447996415)
+
+## Document Pull Requests
+
+Use Replay to clearly document changes made in a pull request — both to the code and application behavior. Add comments to lines of code explaining changes and specific areas of the UI. You can even add comments to network requests to highlight changes in requests or response bodies ([experimental feature](https://docs.replay.io/docs/experimental-features-2a2f9505a8714ade8b7de92df9cf56d3)).
+
+### Resources
+
+- **[Guide:** Documenting Pull Requests](/learn-more/workflows/documenting-pull-requests)
+- **[Documentation:** Commenting on the video](https://docs.replay.io/docs/viewer-26591deb256c473a946d0f64abb67859#fab6543bacc94ce186afa0ca0bd3575a)
+- **[Documentation:** Adding a comment on a source](https://docs.replay.io/docs/search-4bd72377ac3d498d96bb7bcb33722a75#439a427abffd46c6aae7b5e12ce8805b)
+- **[Documentation:** Adding a comment from a print statement](https://docs.replay.io/docs/print-statements-1dcf7c3a8414423aab122ea7c4a41661#8767e5697b7044288655b5a10104a438)
+
+## Getting Started
+
+To get started, simply [create a team](https://www.notion.so/Setting-up-a-team-f5bd9ee853814d6f84e23fb535066199?pvs=21) in Replay, then contact us to set up your OSS plan! We’re here to help with any questions and get you up and running. Visit [replay.io/get-started](http://replay.io/get-started) to learn more.

@@ -11,6 +11,7 @@
   "license": "MIT",
   "homepage": "https://replay.io",
   "dependencies": {
+    "glob": "^10.3.10",
     "next": "^13.0.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",

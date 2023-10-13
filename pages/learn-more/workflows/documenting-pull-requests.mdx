@@ -1,0 +1,57 @@
+import { Callout } from 'nextra/components'
+import Video from '../../../components/Video.tsx'
+
+# Documenting Pull Requests
+
+Using Replay to document changes with pull requests makes it easier to review and accepts PRs faster. Record the updated application flow and use comments to highlight changed to the UI, application behavior, and even lines of code and network requests.
+
+### Record
+
+Start by recording the area(s) of your application impacted by the pull request. Depending on the scope of your PR, this may involve capturing a single component render or a more complex user flow.
+
+<Callout type="info" emoji="👉">
+Replay captures all code execution happening in the browser, not just the UI. This makes it a powerful tool for understanding changes that don’t just happen on the screen.
+
+</Callout>
+
+Check out the [Recording a Replay guide](https://www.notion.so/Recording-a-replay-archived-a839a8481b3b41a6b21a56817f5c2b69?pvs=21) for details.
+
+### Inspect
+
+After recording, explore the replay to identify the areas that have changed in the pull request.
+
+- For UI changes, use the [Viewer](https://www.notion.so/Viewer-26591deb256c473a946d0f64abb67859?pvs=21)
+- For code changes, use [Search](https://www.notion.so/Search-4bd72377ac3d498d96bb7bcb33722a75?pvs=21)
+- For API changes, use the [Network Monitor](https://www.notion.so/Network-24631b78240749879d54fffcda94f098?pvs=21)
+- To validate changes, use [Print Statements](https://www.notion.so/Print-statements-1dcf7c3a8414423aab122ea7c4a41661?pvs=21)
+
+### Comment
+
+Comments in Replay are linked to a point in time and one of the following:
+
+- [A location on the UI](https://www.notion.so/Viewer-26591deb256c473a946d0f64abb67859?pvs=21)
+- [A line of code](https://www.notion.so/Commenting-0a140c06524d428681cadd78acf44661?pvs=21)
+- [A network request](https://www.notion.so/Network-24631b78240749879d54fffcda94f098?pvs=21)
+
+Use comments to identify visual changes in the UI, diffs in lines of code, network requests and response bodies, or to add context for decision-making on why a change was made.
+
+<Video src="/media/learn-more/workflows/documenting-pull-requests/addcomment.mp4" />
+
+The pull request reviewer can click on any comment and be taken directly to the referenced point in time and UI location, line of code, or network request. No need to write file names or reproduction steps.
+
+### Share
+
+Every replay has a shareable URL that can be added directly to the pull request in the description or as a comment. 
+
+![Untitled](/media/learn-more/workflows/documenting-pull-requests/Untitled.png)
+
+We recommend [setting up a team](https://www.notion.so/Setting-up-a-team-f5bd9ee853814d6f84e23fb535066199?pvs=21) to easily manage access to replays so anyone reviewing your PR will already have access.
+
+<Callout type="info" emoji="💡">
+As a best practice, require a replay as part of your [pull request template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository) so every PR is well-documented for quick review.
+
+</Callout>
+
+### Examples
+
+Check out Replay’s [open source `/devtools` repository](https://github.com/replayio/devtools/pulls?q=is%3Apr+label%3A%22has-replay+%F0%9F%9A%80%22+) to see how the team uses replays to document pull requests.

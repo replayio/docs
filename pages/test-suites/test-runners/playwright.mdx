@@ -8,7 +8,7 @@ You’ll need a Replay team specifically for your automated test replays. This l
 
 Start by creating a new team in the **[Replay Library](https://app.replay.io)** sidebar and inviting your team members. Once created, we’ll enable access to the **Test Suite Dashboard**. 
 
-When you’re ready to record, you can create an [API Key from the Team Settings](../../Teams-&-Admin/Team-Settings.md). Using the API Key connects your recordings to the correct team to ensure access to your replays is protected and your Test Suite Dashboard views are accurate.
+When you’re ready to record, you can create an [API Key from the Team Settings]/Teams-&-Admin/Team-Settings.md). Using the API Key connects your recordings to the correct team to ensure access to your replays is protected and your Test Suite Dashboard views are accurate.
 
 # Configuring Playwright
 
@@ -82,11 +82,11 @@ Configuration instructions will vary based on your CI provider and pipeline.
 
 ## GitHub Actions
 
-[Recording with GitHub Actions](Playwright/Recording-with-GitHub-Actions.md)
+[Recording with GitHub Actions](/test-suites/test-runners/playwright/recording-with-git-hub-actions)
 
 ## Other CI Providers
 
-[Recording with Other CI Providers](Playwright/Recording-with-Other-CI-Providers.md)
+[Recording with Other CI Providers](/test-suites/test-runners/playwright/recording-with-other-ci-providers)
 
 # Recording tests locally
 
@@ -95,7 +95,7 @@ While Replay Test Suites is designed for debugging tests in CI, it can be helpfu
 ## Recording replays
 
 - Ensure your project is configured with `replayio/playwright`
-- Configure Playwright to only use a single worker and increase the timeout if needed to allow for increased run time. ([See config example below](Playwright.md)).
+- Configure Playwright to only use a single worker and increase the timeout if needed to allow for increased run time. See config example below.
 - Set `RECORD_REPLAY_API_KEY` as an environment variable locally
 - Pass the `--project` flag, and your selected browser option:
     - `--project project-name` (`replay-chromium` or `replay-firefox` )
@@ -162,13 +162,13 @@ Replays are uploaded locally using the `@replayio/replay` CLI. Your API key must
 
 [Full instructions at the `@replayio/replay` repo.](https://github.com/replayio/replay-cli/tree/main/packages/replay)
 
-<aside>
-💡 Once you’ve recorded, view test results and replays using the [Test Suite Dashboard](../Features/Test-Suite-Dashboard.md) and [Pull Request Comments](../Features/Pull-Request-Comments.md).
+<Callout type="info" emoji="👉">
+💡 Once you’ve recorded, view test results and replays using the [Test Suite Dashboard]/Features/Test-Suite-Dashboard.md) and [Pull Request Comments]/Features/Pull-Request-Comments.md).
 
-</aside>
+</Callout>
 
-[Troubleshooting Guide](Playwright/Troubleshooting-Guide.md)
+[Troubleshooting Guide](/test-suites/test-runners/playwright/troubleshooting-guide)
 
-[Playwright FAQs](Playwright/Playwright-FAQs.md)
+[Playwright FAQs](/test-suites/test-runners/playwright/playwright-faqs)
 
-[Playwright Node](Playwright/Playwright-Node.md)
+[Playwright Node](/test-suites/test-runners/playwright/playwright-node)

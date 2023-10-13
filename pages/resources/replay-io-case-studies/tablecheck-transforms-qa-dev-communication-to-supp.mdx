@@ -1,0 +1,106 @@
+import { Callout } from 'nextra/components'
+
+# TableCheck transforms QA/Dev communication to support thousands of restaurants and hotel chains
+
+<Callout type="info" emoji="🪄">
+“If I didn’t have Replay, it would have taken me several days or even weeks getting the debugger to run properly in all the dynamically loaded scripts, which is not easy. With Replay it took me half a day to figure it out and get a fix ready.” - Simeon Cheeseman, Principal Engineer
+
+</Callout>
+
+# Summary
+
+### TableCheck Challenges
+
+- Expanding into numerous markets globally and launching new UIs per market
+- Managing QA/Support issues and inter-team communication at scale across multiple front ends, a monolith single page app, and many languages
+- Building new landing pages and moving tech stacks resulting in hard-to-reproduce bugs
+
+### How Replay helps
+
+- Significant time savings between QA and Engineering, resulting in a scalable approach to supporting new markets and features
+- Greater developer velocity via improved code reviews and a greater understanding of routing and core issues across teams and front ends
+- A tools usable by engineers with varying tech stacks that can move from project to project with little context
+
+# What is TableCheck?
+
+[TableCheck](https://www.tablecheck.com/en/company/) has built a global platform to empower restaurants to reach their full potential and own their whole guest experience. TableCheck helps restaurants reduce reliance on paid booking channels by directly converting first-time diners into repeat guests⁠—and repeat guests into loyal fans. The company has become the standard solution for restaurants and hospitality businesses around the world to drive guest loyalty and revenue.
+
+The company started in Japan, assisting large hotel chains and top end restaurants manage reservations by allowing optimal use of available tables and avoiding double booking. TableCheck’s business model is all about supporting restaurants to give the best experience to their diners.
+
+# Managing across markets, front ends and tech stacks
+
+Providing a custom experience to thousands of hospitality customers across the world requires a mix of micro front ends and various technologies. Ensuring that teams with different tech stacks could work together became a challenge as the business scaled.
+
+The TableCheck engineering team is evenly split between front end and back end, with both teams using a variety of frameworks, architectural approaches, and languages. These include React, Ember, single-page applications (SPAs), micro front ends, server-side rendered applications (SSRs), Elixir, and Ruby. Developers also created their own systems, which provided more control but were more difficult to maintain.
+
+“We also created a fork of the Create React App system,” said Simeon Cheeseman, Principal Front End Developer. Simeon has worked on a variety of projects at TableCheck and worked on most of the code across the front end. “When it's your own system, you can make a lot of your own choices without being shackled by the open source maintainers choices. The downside of this is, if you write it you’re the one who maintains it.”
+
+Different teams across the core user flows like Diners and Restaurants used different approaches, resulting in various versions of the user-facing front ends as they launched new features per market. This made communication between developers and user-facing teams like Support more challenging when reproducing and debugging issues.
+
+# Building shared understanding with Replay
+
+TableCheck discovered Replay online and developers began playing with it across teams and determining the highest value use cases.
+
+Simeon explained the early days, saying “when I first got introduced to Replay,  we’d use it to fix bugs here and there and I could see the potential but it was hard to get traction.”
+
+Once the team realized that Replay could help them reproduce specific issues, regardless of the tech stack or toolkit, then the value quickly became apparent.
+
+> “The first time it really clicked was when we were building our main marketing landing page and managing third-party javascript SDKs,” said Simeon. “As with all marketing pages, everyone wants to put their choice of third-party scripts into it. At the time, it was a Gatsby app with third-party tools requested by our sales team.”
+> 
+
+Simeon explained that the lack of technical support and documentation for the third-party tools made it difficult to debug when the script wasn’t triggering on SPA route changes. They weren’t able to find a method for manually re-triggering the script without refreshing the page.
+
+> “I was trying to understand the minified code, as that’s all we had to go on,” said Simeon. “It was a mess – their tool loaded other JavaScript dynamically and set random variables on the window. With the magic of Replay, I could figure out what the tool was doing and how to get the tool to re-trigger on each route change.”
+> 
+
+This experience showed Simeon the time savings possible with Replay, especially when debugging less familiar tools or tech stacks.
+
+> “If I didn’t have Replay, it probably would have taken me several days or even weeks to figure it out” said Simeon. “I would've had to spend ages getting the debugger to run properly in all the dynamically loaded scripts, which is not easy. With Replay it took me about half a day to figure it all out and get a fix ready.”
+> 
+
+## Expanding to other teams for streamlined communication
+
+After that project, TableCheck realized the value and things really took off when the QA team came on board.
+
+Simeon realized that developers can actually debug really hard stuff in Replay. At their next weekly front end team meeting, they decided to get the QA team to use Replay to speed up communication between teams. Soon after, TableCheck’s entire QA team started recording replays for every issue. The team adopted it quickly because developers found it familiar enough to the tools they already used.
+
+> “They can use it like a console log debugger and step through everything right there from the ticket where the replay is shared,” said Simeon. “Now QA shares replays with engineering to resolve bugs across all SPAs and front ends.”
+> 
+
+## Using Replay in code reviews
+
+<Callout type="info" emoji="🗽">
+“As a front end developer, Replay.io saves me an incredible amount of time during code reviews. Reviewing style changes in a PR the old fashioned way with screenshots is cumbersome. With Replay, we can inspect new styles raised in a PR in a real browser without having to checkout to a branch.” Daniel Lizik, Tech Lead, Booking Form App
+
+</Callout>
+
+TableCheck quickly started using Replay to document pull requests and saw immediate benefits.
+
+As with many teams, TableCheck’s front end teams rely on feature branches and manage numerous shared staging environments with multiple people working across those areas at any given time.
+
+> “Adding replays to the feature branches makes it so much easier to understand changes being made,” said Simeon. “We don’t have to worry if the branch is deployed to our staging environment or someone else has deployed a different branch replacing it.”
+> 
+
+In addition to ensuring the correct code is being reviewed, Replay makes the process of reviewing much simpler.
+
+## Asynchronous debugging for maximum efficiency
+
+<Callout type="info" emoji="😇">
+“With replay, the urgency to fix before it disappears is no longer a concern; we have the replay so the bug is reproduced forever.” Simeon Cheeseman, Principal Engineer
+
+</Callout>
+
+Simeon explains some of the life improvements since their teams adopted replay, “When a bug comes in, I can take a break from my normal work and spend 10-15 minutes figuring it out.” He adds, “I like adding comments to leave myself or my colleagues breadcrumbs to fix for later. I’m the kind of person to leave a lot of comments…I often leave them as to-do’s in the open file at the end of the day so that I can pick up the same task tomorrow.”
+
+Collaboration features are a major pillar of the Replay experience and a big reason Replay exists today, we want to bring joy into the debugging experience and find those quality of life improvements that make being a developer fun and less painful. We love hearing from teams that  Replay has “given them the ability to have dinner at home without needing to urgently address bugs before they are no longer reproducible.” This is peace of mind that makes all of our work more fulfilling. 
+
+# What’s Next?
+
+For TableCheck, the next place to bring Replay is in CI/CD. Occasionally, there are Cypress tests that are difficult to debug; there are a few projects where it works locally but it doesn’t work in another environment. Being able to see what the actual error message is typically our challenge and that would be valuable. 
+
+> Simeon explains “If Replay could capture and record our Cypress errors so we see them when a test fails, oh boy. QA has been trying to get automation running. We can unlock so much value just by continuing to transform the communication between QA & Development teams. There is so much time savings to be found here.”
+> 
+
+For TableCheck, a product that scales across markets, has internationalization and all sorts of other concerns as it scales whilst adding new features and supporting lots of languages, Replay has even greater potential to be even more valuable as the company grows.
+
+To answer Simeon’s question - we’re working on it! Check out [our blog](https://medium.com/replay-io) for updates to our Test Suites offering where we are prioritizing support for Cypress and Playwright test runners. You can also check out [our docs](https://docs.replay.io/docs/recording-automated-tests-5bf7d91b65cd46deab1867b07bd12bdf) or hop into [our discord](http://replay.io/discord) to chat with us!
