@@ -13,11 +13,12 @@ jobs:
         mdx_files=$(find pages -name '*.mdx' | tr '\n' ' ')
         echo "Found MDX files: $mdx_files"
         echo "::set-output name=mdxfiles::$mdx_files"
-    - name: HashiCorp's Link Checker
+    - name: Link Checker
       uses: hashicorp/gh-action-check-broken-links@v1
       with:
         baseUrl: ${{ github.event.deployment_status.target_url }}
         files: ${{ steps.findmdx.outputs.mdxfiles }}
         whitelist: |
-          https://google.com/whitelist
-          https://yahoo.com/whitelist
+          https://youtube.com/
+          https://youtu.be
+          https://loom.com
