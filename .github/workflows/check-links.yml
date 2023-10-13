@@ -1,0 +1,22 @@
+name: Check for broken links
+on: [push]
+jobs:
+  checklinks:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Find all MDX files
+      id: findmdx
+      run: |
+        mdx_files=$(find pages -name '*.mdx' | tr '\n' ' ')
+        echo "Found MDX files: $mdx_files"
+        echo "::set-output name=mdxfiles::$mdx_files"
+    - name: HashiCorp's Link Checker
+      uses: hashicorp/gh-action-check-broken-links@v1
+      with:
+        baseUrl: 'https://hashicorp.com'
+        files: ${{ steps.findmdx.outputs.mdxfiles }}
+        whitelist: |
+          https://google.com/whitelist
+          https://yahoo.com/whitelist

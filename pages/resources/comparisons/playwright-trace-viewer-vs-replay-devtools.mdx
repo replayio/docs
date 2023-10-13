@@ -16,13 +16,13 @@ Here is a screenshot of **Replay DevTools** for the same test. On the surface, t
 
 ## Time travel debugging
 
-Because Replay is simply a browser, you can start recording your tests by adding `Replay Chromium` in your playwright config [here](https://docs.replay.io/test-suites/test-runners/playwright#22b3ac74c8bf4f1db7d382f784d35a0d). And when you open a replay you can start time traveling!
+Because Replay is simply a browser, you can start recording your tests by adding `Replay Chromium` in your playwright config [here](/test-suites/test-runners/playwright). And when you open a replay you can start time traveling!
 
 ### Retroactive print statements
 
 The biggest benefit of time travel debugging is the ability to find a line of code and add a retroactive print statement. In the example below, we’ll add a `console.log("gPendingMessages", gPendingMessgages, msg)` on the line where `gPendingMessages.push` is called and see what was in the array and `msg` at the time.
 
-Flaky tests can either come from an assumption in your testing logic or application logic. In both cases, it can be helpful to work backwards from the user visible issue to the root cause with console logs that help you narrow down the timing issue. For more info on print statements, check our our [docs](https://docs.replay.io/reference-guide/debugging/print-statements).
+Flaky tests can either come from an assumption in your testing logic or application logic. In both cases, it can be helpful to work backwards from the user visible issue to the root cause with console logs that help you narrow down the timing issue. For more info on print statements, check our our [docs](/referrence-guide/debugging/print-statements).
 
 <Video src="/media/resources/comparisons/playwright-trace-viewer-vs-replay-devtools/Adding_a_print_statement.mp4" />
 
