@@ -19,10 +19,10 @@ jobs:
         baseUrl: ${{ github.event.deployment_status.target_url }}
         files: ${{ steps.findmdx.outputs.mdxfiles }}
         whitelist: |
-          https://youtube.com/
-          https://youtu.be/
-          https://loom.com/
-          https://medium.com/
-          https://github.com/
-          https://twitter.com/
+          youtube.com
+          youtu.be
+          loom.com
+          medium.com
+          github.com
+          twitter.com
           mailto:support@replay.io
