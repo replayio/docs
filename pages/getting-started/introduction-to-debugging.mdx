@@ -7,7 +7,7 @@ import YouTubeVideo from '../../components/YouTubeVideo.tsx'
 
 ## Viewing your application
 
-It’s important to get a sense of what was happening in the app at the time of the issue. With the [Viewer](../Reference-Guide/Viewer.md), you can playback the user session, view user events in the timeline, and add comments in the video.
+It’s important to get a sense of what was happening in the app at the time of the issue. With the [Viewer]/Reference-Guide/Viewer.md), you can playback the user session, view user events in the timeline, and add comments in the video.
 
 ![Replay viewer](/media/introduction-to-debugging/viewer.png)
 
@@ -30,13 +30,13 @@ It can be helpful to jump directly to the line of code that causes an event. In 
 
 ### Jumping to a console log
 
-You can jump between console messages generated from your application, or ones you’ve added with Replay’s [print statements](../Reference-Guide/Debugging/Print-statements.md) feature.
+You can jump between console messages generated from your application, or ones you’ve added with Replay’s [print statements]/Reference-Guide/Debugging/Print-statements.md) feature.
 
 <Video src="/media/introduction-to-debugging/jump-to-console-log.mp4" />
 
 ### Evaluating print statements
 
-Replay lets you add [print statements](../Reference-Guide/Debugging/Print-statements.md) (also called console logs) to an existing replay with no need to compile or re-run the code. Adding print statements to a replay is like going back in time and adding markers to your code to broadcast information at specific points. 
+Replay lets you add [print statements]/Reference-Guide/Debugging/Print-statements.md) (also called console logs) to an existing replay with no need to compile or re-run the code. Adding print statements to a replay is like going back in time and adding markers to your code to broadcast information at specific points. 
 
 Let’s say you have a click handler that is supposed to update the value of a variable, but you’re not sure if it’s actually working. You could add a **print statement** to log the value of that variable after the function executes to see if it actually updated.
 
@@ -46,7 +46,7 @@ With Replay print statements, you can see how many times a function executed, ev
 
 ### Jumping to a network request
 
-The Replay [Network Monitor](../Reference-Guide/DevTools/Network.md) is helpful for debugging anything related to your API or any external network requests going in and out of your application. 
+The Replay [Network Monitor]/Reference-Guide/DevTools/Network.md) is helpful for debugging anything related to your API or any external network requests going in and out of your application. 
 
 If requests fail or time out or if data coming from your back end isn’t accurate, the Network Monitor can help identify problematic requests for debugging. All network requests appear as a timeline so you can navigate back and forth between calls.
 
@@ -54,13 +54,13 @@ If requests fail or time out or if data coming from your back end isn’t accura
 
 ### Jumping to a breakpoint
 
-[Breakpoints](../Reference-Guide/Debugger/Breakpoints.md) are the remote control for your code — pause, rewind, fast-forward, and step through your code line by line to evaluate it at various points in time. This can be particularly helpful when you have granular timing or async code issues causing a bug.
+[Breakpoints]/Reference-Guide/Debugger/Breakpoints.md) are the remote control for your code — pause, rewind, fast-forward, and step through your code line by line to evaluate it at various points in time. This can be particularly helpful when you have granular timing or async code issues causing a bug.
 
 <Video src="/media/common/jump-to-breakpoint.mp4" />
 
 ### Jumping to a Redux action
 
-The experimental [Redux DevTools](../Reference-Guide/DevTools/Redux.md) integration will show dispatched actions up to the point in time you are paused in the replay. We are building out functionality to add a timeline view, stack traces, and more.
+The experimental [Redux DevTools]/Reference-Guide/DevTools/Redux.md) integration will show dispatched actions up to the point in time you are paused in the replay. We are building out functionality to add a timeline view, stack traces, and more.
 
 ## Inspecting and Evaluating
 
@@ -68,13 +68,13 @@ Once you’ve narrowed in on the points in time to debug, Replay provides all th
 
 ### Inspecting elements
 
-The **[Elements panel](../Reference-Guide/DevTools/Elements.md)** is the blueprint of the HTML elements and CSS styles for your app. If you have issues with how your app is being displayed, this is a great place to start. View the structure of your HTML elements and see what styles have been applied. You can also see which elements have event listeners.
+The **[Elements panel]/Reference-Guide/DevTools/Elements.md)** is the blueprint of the HTML elements and CSS styles for your app. If you have issues with how your app is being displayed, this is a great place to start. View the structure of your HTML elements and see what styles have been applied. You can also see which elements have event listeners.
 
 <Video src="/media/introduction-to-debugging/inspecting-elements.mp4" />
 
 ### Inspecting React components
 
-For React applications, you can view components, props, state, and hooks with Replay’s [React DevTools](../Reference-Guide/DevTools/React.md). 
+For React applications, you can view components, props, state, and hooks with Replay’s [React DevTools]/Reference-Guide/DevTools/React.md). 
 
 React DevTools helps you answer questions like
 
@@ -98,9 +98,9 @@ The Heat Map in the editor’s gutter is helpful for seeing how many times a lin
 
 ### Inspecting the Call Stack and Scopes
 
-When paused on a specific execution of a line of code, you can view the [call stack](../Reference-Guide/Debugger/Breakpoints.md) leading up to that point. 
+When paused on a specific execution of a line of code, you can view the [call stack]/Reference-Guide/Debugger/Breakpoints.md) leading up to that point. 
 
-The [Scopes](../Reference-Guide/Debugger/Breakpoints.md) pane will show the values of properties and variables within a given scope when paused on an execution of a line of code.
+The [Scopes]/Reference-Guide/Debugger/Breakpoints.md) pane will show the values of properties and variables within a given scope when paused on an execution of a line of code.
 
 <Video src="/media/introduction-to-debugging/callback-and-scopes.mp4" />
 
@@ -108,8 +108,8 @@ The [Scopes](../Reference-Guide/Debugger/Breakpoints.md) pane will show the valu
 
 The Console lets you view and navigate between print statements and events that occur in your application. You can also use the console to evaluate expressions in order to see the value of variables at different points in time. 
 <Video src="/media/introduction-to-debugging/evaluating-console.mp4" />
-Check out our [Console](../Reference-Guide/DevTools/Console.md) documentation for more.
+Check out our [Console]/Reference-Guide/DevTools/Console.md) documentation for more.
 
 ## What’s next
 
-Replay works best when used by a team. Teams lets you easily collaborate and gives access to features like source map uploads, recording automated tests, and managing access to team replays. Learn more in [Setting up a team](../Teams-&-Admin/Setting-up-a-team.md).
+Replay works best when used by a team. Teams lets you easily collaborate and gives access to features like source map uploads, recording automated tests, and managing access to team replays. Learn more in [Setting up a team]/Teams-&-Admin/Setting-up-a-team.md).
