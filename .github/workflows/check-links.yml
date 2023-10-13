@@ -1,5 +1,5 @@
 name: Check for broken links
-on: [push]
+on: [deployment_status]
 jobs:
   checklinks:
     if: github.event.deployment_status.state == 'success'
