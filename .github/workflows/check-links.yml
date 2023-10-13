@@ -20,5 +20,9 @@ jobs:
         files: ${{ steps.findmdx.outputs.mdxfiles }}
         whitelist: |
           https://youtube.com/
-          https://youtu.be
-          https://loom.com
+          https://youtu.be/
+          https://loom.com/
+          https://medium.com/
+          https://github.com/
+          https://twitter.com/
+          mailto:support@replay.io
