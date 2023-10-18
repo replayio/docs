@@ -1,6 +1,10 @@
 {
   "redirects": [
     {
+      "source": "/discord",
+      "destination": "https://discord.gg/Wh9w3KMr7J"
+    },
+    {
       "source": "/",
       "destination": "/getting-started/what-is-replay-io"
     },

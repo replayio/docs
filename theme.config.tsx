@@ -9,7 +9,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/replayio-public/replay-documentation',
   },
   chat: {
-    link: 'https://discord.gg/replayio',
+    link: '/discord',
   },
   docsRepositoryBase: 'https://docs.replay.io',
   footer: {
