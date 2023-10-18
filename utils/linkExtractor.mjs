@@ -4,7 +4,6 @@ import markdown from 'remark-parse';
 import html from 'rehype-parse';
 import { visit } from 'unist-util-visit';
 
-
 /**
  * Find all links within a Markdown file.
  * 
