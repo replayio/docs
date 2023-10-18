@@ -1,5 +1,4 @@
 import React, { SVGProps } from 'react'
-import { useTheme } from 'next-themes'
 
 export function LogosReplay(props: SVGProps<SVGSVGElement>) {
 
