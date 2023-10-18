@@ -1,0 +1,172 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/getting-started/what-is-replay-io"
+    },
+    {
+      "source": "/test-suites",
+      "destination": "/test-suites/test-runners"
+    },
+    {
+      "source": "/resources",
+      "destination": "/resources/get-help"
+    },
+    {
+      "source": "/reference-guide",
+      "destination": "/reference-guide/debugging/print-statements"
+    },
+    {
+      "source": "/docs/replay-oss-751fc053a0a14c32812c4766d7c65e4d",
+      "destination": "/learn-more/workflows/oss-projects"
+    },
+    {
+      "source": "/docs/recording-bug-reports-80c37d7d6753485f81497570625d06f0",
+      "destination": "/learn-more/workflows/recording-bug-reports"
+    },
+    {
+      "source": "/docs/recording-bug-reports-80c37d7d6753485f81497570625d06f0",
+      "destination": "/learn-more/workflows/recording-bug-reports"
+    },
+    {
+      "source": "/docs/resources-and-examples-d25ae319114e4d109022458cd47f38ec",
+      "destination": "/resources/get-help"
+    },
+    {
+      "source": "/docs/recording-a-web-app-5fc7ace7f3e449ce903e89e59d4b93ba",
+      "destination": "/getting-started/recording-your-first-replay"
+    },
+    {
+      "source": "/docs/contact-and-community-096224a3bca4479b982ac572dc5c81d0",
+      "destination": "/resources/get-help/contact-community"
+    },
+    {
+      "source": "/docs/billing-e01f0740cd9548f1b8725c9773b217f6",
+      "destination": "/getting-started/teams-admin/billing"
+    },
+    {
+      "source": "/docs/case-studies-and-comparisons-3bd958ab68234ae697cdac5904bbc36e",
+      "destination": "/resources/replay-io-case-studies"
+    },
+    {
+      "source": "/bug-reports",
+      "destination": "/getting-started/recording-your-first-replay"
+    },
+    {
+      "source": "/reference-guide/react",
+      "destination": "/reference-guide/dev-tools/react"
+    },
+    {
+      "source": "/reference-guide/print-statements",
+      "destination": "/reference-guide/debugging/print-statements"
+    },
+    {
+      "source": "/reference-guide/cypress-panel",
+      "destination": "/test-suites/test-runners/cypress"
+    },
+    {
+      "source": "/reference-guide/events#b1a0e7f432f5426888b80e9b00e7b226",
+      "destination": "/reference-guide/viewer/events"
+    },
+    {
+      "source": "/resources-and-examples/security-practices",
+      "destination": "/resources/security-practices"
+    },
+    {
+      "source": "/recording-browser-tests-(beta)",
+      "destination": "/getting-started/test-suite-integration"
+    },
+    {
+      "source": "/case-studies-and-comparisons/replay-vs.-session-replay",
+      "destination": "/resources/comparisons/session-replay-vs-runtime-replay"
+    },
+    {
+      "source": "/case-studies-and-comparisons/replay-vs.-chrome-recorder",
+      "destination": "/resources/comparisons/chrome-recorder-vs-replay"
+    },
+    {
+      "source": "/case-studies-and-comparisons/replay-vs.-loom",
+      "destination": "/resources/comparisons/loom-vs-replay"
+    },
+    {
+      "source": "/recording-a-web-app/sharing-your-replay",
+      "destination": "/getting-started/bug-reports/sharing-your-replay"
+    },
+    {
+      "source": "/recording-a-web-app/viewing-and-collaborating",
+      "destination": "/getting-started/bug-reports/viewing-and-collaborating"
+    },
+    {
+      "source": "/recording-browser-tests-(beta)/cypress-instructions",
+      "destination": "/test-suites/test-runners/cypress"
+    },
+    {
+      "source": "/recording-browser-tests-(beta)/pull-request-comments",
+      "destination": "/test-suites/features/pull-request-comments"
+    },
+    {
+      "source": "/recording-browser-tests-(beta)/test-suite-dashboard",
+      "destination": "/test-suites/features/test-suite-dashboard"
+    },
+    {
+      "source": "/reference-guide/cypress-panel",
+      "destination": "/test-suites/test-runners/cypress"
+    },
+    {
+      "source": "/resources-and-examples",
+      "destination": "/resources/get-help"
+    },
+    {
+      "source": "/resources-and-examples#7375c6180b8848f48be37c4bf1026007",
+      "destination": "/resources/get-help"
+    },
+    {
+      "source": "/case-studies-and-comparisons",
+      "destination": "/resources/replay-io-case-studies"
+    },
+    {
+      "source": "/case-studies-and-comparisons#ff284e483831445ba1a6928c24afc2b5",
+      "destination": "/resources/replay-io-case-studies"
+    },
+    {
+      "source": "/contribute",
+      "destination": "/learn-more/contribute"
+    },
+    {
+      "source": "/reference-guide/console",
+      "destination": "/reference-guide/dev-tools/console"
+    },
+    {
+      "source": "/reference-guide/print-statements",
+      "destination": "/reference-guide/debugging/print-statements"
+    },
+    {
+      "source": "/reference-guide/react",
+      "destination": "/reference-guide/dev-tools/react"
+    },
+    {
+      "source": "/reference-guide/elements",
+      "destination": "/reference-guide/dev-tools/elements"
+    },
+    {
+      "source": "/reference-guide/breakpoints",
+      "destination": "/reference-guide/debugger/breakpoints"
+    },
+    {
+      "source": "/reference-guide/events",
+      "destination": "/reference-guide/viewer/events"
+    },
+    {
+      "source": "/reference-guide/network",
+      "destination": "/reference-guide/dev-tools/network"
+    },
+    {
+      "source": "/get-help",
+      "destination": "/resources/get-help/contact-community"
+    },
+    {
+      "source": "/case-studies-and-comparisons",
+      "destination": "/resources/replay-io-case-studies"
+    }
+  ]
+}

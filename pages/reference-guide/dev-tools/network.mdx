@@ -12,7 +12,7 @@ The **Network Monitor** gives you insight to the network activity taking place d
 
 Replay’s Network Monitor lets you view resource details, request and response bodies, and even request stack traces.
 
-![[Climatescape replay](https://app.replay.io/recording/b4634ffa-1904-4343-87a3-649a9ebcecab?point=7788445288484938147141165896434119&time=3599&hasFrames=true)](/media/referrence-guide/dev-tools/network/Untitled.png)
+![[Climatescape replay](https://app.replay.io/recording/b4634ffa-1904-4343-87a3-649a9ebcecab?point=7788445288484938147141165896434119&time=3599&hasFrames=true)](/media/reference-guide/dev-tools/network/Untitled.png)
 
 [Climatescape replay](https://app.replay.io/recording/b4634ffa-1904-4343-87a3-649a9ebcecab?point=7788445288484938147141165896434119&time=3599&hasFrames=true)
 
@@ -36,7 +36,7 @@ The Network table shows resources broken down by type in the following order:
 
 The table shows the resource response status, name, method, type, and domain. Like in the console, a red line indicates the current point in time when paused in a replay. All network requests after the current point in time are dimmed to indicate they have not yet occurred.
 
-![Screen Shot 2022-01-12 at 1.49.57 PM.png](/media/referrence-guide/dev-tools/network/Screen_Shot_2022-01-12_at_1.49.57_PM.png)
+![Screen Shot 2022-01-12 at 1.49.57 PM.png](/media/reference-guide/dev-tools/network/Screen_Shot_2022-01-12_at_1.49.57_PM.png)
 
 <Callout type="info" emoji="❓">
 **Why can’t I time travel to this request?**
@@ -47,7 +47,7 @@ In order to support time travel the request has to be associated with a particul
 
 When a replay is initially loading or a part of it has been unloaded, some network request details may not be available. These are dimmed and will not be clickable during this loading state. You can still fast-forward and rewind to these requests, but will not be able to view headers, or request/response bodies until that section of the recording is loaded (or re-loaded in the case of an unloaded section).
 
-![Screen Shot 2022-04-27 at 10.39.05 AM.png](/media/referrence-guide/dev-tools/network/Screen_Shot_2022-04-27_at_10.39.05_AM.png)
+![Screen Shot 2022-04-27 at 10.39.05 AM.png](/media/reference-guide/dev-tools/network/Screen_Shot_2022-04-27_at_10.39.05_AM.png)
 
 <Callout type="info" emoji="🚧">
 In the graphic above, the middle section of requests is slightly dimmed, because those requests happened later in the recording than the “present” (the red bar). The bottom section of requests also happened later, but they are in a section of the recording which is not currently loaded.
@@ -63,13 +63,13 @@ Resource details are broken down by section:
 - Request Headers
 - Response Headers
 
-![Untitled](/media/referrence-guide/dev-tools/network/Untitled-1.png)
+![Untitled](/media/reference-guide/dev-tools/network/Untitled-1.png)
 
 ### Inspecting request bodies
 
 The **Request** tab shows the request body. The tab will not appear if there is no request body for the resource.
 
-![Untitled](/media/referrence-guide/dev-tools/network/Untitled-2.png)
+![Untitled](/media/reference-guide/dev-tools/network/Untitled-2.png)
 
 ### Inspecting response bodies
 
@@ -79,7 +79,7 @@ The response body is previewed as JSON when available. Otherwise it is shown as 
 
 Click the arrows to expand values within the response body.
 
-![Untitled](/media/referrence-guide/dev-tools/network/Untitled-3.png)
+![Untitled](/media/reference-guide/dev-tools/network/Untitled-3.png)
 
 <Callout type="info" emoji="❓">
 **Why doesn’t Replay capture some response bodies?**
@@ -97,7 +97,7 @@ The **Stack Trace** tab shows where the request initiated in the application cod
 
 Click on any row in the stack trace to open that line of code in the **Editor**. (The Editor must be open before clicking.)
 
-![Untitled](/media/referrence-guide/dev-tools/network/Untitled-4.png)
+![Untitled](/media/reference-guide/dev-tools/network/Untitled-4.png)
 
 ### Inspecting timings
 
@@ -109,7 +109,7 @@ The **Time waiting for response** is the difference between the request initiati
 Timings are relative to the replay and are a best effort representation of when events happen related to network requests. Some responses requiring additional processing or decoding may affect the precision of the timing calculations.
 </Callout>
 
-![timingspanel.png](/media/referrence-guide/dev-tools/network/timingspanel.png)
+![timingspanel.png](/media/reference-guide/dev-tools/network/timingspanel.png)
 
 ### Commenting on network requests
 
