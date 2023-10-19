@@ -4,7 +4,7 @@ import { Callout } from 'nextra/components'
 
 Replay Chrome is currently built for automated recordings with tools like Playwright and Cypress so it does not have a record button yet. If you would like to use Chrome to record a replay, you can use the `replay` CLI.
 
-# Dependencies
+## Dependencies
 
 Replay Chrome should work on most modern versions of Linux, but it does require a relatively modern version of libc (v2.27+). We’ve tested Replay Chrome against the following versions of Ubuntu:
 
@@ -19,7 +19,7 @@ Replay Chrome should work on most modern versions of Linux, but it does require 
 
 </Callout>
 
-# Launching Chrome
+## Launching Chrome
 
 ```bash
 npx @replayio/replay@latest launch https://replay.io
@@ -42,9 +42,9 @@ RECORD_REPLAY_API_KEY=<API_Key> npx @replayio/replay@latest upload <id>
 
 You can create an API Key for either a [team](/getting-started/teams-admin/setting-up-a-team#api-keys) or your [user](/resources/get-help/user-settings) account.
 
-# Installation troubleshooting
+## Installation troubleshooting
 
-## glibc not found
+### glibc not found
 
 If you’re getting an error like the following:
 
