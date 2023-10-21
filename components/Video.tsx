@@ -7,7 +7,7 @@ interface VideoProps {
 
 const Video: React.FC<VideoProps> = ({ src, ...props }) => {
   return (
-    <video autoPlay muted loop width="100%" className="p-4" {...props}>
+    <video autoPlay muted loop width="100%" playsInline className="p-4" {...props}>
       <source src={src} type="video/mp4" />
     </video>
   );

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Replay.io documentation",
   "scripts": {
-    "dev": "vercel dev",
+    "dev": "npm run dev",
     "build": "next build",
     "start": "next start",
     "check-links": "node ./utils/checklinks.mjs",
