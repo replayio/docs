@@ -9,7 +9,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/replayio-public/replay-documentation',
   },
   chat: {
-    link: '/discord',
+    link: 'https://docs.replay.io/discord',
   },
   docsRepositoryBase: 'https://docs.replay.io',
   footer: {
@@ -21,7 +21,6 @@ const config: DocsThemeConfig = {
     const url =
       'https://docs.replay.io' +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
- 
     return (
       <>
         <meta property="og:url" content={url} />
@@ -30,10 +29,21 @@ const config: DocsThemeConfig = {
           property="og:description"
           content={frontMatter.description || 'Replay.io is a tool that makes debugging easy. It lets you record your web app and retroactively inspect it using print statements and browser DevTools.'}
         />
+        <meta name='image' content={`https://docs.replay.io/api/og?title=${frontMatter.title}`} />
+        <meta property='og:type' content='article' />
+        <meta property='og:title' content={frontMatter.title} />
+        <meta property='og:description' content={frontMatter.description} />
+        <meta property='og:image'content={`https://docs.replay.io/api/og?title=${frontMatter.title}`} />
+        <meta property='twitter:card' content= 'summary_large_image' />
+        <meta property='twitter:creator' content='@replayio' />
+        <meta property='twitter:title' content={frontMatter.title} />
+        <meta property='twitter:description' content={frontMatter.description} />
+        <meta property='twitter:image' content={`https://docs.replay.io/api/og?title=${frontMatter.title}`} />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link rel="canonical" href={url} />
       </>
     )
   },
