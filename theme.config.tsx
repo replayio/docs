@@ -1,10 +1,10 @@
 import React from 'react'
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
-import LogosReplay from './icons/LogosReplay'
+import ReplayLogotype from './icons/ReplayLogotype'
 import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
-  logo: <LogosReplay width={100} />,
+  logo: <ReplayLogotype width={100} />,
   project: {
     link: 'https://github.com/replayio-public/replay-documentation',
   },
