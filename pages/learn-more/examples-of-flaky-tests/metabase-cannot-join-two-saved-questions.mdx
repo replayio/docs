@@ -29,11 +29,11 @@ When the test fails, the test is not able to select the second question.
 
 ### What is the observable difference?
 
-![cause:effect.png](/media/learn-more/examples-of-flaky-tests/metabase-cannot-join-two-saved-questions/causeeffect.png)
+![cause:effect.png](/images/causeeffect_hpvnx.png)
 
 When the test fails, the “Saved Questions” button is missing so there’s nothing to click. This happens because the render function has a case statement that renders the `TablePicker`  when the test fails and the `DatabaseSchemaPicker` when the test passes. 
 
-![[view replay](https://app.replay.io/recording/e2etestscenariosjoinsreproductions18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-fieldcyspecjs--4278ec85-6d28-4d07-ab29-45330ac6e016?point=40240300675957395929315341418627622&time=18803.25987239179&focusWindow=eyJiZWdpbiI6eyJwb2ludCI6IjI5ODU1NzA2OTUwMDI0NDUwMjMyNjQxNjcwNDE4MDA2MDE2IiwidGltZSI6MTQ0MzV9LCJlbmQiOnsicG9pbnQiOiI1ODQxMzMzOTY4ODg4MDQ1MjQ3ODgwNjcwODA1MDcyMjgxNiIsInRpbWUiOjI0OTMzfX0%253D)](/media/learn-more/examples-of-flaky-tests/metabase-cannot-join-two-saved-questions/Screenshot_2023-07-12_at_9.35.14_AM.png)
+![[view replay](https://app.replay.io/recording/e2etestscenariosjoinsreproductions18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-fieldcyspecjs--4278ec85-6d28-4d07-ab29-45330ac6e016?point=40240300675957395929315341418627622&time=18803.25987239179&focusWindow=eyJiZWdpbiI6eyJwb2ludCI6IjI5ODU1NzA2OTUwMDI0NDUwMjMyNjQxNjcwNDE4MDA2MDE2IiwidGltZSI6MTQ0MzV9LCJlbmQiOnsicG9pbnQiOiI1ODQxMzMzOTY4ODg4MDQ1MjQ3ODgwNjcwODA1MDcyMjgxNiIsInRpbWUiOjI0OTMzfX0%253D)](/images/Screenshot_2023-07-12_at_9.35.14_AM_gbeoh.png)
 
 [view replay](https://app.replay.io/recording/e2etestscenariosjoinsreproductions18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-fieldcyspecjs--4278ec85-6d28-4d07-ab29-45330ac6e016?point=40240300675957395929315341418627622&time=18803.25987239179&focusWindow=eyJiZWdpbiI6eyJwb2ludCI6IjI5ODU1NzA2OTUwMDI0NDUwMjMyNjQxNjcwNDE4MDA2MDE2IiwidGltZSI6MTQ0MzV9LCJlbmQiOnsicG9pbnQiOiI1ODQxMzMzOTY4ODg4MDQ1MjQ3ODgwNjcwODA1MDcyMjgxNiIsInRpbWUiOjI0OTMzfX0%253D)
 
@@ -46,7 +46,7 @@ The `DatabaseSchemaPicker` is rendered because the active step is a SCHEMA_STEP.
     `onChangeSchema` is called from [skipTests](https://app.replay.io/recording/e2etestscenariosjoinsreproductions18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-fieldcyspecjs--4278ec85-6d28-4d07-ab29-45330ac6e016?point=18822076122371152273768683870879936&time=10859.494619228097&focusWindow=eyJiZWdpbiI6eyJwb2ludCI6IjUxOTIyOTY4NjAyMDQ2MjgwNTUwMDQxODk1NDgzNDczOTIiLCJ0aW1lIjoyOTY1fSwiZW5kIjp7InBvaW50IjoiMzQzOTg5NjY3MDE3Nzg3MDM1Mzk2MzA3MjAzNjMyNjYwNDgiLCJ0aW1lIjoxNjEzMH19) when the DataSelector is mounted and when the test fails, the component has `1:PUBLIC` schema set in its state. When the test passes, the component does not have any schemas set.
     
 
-![[view replay](https://app.replay.io/recording/e2etestscenariosjoinsreproductions18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-fieldcyspecjs--4278ec85-6d28-4d07-ab29-45330ac6e016?point=18822076122371152273768683870879936&time=10859.494619228097&focusWindow=eyJiZWdpbiI6eyJwb2ludCI6IjUxOTIyOTY4NjAyMDQ2MjgwNTUwMDQxODk1NDgzNDczOTIiLCJ0aW1lIjoyOTY1fSwiZW5kIjp7InBvaW50IjoiMzQzOTg5NjY3MDE3Nzg3MDM1Mzk2MzA3MjAzNjMyNjYwNDgiLCJ0aW1lIjoxNjEzMH19)](/media/learn-more/examples-of-flaky-tests/metabase-cannot-join-two-saved-questions/Untitled.png)
+![[view replay](https://app.replay.io/recording/e2etestscenariosjoinsreproductions18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-fieldcyspecjs--4278ec85-6d28-4d07-ab29-45330ac6e016?point=18822076122371152273768683870879936&time=10859.494619228097&focusWindow=eyJiZWdpbiI6eyJwb2ludCI6IjUxOTIyOTY4NjAyMDQ2MjgwNTUwMDQxODk1NDgzNDczOTIiLCJ0aW1lIjoyOTY1fSwiZW5kIjp7InBvaW50IjoiMzQzOTg5NjY3MDE3Nzg3MDM1Mzk2MzA3MjAzNjMyNjYwNDgiLCJ0aW1lIjoxNjEzMH19)](/images/Untitled_rovne.png)
 
 [view replay](https://app.replay.io/recording/e2etestscenariosjoinsreproductions18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-fieldcyspecjs--4278ec85-6d28-4d07-ab29-45330ac6e016?point=18822076122371152273768683870879936&time=10859.494619228097&focusWindow=eyJiZWdpbiI6eyJwb2ludCI6IjUxOTIyOTY4NjAyMDQ2MjgwNTUwMDQxODk1NDgzNDczOTIiLCJ0aW1lIjoyOTY1fSwiZW5kIjp7InBvaW50IjoiMzQzOTg5NjY3MDE3Nzg3MDM1Mzk2MzA3MjAzNjMyNjYwNDgiLCJ0aW1lIjoxNjEzMH19)
 
@@ -55,11 +55,11 @@ The `DatabaseSchemaPicker` is rendered because the active step is a SCHEMA_STEP.
     When the test passes, the schema is fetched when the DataSelector is mounted. Here’s what the console logs look like. Here’s the [point](https://app.replay.io/recording/e2etestscenariosjoinsreproductions18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-fieldcyspecjs--4278ec85-6d28-4d07-ab29-45330ac6e016?point=63281117997767009521481639631257811&time=26658.881606131647&focusWindow=eyJiZWdpbiI6eyJwb2ludCI6IjUyMjQ3NDg3MTY0ODEzMDE4OTAwNDQxNTY4NTkwNjkyMzUyIiwidGltZSI6MjI2OTF9LCJlbmQiOnsicG9pbnQiOiI3MDQyMDUyNjE4Njc2NTIzMzI0NzY0ODg4NjgxODg2NTE1MiIsInRpbWUiOjI5NzI5fX0%253D) where the fetch is returned.
     
 
-![Untitled](/media/learn-more/examples-of-flaky-tests/metabase-cannot-join-two-saved-questions/Untitled%201.png)
+![Untitled](/images/Untitled%201_tedhk.png)
 
 When the test fails, the schema is fetched earlier which causes it to finish before the DataSelector even tries to fetch the schema. Here’s the [point](https://app.replay.io/recording/e2etestscenariosjoinsreproductions18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-fieldcyspecjs--4278ec85-6d28-4d07-ab29-45330ac6e016?point=39915782121880942923393415369457875&time=18653.016595980083&focusWindow=eyJiZWdpbiI6eyJwb2ludCI6IjMxNDc4Mjk5NzE4NjQxMTIzMTk5NjUzNzQ1Njk2NzAyNDY0IiwidGltZSI6MTQ5Njl9LCJlbmQiOnsicG9pbnQiOiI1NTQ5MjY3MjcwMTcyNDQ1NTMxNTMyMTQzMjE5MDIyMjMzNiIsInRpbWUiOjIzODA5fX0%253D) where the fetch is returned.
 
-![Untitled](/media/learn-more/examples-of-flaky-tests/metabase-cannot-join-two-saved-questions/Untitled%202.png)
+![Untitled](/images/Untitled%202_bgksa.png)
 
 1. **Why is the schema fetched when the test fails**
     

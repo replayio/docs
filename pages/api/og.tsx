@@ -12,7 +12,7 @@ const boldFont = fetch(new URL('../../public/fonts/SpaceGrotesk-Bold.ttf', impor
 const normalFont = fetch(new URL('../../public/fonts/SpaceGrotesk-Regular.ttf', import.meta.url)).then(
   (res) => res.arrayBuffer(),
 );
-const backgroundImage = fetch(new URL('../../public/media/background.png', import.meta.url)).then(
+const backgroundImage = fetch(new URL('../../public/images/background.png', import.meta.url)).then(
   (res) => res.arrayBuffer(),
 )
 
