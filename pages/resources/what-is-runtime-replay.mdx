@@ -15,23 +15,23 @@ When the browser is replaying, it should think it is running live for the first 
 
 Replaying your browser is similar to writing a good test. If you’re testing a deterministic function like `fibonacci`, there’s nothing you need to do. Every time the test is run, it will return the same value.
 
-![Untitled](/media/resources/what-is-runtime-replay/Untitled.png)
+![Untitled](/images/Untitled_yzboh.png)
 
-![Untitled](/media/resources/what-is-runtime-replay/Untitled%201.png)
+![Untitled](/images/Untitled%201_zmnle.png)
 
 If we change fibonacci slightly so that it doesn’t take `n`, but instead reads it from a file, we’ll need to mock `readFileSync` so that when the test runs, it always returns the same value.
 
-![Untitled](/media/resources/what-is-runtime-replay/Untitled%202.png)
+![Untitled](/images/Untitled%202_tyily.png)
 
-![Untitled](/media/resources/what-is-runtime-replay/Untitled%203.png)
+![Untitled](/images/Untitled%203_icyyv.png)
 
 Recording a runtime like Chrome is fairly similar in theory to recording our non-deterministic fibonacci function. The one caveat is that instead of writing a test function that mocks a single non-deterministic function, we need to write a little bit of inline assembly code that can intercept low level OS library calls and replaying them later.
 
-![Untitled](/media/resources/what-is-runtime-replay/Untitled%204.png)
+![Untitled](/images/Untitled%204_dhdiv.png)
 
 Once we’re able to intercept calls, and we know their signatures, the remaining task is to enumerate all of the calls that the runtime will make.
 
-![Untitled](/media/resources/what-is-runtime-replay/Untitled%205.png)
+![Untitled](/images/Untitled%205_bklzp.png)
 
 This approach might sound crazy, and in many ways it is, but there’s an elegance to it in that the libc level is fairly stable and well defined. Also it turns out that intercepting libc calls is incredibly cheap. 
 
