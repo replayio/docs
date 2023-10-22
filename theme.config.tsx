@@ -11,10 +11,11 @@ const config: DocsThemeConfig = {
   chat: {
     link: 'https://docs.replay.io/discord',
   },
-  docsRepositoryBase: 'https://docs.replay.io',
+  docsRepositoryBase: 'https://github.com/replayio-public/replay-documentation/tree/main',
   footer: {
     text: '® 2023 Replay, All rights reserved.',
   },
+  feedback: {},
   head: () => {
     const { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
