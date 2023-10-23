@@ -77,7 +77,7 @@
       "destination": "/resources/security-practices"
     },
     {
-      "source": "/recording-browser-tests-(beta)",
+      "source": "/recording-browser-tests-\\(beta\\)",
       "destination": "/getting-started/test-suite-integration"
     },
     {
@@ -101,15 +101,15 @@
       "destination": "/getting-started/bug-reports/viewing-and-collaborating"
     },
     {
-      "source": "/recording-browser-tests-(beta)/cypress-instructions",
+      "source": "/recording-browser-tests-\\(beta\\)/cypress-instructions",
       "destination": "/test-suites/test-runners/cypress"
     },
     {
-      "source": "/recording-browser-tests-(beta)/pull-request-comments",
+      "source": "/recording-browser-tests-\\(beta\\)/pull-request-comments",
       "destination": "/test-suites/features/pull-request-comments"
     },
     {
-      "source": "/recording-browser-tests-(beta)/test-suite-dashboard",
+      "source": "/recording-browser-tests-\\(beta\\)/test-suite-dashboard",
       "destination": "/test-suites/features/test-suite-dashboard"
     },
     {
