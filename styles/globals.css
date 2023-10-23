@@ -6,3 +6,8 @@
   --nextra-primary-hue: 345deg;
   --nextra-primary-saturation: 81%;
 }
+
+/* remove the ugly outlines on Nextra Tabs component */
+html button, [tabindex]:not([tabindex="-1"]):focus-visible {
+  @apply focus-visible:ring-0 focus-visible:ring-offset-0
+}
