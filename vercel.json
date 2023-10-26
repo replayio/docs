@@ -9,6 +9,10 @@
       "destination": "/getting-started/what-is-replay-io"
     },
     {
+      "source": "/getting-started",
+      "destination": "/getting-started/what-is-replay-io"
+    },
+    {
       "source": "/test-suites",
       "destination": "/test-suites/test-runners"
     },
@@ -171,6 +175,10 @@
     {
       "source": "/case-studies-and-comparisons",
       "destination": "/resources/replay-io-case-studies"
+    },
+    {
+      "source": "/replay.io-case-studies/midnite-builds-time-travel-workflows-for-its-fast-paced-betting-platform",
+      "destination": "/resources/replay-io-case-studies/midnite-builds-time-travel-workflows-for-its-fast"
     }
   ]
 }
