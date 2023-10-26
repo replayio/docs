@@ -9,6 +9,10 @@
       "destination": "/getting-started/what-is-replay-io"
     },
     {
+      "source": "/getting-started",
+      "destination": "/getting-started/what-is-replay-io"
+    },
+    {
       "source": "/test-suites",
       "destination": "/test-suites/test-runners"
     },
