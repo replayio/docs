@@ -3,7 +3,7 @@ title: What is Runtime Replay?
 ---
 # What is Runtime Replay?
 
-The most common question we get is “how is [Replay.io](http://Replay.io) different from Session Replay?” At a high level, Session Replay tools replay the DOM and Replay.io replays the runtime so that you can inspect the session with browser DevTools after the fact. 
+The most common question we get is “how is [Replay.io](https://Replay.io) different from Session Replay?” At a high level, Session Replay tools replay the DOM and Replay.io replays the runtime so that you can inspect the session with browser DevTools after the fact. 
 
 This post walks through what it means to replay the runtime. If you’d like to go deeper on how it works, checkout this [post](https://replay.help/how-replay-works). If you’d like to better understand the implications, checkout the [replayability roadmap](https://replay.help/replayability-roadmap).
 
@@ -35,4 +35,4 @@ Once we’re able to intercept calls, and we know their signatures, the remainin
 
 This approach might sound crazy, and in many ways it is, but there’s an elegance to it in that the libc level is fairly stable and well defined. Also it turns out that intercepting libc calls is incredibly cheap. 
 
-The overhead in practice is 3% and recordings are tiny compared to traces. A typical [Replay.io](http://Replay.io) recording is less than a Mb a second where as computers execute billions of options a second and traces are measured in GBs.
+The overhead in practice is 3% and recordings are tiny compared to traces. A typical [Replay.io](https://Replay.io) recording is less than a Mb a second where as computers execute billions of options a second and traces are measured in GBs.
