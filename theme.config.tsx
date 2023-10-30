@@ -15,6 +15,9 @@ const config: DocsThemeConfig = {
   footer: {
     text: '® 2023 Replay, All rights reserved.',
   },
+  sidebar: {
+    defaultMenuCollapseLevel: 1,
+  },
   feedback: {},
   head: () => {
     const { asPath, defaultLocale, locale } = useRouter()

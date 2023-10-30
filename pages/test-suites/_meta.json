@@ -1,7 +1,20 @@
 {
-  "index": "Test suites",
-  "test-runners": "Test runners",
-  "features": "Features",
+  "index": {
+    "title": "Getting started"
+  },
+  "test-runners-separator": {
+    "title": "Test runners",
+    "type": "separator"
+  },
+  "cypress": "Cypress",
+  "playwright": "Playwright",
+  "puppeteer": "Puppeteer",
+  "webdriver-io": "WebdriverIO",
+  "jest": "Jest",
+  "features": {
+    "title": "Features",
+    "type": "separator"
+  },
   "ci-environments": "CI Environments",
   "test-suites-faq": "Test Suites FAQ"
 }

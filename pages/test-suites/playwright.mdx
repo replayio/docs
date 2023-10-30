@@ -5,7 +5,7 @@ import { Callout, Tabs } from 'nextra/components'
 
 # Playwright
 
-# Setting up a team
+## Setting up a team
 
 You’ll need a Replay team specifically for your automated test replays. This lets you set up an API key for recording in CI and provides 
 
@@ -13,7 +13,7 @@ Start by creating a new team in the **[Replay Library](https://app.replay.io)** 
 
 When you’re ready to record, you can create an [API Key from the Team Settings]/Teams-&-Admin/Team-Settings.md). Using the API Key connects your recordings to the correct team to ensure access to your replays is protected and your Test Suite Dashboard views are accurate.
 
-# Configuring Playwright
+## Configuring Playwright
 
 Replay records automated browser tests by replacing the browser normally used to run your tests. Playwright must be configured to launch the Replay Browser to generate recordings.
 
@@ -77,25 +77,25 @@ export default config;
 
 This example also includes projects for running your tests without recording using Firefox and Chromium, imported from `@playwright/test`. Only the `replay-firefox` and `replay-chromium` projects will generate replays.
 
-# Recording tests in CI
+## Recording tests in CI
 
 Replay is designed to record tests in CI so you can debug when tests fail. Without Replay, test failures in CI are like a black box, with little insights into what went wrong. By recording with Replay, you get a full recording of the test run with debugging tools built in.
 
 Configuration instructions will vary based on your CI provider and pipeline.
 
-## GitHub Actions
+### GitHub Actions
 
 [Recording with GitHub Actions](/test-suites/test-runners/playwright/recording-with-git-hub-actions)
 
-## Other CI Providers
+### Other CI Providers
 
 [Recording with Other CI Providers](/test-suites/test-runners/playwright/recording-with-other-ci-providers)
 
-# Recording tests locally
+## Recording tests locally
 
 While Replay Test Suites is designed for debugging tests in CI, it can be helpful to record a test locally for additional debugging or when first getting set up. 
 
-## Recording replays
+### Recording replays
 
 - Ensure your project is configured with `replayio/playwright`
 - Configure Playwright to only use a single worker and increase the timeout if needed to allow for increased run time. See config example below.

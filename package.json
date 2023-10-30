@@ -13,6 +13,7 @@
   "license": "MIT",
   "homepage": "https://replay.io",
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "@vercel/og": "^0.5.20",
     "next": "^13.0.6",
     "nextra": "latest",
