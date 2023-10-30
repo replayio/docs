@@ -1,0 +1,34 @@
+---
+title: Using GitHub Actions with cypress-io/github-action
+---
+import { Callout } from 'nextra/components'
+
+# Using GitHub Actions with cypress-io/github-action
+
+If you’re already using the Cypress’s [@cypress-io/github-action](https://github.com/cypress-io/github-action), modify the step like this:
+
+```yaml
+- name: Cypress run
+  uses: cypress-io/github-action@v5
+	with:
+		# 🙋‍♂️ Specify Replay Chromium
+    browser: replay-chromium
+	env:
+		REPLAY_API_KEY: ${{ secrets.RECORD_REPLAY_API_KEY }}
+```
+
+Add a new step to run after this Cypress GitHub Action for uploading the replays:
+
+```yaml
+- name: Upload replays
+  if: always()
+  uses: replayio/action-upload@v0.5.1
+  with:
+    api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+```
+
+Lastly, [add your API key to your Secrets](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-encrypted-secrets-for-your-repository-and-organization-for-github-codespaces#adding-secrets-for-a-repository). To get an API key, create a new Replay team and generate an API key — [instructions can be found here](/getting-started/teams-admin/setting-up-a-team#api-keys).
+
+<Callout type="info" emoji="⚠️">
+ If you run into any problems, [consult our troubleshooting guide here](/resources/get-help/troubleshooting).
+</Callout>

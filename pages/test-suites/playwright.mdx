@@ -1,0 +1,177 @@
+---
+title: Playwright
+---
+import { Callout, Tabs } from 'nextra/components'
+
+# Playwright
+
+# Setting up a team
+
+You’ll need a Replay team specifically for your automated test replays. This lets you set up an API key for recording in CI and provides 
+
+Start by creating a new team in the **[Replay Library](https://app.replay.io)** sidebar and inviting your team members. Once created, we’ll enable access to the **Test Suite Dashboard**. 
+
+When you’re ready to record, you can create an [API Key from the Team Settings]/Teams-&-Admin/Team-Settings.md). Using the API Key connects your recordings to the correct team to ensure access to your replays is protected and your Test Suite Dashboard views are accurate.
+
+# Configuring Playwright
+
+Replay records automated browser tests by replacing the browser normally used to run your tests. Playwright must be configured to launch the Replay Browser to generate recordings.
+
+<Callout type="info" emoji="👉">
+Make sure you’re using Playwright version 1.19.2.
+</Callout>
+
+## Installation
+
+Run the following in your project directory:
+
+<Tabs items={['npm', 'yarn']}>
+<Tabs.Tab>
+```bash
+npm install @replayio/playwright -D
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```bash
+yarn add @replayio/playwright -D
+```
+</Tabs.Tab>
+</Tabs>
+
+This installs the Replay Browsers on your machine and provides functionality for recording tests with Replay.
+
+## **Configuration**
+
+In your `playwright.config.ts` file, import `devices` from `@replayio/playwright`. 
+
+This gives you access to “Replay Firefox” and “Replay Chromium” devices to set the browser in your config using [Playwright projects](https://playwright.dev/docs/test-configuration#multiple-browsers). 
+
+**Example config:**
+
+```tsx
+import { PlaywrightTestConfig, devices } from "@playwright/test";
+import { devices as replayDevices } from "@replayio/playwright";
+
+const config: PlaywrightTestConfig = {
+  projects: [
+    {
+      name: "replay-firefox",
+      use: { ...replayDevices["Replay Firefox"] as any },
+    },
+    {
+      name: "replay-chromium",
+      use: { ...replayDevices["Replay Chromium"] as any },
+    },
+    {
+      name: "firefox",
+      use: { ...devices["Desktop Firefox"] },
+    },
+    {
+      name: "chromium",
+      use: { ...devices["Desktop Chromium"] },
+    },
+  ],
+};
+export default config;
+```
+
+This example also includes projects for running your tests without recording using Firefox and Chromium, imported from `@playwright/test`. Only the `replay-firefox` and `replay-chromium` projects will generate replays.
+
+# Recording tests in CI
+
+Replay is designed to record tests in CI so you can debug when tests fail. Without Replay, test failures in CI are like a black box, with little insights into what went wrong. By recording with Replay, you get a full recording of the test run with debugging tools built in.
+
+Configuration instructions will vary based on your CI provider and pipeline.
+
+## GitHub Actions
+
+[Recording with GitHub Actions](/test-suites/test-runners/playwright/recording-with-git-hub-actions)
+
+## Other CI Providers
+
+[Recording with Other CI Providers](/test-suites/test-runners/playwright/recording-with-other-ci-providers)
+
+# Recording tests locally
+
+While Replay Test Suites is designed for debugging tests in CI, it can be helpful to record a test locally for additional debugging or when first getting set up. 
+
+## Recording replays
+
+- Ensure your project is configured with `replayio/playwright`
+- Configure Playwright to only use a single worker and increase the timeout if needed to allow for increased run time. See config example below.
+- Set `RECORD_REPLAY_API_KEY` as an environment variable locally
+- Pass the `--project` flag, and your selected browser option:
+    - `--project project-name` (`replay-chromium` or `replay-firefox` )
+    - Currently supported browser options are `replay-chromium` (Linux) or `replay-firefox` (maxOS, Linux)
+- Pass the `--reporter` flag like this:
+    - `--reporter=@replayio/playwright/reporter,line`
+
+For example, to use Replay Firefox (macOS, Linux), the command is:
+
+```bash
+npx playwright test --project replay-firefox --reporter=@replayio/playwright/reporter,line
+```
+
+**If you don’t specify a project, all projects defined in your config will run.**
+
+**Config example:**
+
+```jsx
+import { PlaywrightTestConfig, devices } from "@playwright/test";
+import { devices as replayDevices } from "@replayio/playwright";
+
+const inCI = !!process.env.CI;
+
+const config: PlaywrightTestConfig = {
+  timeout: !inCI ? 30 * 1000 : 10 * 1000,
+  workers: !inCI ? 1 : undefined,
+  use: {
+    baseURL: !inCI ? "http://localhost:3000" : undefined,
+    launchOptions: {
+      slowMo: inCI ? 0 : 500,
+    },
+  },
+  projects: [
+    {
+      name: "replay-firefox",
+      use: { ...replayDevices["Replay Firefox"] as any },
+    },
+    {
+      name: "replay-chromium",
+      use: { ...replayDevices["Replay Chromium"] as any },
+    },
+    {
+      name: "firefox",
+      use: { ...devices["Desktop Firefox"] },
+    },
+    {
+      name: "chromium",
+      use: { ...devices["Desktop Chromium"] },
+    },
+  ],
+};
+export default config;
+```
+
+We recommend using the [options available in Playwright to only run certain tests as needed](https://playwright.dev/docs/running-tests).
+
+## Uploading replays
+
+Replays are uploaded locally using the `@replayio/replay` CLI. Your API key must be set as the `RECORD_REPLAY_API_KEY` environment variable to upload.
+
+- To see available replays for upload, use `npx @replayio/replay ls`
+- To upload a single replay, use `npx @replayio/replay upload <id>`
+- To upload all available replays, use `npx @replayio/replay upload-all`
+
+[Full instructions at the `@replayio/replay` repo.](https://github.com/replayio/replay-cli/tree/main/packages/replay)
+
+<Callout type="info" emoji="👉">
+💡 Once you’ve recorded, view test results and replays using the [Test Suite Dashboard]/Features/Test-Suite-Dashboard.md) and [Pull Request Comments]/Features/Pull-Request-Comments.md).
+
+</Callout>
+
+[Troubleshooting Guide](/test-suites/test-runners/playwright/troubleshooting-guide)
+
+[Playwright FAQs](/test-suites/test-runners/playwright/playwright-faqs)
+
+[Playwright Node](/test-suites/test-runners/playwright/playwright-node)
