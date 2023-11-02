@@ -45,12 +45,23 @@ Whenever you run your tests, the test execution will be recorded and a replay wi
 ## Dashboard
 The **Test Suite Dashboard** provides you with an overview of all the tests and test runs that were recorded with Replay Browser. This will serve you as a great reporter tool, but with every test result, you’ll have access to the test recording. If anything went wrong, you can start debugging with all the powers that Replay DevTools provide you with.
 
+Each test run contains information on failed, passed and flaky tests. 
 
- Each test run contains information on failed, passed and flaky tests. 
-
-
- You can choose to open a replay that ran on a failed test, or start debugging a flaky one.
+You can choose to open a replay that ran on a failed test, or start debugging a flaky one.
 
 The **Test Suite Dashboard** is your launching off point. If you want to see why a recent change caused several tests to fail, you can go to the dashboard, and open each of the replays and begin debugging.
 
-![](http://localhost:3000/images/test-suite-dashboard.png)
+![Test suite dashboard](/images/test-suite-dashboard.png)
+
+## Replay DevTools
+
+Replay DevTools enable you to see what happened during your test run. This is great for flaky tests and revealing timing issues that tend to happen when running end-to-end tests. You can deep dive into your test code as well as your application code and make your app and tests work well together.
+
+### Cypress panel
+![Cypress Panel](/images/cypress-panel_uzhnf.png)
+
+Examine each command step by step, travel back in time and see what each command returned. This will bring the great experience from your local Cypress GUI mode into your CI execution as well.
+
+For action commands, you can click "Jump to code" to see what part of your application code was actually triggered.
+
+### Playwright panel
