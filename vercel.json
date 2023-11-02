@@ -117,6 +117,10 @@
       "destination": "/test-suites/features/test-suite-dashboard"
     },
     {
+      "source": "/recording-browser-tests-\\(beta\\)/test-replay",
+      "destination": "/test-suites"
+    },
+    {
       "source": "/reference-guide/cypress-panel",
       "destination": "/test-suites/test-runners/cypress"
     },
