@@ -13,10 +13,6 @@
       "destination": "/getting-started/what-is-replay-io"
     },
     {
-      "source": "/test-suites",
-      "destination": "/test-suites/test-runners"
-    },
-    {
       "source": "/resources",
       "destination": "/resources/get-help"
     },
