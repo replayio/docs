@@ -1,7 +1,5 @@
 {
-  "index": {
-    "title": "Getting started"
-  },
+  "index": "Getting started",
   "test-suites-faq": "FAQ",
   "test-runners-separator": {
     "title": "Test runners",
@@ -16,13 +14,16 @@
     "title": "Features",
     "type": "separator"
   },
-  "pull-request-comments": "Pull request comments",
-  "replay-devtools": "Replay DevTools",
-  "test-suite-dashboard": "Test Suite Dashboard",
-  "ci-environments-separator": {
-    "title": "CI environments",
+  "features": {
+    "display": "children",
+    "title": "Features"
+  },
+  "ci-integration-separator": {
+    "title": "CI integration",
     "type": "separator"
   },
-  "circle-ci": "CircleCI",
-  "github-actions": "GitHub Actions" 
+  "ci-integration": {
+    "display": "children",
+    "title": "CI integration"
+  }
 }

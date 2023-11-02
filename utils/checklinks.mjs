@@ -33,7 +33,7 @@ async function main() {
   const internalOnly = argv.internalOnly;
 
   // Start a spinner
-  const spinner = ora('Looking for .mdx files...').start();
+  const spinner = ora('Looking for .mdx files...\n').start();
 
   // Find all .mdx files
   const directoryPath = './pages'; // specify the relative path to the 'pages' directory
@@ -43,15 +43,15 @@ async function main() {
 
   // Extract all links from the .mdx files
   let links = [];
-  spinner.start('Extracting links from files...');
+  spinner.start('Extracting links from files...\n');
   files.forEach(file => {
     const fileLinks = findLinksInMarkdown(file);
     links = links.concat(fileLinks);
   });
-  spinner.succeed(`Extracted ${links.length} links`);
+  spinner.succeed(`Extracted ${links.length} links\n`);
 
   // Initialize a new progress bar
-  const progressBar = new ProgressBar('checking links... :current/:total', { total: links.length });
+  const progressBar = new ProgressBar('checking links...\n :current/:total\n\n', { total: links.length });
 
   // Check each link
   for (const link of links) {
