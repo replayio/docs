@@ -34,7 +34,7 @@ async function checkLink(link, filePath, whitelist, baseUrl, internalOnly) {
     const localFilePath = path.join(process.cwd(), 'pages', url.pathname);
 
     // Check both with and without the '.mdx' extension
-    if (fs.existsSync(url.pathname) || fs.existsSync(`${localFilePath}.mdx`)) {
+    if (fs.existsSync(url.pathname) || fs.existsSync(`${localFilePath}.mdx`) || fs.existsSync(`${localFilePath}/index.mdx`)) {
       return { isBroken: false, statusCode: null }; // File exists, link is not broken
     } else {
       console.error(`File not found for internal link: ${localFilePath}`);
