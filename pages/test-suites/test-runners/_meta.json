@@ -1,7 +1,0 @@
-{
-  "cypress": "Cypress",
-  "playwright": "Playwright",
-  "puppeteer": "Puppeteer",
-  "webdriver-io": "WebdriverIO",
-  "jest": "Jest"
-}

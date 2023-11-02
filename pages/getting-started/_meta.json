@@ -24,13 +24,15 @@
     "type": "separator"
   },
   "bug-reports": {
-    "title": "Bug Reports"
+    "title": "Bug Reports",
+    "display": "children"
   },
   "teams-and-admin": {
     "title": "Teams & Admin",
     "type": "separator"
   },
   "teams-admin": {
-    "title": "Teams & Admin"
+    "title": "Teams & Admin",
+    "display": "children"
   }
 }

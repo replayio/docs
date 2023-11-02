@@ -9,7 +9,7 @@ The `@replayio/cypress` plugin includes a cypress runner that includes diagnosti
 npx @replayio/cypress run --mode <mode> <...other cypress parameters>
 ```
 
-# Record on Retry
+## Record on Retry
 
 ```bash
 npx @replayio/cypress run --mode record-on-retry
@@ -17,7 +17,7 @@ npx @replayio/cypress run --mode record-on-retry
 
 Runs the test suite once with recording disabled and if any specs fail, those are re-ran with recording enabled.
 
-# Stress
+## Stress
 
 ```bash
 npx @replayio/cypress run --mode stress
@@ -25,7 +25,7 @@ npx @replayio/cypress run --mode stress
 
 Runs the test suite 10 times regardless of test result
 
-# Diagnostics
+## Diagnostics
 
 ```bash
 npx @replayio/cypress run --mode diagnostics --level basic

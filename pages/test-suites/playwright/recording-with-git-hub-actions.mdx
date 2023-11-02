@@ -6,10 +6,10 @@ import { Callout } from 'nextra/components'
 # Recording with GitHub Actions
 
 <Callout type="info" emoji="👉">
-**Use of GitHub Actions is not required to enable [Pull Request Comments](/test-suites/features/pull-request-comments) in GitHub.**
+**Use of GitHub Actions is not required to enable [Pull Request Comments]/Features/Pull-Request-Comments.md) in GitHub.**
 </Callout>
 
-# Using the Replay `action-playwright`
+## Using the Replay `action-playwright`
 
 Using Replay’s `[action-playwright](https://github.com/replayio/action-playwright)` in your GitHub Actions workflow is the easiest way to get started recording your Playwright tests in CI.
 
@@ -27,10 +27,10 @@ If your workflow does not have a step to install project dependencies, you’ll 
 [Full instructions at the `action-playwright` repository.](https://github.com/replayio/action-playwright)
 
 <Callout type="info" emoji="💡">
-Once you’ve recorded, view test results and replays using the [Test Suite Dashboard](/test-suites/features/test-suite-dashboard) and [Pull Request Comments](/test-suites/features/pull-request-comments).
+Once you’ve recorded, view test results and replays using the [Test Suite Dashboard]/Features/Test-Suite-Dashboard.md) and [Pull Request Comments]/Features/Pull-Request-Comments.md).
 </Callout>
 
-# Using other GitHub Actions
+## Using other GitHub Actions
 
 If you’d like to use a different action or workflow step to execute your tests, you can still configure GitHub Actions to record and upload replays.
 
@@ -74,8 +74,8 @@ Use `[replayio/action-upload](https://github.com/replayio/action-upload)` to upl
     api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
 ```
 
-You can also use the `@replayio/replay` CLI to upload replays. [See instructions here](/test-suites/test-runners/cypress/ci-environments/using-other-ci-providers).
+You can also use the `@replayio/replay` CLI to upload replays. [See instructions here]/Cypress/Cypress-Instructions-(archived)/Recording-with-Other-CI-Providers.md).
 
 <Callout type="info" emoji="💡">
-Once you’ve recorded, view test results and replays using the [Test Suite Dashboard](/test-suites/features/test-suite-dashboard) and [Pull Request Comments](/test-suites/features/pull-request-comments).
+Once you’ve recorded, view test results and replays using the [Test Suite Dashboard]/Features/Test-Suite-Dashboard.md) and [Pull Request Comments]/Features/Pull-Request-Comments.md).
 </Callout>

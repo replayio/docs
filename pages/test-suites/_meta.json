@@ -1,7 +1,29 @@
 {
-  "index": "Test suites",
-  "test-runners": "Test runners",
-  "features": "Features",
-  "ci-environments": "CI Environments",
-  "test-suites-faq": "Test Suites FAQ"
+  "index": "Getting started",
+  "test-suites-faq": "FAQ",
+  "test-runners-separator": {
+    "title": "Test runners",
+    "type": "separator"
+  },
+  "cypress": "Cypress",
+  "playwright": "Playwright",
+  "puppeteer": "Puppeteer",
+  "webdriver-io": "WebdriverIO",
+  "jest": "Jest",
+  "features-separator": {
+    "title": "Features",
+    "type": "separator"
+  },
+  "features": {
+    "display": "children",
+    "title": "Features"
+  },
+  "ci-integration-separator": {
+    "title": "CI integration",
+    "type": "separator"
+  },
+  "ci-integration": {
+    "display": "children",
+    "title": "CI integration"
+  }
 }

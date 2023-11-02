@@ -1,8 +1,95 @@
-import { Cards, Card } from 'nextra/components'
+---
+title: Integrating Replay.io with Test Runners
+---
+import { Tabs, Tab, Callout } from 'nextra/components'
+import Features from './Features.tsx'
 
-<Cards>
-  <Card title="Test runners" href="test-runners" />
-  <Card title="Features" href="features" />
-  <Card title="CI Environments" href="ci-environments" />
-  <Card title="Test Suites FAQ" href="test-suites-faq" />
-</Cards>
+# Test Suites
+
+![Test suite integration with Cypress and Playwright](/images/test_suites_hero.png)
+
+Integrating Replay Browser into your test suite is as easy as telling your test framework which browser to run on. A simplified example for each test framework of integration will look something like this:
+
+<Tabs items={['Playwright', 'Cypress.io', 'WebdriverIO', 'Puppeteer']}>
+<Tabs.Tab>
+```bash
+npx playwright test --project replay-chromium
+```
+<p className="text-sm">[Click here](/test-suites/playwright) Learn more about how to integrate into Playwright</p>
+</Tabs.Tab>
+<Tabs.Tab>
+```bash
+npx cypress run --browser replay-chromium
+```
+<p className="text-sm">[Click here](/test-suites/cypress) Learn more about how to integrate into Cypress</p>
+</Tabs.Tab>
+<Tabs.Tab>
+```bash
+wdio run ./wdio.conf.ts # Read docs on how to set up your configuration
+```
+<p className="text-sm">[Click here](/test-suites/webdriver-io) Learn more about how to integrate into WebdriverIO</p>
+</Tabs.Tab>
+<Tabs.Tab>
+```bash
+node puppeteer-test.js # Read docs on how to set up your configuration
+```
+<p className="text-sm">[Click here](/test-suites/puppeteer) Learn more about how to integrate into Puppeteer</p>
+</Tabs.Tab>
+</Tabs>
+
+Whenever you run your tests, the test execution will be recorded and a replay will be created. This allows you to debug failures, analyse the root cause of a flaky test and much more. With frameworks such as Playwright and Cypress, we bring you a custom sidebar that allows you to examine each test step.
+
+## Benefits of integrating Replay to your test suite
+<Features />
+
+## Dashboard
+The **Test Suite Dashboard** provides you with an overview of all the tests and test runs that were recorded with Replay Browser. This will serve you as a great reporter tool, but with every test result, you’ll have access to the test recording. If anything went wrong, you can start debugging with all the powers that Replay DevTools provide you with.
+
+Each test run contains information on failed, passed and flaky tests. 
+
+You can choose to open a replay that ran on a failed test, or start debugging a flaky one.
+
+The **Test Suite Dashboard** is your launching off point. If you want to see why a recent change caused several tests to fail, you can go to the dashboard, and open each of the replays and begin debugging.
+
+![Test suite dashboard](/images/test-suite-dashboard.png)
+
+## Replay DevTools
+
+Replay DevTools enable you to see what happened during your test run. This is great for flaky tests and revealing timing issues that tend to happen when running end-to-end tests. You can deep dive into your test code as well as your application code and make your app and tests work well together.
+
+### Cypress panel
+![Cypress Panel](/images/cypress-panel_uzhnf.png)
+
+Examine each command step by step, travel back in time and see what each command returned. This will bring the great experience from your local Cypress GUI mode into your CI execution as well.
+
+For action commands, you can click "Jump to code" to see what part of your application code was actually triggered. This empowers you to fix test dlakes at the exact place they happen.
+
+All network requests are captured as well, including static assets. With your test result you are getting all the powers of Replay DevTools that allow you to take a deep dive into your test execution and examine your code using [print statements](/reference-guide/debugging/print-statements), [debugger](/reference-guide/debugger/breakpoints) and [React panel](/reference-guide/dev-tools/react).
+
+<Callout type="info">
+Ready to integrate Replay to Cypress? [Learn how to setup here.](/test-suites/cypress)
+</Callout>
+
+### Playwright panel
+![Playwright panel](/images/playwright-panel_d78bh.png)
+Playwright panel will provide you with a trace-viewer-like experience in which you can examine not only your test code, but your application code as well. You’ll get more insight into CI execution and fight off flakes more effectively.
+
+With every recorded test, you can examine your code using Replay DevTools. You can take a look at [network calls](/reference-guide/dev-tools/network), [React components](/reference-guide/dev-tools/react) of your app, or you can debug your test using [print statements](/reference-guide/debugging/print-statements) and [debugger](/reference-guide/debugger/breakpoints).
+
+<Callout type="info">
+Learn how to [integrate Cypress into Playwright here](/test-suites/cypress)
+</Callout>
+
+## Integrating into CI
+Recording your tests is as simple as running them with the Replay browser. You can record your test suite in any CI provider. This recording happens in two steps:
+1. Run your tests in Playwright, Cypress, Puppeteer or WebdriverIO using Replay Browser 
+2. Upload your recordings to Replay Dashboard [using your API key](/getting-started/teams-admin/setting-up-a-team)
+
+After this, you can view your test results in Replay Dashboard and debug your failed and flaky tests with Replay DevTools.
+
+Read these guides to see how to set up your pipeline in [CircleCI](/test-suites/ci-integration/circle-ci), [GitHub Actions](/test-suites/ci-integration/circle-ci) and [other providers](/test-suites/ci-integration/circle-ci).
+
+## Pull request comments
+For a smoother workflow, we have created a [GitHub App](https://github.com/apps/replay-io) that will add comments to your pull request showing all your failed an passed test. Clicking on a failed test will take you directly to the Replay DevTools where you can debug your test.
+
+![Pull request comments](/images/pull-request-comments_zdwcd.png)

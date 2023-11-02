@@ -5,15 +5,15 @@ import { Callout, Tabs } from 'nextra/components'
 
 # Playwright
 
-# Setting up a team
+## Setting up a team
 
 You’ll need a Replay team specifically for your automated test replays. This lets you set up an API key for recording in CI and provides 
 
 Start by creating a new team in the **[Replay Library](https://app.replay.io)** sidebar and inviting your team members. Once created, we’ll enable access to the **Test Suite Dashboard**. 
 
-When you’re ready to record, you can create an [API Key from the Team Settings](/getting-started/teams-admin/team-settings). Using the API Key connects your recordings to the correct team to ensure access to your replays is protected and your Test Suite Dashboard views are accurate.
+When you’re ready to record, you can create an [API Key from the Team Settings]/Teams-&-Admin/Team-Settings.md). Using the API Key connects your recordings to the correct team to ensure access to your replays is protected and your Test Suite Dashboard views are accurate.
 
-# Configuring Playwright
+## Configuring Playwright
 
 Replay records automated browser tests by replacing the browser normally used to run your tests. Playwright must be configured to launch the Replay Browser to generate recordings.
 
@@ -77,25 +77,25 @@ export default config;
 
 This example also includes projects for running your tests without recording using Firefox and Chromium, imported from `@playwright/test`. Only the `replay-firefox` and `replay-chromium` projects will generate replays.
 
-# Recording tests in CI
+## Recording tests in CI
 
 Replay is designed to record tests in CI so you can debug when tests fail. Without Replay, test failures in CI are like a black box, with little insights into what went wrong. By recording with Replay, you get a full recording of the test run with debugging tools built in.
 
 Configuration instructions will vary based on your CI provider and pipeline.
 
-## GitHub Actions
+### GitHub Actions
 
-[Recording with GitHub Actions](/test-suites/test-runners/playwright/recording-with-git-hub-actions)
+[Recording with GitHub Actions](/test-suites/playwright/recording-with-git-hub-actions)
 
-## Other CI Providers
+### Other CI Providers
 
-[Recording with Other CI Providers](/test-suites/test-runners/playwright/recording-with-other-ci-providers)
+[Recording with Other CI Providers](/test-suites/playwright/recording-with-other-ci-providers)
 
-# Recording tests locally
+## Recording tests locally
 
 While Replay Test Suites is designed for debugging tests in CI, it can be helpful to record a test locally for additional debugging or when first getting set up. 
 
-## Recording replays
+### Recording replays
 
 - Ensure your project is configured with `replayio/playwright`
 - Configure Playwright to only use a single worker and increase the timeout if needed to allow for increased run time. See config example below.
@@ -126,7 +126,7 @@ const config: PlaywrightTestConfig = {
   timeout: !inCI ? 30 * 1000 : 10 * 1000,
   workers: !inCI ? 1 : undefined,
   use: {
-    baseURL: !inCI ? "https://localhost:3000" : undefined,
+    baseURL: !inCI ? "http://localhost:3000" : undefined,
     launchOptions: {
       slowMo: inCI ? 0 : 500,
     },
@@ -165,13 +165,13 @@ Replays are uploaded locally using the `@replayio/replay` CLI. Your API key must
 
 [Full instructions at the `@replayio/replay` repo.](https://github.com/replayio/replay-cli/tree/main/packages/replay)
 
-<Callout type="info" emoji="👉">
-💡 Once you’ve recorded, view test results and replays using the [Test Suite Dashboard](/test-suites/features/test-suite-dashboard) and [Pull Request Comments](/test-suites/features/pull-request-comments).
+<Callout type="info" emoji="💡">
+Once you’ve recorded, view test results and replays using the [Test Suite Dashboard]/Features/Test-Suite-Dashboard.md) and [Pull Request Comments]/Features/Pull-Request-Comments.md).
 
 </Callout>
 
-[Troubleshooting Guide](/test-suites/test-runners/playwright/troubleshooting-guide)
+[Troubleshooting Guide](/test-suites/playwright/troubleshooting-guide)
 
-[Playwright FAQs](/test-suites/test-runners/playwright/playwright-faqs)
+[Playwright FAQs](/test-suites/playwright/playwright-faqs)
 
-[Playwright Node](/test-suites/test-runners/playwright/playwright-node)
+[Playwright Node](/test-suites/playwright/playwright-node)

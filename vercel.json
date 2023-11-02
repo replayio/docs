@@ -13,10 +13,6 @@
       "destination": "/getting-started/what-is-replay-io"
     },
     {
-      "source": "/test-suites",
-      "destination": "/test-suites/test-runners"
-    },
-    {
       "source": "/resources",
       "destination": "/resources/get-help"
     },
@@ -70,7 +66,7 @@
     },
     {
       "source": "/reference-guide/cypress-panel",
-      "destination": "/test-suites/test-runners/cypress"
+      "destination": "/test-suites/cypress"
     },
     {
       "source": "/reference-guide/events#b1a0e7f432f5426888b80e9b00e7b226",
@@ -106,7 +102,7 @@
     },
     {
       "source": "/recording-browser-tests-\\(beta\\)/cypress-instructions",
-      "destination": "/test-suites/test-runners/cypress"
+      "destination": "/test-suites/cypress"
     },
     {
       "source": "/recording-browser-tests-\\(beta\\)/pull-request-comments",
@@ -122,7 +118,7 @@
     },
     {
       "source": "/reference-guide/cypress-panel",
-      "destination": "/test-suites/test-runners/cypress"
+      "destination": "/test-suites/cypress"
     },
     {
       "source": "/resources-and-examples",

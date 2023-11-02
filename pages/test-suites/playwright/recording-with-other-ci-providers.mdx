@@ -11,7 +11,7 @@ import { Callout } from 'nextra/components'
 
 To record tests and upload replays in other CI providers, you’ll need to complete the following steps in your workflow.
 
-# Install dependencies
+## Install dependencies
 
 `@replayio/playwright` must be installed in your CI environment before the tests execute.
 
@@ -25,7 +25,7 @@ By default, `@replayio/playwright` also installs the required Replay Browsers. H
 
 `npx @replayio/playwright install` 
 
-# Update test run command
+## Update test run command
 
 Your existing test run command (for example, `npx playwright test`) must be updated to include the name of a Replay Browser and required environment variables to record. 
 
@@ -44,7 +44,7 @@ npx playwright test --project replay-firefox --reporter=@replayio/playwright/rep
 
 **If you don’t specify a project, all projects defined in your config will run.**
 
-# Upload replays
+## Upload replays
 
 Use the `[@replayio/replay](https://github.com/replayio/replay-cli/tree/main/packages/replay)` CLI in your workflow to add source control metadata and upload replays to your team. 
 
@@ -67,5 +67,5 @@ The Replay CLI provides other commands and options, such as filtering which repl
 [Full instructions at the `@replayio/replay` repo.](https://github.com/replayio/replay-cli/tree/main/packages/replay)
 
 <Callout type="info" emoji="💡">
-Once you’ve recorded, view test results and replays using the [Test Suite Dashboard](/test-suites/features/test-suite-dashboard) and [Pull Request Comments](/test-suites/features/pull-request-comments).
+Once you’ve recorded, view test results and replays using the [Test Suite Dashboard]/Features/Test-Suite-Dashboard.md) and [Pull Request Comments]/Features/Pull-Request-Comments.md).
 </Callout>
