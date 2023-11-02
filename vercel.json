@@ -117,7 +117,7 @@
       "destination": "/test-suites/features/test-suite-dashboard"
     },
     {
-      "source": "/recording-browser-tests-\\(beta\\)/test-replay",
+      "source": "/recording-browser-tests-\\(beta\\)/test-replays",
       "destination": "/test-suites"
     },
     {
