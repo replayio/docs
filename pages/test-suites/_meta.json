@@ -2,6 +2,7 @@
   "index": {
     "title": "Getting started"
   },
+  "test-suites-faq": "FAQ",
   "test-runners-separator": {
     "title": "Test runners",
     "type": "separator"
@@ -11,10 +12,17 @@
   "puppeteer": "Puppeteer",
   "webdriver-io": "WebdriverIO",
   "jest": "Jest",
-  "features": {
+  "features-separator": {
     "title": "Features",
     "type": "separator"
   },
-  "ci-environments": "CI Environments",
-  "test-suites-faq": "Test Suites FAQ"
+  "pull-request-comments": "Pull request comments",
+  "replay-devtools": "Replay DevTools",
+  "test-suite-dashboard": "Test Suite Dashboard",
+  "ci-environments-separator": {
+    "title": "CI environments",
+    "type": "separator"
+  },
+  "circle-ci": "CircleCI",
+  "github-actions": "GitHub Actions" 
 }
