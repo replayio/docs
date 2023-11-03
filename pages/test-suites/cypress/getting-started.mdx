@@ -1,26 +1,44 @@
 ---
 title: Getting Started
 ---
-import { Callout, Steps } from 'nextra/components'
+import { Callout, Steps, Tab, Tabs } from 'nextra/components'
+import Video from '../../../components/Video.tsx'
+import MaterialSymbolsSettings from '../../../icons/MaterialSymbolsSettings'
 
 # Getting Started
 
 <Callout type="info" emoji="💡">
-This guide assumes that you already have a Cypress 10.9+ test suite. If you’re just setting up your Cypress test suite, first follow the instructions [here](https://docs.cypress.io/guides/getting-started/installing-cypress).
+This guide assumes that you already have a Cypress 10.9+ test suite. If you’re just setting up your Cypress test suite, first [follow the instructions here](https://docs.cypress.io/guides/getting-started/installing-cypress).
 </Callout>
 
 <Steps>
 ### Installing the Replay plugin
 
-Install the `[@replayio/cypress](https://www.npmjs.com/package/@replayio/cypress)` package in your project:
+Install the [@replayio/cypress](https://www.npmjs.com/package/@replayio/cypress) package in your project:
 
-```bash
+<Tabs items={['npm', 'yarn', 'pnpm']}>
+<Tabs.Tab>
+```bash copy
 npm install @replayio/cypress -D
 ```
+</Tabs.Tab>
+<Tabs.Tab>
+```bash copy
+yarn add @replayio/cypress -D
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```bash copy
+pnpm install @replayio/cypress -D
+```
+</Tabs.Tab>
+</Tabs>
 
 Add the Replay plugin to `cypress.config.js`
 
-```jsx
+<Tabs items={['CommonJS', 'ESM']}>
+<Tabs.Tab>
+```jsx copy filename="cypress.config.js"
 const { defineConfig } = require('cypress');
 // 🙋‍♂️ Add this line to require the replay plugin
 const { plugin: replayPlugin } = require("@replayio/cypress")
@@ -36,41 +54,63 @@ module.exports = defineConfig({
   },
 });
 ```
+</Tabs.Tab>
+<Tabs.Tab>
+```jsx copy filename="cypress.config.ts"
+import defineConfig from 'cypress'
+// 🙋‍♂️ Add this line to add the replay plugin
+import { replayPlugin } from "@replayio/cypress";
+
+export default defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      // 🙋‍♂️ Add this line to install the replay plugin
+      replayPlugin(on, config);
+      // Make sure that setupNodeEvents returns config
+      return config;
+    },
+  },
+});
+```
+</Tabs.Tab>
+</Tabs>
 
 Add this line your [support file](https://docs.cypress.io/guides/references/configuration#e2e), which should be `cypress/support/e2e.js` for e2e tests (unless modified)
 
-```jsx
-// cypress/support/e2e.js
+<Tabs items={['CommonJS', 'ESM']}>
+<Tabs.Tab>
+```jsx copy filename="cypress/support/e2e.js"
 require('@replayio/cypress/support');
 ```
-
-After the setup is complete, you can now try running your tests locally with the Replay browser:
-
-```bash
-npx cypress run --browser=replay-chromium
+</Tabs.Tab>
+<Tabs.Tab>
+```jsx copy filename="cypress/support/e2e.ts"
+import '@replayio/cypress/support';
 ```
-
-<Callout type="info" emoji="🚧">
-Replay Chromium is GA on Linux and beta for Mac and Windows!
-</Callout>
-
-<Callout type="warning" emoji="💡">
-⚠️ If you run into any problems, consult our troubleshooting guide [here](/test-suites/cypress/cypress-troubleshooting-guide).
-</Callout>
+</Tabs.Tab>
+</Tabs>
 
 ### Uploading and viewing replays
 
-We recommend creating a new team in Replay to organize your Cypress replays. You’ll also need an API Key to upload your replays and team API keys have much higher limits than personal API keys.
+First, create a new team in Replay to organize your Cypress replays. You’ll also need an API Key to upload your replays and team API keys have much higher limits than personal API keys.
+<span className="font-semibold text-xl pt-5 inline-block">Go to your Replay Dashboard and create a new team</span><br />
+Alternatively, you can visit [this link](http://app.replay.io/team/new) to instantly create a new team.
+<Video src="/videos/add_team.mp4" />
+<Callout type="info" emoji="💡">
+Test Suites are currently in closed Beta. If you’d like to start recording your tests, test suites need to be enabled in your team. Join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible.
+</Callout>
+<span className="font-semibold text-xl pt-5 inline-block">Once you’ve created a team, click on the settings <MaterialSymbolsSettings className="w-6 h-6 inline-block" /> icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)</span>
+<Video src="/videos/api-keys.mp4" />
+<span className="font-semibold text-xl pt-5 inline-block">Save that API in your CI environment as `RECORD_REPLAY_API_KEY`</span>
+This step may vary depending on your CI provider. You can learn more about how to set up environment variables with different CI providers [on this docs page](/test-suites/cypress/ci-environments).
 
-1. Visit [app.replay.io/team/new](http://app.replay.io/team/new) to create a team.
-2. Once you’ve created a team, [create a new API Key](/getting-started/teams-admin/team-settings).
-3. Save that API in your [GitHub Repository secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) as `RECORD_REPLAY_API_KEY` so it’s available for the workflow we’ll make next!
+### Setting up your CI workflow
 
-### Setting up your CI environment
+Here are basic configurations for some of the most popular providers which you can add to you project
 
-Here’s a basic GitHub Action configuration which you can add to you project as `.github/workflows/e2e.yaml` to get started.
-
-```yaml
+<Tabs items={['GitHub Actions', 'CircleCI']}>
+<Tabs.Tab>
+```yml filename=".github/workflows/e2e.yml" copy
 name: End-to-end tests
 on: [push, pull_request]
 jobs:
@@ -78,19 +118,15 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+        uses: actions/checkout@v4
       - name: Cypress run
-        uses: cypress-io/github-action@v5.1.0
+        uses: cypress-io/github-action@v6
         with:
           browser: replay-chromium
           build: npm run build
           start: npm start
         env:
           REPLAY_API_KEY: ${{ secrets.RECORD_REPLAY_API_KEY }}
-
       # Always run this step so failed tests are uploaded
       - name: Upload replays
         if: always()
@@ -98,6 +134,54 @@ jobs:
         with:
           api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
 ```
+</Tabs.Tab>
+<Tabs.Tab>
+```yml filename=".circleci/e2e.yml" copy
+version: 2.1
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  replay-upload:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
+      - image: cimg/node:18.4.0-browsers
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - checkout
+      - run:
+          name: "Install Dependencies"
+          command: "npm ci"
+      - run:
+          name: "Run Cypress Tests"
+          command: 'npx cypress run --browser "Replay Firefox"'
+          environment:
+            RECORD_ALL_CONTENT: 1
+            RECORD_REPLAY_METADATA_FILE: /tmp/replay-metadata.log
+      - run:
+          name: "Upload to Replay"
+          when: always
+          command: |
+            npm i -g @replayio/replay@latest
+            export RECORD_REPLAY_METADATA_SOURCE_COMMIT_TITLE="$(git log --format=%s -n 1)"
+            replay metadata --init --keys source --warn
+            replay ls
+            replay upload-all --api-key $RECORD_REPLAY_API_KEY
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  cypress-test-workflow:
+    jobs:
+      - replay-upload:
+          context: replayable
+```
+</Tabs.Tab>
+</Tabs>
 </Steps>
 
 The steps may be different depending on how you run tests in CI, so pick one of the options below that best applies to you.
+
+<Callout type="warning" emoji="⚠️">
+If you run into any problems, consult our troubleshooting guide [here](/test-suites/cypress/cypress-troubleshooting-guide).
+</Callout>

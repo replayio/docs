@@ -3,8 +3,15 @@ title: Integrating Replay.io with Test Runners
 ---
 import { Tabs, Tab, Callout } from 'nextra/components'
 import Features from './Features.tsx'
+import ReplayLogomark from '../../icons/ReplayLogomark.tsx' 
 
 # Test Suites
+
+<Callout emoji={<ReplayLogomark className="pt-1 w-6 h-6" />} type="info">
+**Join the waitlist**
+
+Replay for Test Suites was released in June 2023 as a beta so that we can help each team setup Replay and fix their flakes. If you’d like to start recording your tests, join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible. Also feel free joining our [**Discord**](https://replay.io/discord) #testing channel or emailing us at hey@replay.io.
+</Callout>
 
 ![Test suite integration with Cypress and Playwright](/images/test_suites_hero.png)
 
@@ -79,6 +86,9 @@ With every recorded test, you can examine your code using Replay DevTools. You c
 <Callout type="info">
 Learn how to [integrate Cypress into Playwright here](/test-suites/cypress)
 </Callout>
+
+### Other testing tools
+Are you using other tools? We got you covered. You can use Replay Browser to record with [Puppeteer](/test-suites/puppeteer), [WebdriverIO](/test-suites/webdriver-io) and [Jest (alpha)](/test-suites/jest). Your recorings will be available in the same way, so you can examine your code and search for flakes with these frameworks as well. 
 
 ## Integrating into CI
 Recording your tests is as simple as running them with the Replay browser. You can record your test suite in any CI provider. This recording happens in two steps:
