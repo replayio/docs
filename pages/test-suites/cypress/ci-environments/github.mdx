@@ -1,0 +1,63 @@
+---
+title: Integrate Replay with Cypress on GitHub
+---
+import { Callout } from 'nextra/components'
+
+# Integrate Replay with Cypress on GitHub
+
+Cypress provides its own GitHub Action which makes installation and caching much easier. The setup with [cypress-io/github-action](https://github.com/cypress-io/github-action) is very straightforward, but some teams prefer their own custom setup. 
+
+## Using GitHub Actions with cypress-io/github-action
+
+If you’re already using the Cypress’s [@cypress-io/github-action](https://github.com/cypress-io/github-action), modify the step like this:
+
+```yaml
+- name: Cypress run
+  uses: cypress-io/github-action@v5
+	with:
+		# 🙋‍♂️ Specify Replay Chromium
+    browser: replay-chromium
+	env:
+		REPLAY_API_KEY: ${{ secrets.RECORD_REPLAY_API_KEY }}
+```
+
+Add a new step to run after this Cypress GitHub Action for uploading the replays:
+
+```yaml
+- name: Upload replays
+  if: always()
+  uses: replayio/action-upload@v0.5.1
+  with:
+    api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+```
+
+## Using GitHub Actions without cypress-io/github-action
+
+If you’re using GitHub Actions and running tests by calling a script, but aren’t using Cypress’s [@cypress-io/github-action](https://github.com/cypress-io/github-action), create a similar script in `package.json` like this:
+
+```json
+"scripts": {
+  "cy:run": "cypress run", // original test script
+	"cy:run:replay": "cypress run --browser=replay-chromium" // new test script
+}
+```
+
+Use that new test script instead in your current workflow file, and add the environment variable(s):
+
+```yaml
+- name: Cypress run
+  # run: npm run cy:run 
+	run: npm run cy:run:replay
+	env:
+		REPLAY_API_KEY: ${{ secrets.RECORD_REPLAY_API_KEY }}
+```
+
+Add a new step to run after this Cypress GitHub Action for uploading the replays:
+
+```yaml
+- name: Upload replays
+  if: always()
+  uses: replayio/action-upload@v0.5.1
+  with:
+    api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+```

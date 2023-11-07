@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Cypress - Getting Started
 ---
 import { Callout, Steps, Tab, Tabs } from 'nextra/components'
 import Video from '../../../components/Video.tsx'
@@ -102,6 +102,7 @@ Test Suites are currently in closed Beta. If you’d like to start recording you
 <span className="font-semibold text-xl pt-5 inline-block">Once you’ve created a team, click on the settings <MaterialSymbolsSettings className="w-6 h-6 inline-block" /> icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)</span>
 <Video src="/videos/api-keys.mp4" />
 <span className="font-semibold text-xl pt-5 inline-block">Save that API in your CI environment as `RECORD_REPLAY_API_KEY`</span>
+
 This step may vary depending on your CI provider. You can learn more about how to set up environment variables with different CI providers [on this docs page](/test-suites/cypress/ci-environments).
 
 ### Setting up your CI workflow
@@ -138,16 +139,10 @@ jobs:
 <Tabs.Tab>
 ```yml filename=".circleci/e2e.yml" copy
 version: 2.1
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   replay-upload:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: cimg/node:18.4.0-browsers
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
       - run:
@@ -168,8 +163,6 @@ jobs:
             replay metadata --init --keys source --warn
             replay ls
             replay upload-all --api-key $RECORD_REPLAY_API_KEY
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   cypress-test-workflow:
     jobs:
@@ -180,7 +173,7 @@ workflows:
 </Tabs>
 </Steps>
 
-The steps may be different depending on how you run tests in CI, so pick one of the options below that best applies to you.
+Looking for other CI providers? Checkout the CI environments section.
 
 <Callout type="warning" emoji="⚠️">
 If you run into any problems, consult our troubleshooting guide [here](/test-suites/cypress/cypress-troubleshooting-guide).

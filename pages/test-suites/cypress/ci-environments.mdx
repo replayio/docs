@@ -1,0 +1,20 @@
+---
+title: Setup Replay on CI
+---
+import { Callout } from 'nextra/components'
+
+# Setup Replay on CI
+
+Setting up Replay on your CI is pretty easy. In order to automatically record your tests, you need to use Replay Browser for your Cypress tests, and then upload the recordings cached on your CI to Replay Test Suites Dashboard.
+
+This works for any CI providers, but we’ve included documentation walkthroughs and example files to get you started.
+
+| Provider   | Documentation | Example file |
+| :----- | :----- | :----- |
+| GitHub Actions | [/test-suites/ci-environments/github](/test-suites/ci-environments/github) |   workflow.yml |
+| CircleCI | [/test-suites/ci-environments/circle-ci](/test-suites/ci-environments/circle-ci)  |  circle.yml |
+| Other providers | [/test-suites/ci-environments/circle-ci](/test-suites/ci-environments/using-other-ci-providers)  | - |
+
+<Callout type="info" emoji="❓">
+Not seeing your provider? [Let us know on Discord](https://replay.io/discord)
+</Callout>

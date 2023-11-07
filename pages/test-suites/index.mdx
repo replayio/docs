@@ -1,9 +1,14 @@
 ---
 title: Integrating Replay.io with Test Runners
 ---
-import { Tabs, Tab, Callout } from 'nextra/components'
+import { Tabs, Tab, Callout, Cards, Card } from 'nextra/components'
 import Features from './Features.tsx'
 import ReplayLogomark from '../../icons/ReplayLogomark.tsx' 
+import VscodeIconsFileTypeCypress from '../../icons/VscodeIconsFileTypeCypress.tsx' 
+import VscodeIconsFileTypePlaywright from '../../icons/VscodeIconsFileTypePlaywright.tsx' 
+import SimpleIconsWebdriverio from '../../icons/SimpleIconsWebdriverio.tsx' 
+import DeviconPuppeteer from '../../icons/DeviconPuppeteer.tsx' 
+import VscodeIconsFileTypeJest from '../../icons/VscodeIconsFileTypeJest.tsx' 
 
 # Test Suites
 
@@ -103,3 +108,12 @@ Read these guides to see how to set up your pipeline in [CircleCI](/test-suites/
 For a smoother workflow, we have created a [GitHub App](https://github.com/apps/replay-io) that will add comments to your pull request showing all your failed an passed test. Clicking on a failed test will take you directly to the Replay DevTools where you can debug your test.
 
 ![Pull request comments](/images/pull-request-comments_zdwcd.png)
+
+## Learn more
+<Cards>
+  <Card icon={<VscodeIconsFileTypePlaywright />} title="Playwright" href="/test-suites/playwright" />
+  <Card icon={<VscodeIconsFileTypeCypress />} title="Cypress" href="/test-suites/cypress/getting-started" />
+  <Card icon={<SimpleIconsWebdriverio />} title="WebdriverIO" href="/test-suites/webdriver-io" />
+  <Card icon={<DeviconPuppeteer />} title="Puppeteer" href="/test-suites/puppeteer" />
+  <Card icon={<VscodeIconsFileTypeJest />} title="Jest (alpha)" href="/test-suites/jest" />
+</Cards>
