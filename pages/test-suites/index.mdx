@@ -1,14 +1,15 @@
 ---
 title: Integrating Replay.io with Test Runners
 ---
-import { Tabs, Tab, Callout, Cards, Card } from 'nextra/components'
-import Features from './Features.tsx'
+import { Tabs, Callout, Cards, Card } from 'nextra/components'
+import Features from '../../components/Features'
 import ReplayLogomark from '../../icons/ReplayLogomark.tsx' 
 import VscodeIconsFileTypeCypress from '../../icons/VscodeIconsFileTypeCypress.tsx' 
 import VscodeIconsFileTypePlaywright from '../../icons/VscodeIconsFileTypePlaywright.tsx' 
 import SimpleIconsWebdriverio from '../../icons/SimpleIconsWebdriverio.tsx' 
 import DeviconPuppeteer from '../../icons/DeviconPuppeteer.tsx' 
 import VscodeIconsFileTypeJest from '../../icons/VscodeIconsFileTypeJest.tsx' 
+import { items } from './test-suites-features'
 
 # Test Suites
 
@@ -33,7 +34,7 @@ npx playwright test --project replay-chromium
 ```bash
 npx cypress run --browser replay-chromium
 ```
-<p className="text-sm">[Click here](/test-suites/cypress) Learn more about how to integrate into Cypress</p>
+<p className="text-sm">[Click here](/test-suites/cypress/getting-started) Learn more about how to integrate into Cypress</p>
 </Tabs.Tab>
 <Tabs.Tab>
 ```bash
@@ -52,7 +53,7 @@ node puppeteer-test.js # Read docs on how to set up your configuration
 Whenever you run your tests, the test execution will be recorded and a replay will be created. This allows you to debug failures, analyse the root cause of a flaky test and much more. With frameworks such as Playwright and Cypress, we bring you a custom sidebar that allows you to examine each test step.
 
 ## Benefits of integrating Replay to your test suite
-<Features />
+<Features items={items}/>
 
 ## Dashboard
 The **Test Suite Dashboard** provides you with an overview of all the tests and test runs that were recorded with Replay Browser. This will serve you as a great reporter tool, but with every test result, you’ll have access to the test recording. If anything went wrong, you can start debugging with all the powers that Replay DevTools provide you with.
@@ -79,7 +80,7 @@ For action commands, you can click "Jump to code" to see what part of your appli
 All network requests are captured as well, including static assets. With your test result you are getting all the powers of Replay DevTools that allow you to take a deep dive into your test execution and examine your code using [print statements](/reference-guide/debugging/print-statements), [debugger](/reference-guide/debugger/breakpoints) and [React panel](/reference-guide/dev-tools/react).
 
 <Callout type="info">
-Ready to integrate Replay to Cypress? [Learn how to setup here.](/test-suites/cypress)
+Ready to integrate Replay to Cypress? [Learn how to setup here.](/test-suites/cypress/getting-started)
 </Callout>
 
 ### Playwright panel
@@ -89,7 +90,7 @@ Playwright panel will provide you with a trace-viewer-like experience in which y
 With every recorded test, you can examine your code using Replay DevTools. You can take a look at [network calls](/reference-guide/dev-tools/network), [React components](/reference-guide/dev-tools/react) of your app, or you can debug your test using [print statements](/reference-guide/debugging/print-statements) and [debugger](/reference-guide/debugger/breakpoints).
 
 <Callout type="info">
-Learn how to [integrate Cypress into Playwright here](/test-suites/cypress)
+Learn how to [integrate Cypress into Playwright here](/test-suites/cypress/getting-started)
 </Callout>
 
 ### Other testing tools
@@ -110,6 +111,7 @@ For a smoother workflow, we have created a [GitHub App](https://github.com/apps/
 ![Pull request comments](/images/pull-request-comments_zdwcd.png)
 
 ## Learn more
+Integrating Replay with your existing test suite is pretty straightforward, but we have prepared some more detailed tutorials to walk you through the basic setup and some advanced features. Click below to choose the framework of your choice.
 <Cards>
   <Card icon={<VscodeIconsFileTypePlaywright />} title="Playwright" href="/test-suites/playwright" />
   <Card icon={<VscodeIconsFileTypeCypress />} title="Cypress" href="/test-suites/cypress/getting-started" />

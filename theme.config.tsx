@@ -15,6 +15,9 @@ const config: DocsThemeConfig = {
   footer: {
     text: '® 2023 Replay, All rights reserved.',
   },
+  toc: {
+    backToTop: true
+  },
   sidebar: {
     defaultMenuCollapseLevel: 1,
   },

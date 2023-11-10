@@ -1,4 +1,14 @@
 {
-  "getting-started": "Getting started",
-  "ci-environments": "CI Environments"
+  "installation": {
+    "title": "Installation",
+    "theme": {
+      "pagination": false
+    }
+  },
+  "cypress-dashboard": "Dashboard",
+  "cypress-panel": "Cypress Panel",
+  "continuous-integration": "Continuous Integration",
+  "configuration": "Configuration",
+  "cypress-faq": "FAQ",
+  "cypress-troubleshooting-guide": "Troubleshooting Guide"
 }
