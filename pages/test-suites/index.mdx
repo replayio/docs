@@ -2,14 +2,13 @@
 title: Integrating Replay.io with Test Runners
 ---
 import { Tabs, Callout, Cards, Card } from 'nextra/components'
-import Features from '../../components/Features'
+import Features from '@components/Features'
 import ReplayLogomark from '../../icons/ReplayLogomark.tsx' 
 import VscodeIconsFileTypeCypress from '../../icons/VscodeIconsFileTypeCypress.tsx' 
 import VscodeIconsFileTypePlaywright from '../../icons/VscodeIconsFileTypePlaywright.tsx' 
 import SimpleIconsWebdriverio from '../../icons/SimpleIconsWebdriverio.tsx' 
 import DeviconPuppeteer from '../../icons/DeviconPuppeteer.tsx' 
 import VscodeIconsFileTypeJest from '../../icons/VscodeIconsFileTypeJest.tsx' 
-import { items } from './test-suites-features'
 
 # Test Suites
 
@@ -53,7 +52,7 @@ node puppeteer-test.js # Read docs on how to set up your configuration
 Whenever you run your tests, the test execution will be recorded and a replay will be created. This allows you to debug failures, analyse the root cause of a flaky test and much more. With frameworks such as Playwright and Cypress, we bring you a custom sidebar that allows you to examine each test step.
 
 ## Benefits of integrating Replay to your test suite
-<Features items={items}/>
+<Features />
 
 ## Dashboard
 The **Test Suite Dashboard** provides you with an overview of all the tests and test runs that were recorded with Replay Browser. This will serve you as a great reporter tool, but with every test result, you’ll have access to the test recording. If anything went wrong, you can start debugging with all the powers that Replay DevTools provide you with.
