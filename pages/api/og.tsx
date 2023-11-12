@@ -1,6 +1,6 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
-import ReplayLogomark from '../../icons/ReplayLogomark'
+import ReplayLogomark from '../../components/icons/ReplayLogomark'
 
 export const config = {
   runtime: 'edge',

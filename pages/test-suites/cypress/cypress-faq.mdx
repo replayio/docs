@@ -77,7 +77,7 @@ import Faq from '@components/Faq'
     test:
       needs: test-run-id
       runs-on: ubuntu-latest
-  **    strategy:
+      strategy:
         matrix:
           product: [frontend, backend, api]
       steps:

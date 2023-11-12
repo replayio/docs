@@ -1,5 +1,5 @@
 import React, { useState, ReactElement } from 'react';
-import RiArrowDownSLine from '../icons/RiArrowDownSLine';
+import RiArrowDownSLine from './icons/RiArrowDownSLine';
 
 const FaqItem = ({ question, answer, isOpen, toggle }) => (
   <div className='border-b border-slate-500 border-opacity-25'>

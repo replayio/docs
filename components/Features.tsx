@@ -1,7 +1,7 @@
-import Bug from '../icons/Bug'
-import HeroiconsCommandLine from '../icons/HeroiconsCommandLine'
-import MaterialSymbolsFlaky from '../icons/MaterialSymbolsFlaky'
-import MagnifyingApps from '../icons/MagnifyingApps'
+import Bug from './icons/Bug'
+import HeroiconsCommandLine from './icons/HeroiconsCommandLine'
+import MaterialSymbolsFlaky from './icons/MaterialSymbolsFlaky'
+import MagnifyingApps from './icons/MagnifyingApps'
 
 const items = [
   {

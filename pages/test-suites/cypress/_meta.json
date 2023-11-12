@@ -1,12 +1,8 @@
 {
-  "installation": {
-    "title": "Installation",
-    "theme": {
-      "pagination": false
-    }
-  },
+  "installation": "Installation",
   "cypress-dashboard": "Dashboard",
   "cypress-panel": "Cypress Panel",
+  "debugging-guide": "Debugging Guide",
   "continuous-integration": "Continuous Integration",
   "configuration": "Configuration",
   "cypress-faq": "FAQ",
