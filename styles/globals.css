@@ -11,3 +11,8 @@
 html button, [tabindex]:not([tabindex="-1"]):focus-visible {
   @apply focus-visible:ring-0 focus-visible:ring-offset-0
 }
+
+/* center images in articles */
+article img {
+  @apply mx-auto
+}
