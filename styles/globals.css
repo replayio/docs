@@ -3,23 +3,9 @@
 @tailwind utilities;
 
 :root {
+  /* base color */
   --nextra-primary-hue: 345deg;
   --nextra-primary-saturation: 89%;
-  --token-comment-color: #8f8f92;
-  --token-definition-color: #fefefe;
-  --token-local-color: #fefefe;
-  --token-meta-color: #8f8f92;
-  --token-keyword-color: #ff42a9;
-  --token-number-color: #ffff00;
-  --token-operator-color: #fefefe;
-  --token-propertyName-color: #ff98eb;
-  --token-punctuation-color: #75bfff;
-  --token-string-color: #08aafa;
-  --token-string2-color: #08aafa;
-  --token-typeName-color: #75bfff;
-  --token-variableName-color: #58e0ff;
-  --token-variableName2-color: #58e0ff;
-  --inspectable-token-hover-background-color: #484731;
 }
 
 /* remove the ugly outlines on Nextra Tabs component */
@@ -30,4 +16,13 @@ html button, [tabindex]:not([tabindex="-1"]):focus-visible {
 /* center images in articles */
 article img {
   @apply mx-auto
+}
+
+.nextra-code-block > div {
+  background-color: #081120 !important;
+  color: #fff
+}
+
+.nextra-code-block > pre {
+  background-color: #192230 !important;
 }
