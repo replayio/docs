@@ -180,5 +180,11 @@
       "source": "/resources/replay.io-case-studies/midnite-builds-time-travel-workflows-for-its-fast-paced-betting-platform",
       "destination": "/resources/replay-io-case-studies/midnite-builds-time-travel-workflows-for-its-fast"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/stats/:match*",
+      "destination": "https://analytics.umami.is/:match*"
+    }
   ]
 }
