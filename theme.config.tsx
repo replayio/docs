@@ -1,6 +1,6 @@
 import React from 'react'
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
-import ReplayLogotype from './icons/ReplayLogotype'
+import ReplayLogotype from '@icons/ReplayLogotype'
 import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
@@ -14,6 +14,9 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: 'https://github.com/replayio-public/replay-documentation/tree/main',
   footer: {
     text: '® 2023 Replay, All rights reserved.',
+  },
+  toc: {
+    backToTop: true
   },
   sidebar: {
     defaultMenuCollapseLevel: 1,

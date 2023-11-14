@@ -63,8 +63,8 @@ async function main() {
     if (result?.isBroken) {
       brokenLinks++;
       // Move to the next line before logging the message about the broken link
-      process.stdout.write('\n');
       console.log(`Broken link found: ${link.text} (${link.url}) - Status code: ${result.statusCode}`);
+      process.stdout.write('\n');
     }
   }
 }

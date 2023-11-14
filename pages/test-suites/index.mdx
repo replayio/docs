@@ -1,10 +1,22 @@
 ---
 title: Integrating Replay.io with Test Runners
 ---
-import { Tabs, Tab, Callout } from 'nextra/components'
-import Features from './Features.tsx'
+import { Tabs, Callout, Cards, Card } from 'nextra/components'
+import Features from '@components/Features'
+import ReplayLogomark from '@icons/ReplayLogomark.tsx' 
+import VscodeIconsFileTypeCypress from '@icons/VscodeIconsFileTypeCypress.tsx' 
+import VscodeIconsFileTypePlaywright from '@icons/VscodeIconsFileTypePlaywright.tsx' 
+import SimpleIconsWebdriverio from '@icons/SimpleIconsWebdriverio.tsx' 
+import DeviconPuppeteer from '@icons/DeviconPuppeteer.tsx' 
+import VscodeIconsFileTypeJest from '@icons/VscodeIconsFileTypeJest.tsx' 
 
 # Test Suites
+
+<Callout emoji={<ReplayLogomark className="pt-1 w-6 h-6" />} type="info">
+**Join the waitlist**
+
+Replay for Test Suites was released in June 2023 as a beta so that we can help each team setup Replay and fix their flakes. If you’d like to start recording your tests, join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible. Also feel free joining our [**Discord**](https://replay.io/discord) #testing channel or emailing us at hey@replay.io.
+</Callout>
 
 ![Test suite integration with Cypress and Playwright](/images/test_suites_hero.png)
 
@@ -21,7 +33,7 @@ npx playwright test --project replay-chromium
 ```bash
 npx cypress run --browser replay-chromium
 ```
-<p className="text-sm">[Click here](/test-suites/cypress) Learn more about how to integrate into Cypress</p>
+<p className="text-sm">[Click here](/test-suites/cypress/installation) Learn more about how to integrate into Cypress</p>
 </Tabs.Tab>
 <Tabs.Tab>
 ```bash
@@ -67,7 +79,7 @@ For action commands, you can click "Jump to code" to see what part of your appli
 All network requests are captured as well, including static assets. With your test result you are getting all the powers of Replay DevTools that allow you to take a deep dive into your test execution and examine your code using [print statements](/reference-guide/debugging/print-statements), [debugger](/reference-guide/debugger/breakpoints) and [React panel](/reference-guide/dev-tools/react).
 
 <Callout type="info">
-Ready to integrate Replay to Cypress? [Learn how to setup here.](/test-suites/cypress)
+Ready to integrate Replay to Cypress? [Learn how to setup here.](/test-suites/cypress/installation)
 </Callout>
 
 ### Playwright panel
@@ -77,8 +89,11 @@ Playwright panel will provide you with a trace-viewer-like experience in which y
 With every recorded test, you can examine your code using Replay DevTools. You can take a look at [network calls](/reference-guide/dev-tools/network), [React components](/reference-guide/dev-tools/react) of your app, or you can debug your test using [print statements](/reference-guide/debugging/print-statements) and [debugger](/reference-guide/debugger/breakpoints).
 
 <Callout type="info">
-Learn how to [integrate Cypress into Playwright here](/test-suites/cypress)
+Learn how to [integrate Cypress into Playwright here](/test-suites/cypress/installation)
 </Callout>
+
+### Other testing tools
+Are you using other tools? We got you covered. You can use Replay Browser to record with [Puppeteer](/test-suites/puppeteer), [WebdriverIO](/test-suites/webdriver-io) and [Jest (alpha)](/test-suites/jest). Your recorings will be available in the same way, so you can examine your code and search for flakes with these frameworks as well. 
 
 ## Integrating into CI
 Recording your tests is as simple as running them with the Replay browser. You can record your test suite in any CI provider. This recording happens in two steps:
@@ -93,3 +108,13 @@ Read these guides to see how to set up your pipeline in [CircleCI](/test-suites/
 For a smoother workflow, we have created a [GitHub App](https://github.com/apps/replay-io) that will add comments to your pull request showing all your failed an passed test. Clicking on a failed test will take you directly to the Replay DevTools where you can debug your test.
 
 ![Pull request comments](/images/pull-request-comments_zdwcd.png)
+
+## Learn more
+Integrating Replay with your existing test suite is pretty straightforward, but we have prepared some more detailed tutorials to walk you through the basic setup and some advanced features. Click below to choose the framework of your choice.
+<Cards>
+  <Card icon={<VscodeIconsFileTypePlaywright />} title="Playwright" href="/test-suites/playwright" />
+  <Card icon={<VscodeIconsFileTypeCypress />} title="Cypress" href="/test-suites/cypress/installation" />
+  <Card icon={<SimpleIconsWebdriverio />} title="WebdriverIO" href="/test-suites/webdriver-io" />
+  <Card icon={<DeviconPuppeteer />} title="Puppeteer" href="/test-suites/puppeteer" />
+  <Card icon={<VscodeIconsFileTypeJest />} title="Jest (alpha)" href="/test-suites/jest" />
+</Cards>

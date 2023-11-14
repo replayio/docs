@@ -1,23 +1,36 @@
 {
-  "index": "Getting started",
-  "test-suites-faq": "FAQ",
-  "test-runners-separator": {
-    "title": "Test runners",
-    "type": "separator"
-  },
-  "cypress": "Cypress",
-  "playwright": "Playwright",
-  "puppeteer": "Puppeteer",
-  "webdriver-io": "WebdriverIO",
-  "jest": "Jest",
   "features-separator": {
     "title": "Features",
     "type": "separator"
   },
+  "index": "Getting started",
   "features": {
     "display": "children",
     "title": "Features"
   },
+  "cypress-separator": {
+    "title": "Cypress",
+    "type": "separator"
+  },
+  "cypress": {
+    "title": "Cypress",
+    "display": "children"
+  },
+  "playwright-separator": {
+    "title": "Playwright",
+    "type": "separator"
+  },
+ "playwright": {
+  "title": "Playwright",
+  "display": "children"
+ },
+  "other-separator": {
+    "title": "Other test frameworks",
+    "type": "separator"
+  },
+  "puppeteer": "Puppeteer",
+  "jest": "Jest",
+  "webdriver-io": "WebdriverIO",
   "ci-integration-separator": {
     "title": "CI integration",
     "type": "separator"
@@ -25,5 +38,10 @@
   "ci-integration": {
     "display": "children",
     "title": "CI integration"
-  }
+  },
+  "faq-separator": {
+    "title": "FAQ",
+    "type": "separator"
+  },
+  "test-suites-faq": "FAQ"
 }
