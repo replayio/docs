@@ -2,9 +2,9 @@
   "installation": "Installation",
   "cypress-dashboard": "Dashboard",
   "cypress-panel": "Cypress Panel",
-  "debugging-guide": "Debugging Guide",
   "continuous-integration": "Continuous Integration",
   "configuration": "Configuration",
+  "debugging-tips": "Debugging Tips",
   "cypress-faq": "FAQ",
   "cypress-troubleshooting-guide": "Troubleshooting Guide"
 }
