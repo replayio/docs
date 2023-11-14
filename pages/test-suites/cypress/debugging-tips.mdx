@@ -49,7 +49,7 @@ With Replay you can jump from a test `cy.click(){:js}` command into your React c
 Rerunning your test repeatedly can be a helpful ways to catch a test flake. This strategy can sometimes be easier if you want to quickly record a flake locally.
 
 ```js filename="cypress/e2e/login.js"
-describe('Verify "Login" is visible. Test: '+i, () => {
+describe(`Verify "Login" is visible. Test: ${i}`, () => {
   for (let i = 0; i < 3 ; i++) {
     it('finds the Login link in the header', () => {
       // Place code inside the loop that you want to repeat
