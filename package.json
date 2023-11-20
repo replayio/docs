@@ -14,6 +14,8 @@
   "homepage": "https://replay.io",
   "dependencies": {
     "@vercel/og": "^0.5.20",
+    "logrocket": "^7.0.0",
+    "logrocket-react": "^6.0.1",
     "next": "^13.0.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
