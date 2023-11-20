@@ -179,6 +179,10 @@
     {
       "source": "/resources/replay.io-case-studies/midnite-builds-time-travel-workflows-for-its-fast-paced-betting-platform",
       "destination": "/resources/replay-io-case-studies/midnite-builds-time-travel-workflows-for-its-fast"
+    },
+    {
+      "source": "/test-suites/cypress",
+      "destination": "/test-suites/cypress/installation"
     }
   ],
   "rewrites": [
