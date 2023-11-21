@@ -1,3 +1,8 @@
 {
-  "playwright-faqs": "FAQ"
+  "playwright-installation": "Installation",
+  "recording-with-git-hub-actions": "Recording with GitHub Actions",
+  "recording-with-other-ci-providers": "Recording with Other CI Providers",
+  "playwright-troubleshooting-guide": "Troubleshooting Guide",
+  "playwright-faqs": "FAQ",
+  "playwright-node": "Playwright Node"
 }

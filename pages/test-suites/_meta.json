@@ -20,10 +20,10 @@
     "title": "Playwright",
     "type": "separator"
   },
- "playwright": {
-  "title": "Playwright",
-  "display": "children"
- },
+  "playwright": {
+    "title": "Playwright",
+    "display": "children"
+  },
   "other-separator": {
     "title": "Other test frameworks",
     "type": "separator"
