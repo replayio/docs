@@ -1,16 +1,12 @@
 import React from 'react';
+import { default as NextVideo } from 'next-video'
 
 interface VideoProps {
-  src: string
-  props: React.ReactNode;
+  src: React.ReactNode
 }
 
-const Video: React.FC<VideoProps> = ({ src, ...props }) => {
-  return (
-    <video autoPlay muted loop width="100%" playsInline className="p-4" {...props}>
-      <source src={src} type="video/mp4" />
-    </video>
-  );
+const Video: React.FC<VideoProps> = ({ src }) => {
+  return <NextVideo src={src} autoPlay muted loop accentColor="#D01644" />
 };
 
 export default Video;

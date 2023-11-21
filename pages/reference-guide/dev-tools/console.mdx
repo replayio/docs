@@ -2,8 +2,11 @@
 title: Console
 ---
 import { Callout } from 'nextra/components'
-import Video from '@components/Video.tsx'
+import Video from '@components/Video'
 import LoomVideo from '@components/LoomVideo.tsx'
+import clearConsoleHoytr from '/videos/clear-console_hoytr.mov'
+import inspectingObjectsKmbdu from '/videos/inspecting-objects_kmbdu.mp4'
+import viewingStackTracesUpcgy from '/videos/viewing-stack-traces_upcgy.mp4'
 
 # Console
 
@@ -36,7 +39,7 @@ Notice the expression evaluates at that moment in time in the console, before th
 
 Click the trashcan icon in the console to clear any evaluations and results.
 
-<Video src="/videos/clear-console_hoytr.mov"/>
+<Video src={clearConsoleHoytr} />
 
 ## Autocomplete
 
@@ -48,7 +51,7 @@ When typing in the terminal, you will see autocomplete suggestions. Autocomplete
 
 Clicking on an object lets you see an expanded view of its properties. Unlike traditional consoles which will show the object’s property values as they are now, when you expand an object in Replay you will see the values as they were when the message was logged to the Console!
 
-<Video src="/videos/inspecting-objects_kmbdu.mp4" />
+<Video src={inspectingObjectsKmbdu} />
 [Original replay](https://app.replay.io/recording/the-s-series-snowboard-hydrogen--6649f1d0-1526-42ce-835d-852cd62d4b5c)
 
 [Original replay](https://app.replay.io/recording/the-s-series-snowboard-hydrogen--6649f1d0-1526-42ce-835d-852cd62d4b5c)
@@ -57,7 +60,7 @@ Clicking on an object lets you see an expanded view of its properties. Unlike tr
 
 Replay Errors can be expanded to view the stack trace and see where the error originated. Clicking on a stack trace function or source location will navigate the Source Editor to the line of code.
 
-<Video src="/videos/viewing-stack-traces_upcgy.mp4" />
+<Video src={viewingStackTracesUpcgy} />
 
 
 ## Console message types

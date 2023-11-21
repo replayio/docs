@@ -2,6 +2,11 @@ import { Callout } from 'nextra/components'
 import Video from '@components/Video'
 import TargetElement from '@icons/TargetElement'
 import JumpTo from '@icons/JumpTo'
+import commandDetail from '/videos/command-detail.mp4'
+import networkPanelCypress from '/videos/network_panel_cypress.mp4'
+import jumpToCodeCypress from '/videos/jump-to-code-cypress.mp4'
+import printStatementCypress from '/videos/print-statement-cypress.mp4'
+import fastForwardCypress from '/videos/fast-forward-cypress.mp4'
 
 # Cypress Panel with Replay DevTools
 Every recorded test can be viewed in Replay DevTools which will help you find root causes of any hidden instabilities. With Cypress panel, you’ll get additional information about the test itself. The experience is very similar to Cypress GUI mode, but there are small differences that allow you to dive deeper into your test recording.
@@ -14,7 +19,7 @@ Clicking on any command in Cypress panel will reveal its details. You can inspec
 ### Queries
 Details of [query commands](https://docs.cypress.io/api/table-of-contents#Queries) such as `cy.get(){:js}` or `cy.contains(){:js}` contain information on selected elements and number of elements found. Clicking on target <TargetElement className='w-5 h-5 inline-block' /> icon will highlight the selected element in Viewer panel.
 
-<Video src="/videos/command-detail.mp4" />
+<Video src={commandDetail} />
 
 Additionally, you can right-click on the target <TargetElement className='w-5 h-5 inline-block' /> icon to reveal the option to copy the HTML element.
 
@@ -37,7 +42,7 @@ In case of a failed assertion, you can view complete details of the expected and
 ## Network activity
 Network requests are captured the same way as in Cypress GUI mode. In the network panel inside DevTools, you can take a better detail into different parts of an XHR call. For example, you can review the stack trace or timings of certain API calls.
 
-<Video src="/videos/network_panel_cypress.mp4" />
+<Video src={networkPanelCypress} />
 
 Read the full guide on network panel in [reference guide](/reference-guide/dev-tools/network).
 
@@ -46,11 +51,11 @@ Hovering over <span className='font-mono bg-blue-500 text-white rounded-full p-1
 
 Read the full guide on jumping into code in [reference guide](/reference-guide/debugging/jumping).
 
-<Video src="/videos/jump-to-code-cypress.mp4" />
+<Video src={jumpToCodeCypress} />
 
 ## Print statements
 With print statements, you can deep-dive into your test flow. Click on the <span className='font-mono bg-blue-500 text-white rounded-md font-extrabold py-0.5 px-1.5 mx-1'>+</span> button and type into the text field. You can think of this the same way as of `console.log(){:js}`. Anything you put in here will be printed out to the console. You can observe the values changing over the time of your test run.
-<Video src="/videos/print-statement-cypress.mp4" />
+<Video src={printStatementCypress} />
 
 Read the full guide on print statements in [reference guide](/reference-guide/debugging/print-statements).
 
@@ -63,7 +68,7 @@ You can use console the same way as in any other browser console. Replay will ho
 
 Read the full guide on console in [reference guide](/reference-guide/dev-tools/console).
 
-<Video src="/videos/fast-forward-cypress.mp4" />
+<Video src={fastForwardCypress} />
 
 <Callout type="default" emoji="💡">
 PRO tip: You can use `cy.now(){:js}` to call a Cypress command inside the console. For example, call `cy.now('get', '[data-id=send-button]'){:js}` to select `[data-id=send-button]` element on a given moment of your recording. This is great for checking if a given element was present at a precise moment.
