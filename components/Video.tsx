@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-ignore
 import { default as NextVideo } from 'next-video'
 
 interface VideoProps {
