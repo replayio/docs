@@ -66,7 +66,7 @@
     },
     {
       "source": "/reference-guide/cypress-panel",
-      "destination": "/test-suites/cypress"
+      "destination": "/test-suites/cypress/cypress-panel"
     },
     {
       "source": "/reference-guide/events#b1a0e7f432f5426888b80e9b00e7b226",
@@ -102,7 +102,7 @@
     },
     {
       "source": "/recording-browser-tests-\\(beta\\)/cypress-instructions",
-      "destination": "/test-suites/cypress"
+      "destination": "/test-suites/cypress/cypress-installation"
     },
     {
       "source": "/recording-browser-tests-\\(beta\\)/pull-request-comments",
@@ -118,7 +118,7 @@
     },
     {
       "source": "/reference-guide/cypress-panel",
-      "destination": "/test-suites/cypress"
+      "destination": "/test-suites/cypress/cypress-panel"
     },
     {
       "source": "/resources-and-examples",
@@ -182,7 +182,11 @@
     },
     {
       "source": "/test-suites/cypress",
-      "destination": "/test-suites/cypress/installation"
+      "destination": "/test-suites/cypress/cypress-installation"
+    },
+    {
+      "source": "/test-suites/playwright",
+      "destination": "/test-suites/playwright/playwright-installation"
     }
   ],
   "rewrites": [
