@@ -1,3 +1,5 @@
+const { withNextVideo } = require('next-video/process')
+
 const fs = require('fs')
 
 const withNextra = require('nextra')({
@@ -13,4 +15,4 @@ const withNextra = require('nextra')({
   }
 });
 
-module.exports = withNextra({});
+module.exports = withNextVideo(withNextra({}));

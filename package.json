@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Replay.io documentation",
   "scripts": {
-    "dev": "npm run dev",
+    "dev": "npm run dev & npx next-video sync -w",
     "build": "next build",
     "start": "next start",
     "check-links": "node ./utils/checklinks.mjs",
@@ -17,6 +17,7 @@
     "logrocket": "^7.0.0",
     "logrocket-react": "^6.0.1",
     "next": "^13.0.6",
+    "next-video": "^0.9.1",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
     "react": "^18.2.0",

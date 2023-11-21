@@ -2,7 +2,9 @@
 title: Viewer
 ---
 import LoomVideo from '@components/LoomVideo.tsx'
-import Video from '@components/Video.tsx'
+import Video from '@components/Video'
+import addcommentOpevy from '/videos/addcomment_opevy.mp4'
+import commentattachAyapn from '/videos/commentattach_ayapn.mp4'
 
 # Viewer
 
@@ -25,7 +27,7 @@ Apart from that, this functions exactly like any other video player you've used 
 
 ## Commenting on the video
 
-<Video src="/videos/addcomment_opevy.mp4" />
+<Video src={addcommentOpevy} />
 
 Maybe you created a replay to record a bug so you can pass it onto someone else. Before you do, it would be nice if you annotated it — this way the next person knows what they're looking at. 
 
@@ -39,7 +41,7 @@ To add comments on the video:
 
 You can also reply to comments and edit or delete your own comments. You can also attach a Loom video to any comment by clicking the paper clip icon.
 
-<Video src="/videos/commentattach_ayapn.mp4" />
+<Video src={commentattachAyapn} />
 
 ## Navigating by events
 
