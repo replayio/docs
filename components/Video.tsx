@@ -7,7 +7,7 @@ interface VideoProps {
 }
 
 const Video: React.FC<VideoProps> = ({ src }) => {
-  return <NextVideo src={src} autoPlay muted loop accentColor="#D01644" />
+  return <NextVideo src={src} autoPlay muted loop accentColor="#D01644" className="pt-5" />
 };
 
 export default Video;
