@@ -2,53 +2,29 @@
 title: Playwright
 ---
 import { Callout, Tabs } from 'nextra/components'
+import Video from '@components/Video'
+import MaterialSymbolsSettings from '@icons/MaterialSymbolsSettings'
+import addTeam from '/videos/add_team.mp4'
+import apiKeys from '/videos/api-keys.mp4'
 
 # Playwright
 
-## Setting up a team
+## Install the Replay plugin
 
-You’ll need a Replay team specifically for your automated test replays. This lets you set up an API key for recording in CI and provides 
-
-Start by creating a new team in the **[Replay Library](https://app.replay.io)** sidebar and inviting your team members. Once created, we’ll enable access to the **Test Suite Dashboard**. 
-
-When you’re ready to record, you can create an [API Key from the Team Settings](/getting-started/teams-admin/team-settings). Using the API Key connects your recordings to the correct team to ensure access to your replays is protected and your Test Suite Dashboard views are accurate.
-
-## Configuring Playwright
-
-Replay records automated browser tests by replacing the browser normally used to run your tests. Playwright must be configured to launch the Replay Browser to generate recordings.
-
-<Callout type="info" emoji="👉">
-Make sure you’re using Playwright version 1.19.2.
-</Callout>
-
-## Installation
-
-Run the following in your project directory:
+**1. Install the [@replayio/playwright](https://www.npmjs.com/package/@replayio/playwright) package into your project:**
 
 ```sh npm2yarn
 npm install @replayio/playwright -D
 ```
 
-This installs the Replay Browsers on your machine and provides functionality for recording tests with Replay.
+**2. Add Replay Chromium browser to your `playwright.config.ts` file.**
 
-## **Configuration**
-
-In your `playwright.config.ts` file, import `devices` from `@replayio/playwright`. 
-
-This gives you access to “Replay Firefox” and “Replay Chromium” devices to set the browser in your config using [Playwright projects](https://playwright.dev/docs/test-configuration#multiple-browsers). 
-
-**Example config:**
-
-```tsx
+```tsx {2,6-9} filename="playwright.config.ts"
 import { PlaywrightTestConfig, devices } from "@playwright/test";
 import { devices as replayDevices } from "@replayio/playwright";
 
 const config: PlaywrightTestConfig = {
   projects: [
-    {
-      name: "replay-firefox",
-      use: { ...replayDevices["Replay Firefox"] as any },
-    },
     {
       name: "replay-chromium",
       use: { ...replayDevices["Replay Chromium"] as any },
@@ -66,21 +42,61 @@ const config: PlaywrightTestConfig = {
 export default config;
 ```
 
-This example also includes projects for running your tests without recording using Firefox and Chromium, imported from `@playwright/test`. Only the `replay-firefox` and `replay-chromium` projects will generate replays.
+## Setup Replay Dashboard
 
-## Recording tests in CI
+First, create a new team in Replay to organize your Playwright replays. You’ll also need an API Key to upload your replays and team API keys have much higher limits than personal API keys.
+
+**1. Go to your Replay Dashboard and create a new team**
+
+Alternatively, you can visit [this link](https://app.replay.io/team/new) to instantly create a new team.
+<Video src={addTeam} />
+<Callout type="info" emoji="💡">
+Test Suites are currently in closed Beta. If you’d like to start recording your tests, test suites need to be enabled in your team. Join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible.
+</Callout>
+
+**2. Once you’ve created a team, click on the settings <MaterialSymbolsSettings className="w-6 h-6 inline-block" /> icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)**
+
+<Video src={apiKeys} />
+
+**3. Save that API in your CI environment as `REPLAY_API_KEY`**
+
+This step may vary depending on your CI provider. You can learn more about how to set up environment variables with different CI providers [on this docs page](/test-suites/cypress/continuous-integration).
+
+## Integrate into your CI workflow
 
 Replay is designed to record tests in CI so you can debug when tests fail. Without Replay, test failures in CI are like a black box, with little insights into what went wrong. By recording with Replay, you get a full recording of the test run with debugging tools built in.
 
-Configuration instructions will vary based on your CI provider and pipeline.
+Here are basic configurations for some of the most popular providers which you can add to you project
 
-### GitHub Actions
-
-[Recording with GitHub Actions](/test-suites/playwright/recording-with-git-hub-actions)
-
-### Other CI Providers
-
-[Recording with Other CI Providers](/test-suites/playwright/recording-with-other-ci-providers)
+<Tabs items={['GitHub Actions', 'CircleCI']}>
+<Tabs.Tab>
+```yml filename=".github/workflows/e2e.yml" copy
+name: End-to-end tests
+on: [push, pull_request]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test --project replay-chromium --reporter=@replayio/playwright/reporter,line
+      - name: Upload replays
+        if: ${{ always() }}
+        uses: replayio/action-upload@v0.5.1
+        with:
+          public: true
+          api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+```
+</Tabs.Tab>
+</Tabs>
 
 ## Recording tests locally
 

@@ -1,7 +1,7 @@
 ---
 title: Cypress - Installation
 ---
-import { Callout, Steps, Tab, Tabs } from 'nextra/components'
+import { Callout, Tabs } from 'nextra/components'
 import Video from '@components/Video'
 import MaterialSymbolsSettings from '@icons/MaterialSymbolsSettings'
 import addTeam from '/videos/add_team.mp4'
@@ -17,23 +17,9 @@ This guide assumes that you already have a Cypress 10.9+ test suite. If you’re
 
 **1. Install the [@replayio/cypress](https://www.npmjs.com/package/@replayio/cypress) package in your project:**
 
-<Tabs items={['npm', 'yarn', 'pnpm']}>
-<Tabs.Tab>
-```bash copy
+```sh npm2yarn
 npm install @replayio/cypress -D
 ```
-</Tabs.Tab>
-<Tabs.Tab>
-```bash copy
-yarn add @replayio/cypress -D
-```
-</Tabs.Tab>
-<Tabs.Tab>
-```bash copy
-pnpm install @replayio/cypress -D
-```
-</Tabs.Tab>
-</Tabs>
 
 **2. Add the Replay plugin to `cypress.config.js`**
 
@@ -121,6 +107,8 @@ This step may vary depending on your CI provider. You can learn more about how t
 
 ## Integrate into your CI workflow
 
+Replay is designed to record tests in CI so you can debug when tests fail. Without Replay, test failures in CI are like a black box, with little insights into what went wrong. By recording with Replay, you get a full recording of the test run with debugging tools built in.
+
 Here are basic configurations for some of the most popular providers which you can add to you project
 
 <Tabs items={['GitHub Actions', 'CircleCI']}>
@@ -170,7 +158,7 @@ workflows:
 </Tabs.Tab>
 </Tabs>
 
-Looking for other CI providers? Checkout the CI environments section.
+Looking for other CI providers? Checkout the [Continuous Integration section](/test-suites/cypress/continuous-integration).
 
 ## Next steps
 Your replays will now be recorded on each test run. You can find all your replays in [Cypress Test Suite Dashboard](/test-suites/cypress/cypress-dashboard).

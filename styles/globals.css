@@ -26,3 +26,11 @@ article img {
 .nextra-code-block > pre {
   background-color: #192230 !important;
 }
+
+code .line.highlighted {
+  background-color: hsl(217deg,32%, 20%);
+  color: hsl(var(--nextra-primary-hue)var(--nextra-primary-saturation)45%/.5);
+  --tw-shadow: 2px 0 currentColor inset;
+  --tw-shadow-colored: inset 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
+}

@@ -187,6 +187,10 @@
     {
       "source": "/test-suites/playwright",
       "destination": "/test-suites/playwright/playwright-installation"
+    },
+    {
+      "source": "/docs/recording-automated-tests-5bf7d91b65cd46deab1867b07bd12bdf",
+      "destination": "/test-suites/playwright/playwright-installation"
     }
   ],
   "rewrites": [
