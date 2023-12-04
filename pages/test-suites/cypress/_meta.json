@@ -1,10 +1,10 @@
 {
-  "cypress-installation": "Installation",
-  "cypress-dashboard": "Dashboard",
-  "cypress-panel": "Cypress Panel",
+  "installation": "Installation",
+  "dashboard": "Dashboard",
+  "panel": "Cypress Panel",
   "continuous-integration": "Continuous Integration",
   "configuration": "Configuration",
   "debugging-tips": "Debugging Tips",
-  "cypress-faq": "FAQ",
-  "cypress-troubleshooting-guide": "Troubleshooting Guide"
+  "faq": "FAQ",
+  "troubleshooting-guide": "Troubleshooting Guide"
 }

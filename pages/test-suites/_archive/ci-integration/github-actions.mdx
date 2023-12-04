@@ -12,9 +12,9 @@ By default, the GitHub action will upload all failed recordings.
 ```yaml
 - name: Upload replays
   if: always()
-  uses: replayio/action-upload@v0.5.0
+  uses: replayio/action-upload@v0.5.1
   with:
-    api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+    api-key: ${{ secrets.REPLAY_API_KEY }}
 ```
 
 ### Upload all recordings
@@ -24,7 +24,7 @@ If you’d like to upload all recordings regardless of whether the test passed o
 ```yaml
 - name: Upload Replay recordings
   if: always()
-  uses: replayio/action-upload@v0.5.0
+  uses: replayio/action-upload@v0.5.1
   with:
     api-key: <API Key>
     filter: ${{ 'function() { true }' }}
@@ -37,8 +37,8 @@ By default recordings will be private and only available to yourself or members 
 ```yaml
 - name: Upload Replay recordings
   if: always()
-  uses: replayio/action-upload@v0.5.0
+  uses: replayio/action-upload@v0.5.1
   with:
-    api-key:  <API Key>
+    api-key: <API Key>
     public: true
 ```

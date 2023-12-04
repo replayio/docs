@@ -6,7 +6,7 @@ import { Callout } from 'nextra/components'
 # Recording with Other CI Providers
 
 <Callout type="info" emoji="👉">
-👉 Have questions? We’re here to help! Contact us in [Discord](https://replay.io/discord) or at support@replay.io.
+Have questions? We’re here to help! Contact us in [Discord](https://replay.io/discord) or at support@replay.io.
 </Callout>
 
 To record tests and upload replays in other CI providers, you’ll need to complete the following steps in your workflow.
@@ -60,12 +60,12 @@ replay metadata --init --keys source --warn
 replay upload-all --api-key <api key>
 ```
 
-You can also set `RECORD_REPLAY_API_KEY` as an environment variable instead of passing to the `upload-all` command. This allows you to store the API Key in your CI provider to keep it secure.
+You can also set `REPLAY_API_KEY` as an environment variable instead of passing to the `upload-all` command. This allows you to store the API Key in your CI provider to keep it secure.
 
 The Replay CLI provides other commands and options, such as filtering which replays are uploaded.
 
 [Full instructions at the `@replayio/replay` repo.](https://github.com/replayio/replay-cli/tree/main/packages/replay)
 
 <Callout type="info" emoji="💡">
-Once you’ve recorded, view test results and replays using the [Test Suite Dashboard]/Features/Test-Suite-Dashboard.md) and [Pull Request Comments]/Features/Pull-Request-Comments.md).
+Once you’ve recorded, view test results and replays using the [Test Suite Dashboard](/test-suites/features/test-suite-dashboard) and [Pull Request Comments](/test-suites/features/pull-request-comments).
 </Callout>

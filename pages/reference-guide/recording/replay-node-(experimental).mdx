@@ -11,7 +11,7 @@ For recording Node processes, Replay provides the [@replayio/node](https://githu
 npm i @replayio/node --global
 
 replay-node script-name.js
-RECORD_REPLAY_API_KEY=YOUR-KEY npx @replayio/replay view-latest
+REPLAY_API_KEY=YOUR-KEY npx @replayio/replay view-latest
 ```
 
 Note: This will prompt you to install `@replayio/replay` if you haven’t already!
@@ -30,7 +30,7 @@ You'd first create the replay with `replay-node` and then upload it with `@repla
 
 ```bash
 replay-node loop.js
-RECORD_REPLAY_API_KEY=YOUR-KEY npx @replayio/replay view-latest
+REPLAY_API_KEY=YOUR-KEY npx @replayio/replay view-latest
 ```
 
 And once it's uploaded you'd be able to view it at [app.replay.io](https://app.replay.io)
