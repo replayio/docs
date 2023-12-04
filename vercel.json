@@ -102,7 +102,7 @@
     },
     {
       "source": "/recording-browser-tests-\\(beta\\)/cypress-instructions",
-      "destination": "/test-suites/cypress/cypress-installation"
+      "destination": "/test-suites/cypress/installation"
     },
     {
       "source": "/recording-browser-tests-\\(beta\\)/pull-request-comments",
@@ -182,15 +182,19 @@
     },
     {
       "source": "/test-suites/cypress",
-      "destination": "/test-suites/cypress/cypress-installation"
+      "destination": "/test-suites/cypress/installation"
     },
     {
       "source": "/test-suites/playwright",
-      "destination": "/test-suites/playwright/playwright-installation"
+      "destination": "/test-suites/playwright/installation"
     },
     {
       "source": "/docs/recording-automated-tests-5bf7d91b65cd46deab1867b07bd12bdf",
-      "destination": "/test-suites/playwright/playwright-installation"
+      "destination": "/test-suites"
+    },
+    {
+      "source": "/contribute/contributing-to-replay",
+      "destination": "/learn-more/contribute/contributing-to-replay"
     }
   ],
   "rewrites": [

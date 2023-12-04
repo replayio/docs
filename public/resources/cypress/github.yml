@@ -13,10 +13,10 @@ jobs:
           build: npm run build
           start: npm start
         env:
-          REPLAY_API_KEY: ${{ secrets.RECORD_REPLAY_API_KEY }}
+          REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
       # Always run this step so failed tests are uploaded
       - name: Upload replays
         if: always()
         uses: replayio/action-upload@v0.5.1
         with:
-          api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+          api-key: ${{ secrets.REPLAY_API_KEY }}

@@ -19,7 +19,7 @@ const config: DocsThemeConfig = {
     backToTop: true
   },
   sidebar: {
-    defaultMenuCollapseLevel: 1,
+    defaultMenuCollapseLevel: 2,
   },
   feedback: {},
   head: () => {

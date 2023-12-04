@@ -53,7 +53,7 @@ e2etest:
       - uses: replayio/action-playwright@main
         with:
           command: npx playwright test --shard ${{ matrix.shard }}/10 --reporter=@replayio/playwright/reporter,line
-          api-key: ${{ env.RECORD_REPLAY_API_KEY }}
+          api-key: ${{ env.REPLAY_API_KEY }}
         env:
           RECORD_REPLAY_METADATA_TEST_RUN_ID: ${{ needs.generate-test-run-id.outputs.testRunId }}
 ```

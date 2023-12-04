@@ -34,3 +34,8 @@ code .line.highlighted {
   --tw-shadow-colored: inset 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
 }
+
+aside li > button {
+  @apply font-bold;
+  color: rgba(243,244,246,var(--tw-text-opacity)) !important;
+}

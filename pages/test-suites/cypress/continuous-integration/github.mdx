@@ -8,7 +8,7 @@ import { Callout } from 'nextra/components'
 Cypress team has created its [official GitHub Action](https://github.com/cypress-io/github-action). The action provides dependency installation, built-in caching, and multiple options for advanced workflow configuration. Using this GitHub Action is optional and some teams prefer their own custom setup. Replay integrates well with both workflows, as shown in examples below
 
 <Callout type="default" emoji="💡">
-These instructions assume that you have already installed [`@replayio/cypress`](https://www.npmjs.com/package/@replayio/cypress) plugin into your project. [Follow the instructions on this page](/test-suites/cypress/cypress-installation) to learn how to install the plugin.
+These instructions assume that you have already installed [`@replayio/cypress`](https://www.npmjs.com/package/@replayio/cypress) plugin into your project. [Follow the instructions on this page](/test-suites/cypress/installation) to learn how to install the plugin.
 </Callout>
 
 ## Using GitHub Actions with cypress-io/github-action
@@ -22,7 +22,7 @@ If you’re already using the Cypress’s [@cypress-io/github-action](https://gi
 		# 🙋‍♂️ Specify Replay Chromium
     browser: replay-chromium
 	env:
-		REPLAY_API_KEY: ${{ secrets.RECORD_REPLAY_API_KEY }}
+		REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
 ```
 
 Add a new step to run after this Cypress GitHub Action for uploading the replays:
@@ -32,7 +32,7 @@ Add a new step to run after this Cypress GitHub Action for uploading the replays
   if: always()
   uses: replayio/action-upload@v0.5.1
   with:
-    api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+    api-key: ${{ secrets.REPLAY_API_KEY }}
 ```
 
 ## Using GitHub Actions without cypress-io/github-action
@@ -53,7 +53,7 @@ Use that new test script instead in your current workflow file, and add the envi
   # run: npm run cy:run 
 	run: npm run cy:run:replay
 	env:
-		REPLAY_API_KEY: ${{ secrets.RECORD_REPLAY_API_KEY }}
+		REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
 ```
 
 Add a new step to run after this Cypress GitHub Action for uploading the replays:
@@ -63,5 +63,5 @@ Add a new step to run after this Cypress GitHub Action for uploading the replays
   if: always()
   uses: replayio/action-upload@v0.5.1
   with:
-    api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+    api-key: ${{ secrets.REPLAY_API_KEY }}
 ```

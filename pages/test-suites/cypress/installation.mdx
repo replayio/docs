@@ -105,7 +105,76 @@ Test Suites are currently in closed Beta. If you’d like to start recording you
 
 This step may vary depending on your CI provider. You can learn more about how to set up environment variables with different CI providers [on this docs page](/test-suites/cypress/continuous-integration).
 
-## Integrate into your CI workflow
+## Record your tests
+
+### Recording locally
+Once you have Replay plugin into your project, you are ready to create your recordings. These will be available in your [Replay Dashboard](https://app.replay.io). You can run your tests by adding the `--browser` flag.
+
+```sh
+npx cypress run --browser replay-chromium
+```
+
+```ansi
+➜ npx cypress run --browser replay-chromium
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        13.5.1                                                                         │
+  │ Browser:        Replay 91 (headless)                                                           │
+  │ Node Version:   v18.10.0 (/Users/filiphric/.nvm/versions/node/v18.10.0/bin/node)               │
+  │ Specs:          1 found (spec.cy.ts)                                                           │
+  │ Searched:       cypress/e2e/**/*.cy.{js,jsx,ts,tsx}                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  Running:  spec.cy.ts                                                                      (1 of 1)
+  ✓ add todo (1022ms)
+  ✓ edit todo (1387ms)
+  ✓ complete todo (987ms)
+  ✓ remove todo (973ms)
+
+  4 passing (5s)
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     spec.cy.ts                                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[replay.io]: 🕑 Completing some outstanding work ...
+[replay.io]: 
+[replay.io]: 🚀 Successfully uploaded 1 recordings:
+[replay.io]: 
+[replay.io]:    ✅ cypress/e2e/spec.cy.ts
+[replay.io]:       https://app.replay.io/recording/349401bc-c5df-487a-bb55-a3deab4aced5
+[replay.io]: 
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  spec.cy.ts                               00:04        4        4        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✔  All specs passed!                        00:04        4        4        -        -        -  
+
+```
+
+### Integrate into your CI workflow
 
 Replay is designed to record tests in CI so you can debug when tests fail. Without Replay, test failures in CI are like a black box, with little insights into what went wrong. By recording with Replay, you get a full recording of the test run with debugging tools built in.
 
@@ -159,9 +228,6 @@ workflows:
 </Tabs>
 
 Looking for other CI providers? Checkout the [Continuous Integration section](/test-suites/cypress/continuous-integration).
-
-## Next steps
-Your replays will now be recorded on each test run. You can find all your replays in [Cypress Test Suite Dashboard](/test-suites/cypress/cypress-dashboard).
 
 ## See also
 - [Test Suite Dashboard for Cypress](/test-suites/cypress/cypress-dashboard)

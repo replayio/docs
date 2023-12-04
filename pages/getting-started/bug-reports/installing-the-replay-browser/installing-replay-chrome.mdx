@@ -33,14 +33,14 @@ npx @replayio/replay@latest launch https://replay.io
 Replay Chrome will record every tab by default. When you want to view a replay, you can use the `replay` CLI to either upload the most recent recording or view the most recent recordings and upload just the one you want.
 
 ```bash
-RECORD_REPLAY_API_KEY=<API_Key> npx @replayio/replay@latest view-latest
+REPLAY_API_KEY=<API_Key> npx @replayio/replay@latest view-latest
 ```
 
 or 
 
 ```bash
 npx @replayio/replay@latest ls
-RECORD_REPLAY_API_KEY=<API_Key> npx @replayio/replay@latest upload <id>
+REPLAY_API_KEY=<API_Key> npx @replayio/replay@latest upload <id>
 ```
 
 You can create an API Key for either a [team](/getting-started/teams-admin/setting-up-a-team#api-keys) or your [user](/resources/get-help/user-settings) account.
