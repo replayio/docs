@@ -1,7 +1,7 @@
 ---
 title: Test Suite integration
 ---
-import { Callout } from 'nextra/components'
+import { Callout, Tabs } from 'nextra/components'
 import YouTubeVideo from '@components/YouTubeVideo.tsx'
 import Video from '@components/Video'
 import ReplayLogomark from '@icons/ReplayLogomark.tsx' 
@@ -114,10 +114,16 @@ Ready to get started? Join the [waitlist](https://replayio.typeform.com/to/jTudl
 
 Because recording your tests is as simple as running them with the Replay browser, you can record your test suite in any environment. Because each environment is slightly different, we’re beginning to collect best practices which we are sharing below.
 
-- [CircleCI](/test-suites/ci-integration/circle-ci)
-- [Github Actions](/test-suites/ci-integration/github-actions)
-
-![CI output](/images/ci-output_cmukq.png)
+<Tabs items={['Cypress', 'Playwright']}>
+<Tabs.Tab>
+- [CircleCI](/test-suites/cypress/continuous-integration/circle-ci)
+- [Other CI providers](/test-suites/cypress/continuous-integration/other-ci-providers)
+</Tabs.Tab>
+<Tabs.Tab>
+- [Github Actions](/test-suites/playwright/continuous-integration/git-hub-actions)
+- [Other CI providers](/test-suites/cypress/continuous-integration/other-ci-providers)
+</Tabs.Tab>
+</Tabs>
 
 ## Test Suites FAQ
 

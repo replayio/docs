@@ -89,7 +89,7 @@ sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb
 
 If you’re using DeploySentinel, you may notice that either you are unable to record replays or the replays created do not show the Cypress Panel when you open them. This is caused by environment variables set by our plugin that are not passed on by DeploySentinel.
 
-Fortunately, you can set this manually on the command line or in your CI configuration. Follow the [instructions for running with earlier versions of Cypress](/test-suites/cypress/cypress-faq) to configure `RECORD_REPLAY_METADATA_FILE` (and `RECORD_ALL_CONTENT` if you’re using Firefox).
+Fortunately, you can set this manually on the command line or in your CI configuration. Follow the [instructions for running with earlier versions of Cypress](/test-suites/cypress/faq) to configure `RECORD_REPLAY_METADATA_FILE` (and `RECORD_ALL_CONTENT` if you’re using Firefox).
 
 ```bash
 RECORD_REPLAY_METADATA_FILE=/tmp/replay-metadata.json npx run cypress
