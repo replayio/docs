@@ -35,7 +35,10 @@ code .line.highlighted {
   box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
 }
 
-aside li > button {
-  @apply font-bold;
-  color: rgba(243,244,246,var(--tw-text-opacity)) !important;
+.light .nextra-sidebar-container li > button.nx-items-center {
+  @apply font-bold text-accent-dark;
+}
+
+.dark .nextra-sidebar-container li > button.nx-items-center {
+  @apply font-bold text-accent-light;
 }
