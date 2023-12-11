@@ -53,6 +53,20 @@ async function main() {
   // Initialize a new progress bar
   const progressBar = new ProgressBar('checking links...\n :current/:total\n\n', { total: links.length });
 
+  function logWithFrame(...lines) {
+    const maxLength = Math.max(...lines.map(line => line.length));
+    const topBorder = '╔' + '═'.repeat(maxLength + 2) + '╗';
+    const bottomBorder = '╚' + '═'.repeat(maxLength + 2) + '╝';
+    const sideBorder = '║';
+
+    console.log(topBorder);
+    lines.forEach(line => {
+        const padding = ' '.repeat(maxLength - line.length);
+        console.log(`${sideBorder} ${line}${padding} ${sideBorder}`);
+    });
+    console.log(bottomBorder);
+  }
+
   // Check each link
   for (const link of links) {
     const absoluteUrl = link.url.startsWith('/') ? `${baseUrl}${link.url.slice(1)}` : link.url;
@@ -63,7 +77,11 @@ async function main() {
     if (result?.isBroken) {
       brokenLinks++;
       // Move to the next line before logging the message about the broken link
-      console.log(`Broken link found: ${link.text} (${link.url}) - Status code: ${result.statusCode}`);
+      logWithFrame(
+        `Link text: ${link.text}`,
+        `Link url: ${link.url}`,
+        `Status code: ${result.statusCode}`
+      );
       process.stdout.write('\n');
     }
   }

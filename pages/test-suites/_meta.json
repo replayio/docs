@@ -12,6 +12,7 @@
     "title": "Other test frameworks",
     "type": "separator"
   },
+  "selenium": "Selenium",
   "puppeteer": "Puppeteer",
   "jest": "Jest",
   "webdriver-io": "WebdriverIO",
