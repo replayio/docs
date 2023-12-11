@@ -37,7 +37,7 @@ async function checkLink(link, filePath, whitelist, baseUrl, internalOnly) {
     if (fs.existsSync(url.pathname) || fs.existsSync(`${localFilePath}.mdx`) || fs.existsSync(`${localFilePath}/index.mdx`)) {
       return { isBroken: false, statusCode: null }; // File exists, link is not broken
     } else {
-      console.error(`File not found for internal link: ${localFilePath}`);
+      console.error(`Following .mdx page was not not found:\n${localFilePath}`);
       return { isBroken: true, statusCode: null }; // File doesn't exist, link is broken
     }
   } else if (whitelist.includes(url.hostname)) {
