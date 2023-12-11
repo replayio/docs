@@ -4,6 +4,7 @@ title: Integrating Replay.io with Test Runners
 import { Tabs, Callout, Cards, Card } from 'nextra/components'
 import Features from '@components/Features'
 import ReplayLogomark from '@icons/ReplayLogomark.tsx' 
+import LogosSelenium from '@icons/LogosSelenium.tsx' 
 import VscodeIconsFileTypeCypress from '@icons/VscodeIconsFileTypeCypress.tsx' 
 import VscodeIconsFileTypePlaywright from '@icons/VscodeIconsFileTypePlaywright.tsx' 
 import SimpleIconsWebdriverio from '@icons/SimpleIconsWebdriverio.tsx' 
@@ -93,7 +94,7 @@ Learn how to [integrate Playwright into Pipeline here](/test-suites/playwright/i
 </Callout>
 
 ### Other testing tools
-Are you using other tools? We got you covered. You can use Replay Browser to record with [Puppeteer](/test-suites/puppeteer), [WebdriverIO](/test-suites/webdriver-io) and [Jest (alpha)](/test-suites/jest). Your recorings will be available in the same way, so you can examine your code and search for flakes with these frameworks as well. 
+Are you using other tools? We got you covered. You can use Replay Browser to record with [Selenium](/test-suites/selenium), [Puppeteer](/test-suites/puppeteer), [WebdriverIO](/test-suites/webdriver-io) and [Jest (alpha)](/test-suites/jest). Your recorings will be available in the same way, so you can examine your code and search for flakes with these frameworks as well. 
 
 ## Integrating into CI
 Recording your tests is as simple as running them with the Replay browser. You can record your test suite in any CI provider. This recording happens in two steps:
@@ -114,6 +115,7 @@ Integrating Replay with your existing test suite is pretty straightforward, but 
 <Cards>
   <Card icon={<VscodeIconsFileTypePlaywright />} title="Playwright" href="/test-suites/playwright" />
   <Card icon={<VscodeIconsFileTypeCypress />} title="Cypress" href="/test-suites/cypress/installation" />
+  <Card icon={<LogosSelenium />} title="Selenium" href="/test-suites/selenium" />
   <Card icon={<SimpleIconsWebdriverio />} title="WebdriverIO" href="/test-suites/webdriver-io" />
   <Card icon={<DeviconPuppeteer />} title="Puppeteer" href="/test-suites/puppeteer" />
   <Card icon={<VscodeIconsFileTypeJest />} title="Jest (alpha)" href="/test-suites/jest" />
