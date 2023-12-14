@@ -39,13 +39,15 @@ This test will run in Chrome browser as indicated on lines 4-6. In order to crea
 
 To pass these options, add the configuration to your existing setup:
 
-```js showLineNumbers {2,5-6,10}
+```js showLineNumbers {2,7-8,12} copy
 const { Builder, Browser, By, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
+import { getPlaywrightBrowserPath } from "@replayio/replay";
+const chromiumPath = getPlaywrightBrowserPath("chromium");
 
 (async function test() {
   let options = new chrome.Options();
-  options.setChromeBinaryPath(process.env.REPLAY_BROWSER_PATH);
+  options.setChromeBinaryPath(chromiumPath);
 
   let driver = await new Builder()
     .forBrowser(Browser.CHROME)
@@ -62,7 +64,7 @@ const chrome = require('selenium-webdriver/chrome');
 })();
 ```
 
-In this example, path is defined as a `REPLAY_BROWSER_PATH{:sh}` environment variable. The implementation is up to you, but it is a good practice to move your configuration to a global scope.
+In this example, path is defined as a `chromiumPath{:js}` variable. The implementation is up to you, but it is a good practice to move your configuration to a global scope.
 
 <Callout type="info" emoji="💡">
 You can try this out on your own, by forking [this example repository](https://github.com/filiphric/replay-selenium-example).
@@ -92,3 +94,45 @@ npx @replayio/replay upload-all
 ```
 
 Note: you need to provide API key, either in your shell environment, or by passing it into the command. [You can read more about Replay CLI here](/reference-guide/recording/replay-cli).
+
+## Continuous integration
+To run your project on CI, you’ll simply follow the same steps as described above. In addition to running your tests and uploading your replays, you need to make sure that your CI environment is set up properly.
+
+### CircleCI
+CircleCI keeps your workflows simple thanks to CircleCI Orbs. These help you set up your testing environment, install dependencies and properly cache resources.
+
+In this example we are using `circleci/node@5.0.2` and `circleci/browser-tools@1.4.6` Orbs. In the following example, Orbs take care of installing proper browsers and their drivers, so that we can execute Selenium tests.
+
+```yml {4, 14,15} showLineNumbers
+version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+  browser-tools: circleci/browser-tools@1.4.6
+jobs:
+  replay:
+    environment: 
+      RECORD_ALL_CONTENT: 1
+    executor: node/default 
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run:
+          name: Run e2e tests 
+          command: npm test
+      - run:
+          name: Upload replays
+          when: always
+          command: npx @replayio/replay upload-all
+      
+workflows:
+  replay-workflow:
+    jobs:
+      - replay
+```
+
+After tests are ran, the `Upload replays` step is executed. notice the `when: always{:yml}` option that ensures we run this steps independently from whether previous step fails or passes. This ensures we will upload recordings of failed tests and don’t stop the pipeline execution on previous step.
+
+The `Upload replays` step relies on `REPLAY_API_KEY` being present in the environment. To generate an API key, follow [these docs](/getting-started/teams-admin/setting-up-a-team#api-keys). To set up your API key in your CircleCI project, follow the [documentation on CircleCI](https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-project)
