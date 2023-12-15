@@ -94,3 +94,9 @@ When running in CI, the latest version of the Replay Browser will be installed o
 To update your browser locally, use `npx @replayio/replay update-browsers`. Please note that the desktop version of the Replay Browser used to record manually is not the same as the browsers installed for testing.
 
 The desktop Replay Browser and testing Replay Browsers must be updated separately.
+
+## What causes Replays to be missing from the test view?
+
+This can be caused by a number of reasons:
+1. The replay wasn't uploaded at all, or it wasn't uploaded correctly
+2. The replay has been deleted due to it being past the retention limit allowed for your team
