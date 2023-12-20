@@ -20,7 +20,7 @@ import { devices as replayDevices } from "@replayio/playwright";
 
 const config: PlaywrightTestConfig = {
   reporter: [["@replayio/playwright/reporter", {
-      apiKey: process.env.REPLAY_API_KEY,
+      apiKey: process.env.RECORD_REPLAY_API_KEY,
       upload: true
   }], ['line']],
   projects: [
@@ -56,7 +56,7 @@ eddbdf58-fa10-43ab-ab0c-0da1e2939b57  onDisk  should allow me to add todo items 
 7585b8f4-6475-4535-995d-4d8a0c50f829  onDisk  Replay of localhost:8080           4 days ago
 ```
 
-Replays are uploaded locally using the `@replayio/replay` CLI. Your API key must be set as the `REPLAY_API_KEY` environment variable to upload.
+Replays are uploaded locally using the `@replayio/replay` CLI. Your API key must be set as the `RECORD_REPLAY_API_KEY` environment variable to upload.
 
 ### Upload all replays
 To upload all available replays, use the following command:

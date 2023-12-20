@@ -223,7 +223,7 @@ const { getExecutablePath } = require("@replayio/playwright");
 
 Writing your tests as a Node script allows you to upload failed recordings automatically using `@replayio/replay` as a Node module.
 
-For the example below, use `REPLAY_API_KEY=123 node upload-failure.spec.js` to execute and record the test.
+For the example below, use `RECORD_REPLAY_API_KEY=123 node upload-failure.spec.js` to execute and record the test.
 
 ```jsx
 //upload-failure.spec.js
@@ -274,7 +274,7 @@ async function testRun() {
   try {
     await test()
   } catch (e) {
-    const recordingId = await replayCli.viewLatestRecording({apiKey: `${process.env.REPLAY_API_KEY}`})
+    const recordingId = await replayCli.viewLatestRecording({apiKey: `${process.env.RECORD_REPLAY_API_KEY}`})
     console.log({e, recordingId})
     process.exit(1)
   }

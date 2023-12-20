@@ -36,7 +36,7 @@ module.exports = defineConfig({
       // 🙋‍♂️ Add this line to install the replay plugin
       replayPlugin(on, config, {
         upload: true,
-        apiKey: process.env.REPLAY_API_KEY,
+        apiKey: process.env.RECORD_REPLAY_API_KEY,
       });
       // Make sure that setupNodeEvents returns config
       return config;
@@ -57,7 +57,7 @@ export default defineConfig({
       // 🙋‍♂️ Add this line to install the replay plugin
       replayPlugin(on, config, {
         upload: true,
-        apiKey: process.env.REPLAY_API_KEY,
+        apiKey: process.env.RECORD_REPLAY_API_KEY,
       });
       // Make sure that setupNodeEvents returns config
       return config;
@@ -101,7 +101,7 @@ Test Suites are currently in closed Beta. If you’d like to start recording you
 
 <Video src={apiKeys} />
 
-**3. Save that API in your CI environment as `REPLAY_API_KEY`**
+**3. Save that API in your CI environment as `RECORD_REPLAY_API_KEY`**
 
 This step may vary depending on your CI provider. You can learn more about how to set up environment variables with different CI providers [on this docs page](/test-suites/cypress/continuous-integration).
 
@@ -198,7 +198,7 @@ jobs:
           build: npm run build
           start: npm start
         env:
-          REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
+          RECORD_REPLAY_API_KEY: ${{ secrets.RECORD_REPLAY_API_KEY }}
 ```
 </Tabs.Tab>
 <Tabs.Tab>
@@ -217,7 +217,7 @@ jobs:
           name: "Run Cypress Tests"
           command: 'npx cypress run --browser replay-chromium'
           environment:
-            REPLAY_API_KEY: ${REPLAY_API_KEY}
+            RECORD_REPLAY_API_KEY: ${RECORD_REPLAY_API_KEY}
 workflows:
   cypress-test-workflow:
     jobs:

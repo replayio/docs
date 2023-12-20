@@ -26,7 +26,7 @@ Lastly, add a new step in the workflow for uploading the replays once they’re 
 
 ```bash
 # Run your tests
-REPLAY_API_KEY=<api key> npm run cy:run:replay
+RECORD_REPLAY_API_KEY=<api key> npm run cy:run:replay
 # Adds source control metadata like the commit, branch, and PR
 # that triggered this test run
 npx @replayio/replay metadata --init --keys source --warn

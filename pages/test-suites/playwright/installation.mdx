@@ -25,7 +25,7 @@ import { devices as replayDevices } from "@replayio/playwright";
 
 const config: PlaywrightTestConfig = {
   reporter: [["@replayio/playwright/reporter", {
-    apiKey: process.env.REPLAY_API_KEY,
+    apiKey: process.env.RECORD_REPLAY_API_KEY,
     upload: true
   }], ['line']],
   projects: [
@@ -54,7 +54,7 @@ Test Suites are currently in closed Beta. If you’d like to start recording you
 
 <Video src={apiKeys} />
 
-**3. Save the API key in your environment as `REPLAY_API_KEY`**. You can run your tests locally or using your CI provider.
+**3. Save the API key in your environment as `RECORD_REPLAY_API_KEY`**. You can run your tests locally or using your CI provider.
 
 ## Record your tests
 

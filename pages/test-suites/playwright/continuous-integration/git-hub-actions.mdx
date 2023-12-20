@@ -17,7 +17,7 @@ import { devices as replayDevices } from "@replayio/playwright";
 
 const config: PlaywrightTestConfig = {
   reporter: [["@replayio/playwright/reporter", {
-    apiKey: process.env.REPLAY_API_KEY,
+    apiKey: process.env.RECORD_REPLAY_API_KEY,
     upload: true
   }], ['line']],
   projects: [
@@ -77,7 +77,7 @@ jobs:
         uses: replayio/action-upload@v0.5.1
         with:
           public: true
-          api-key: ${{ secrets.REPLAY_API_KEY }}
+          api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
 ```
 
 ### Uploading failed tests only
@@ -101,7 +101,7 @@ jobs:
         uses: replayio/action-upload@v0.5.1
         with:
           public: true
-          api-key: ${{ secrets.REPLAY_API_KEY }}
+          api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
           filter: ${{ 'function($v) { $v.metadata.test.result = "failed" }' }}
 ```
 <Callout type="warning" emoji="⚠️">
