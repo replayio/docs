@@ -20,11 +20,11 @@
     "title": "Test Suite integration"
   },
   "bug-reports-separator": {
-    "title": "Bug Reports",
+    "title": "Replay Browser",
     "type": "separator"
   },
-  "bug-reports": {
-    "title": "Bug Reports",
+  "replay-browser": {
+    "title": "Replay Browser",
     "display": "children"
   },
   "teams-and-admin": {

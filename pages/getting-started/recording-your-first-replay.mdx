@@ -1,12 +1,14 @@
 ---
 title: Recording your first Replay
 ---
-import { Steps, Callout } from 'nextra/components'
+import { Steps, Callout, Cards, Card } from 'nextra/components'
 import RecButton from '@icons/RecButton'
 import StopButton from '@icons/StopButton'
+import IcBaselineApple from '@icons/IcBaselineApple'
+import MdiMicrosoftWindows from '@icons/MdiMicrosoftWindows'
+import CodiconTerminalLinux from '@icons/CodiconTerminalLinux'
 import Video from '@components/Video'
 import downloadReplayMwnjr from '/videos/download-replay_mwnjr.mp4'
-import installReplayQmghp from '/videos/install-replay_qmghp.mp4'
 import recordReplayOusuj from '/videos/record-replay_ousuj.mp4'
 import recordingSaveXjfxl from '/videos/recording-save_xjfxl.mp4'
 import showRecordingMnmmp from '/videos/show-recording_mnmmp.mp4'
@@ -16,17 +18,18 @@ import showRecordingMnmmp from '/videos/show-recording_mnmmp.mp4'
 There are just few simple steps to create your first recording:
 
 <Steps>
-### Download [Replay Browser here](https://www.replay.io/downloads/replay.dmg)
-<Callout type="info">
-Looking for Windows or Linux version? [Click here to see the installation steps](/getting-started/bug-reports/installing-the-replay-browser).
-</Callout>
-
+### Download Replay Browser
+<Cards>
+<Card icon={<IcBaselineApple />} title="Mac" href="https://www.replay.io/downloads/replay.dmg" />
+<Card icon={<MdiMicrosoftWindows />} title="Windows (BETA)" href="https://replay.io/downloads/windows-replay.zip" />
+<Card icon={<CodiconTerminalLinux />} title="Linux" href="https://www.replay.io/downloads/linux-replay.tar.bz2" />
+</Cards>
+[Or follow these instructions](/getting-started/replay-browser/installation#cli-replay-chrome-new) on how to install use our CLI tool.
 
 <Video src={downloadReplayMwnjr} />
 
 ### Install Replay Browser on your computer
-<Video src={installReplayQmghp} />
-
+Follow the standard installation process on your machine or check out our docs to get a more detailed information.
 
 ### Open Replay Browser, navigate to the page you want to record, and click <RecButton className="w-12 mb-0.5 inline-block" /> button 
 

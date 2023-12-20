@@ -31,10 +31,10 @@ async function checkLink(link, filePath, whitelist, baseUrl, internalOnly) {
   // Check if the link is internal by comparing the link's host and the base URL's host
   if (url.hostname === new URL(baseUrl).hostname) {
     // Construct the path to the file we expect to exist, without appending ".mdx"
-    const localFilePath = path.join(process.cwd(), 'pages', url.pathname);
+    const localFilePath = url.pathname.includes('.yml') ? path.join(process.cwd(), 'public', url.pathname) : path.join(process.cwd(), 'pages', url.pathname);
 
     // Check both with and without the '.mdx' extension
-    if (fs.existsSync(url.pathname) || fs.existsSync(`${localFilePath}.mdx`) || fs.existsSync(`${localFilePath}/index.mdx`)) {
+    if (fs.existsSync(url.pathname) || fs.existsSync(localFilePath) || fs.existsSync(`${localFilePath}.mdx`) || fs.existsSync(`${localFilePath}/index.mdx`)) {
       return { isBroken: false, statusCode: null }; // File exists, link is not broken
     } else {
       console.error(`Following .mdx page was not not found:\n${localFilePath}`);
