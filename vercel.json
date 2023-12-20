@@ -90,11 +90,11 @@
     },
     {
       "source": "/recording-a-web-app/sharing-your-replay",
-      "destination": "/getting-started/bug-reports/sharing-your-replay"
+      "destination": "/getting-started/replay-browser/sharing-your-replay"
     },
     {
       "source": "/recording-a-web-app/viewing-and-collaborating",
-      "destination": "/getting-started/bug-reports/viewing-and-collaborating"
+      "destination": "/getting-started/replay-browser/viewing-and-collaborating"
     },
     {
       "source": "/recording-browser-tests-\\(beta\\)/cypress-instructions",
@@ -191,6 +191,22 @@
     {
       "source": "/contribute/contributing-to-replay",
       "destination": "/learn-more/contribute/contributing-to-replay"
+    },
+    {
+      "source": "/getting-started/bug-reports/installing-the-replay-browser",
+      "destination": "/getting-started/replay-browser/installation"
+    },
+    {
+      "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-replay-chrome",
+      "destination": "/getting-started/replay-browser/installation#cli-replay-chrome-new"
+    },
+    {
+      "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-on-linux",
+      "destination": "/getting-started/replay-browser/installation#linux"
+    },
+    {
+      "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-on-windows",
+      "destination": "/getting-started/replay-browser/installation#windows-beta"
     }
   ],
   "rewrites": [
