@@ -6,12 +6,12 @@ import { useRouter } from 'next/router'
 const config: DocsThemeConfig = {
   logo: <ReplayLogotype width={100} />,
   project: {
-    link: 'https://github.com/replayio-public/replay-documentation',
+    link: 'https://github.com/replayio/replay-documentation',
   },
   chat: {
     link: 'https://docs.replay.io/discord',
   },
-  docsRepositoryBase: 'https://github.com/replayio-public/replay-documentation/tree/main',
+  docsRepositoryBase: 'https://github.com/replayio/replay-documentation/tree/main',
   footer: {
     text: '® 2023 Replay, All rights reserved.',
   },
