@@ -1,5 +1,6 @@
 ---
 title: Playwright FAQs
+description: ''
 ---
 
 import Faq from '@components/Faq'

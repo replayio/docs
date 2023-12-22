@@ -1,5 +1,6 @@
 ---
 title: Cypress - Configuration
+description: ''
 ---
 
 import { Callout, Tabs } from 'nextra/components'

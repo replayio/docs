@@ -1,5 +1,6 @@
 ---
 title: Sentry vs Replay
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

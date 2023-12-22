@@ -1,5 +1,6 @@
 ---
 title: Events
+description: ''
 ---
 import { Callout } from 'nextra/components'
 # Events

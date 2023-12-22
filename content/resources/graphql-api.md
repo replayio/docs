@@ -1,5 +1,6 @@
 ---
 title: GraphQL API
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

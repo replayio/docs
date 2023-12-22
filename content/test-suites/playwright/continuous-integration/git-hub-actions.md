@@ -1,5 +1,6 @@
 ---
 title: GitHub Actions
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

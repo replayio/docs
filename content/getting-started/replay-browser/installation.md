@@ -1,5 +1,6 @@
 ---
 title: Installation
+description: ''
 ---
 import { Callout, Cards, Card } from 'nextra/components'
 import Tag from '@components/Tag'

@@ -1,5 +1,6 @@
 ---
 title: Introduction to debugging
+description: ''
 ---
  
 :YouTubePlayer{id="bNWxgc8i-VU"}

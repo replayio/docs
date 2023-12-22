@@ -1,5 +1,6 @@
 ---
 title: Puppeteer
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

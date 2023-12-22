@@ -1,5 +1,6 @@
 ---
 title: Midnite builds time travel workflows for its fast-paced betting platform
+description: ''
 ---
 # Midnite builds time travel workflows for its fast-paced betting platform
 

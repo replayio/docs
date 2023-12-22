@@ -1,5 +1,6 @@
 ---
 title: Debugging Tips
+description: ''
 ---
 
 import { Callout } from 'nextra/components'

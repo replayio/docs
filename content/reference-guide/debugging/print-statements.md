@@ -1,5 +1,6 @@
 ---
 title: Print statements
+description: ''
 ---
 import { Callout } from 'nextra/components'
 # Print statements

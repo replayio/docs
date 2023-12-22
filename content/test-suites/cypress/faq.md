@@ -1,5 +1,6 @@
 ---
 title: Cypress FAQ
+description: ''
 ---
 
 import Faq from '@components/Faq'

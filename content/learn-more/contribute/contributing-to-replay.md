@@ -1,5 +1,6 @@
 ---
 title: Contributing to Replay
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

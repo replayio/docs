@@ -1,5 +1,6 @@
 ---
 title: Okta Integration with Auth0
+description: ''
 ---
 # Okta Integration with Auth0
 

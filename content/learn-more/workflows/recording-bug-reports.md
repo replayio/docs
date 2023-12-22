@@ -1,5 +1,6 @@
 ---
 title: Recording Bug Reports
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

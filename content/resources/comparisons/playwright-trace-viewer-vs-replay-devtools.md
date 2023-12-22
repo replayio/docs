@@ -1,5 +1,6 @@
 ---
 title: Playwright Trace Viewer vs Replay DevTools
+description: ''
 ---
 
 # Playwright Trace Viewer vs Replay DevTools

@@ -1,5 +1,6 @@
 ---
 title: Cypress - Installation
+description: ''
 ---
 import { Callout, Tabs } from 'nextra/components'
 import MaterialSymbolsSettings from '@icons/MaterialSymbolsSettings'

@@ -1,5 +1,6 @@
 ---
 title: Documenting Pull Requests
+description: ''
 ---
 import { Callout } from 'nextra/components'
 # Documenting Pull Requests

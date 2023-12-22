@@ -1,5 +1,6 @@
 ---
 title: Viewing and collaborating
+description: ''
 ---
 import { Callout } from 'nextra/components'
 # Viewing and collaborating

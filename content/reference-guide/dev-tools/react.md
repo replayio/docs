@@ -1,5 +1,6 @@
 ---
 title: React
+description: ''
 ---
 import { Callout } from 'nextra/components'
 # React

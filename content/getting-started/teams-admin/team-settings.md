@@ -1,5 +1,6 @@
 ---
 title: Team Settings
+description: ''
 ---
 import { Callout } from 'nextra/components'
 # Team Settings

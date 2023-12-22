@@ -1,5 +1,6 @@
 ---
 title: Jumping
+description: ''
 ---
 
 # Jumping

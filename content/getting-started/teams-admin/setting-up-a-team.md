@@ -1,5 +1,6 @@
 ---
 title: Setting up a team
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

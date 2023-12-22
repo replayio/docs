@@ -1,5 +1,6 @@
 ---
 title: Recording with Other CI Providers
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

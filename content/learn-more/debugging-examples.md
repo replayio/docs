@@ -1,5 +1,6 @@
 ---
 title: Debugging Examples
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

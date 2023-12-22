@@ -1,5 +1,6 @@
 ---
 title: What is Replay.io?
+description: ''
 ---
 import IconInline from '@components/IconInline.tsx'
 import IconSquare from '@components/IconSquare.tsx'

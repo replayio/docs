@@ -1,5 +1,6 @@
 ---
 title: TableCheck transforms QA/Dev communication to support thousands of restaurants and hotel chains
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

@@ -1,5 +1,6 @@
 ---
 title: Exploring a Codebase
+description: ''
 ---
 # Exploring a Codebase
 

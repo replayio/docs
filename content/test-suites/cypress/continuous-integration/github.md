@@ -1,5 +1,6 @@
 ---
 title: Integrate Replay with Cypress on GitHub
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

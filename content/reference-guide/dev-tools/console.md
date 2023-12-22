@@ -1,5 +1,6 @@
 ---
 title: Console
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

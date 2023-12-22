@@ -1,5 +1,6 @@
 ---
 title: Collaboration
+description: ''
 ---
 # Collaboration
 

@@ -1,5 +1,6 @@
 ---
 title: Playwright Node
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

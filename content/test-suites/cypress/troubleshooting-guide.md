@@ -1,5 +1,6 @@
 ---
 title: Cypress Troubleshooting Guide
+description: ''
 ---
 
 import { Callout } from 'nextra/components'

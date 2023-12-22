@@ -1,5 +1,6 @@
 ---
 title: Pantheon solves performance bottlenecks improving load time by 5x
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

@@ -1,5 +1,6 @@
 ---
 title: Recording your first Replay
+description: ''
 ---
 import { Steps, Callout, Cards, Card } from 'nextra/components'
 import RecButton from '@icons/RecButton'
@@ -26,9 +27,9 @@ There are just few simple steps to create your first recording:
 ### Install Replay Browser on your computer
 Follow the standard installation process on your machine or check out our docs to get a more detailed information.
 
-### Open Replay Browser, navigate to the page you want to record, and click <RecButton className="w-12 mb-0.5 inline-block" /> button 
+### Open Replay Browser, navigate to the page you want to record, and click :IconsRecButton button 
 
-Capture an issue, replicate a bug or simply interact with your app and then click on <StopButton className="w-14 mb-0.5 inline-block" /> button
+Capture an issue, replicate a bug or simply interact with your app and then click on :IconsStopButton button
 
 :VideoPlayer{id="ee5XbXlGSnIWMrjPdrbgwrluron8Iy6vjKGq8EqiAAA"}
 

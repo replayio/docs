@@ -1,5 +1,6 @@
 ---
 title: How Replay Works
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

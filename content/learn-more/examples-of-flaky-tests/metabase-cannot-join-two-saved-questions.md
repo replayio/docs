@@ -1,5 +1,6 @@
 ---
 title: "Metabase: cannot-join-two-saved-questions"
+description: ''
 ---
 # Metabase: cannot-join-two-saved-questions
 

@@ -1,5 +1,6 @@
 ---
 title: Limitations
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

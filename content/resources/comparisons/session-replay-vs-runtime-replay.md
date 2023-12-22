@@ -1,5 +1,6 @@
 ---
 title: Session Replay vs Runtime Replay
+description: ''
 ---
 import { Callout } from 'nextra/components'
 

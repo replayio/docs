@@ -1,5 +1,6 @@
 ---
 title: Focus Mode
+description: ''
 ---
 import { Callout } from 'nextra/components'
 # Focus Mode
