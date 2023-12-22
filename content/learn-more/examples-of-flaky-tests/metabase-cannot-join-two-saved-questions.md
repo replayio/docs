@@ -1,15 +1,13 @@
 ---
 title: "Metabase: cannot-join-two-saved-questions"
 ---
-import LoomVideo from '@components/LoomVideo.tsx'
-
 # Metabase: cannot-join-two-saved-questions
 
 [e2e/test/scenarios/joins/reproductions/18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-field.cy.spec.js](https://app.replay.io/recording/e2etestscenariosjoinsreproductions18512-cannot-join-two-saved-questions-with-same-implicit-explicit-grouped-fieldcyspecjs--4278ec85-6d28-4d07-ab29-45330ac6e016?point=39915782121745558809872149013078687&time=18597&focusWindow=eyJiZWdpbiI6eyJwb2ludCI6IjMxNDc4Mjk5NzE4NjQxMTIzMTk5NjUzNzQ1Njk2NzAyNDY0IiwidGltZSI6MTQ5Njl9LCJlbmQiOnsicG9pbnQiOiI1NTQ5MjY3MjcwMTcyNDQ1NTMxNTMyMTQzMjE5MDIyMjMzNiIsInRpbWUiOjIzODA5fX0%3D)
 
 ### What is the test trying to do?
 
-<LoomVideo src="https://www.loom.com/embed/0f6bf01b07b348b789107cbf603dd5a5" />
+:LoomPlayer{id="0f6bf01b07b348b789107cbf603dd5a5"}
 
 The test creates two questions and then tries to join them with the same implicit/explicit grouped field.
 
@@ -25,7 +23,7 @@ Procedurally, the test performs these steps
 
 When the test fails, the test is not able to select the second question.
 
-<LoomVideo src="https://www.loom.com/embed/466d39f90c28410eb031941a636f7565" />
+:LoomPlayer{id="466d39f90c28410eb031941a636f7565"}
 
 ### What is the observable difference?
 

@@ -2,15 +2,13 @@
 title: React
 ---
 import { Callout } from 'nextra/components'
-import LoomVideo from '@components/LoomVideo.tsx'
-
 # React
 
 Debugging React applications becomes much easier when you can inspect your React components. Brian Vaughn, React DevTools core maintainer, has [joined the Replay team](https://medium.com/replay-io/replay-welcomes-brian-vaughn-react-core-maintainer-4753749ffa36) to replicate the same DevTools experience you get in other browsers.
 
 Want to see React DevTools in action? Check out our [React Calculator Guided Example](https://app.replay.io/recording/react-calculator-guided-example--aaa087dc-ea2a-4ea0-9e9f-f20efd3f49d1)!
 
-<LoomVideo src="https://www.loom.com/embed/da3119fba06b4ed6ad56d95be98672b2" />
+:LoomPlayer{id="da3119fba06b4ed6ad56d95be98672b2"}
 
 <Callout type="info" emoji="💡">
 It’s likely that the replay will start recording before React is initialized on the page. If you see the message `React DevTools not yet initialised at this point in time.` in the DevTools pane, move to another point in the replay after initialization has occurred.

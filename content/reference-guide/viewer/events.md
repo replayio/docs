@@ -2,13 +2,11 @@
 title: Events
 ---
 import { Callout } from 'nextra/components'
-import LoomVideo from '@components/LoomVideo.tsx'
-
 # Events
 
 Because we *actually* replay the browser session as it ran before, Replay collects all of the event handlers that ran while recording. This means that all the mouse events, worker messages, or even uncaught promises are available for inspecting and debugging.
 
-<LoomVideo src="https://www.loom.com/embed/9f16bce647354353814ddd659af0b22f" />
+:LoomPlayer{id="9f16bce647354353814ddd659af0b22f"}
 [View replay](https://app.replay.io/recording/your-first-replay--25801818-9944-46bf-8a80-461de654832c?point=7788445287848786036857819491205596&time=2549.2242647058824&focusRegion=eyJiZWdpbiI6eyJwb2ludCI6IjAiLCJ0aW1lIjowfSwiZW5kIjp7InBvaW50IjoiMTIwMDcxODY0ODU0MzAyMDQ0MDU5ODE2NDc2Njc3MjQyODgiLCJ0aW1lIjo0NjIxfX0%253D)
 
 ## Viewing events

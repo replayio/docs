@@ -3,8 +3,7 @@ title: What is Replay.io?
 ---
 import IconInline from '@components/IconInline.tsx'
 import IconSquare from '@components/IconSquare.tsx'
-import Video from '@components/Video'
-import YouTubeVideo from '@components/YouTubeVideo.tsx'
+
 import { Steps, Callout, Tabs, Tab } from 'nextra/components'
 import DesktopCursor from '@icons/DesktopCursor'
 import Bug from '@icons/Bug'
@@ -12,9 +11,7 @@ import BiBrowserChrome from '@icons/BiBrowserChrome'
 import FluentVideoRecording20Regular from '@icons/FluentVideoRecording20Regular'
 import FluentWindowDevTools24Regular from '@icons/FluentWindowDevTools24Regular'
 import TestTube from '@icons/TestTube'
-import recordReplayOusuj from '/videos/record-replay_ousuj.mp4'
-import replayDashboardPttbf from '/videos/replay-dashboard_pttbf.mp4'
-import shareJplox from '/videos/share_jplox.mp4'
+
 
 # What is Replay.io?
 **Replay.io is a tool that makes debugging easy.** It’s a browser that lets you record your web app and retroactively inspect it using print statements and browser DevTools.
@@ -56,7 +53,7 @@ Typically, you would use Replay to debug, or better understand your app. The jou
 ### Create a recording
 You can create a recording manually:
 
-<Video src={recordReplayOusuj} />
+:VideoPlayer{id="9JDd3kTOaV13yIn02YQ75VgwZTlNpiOaIYqW8icbbHMQ"}
 
 or by integrating Replay.io to your Test Suite:
 <Tabs items={['Playwright', 'Cypress.io', 'WebdriverIO', 'Puppeteer']}>
@@ -87,12 +84,12 @@ node puppeteer-test.js # Read docs on how to set up your configuration
 </Tabs>
 
 ### Replay the recording and debug your app
-<Video src={replayDashboardPttbf} />
+:VideoPlayer{id="9JDd3kTOaV13yIn02YQ75VgwZTlNpiOaIYqW8icbbHMQ"}
 
 ### Fix the bug or get help
 With a better understanding of data flows, state changes and other processes in your app, you can now fix your bug. Or even better, send a recording to your colleague to debug together.
 
-<Video src={shareJplox} />
+:VideoPlayer{id="9JDd3kTOaV13yIn02YQ75VgwZTlNpiOaIYqW8icbbHMQ"}
 
 </Steps>
 
@@ -117,4 +114,4 @@ If you’re a visual learner, you’ll enjoy Filip Hric’s video Time Travellin
 
 For more walk throughs, checkout [Replay in action](/learn-more/replay-in-action).
 
-<YouTubeVideo src="https://www.youtube.com/embed/puHAiZBdjFw?si=fDYAd1kxhhK5Hu34" />
+:YouTubePlayer{id="puHAiZBdjFw?si=fDYAd1kxhhK5Hu34"}

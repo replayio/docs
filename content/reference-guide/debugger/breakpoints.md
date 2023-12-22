@@ -1,9 +1,6 @@
 ---
 title: Breakpoints
 ---
-import Video from '@components/Video'
-import jumpToBreakpointNetuo from '/videos/jump-to-breakpoint_netuo.mp4'
-import navigationshortcutsKjrjk from '/videos/navigationshortcuts_kjrjk.mp4'
 
 # Breakpoints
 
@@ -11,7 +8,7 @@ Breakpoints in Replay work like breakpoints in other debugging tools, but with s
 
 With Replay you can easily navigate between breakpoints, track and update all breakpoints in your code, and view helpful details like the call stack and scopes for each line. You can also step through your code and see the replay video and console change to represent your application at that moment in time.
 
-<Video src={jumpToBreakpointNetuo} />
+:VideoPlayer{id="ezNcAM00k01DBQCcVky72OcIIMvvc1GvSBHWlq2Mr5QGI"}
 
 ### Adding a breakpoint
 
@@ -64,7 +61,7 @@ When hovering on a line in a source:
 
 You will see dots appear on the timeline that mark the executions of that line. The dots will turn red as you navigate between points.
 
-<Video src={navigationshortcutsKjrjk} />
+:VideoPlayer{id="ezNcAM00k01DBQCcVky72OcIIMvvc1GvSBHWlq2Mr5QGI"}
 
 ### Call Stack
 

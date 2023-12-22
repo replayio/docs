@@ -2,15 +2,13 @@
 title: Print statements
 ---
 import { Callout } from 'nextra/components'
-import LoomVideo from '@components/LoomVideo.tsx'
-
 # Print statements
 
 Print statements in Replay are your magic wand for debugging. Replay lets you add print statements (also called console logs) to an existing replay with no need to compile or re-run the code. 
 
 With print statements, you can see how many times a function executed, evaluate parameters, and even add comments to provide insights for your team.
 
-<LoomVideo src="https://www.loom.com/embed/f7161a6e7ed54f71b542f635717d9253?sid=77f93532-58ab-44a7-afa7-81bb32aa40ab" />
+:LoomPlayer{id="f7161a6e7ed54f71b542f635717d9253?sid=77f93532-58ab-44a7-afa7-81bb32aa40ab"}
 
 ## Adding a print statement
 

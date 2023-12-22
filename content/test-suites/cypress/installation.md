@@ -2,10 +2,7 @@
 title: Cypress - Installation
 ---
 import { Callout, Tabs } from 'nextra/components'
-import Video from '@components/Video'
 import MaterialSymbolsSettings from '@icons/MaterialSymbolsSettings'
-import addTeam from '/videos/add_team.mp4'
-import apiKeys from '/videos/api-keys.mp4'
 
 # Installation
 
@@ -92,14 +89,14 @@ First, create a new team in Replay to organize your Cypress replays. You’ll al
 **1. Go to your Replay Dashboard and create a new team**
 
 Alternatively, you can visit [this link](https://app.replay.io/team/new) to instantly create a new team.
-<Video src={addTeam} />
+:VideoPlayer{id="MKY00er012SvPUW01AHa8c8d7W1DPK8KFFIo3RvcLXWUUU"}
 <Callout type="info" emoji="💡">
 Test Suites are currently in closed Beta. If you’d like to start recording your tests, test suites need to be enabled in your team. Join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible.
 </Callout>
 
 **2. Once you’ve created a team, click on the settings <MaterialSymbolsSettings className="w-6 h-6 inline-block" /> icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)**
 
-<Video src={apiKeys} />
+:VideoPlayer{id="MKY00er012SvPUW01AHa8c8d7W1DPK8KFFIo3RvcLXWUUU"}
 
 **3. Save that API in your CI environment as `REPLAY_API_KEY`**
 
@@ -128,8 +125,6 @@ npx cypress run --browser replay-chromium
   │ Specs:          1 found (spec.cy.ts)                                                           │
   │ Searched:       cypress/e2e/**/*.cy.{js,jsx,ts,tsx}                                            │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
 ────────────────────────────────────────────────────────────────────────────────────────────────────
   Running:  spec.cy.ts                                                                      (1 of 1)
   ✓ add todo (1022ms)
@@ -164,8 +159,6 @@ npx cypress run --browser replay-chromium
 ====================================================================================================
 
   (Run Finished)
-
-
        Spec                                              Tests  Passing  Failing  Pending  Skipped  
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
   │ ✔  spec.cy.ts                               00:04        4        4        -        -        - │

@@ -2,13 +2,8 @@
 title: Recording Bug Reports
 ---
 import { Callout } from 'nextra/components'
-import Video from '@components/Video'
-import navigatetowebsiteJafxk from '/videos/navigatetowebsite_jafxk.mp4'
-import pressrecordPukiu from '/videos/pressrecord_pukiu.mp4'
-import recreatebugSeylr from '/videos/recreatebug_seylr.mp4'
-import savereplayUkkjv from '/videos/savereplay_ukkjv.mp4'
-import addcommentZwepn from '/videos/addcomment_zwepn.mp4'
-import shareGtcpd from '/videos/share_gtcpd.mp4'
+
+
 
 # Recording Bug Reports
 
@@ -28,13 +23,13 @@ You can download the browser by going to [replay.io](https://replay.io) and clic
 
 The first time you sign in to Replay, it may prompt you to record our demo game. You can ignore this. Type the URL of the website you experienced the bug in the address bar and hit Enter.
 
-<Video src={navigatetowebsiteJafxk} />
+:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
 
 ### 3. Click record 📹
 
 Click the blue record button to the right of the address bar. The page will refresh and the recording will begin!
 
-<Video src={pressrecordPukiu} />
+:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
 
 ### 4. Recreate the bug 🐛
 
@@ -45,7 +40,7 @@ We recommend keeping the recording as short as possible. Try to only record the 
 
 </Callout>
 
-<Video src={recreatebugSeylr} />
+:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
 
 ### 5. Save the replay ⬆️
 
@@ -53,7 +48,7 @@ After you stop recording, you can add a title describing the bug you found and s
 
 We recommend leaving the replay private and sharing it in step 7.
 
-<Video src={savereplayUkkjv} />
+:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
 
 ### 6. Add comments 💬
 
@@ -64,7 +59,7 @@ When adding a replay to a bug report, comments can be a “trail of breadcrumbs�
 
 </Callout>
 
-<Video src={addcommentZwepn} />
+:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
 
 ### 7. Share the replay 👋
 
@@ -77,7 +72,7 @@ If you’re adding a replay to a GitHub issue or support ticket and don’t have
 
 </Callout>
 
-<Video src={shareGtcpd} />
+:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
 
 ## Need help?
 

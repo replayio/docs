@@ -13,9 +13,8 @@ pnpm i
 
 ## Local development
 ```
-vercel dev
+npm run dev
 ```
-> Note: Using Vercel for local development ensures that some redirects work properly.
 
 ## Issues
 If you find any issues, feel free to open a [new issue](https://github.com/replayio-public/replay-documentation/issues/new) or contact us [via Discord](https://docs.replay.io/discord).

@@ -1,10 +1,7 @@
 ---
 title: Sources
 ---
-import Video from '@components/Video'
 import { Callout } from 'nextra/components'
-import addLineCommentJqkzf from '/videos/add-line-comment_jqkzf.mp4'
-import sourcemapsDbrqq from '/videos/sourcemaps_dbrqq.mp4'
 
 # Sources
 
@@ -49,7 +46,7 @@ By default, the Heat Map does not show hit counts, but if you would like to see 
 
 You can add a comment to any line of code directly from the **Editor.** To get started, click on the number in the gutter of the source and click “Add comment” on the pop-up. The line of code will be referenced directly in the comment so others can easily connect your comment to the source.
 
-<Video src={addLineCommentJqkzf} />
+:VideoPlayer{id="5OGcnQ02wLwQU2Ubp6paqD8hfkRgm02RWfbUkAfJJh100k"}
 
 ## Source Maps
 
@@ -57,7 +54,7 @@ If source maps were available during recording or [uploaded to Replay](/getting-
 
 The toggle in the lower-left side of a source will indicate if it is an Original Source file. Clicking the toggle will automatically open the corresponding bundled file.
 
-<Video src={sourcemapsDbrqq} />
+:VideoPlayer{id="5OGcnQ02wLwQU2Ubp6paqD8hfkRgm02RWfbUkAfJJh100k"}
 
 ### Source Maps Visualization
 

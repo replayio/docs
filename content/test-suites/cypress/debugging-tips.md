@@ -1,12 +1,9 @@
 ---
 title: Debugging Tips
 ---
-import LoomVideo from '@components/LoomVideo.tsx'
-import Video from '@components/Video'
+
 import { Callout } from 'nextra/components'
 import JumpTo from '@icons/JumpTo'
-import evalZjmqz from '/videos/eval_zjmqz.mp4'
-import jumpToCodeQiunq from '/videos/jump-to-code_qiunq.mp4'
 
 # Debugging Tips
 
@@ -23,13 +20,11 @@ A good example [can be found in this video](https://www.youtube.com/watch?v=4wL8
 
 ## Adding console logs in the spec file
 
-<LoomVideo src="https://www.loom.com/embed/64839a8f075a41cabf105d671cc48a07" />
+:LoomPlayer{id="64839a8f075a41cabf105d671cc48a07"}
 
 Typically console logs are not that helpful in a spec file because the spec is run at the beginning of the test to build the test plan.
 
 The exception for the rule is `.should` and other cases where the test code is run in the middle of the test and there are values that can be inspected.
-
-
 ## Evaluating in Cypress callbacks
 
 Most Cypress steps run at test start to build the test schedule. An exception to this rule is Cypress commands and should assertions.
@@ -39,13 +34,13 @@ In these cases you can jump to a line of code and evaluate expressions in the Co
 1. Hold down command and click the blue jump button
 2. Evaluate an expression in the Console’s terminal
 
-<Video src={evalZjmqz} />
+:VideoPlayer{id="SWxOLuzsfxGjtt5um01zfOtxrsnxor6hMCamKSglK0001g"}
 
 ## Jump to application events
 
 With Replay you can jump from a test `cy.click(){:js}` command into your React component’s `onClick{:js}` hander. In the example below, we jump from the test’s click command into the Todo app’s `handleEdit{:js}` callback.
 
-<Video src={jumpToCodeQiunq} />
+:VideoPlayer{id="SWxOLuzsfxGjtt5um01zfOtxrsnxor6hMCamKSglK0001g"}
 
 ## Test burn-in
 Rerunning your test repeatedly can be a helpful ways to catch a test flake. This strategy can sometimes be easier if you want to quickly record a flake locally.

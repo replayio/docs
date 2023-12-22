@@ -2,11 +2,6 @@
 title: Console
 ---
 import { Callout } from 'nextra/components'
-import Video from '@components/Video'
-import LoomVideo from '@components/LoomVideo.tsx'
-import clearConsoleHoytr from '/videos/clear-console_hoytr.mov'
-import inspectingObjectsKmbdu from '/videos/inspecting-objects_kmbdu.mp4'
-import viewingStackTracesUpcgy from '/videos/viewing-stack-traces_upcgy.mp4'
 
 # Console
 
@@ -39,19 +34,19 @@ Notice the expression evaluates at that moment in time in the console, before th
 
 Click the trashcan icon in the console to clear any evaluations and results.
 
-<Video src={clearConsoleHoytr} />
+:VideoPlayer{id="esf00aKodRhUh17r2KGXpUKzvTjVzCmUuEbSMG6GhZ2w"}
 
 ## Autocomplete
 
 When typing in the terminal, you will see autocomplete suggestions. Autocomplete is one of those features that help you get into a state of flow. 
 
-<LoomVideo src="https://www.loom.com/embed/82ffc61536e0418c9b47c9218fba9f39" />
+:LoomPlayer{id="82ffc61536e0418c9b47c9218fba9f39"}
 
 ## Inspecting objects
 
 Clicking on an object lets you see an expanded view of its properties. Unlike traditional consoles which will show the object’s property values as they are now, when you expand an object in Replay you will see the values as they were when the message was logged to the Console!
 
-<Video src={inspectingObjectsKmbdu} />
+:VideoPlayer{id="esf00aKodRhUh17r2KGXpUKzvTjVzCmUuEbSMG6GhZ2w"}
 [Original replay](https://app.replay.io/recording/the-s-series-snowboard-hydrogen--6649f1d0-1526-42ce-835d-852cd62d4b5c)
 
 [Original replay](https://app.replay.io/recording/the-s-series-snowboard-hydrogen--6649f1d0-1526-42ce-835d-852cd62d4b5c)
@@ -60,9 +55,7 @@ Clicking on an object lets you see an expanded view of its properties. Unlike tr
 
 Replay Errors can be expanded to view the stack trace and see where the error originated. Clicking on a stack trace function or source location will navigate the Source Editor to the line of code.
 
-<Video src={viewingStackTracesUpcgy} />
-
-
+:VideoPlayer{id="esf00aKodRhUh17r2KGXpUKzvTjVzCmUuEbSMG6GhZ2w"}
 ## Console message types
 
 The console settings panel is useful for filtering console exceptions, errors, warnings, and logs when they are not helpful. It's also possible to filter console logs by adding a query in the filter bar.

@@ -1,16 +1,13 @@
 ---
 title: Cypress Test Replay vs Replay DevTools (8/29)
 ---
-import Video from '@components/Video'
-import untitledFtdvx from '/videos/Untitled_ftdvx.mp4'
-
 # Cypress Test Replay vs Replay DevTools (8/29)
 
 Cypress Test Replay is built on top of [RRWeb](https://github.com/rrweb-io/rrweb), a popular Session Replay tool which records the DOM, Console logs, and Network Requests. Replay DevTools is built on top of Replay’s Chrome based browser which is able to record and deterministically replay web applications.
 
 This means that when you’re debugging in Replay DevTools you’re able to add retroactive print statements and inspect your applications with Browser DevTools as if the test is running locally on your computer.
 
-<Video src={untitledFtdvx} />
+:VideoPlayer{id="MCfRs02sV401sxaIM8245Oiya8bs1DSQeLoMAy01fAglbc"}
 
 Retroactive print statements
 

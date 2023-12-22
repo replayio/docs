@@ -2,9 +2,6 @@
 title: Team Settings
 ---
 import { Callout } from 'nextra/components'
-import Video from '@components/Video'
-import userrolechangeAttxe from '/videos/userrolechange_attxe.mp4'
-
 # Team Settings
 
 Access team settings by clicking the gear icon next to the team name in the sidebar. You can also create a new team from the sidebar.
@@ -38,7 +35,7 @@ Replay users are either Users or Developers. Our plans charge by Developer seat.
 
 User roles can be updated any time in the Team Settings in your Replay Library. **Addition or removal of Developer seats will be automatically applied to your plan and your billing will updated on a prorated basis.**
 
-<Video src={userrolechangeAttxe} />
+:VideoPlayer{id="DxSuPF2obK9r1O62lhwY00iUsMBVnpQlWZmFvZlv2bIM"}
 
 ## Organization Settings
 

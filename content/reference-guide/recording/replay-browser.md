@@ -2,8 +2,6 @@
 title: Replay Browser
 ---
 import { Callout } from 'nextra/components'
-import LoomVideo from '@components/LoomVideo.tsx'
-
 # Replay Browser
 
 The Replay Browser is software you [download and install](/getting-started/replay-browser/installation) on your computer to record replays. To learn more about recording a replay with the browser, [check out our guide here](/getting-started/recording-your-first-replay).
@@ -25,7 +23,7 @@ Need help? Check out our [Troubleshooting](/resources/get-help/troubleshooting) 
 
 The [Replay Launcher Chrome Extension](https://chrome.google.com/webstore/detail/replay-launcher/djjkbhpjjnhbebpcdkjiggjloabpkkeo?hl=en) lets you quickly open the Replay Browser from Chrome. Click the extension to open your current URL in the Replay Browser and immediately start recording.
 
-<LoomVideo src="https://www.loom.com/embed/e805f4195bae4dcd9231107120f1172b" />
+:LoomPlayer{id="e805f4195bae4dcd9231107120f1172b"}
 
 <Callout type="warning" emoji="⚠️">
 This extension is experimental and only supported on MacOS. Please let us know at [replay.io/discord](https://replay.io/discord) if you have any feedback or issues.

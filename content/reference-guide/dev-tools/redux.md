@@ -1,9 +1,6 @@
 ---
 title: Redux
 ---
-import Video from '@components/Video'
-import reduxDevtoolsUhzul from '/videos/redux_devtools_uhzul.mp4'
-
 # Redux
 
 ## Overview
@@ -12,7 +9,7 @@ Redux DevTools in Replay is similar to the functionality of Redux DevTools in ot
 
 Once enabled, the Replay Redux DevTools integration will show dispatched actions **up to the point in time you are paused in the replay.**
 
-<Video src={reduxDevtoolsUhzul} />
+:VideoPlayer{id="C3xunRQofLXjK0200jVW5MN2PfNhAntGA0101N010201wjHauc"}
 
 ### Jump to Code
 

@@ -2,15 +2,13 @@
 title: Viewing and collaborating
 ---
 import { Callout } from 'nextra/components'
-import LoomVideo from '@components/LoomVideo.tsx'
-
 # Viewing and collaborating
 
 ## Viewing your application
 
 It’s important to get a sense of what was happening in the app at the time of the issue. With the [Viewer](/reference-guide/viewer), you can see the browser capture and user events in a timeline view.
 
-<LoomVideo src="https://www.loom.com/embed/64b0f0fa5cf94269af5440dc9a54093b" />
+:LoomPlayer{id="64b0f0fa5cf94269af5440dc9a54093b"}
 
 ## Collaborating with comments
 

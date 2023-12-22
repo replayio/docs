@@ -2,8 +2,6 @@
 title: Focus Mode
 ---
 import { Callout } from 'nextra/components'
-import LoomVideo from '@components/LoomVideo.tsx'
-
 # Focus Mode
 
 ![Focus Mode](/images/focus-mode_zjbjq.png)
@@ -22,7 +20,7 @@ Click the Edit Focus icon to the right of the timeline to start **Focus Mode.**
 You can still navigate while in Edit Focus mode to verify what the video looks like while at a particular pause point, and the viewer will update as you adjust the focus region.
 </Callout>
 
-<LoomVideo src="https://www.loom.com/embed/c9784dfddc6f460db6b8748e54d8c6dd" />
+:LoomPlayer{id="c9784dfddc6f460db6b8748e54d8c6dd"}
 
 - Once you're satisfied with your changes, click Save.
 - You can click “Discard Changes” or anywhere outside the modal or timeline to abandon updating the focus region.

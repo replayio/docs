@@ -1,9 +1,6 @@
 ---
 title: Search
 ---
-import Video from '@components/Video'
-import searchSourceTextKtjtb from '/videos/search-source-text_ktjtb.mp4'
-import searchNodeModulesUqxlm from '/videos/search-node-modules_uqxlm.mov'
 
 # Search
 
@@ -29,13 +26,13 @@ Search for text two ways:
 - Click the Search icon in the left sidebar to open the **Search panel.**
 - Use the `cmd+shift+f` shortcut.
 
-<Video src={searchSourceTextKtjtb} />
+:VideoPlayer{id="lwrPu622DLmcR00gQxRTuHKtxtS01e7zkwNCqwfpPXSaI"}
 
 ### Search node modules
 
 When searching for text, you can toggle whether to include results found in `node_modules` by checking the box under the search input.
 
-<Video src={searchNodeModulesUqxlm} />
+:VideoPlayer{id="lwrPu622DLmcR00gQxRTuHKtxtS01e7zkwNCqwfpPXSaI"}
 
 Including/excluding node modules from search results.
 

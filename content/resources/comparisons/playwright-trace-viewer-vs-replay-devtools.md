@@ -1,11 +1,6 @@
 ---
 title: Playwright Trace Viewer vs Replay DevTools
 ---
-import Video from '@components/Video'
-import addingAPrintStatementHecfb from '/videos/Adding_a_print_statement_hecfb.mp4'
-import evaluatingInTheConsoleLczxk from '/videos/evaluating_in_the_console_lczxk.mp4'
-import reactDevToolsZdolz from '/videos/React_DevTools_zdolz.mp4'
-import reduxHzwnf from '/videos/Redux_hzwnf.mp4'
 
 # Playwright Trace Viewer vs Replay DevTools
 
@@ -31,7 +26,7 @@ The biggest benefit of time travel debugging is the ability to find a line of co
 
 Flaky tests can either come from an assumption in your testing logic or application logic. In both cases, it can be helpful to work backwards from the user visible issue to the root cause with console logs that help you narrow down the timing issue. For more info on print statements, check our our [docs](/reference-guide/debugging/print-statements).
 
-<Video src={addingAPrintStatementHecfb} />
+:VideoPlayer{id="fhrK01qTnK9Y02901bFHz2q6W5gnLWf02XWDR3Jxr9I25oU"}
 
 ### Inspect **Console logs**
 
@@ -47,7 +42,7 @@ In contrast, the Console logs in Replay DevTools work the same way that they do 
 
 And because Replay is a browser, pausing in Replay DevTools is similar to pausing in Chrome DevTools. When you’re paused, you’re able to evaluate expressions in the Console terminal like `response.result`.
 
-<Video src={evaluatingInTheConsoleLczxk} />
+:VideoPlayer{id="fhrK01qTnK9Y02901bFHz2q6W5gnLWf02XWDR3Jxr9I25oU"}
 
 ### React + Redux DevTools
 
@@ -57,11 +52,11 @@ Typically, React DevTools can help you find the React component with the user vi
 
 In the example, below we’re using React DevTools to inspect Replay’s Console components and view the source code. If we wanted to see what the props were when the components rendered, we could add a `console.log(...)` in the code.
 
-<Video src={reactDevToolsZdolz} />
+:VideoPlayer{id="fhrK01qTnK9Y02901bFHz2q6W5gnLWf02XWDR3Jxr9I25oU"}
 
 In the example, below we’re using Redux DevTools to inspect the `pointsReceived` and `paused` actions. Unlike standard Redux DevTools, we’re able to go beyond simply looking at the action payload and application state at that point in time and jump directly into the redux dispatch. From there we can add console logs in the thunk and better understand the sequence of events that lead up to the dispatch.
 
-<Video src={reduxHzwnf} />
+:VideoPlayer{id="fhrK01qTnK9Y02901bFHz2q6W5gnLWf02XWDR3Jxr9I25oU"}
 
 ## Conclusion
 

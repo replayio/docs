@@ -2,18 +2,15 @@
 title: Test Suite integration
 ---
 import { Callout, Tabs } from 'nextra/components'
-import YouTubeVideo from '@components/YouTubeVideo.tsx'
-import Video from '@components/Video'
-import ReplayLogomark from '@icons/ReplayLogomark.tsx' 
-import debuggingCypressCducm from '/videos/debugging-cypress_cducm.mp4'
 
+import ReplayLogomark from '@icons/ReplayLogomark.tsx' 
 # Test Suite integration
 
 ## Overview
 
 [Replay.io](https://Replay.io) lets you record your browser tests in CI and debug them later with Browser DevTools. If you’ve ever struggled to understand why a test fails intermittently in CI, but passes when you run it locally, Replay can help. 
 
-<YouTubeVideo src="https://www.youtube.com/embed/nWh-uJBl3Oo" />
+:YouTubePlayer{id="nWh-uJBl3Oo"}
 
 <Callout emoji={<ReplayLogomark className="pt-1 w-6 h-6" />} type="info">
 **Join the waitlist**
@@ -105,7 +102,7 @@ Because it can also be nice to see your test steps when you’re debugging your 
 - [WebdriverIO](/test-suites/webdriver-io)
 - [Jest](/test-suites/jest) (alpha)
 
-<Video src={debuggingCypressCducm} />
+:VideoPlayer{id="02IBP00ZR8X5yJ5sppekN02UKa02KmLM0278asmH6FKA00c6E"}
 
 <Callout type="info" emoji="👉">
 Ready to get started? Join the [waitlist](https://replayio.typeform.com/to/jTudlerL) and we will get back to you as soon as possible.

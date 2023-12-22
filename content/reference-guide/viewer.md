@@ -1,10 +1,7 @@
 ---
 title: Viewer
 ---
-import LoomVideo from '@components/LoomVideo.tsx'
-import Video from '@components/Video'
-import addcommentOpevy from '/videos/addcomment_opevy.mp4'
-import commentattachAyapn from '/videos/commentattach_ayapn.mp4'
+
 
 # Viewer
 
@@ -17,7 +14,7 @@ Additional Resources
 - [Collaboration](/reference-guide/viewer/collaboration)
 - [Events](/reference-guide/viewer/events)
 
-<LoomVideo src="https://www.loom.com/embed/64b0f0fa5cf94269af5440dc9a54093b" />
+:LoomPlayer{id="64b0f0fa5cf94269af5440dc9a54093b"}
 
 ## Playing back the video
 
@@ -27,7 +24,7 @@ Apart from that, this functions exactly like any other video player you've used 
 
 ## Commenting on the video
 
-<Video src={addcommentOpevy} />
+:VideoPlayer{id="rejFnBaWkkRCGhSbMLsCj3w00mQWwuYX00RDDX5eHYg6Y"}
 
 Maybe you created a replay to record a bug so you can pass it onto someone else. Before you do, it would be nice if you annotated it — this way the next person knows what they're looking at. 
 
@@ -41,7 +38,7 @@ To add comments on the video:
 
 You can also reply to comments and edit or delete your own comments. You can also attach a Loom video to any comment by clicking the paper clip icon.
 
-<Video src={commentattachAyapn} />
+:VideoPlayer{id="rejFnBaWkkRCGhSbMLsCj3w00mQWwuYX00RDDX5eHYg6Y"}
 
 ## Navigating by events
 

@@ -2,9 +2,6 @@
 title: Elements
 ---
 import { Callout } from 'nextra/components'
-import Video from '@components/Video'
-import climatescapeSaf from '/videos/climatescape-saf-25-january-2022_mcwhz.mp4'
-
 # Elements
 
 The **Elements panel** is your magnifying glass into the HTML and CSS styling for the elements of your application. Access the panel by clicking the **Elements tab** in the Console.
@@ -20,7 +17,7 @@ When the Elements panel is open, you can select an element in the viewer to see 
 
 The HTML for the selected element will automatically highlight in the Elements panel. You can also click on any HTML element directly in the panel, or search the HTML.
 
-<Video src={climatescapeSaf} />
+:VideoPlayer{id="KU3X5HDqTX01L7RAWtymCoZaV4youm5gd21PoRG2CDSk"}
 
 ## Viewing an element’s rules
 

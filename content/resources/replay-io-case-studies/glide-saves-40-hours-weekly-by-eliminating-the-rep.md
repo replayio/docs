@@ -2,9 +2,6 @@
 title: Glide saves 40 hours weekly by eliminating the reproducibility problem
 ---
 import { Callout } from 'nextra/components'
-import Video from '@components/Video'
-import glideJgka4 from '/videos/glide_jgka4.mp4'
-
 # Glide saves 40 hours weekly by eliminating the reproducibility problem
 
 <Callout type="info" emoji="🐌">
@@ -56,7 +53,7 @@ Using a two-pronged approach, Glide started using Replay first in their developm
 > “After we started using Replay in our own development process, we figured, can we actually give this to our customers? We experience the same problems around debugging between customers > Support > QA > Engineering as we do between Engineers in development.” - Jason Smith, VP of Engineering
 > 
 
-<Video src={glideJgka4} />
+:VideoPlayer{id="c3jf2xk1mANAaMH4X6QquBjEXEjvHtfkGbwdJB01dzbM"}
 
 Here is a video of the Glide landing page being recorded in the Replay browser
 

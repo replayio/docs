@@ -2,10 +2,7 @@
 title: Playwright
 ---
 import { Callout, Tabs } from 'nextra/components'
-import Video from '@components/Video'
 import MaterialSymbolsSettings from '@icons/MaterialSymbolsSettings'
-import addTeam from '/videos/playwright-create-team.mp4'
-import apiKeys from '/videos/playwright-api-key.mp4'
 
 # Playwright
 
@@ -45,14 +42,14 @@ First, create a new team in Replay to organize your Playwright replays. You’ll
 **1. Go to your Replay Dashboard and create a new team**
 
 Alternatively, you can visit [this link](https://app.replay.io/team/new) to instantly create a new team.
-<Video src={addTeam} />
+:VideoPlayer{id="oB7LA8FC8WUB4Q52QKH00FH02UFpTeqCwYZB01tpAftZvQ"}
 <Callout type="info" emoji="💡">
 Test Suites are currently in closed Beta. If you’d like to start recording your tests, test suites need to be enabled in your team. Join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible.
 </Callout>
 
 **2. Once you’ve created a team, click on the settings <MaterialSymbolsSettings className="w-6 h-6 inline-block" /> icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)**
 
-<Video src={apiKeys} />
+:VideoPlayer{id="oB7LA8FC8WUB4Q52QKH00FH02UFpTeqCwYZB01tpAftZvQ"}
 
 **3. Save the API key in your environment as `REPLAY_API_KEY`**. You can run your tests locally or using your CI provider.
 

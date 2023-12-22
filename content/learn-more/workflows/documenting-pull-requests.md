@@ -2,9 +2,6 @@
 title: Documenting Pull Requests
 ---
 import { Callout } from 'nextra/components'
-import Video from '@components/Video'
-import addcommentFngsm from '/videos/addcomment_fngsm.mp4'
-
 # Documenting Pull Requests
 
 Using Replay to document changes with pull requests makes it easier to review and accepts PRs faster. Record the updated application flow and use comments to highlight changed to the UI, application behavior, and even lines of code and network requests.
@@ -39,7 +36,7 @@ Comments in Replay are linked to a point in time and one of the following:
 
 Use comments to identify visual changes in the UI, diffs in lines of code, network requests and response bodies, or to add context for decision-making on why a change was made.
 
-<Video src={addcommentFngsm} />
+:VideoPlayer{id="IAmZvEnb1l1WdefV2KcsR5EMTcLoJPkXN1gXKR8Uw7I"}
 
 The pull request reviewer can click on any comment and be taken directly to the referenced point in time and UI location, line of code, or network request. No need to write file names or reproduction steps.
 

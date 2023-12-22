@@ -1,20 +1,8 @@
 ---
 title: Introduction to debugging
 ---
-import Video from '@components/Video'
-import YouTubeVideo from '@components/YouTubeVideo.tsx'
-import jumpToCodeOftgs from '/videos/jump-to-code_oftgs.mp4'
-import jumpToConsoleLogAvhvi from '/videos/jump-to-console-log_avhvi.mp4'
-import addPrintStatementLmhxw from '/videos/add-print-statement_lmhxw.mp4'
-import jumpToNetworkRequestTteea from '/videos/jump-to-network-request_tteea.mp4'
-import jumpToBreakpointNetuo from '/videos/jump-to-breakpoint_netuo.mp4'
-import inspectingElementsVolne from '/videos/inspecting-elements_volne.mp4'
-import callbackAndScopesHardt from '/videos/callback-and-scopes_hardt.mp4'
-import evaluatingConsoleDyaze from '/videos/evaluating-console_dyaze.mp4'
-import inspectReactComponentZoscp from '/videos/inspect-react-component_zoscp.mp4'
  
-# Introduction to debugging
-<YouTubeVideo src="https://www.youtube.com/embed/bNWxgc8i-VU" />
+:YouTubePlayer{id="bNWxgc8i-VU"}
 
 ## Viewing your application
 
@@ -36,14 +24,13 @@ When you switch to DevTools, you’ll see everything you’d find in Chrome Devt
 ### Jumping to an event handler
 
 It can be helpful to jump directly to the line of code that causes an event. In the events pane, click the blue button to have that line of code open in the source viewer. 
-
-<Video src={jumpToCodeOftgs} />
+:VideoPlayer{id="iIS5i8WJOadr5GR4F2301N9Jr02QNqTBmX00llt72wQxt00"}
 
 ### Jumping to a console log
 
 You can jump between console messages generated from your application, or ones you’ve added with Replay’s [print statements](/reference-guide/debugging/print-statements) feature.
 
-<Video src={jumpToConsoleLogAvhvi} />
+:VideoPlayer{id="qAIM5W8gHNjv8wrb9Y02uWK3WzYm3RQNi26l00m5jABkg"}
 
 ### Evaluating print statements
 
@@ -53,7 +40,7 @@ Let’s say you have a click handler that is supposed to update the value of a v
 
 With Replay print statements, you can see how many times a function executed, evaluate parameters, and even add comments to provide insights for your team.
 
-<Video src={addPrintStatementLmhxw} />
+:VideoPlayer{id="Pfaw95HiSfU5SdBdpGP1Qs1XEwm6AnDbuqA5IrxbEMg"}
 
 ### Jumping to a network request
 
@@ -61,13 +48,13 @@ The Replay [Network Monitor](/reference-guide/debugging/print-statements) is hel
 
 If requests fail or time out or if data coming from your back end isn’t accurate, the Network Monitor can help identify problematic requests for debugging. All network requests appear as a timeline so you can navigate back and forth between calls.
 
-<Video src={jumpToNetworkRequestTteea} />
+:VideoPlayer{id="OSuzOiU57cEBlfcg4SX3FARkbgfG027auWip2tfVO00R4"}
 
 ### Jumping to a breakpoint
 
 [Breakpoints](/reference-guide/debugger/breakpoints) are the remote control for your code — pause, rewind, fast-forward, and step through your code line by line to evaluate it at various points in time. This can be particularly helpful when you have granular timing or async code issues causing a bug.
 
-<Video src={jumpToBreakpointNetuo} />
+:VideoPlayer{id="ezNcAM00k01DBQCcVky72OcIIMvvc1GvSBHWlq2Mr5QGI"}
 
 ### Jumping to a Redux action
 
@@ -81,7 +68,7 @@ Once you’ve narrowed in on the points in time to debug, Replay provides all th
 
 The **[Elements panel](/reference-guide/dev-tools/elements)** is the blueprint of the HTML elements and CSS styles for your app. If you have issues with how your app is being displayed, this is a great place to start. View the structure of your HTML elements and see what styles have been applied. You can also see which elements have event listeners.
 
-<Video src={inspectingElementsVolne} />
+:VideoPlayer{id="01sJJx5LxM9T7CHygjI5axHLjCNhY3s5UQXrpfX02Kwok"}
 
 ### Inspecting React components
 
@@ -94,7 +81,7 @@ React DevTools helps you answer questions like
 - Are there competing sources of truth for state management?
 - Is my component tree rendered as expected?
 
-<Video src={inspectReactComponentZoscp} />
+:VideoPlayer{id="H6CBMgp700oUVLAaNivMj6XV8vydb5BXooPv02in17kmk"}
 
 ### Inspecting function and code line execution
 
@@ -113,12 +100,14 @@ When paused on a specific execution of a line of code, you can view the [call st
 
 The [Scopes](/reference-guide/debugger/breakpoints#scopes) pane will show the values of properties and variables within a given scope when paused on an execution of a line of code.
 
-<Video src={callbackAndScopesHardt} />
+:VideoPlayer{id="nHNAi118ODIPi8gTeANNvXiddPfn01EtwCw00Vr5CqoCc"}
 
 ### Evaluating in the Console
 
 The Console lets you view and navigate between print statements and events that occur in your application. You can also use the console to evaluate expressions in order to see the value of variables at different points in time. 
-<Video src={evaluatingConsoleDyaze} />
+
+:VideoPlayer{id="Hh229KlOHoyyMOhPCRDODtDJqUf01lOsaxxGrBzuXpKY"}
+
 Check out our [Console](/reference-guide/dev-tools/console) documentation for more.
 
 ## What’s next

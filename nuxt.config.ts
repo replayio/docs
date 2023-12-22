@@ -23,6 +23,11 @@ export default defineNuxtConfig({
   ui: {
     icons: ['heroicons', 'simple-icons']
   },
+  vue: {  
+    compilerOptions: {
+      isCustomElement: (tag) => ['mux-player', 'you-tube-player'].includes(tag),
+    },
+  },
   // Fonts
   fontMetrics: {
     fonts: ['Inter']

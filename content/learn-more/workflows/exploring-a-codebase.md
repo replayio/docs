@@ -1,8 +1,6 @@
 ---
 title: Exploring a Codebase
 ---
-import LoomVideo from '@components/LoomVideo.tsx'
-
 # Exploring a Codebase
 
 Use Replay to explore applications, whether you’re getting up to speed with a new project, understanding changes, just curious how something works.
@@ -13,7 +11,7 @@ A video of digging into the React front end of the open source [hot.opensauced.p
 
 - [**Link to replay**](https://app.replay.io/recording/hot-open-sauced-v1260--75c2b9fa-473d-4701-8247-e06f8620f316)
 
-<LoomVideo src="https://www.loom.com/embed/801a76944eef4318803e768999d33a58" />
+:LoomPlayer{id="801a76944eef4318803e768999d33a58"}
 
 ## Reviewing Changes
 
@@ -21,4 +19,4 @@ A video example of using a replay to review changes made to a codebase.
 
 - **[Link to replay](https://app.replay.io/recording/got-bugs-repo-search-update--17e69812-4474-4e5e-ac4e-95d51dc5c102)**
 
-<LoomVideo src="https://www.loom.com/embed/9ba2e4caa6c1478e88e843bd7e0528f6" />
+:LoomPlayer{id="9ba2e4caa6c1478e88e843bd7e0528f6"}
