@@ -2,7 +2,7 @@
 title: Sources
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Sources
 
@@ -61,9 +61,9 @@ The toggle in the lower-left side of a source will indicate if it is an Original
 
 The Source Map Visualization is useful for seeing how original and generated sources map to each other. The visualization can help trace issues in minified code back to the original code. The visualization can also help identify issues with breakpoints or minified variables in DevTools.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Read more about how we developed this feature in [the blog post here](https://medium.com/replay-io/changelog-source-map-visualization-33099ec719bb).
-</Callout>
+::
 
 If a source map is available, click the Source Map icon next to the Original Source toggle to open the Visualization. The Original Source is shown on the left and the bundled code on the right. Hover over values to see how they map between the source and bundled code.
 

@@ -2,13 +2,13 @@
 title: Jest
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Jest
 
-<Callout type="error" emoji="❗">
+::callout{icon="i-heroicons-light-bulb"}
  This implementation is experimental. It is not configured for use with Replay Test Teams.
-</Callout>
+::
 
 You can record jest using `replay-node`. To do so:
 

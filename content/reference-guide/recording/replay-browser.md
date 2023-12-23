@@ -2,16 +2,16 @@
 title: Replay Browser
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # Replay Browser
 
 The Replay Browser is software you [download and install](/getting-started/replay-browser/installation) on your computer to record replays. To learn more about recording a replay with the browser, [check out our guide here](/getting-started/recording-your-first-replay).
 
 **The Replay Browser is not required to view existing replays.**
 
-<Callout type="info" emoji="🚧">
+::callout{icon="i-heroicons-light-bulb"}
 Need help? Check out our [Troubleshooting](/resources/get-help/troubleshooting) guide.
-</Callout>
+::
 
 ![Replay browser](/images/replay-browser_thxwj.png)
 
@@ -26,9 +26,9 @@ The [Replay Launcher Chrome Extension](https://chrome.google.com/webstore/detail
 
 :LoomPlayer{id="e805f4195bae4dcd9231107120f1172b"}
 
-<Callout type="warning" emoji="⚠️">
+::callout{icon="i-heroicons-light-bulb"}
 This extension is experimental and only supported on MacOS. Please let us know at [replay.io/discord](https://replay.io/discord) if you have any feedback or issues.
-</Callout>
+::
 
 ## Getting Started
 

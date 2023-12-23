@@ -2,7 +2,7 @@
 title: WebdriverIO
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # WebdriverIO
 
@@ -32,9 +32,9 @@ describe('My Login application', () => {
 });
 ```
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 You can try this out on your own, by forking [this example repository](https://github.com/filiphric/replay-webdriverio-example).
-</Callout>
+::
 
 Because Replay is simply a browser, we can pass it into `wdio.config.ts` file as we would with any other browser. Example configuration will look like this:
 
@@ -54,9 +54,9 @@ exports.config = {
 };
 ```
 
-<Callout type="info" emoji="ℹ️">
+::callout{icon="i-heroicons-light-bulb"}
 You need to set up `automationProtocol: 'devtools'` option in your config instead of default `webdriver` protocol for now. This may change in future updates.
-</Callout>
+::
 
 ## Uploading your replays
 After setting up everything, you will run your tests as you normally would. Replay will record all the activity inside the browser, which you can then upload and view in [Test Suite dashboard](/test-suites/features/test-suite-dashboard).

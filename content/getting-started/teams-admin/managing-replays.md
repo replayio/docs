@@ -2,7 +2,7 @@
 title: Managing replays
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Managing replays
 
@@ -13,10 +13,9 @@ There are two ways to transfer a replay between teams.
 1. The actions dropdown in the Library
 2. The privacy dropdown in the replay Info Panel
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 💡 The replay’s author will still have access after you move the recording to a new team.
-
-</Callout>
+::
 
 **Info Panel**
 

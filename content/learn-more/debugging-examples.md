@@ -2,7 +2,7 @@
 title: Debugging Examples
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Debugging Examples
 
@@ -10,10 +10,9 @@ import { Callout } from 'nextra/components'
 
 Debugging gets easier the more bugs you see. These examples feature real-world issues, as well as opportunities to hone your own debugging skills. **Share your replays with us and we’ll add it to this page!**
 
-<Callout type="info" emoji="📹">
+::callout{icon="i-heroicons-light-bulb"}
 If you’re brand new to Replay, [this 3-minute video](https://www.loom.com/share/138e61738163453295b362dd6b7c62c2) gives a quick overview, then check out the [Getting Started Guide](/getting-started/recording-your-first-replay).
-
-</Callout>
+::
 
 - [Debug an element resize issue in Excalidraw](https://medium.com/replay-io/contributing-to-oss-with-reproducible-bug-reports-7fd4b22130b1)
 - [Debug a React useEffect issue in Replay.](https://medium.com/replay-io/debugging-a-react-useeffect-bug-991e8fa0648)

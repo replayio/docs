@@ -2,7 +2,7 @@
 title: Sentry vs Replay
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Sentry vs Replay
 
@@ -52,10 +52,9 @@ Replay is primarily used to capture errors, bugs, and any other issues in your s
 
 Ultimately, if you are more interested **error monitoring**, Sentry is a great service. If you are interested in **debugging those errors**, reach for Replay.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 To start recording with Replay, [download the Replay Browser](https://replay.io) and check out our [Getting Started guide](/getting-started/recording-your-first-replay).
-
-</Callout>
+::
 
 Funny metaphor: Sentry is a line in a webmd, it’s more of a symptom. Logrocket is like a fitness tracker, you can observe the steps a person did, you can’t see what’s happening inside the body but you can see some symptoms along the way.
 

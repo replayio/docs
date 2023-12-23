@@ -2,15 +2,15 @@
 title: GraphQL API
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # GraphQL API
 
 The GraphQL API is useful for fetching workspace and user metadata including recordings, users that belong to a team, and comments added to a recording.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 The GraphQL API is not used for programmatically debugging a recording. If you’d like to learn more about the Debugging Protocol, checkout the docs [here](https://replay.io/protocol).
-</Callout>
+::
 
 ```jsx
 try {

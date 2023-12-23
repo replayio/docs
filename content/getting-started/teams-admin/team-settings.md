@@ -2,7 +2,7 @@
 title: Team Settings
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # Team Settings
 
 Access team settings by clicking the gear icon next to the team name in the sidebar. You can also create a new team from the sidebar.
@@ -27,10 +27,9 @@ Replay users are either Users or Developers. Our plans charge by Developer seat.
 - **Users** can record replays and have some DevTools functionality, but they cannot edit a print statement or evaluate in the console
 - **Admins** have access to Billing information. Either role type can also be made an Admin, and you can have as many Admins on a team as you want
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 👉 While you are only charged for Developer seats, both Developers and Users contribute to the [user limits for our Team and Organization plans](https://www.replay.io/pricing) and recordings per month.
-
-</Callout>
+::
 
 ## Updating user roles
 

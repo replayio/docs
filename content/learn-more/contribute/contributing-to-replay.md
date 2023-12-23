@@ -2,7 +2,7 @@
 title: Contributing to Replay
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Contributing to Replay
 
@@ -25,7 +25,7 @@ Being part of a community means following some basic rules and etiquette:
 
 ## Coding + PR Guidelines
 
-<Callout type="info" emoji="😲">
+::callout{icon="i-heroicons-light-bulb"}
 Help, my pull request got rejected!
 
 Contributing to Open Source can be challenging. Mistakes –even small ones– can prevent a change from being accepted. We ask that you follow the rules and guidelines below to make the process as smooth as possible, and avoid unwanted rejections.
@@ -33,8 +33,7 @@ Contributing to Open Source can be challenging. Mistakes –even small ones– c
 WARNING: Even if you follow all the rules, commits might still get rejected. That does not say anything about who you are as a person, nor does it mean that your PRs are not welcome. We are all human beings here, and we are all imperfect. However, sometimes we just don’t have the capacity or bandwidth to work with you through the many subtle changes and susbequent problems that your PR can cause.
 
 If you feel that your PR has been rejected unfairly, you can (carefully) ask on Discord: If you are an experienced developer, ask in #development. If you are a beginner, please ask in #gsoc, where we currently handle a large influx of inexperienced contributors. We try to respond to all requests, but we sometimes get a bit overwhelmed. Please be patient, tag only sporadically, and never DM people without consent. Thank you!
-
-</Callout>
+::
 
 1. Before posting a PR, please run all `lint` , `typecheck` and `test` steps. For `devtools` those are:
     1. Run TypeScript (`npm run typecheck`) and Lint (`npm run lint`) to check for errors and formatting issues.

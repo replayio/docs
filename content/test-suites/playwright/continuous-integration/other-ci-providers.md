@@ -2,13 +2,13 @@
 title: Recording with Other CI Providers
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Recording with Other CI Providers
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Have questions? We’re here to help! Contact us in [Discord](https://replay.io/discord) or at support@replay.io.
-</Callout>
+::
 
 To record tests and upload replays in other CI providers, you’ll need to complete the following steps in your workflow.
 
@@ -67,6 +67,6 @@ The Replay CLI provides other commands and options, such as filtering which repl
 
 [Full instructions at the `@replayio/replay` repo.](https://github.com/replayio/replay-cli/tree/main/packages/replay)
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Once you’ve recorded, view test results and replays using the [Test Suite Dashboard](/test-suites/features/test-suite-dashboard) and [Pull Request Comments](/test-suites/features/pull-request-comments).
-</Callout>
+::

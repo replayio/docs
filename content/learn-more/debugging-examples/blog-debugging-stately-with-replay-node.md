@@ -2,7 +2,7 @@
 title: "Blog: Debugging Stately with Replay Node"
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # Blog: Debugging Stately with Replay Node
 
 In the example below, Mateusz Burzyński from Stately AI walks through the debugging process for [this bug](https://github.com/statelyai/xstate/issues/3096). To investigate, he uses `replay-node`, which records a Node runtime without the browser to debug after the fact.
@@ -23,7 +23,6 @@ Mateusz traces the value of `machine` across multiple functions to identify why 
 
 :LoomPlayer{id="d35925a296c44d1283276e6d3f9a3bbf"}
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Share your debugging success story with us and we’ll add it to our examples page! [Contact us in Discord](https://replay.io/discord) or at support@replay.io.
-
-</Callout>
+::

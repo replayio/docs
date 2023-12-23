@@ -2,16 +2,16 @@
 title: Installation
 description: ''
 ---
-import { Callout, Cards, Card } from 'nextra/components'
+import { Cards, Card } from 'nextra/components'
 import Tag from '@components/Tag'
 
 # Installing the Replay browser
 
 To start recording your own replays, you first need to install the **Replay Browser**. There are several ways to install it.
 
-<Callout type="warning" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Installing the **Replay Browser** is only required to record replays. If you want to view an existing replay, open it in any browser and skip straight to debugging.
-</Callout>
+::
 
 ## CLI (Replay Chrome) <Tag>New</Tag>
 Replay Chrome is currently built for automated recordings with tools like Playwright and Cypress so it does not have a record button yet. If you would like to use Chrome to record a replay, you can use the `replay` CLI.
@@ -20,9 +20,9 @@ Replay Chrome is currently built for automated recordings with tools like Playwr
 npm i @replayio/replay -g
 ```
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 We recommend installing the Replay CLI globally. Thiw will add `replay` to your path so you can skip `npx` and just call `replay` directly
-</Callout>
+::
 
 To open Replay type following command into your terminal
 

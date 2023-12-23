@@ -2,7 +2,7 @@
 title: DevTools
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # DevTools
 
@@ -15,15 +15,15 @@ Replay’s DevTools has six primary panels for inspecting the replay:
 - [Search](/reference-guide/debugger/search) Search files, functions, and text
 - [Pause](/reference-guide/debugger/breakpoints) Inspect the call stack and scope
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Want to know how to best use these features for debugging? Check out [Debugging](/getting-started/introduction-to-debugging).
-</Callout>
+::
 
 ![Untitled](/images/Untitled_cqaci.png)
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 You can also view [Events](/reference-guide/viewer/events) from the Replay Info panel in DevTools or Viewer mode.
-</Callout>
+::
 
 ### Layouts
 
@@ -74,6 +74,6 @@ Examples:
 
  
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 The Home button in the top left of the Sources panel navigates to the Command Palette.
-</Callout>
+::

@@ -2,7 +2,7 @@
 title: Replay DevTools
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Replay DevTools
 
@@ -16,9 +16,9 @@ Replay provides a recording of everything that happened in your browser during a
 - In Cypress, view the test code execution and the command log to confirm the test ran as expected
 - And more!
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Ready to get started? Contact us [on Discord](https://replay.io/discord) or at support@replay.io to get set up.
-</Callout>
+::
 
 ![Screen Shot 2022-12-05 at 5.15.34 PM.png](/images/Screen_Shot_2022-12-05_at_5.15.34_PM_dwqjk.png)
 

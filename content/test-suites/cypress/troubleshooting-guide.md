@@ -3,13 +3,13 @@ title: Cypress Troubleshooting Guide
 description: ''
 ---
 
-import { Callout } from 'nextra/components'
+
 
 # Cypress Troubleshooting Guide
 
-<Callout type="default" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 If your run into troubles and cannot find help here, feel free to hop into our [Discord server](https://replay.io/discord), where we’ll be happy to help you out.
-</Callout>
+::
 
 ### Cypress won’t start
 

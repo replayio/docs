@@ -2,7 +2,7 @@
 title: Console
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Console
 
@@ -24,11 +24,9 @@ In general, expressions will be evaluated in the global context. When you are pa
 
 Type in the console by the >> icon to evaluate an expression.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 In the example below, we are paused on a specific marker for an instance of line 6 within `drawMatrix` . Because we are paused, the expression `shift` evaluates to 275.
-
-Notice the expression evaluates at that moment in time in the console, before the next function execution occurs.
-</Callout>
+::
 
 ![Evaluating expressions](/images/evaluating-expressions_bmaeq.png)
 [Replay link](https://app.replay.io/recording/75ff9d7c-9e46-4e8b-99b9-34fd86c6c85d?point=4218741197559736527307753725624504&time=1699.2&hasFrames=true)
@@ -77,9 +75,9 @@ In general, filtering is useful when you want to narrow the results don to just 
 
 ## Object Getters and Setters
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Here’s [an example replay](https://app.replay.io/recording/getters-and-setters--ac0800f9-325f-4fe2-a252-287ecce4d5b4) for playing with Getters and Setters that is used in the screenshots below. Check out [this video on Twitch](https://www.twitch.tv/videos/1423016337) of the example.
-</Callout>
+::
 
 You can view object getters and setters three ways:
 

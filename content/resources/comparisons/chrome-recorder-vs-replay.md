@@ -2,7 +2,7 @@
 title: Chrome Recorder vs Replay
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Chrome Recorder vs Replay
 
@@ -48,6 +48,6 @@ The use cases would be user flow validation for product, measuring how performan
 
 Ultimately, if you are more interested in the **user flow**, you can use Chrome Recorder. If you are more interested in the **application functionality** for validation or debugging, reach for Replay.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 To start recording with Replay, [download the Replay Browser](https://replay.io) and check out our [Getting Started guide](/getting-started/recording-your-first-replay).
-</Callout>
+::

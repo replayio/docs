@@ -2,7 +2,7 @@
 title: OSS Projects
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # OSS Projects
 
@@ -28,10 +28,9 @@ Replay lets you upload source maps so recordings made from production applicatio
 
 Test failures can derail a pull request, whether it’s from a maintainer or a contributor. Use Replay to automatically generate replays of failed tests so you can quickly debug. It even posts the replays back to the pull request so you have all the context needed when reviewing PRs.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Replay for Cypress and Playwright are in closed beta. We’d love to help your OSS project get set up, contact us on [Discord](https://replay.io/discord) or at support@replay.io!
-
-</Callout>
+::
 
 ### Resources
 

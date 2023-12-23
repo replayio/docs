@@ -2,7 +2,7 @@
 title: User Settings
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # User Settings
 
@@ -18,10 +18,9 @@ From this menu, you can:
 
 ![Screen Shot 2022-01-25 at 11.32.37 AM.png](/images/Screen_Shot_2022-01-25_at_11.32.37_AM_lcnca.png)
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Settings can also be updated from within a replay when logged in by clicking the three dot menu in the upper right-hand corner.
-
-</Callout>
+::
 
 ## Preferences
 

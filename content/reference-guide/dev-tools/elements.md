@@ -2,7 +2,7 @@
 title: Elements
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # Elements
 
 The **Elements panel** is your magnifying glass into the HTML and CSS styling for the elements of your application. Access the panel by clicking the **Elements tab** in the Console.
@@ -28,9 +28,9 @@ When you select an element in the markup pane, you can see its applied CSS rules
 - **CSS** **Rules** shows the rules that matched the element, sorted by precedence, and the location of the rule definition.
 - **Properties** shows the properties that style the element. Properties that are defined in the rule but not applied have a strikeout.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 In the example below, the list item element has a rule of `.border-b` defined `inline:3` with a property of `border-bottom-width: 1px;` .
-</Callout>
+::
 
 ![Untitled](/images/Untitled_nqavc.png)
 

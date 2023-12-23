@@ -2,13 +2,13 @@
 title: Playwright Node
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Playwright Node
 
-<Callout type="info" emoji="❗">
+::callout{icon="i-heroicons-light-bulb"}
 This implementation is experimental and does not provide the same features as using Playwright Test. It is not configured for use with Replay Test Teams.
-</Callout>
+::
 
 ## Recording with Playwright as a Node script
 
@@ -16,17 +16,17 @@ You can write tests as a function that uses `playwright.[browser].launch()`. Thi
 
 In this configuration, you’ll use the `getExecutablePath()` function from `@replayio/playwright` to ensure the Replay-enabled browser is used.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
  Passing the `RECORD_ALL_CONTENT: 1`  is only required for Replay Firefox.
-</Callout>
+::
 
 ## Metadata
 
 You can add metadata to your playwright recordings using either the `RECORD_REPLAY_METADATA` or `RECORD_REPLAY_METADATA_FILE` environment variable. If both are set, `RECORD_REPLAY_METADATA_FILE` takes precedence.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Currently, this metadata is only available locally except for `title`
-</Callout>
+::
 
 - `RECORD_REPLAY_METADATA_FILE` - The path to a file containing JSON-formatted metadata
 - `RECORD_REPLAY_METADATA` - JSON-formatted metadata string

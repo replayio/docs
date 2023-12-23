@@ -2,7 +2,7 @@
 title: Our approach for source maps
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Our approach for source maps
 
@@ -10,10 +10,9 @@ import { Callout } from 'nextra/components'
 
 Source maps are a file that build tools like [webpack](https://webpack.js.org/) create to map the "original" code you see in your editor to the "generated" code you see in browser DevTools. 
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Evan Wallace's [Source Map Visualizer](https://evanw.github.io/source-map-visualization/) is a great tool for seeing how source maps work. And if you're curious about how maps are parsed and visualized, we recorded a [replay](https://app.replay.io/recording/dfa08836-dbcf-41c4-bd77-b3800d4f7e8b) of the visualizer 😉
-
-</Callout>
+::
 
 ![Screen Shot 2021-10-05 at 8.57.12 PM.png](/images/Screen_Shot_2021-10-05_at_8.57.12_PM_kcjyf.png)
 

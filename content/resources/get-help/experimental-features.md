@@ -2,16 +2,15 @@
 title: Experimental Features
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Experimental Features
 
 At Replay we are always working on new features for our users! You can enable features still in the experimental phase in your user settings.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Please remember these features are experimental and may still have bugs or unexpected behavior! If you run into any issues or have feedback, please let us know on [Discord](https://replay.io/discord) or at [support@replay.io](mailto:support@replay.io).
-
-</Callout>
+::
 
 ## Enabling experimental features
 

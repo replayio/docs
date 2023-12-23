@@ -2,16 +2,15 @@
 title: Troubleshooting
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Troubleshooting
 
 If you run into an issue while recording with the **[Replay Browser](/reference-guide/recording/replay-browser)**, these tips can help identify the issue. If you have any questions or get stuck, don’t hesitate to [contact us](/resources/get-help/contact-community).
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 The **Replay Browser** is not required to view replays. Replay URLs can be opened in any browser of your choice.
-
-</Callout>
+::
 
 ## Updating the Replay Browser
 
@@ -34,10 +33,9 @@ To check if Replay is up-to-date or to get the Build ID for a bug report, go to 
 
 When the browser fails while recording, the exception will likely be logged to the Browser Console. 
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 As a little bit of context, we built Replay's recorder is written in C++, but most of the logic for starting, stopping, and saving is in JavaScript. This means that most exceptions will bubble up to the console where we can pretty easily identify it and fix it.
-
-</Callout>
+::
 
 The Browser Console is available at *Tools > Web Developer > Browser Console*.
 
@@ -90,10 +88,9 @@ This message appears if we fail to notarize a version of Replay. Please [let us 
 
 Visit `about:crashes` while in the Replay Browser to see if a browser crash has already been reported to our servers. Any crashes in the “Unsubmitted Crash Reports” section should be re-submitted using the “Submit All” button.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Browser crashes are also written to a text file which can be viewed locally.
-
-</Callout>
+::
 
 ![/images/Screen_Shot_2021-06-02_at_10.04.04_AM_wdihc.png](/images/Screen_Shot_2021-06-02_at_10.04.04_AM_wdihc.png)
 

@@ -2,16 +2,15 @@
 title: Setting up a team
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Setting up a team
 
 Replay teams are a shared space to organize replays and collaborate across your team.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 🙌 All new teams come with a 30-day trial of [paid features](https://replay.io/pricing). We also provide free plans for OSS projects, contact us in [Discord](https://replay.io/discord) or support@replay.io for more details.
-
-</Callout>
+::
 
 ## Setting up a team
 
@@ -22,10 +21,9 @@ To create a team:
 3. Give the team a name.
 4. Invite users by email address or invite link.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 💡 Sharing the invite link is the easiest way to invite everyone on your team. New members added by invite link are Developers by default.
-
-</Callout>
+::
 
 ![Screen Shot 2021-09-23 at 3.10.11 PM.png](/images/Screen_Shot_2021-09-23_at_3.10.11_PM_atbsr.png)
 
@@ -41,7 +39,6 @@ Teams can create API Keys for uploading [source maps](/getting-started/teams-adm
 
 ![Screen Shot 2021-09-23 at 3.20.11 PM.png](/images/Screen_Shot_2021-09-23_at_3.20.11_PM_nyhuz.png)
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 💡 For more information on Teams, Users, and Pricing, check out [Billing](/getting-started/teams-admin/billing) and [Team Settings](/getting-started/teams-admin/team-settings).
-
-</Callout>
+::

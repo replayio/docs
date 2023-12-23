@@ -2,7 +2,7 @@
 title: Selenium
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Selenium
 
@@ -67,9 +67,9 @@ const chromiumPath = getPlaywrightBrowserPath("chromium");
 
 In this example, path is defined as a `chromiumPath{:js}` variable. The implementation is up to you, but it is a good practice to move your configuration to a global scope.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 You can try this out on your own, by forking [this example repository](https://github.com/filiphric/replay-selenium-example).
-</Callout>
+::
 
 ## Uploading your replays
 Simply passing the Replay Browser instead of the default one will automatically create your recordings. You can list your recordings by typing `replay ls` into your terminal. 
@@ -82,9 +82,9 @@ bd4804ea-2f74-4c88-a3bd-cf1a2e87b307  onDisk  Replay of localhost:3000  20 minut
 58264a70-5bed-4df4-b765-fb001e51f8aa  onDisk  Replay of localhost:3000  20 minutes ago
 24913f24-f700-46cf-81a0-352f7bd71b17  onDisk  Replay of localhost:3000  4 hours ago
 ```
-<Callout type="info" emoji="ℹ️">
+::callout{icon="i-heroicons-light-bulb"}
 Find out more about [Replay CLI here](/reference-guide/recording/replay-cli).
-</Callout>
+::
 
 After setting up everything, you will run your tests as you normally would. Replay will record all the activity inside the browser, which you can then upload and view in [Test Suite Dashboard](/test-suites/features/test-suite-dashboard).
 

@@ -2,7 +2,7 @@
 title: Print statements
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # Print statements
 
 Print statements in Replay are your magic wand for debugging. Replay lets you add print statements (also called console logs) to an existing replay with no need to compile or re-run the code. 
@@ -18,11 +18,9 @@ You can add a print statement to any line of executable code in a source.
 1. Hover over a line of code to see how many times the line was hit. 
 2. A blue plus button will appear if a print statement can be added. Click the button to add a print statement.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 The screenshot below is from [a public replay](https://app.replay.io/recording/your-first-replay--67e972a8-5491-45dc-a2af-1c6f36b2ff9f?point=5841333965852052322821291775099144&time=2364) of [replay.io/demo](https://replay.io/demo). To follow along, open `demo-script.js` file in the **Editor.**
-
-To log all of the calls to the `randomizeIllustration` function, click on the blue plus button on line 68.
-</Callout>
+::
 
 ![Adding a print statement](/images/adding-print-statement_bctkz.png)
 
@@ -30,9 +28,9 @@ Clicking the blue plus button opens the **Print Statement panel** with the initi
 
 The console will also update to show the new console logs. Initially, the print statement will output the line number of the code.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 In our example, we can see `randomizeIllustration` was called four times. This is indicated by the four markers on the timeline, as well as the console output.
-</Callout>
+::
 
 ![Print statement output](/images/print-statement-output_ziymw.png)
 
@@ -46,15 +44,15 @@ To edit:
 2. You can edit both the text and values output to the console. Output multiple values by separating them with a comma.
 3. Click the blue Save button to update.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 In our example, let’s edit it so that we can see the second parameter, `number`. Now the value of `number` is output to the console for each time the function was called.
-</Callout>
+::
 
 ![Editing print statement](/images/editing-print-statement_qaxdt.png)
 
-<Callout type="info" emoji="🧠">
+::callout{icon="i-heroicons-light-bulb"}
 When logging values of variables to the console, remember that the print statement is for the *beginning* of the line. If the variable is defined on a given line, you would need to log on the *next* line, after the code declaring the variable has been executed.
-</Callout>
+::
 
 ## Adding a comment from a print statement
 
@@ -66,7 +64,7 @@ Click the blue comment button when the print statement panel is open to create a
 
 Replay lets you navigate between executions of a line of code so you can see the state of your application at each instance. You can rewind or fast-forward to a console log from the Print Statement panel or the console.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Let’s say we want to see what the application looked like when `randomizeIllustration` was called the second time.
 
 We could do that by either:
@@ -74,7 +72,7 @@ We could do that by either:
 - Clicking the rewind arrow twice in the print statement timeline.
 - Clicking the second marker in the print statement timeline.
 - Clicking the blue rewind button on the second console log.
-</Callout>
+::
 
 ![Navigating to console log](/images/navigating-to-console-log_ptcub.png)
 
@@ -102,9 +100,9 @@ To add:
 3. Add a condition in the `if` input 
 4. Click the save button
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 In our example, let’s edit it so that we only log numbers greater than 1. Now the logs in the console with a number equal to 1 are hidden.
-</Callout>
+::
 
 ![Adding print statement condition](/images/adding-print-statement-condition_hyqbs.png)
 

@@ -2,7 +2,7 @@
 title: Test Suite integration
 description: ''
 ---
-import { Callout, Tabs } from 'nextra/components'
+import { Tabs } from 'nextra/components'
 
 import ReplayLogomark from '@icons/ReplayLogomark.tsx' 
 # Test Suite integration
@@ -13,11 +13,9 @@ import ReplayLogomark from '@icons/ReplayLogomark.tsx'
 
 :YouTubePlayer{id="nWh-uJBl3Oo"}
 
-<Callout emoji={<ReplayLogomark className="pt-1 w-6 h-6" />} type="info">
+::callout{icon="i-heroicons-light-bulb"}
 **Join the waitlist**
-
-Replay for Test Suites was released in June as a beta so that we can help each team setup Replay and fix their flakes. If you’d like to start recording your tests, join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible. Also feel free joining our [**Discord**](https://replay.io/discord) #testing channel or emailing us at hey@replay.io.
-</Callout>
+::
 
 ## Replay DevTools
 
@@ -64,9 +62,9 @@ The **Test Suite Dashboard** also serves as a launching off point. If you want t
 
 ![Test Suites dashboard](/images/test-suite-dashboard.png)
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Ready to get started? Join the [waitlist](https://replayio.typeform.com/to/jTudlerL) and we will get back to you as soon as possible.
-</Callout>
+::
 
 ## Pull Request Comments
 
@@ -105,9 +103,9 @@ Because it can also be nice to see your test steps when you’re debugging your 
 
 :VideoPlayer{id="02IBP00ZR8X5yJ5sppekN02UKa02KmLM0278asmH6FKA00c6E"}
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Ready to get started? Join the [waitlist](https://replayio.typeform.com/to/jTudlerL) and we will get back to you as soon as possible.
-</Callout>
+::
 
 ## CI Environments
 
@@ -134,8 +132,6 @@ If you have any questions that are not answered in the FAQ, feel free to email u
 - [Are only failed test replays uploaded?](/test-suites/test-suites-faq)
 - [How do I update the Replay Browser?](/test-suites/test-suites-faq)
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Ready to get started? Join the [waitlist](https://replayio.typeform.com/to/jTudlerL) and we will get back to you as soon as possible.
-
-Email us at support@replay.io or join our [Discord](https://replay.io/discord) #testing channel.
-</Callout>
+::

@@ -2,7 +2,7 @@
 title: Billing
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Billing
 
@@ -36,10 +36,9 @@ Our plan details are at [replay.io/pricing](https://replay.io/pricing).
 
 If more than 10 people from your team use Replay, then an Organization or Enterprise plan is the recommended plan. See [Premium Features](/getting-started/teams-admin/organization-features) for more details.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 🏉 Org + Enterprise plans include added features like SSO integration, more configurability of user settings, libraries, and higher limits for recordings and API keys.
-
-</Callout>
+::
 
 **What is the maximum number of users on Team Plan?**
 

@@ -2,7 +2,7 @@
 title: GitHub Actions
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Recording with GitHub Actions
 
@@ -105,6 +105,6 @@ jobs:
           api-key: ${{ secrets.REPLAY_API_KEY }}
           filter: ${{ 'function($v) { $v.metadata.test.result = "failed" }' }}
 ```
-<Callout type="warning" emoji="⚠️">
+::callout{icon="i-heroicons-light-bulb"}
 While uploading just failed test is good for saving resources, our recommendation is to upload both failed and passed tests so that you can compare them. This can be really useful for debugging purposes.
-</Callout>
+::

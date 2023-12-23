@@ -2,12 +2,12 @@
 title: Glide saves 40 hours weekly by eliminating the reproducibility problem
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # Glide saves 40 hours weekly by eliminating the reproducibility problem
 
-<Callout type="info" emoji="🐌">
+::callout{icon="i-heroicons-light-bulb"}
 “[Before Replay] We spent somewhere between 1-2 hours per day per dev in this reproducibility purgatory. The toll this was taking on our development velocity and our ability to respond and resolve issues was huge. We thought there must be a better way.” - Mark Probst, CTO
-</Callout>
+::
 
 ## What is Glide?
 
@@ -22,10 +22,9 @@ Glide’s stack is fairly standard - React using Typescript on top of Firebase a
 
 ## The journey to build performant, functional apps — fast
 
-<Callout type="info" emoji="🐛">
+::callout{icon="i-heroicons-light-bulb"}
 “When we found a bug in development and had to reproduce the bug over and over to make sure it works, it slowed us down A TON and was very painful. All of that goes away with Replay.” - Mark Probst, CTO
-
-</Callout>
+::
 
 You need a complex platform to create a simple tool for no-code developers. With a complex app comes a high potential for bugs and a high bar for getting releases right.
 
@@ -35,10 +34,9 @@ In development, Glide often ran into challenges that really weighed down develop
 
 ## Discovering Replay
 
-<Callout type="info" emoji="🚨">
+::callout{icon="i-heroicons-light-bulb"}
 “Without Replay, we’d have to go on a quest, do a screen share with console logs open and it’d be a long journey with urgent Zoom calls that have to happen immediately or else the bug vanishes. “ - Mark Probst, CTO
-
-</Callout>
+::
 
 Glide’s VP of Engineering, Jason Smith discovered Replay and thought it could be a game changer so introduced to Mark and the rest of the team. You’d only have to record the bug once and then can reproduce it forever. Plus, the time travel functionality lets you isolate specific function calls.
 
@@ -73,10 +71,9 @@ Jason shared more on what it looks like in practice, “There’s a huge perform
 
 ## Understanding Replay ROI
 
-<Callout type="info" emoji="💸">
+::callout{icon="i-heroicons-light-bulb"}
 “Just looking at our front-end team, on a good week, we estimate we save about 1 day/week/engineer, which is massive. For our core team of 5, that’s 40 hours/week saved, conservatively just in developer hours.” - Jason Smith, VP of Engineering
-
-</Callout>
+::
 
 After a few months, Glide saw a few use cases emerge as part of their workflow:
 
@@ -86,10 +83,9 @@ After a few months, Glide saw a few use cases emerge as part of their workflow:
 
 ## Next chapter with Replay
 
-<Callout type="info" emoji="🛠">
+::callout{icon="i-heroicons-light-bulb"}
 “As a CTO, one thing I’m excited about is Replay working on the backend. I’m spending more time there these days, and I’d love to not have to debug like a caveman. Any other time, I use Replay.” - Mark Probst, CTO
-
-</Callout>
+::
 
 Replay is working on Node support and adding integrations for Cypress, Playwright and Puppeteer so Replay can be used on the backend and in e2e testing workflows. We are also ramping up our M1 Support to improve Replay’s performance and get you debugging faster.
 

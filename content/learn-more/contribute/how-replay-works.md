@@ -2,14 +2,13 @@
 title: How Replay Works
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # How Replay Works
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 This document is somewhat outdated. While we are working on this, please refer to [Replay for New Contributors](/learn-more/contribute/replay-for-new-contributors) instead.
-
-</Callout>
+::
 
 [Replay.io](https://Replay.io) is the first time-travel debugger for runtimes like the browser and Node.
 

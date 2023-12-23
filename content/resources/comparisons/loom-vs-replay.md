@@ -2,7 +2,7 @@
 title: Loom vs Replay
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Loom vs Replay
 
@@ -36,7 +36,6 @@ Chrome Recorder, as the name implies, is specific to the Chrome browser and reco
 
 Ultimately, if you are more interested in **sending a video message and basic functionality of screen recording**, you can use Loom or other screen recorders. If you are more interested in the **application functionality** for validation or debugging, reach for Replay.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 To start recording with Replay, [download the Replay Browser](https://replay.io) and check out our [Getting Started guide](/getting-started/recording-your-first-replay).
-
-</Callout>
+::

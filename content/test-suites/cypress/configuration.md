@@ -3,7 +3,7 @@ title: Cypress - Configuration
 description: ''
 ---
 
-import { Callout, Tabs } from 'nextra/components'
+import { Tabs } from 'nextra/components'
 
 # Configuration
 There are different modes and strategies that help you create your recordings more effectively. By default, every test is recorded, but you can choose to create your recordings only when problems appear, saving costs and time.
@@ -122,9 +122,9 @@ When level is set to `full`, the test suite is run *many* times with each run di
   ```
   </Tabs.Tab>
 </Tabs>
-<Callout type="error" emoji="⚠️">
+::callout{icon="i-heroicons-light-bulb"}
 This mode is mostly used for diagnosing problems with integration of Replay into your test run. Due to the number of runs (currently 38), we don’t recommend using the `--level full{:bash}` flag for standard test runs. Be sure to limit using this mode to a specific spec file that is failing by usiing `--spec [path to spec]{:bash}`.
-</Callout>
+::
 
 ## Recording strategies
 

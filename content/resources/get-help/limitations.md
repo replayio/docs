@@ -2,7 +2,7 @@
 title: Limitations
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Limitations
 
@@ -38,10 +38,9 @@ There are some known limitations with Replay when debugging applications that ha
 
 ![focusmode.png](/images/focusmode_cqskw.png)
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 We recommend enabling [Focus Mode](/reference-guide/viewer) to narrow down the number of hits.
-
-</Callout>
+::
 
 **Breakpoint panel** behavior changes:
 

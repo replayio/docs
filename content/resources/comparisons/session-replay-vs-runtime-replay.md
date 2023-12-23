@@ -2,7 +2,7 @@
 title: Session Replay vs Runtime Replay
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Session Replay vs Runtime Replay
 
@@ -18,10 +18,9 @@ Time-Travel Debugging is the ability to replay the runtime exactly as it ran bef
 
 The browser thinks it is running in Japan on that same Windows laptop, but in reality it is just reading from the recording. 
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 The ability to replay the runtime is where [Replay.io](https://Replay.io) got its name!
-
-</Callout>
+::
 
 Time-Travel Debugging is not a new idea, it is just incredibly difficult to pull off in practice. Computers execute billions of operations a second. If the wrong operation runs out of order, the recording will diverge and fail. For a more in-depth explanation, feel free to read [this series on How Replay Works](https://medium.com/replay-io/how-replay-works-5c9c29580c58). 
 
@@ -64,10 +63,9 @@ One-off session replays are useful when you want more context than a video can p
 
 ![Untitled](/images/Untitled%202_bmqbr.png)
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Because [Replay.io](https://Replay.io) is a Time-Travel Debugger that also has video and comment functionality, you can use it for one-off recording sessions as well.
-
-</Callout>
+::
 
 ## Conclusion
 

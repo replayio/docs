@@ -2,7 +2,7 @@
 title: Recording your first Replay
 description: ''
 ---
-import { Steps, Callout, Cards, Card } from 'nextra/components'
+import { Steps, Cards, Card } from 'nextra/components'
 import RecButton from '@icons/RecButton'
 import StopButton from '@icons/StopButton'
 import IcBaselineApple from '@icons/IcBaselineApple'
@@ -41,6 +41,6 @@ Capture an issue, replicate a bug or simply interact with your app and then clic
 
 </Steps>
 
-<Callout type="info">
+::callout{icon="i-heroicons-light-bulb"}
 Did you know you can create Replays using your existing [Test Automation Suite](/test-suites)? You can pass Replay Browser as the browser of choice to Cypress, Playwright or Webdriver.io.
-</Callout>
+::

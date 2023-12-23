@@ -2,7 +2,7 @@
 title: Pull Request Comments
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Pull Request Comments
 
@@ -16,6 +16,6 @@ The comment also includes links to replays of the tests and the test run in the 
 
 For this to work, simply install our [Github App](https://github.com/apps/replay-io)! See the bot in action on our own Replay `devtools` [pull requests here](https://github.com/replayio/devtools/pulls).
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Ready to get started? Contact us [on Discord](https://replay.io/discord) or at support@replay.io to get set up.
-</Callout>
+::

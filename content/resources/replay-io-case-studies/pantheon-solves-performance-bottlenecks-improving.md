@@ -2,14 +2,13 @@
 title: Pantheon solves performance bottlenecks improving load time by 5x
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Pantheon solves performance bottlenecks improving load time by 5x
 
-<Callout type="info" emoji="🎆">
+::callout{icon="i-heroicons-light-bulb"}
 “If a picture is worth a thousand words, a replay is worth a thousand pictures” - Zack Rosen, Pantheon CEO
-
-</Callout>
+::
 
 ## Summary
 
@@ -40,10 +39,9 @@ import { Callout } from 'nextra/components'
 
 ## Big Mission, Big Challenges
 
-<Callout type="info" emoji="💭">
+::callout{icon="i-heroicons-light-bulb"}
 “We are building software for difficult processes, so our software is inherently complex. And we are doing all this new stuff with our platform on top of old software and legacy systems. We are building the plane while it’s in flight.” - Shane Duff, Front End Lead
-
-</Callout>
+::
 
 [Pantheon](https://pantheon.io/why-pantheon?_bt=467792205240&_bk=pantheon&_bm=b&_bn=g&_bg=52414346635&utm_term=pantheon&utm_campaign=2021_01_pr_dec_mktg_search_brand&utm_source=Google&utm_medium=CPC&gclid=Cj0KCQjwkruVBhCHARIsACVIiOwWWXO492xRa2zVpf3drZqEVnTu4MzxFafhCw-kAX1cXRDgJZqi7ZkaAo_fEALw_wcB)’s mission is to make the web a first-class citizen that delivers results. Pantheon is building the world’s best WebOps (Website Operations) Platform— one that empowers marketing and development teams to take control of their websites, while giving them the agility to win in the dynamic world of digital marketing.
 
@@ -63,10 +61,9 @@ With all that came slower performance for their core platform, which was a major
 
 ## Debugging Performance at Scale
 
-<Callout type="info" emoji="🎆">
+::callout{icon="i-heroicons-light-bulb"}
 “If a picture is worth a thousand words, a replay is worth a thousand pictures” - Zack Rosen, Pantheon CEO
-
-</Callout>
+::
 
 At the same time, Pantheon was rapidly growing their team from 60 to 200 engineers. As Pantheon was preparing the new dashboard for scale, the team struggled to pin down performance issues and the executive team was frustrated. In particular, Pantheon CEO Zack Rosen was feeling the pain when using their product himself.
 
@@ -79,10 +76,9 @@ Before Replay, Pantheon was seeing 10-12 second loading time. After using Replay
 
 ## A Clear Path Forward
 
-<Callout type="info" emoji="🏁">
+::callout{icon="i-heroicons-light-bulb"}
 “It all started because we had those replays. [We knew] where exactly in the code the problems were showing up and had a path to solving them. Now, from PM, Engineering, Support to our CEO, we use Replay to track down bugs with so much more ease and save so much time diagnosing what went wrong.” - Shane Duff, Front End Lead
-
-</Callout>
+::
 
 Before Replay, Pantheon struggled with identifying main causes for performance issues and how to address them.
 
@@ -96,10 +92,9 @@ By getting up to speed quickly and spending less time debugging, engineers could
 
 ## Faster Development, Faster Apps
 
-<Callout type="info" emoji="❤️">
+::callout{icon="i-heroicons-light-bulb"}
 “The biggest value for us was in identifying and reshaping our roadmap for the quarter mid-sprint. It made our CEO very happy. Without Replay, I don’t know how we would’ve been able to take our new dashboard down from 10-12 seconds to 2 seconds.” - Shane Duff, Front End Lead
-
-</Callout>
+::
 
 With Replay, Pantheon now has a tool to diagnose issues happening in the browser. Pantheon’s leadership team can prioritize work as the team scales against specific problems, and has more confidence in understanding and addressing performance issues. Not only that but it has helped Pantheon prioritize tech stack decisions like server-side rendering and caching strategy.
 
@@ -117,10 +112,9 @@ Another major value driver for Pantheon is accelerating  Engineering onboarding
 
 ## What’s Next?
 
-<Callout type="info" emoji="📡">
+::callout{icon="i-heroicons-light-bulb"}
 “We’d love to make it way easier for customers to share Replays. Most of our top clients would be willing to install Replay and use it to share issues. Our Customers have invested a lot in our platform and want to help us make it better.” - Shane Duff, Front End Lead
-
-</Callout>
+::
 
 For Pantheon’s Customer Experience team, everyone gets replays as soon as they ask for them, but building that muscle memory is a work-in-progress.
 

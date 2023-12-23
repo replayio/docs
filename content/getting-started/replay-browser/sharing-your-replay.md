@@ -2,7 +2,7 @@
 title: Sharing your replay
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Sharing your replay
 
@@ -16,10 +16,9 @@ This will show any existing collaborators added to the replay.
 
 ![Screen Shot 2022-01-27 at 11.37.25 AM.png](/images/Screen_Shot_2022-01-27_at_11.37.25_AM_yvwec.png)
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Authors are the original recorder of the replay while collaborators are anyone who have been invited. **Collaborators are able to invite others and share the replay.**
-
-</Callout>
+::
 
 ## Sharing with your team
 
@@ -29,9 +28,9 @@ Initially, a replay will be saved to your personal library. Click the down arrow
 
 When a replay belongs to a team, that replay will appear in the team library’s feed and all members of the team will have access.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Members of the same team are able to make any replay within the team public.
-</Callout>
+::
 
 You can also update the Privacy Settings by clicking the arrow next to the current setting in the Replay Info panel.
 
@@ -59,7 +58,6 @@ If you share a link with someone not already added to the replay or your team, t
 
 This triggers an email notification to the replay creator asking to grant access. Once approved, the requestor will be able to view the replay using the same link.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Instead of sharing each replay individually, we recommend [setting up a team](/getting-started/teams-admin/setting-up-a-team). Any replay saved to your team library will automatically be shared with all team members.
-
-</Callout>
+::

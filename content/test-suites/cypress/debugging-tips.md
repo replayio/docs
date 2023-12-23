@@ -3,7 +3,7 @@ title: Debugging Tips
 description: ''
 ---
 
-import { Callout } from 'nextra/components'
+
 import JumpTo from '@icons/JumpTo'
 
 # Debugging Tips
@@ -61,9 +61,9 @@ To run your the test, use following command:
 npx cypress run --spec cypress/e2e/login.js --browser replay-chromium
 ```
 
-<Callout type="default" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Pro tip: You can use `@cypress/grep` package to repeat your tests without changing code in your spec. Read more about it [in the package readme](https://www.npmjs.com/package/@cypress/grep#burn-repeat-tests).
-</Callout>
+::
 
 When running locally, you can use [Replay CLI](/reference-guide/recording/replay-cli) to manually upload your recordings to Replay Dashboard.
 ```sh

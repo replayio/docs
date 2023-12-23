@@ -2,7 +2,7 @@
 title: Puppeteer
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Puppeteer
 
@@ -39,6 +39,6 @@ Setting up Replay is as simple as downloading the browser, using it in your test
 2. Pass in the path to `replay-chromium` in the  `puppeteer.launch()` call. See example above.
 3. Upload recordings with the `npx @replayio/reply upload-all` command. See more [here](/reference-guide/recording/replay-cli).
 
-<Callout type="info" emoji="📌">
+::callout{icon="i-heroicons-light-bulb"}
 Replay is up-to-date as of Puppeteer version 13.3.1. If you are using a newer version and run into a problem, please [open a GitHub issue here](https://github.com/replayio/replay-cli) to let us know!
-</Callout>
+::

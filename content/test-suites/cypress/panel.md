@@ -1,4 +1,4 @@
-import { Callout } from 'nextra/components'
+
 import TargetElement from '@icons/TargetElement'
 import JumpTo from '@icons/JumpTo'
 
@@ -54,9 +54,9 @@ With print statements, you can deep-dive into your test flow. Click on the <span
 
 Read the full guide on print statements in [reference guide](/reference-guide/debugging/print-statements).
 
-<Callout type="default" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 PRO tip: When dealing with a flaky test, open failed and passed test side by side and compare values between them. For example if you are dealing with todo item in your test, add a print statement that will show its text. Differences in data might point to a root cause of test flakiness.
-</Callout>
+::
 
 ## Console
 You can use console the same way as in any other browser console. Replay will however provide you with couple more capabilities. For example, you can jump to a print statement to rewind or move forward in your recording. Clicking the<span className='mx-1.5 font-mono bg-blue-500 text-white rounded-r-3xl pl-1.5 pr-3 py-1'><JumpTo className="w-5 h-5 inline-block p-0.5 mb-0.5" /> Fast forward</span> or <span className='mx-1.5 font-mono bg-blue-500 text-white rounded-r-3xl pl-2 pr-3 py-1'><JumpTo className="w-5 h-5 inline-block p-0.5 mb-0.5 rotate-180" /> Rewind</span> button will take you to the moment of that print statement.
@@ -65,9 +65,9 @@ Read the full guide on console in [reference guide](/reference-guide/dev-tools/c
 
 :VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
 
-<Callout type="default" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 PRO tip: You can use `cy.now(){:js}` to call a Cypress command inside the console. For example, call `cy.now('get', '[data-id=send-button]'){:js}` to select `[data-id=send-button]` element on a given moment of your recording. This is great for checking if a given element was present at a precise moment.
-</Callout>
+::
 ## See also
 - [Debugging tips](/test-suites/cypress/debugging-tips)
 - [Video: Debugging a flaky Cypress test](https://www.youtube.com/watch?v=4wL8Qi9vjho)

@@ -2,7 +2,7 @@
 title: Focus Mode
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # Focus Mode
 
 ![Focus Mode](/images/focus-mode_zjbjq.png)
@@ -17,9 +17,9 @@ Click the Edit Focus icon to the right of the timeline to start **Focus Mode.**
 2. Click and drag the blue highlighted portion on the timeline
 3. Use the timestamp input fields in the timeline next to the Focus Mode icon
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 You can still navigate while in Edit Focus mode to verify what the video looks like while at a particular pause point, and the viewer will update as you adjust the focus region.
-</Callout>
+::
 
 :LoomPlayer{id="c9784dfddc6f460db6b8748e54d8c6dd"}
 

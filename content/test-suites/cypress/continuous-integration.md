@@ -2,7 +2,7 @@
 title: Continuous Integration
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Integrate Replay to your CI workflow
 
@@ -16,6 +16,6 @@ This works for any CI providers, but we’ve included documentation walkthroughs
 | [CircleCI](https://circleci.com/) | CircleCI  |  [circle.yml](/resources/cypress/circle.yml) |
 | Other providers | [Other providers](/test-suites/cypress/continuous-integration/other-ci-providers)  | - |
 
-<Callout type="info" emoji="❓">
+::callout{icon="i-heroicons-light-bulb"}
 Not seeing your provider? [Let us know on Discord](https://replay.io/discord) or [edit this page](https://github.com/replayio-public/replay-documentation/tree/main/pages/test-suites/cypress/continuous-integration.mdx) to add it.
-</Callout>
+::

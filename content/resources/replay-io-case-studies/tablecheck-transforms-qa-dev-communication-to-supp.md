@@ -2,14 +2,13 @@
 title: TableCheck transforms QA/Dev communication to support thousands of restaurants and hotel chains
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # TableCheck transforms QA/Dev communication to support thousands of restaurants and hotel chains
 
-<Callout type="info" emoji="🪄">
+::callout{icon="i-heroicons-light-bulb"}
 “If I didn’t have Replay, it would have taken me several days or even weeks getting the debugger to run properly in all the dynamically loaded scripts, which is not easy. With Replay it took me half a day to figure it out and get a fix ready.” - Simeon Cheeseman, Principal Engineer
-
-</Callout>
+::
 
 ## Summary
 
@@ -73,10 +72,9 @@ Simeon realized that developers can actually debug really hard stuff in Replay. 
 
 ### Using Replay in code reviews
 
-<Callout type="info" emoji="🗽">
+::callout{icon="i-heroicons-light-bulb"}
 “As a front end developer, Replay.io saves me an incredible amount of time during code reviews. Reviewing style changes in a PR the old fashioned way with screenshots is cumbersome. With Replay, we can inspect new styles raised in a PR in a real browser without having to checkout to a branch.” Daniel Lizik, Tech Lead, Booking Form App
-
-</Callout>
+::
 
 TableCheck quickly started using Replay to document pull requests and saw immediate benefits.
 
@@ -89,10 +87,9 @@ In addition to ensuring the correct code is being reviewed, Replay makes the pro
 
 ### Asynchronous debugging for maximum efficiency
 
-<Callout type="info" emoji="😇">
+::callout{icon="i-heroicons-light-bulb"}
 “With replay, the urgency to fix before it disappears is no longer a concern; we have the replay so the bug is reproduced forever.” Simeon Cheeseman, Principal Engineer
-
-</Callout>
+::
 
 Simeon explains some of the life improvements since their teams adopted replay, “When a bug comes in, I can take a break from my normal work and spend 10-15 minutes figuring it out.” He adds, “I like adding comments to leave myself or my colleagues breadcrumbs to fix for later. I’m the kind of person to leave a lot of comments…I often leave them as to-do’s in the open file at the end of the day so that I can pick up the same task tomorrow.”
 

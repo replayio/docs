@@ -2,7 +2,7 @@
 title: Documenting Pull Requests
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # Documenting Pull Requests
 
 Using Replay to document changes with pull requests makes it easier to review and accepts PRs faster. Record the updated application flow and use comments to highlight changed to the UI, application behavior, and even lines of code and network requests.
@@ -11,10 +11,9 @@ Using Replay to document changes with pull requests makes it easier to review an
 
 Start by recording the area(s) of your application impacted by the pull request. Depending on the scope of your PR, this may involve capturing a single component render or a more complex user flow.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Replay captures all code execution happening in the browser, not just the UI. This makes it a powerful tool for understanding changes that don’t just happen on the screen.
-
-</Callout>
+::
 
 Check out the [Recording a Replay guide](/getting-started/recording-your-first-replay) for details.
 
@@ -49,10 +48,9 @@ Every replay has a shareable URL that can be added directly to the pull request 
 
 We recommend [setting up a team](/getting-started/teams-admin/setting-up-a-team) to easily manage access to replays so anyone reviewing your PR will already have access.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 As a best practice, require a replay as part of your [pull request template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository) so every PR is well-documented for quick review.
-
-</Callout>
+::
 
 ### Examples
 

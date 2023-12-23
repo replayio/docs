@@ -2,7 +2,7 @@
 title: Integrating Replay.io with Test Runners
 description: ''
 ---
-import { Tabs, Callout, Cards, Card } from 'nextra/components'
+import { Tabs, Cards, Card } from 'nextra/components'
 import Features from '@components/Features'
 import ReplayLogomark from '@icons/ReplayLogomark.tsx' 
 import LogosSelenium from '@icons/LogosSelenium.tsx' 
@@ -14,11 +14,9 @@ import VscodeIconsFileTypeJest from '@icons/VscodeIconsFileTypeJest.tsx'
 
 # Test Suites
 
-<Callout emoji={<ReplayLogomark className="pt-1 w-6 h-6" />} type="info">
+::callout{icon="i-heroicons-light-bulb"}
 **Join the waitlist**
-
-Replay for Test Suites was released in June 2023 as a beta so that we can help each team setup Replay and fix their flakes. If you’d like to start recording your tests, join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible. Also feel free joining our [**Discord**](https://replay.io/discord) #testing channel or emailing us at hey@replay.io.
-</Callout>
+::
 
 ![Test suite integration with Cypress and Playwright](/images/test_suites_hero.png)
 
@@ -80,9 +78,9 @@ For action commands, you can click "Jump to code" to see what part of your appli
 
 All network requests are captured as well, including static assets. With your test result you are getting all the powers of Replay DevTools that allow you to take a deep dive into your test execution and examine your code using [print statements](/reference-guide/debugging/print-statements), [debugger](/reference-guide/debugger/breakpoints) and [React panel](/reference-guide/dev-tools/react).
 
-<Callout type="info">
+::callout{icon="i-heroicons-light-bulb"}
 Ready to integrate Replay to Cypress? [Learn how to setup here.](/test-suites/cypress/installation)
-</Callout>
+::
 
 ### Playwright panel
 ![Playwright panel](/images/playwright-panel_d78bh.png)
@@ -90,9 +88,9 @@ Playwright panel will provide you with a trace-viewer-like experience in which y
 
 With every recorded test, you can examine your code using Replay DevTools. You can take a look at [network calls](/reference-guide/dev-tools/network), [React components](/reference-guide/dev-tools/react) of your app, or you can debug your test using [print statements](/reference-guide/debugging/print-statements) and [debugger](/reference-guide/debugger/breakpoints).
 
-<Callout type="info">
+::callout{icon="i-heroicons-light-bulb"}
 Learn how to [integrate Playwright into Pipeline here](/test-suites/playwright/installation)
-</Callout>
+::
 
 ### Other testing tools
 Are you using other tools? We got you covered. You can use Replay Browser to record with [Selenium](/test-suites/selenium), [Puppeteer](/test-suites/puppeteer), [WebdriverIO](/test-suites/webdriver-io) and [Jest (alpha)](/test-suites/jest). Your recorings will be available in the same way, so you can examine your code and search for flakes with these frameworks as well. 

@@ -2,14 +2,14 @@
 title: Cypress - Installation
 description: ''
 ---
-import { Callout, Tabs } from 'nextra/components'
+import { Tabs } from 'nextra/components'
 import MaterialSymbolsSettings from '@icons/MaterialSymbolsSettings'
 
 # Installation
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 This guide assumes that you already have a Cypress 10.9+ test suite. If you’re just setting up your Cypress test suite, first [follow the instructions here](https://docs.cypress.io/guides/getting-started/installing-cypress).
-</Callout>
+::
 
 ## Install the Replay plugin
 
@@ -91,9 +91,9 @@ First, create a new team in Replay to organize your Cypress replays. You’ll al
 
 Alternatively, you can visit [this link](https://app.replay.io/team/new) to instantly create a new team.
 :VideoPlayer{id="MKY00er012SvPUW01AHa8c8d7W1DPK8KFFIo3RvcLXWUUU"}
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Test Suites are currently in closed Beta. If you’d like to start recording your tests, test suites need to be enabled in your team. Join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible.
-</Callout>
+::
 
 **2. Once you’ve created a team, click on the settings <MaterialSymbolsSettings className="w-6 h-6 inline-block" /> icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)**
 

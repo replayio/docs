@@ -5,7 +5,7 @@ description: ''
 import IconInline from '@components/IconInline.tsx'
 import IconSquare from '@components/IconSquare.tsx'
 
-import { Steps, Callout, Tabs, Tab } from 'nextra/components'
+import { Steps, Tabs, Tab } from 'nextra/components'
 import DesktopCursor from '@icons/DesktopCursor'
 import Bug from '@icons/Bug'
 import BiBrowserChrome from '@icons/BiBrowserChrome'
@@ -45,9 +45,9 @@ You can think about Replay as three tools in one:
 - As **DevTools** you can inspect your recording (*or your "replay" as we like to call it*) that contains much more than mere video. You can inspect Network requests, DOM elements, and even React components. But even better, you can find a function, add a `console.log(){:js}`, and the Replay browser will retroactively log the messages to the console. 
 
 ## How to use Replay.io?
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 This example shows the simplest use case. Once you get familiar with the basic principles of recording and debugging, we highly recommend you to [check out our Test Suites documentation](/test-suites) to learn how you can integrate Replay Browser into Cypress, Playwright or other framework and draw your test flakiness below&nbsp;1%.
-</Callout>
+::
 Typically, you would use Replay to debug, or better understand your app. The journey with Replay.io would have three chapters:
 
 <Steps>
@@ -101,9 +101,9 @@ With a better understanding of data flows, state changes and other processes in 
   <li className="pb-3"><IconInline><TestTube /></IconInline> **Flaky and failed tests**: teams use Replay to record their end-to-end tests in CI so that developers can debug flaky and failed tests.</li>
 </ul>
 
-<Callout type="default" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Check out our [case studies](/resources/replay-io-case-studies/tablecheck-transforms-qa-dev-communication-to-supp) to see how companies like Tablecheck adopt Replay.
-</Callout>
+::
 
 ## How does Replay.io compare to Session Replay tools?
 Replay records the runtime so you can retroactively debug your application with print statements and Browser DevTools. Session Replay tools like Full story record the DOM so you can see how your users use your application.

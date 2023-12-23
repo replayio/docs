@@ -2,7 +2,7 @@
 title: Network
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Network
 
@@ -42,10 +42,9 @@ The table shows the resource response status, name, method, type, and domain. Li
 
 ![Screen Shot 2022-01-12 at 1.49.57 PM.png](/images/Screen_Shot_2022-01-12_at_1.49.57_PM_uurie.png)
 
-<Callout type="info" emoji="❓">
+::callout{icon="i-heroicons-light-bulb"}
 **Why can’t I time travel to this request?**
-In order to support time travel the request has to be associated with a particular point in the browser’s JS execution timeline. Some requests, like those dispatched by HTML documents, are not associated with any particular JS execution point, even though they may have a “timestamp” associated with them. In those cases, you won’t see a fast-forward or rewind button.
-</Callout>
+::
 
 ### Unloaded network requests
 
@@ -53,9 +52,9 @@ When a replay is initially loading or a part of it has been unloaded, some netwo
 
 ![Screen Shot 2022-04-27 at 10.39.05 AM.png](/images/Screen_Shot_2022-04-27_at_10.39.05_AM_xilwl.png)
 
-<Callout type="info" emoji="🚧">
+::callout{icon="i-heroicons-light-bulb"}
 In the graphic above, the middle section of requests is slightly dimmed, because those requests happened later in the recording than the “present” (the red bar). The bottom section of requests also happened later, but they are in a section of the recording which is not currently loaded.
-</Callout>
+::
 
 ## Inspecting a resource's details
 
@@ -85,15 +84,13 @@ Click the arrows to expand values within the response body.
 
 ![Untitled](/images/Untitled-3_dhkyq.png)
 
-<Callout type="info" emoji="❓">
+::callout{icon="i-heroicons-light-bulb"}
 **Why doesn’t Replay capture some response bodies?**
-There’s a lot of diversity in how browsers handle HTTP requests, and while we’ve tried to cover the most common code paths, there are still some types of requests for which we won’t capture full information (like response bodies). As a rule of thumb, if your request is done via XHR or `fetch`, you should see it’s entire details, including request and response bodies. We also capture the response bodies of requests that are triggered by the `src` attribute of `img` tags. We’ll be continuing to expand the variety of network requests that we record, and if you have any questions or want to request a particular use case please hop into our discord and share it with us!
-</Callout>
+::
 
-<Callout type="info" emoji="❓">
+::callout{icon="i-heroicons-light-bulb"}
 ❓ **Why does this response body need to be downloaded?**
-All responses are recorded as binary data. We depend heavily on the `content-type` header of the response to decide if we should try and display a particular binary stream as text. In cases where the body is valid UTF-8 but the content type is unclear, you might have to download the response in order to properly view it.
-</Callout>
+::
 
 ### Inspecting stack traces
 
@@ -109,9 +106,9 @@ The **Timings panel** shows the time in the replay the request was initiated and
 
 The **Time waiting for response** is the difference between the request initiation time and the first-byte response time.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Timings are relative to the replay and are a best effort representation of when events happen related to network requests. Some responses requiring additional processing or decoding may affect the precision of the timing calculations.
-</Callout>
+::
 
 ![timingspanel.png](/images/timingspanel_npqba.png)
 

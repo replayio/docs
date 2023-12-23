@@ -2,7 +2,7 @@
 title: Events
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # Events
 
 Because we *actually* replay the browser session as it ran before, Replay collects all of the event handlers that ran while recording. This means that all the mouse events, worker messages, or even uncaught promises are available for inspecting and debugging.
@@ -16,9 +16,9 @@ Events are shown in the Events pane in the left sidebar and can be output to the
 
 The Events pane is within the Replay Info panel. Click on an event to jump to that time in the replay. The video and console will update to reflect the application at that point in time.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 Sometimes one event is handled multiple times. This can be surprising at first, but it's pretty common for one mouse click to have a lot of handlers.
-</Callout>
+::
 
 ![Screenshot 2023-04-07 at 8.47.24 AM.png](/images/Screenshot_2023-04-07_at_8.47.24_AM_oprdn.png)
 
@@ -28,9 +28,9 @@ Time travel from click and keystroke events into their React `onClick` and `onKe
 
 ![Untitled](/images/Untitled_kqufv.png)
 
-<Callout type="info" emoji="⚛️">
+::callout{icon="i-heroicons-light-bulb"}
 Often libraries like React will install their own global handler and then pass the event to a component event handler like `onClick`. We do our best to map these, but if you see an issue please let us know by submitting a  [bug report](https://github.com/replayio/devtools/issues/new/choose).
-</Callout>
+::
 
 ## Logging events to the console
 

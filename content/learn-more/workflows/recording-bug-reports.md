@@ -2,7 +2,7 @@
 title: Recording Bug Reports
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 
 
@@ -36,10 +36,9 @@ Click the blue record button to the right of the address bar. The page will refr
 
 Retrace the steps that triggered the bug. For example, if you clicked a link and it was broken, you’ll want to click the link again with the recording running. Once you’re done, click the red stop button.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 We recommend keeping the recording as short as possible. Try to only record the steps needed to recreate the issue that occurred.
-
-</Callout>
+::
 
 :VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
 
@@ -55,10 +54,9 @@ We recommend leaving the replay private and sharing it in step 7.
 
 Once you save the replay, adding [Comments](/reference-guide/debugging/commenting) is a great way to leave notes for yourself or other members of your team. You can add comments to the video, print statements, console logs, network requests, or a source.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 When adding a replay to a bug report, comments can be a “trail of breadcrumbs” allowing your team member to jump to a point in time where the issue occurred and start debugging right away.
-
-</Callout>
+::
 
 :VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
 
@@ -68,10 +66,9 @@ After you've saved the replay, you will be redirected to the replay itself. You 
 
 Click the blue share button in the top right and add their email address. You can add anyone and they will get an email invitation from us to view the replay.
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 If you’re adding a replay to a GitHub issue or support ticket and don’t have an email address, you can also make the replay public, then share by copying the link.
-
-</Callout>
+::
 
 :VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
 

@@ -2,7 +2,7 @@
 title: React
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # React
 
 Debugging React applications becomes much easier when you can inspect your React components. Brian Vaughn, React DevTools core maintainer, has [joined the Replay team](https://medium.com/replay-io/replay-welcomes-brian-vaughn-react-core-maintainer-4753749ffa36) to replicate the same DevTools experience you get in other browsers.
@@ -11,9 +11,9 @@ Want to see React DevTools in action? Check out our [React Calculator Guided Exa
 
 :LoomPlayer{id="da3119fba06b4ed6ad56d95be98672b2"}
 
-<Callout type="info" emoji="💡">
+::callout{icon="i-heroicons-light-bulb"}
 It’s likely that the replay will start recording before React is initialized on the page. If you see the message `React DevTools not yet initialised at this point in time.` in the DevTools pane, move to another point in the replay after initialization has occurred.
-</Callout>
+::
 
 ## Inspecting components
 

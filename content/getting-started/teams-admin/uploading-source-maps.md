@@ -2,7 +2,7 @@
 title: Uploading Source Maps
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Uploading Source Maps
 
@@ -14,10 +14,9 @@ Source maps exist to try and preserve the original debugging experience as best 
 
 For production use cases where sourcemaps may not be exposed publicly, we provide tooling for preemptively uploading sourcemaps to our servers so that when recordings are made, they can make use of these maps. We provide both a CLI command, and a Webpack plugin to make integrating this into your build process as easy as possible.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 We recommend **not using compression** during the minification process. Mangling is fine, but compression can cause issues with how source maps are interpreted by Replay.
-
-</Callout>
+::
 
 ### API Keys
 
@@ -97,17 +96,15 @@ module.exports = {
 };
 ```
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 💡 In most cases it’s safe to not include the `group` field.
-
-</Callout>
+::
 
 As mentioned, NextJS's `buildId` can be useful, but please [see their docs](https://nextjs.org/docs/api-reference/next.config.js/configuring-the-build-id) to ensure verify if it is a good fit for your application. 
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 💡 If you are serving your site via Vercel, [see their docs](https://vercel.com/docs/environment-variables) for information on setting up the `REPLAY_API_KEY` environment variable.
-
-</Callout>
+::
 
 ### Debugging problems
 

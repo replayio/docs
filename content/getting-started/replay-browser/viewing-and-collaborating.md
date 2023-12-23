@@ -2,7 +2,7 @@
 title: Viewing and collaborating
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 # Viewing and collaborating
 
 ## Viewing your application
@@ -22,7 +22,6 @@ Use comments to:
 - Identify functions or lines of code that are problematic.
 - Share the good news when you’ve identified the source of a bug!
 
-<Callout type="info" emoji="🙌">
+::callout{icon="i-heroicons-light-bulb"}
 Check out our [Debugging](/reference-guide), [Get Help](/resources/get-help), and [Examples](/resources) sections for what’s next.
-
-</Callout>
+::

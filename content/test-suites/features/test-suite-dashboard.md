@@ -2,7 +2,7 @@
 title: Test Suite Dashboard
 description: ''
 ---
-import { Callout } from 'nextra/components'
+
 
 # Test Suite Dashboard
 
@@ -43,9 +43,9 @@ This information can help you make critical triage decisions and offer insights 
 - If all tests failed, it may point to an issue in the environment or with the test runner
 - The commit message may give context, like “trying something, may break”
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 For Cypress, replays and pass/fail status is based on spec file, not tests. This is because the same browser session is used for the entire spec file.
-</Callout>
+::
 
 ### Test run details
 
@@ -67,6 +67,6 @@ Click the name of a test in the Test run details sidebar to view recent runs of 
 
 For each run, see the test pass/fail status, branch, the time since the test run, the user triggering the run, and a link to the replay.
 
-<Callout type="info" emoji="👉">
+::callout{icon="i-heroicons-light-bulb"}
 Ready to get started? Contact us [on Discord](https://replay.io/discord) or at support@replay.io to get set up.
-</Callout>
+::
