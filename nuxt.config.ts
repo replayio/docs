@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
@@ -15,13 +17,12 @@ export default defineNuxtConfig({
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
     'components:extend': (components) => {
-      const globals = components.filter((c) => ['UButton'].includes(c.pascalName))
+      const globals = components.filter((c) => ['UButton', 'UIcon', 'UBadge'].includes(c.pascalName))
 
       globals.forEach((c) => c.global = true)
     }
   },
   ui: {
-    global: true,
     icons: ['heroicons', 'simple-icons', 'logos', 'ic']
   },
   vue: {  
@@ -91,6 +92,7 @@ export default defineNuxtConfig({
       '/getting-started/bug-reports/installing-the-replay-browser/installing-on-linux': { redirect: '/getting-started/replay-browser/installation#linux' },
       '/getting-started/bug-reports/installing-the-replay-browser/installing-on-windows': { redirect: '/getting-started/replay-browser/allation#windows-beta' },
     '/api/search.json': { prerender: true },
+    '/public/assets/shiki-theme.json': { prerender: true },
   },
   // Devtools / Typescript
   devtools: { enabled: true },
