@@ -4,11 +4,11 @@
 
 A code repository for [https://docs.replay.io](https://docs.replay.io) containing Replay.io basics, tutorials, examples and explanations.
 
-Docs are built with [Nextra](https://nextra.site/)
+Docs are built with [Nuxt UI](https://ui.nuxt.com/)
 
 ## Installation
 ```bash
-pnpm i
+npm i
 ```
 
 ## Local development

@@ -1,0 +1,78 @@
+---
+title: Cypress panel
+description: ''
+---
+
+Every recorded test can be viewed in Replay DevTools which will help you find root causes of any hidden instabilities. With Cypress panel, you’ll get additional information about the test itself. The experience is very similar to Cypress GUI mode, but there are small differences that allow you to dive deeper into your test recording.
+
+![Cypress Panel](/images/cypress-panel-details_hjk4a.png)
+
+## Command details
+Clicking on any command in Cypress panel will reveal its details. You can inspect element queries, actions and assertions. When a command is focused, Source code panel will jump to the corresponding line in your spec file.
+
+### Queries
+Details of [query commands](https://docs.cypress.io/api/table-of-contents#Queries) such as `cy.get(){:js}` or `cy.contains(){:js}` contain information on selected elements and number of elements found. Clicking on target :IconsTargetElement{class='w-5 h-5 inline-block'} icon will highlight the selected element in Viewer panel.
+
+:VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
+
+Additionally, you can right-click on the target :IconsTargetElement{class='w-5 h-5 inline-block'} icon to reveal the option to copy the HTML element.
+
+![Copy HTML element](/images/copy-html-element_is670.png)
+
+### Actions
+With [action commands](https://docs.cypress.io/api/table-of-contents#Actions) such as `cy.type(){:js}` or `cy.click(){:js}` you’ll get information on coordinates of where given command was triggered as well any parameters passed to that command. This includes text that was typed in, or i.e. `{force:true}{:js}` options.
+
+![Action command detail](/images/action-command-detail_osd5a.png)
+
+### Assertions
+Cypress assertions can be viewed in great detail. Every assertion contains the assertion message, subject of the assertion as well as the expected value.
+
+![Expected value](/images/expected-value_d4gds.png)
+
+In case of a failed assertion, you can view complete details of the expected and actual value. This provides you with additional details that can normally get concatenated in a terminal message or in a failure screenshot.
+
+![Failed assertion](/images/failed-assertion_496gs.png)
+
+## Network activity
+Network requests are captured the same way as in Cypress GUI mode. In the network panel inside DevTools, you can take a better detail into different parts of an XHR call. For example, you can review the stack trace or timings of certain API calls.
+
+:VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
+
+Read the full guide on network panel in [reference guide](/reference-guide/dev-tools/network).
+
+## Jump to code
+Hovering over <span class='font-mono bg-blue-500 text-white rounded-full p-1 mx-1'> :IconsJumpTo{class="w-5 h-5 inline-block p-0.5 mb-0.5"}</span> icon will reveal the <span class='mx-1.5 font-mono bg-blue-500 text-white rounded-3xl px-3 py-1'>Jump to code :IconsJumpTo{class="w-5 h-5 inline-block p-0.5 mb-0.5"}</span> button. This button is a bridge between your test and the application under test. Clicking on this button will take you to the part of code that was executed when a Cypress command was called. This helps further examining what happened during your test.
+
+Read the full guide on jumping into code in [reference guide](/reference-guide/debugging/jumping).
+
+:VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
+
+## Print statements
+With print statements, you can deep-dive into your test flow. Click on the <span className='font-mono bg-blue-500 text-white rounded-md font-extrabold py-0.5 px-1.5 mx-1'>+</span> button and type into the text field. You can think of this the same way as of `console.log(){:js}`. Anything you put in here will be printed out to the console. You can observe the values changing over the time of your test run.
+:VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
+
+Read the full guide on print statements in [reference guide](/reference-guide/debugging/print-statements).
+
+::callout{icon="i-heroicons-light-bulb"}
+PRO tip: When dealing with a flaky test, open failed and passed test side by side and compare values between them. For example if you are dealing with todo item in your test, add a print statement that will show its text. Differences in data might point to a root cause of test flakiness.
+::
+
+## Console
+You can use console the same way as in any other browser console. Replay will however provide you with couple more capabilities. For example, you can jump to a print statement to rewind or move forward in your recording. Clicking the<span class='mx-1.5 font-mono bg-blue-500 text-white rounded-r-3xl pl-1.5 pr-3 py-1'> :IconsJumpTo{class="w-5 h-5 inline-block p-0.5 mb-0.5"} Fast forward</span> or <span class='mx-1.5 font-mono bg-blue-500 text-white rounded-r-3xl pl-2 pr-3 py-1'> :IconsJumpTo{class="w-5 h-5 inline-block p-0.5 mb-0.5 rotate-180"} Rewind</span> button will take you to the moment of that print statement.
+
+Read the full guide on console in [reference guide](/reference-guide/dev-tools/console).
+
+:VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
+
+::callout{icon="i-heroicons-light-bulb"}
+PRO tip: You can use `cy.now(){:js}` to call a Cypress command inside the console. For example, call `cy.now('get', '[data-id=send-button]'){:js}` to select `[data-id=send-button]` element on a given moment of your recording. This is great for checking if a given element was present at a precise moment.
+::
+## See also
+- [Debugging tips](/test-suites/cypress/debugging-tips)
+- [Video: Debugging a flaky Cypress test](https://www.youtube.com/watch?v=4wL8Qi9vjho)
+- [Video: Time travelling with Replay.io](https://www.youtube.com/watch?v=puHAiZBdjFw)
+- [Console](/reference-guide/dev-tools/console)
+- [Network panel](/reference-guide/dev-tools/network)
+- [Commenting](/reference-guide/debugging/commenting)
+- [Jumping into code](/reference-guide/debugging/jumping)
+- [Print statements](/reference-guide/debugging/print-statements)

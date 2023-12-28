@@ -21,7 +21,8 @@ export default defineNuxtConfig({
     }
   },
   ui: {
-    icons: ['heroicons', 'simple-icons']
+    global: true,
+    icons: ['heroicons', 'simple-icons', 'logos', 'ic']
   },
   vue: {  
     compilerOptions: {
@@ -45,6 +46,7 @@ export default defineNuxtConfig({
       '/getting-started': { redirect: '/getting-started/what-is-replay-io' },
       '/resources': { redirect: '/resources/get-help' },
       '/reference-guide': { redirect: '/reference-guide/debugging/print-statements' },
+      '/debugging-guide': { redirect: '/debugging-guide/debugging/print-statements' },
       '/docs/replay-oss-751fc053a0a14c32812c4766d7c65e4d': { redirect: '/learn-more/workflows/oss-projects' },
       '/docs/recording-bug-reports-80c37d7d6753485f81497570625d06f0': { redirect: '/learn-more/workflows/recording-bug-reports' },
       '/docs/resources-and-examples-d25ae319114e4d109022458cd47f38ec': { redirect: '/resources/get-help' },
