@@ -1,5 +1,3 @@
-import fs from 'fs'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
@@ -43,8 +41,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
       '/discord': { redirect: 'https://discord.gg/Wh9w3KMr7J' },
-      '/': { redirect: '/getting-started/what-is-replay-io' },
-      '/getting-started': { redirect: '/getting-started/what-is-replay-io' },
+      '/getting-started': { redirect: '/getting-started/introduction' },
       '/resources': { redirect: '/resources/get-help' },
       '/reference-guide': { redirect: '/reference-guide/debugging/print-statements' },
       '/debugging-guide': { redirect: '/debugging-guide/debugging/print-statements' },

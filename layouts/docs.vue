@@ -13,6 +13,11 @@ const headerLinks = computed(() => {
   to: '/getting-started',
   active: route.path.startsWith('/getting-started')
 }, {
+  label: 'Test Suites',
+  icon: 'i-ic-outline-checklist',
+  to: '/test-suites',
+  active: route.path.startsWith('/test-suites')
+}, {
   label: 'Debugging Guide',
   icon: 'i-heroicons-bug-ant-16-solid',
   to: '/debugging-guide',
