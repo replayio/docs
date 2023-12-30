@@ -54,7 +54,7 @@ Alternatively, you can visit [this link](https://app.replay.io/team/new) to inst
 Test Suites are currently in closed Beta. If you’d like to start recording your tests, test suites need to be enabled in your team. Join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible.
 ::
 
-**2. Once you’ve created a team, click on the settings <MaterialSymbolsSettings className="w-6 h-6 inline-block" /> icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)**
+**2. Once you’ve created a team, click on the settings :UIcon{name="i-heroicons-cog-8-tooth-solid"  class="w-5 h-5 -mb-1 inline-block"} icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)**
 
 :VideoPlayer{id="KMJn27IKI9y3MqjcSnnn9QoEeLQp01pv9stcjLtOTQLg"}
 

@@ -11,6 +11,7 @@ defineProps({
 <template>
   <mux-player
     stream-type="on-demand"
+    accent-color="#f02d5e"
     :playback-id="id"
   />
 </template>
