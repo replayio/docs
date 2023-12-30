@@ -56,4 +56,4 @@ replay-node --update
 
 ### Upgrading the CLI
 
-If the CLI is installed locally, you can run `npm i @replayio/replay@latest{:bash}`. If the CLI is installed globally, you can run `npm update -g @replayio/replay{:bash}` .
+If the CLI is installed locally, you can run `npm i @replayio/replay@latest`{language=shell}. If the CLI is installed globally, you can run `npm update -g @replayio/replay`{language=shell} .

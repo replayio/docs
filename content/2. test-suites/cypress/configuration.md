@@ -103,7 +103,7 @@ When level is set to `full`, the test suite is run *many* times with each run di
 ::
 
 ::callout{icon="i-heroicons-light-bulb"}
-This mode is mostly used for diagnosing problems with integration of Replay into your test run. Due to the number of runs (currently 38), we don’t recommend using the `--level full{:bash}` flag for standard test runs. Be sure to limit using this mode to a specific spec file that is failing by usiing `--spec [path to spec]{:bash}`.
+This mode is mostly used for diagnosing problems with integration of Replay into your test run. Due to the number of runs (currently 38), we don’t recommend using the `--level full`{language=shell} flag for standard test runs. Be sure to limit using this mode to a specific spec file that is failing by usiing `--spec [path to spec]`{language=shell}.
 ::
 
 ## Recording strategies

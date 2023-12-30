@@ -63,7 +63,7 @@ Test Suites are currently in closed Beta. If you’d like to start recording you
 ## Record your tests
 
 ### Recording Locally
-Once you have added Chromium Replay Browser to your project, you are ready to create your recordings. These will be available in your [Replay Dashboard](https://app.replay.io). You can run your tests normally, using `npx playwright test{:sh}` command. 
+Once you have added Chromium Replay Browser to your project, you are ready to create your recordings. These will be available in your [Replay Dashboard](https://app.replay.io). You can run your tests normally, using `npx playwright test`{language=sh}` command. 
 
 If your project has multiple browsers set up, you can run Replay Browser only:
 ```sh

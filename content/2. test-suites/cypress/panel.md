@@ -11,7 +11,7 @@ Every recorded test can be viewed in Replay DevTools which will help you find ro
 Clicking on any command in Cypress panel will reveal its details. You can inspect element queries, actions and assertions. When a command is focused, Source code panel will jump to the corresponding line in your spec file.
 
 ### Queries
-Details of [query commands](https://docs.cypress.io/api/table-of-contents#Queries) such as `cy.get(){:js}` or `cy.contains(){:js}` contain information on selected elements and number of elements found. Clicking on target :IconsTargetElement{class='w-5 h-5 inline-block'} icon will highlight the selected element in Viewer panel.
+Details of [query commands](https://docs.cypress.io/api/table-of-contents#Queries) such as `cy.get()`{language=js}` or `cy.contains()`{language=js}` contain information on selected elements and number of elements found. Clicking on target :IconsTargetElement{class='w-5 h-5 inline-block'} icon will highlight the selected element in Viewer panel.
 
 :VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
 
@@ -20,7 +20,7 @@ Additionally, you can right-click on the target :IconsTargetElement{class='w-5 h
 ![Copy HTML element](/images/copy-html-element_is670.png)
 
 ### Actions
-With [action commands](https://docs.cypress.io/api/table-of-contents#Actions) such as `cy.type(){:js}` or `cy.click(){:js}` you’ll get information on coordinates of where given command was triggered as well any parameters passed to that command. This includes text that was typed in, or i.e. `{force:true}{:js}` options.
+With [action commands](https://docs.cypress.io/api/table-of-contents#Actions) such as `cy.type()`{language=js}` or `cy.click()`{language=js}` you’ll get information on coordinates of where given command was triggered as well any parameters passed to that command. This includes text that was typed in, or i.e. `{force:true}`{language=js}` options.
 
 ![Action command detail](/images/action-command-detail_osd5a.png)
 
@@ -48,7 +48,7 @@ Read the full guide on jumping into code in [reference guide](/reference-guide/d
 :VideoPlayer{id="72ibKXE6wcd1qPaoC3XschqNfyeTYwZhqXLrMVCvKfw"}
 
 ## Print statements
-With print statements, you can deep-dive into your test flow. Click on the <span className='font-mono bg-blue-500 text-white rounded-md font-extrabold py-0.5 px-1.5 mx-1'>+</span> button and type into the text field. You can think of this the same way as of `console.log(){:js}`. Anything you put in here will be printed out to the console. You can observe the values changing over the time of your test run.
+With print statements, you can deep-dive into your test flow. Click on the <span className='font-mono bg-blue-500 text-white rounded-md font-extrabold py-0.5 px-1.5 mx-1'>+</span> button and type into the text field. You can think of this the same way as of `console.log()`{language=js}`. Anything you put in here will be printed out to the console. You can observe the values changing over the time of your test run.
 :VideoPlayer{id="nbx8x8yoUyUXgIN9wtGJcexyI02CfbzFZnY7f6wkuJts"}
 
 Read the full guide on print statements in [reference guide](/reference-guide/debugging/print-statements).
@@ -65,7 +65,7 @@ Read the full guide on console in [reference guide](/reference-guide/dev-tools/c
 :VideoPlayer{id="R5CIB6Ye02YjwtGG9qsfdIwc00hJNPL01g8Scg9UqIEBmc"}
 
 ::callout{icon="i-heroicons-light-bulb"}
-PRO tip: You can use `cy.now(){:js}` to call a Cypress command inside the console. For example, call `cy.now('get', '[data-id=send-button]'){:js}` to select `[data-id=send-button]` element on a given moment of your recording. This is great for checking if a given element was present at a precise moment.
+PRO tip: You can use `cy.now()`{language=js}` to call a Cypress command inside the console. For example, call `cy.now('get', '[data-id=send-button]')`{language=js}` to select `[data-id=send-button]` element on a given moment of your recording. This is great for checking if a given element was present at a precise moment.
 ::
 ## See also
 - [Debugging tips](/test-suites/cypress/debugging-tips)

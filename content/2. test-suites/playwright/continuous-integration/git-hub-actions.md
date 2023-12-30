@@ -58,7 +58,7 @@ Usually a Playwright project contains multiple browser projects and various brow
 ### Specifying projects to run
 You can take control of which project is ran using your worklow file. 
 
-Notice, that in this setup, you need to include an upload step. Specifying `if: ${{ always() }}{:yml}` will make sure that the "Upload replays" step is executed no matter the result of previous step.
+Notice, that in this setup, you need to include an upload step. Specifying `if: ${{ always() }}`{language=yml}` will make sure that the "Upload replays" step is executed no matter the result of previous step.
 
 ```yml {11-18} filename=".github/workflows/e2e.yml" copy
 name: Replay tests
@@ -82,7 +82,7 @@ jobs:
 ```
 
 ### Uploading failed tests only
-By default, all test replays are uploaded no matter the result. If you want upload only the failed recordings, you can define the step to do so using `filter{:yml}` property:
+By default, all test replays are uploaded no matter the result. If you want upload only the failed recordings, you can define the step to do so using `filter`{language=yml}` property:
 
 ```yml {19} filename=".github/workflows/e2e.yml" copy
 name: Replay tests
