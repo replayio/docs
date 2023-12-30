@@ -30,7 +30,7 @@ The first time you sign in to Replay, it may prompt you to record our demo game.
 
 Click the blue record button to the right of the address bar. The page will refresh and the recording will begin!
 
-:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
+:VideoPlayer{id="tYRBcjQ2jbyBPtHPm4600hTT5EsmLTq8K2A01T5pmURdg"}
 
 ### 4. Recreate the bug 🐛
 
@@ -40,7 +40,7 @@ Retrace the steps that triggered the bug. For example, if you clicked a link and
 We recommend keeping the recording as short as possible. Try to only record the steps needed to recreate the issue that occurred.
 ::
 
-:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
+:VideoPlayer{id="IIKKZ2RWSPLQ00T3BnbyGLpddod7cbkaXWqj02cx4qK500"}
 
 ### 5. Save the replay ⬆️
 
@@ -48,7 +48,7 @@ After you stop recording, you can add a title describing the bug you found and s
 
 We recommend leaving the replay private and sharing it in step 7.
 
-:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
+:VideoPlayer{id="IgM3CZsViyItdTS9B4UaCNoHpogpbML8N01w00wYb02QTU"}
 
 ### 6. Add comments 💬
 
@@ -58,7 +58,7 @@ Once you save the replay, adding [Comments](/reference-guide/debugging/commentin
 When adding a replay to a bug report, comments can be a “trail of breadcrumbs” allowing your team member to jump to a point in time where the issue occurred and start debugging right away.
 ::
 
-:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
+:VideoPlayer{id="HnoGVf1uSXKrhJr5h02N8SNKUL6fPZaeleVRvVwiDteM"}
 
 ### 7. Share the replay 👋
 
@@ -70,7 +70,7 @@ Click the blue share button in the top right and add their email address. You ca
 If you’re adding a replay to a GitHub issue or support ticket and don’t have an email address, you can also make the replay public, then share by copying the link.
 ::
 
-:VideoPlayer{id="hLLkkU2xpbuSICFuZHbR8ze75HsAT1xnX8Fllad3nsc"}
+:VideoPlayer{id="nl5F2822MCpRxv16p7hZixeOrZY8itIFBXv01H4SbFXM"}
 
 ## Need help?
 

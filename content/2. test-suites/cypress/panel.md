@@ -36,7 +36,7 @@ In case of a failed assertion, you can view complete details of the expected and
 ## Network activity
 Network requests are captured the same way as in Cypress GUI mode. In the network panel inside DevTools, you can take a better detail into different parts of an XHR call. For example, you can review the stack trace or timings of certain API calls.
 
-:VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
+:VideoPlayer{id="3eyK2BmDxFh2g2eBSf1DpHT5E8AJqWtq21nylaETCAQ"}
 
 Read the full guide on network panel in [reference guide](/reference-guide/dev-tools/network).
 
@@ -45,11 +45,11 @@ Hovering over <span class='font-mono bg-blue-500 text-white rounded-full p-1 mx-
 
 Read the full guide on jumping into code in [reference guide](/reference-guide/debugging/jumping).
 
-:VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
+:VideoPlayer{id="72ibKXE6wcd1qPaoC3XschqNfyeTYwZhqXLrMVCvKfw"}
 
 ## Print statements
 With print statements, you can deep-dive into your test flow. Click on the <span className='font-mono bg-blue-500 text-white rounded-md font-extrabold py-0.5 px-1.5 mx-1'>+</span> button and type into the text field. You can think of this the same way as of `console.log(){:js}`. Anything you put in here will be printed out to the console. You can observe the values changing over the time of your test run.
-:VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
+:VideoPlayer{id="nbx8x8yoUyUXgIN9wtGJcexyI02CfbzFZnY7f6wkuJts"}
 
 Read the full guide on print statements in [reference guide](/reference-guide/debugging/print-statements).
 
@@ -62,7 +62,7 @@ You can use console the same way as in any other browser console. Replay will ho
 
 Read the full guide on console in [reference guide](/reference-guide/dev-tools/console).
 
-:VideoPlayer{id="8Heoh01AgEKew9LlsCpV5V00XecpSLR6oDgisqcLD477s"}
+:VideoPlayer{id="R5CIB6Ye02YjwtGG9qsfdIwc00hJNPL01g8Scg9UqIEBmc"}
 
 ::callout{icon="i-heroicons-light-bulb"}
 PRO tip: You can use `cy.now(){:js}` to call a Cypress command inside the console. For example, call `cy.now('get', '[data-id=send-button]'){:js}` to select `[data-id=send-button]` element on a given moment of your recording. This is great for checking if a given element was present at a precise moment.

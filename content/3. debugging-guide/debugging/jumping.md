@@ -20,16 +20,16 @@ The key is being able to easily jump to the most interesting points in time.
 
 Hover on a Cypress action and click on **Jump to code** to seek to your application’s onClick or onKeypress event handler.
 
-:VideoPlayer{id="Cj9inxL6hHKrtEgGLx4QzdYVxmGEiwGjfDwpcetaZYE"}
+:VideoPlayer{id="HINsI8S3oMGcApJYMvxFyOSVzDHjMLvhqyhYP23XNN8"}
 
 ### Jump to console message
 
 Hover on a console message and click on **Jump to code** to seek to where the message was emitted.
 
-:VideoPlayer{id="Cj9inxL6hHKrtEgGLx4QzdYVxmGEiwGjfDwpcetaZYE"}
+:VideoPlayer{id="yPdRSVVXzc8017E6bUcA6xr1v02XFbiQxR2dsPUFyedYE"}
 
 ### Jump to request
 
 Hover on a network XHR event and click on **Jump to code** to seek to where the request originated.
 
-:VideoPlayer{id="Cj9inxL6hHKrtEgGLx4QzdYVxmGEiwGjfDwpcetaZYE"}
+:VideoPlayer{id="K00u01QDmmN8iHeGGKtsrVK2j02osIxtQZMC01KRU02BQkCs"}

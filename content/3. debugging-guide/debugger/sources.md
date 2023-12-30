@@ -55,7 +55,7 @@ If source maps were available during recording or [uploaded to Replay](/getting-
 
 The toggle in the lower-left side of a source will indicate if it is an Original Source file. Clicking the toggle will automatically open the corresponding bundled file.
 
-:VideoPlayer{id="5OGcnQ02wLwQU2Ubp6paqD8hfkRgm02RWfbUkAfJJh100k"}
+:VideoPlayer{id="7z6EImwfFil2rmajs5P2U8Q7hP2cYzFGzW9m2V8gUuI"}
 
 ### Source Maps Visualization
 

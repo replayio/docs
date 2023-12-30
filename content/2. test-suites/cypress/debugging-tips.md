@@ -34,7 +34,7 @@ In these cases you can jump to a line of code and evaluate expressions in the Co
 
 With Replay you can jump from a test `cy.click(){:js}` command into your React component’s `onClick{:js}` hander. In the example below, we jump from the test’s click command into the Todo app’s `handleEdit{:js}` callback.
 
-:VideoPlayer{id="SWxOLuzsfxGjtt5um01zfOtxrsnxor6hMCamKSglK0001g"}
+:VideoPlayer{id="j4U02cH0100x7rLztMKqFDzZH01XPWzdsOT1W4RbfY01NDdE"}
 
 ## Test burn-in
 Rerunning your test repeatedly can be a helpful ways to catch a test flake. This strategy can sometimes be easier if you want to quickly record a flake locally.

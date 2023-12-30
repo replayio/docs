@@ -62,7 +62,7 @@ When hovering on a line in a source:
 
 You will see dots appear on the timeline that mark the executions of that line. The dots will turn red as you navigate between points.
 
-:VideoPlayer{id="ezNcAM00k01DBQCcVky72OcIIMvvc1GvSBHWlq2Mr5QGI"}
+:VideoPlayer{id="oIO02oKyl1tiwkWtpl4V3fXoP00LwDHNQ1101ol002UnJ74"}
 
 ### Call Stack
 

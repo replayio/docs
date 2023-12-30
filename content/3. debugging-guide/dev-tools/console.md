@@ -45,7 +45,7 @@ When typing in the terminal, you will see autocomplete suggestions. Autocomplete
 
 Clicking on an object lets you see an expanded view of its properties. Unlike traditional consoles which will show the object’s property values as they are now, when you expand an object in Replay you will see the values as they were when the message was logged to the Console!
 
-:VideoPlayer{id="esf00aKodRhUh17r2KGXpUKzvTjVzCmUuEbSMG6GhZ2w"}
+:VideoPlayer{id="S01YOEOoF7NQbIYPgHPwUQQ7NgLXa34x00LsCrgZ3XFc00"}
 [Original replay](https://app.replay.io/recording/the-s-series-snowboard-hydrogen--6649f1d0-1526-42ce-835d-852cd62d4b5c)
 
 [Original replay](https://app.replay.io/recording/the-s-series-snowboard-hydrogen--6649f1d0-1526-42ce-835d-852cd62d4b5c)
@@ -54,7 +54,7 @@ Clicking on an object lets you see an expanded view of its properties. Unlike tr
 
 Replay Errors can be expanded to view the stack trace and see where the error originated. Clicking on a stack trace function or source location will navigate the Source Editor to the line of code.
 
-:VideoPlayer{id="esf00aKodRhUh17r2KGXpUKzvTjVzCmUuEbSMG6GhZ2w"}
+:VideoPlayer{id="WPl9zUnkeA9eHXZ6F7C98P9C8HSmrKEy01y201ulLaNjo"}
 ## Console message types
 
 The console settings panel is useful for filtering console exceptions, errors, warnings, and logs when they are not helpful. It's also possible to filter console logs by adding a query in the filter bar.

@@ -95,7 +95,7 @@ Test Suites are currently in closed Beta. If you’d like to start recording you
 
 **2. Once you’ve created a team, click on the settings :UIcon{name="i-heroicons-cog-8-tooth-solid"} icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)**
 
-:VideoPlayer{id="MKY00er012SvPUW01AHa8c8d7W1DPK8KFFIo3RvcLXWUUU"}
+:VideoPlayer{id="KMJn27IKI9y3MqjcSnnn9QoEeLQp01pv9stcjLtOTQLg"}
 
 **3. Save that API in your CI environment as `REPLAY_API_KEY`**
 

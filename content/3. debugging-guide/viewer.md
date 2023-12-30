@@ -39,7 +39,7 @@ To add comments on the video:
 
 You can also reply to comments and edit or delete your own comments. You can also attach a Loom video to any comment by clicking the paper clip icon.
 
-:VideoPlayer{id="rejFnBaWkkRCGhSbMLsCj3w00mQWwuYX00RDDX5eHYg6Y"}
+:VideoPlayer{id="lFbqmYY00Zay9yZBEZKfmHiEZkuqPGFnLNXOfgIXV202E"}
 
 ## Navigating by events
 

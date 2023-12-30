@@ -33,7 +33,7 @@ Search for text two ways:
 
 When searching for text, you can toggle whether to include results found in `node_modules` by checking the box under the search input.
 
-:VideoPlayer{id="lwrPu622DLmcR00gQxRTuHKtxtS01e7zkwNCqwfpPXSaI"}
+:VideoPlayer{id="Lc5UEg9r2a6iUH7jCP02x338n100DdN5xgYtkXVWaiOo8"}
 
 Including/excluding node modules from search results.
 

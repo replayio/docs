@@ -56,7 +56,7 @@ Test Suites are currently in closed Beta. If you’d like to start recording you
 
 **2. Once you’ve created a team, click on the settings <MaterialSymbolsSettings className="w-6 h-6 inline-block" /> icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)**
 
-:VideoPlayer{id="oB7LA8FC8WUB4Q52QKH00FH02UFpTeqCwYZB01tpAftZvQ"}
+:VideoPlayer{id="KMJn27IKI9y3MqjcSnnn9QoEeLQp01pv9stcjLtOTQLg"}
 
 **3. Save the API key in your environment as `REPLAY_API_KEY`**. You can run your tests locally or using your CI provider.
 

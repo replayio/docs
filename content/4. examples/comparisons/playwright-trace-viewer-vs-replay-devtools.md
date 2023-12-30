@@ -43,7 +43,7 @@ In contrast, the Console logs in Replay DevTools work the same way that they do 
 
 And because Replay is a browser, pausing in Replay DevTools is similar to pausing in Chrome DevTools. When you’re paused, you’re able to evaluate expressions in the Console terminal like `response.result`.
 
-:VideoPlayer{id="fhrK01qTnK9Y02901bFHz2q6W5gnLWf02XWDR3Jxr9I25oU"}
+:VideoPlayer{id="b8pME15U7GRVuz8OLyc01WxqrnJyEgtuOsGz8lB502hoM"}
 
 ### React + Redux DevTools
 
@@ -53,11 +53,11 @@ Typically, React DevTools can help you find the React component with the user vi
 
 In the example, below we’re using React DevTools to inspect Replay’s Console components and view the source code. If we wanted to see what the props were when the components rendered, we could add a `console.log(...)` in the code.
 
-:VideoPlayer{id="fhrK01qTnK9Y02901bFHz2q6W5gnLWf02XWDR3Jxr9I25oU"}
+:VideoPlayer{id="l772CTasC7Rn00gpBRreW5Bcn02l501UIDSwJpWpgA00Ems"}
 
 In the example, below we’re using Redux DevTools to inspect the `pointsReceived` and `paused` actions. Unlike standard Redux DevTools, we’re able to go beyond simply looking at the action payload and application state at that point in time and jump directly into the redux dispatch. From there we can add console logs in the thunk and better understand the sequence of events that lead up to the dispatch.
 
-:VideoPlayer{id="fhrK01qTnK9Y02901bFHz2q6W5gnLWf02XWDR3Jxr9I25oU"}
+:VideoPlayer{id="n3BM4s8eGZjggIQuGTOzISf2Rni3crBxSrXnuH9rOaQ"}
 
 ## Conclusion
 
