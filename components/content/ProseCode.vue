@@ -877,6 +877,7 @@ const props = defineProps<{
   hideHeader?: boolean
   filename?: string
   highlights?: number[]
+  showLineNumbers?: boolean
   meta?: string
 }>()
 
@@ -918,9 +919,13 @@ transformedCode.value = formatted
   .replaceAll('<span class="line"></span>', '')
   .replaceAll('<span class="line">', '<span class="code-line">') // remove default classes
   .split('<span class="code-line">').filter(line => line.trim() !== '') // split each line
-  .map((line, index) => index === 0 ? line : '<span class="code-line">' + line) // 
-  .map((line, num) => num !== 0 ? `<span ${props.highlights.includes(num) ? 'class="highlight"' : ''}><span class="line-number">${(num).toString().padStart(2, ' ')}  </span>${line}</span>` : line)
+  .map((line, index) => index === 0 ? line : '<span class="code-line">' + line) // don’t add span to first line
+  .map((line, num) => num !== 0 ? // add highlight and line numbers
+    `<span ${props.highlights.includes(num) ? 'class="highlight"' : ''}>${props.showLineNumbers ? `<span class="line-number">${(num).toString().padStart(2, ' ')}  </span>${line}</span>` : `</span>${line}</span>`}` : 
+    line)
   .join('')
+
+  console.log(props.showLineNumbers)
 
 </script>
 <template>

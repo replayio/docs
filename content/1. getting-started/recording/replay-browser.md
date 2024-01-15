@@ -2,9 +2,6 @@
 title: Replay Browser
 description: ''
 ---
-
-# Replay Browser
-
 The Replay Browser is software you [download and install](/getting-started/replay-browser/installation) on your computer to record replays. To learn more about recording a replay with the browser, [check out our guide here](/getting-started/recording-your-first-replay).
 
 **The Replay Browser is not required to view existing replays.**

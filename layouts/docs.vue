@@ -36,7 +36,9 @@ const headerLinks = computed(() => {
 })
 
 const navigationLinks = computed(() => {
-  return mapContentNavigation(navPageFromPath('/' + route.params.slug[0], navigation.value)?.children || [])
+  const path = [route.params.slug?.[0]].filter(Boolean).join('/')
+
+  return mapContentNavigation(navPageFromPath('/' + path, navigation.value)?.children || [])
 })
 
 </script>

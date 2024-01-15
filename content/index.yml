@@ -2,19 +2,18 @@ title: 'Replay.io'
 description: 'Replay.io is a tool that makes debugging easy. It lets you record your web app and retroactively inspect it using print statements and browser DevTools.'
 navigation: false
 hero:
-  title: 'Replay [Docs]{.text-primary}'
+  title: 'Replay Docs'
   description: 'Create your documentation in seconds with this template!'
   orientation: horizontal
   links:
-    - label: 'Get started'
+    - label: 'Getting started'
       icon: 'i-heroicons-rocket-launch'
       to: '/getting-started'
       size: lg
-    - label: 'Use this template'
-      icon: 'i-simple-icons-github'
+    - label: 'Debugging guide'
+      icon: 'i-ic-outline-bug-report'
       color: 'white'
-      to: 'https://github.com/new?template_name=docs&template_owner=nuxt-ui-pro'
-      target: '_blank'
+      to: 'debugging-guide'
       size: lg
   code: |
     ```bash [Terminal]
