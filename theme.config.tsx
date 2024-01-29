@@ -13,7 +13,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/replayio/replay-documentation/tree/main',
   footer: {
-    text: '® 2023 Replay, All rights reserved.',
+    text: '® 2024 Replay, All rights reserved.',
   },
   toc: {
     backToTop: true
