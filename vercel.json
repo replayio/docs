@@ -207,6 +207,14 @@
     {
       "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-on-windows",
       "destination": "/getting-started/replay-browser/installation#windows-beta"
+    },
+    {
+      "source": "/reference-guide/focus-mode",
+      "destination": "/reference-guide/debugging/focus-mode"
+    },
+    {
+      "source": "/debugging",
+      "destination": "/reference-guide/debugging/print-statements"
     }
   ],
   "rewrites": [
