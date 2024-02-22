@@ -2,6 +2,8 @@ import React from 'react'
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 import ReplayLogotype from '@icons/ReplayLogotype'
 import { useRouter } from 'next/router'
+import NavBar from '@components/NavBar'
+import SignupButton from '@components/SignupButton'
 
 const config: DocsThemeConfig = {
   logo: <ReplayLogotype width={100} />,
@@ -14,6 +16,10 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: 'https://github.com/replayio/replay-documentation/tree/main',
   footer: {
     text: '® 2024 Replay, All rights reserved.',
+  },
+  navbar: {
+    component: NavBar,
+    extraContent: SignupButton
   },
   toc: {
     backToTop: true
