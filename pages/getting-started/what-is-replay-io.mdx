@@ -17,38 +17,29 @@ import replayDashboardPttbf from '/videos/replay-dashboard_pttbf.mp4'
 import shareJplox from '/videos/share_jplox.mp4'
 
 # What is Replay.io?
-**Replay.io is a tool that makes debugging easy.** It’s a browser that lets you record your web app and retroactively inspect it using print statements and browser DevTools.
-
-You can think about Replay as three tools in one:
+**Replay.io is a tool that allows you to record your application and then debug everything that happened during runtime.** Think of the nastiest bug you have ever faced. You would be able to fix it in minutes with insights that Replay provides. Experience with replay consists of two main parts:
 
 <div className="grid grid-flow-col justify-items-center pt-10">
   <div className="grid grid-flow-row justify-items-center">
     <IconSquare>
       <BiBrowserChrome className="fill-pink-500" />
     </IconSquare>
-    <p className="font-bold py-3">Browser</p>
-  </div>
-  <div className="grid grid-flow-row justify-items-center">
-    <IconSquare>
-      <FluentVideoRecording20Regular className="fill-pink-500" />
-    </IconSquare>
-    <p className="font-bold py-3">Recorder</p>
+    <p className="font-bold py-3">Replay Browser</p>
   </div>
   <div className="grid grid-flow-row justify-items-center">
     <IconSquare>
       <FluentWindowDevTools24Regular className="fill-pink-500" />
     </IconSquare>
-    <p className="font-bold py-3">DevTools</p>
+    <p className="font-bold py-3">Replay DevTools</p>
   </div>
 </div>
 
-- As **browser** for testers and developers, it’s built on top of Chromium so it has everything you’d find in Chrome, but it has **one super power and that’s recording.**
-- As **recorder** you can use it to record your web app and then replay it later exactly as it ran before. That’s how Replay got its name.
-- As **DevTools** you can inspect your recording (*or your "replay" as we like to call it*) that contains much more than mere video. You can inspect Network requests, DOM elements, and even React components. But even better, you can find a function, add a `console.log(){:js}`, and the Replay browser will retroactively log the messages to the console. 
+- **Replay Browser** has the ability to record everything that happens between browser and operation system. A recording created with this browser is called a "replay"
+- **Replay DevTools** lets you inspect the replay. It’s like Chrome DevTools, but with time travel. You can inspect Network requests, DOM elements, and even React components properties. You can add a `console.log(){:js}` to a replay and examine your application runtime at a perfect moment.
 
 ## How to use Replay.io?
 <Callout type="info" emoji="💡">
-This example shows the simplest use case. Once you get familiar with the basic principles of recording and debugging, we highly recommend you to [check out our Test Suites documentation](/test-suites) to learn how you can integrate Replay Browser into Cypress, Playwright or other framework and draw your test flakiness below&nbsp;1%.
+This example shows the simplest use case. Once you get familiar with the basic principles of recording and debugging, we highly recommend you to [check out our Test Suites documentation](/test-suites) to learn how you can integrate Replay Browser into Cypress, Playwright, Selenium, Puppeteer or WebdriverIO and draw your test flakiness to zero.
 </Callout>
 Typically, you would use Replay to debug, or better understand your app. The journey with Replay.io would have three chapters:
 
@@ -90,7 +81,7 @@ node puppeteer-test.js # Read docs on how to set up your configuration
 <Video src={replayDashboardPttbf} />
 
 ### Fix the bug or get help
-With a better understanding of data flows, state changes and other processes in your app, you can now fix your bug. Or even better, send a recording to your colleague to debug together.
+With a better understanding of data flows, state changes and other processes in your app, you can now fix your bug. And since Replay DevTools run in cloud, you can send a recording to your colleague and debug together.
 
 <Video src={shareJplox} />
 
