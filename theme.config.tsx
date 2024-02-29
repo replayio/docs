@@ -3,7 +3,7 @@ import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 import ReplayLogotype from '@icons/ReplayLogotype'
 import { useRouter } from 'next/router'
 import NavBar from '@components/NavBar'
-import SignupButton from '@components/SignupButton'
+import LoginButtoon from '@components/LoginButtoon'
 
 const config: DocsThemeConfig = {
   logo: <ReplayLogotype width={100} />,
@@ -19,7 +19,7 @@ const config: DocsThemeConfig = {
   },
   navbar: {
     component: NavBar,
-    extraContent: SignupButton
+    extraContent: LoginButtoon
   },
   toc: {
     backToTop: true
