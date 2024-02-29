@@ -1,0 +1,70 @@
+---
+title: "Debugging navigation issues"
+---
+import { Callout } from 'nextra/components'
+import YouTubeVideo from '@components/YouTubeVideo'
+import Video from '@components/Video'
+import sourceSearch from '/videos/source-search.mp4'
+import windowLocationPrintStatement from '/videos/window-location-print-statement.mp4'
+
+Routers and navigation changes can be one of the hardest bugs to catch. Most of the time, the changes happen too quickly and can get really tricky.
+
+## Example use case
+Here is a (somewhat edgy) example of how a navigation problem can occur. You can take a look at the example [on this link](https://github.com/filiphric/redirects). The application is a simple start button, that will redirect the user from the main page to **Page A**, then to **Page B**, **Page C** until finally lands on **Page D**. Here’s how this navigation is handled in the application itself:
+
+```tsx filename="main.tsx" showLineNumbers
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />
+  },
+  {
+    path: "/a",
+    element: <Redirect path="/b" component={<PageA />}/>
+  },
+  {
+    path: "/b",
+    element: <Redirect path="/c" component={<PageB />}/>
+  },
+  {
+    path: "/c",
+    element: <Redirect path="/d" component={<PageC />}/>
+  },
+  {
+    path: "/d",
+    element: <PageD />
+  },
+]);
+```
+These redirects are not visible in a browser when we run the application normally. However, with Replay Browser, all of these redirects are caught. 
+
+<Callout type='info'>
+This example uses navigation through different paths, but changes to navigation could include protocol changes, query parameters, and much more. All of these are normally hard to debug but can be easily paused in a replay created with Replay Browser
+</Callout>
+
+## Searching for navigation
+The easiest way to find out about location changes is by searching in the source code.
+
+<Video src={sourceSearch} />
+
+Most of the time when we are dealing with location, a `window.location` property is being used. Searching for this property will reveal all the places where it’s being used.
+
+By default, the search excludes searching in `node_modules` folder. Enabling it will reveal many more search results.
+
+![Exclude node_modules toggle](/images/exclude_node_modules_source_search.png)
+
+## Finding the right place to debug
+The more robust the application, the messier the results can get. But a good indicator in Replay DevTools is taking a look at the hit count inside a file:
+
+![navigation hit cound in history.ts file](/images/navigation-history-hit-count.png)
+
+Adding a print statement here reveals information about all the locations we have visited during the time of our recording. Even the ones we would not be able to see on manual inspection.
+
+<Video src={windowLocationPrintStatement} />
+
+## Going further
+When facing a bug connected to a router or overall navigation, some digging might be needed. But being able to search through all the code and stop at the perfect moment can be the missing piece of the puzzle needed for effective debugging of these issues.
+
+<Callout type='info'>
+Need help? If you run into any issues, contact us at support@replay.io or in the [Replay Discord](https://replay.io/discord).
+</Callout>
