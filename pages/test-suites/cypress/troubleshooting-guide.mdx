@@ -78,11 +78,11 @@ On CI, you can set these environment variables on the task that runs your tests:
 
 ### Replay browser runs but doesn’t record
 
-The Replay browser is compiled against OpenSSL 1.1 which has been deprecated and is not included on some more recent platforms. To manually install it, run the following:
+The Replay browser is compiled against OpenSSL 1.1 which has been deprecated and is not included on some more recent platforms. To manually install it on ubuntu, run the following:
 
 ```bash
-wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb
-sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb
+wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb
+sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb
 ```
 
 ### DeploySentinel
