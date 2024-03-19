@@ -1,35 +1,16 @@
 ---
-title: Installation
+title: Installing the Replay Firefox Browser
 ---
 import { Callout, Cards, Card } from 'nextra/components'
 import Tag from '@components/Tag'
 
-# Installing the Replay browser
+# Installing the Replay Firefox Browser
 
 To start recording your own replays, you first need to install the **Replay Browser**. There are several ways to install it.
 
 <Callout type="warning" emoji="💡">
 Installing the **Replay Browser** is only required to record replays. If you want to view an existing replay, open it in any browser and skip straight to debugging.
 </Callout>
-
-## CLI (Replay Chrome) <Tag>New</Tag>
-Replay Chrome is currently built for automated recordings with tools like Playwright and Cypress so it does not have a record button yet. If you would like to use Chrome to record a replay, you can use the `replay` CLI.
-
-```sh copy
-npm i @replayio/replay -g
-```
-
-<Callout type="info" emoji="💡">
-We recommend installing the Replay CLI globally. This will add `replay` to your path so you can skip `npx` and just call `replay` directly
-</Callout>
-
-To open Replay type following command into your terminal
-
-```sh copy
-replay record http://localhost:3000
-```
-
-The `http://localhost:3000` is the URL of an application that you want to start recording. Recording will automatically stop when you close the browser. To check list of all your recordings type `replay ls` into your terminal. To see more details on how to use Replay CLI, [follow these docs](/reference-guide/recording/replay-cli).
 
 ## Mac
 

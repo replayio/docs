@@ -1,0 +1,41 @@
+---
+title: Installing the Replay Chrome Browser
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Installing the Replay Chrome Browser
+
+To start recording your own replays, you first need to install the **Replay Browser**. There are several ways to install it.
+
+<Callout type="warning" emoji="💡">
+Installing the **Replay Browser** is only required to record replays. If you want to view an existing replay, open it in any browser and skip straight to debugging.
+</Callout>
+
+[Firefox is our default browser](/getting-started/replay-browser/replay-firefox) today for legacy reasons, but Chrome is our future and is better in almost every way. Replay DevTools has the latest Elements and React Panel, print statements are faster, paints are more accurate, and if there is an issue while replaying we will fix it. 
+
+The only catch is that the browser is currently headless and unsigned which means you need to launch it and upload recordings from our CLI.
+
+<Steps>
+### Install Replay CLI
+```bash npm2yarn copy
+npm i @replayio/replay -g
+```
+### Record your site
+```bash copy
+replay record http://localhost:3000
+```
+### Upload your recording
+``` bash
+replay login; 
+replay ls; # print all your replays
+replay upload <id> # upload a replay of your choice
+```
+### Open Replay DevTools
+...and start debugging
+![Replay devtools](/images/replay-devtools.png)
+</Steps>
+
+<Callout type="warning" emoji="🚧">
+Replay Chrome is built for Mac, Linux and Windows. Windows version is currently highly experimental and it is expected for users to encounter issues when recording your site.
+</Callout>
