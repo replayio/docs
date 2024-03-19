@@ -1,5 +1,6 @@
 {
-  "installation": "Installation",
+  "install-chrome": "Install Replay Chrome",
+  "install-firefox": "Install Replay Firefox",
   "viewing-and-collaborating": "Viewing And Collaborating",
   "sharing-your-replay": "Sharing Your Replay",
   "linux-support": "Linux Support",

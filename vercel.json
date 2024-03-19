@@ -194,19 +194,19 @@
     },
     {
       "source": "/getting-started/bug-reports/installing-the-replay-browser",
-      "destination": "/getting-started/replay-browser/installation"
+      "destination": "/getting-started/replay-browser/install-firefox"
     },
     {
       "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-replay-chrome",
-      "destination": "/getting-started/replay-browser/installation#cli-replay-chrome-new"
+      "destination": "/getting-started/replay-browser/install-chrome"
     },
     {
       "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-on-linux",
-      "destination": "/getting-started/replay-browser/installation#linux"
+      "destination": "/getting-started/replay-browser/install-firefox#linux"
     },
     {
       "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-on-windows",
-      "destination": "/getting-started/replay-browser/installation#windows-beta"
+      "destination": "/getting-started/replay-browser/installr-firefox#windows-beta"
     },
     {
       "source": "/reference-guide/focus-mode",
@@ -215,6 +215,10 @@
     {
       "source": "/debugging",
       "destination": "/reference-guide/debugging/print-statements"
+    },
+    {
+      "source": "/getting-started/replay-browser/installation",
+      "destination": "/getting-started/replay-browser/install-chrome"
     }
   ],
   "rewrites": [
