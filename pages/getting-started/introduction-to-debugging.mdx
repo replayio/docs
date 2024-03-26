@@ -1,6 +1,7 @@
 ---
 title: Introduction to debugging
 ---
+
 import Video from '@components/Video'
 import YouTubeVideo from '@components/YouTubeVideo.tsx'
 import jumpToCodeOftgs from '/videos/jump-to-code_oftgs.mp4'
@@ -12,8 +13,9 @@ import inspectingElementsVolne from '/videos/inspecting-elements_volne.mp4'
 import callbackAndScopesHardt from '/videos/callback-and-scopes_hardt.mp4'
 import evaluatingConsoleDyaze from '/videos/evaluating-console_dyaze.mp4'
 import inspectReactComponentZoscp from '/videos/inspect-react-component_zoscp.mp4'
- 
+
 # Introduction to debugging
+
 <YouTubeVideo src="https://www.youtube.com/embed/bNWxgc8i-VU" />
 
 ## Viewing your application
@@ -24,9 +26,9 @@ It’s important to get a sense of what was happening in the app at the time of 
 
 ## Time Travel Debugging
 
-When you switch to DevTools, you’ll see everything you’d find in Chrome Devtools except now they’ve been super charged with time travel. For the first time you’re able to jump from a user event to where the event was handled and from a log in the Console to where the log was emitted. For the first time, you can start time traveling! 
+When you switch to DevTools, you’ll see everything you’d find in Chrome Devtools except now they’ve been super charged with time travel. For the first time you’re able to jump from a user event to where the event was handled and from a log in the Console to where the log was emitted. For the first time, you can start time traveling!
 
-1. [**Jumping to an event handler**](#jumping-to-an-event-handler) 
+1. [**Jumping to an event handler**](#jumping-to-an-event-handler)
 2. [**Jumping to a console log**](#jumping-to-a-console-log)
 3. [**Evaluating print statements**](#evaluating-print-statements)
 4. [**Jumping to a network request**](#jumping-to-a-network-request)
@@ -35,7 +37,7 @@ When you switch to DevTools, you’ll see everything you’d find in Chrome Devt
 
 ### Jumping to an event handler
 
-It can be helpful to jump directly to the line of code that causes an event. In the events pane, click the blue button to have that line of code open in the source viewer. 
+It can be helpful to jump directly to the line of code that causes an event. In the events pane, click the blue button to have that line of code open in the source viewer.
 
 <Video src={jumpToCodeOftgs} />
 
@@ -47,7 +49,7 @@ You can jump between console messages generated from your application, or ones y
 
 ### Evaluating print statements
 
-Replay lets you add [print statements](/reference-guide/debugging/print-statements) (also called console logs) to an existing replay with no need to compile or re-run the code. Adding print statements to a replay is like going back in time and adding markers to your code to broadcast information at specific points. 
+Replay lets you add [print statements](/reference-guide/debugging/print-statements) (also called console logs) to an existing replay with no need to compile or re-run the code. Adding print statements to a replay is like going back in time and adding markers to your code to broadcast information at specific points.
 
 Let’s say you have a click handler that is supposed to update the value of a variable, but you’re not sure if it’s actually working. You could add a **print statement** to log the value of that variable after the function executes to see if it actually updated.
 
@@ -57,7 +59,7 @@ With Replay print statements, you can see how many times a function executed, ev
 
 ### Jumping to a network request
 
-The Replay [Network Monitor](/reference-guide/debugging/print-statements) is helpful for debugging anything related to your API or any external network requests going in and out of your application. 
+The Replay [Network Monitor](/reference-guide/debugging/print-statements) is helpful for debugging anything related to your API or any external network requests going in and out of your application.
 
 If requests fail or time out or if data coming from your back end isn’t accurate, the Network Monitor can help identify problematic requests for debugging. All network requests appear as a timeline so you can navigate back and forth between calls.
 
@@ -85,7 +87,7 @@ The **[Elements panel](/reference-guide/dev-tools/elements)** is the blueprint o
 
 ### Inspecting React components
 
-For React applications, you can view components, props, state, and hooks with Replay’s [React DevTools](/reference-guide/dev-tools/react). 
+For React applications, you can view components, props, state, and hooks with Replay’s [React DevTools](/reference-guide/dev-tools/react).
 
 React DevTools helps you answer questions like
 
@@ -105,11 +107,10 @@ How confident are you in the actual execution of your code? Bugs often occur whe
 The Heat Map in the editor’s gutter is helpful for seeing how many times a line was executed. This helps to identify dead code that never ran, or lines that are running too frequently and may be causing performance issues.
 
 ![Code line execution](/images/line-execution_ewzxz.png)
-[Overboard replay](https://app.replay.io/recording/overboard--af2b0e8d-812b-4f72-bb57-bec816c58a53?point=28557632723904411194804428248977852&time=11685&hasFrames=false)
 
 ### Inspecting the Call Stack and Scopes
 
-When paused on a specific execution of a line of code, you can view the [call stack](/reference-guide/debugger/breakpoints) leading up to that point. 
+When paused on a specific execution of a line of code, you can view the [call stack](/reference-guide/debugger/breakpoints) leading up to that point.
 
 The [Scopes](/reference-guide/debugger/breakpoints#scopes) pane will show the values of properties and variables within a given scope when paused on an execution of a line of code.
 
@@ -117,7 +118,7 @@ The [Scopes](/reference-guide/debugger/breakpoints#scopes) pane will show the va
 
 ### Evaluating in the Console
 
-The Console lets you view and navigate between print statements and events that occur in your application. You can also use the console to evaluate expressions in order to see the value of variables at different points in time. 
+The Console lets you view and navigate between print statements and events that occur in your application. You can also use the console to evaluate expressions in order to see the value of variables at different points in time.
 <Video src={evaluatingConsoleDyaze} />
 Check out our [Console](/reference-guide/dev-tools/console) documentation for more.
 

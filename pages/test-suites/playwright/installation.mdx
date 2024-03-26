@@ -1,6 +1,7 @@
 ---
 title: Playwright
 ---
+
 import { Callout, Tabs } from 'nextra/components'
 import Video from '@components/Video'
 import MaterialSymbolsSettings from '@icons/MaterialSymbolsSettings'
@@ -24,15 +25,21 @@ import { PlaywrightTestConfig, devices } from "@playwright/test";
 import { devices as replayDevices } from "@replayio/playwright";
 
 const config: PlaywrightTestConfig = {
-  reporter: [["@replayio/playwright/reporter", {
-    apiKey: process.env.REPLAY_API_KEY,
-    upload: true
-  }], ['line']],
+  reporter: [
+    [
+      "@replayio/playwright/reporter",
+      {
+        apiKey: process.env.REPLAY_API_KEY,
+        upload: true,
+      },
+    ],
+    ["line"],
+  ],
   projects: [
     {
       name: "replay-chromium",
-      use: { ...replayDevices["Replay Chromium"] as any },
-    }
+      use: { ...(replayDevices["Replay Chromium"] as any) },
+    },
   ],
 };
 export default config;
@@ -59,9 +66,11 @@ Test Suites are currently in closed Beta. If you’d like to start recording you
 ## Record your tests
 
 ### Recording Locally
-Once you have added Chromium Replay Browser to your project, you are ready to create your recordings. These will be available in your [Replay Dashboard](https://app.replay.io). You can run your tests normally, using `npx playwright test{:sh}` command. 
+
+Once you have added Chromium Replay Browser to your project, you are ready to create your recordings. These will be available in your [Replay Dashboard](https://app.replay.io). You can run your tests normally, using `npx playwright test{:sh}` command.
 
 If your project has multiple browsers set up, you can run Replay Browser only:
+
 ```sh
 npx playwright test --project replay-chromium
 ```
@@ -72,11 +81,10 @@ npx playwright test --project replay-chromium
 Running 1 test using 1 worker
 [1/1] things-app.spec.ts:14:7 › Todos › should allow me to add todo items
 [replay.io]: 🕑 Completing some outstanding work ...
-[replay.io]: 
+[replay.io]:
 [replay.io]: 🚀 Successfully uploaded 1 recordings:
-[replay.io]: 
+[replay.io]:
 [replay.io]:    ✅ should allow me to add todo items
-[replay.io]:       https://app.replay.io/recording/1d50d6ee-fe59-47ba-bc69-fdc6339df3cc
   1 passed (2.1s)
 ```
 
@@ -88,6 +96,7 @@ Here are basic configurations for some of the most popular providers which you c
 
 <Tabs items={['GitHub Actions']}>
 <Tabs.Tab>
+
 ```yml filename=".github/workflows/e2e.yml" copy
 name: End-to-end tests
 on: [push, pull_request]
@@ -105,8 +114,10 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
 ```
+
 </Tabs.Tab>
 </Tabs>
 
 ## Next Steps
+
 Your replays will now be recorded on each test run. You can find all your replays in Test Suite Dashboard.
