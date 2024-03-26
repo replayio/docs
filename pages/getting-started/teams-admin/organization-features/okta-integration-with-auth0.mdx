@@ -1,21 +1,22 @@
 ---
 title: Okta Integration with Auth0
 ---
+
 # Okta Integration with Auth0
 
 ## Logging in with SSO
 
-Logging in with SSO, is as easy as going to app.replay.io, clicking Sign In with SSO, and entering your email. When you enter your email, you will be routed to your standard SSO (Okta provider). 
+Logging in with SSO, is as easy as going to app.replay.io, clicking Sign In with SSO, and entering your email. When you enter your email, you will be routed to your standard SSO (Okta provider).
 
 ![Screen Shot 2022-03-02 at 7.16.07 PM.png](/images/Screen_Shot_2022-03-02_at_7.16.07_PM_qjraf.png)
 
 ## Configuration Info from Replay
 
 | Single Sign on / ACS URL | `https://webreplay.us.auth0.com/login/callback?connection=<connection-name>` |
-| --- | --- |
-| Audience URI | `urn:auth0:webreplay:<connection-name>` |
-| Application username | Okta username |
-| Attribute statements | We need the user's email in the email field |
+| ------------------------ | ---------------------------------------------------------------------------- |
+| Audience URI             | `urn:auth0:webreplay:<connection-name>`                                      |
+| Application username     | Okta username                                                                |
+| Attribute statements     | We need the user's email in the email field                                  |
 
 ## Okta SAML Configuration
 

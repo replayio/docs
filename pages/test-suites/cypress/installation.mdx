@@ -1,6 +1,7 @@
 ---
 title: Cypress - Installation
 ---
+
 import { Callout, Tabs } from 'nextra/components'
 import Video from '@components/Video'
 import MaterialSymbolsSettings from '@icons/MaterialSymbolsSettings'
@@ -25,10 +26,11 @@ npm install @replayio/cypress -D
 
 <Tabs items={['CommonJS', 'ESM']}>
 <Tabs.Tab>
+
 ```jsx copy filename="cypress.config.js"
-const { defineConfig } = require('cypress');
+const { defineConfig } = require("cypress");
 // 🙋‍♂️ Add this line to require the replay plugin
-const { plugin: replayPlugin } = require("@replayio/cypress")
+const { plugin: replayPlugin } = require("@replayio/cypress");
 
 module.exports = defineConfig({
   e2e: {
@@ -44,10 +46,12 @@ module.exports = defineConfig({
   },
 });
 ```
+
 </Tabs.Tab>
 <Tabs.Tab>
+
 ```jsx copy filename="cypress.config.ts"
-import defineConfig from 'cypress'
+import defineConfig from "cypress";
 // 🙋‍♂️ Add this line to add the replay plugin
 import { plugin as replayPlugin } from "@replayio/cypress";
 
@@ -65,6 +69,7 @@ export default defineConfig({
   },
 });
 ```
+
 </Tabs.Tab>
 </Tabs>
 
@@ -74,14 +79,18 @@ It should be `cypress/support/e2e.js` for e2e tests (unless modified)
 
 <Tabs items={['CommonJS', 'ESM']}>
 <Tabs.Tab>
+
 ```jsx copy filename="cypress/support/e2e.js"
-require('@replayio/cypress/support');
+require("@replayio/cypress/support");
 ```
+
 </Tabs.Tab>
 <Tabs.Tab>
+
 ```jsx copy filename="cypress/support/e2e.ts"
-import '@replayio/cypress/support';
+import "@replayio/cypress/support";
 ```
+
 </Tabs.Tab>
 </Tabs>
 
@@ -108,6 +117,7 @@ This step may vary depending on your CI provider. You can learn more about how t
 ## Record your tests
 
 ### Recording locally
+
 Once you have Replay plugin into your project, you are ready to create your recordings. These will be available in your [Replay Dashboard](https://app.replay.io). You can run your tests by adding the `--browser` flag.
 
 ```sh
@@ -154,23 +164,22 @@ npx cypress run --browser replay-chromium
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 [replay.io]: 🕑 Completing some outstanding work ...
-[replay.io]: 
+[replay.io]:
 [replay.io]: 🚀 Successfully uploaded 1 recordings:
-[replay.io]: 
+[replay.io]:
 [replay.io]:    ✅ cypress/e2e/spec.cy.ts
-[replay.io]:       https://app.replay.io/recording/349401bc-c5df-487a-bb55-a3deab4aced5
-[replay.io]: 
+[replay.io]:
 
 ====================================================================================================
 
   (Run Finished)
 
 
-       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+       Spec                                              Tests  Passing  Failing  Pending  Skipped
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
   │ ✔  spec.cy.ts                               00:04        4        4        -        -        - │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
-    ✔  All specs passed!                        00:04        4        4        -        -        -  
+    ✔  All specs passed!                        00:04        4        4        -        -        -
 
 ```
 
@@ -182,6 +191,7 @@ Here are basic configurations for some of the most popular providers which you c
 
 <Tabs items={['GitHub Actions', 'CircleCI']}>
 <Tabs.Tab>
+
 ```yml filename=".github/workflows/e2e.yml" copy
 name: End-to-end tests
 on: [push, pull_request]
@@ -200,8 +210,10 @@ jobs:
         env:
           REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
 ```
+
 </Tabs.Tab>
 <Tabs.Tab>
+
 ```yml filename=".circleci/e2e.yml" copy
 version: 2.1
 jobs:
@@ -215,7 +227,7 @@ jobs:
           command: "npm ci"
       - run:
           name: "Run Cypress Tests"
-          command: 'npx cypress run --browser replay-chromium'
+          command: "npx cypress run --browser replay-chromium"
           environment:
             REPLAY_API_KEY: ${REPLAY_API_KEY}
 workflows:
@@ -224,12 +236,14 @@ workflows:
       - replay-upload:
           context: replayable
 ```
+
 </Tabs.Tab>
 </Tabs>
 
 Looking for other CI providers? Checkout the [Continuous Integration section](/test-suites/cypress/continuous-integration).
 
 ## See also
+
 - [Test Suite Dashboard for Cypress](/test-suites/cypress/dashboard)
 - [Configure recording modes](/test-suites/cypress/configuration)
 - [Continuous integration](/test-suites/cypress/continuous-integration)
