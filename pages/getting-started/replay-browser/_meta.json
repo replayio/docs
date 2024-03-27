@@ -1,8 +1,10 @@
 {
   "install-chrome": "Install Replay Chrome",
   "install-firefox": "Install Replay Firefox",
-  "viewing-and-collaborating": "Viewing And Collaborating",
-  "sharing-your-replay": "Sharing Your Replay",
-  "linux-support": "Linux Support",
-  "importing-browser-settings": "Importing Browser Settings"
+  "viewing-and-collaborating": "Viewing and collaborating",
+  "sharing-your-replay": "Sharing replays",
+  "importing-browser-settings": "Importing Browser Settings",
+  "linux-support": {
+    "display": "hidden"
+  }
 }
