@@ -1,0 +1,34 @@
+---
+title: Command line
+---
+
+import { Steps,  } from 'nextra/components'
+
+
+# Record from the command line
+
+It's absolutely fine to run Replay Chrome from the command line directly.
+
+<Steps>
+### Install Replay Chrome 
+
+```bash
+npx @replayio/replay update-browsers chromium
+```
+
+### Launch the browser 
+
+```bash
+RECORD_ALL_CONTENTS=1 ~/.replay/runtimes/Replay-Chromium.app/Contents/MacOS/Chromium 
+```
+</Steps>
+
+
+### Additional options
+
+#### Loading Chrome extensions
+You can load a locally defined chrome extensions with the `load-extension` chromium argument.
+
+```bash
+RECORD_ALL_CONTENTS=1 ~/.replay/runtimes/Replay-Chromium.app/Contents/MacOS/Chromium  --load-extension=./chrome-extensions-samples/api-samples/web-accessible-resources
+```

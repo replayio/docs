@@ -3,21 +3,14 @@ title: Replay CLI
 ---
 # Replay CLI
 
-More details in the ReadMe section of our NPM package download instructions: [https://www.npmjs.com/package/@replayio/replay](https://www.npmjs.com/package/@replayio/replay)
+The Replay CLI helps you record and upload replays.
 
-# **@replayio/replay**
-
-CLI tool and Node module for managing and uploading **[Replay](https://replay.io/)** recordings and installing Replay Browsers.
-
-## **Overview**
-
-When using the Replay plugins to record automated tests or the Replay version of Node, recordings which are created are saved to disk, by default in `$HOME/.replay`. This package is used to manage these recordings and upload them to the record/replay web service so that they can be viewed.
-
-**Check out the ["Recording Automated Tests Guide"](/test-suites) to get started with recording Cypress or Playwright tests.**
 
 ## **Installation**
 
 `npm i @replayio/replay --global`
+
+For more information view the [NPM](https://www.npmjs.com/package/@replayio/replay) package.
 
 ## **Usage**
 
@@ -60,13 +53,13 @@ Depending on the status the recording descriptor can have some of the following 
 - `recordingId`: If the recording started being uploaded, the server-assigned ID for this recording which can be used to view it.
 - `unusableReason`: If the recording is unusable, the reason it was marked unusable.
 
-### **upload `<id>`**
-
-Upload the recording with the given ID to the web service.
-
 ### **process `<id>`**
 
 Upload a recording, and then process it to ensure it can be replayed successfully.
+
+### **upload `<id>`**
+
+Upload the recording with the given ID to the web service.
 
 ### **upload-all**
 
@@ -75,6 +68,13 @@ Upload all recordings to the web service which can be uploaded.
 Options:
 
 - `-filter`: Filter the recordings to upload using a [JSONata-compatible filter function](https://docs.jsonata.org/higher-order-functions#filter)
+
+### **record**
+
+Launches the browser and records the active tabs.
+
+- `url`: pass in the url to record
+- `--browser-args`: pass in additional browser arguments
 
 ### **view `<id>`**
 
@@ -99,3 +99,5 @@ Updates any installed browsers used for recording in automation: **[playwright]
 ### **upload-sourcemaps**
 
 Allows uploading production sourcemaps to Replay's servers so that they can be used when viewing recordings.
+
+
