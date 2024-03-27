@@ -58,7 +58,7 @@
     },
     {
       "source": "/reference-guide/react",
-      "destination": "/reference-guide/devtools/react"
+      "destination": "/reference-guide/dev-tools/react"
     },
     {
       "source": "/reference-guide/print-statements",
@@ -138,7 +138,7 @@
     },
     {
       "source": "/reference-guide/console",
-      "destination": "/reference-guide/devtools/console"
+      "destination": "/reference-guide/dev-tools/console"
     },
     {
       "source": "/reference-guide/print-statements",
@@ -146,11 +146,11 @@
     },
     {
       "source": "/reference-guide/react",
-      "destination": "/reference-guide/devtools/react"
+      "destination": "/reference-guide/dev-tools/react"
     },
     {
       "source": "/reference-guide/elements",
-      "destination": "/reference-guide/devtools/elements"
+      "destination": "/reference-guide/dev-tools/elements"
     },
     {
       "source": "/reference-guide/breakpoints",
@@ -162,7 +162,7 @@
     },
     {
       "source": "/reference-guide/network",
-      "destination": "/reference-guide/devtools/network"
+      "destination": "/reference-guide/dev-tools/network"
     },
     {
       "source": "/get-help",
