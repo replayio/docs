@@ -28,6 +28,8 @@ function GitHubIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function Header() {
   let [isScrolled, setIsScrolled] = useState(false)
 
+  let pathname = usePathname()
+
   useEffect(() => {
     function onScroll() {
       setIsScrolled(window.scrollY > 0)
@@ -69,13 +71,13 @@ function Header() {
           </Link>
         </div>
       </div>
-      <nav className="hidden lg:flex lg:space-x-8 lg:pt-4 lg:pb-1" aria-label="Global">
+      <nav className="hidden lg:flex lg:space-x-8 lg:pt-4 lg:pb-0" aria-label="Global">
           {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
               className={clsx(
-                item.current ? 'shadow-[0px_3px_0px_0px_rgba(240,45,94,1)] text-gray-900 dark:text-gray-100' : 'text-gray-900 dark:text-gray-100',
+                item.href === pathname ? 'border-b-[rgba(240,45,94,1)] border-b-2 text-gray-900 dark:text-gray-100' : 'text-gray-900 dark:text-gray-100',
                 'inline-flex items-center py-2 px-3 text-sm font-medium'
               )}
               aria-current={item.current ? 'page' : undefined}
