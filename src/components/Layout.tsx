@@ -75,7 +75,7 @@ function Header() {
               key={item.name}
               href={item.href}
               className={clsx(
-                item.current ? 'shadow-[0px_3px_0px_0px_rgba(240,45,94,1)] text-gray-900' : 'text-gray-900 hover:bg-gray-50 hover:text-gray-900',
+                item.current ? 'shadow-[0px_3px_0px_0px_rgba(240,45,94,1)] text-gray-900 dark:text-gray-100' : 'text-gray-900 dark:text-gray-100',
                 'inline-flex items-center py-2 px-3 text-sm font-medium'
               )}
               aria-current={item.current ? 'page' : undefined}
