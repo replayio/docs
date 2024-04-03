@@ -1,0 +1,15 @@
+@import 'tailwindcss/base';
+@import './prism.css';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  [inert] ::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+:root {
+  --media-background-color: --_primary-color;
+}
