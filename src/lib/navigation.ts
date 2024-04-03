@@ -72,9 +72,17 @@ export const navigation: NavigationType = {
   ],
   '/test-suites': [
     {
-      "title": 'Test Suites',
-      "links": [
-        { title: "Cypress", href: '/test-suites/cypress' }
+      title: 'Getting started',
+      links: [
+        { title: "Test Suites", href: '/test-suites' }
+      ],
+    },
+    {
+      title: "Cypress",
+      links: [
+        {
+          title: 'Installation', href: '/test-suites/cypress/installation'
+        }
       ]
     }
   ],
