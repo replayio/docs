@@ -74,7 +74,7 @@ export const navigation: NavigationType = {
     {
       "title": 'Test Suites',
       "links": [
-        { title: "Cypress", href: '/cypress' }
+        { title: "Cypress", href: '/test-suites/cypress' }
       ]
     }
   ],
