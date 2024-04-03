@@ -2,11 +2,12 @@
 
 import { usePathname } from 'next/navigation'
 
-import { navigation } from '@/lib/navigation'
+import { SubPagesType, navigation } from '@/lib/navigation'
 
 export function DocsHeader({ title }: { title?: string }) {
   let pathname = usePathname()
-  let section = navigation.find((section) =>
+  let subPage = pathname.split('/')[1] || 'time-travel'
+  let section = navigation['/' + subPage as SubPagesType['href']].find((section) =>
     section.links.find((link) => link.href === pathname),
   )
 

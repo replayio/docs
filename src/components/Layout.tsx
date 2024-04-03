@@ -11,12 +11,8 @@ import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
+import { subPages } from '@/lib/navigation'
 
-const navigation = [
-  { name: 'Time Travel DevTools', href: '/', current: true },
-  { name: 'Test Suites', href: '/test-suites', current: false },
-  { name: 'Tutorials', href: '/tutorials', current: false }
-]
 function GitHubIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg aria-hidden="true" viewBox="0 0 16 16" {...props}>
@@ -27,7 +23,6 @@ function GitHubIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function Header() {
   let [isScrolled, setIsScrolled] = useState(false)
-
   let pathname = usePathname()
 
   useEffect(() => {
@@ -72,15 +67,14 @@ function Header() {
         </div>
       </div>
       <nav className="hidden lg:flex lg:space-x-8 lg:pt-4 lg:pb-0" aria-label="Global">
-          {navigation.map((item) => (
+          {subPages.map((item) => (
             <a
               key={item.name}
               href={item.href}
               className={clsx(
-                item.href === pathname ? 'border-b-[rgba(240,45,94,1)] border-b-2 text-gray-900 dark:text-gray-100' : 'text-gray-900 dark:text-gray-100',
+                pathname.includes(item.href) || (item.href === '/time-travel' && pathname === '/') ? 'border-b-[rgba(240,45,94,1)] border-b-2 text-gray-900 dark:text-gray-100' : 'text-gray-900 dark:text-gray-100',
                 'inline-flex items-center py-2 px-3 text-sm font-medium'
               )}
-              aria-current={item.current ? 'page' : undefined}
             >
               {item.name}
             </a>

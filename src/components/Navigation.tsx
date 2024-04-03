@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
-import { navigation } from '@/lib/navigation'
+import { SubPagesType, navigation } from '@/lib/navigation'
 
 export function Navigation({
   className,
@@ -12,11 +12,12 @@ export function Navigation({
   onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
 }) {
   let pathname = usePathname()
-
+  let subPage = pathname.split('/')[1] || 'time-travel'
+  
   return (
     <nav className={clsx('text-base lg:text-sm', className)}>
       <ul role="list" className="space-y-9">
-        {navigation.map((section) => (
+        {navigation['/' + subPage as SubPagesType['href']].map((section) => (
           <li key={section.title}>
             <h2 className="font-display font-medium text-slate-900 dark:text-white">
               {section.title}
