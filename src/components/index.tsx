@@ -15,6 +15,7 @@ import { Prose } from './Prose'
 import { QuickLinks, QuickLink } from './QuickLinks'
 import { Search } from './Search'
 import { TableOfContents } from './TableOfContents'
+import { Tab, Tabs } from './Tabs'
 import { Video } from './Video'
 
 export default {
@@ -36,5 +37,7 @@ export default {
   QuickLink,
   Search,
   TableOfContents,
+  Tabs,
+  Tab,
   Video,
 }

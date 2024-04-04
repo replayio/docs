@@ -62,6 +62,12 @@ const tags = {
       href: { type: String },
     },
   },
+  tabs: {
+    render: components.Tabs,
+    attributes: {
+      labels: { type: Array },
+    },
+  },
 }
 
 export default tags
