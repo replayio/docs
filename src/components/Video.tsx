@@ -16,7 +16,7 @@ interface VideoProps {
   src: string
 }
 
-const Video: React.FC<VideoProps> = ({ src }) => {
+export const Video: React.FC<VideoProps> = ({ src }) => {
   // @ts-ignore
   const video = videos[src]
   return <NextVideo src={video} autoPlay muted loop className="pt-5"/>
