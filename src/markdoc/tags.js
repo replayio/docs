@@ -1,6 +1,7 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
 import Video from '@/components/Video'
+import { Tabs, Tab } from '@/components/Tabs'
 import React from 'react'
 
 const tags = {
@@ -34,12 +35,12 @@ const tags = {
   'quick-links': {
     render: QuickLinks,
   },
-  'video': {
+  video: {
     render: Video,
     selfClosing: true,
     attributes: {
-      src: { type: String }
-    }
+      src: { type: String },
+    },
   },
   'quick-link': {
     selfClosing: true,
@@ -50,6 +51,15 @@ const tags = {
       icon: { type: String },
       href: { type: String },
     },
+  },
+  tabs: {
+    render: Tabs,
+    attributes: {
+      labels: { type: Array },
+    },
+  },
+  tab: {
+    render: Tab,
   },
 }
 
