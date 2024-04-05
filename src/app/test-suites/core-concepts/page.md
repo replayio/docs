@@ -3,6 +3,5 @@ title: 'Core concepts'
 description: 'Description'
 ---
 
-{% basic icon="installation" title="Drive test flakes to zero" %}
-Hello
-{% /basic %}
+## Snapshots vs. replays
+<!-- TODO: add links to tool comparisons -->

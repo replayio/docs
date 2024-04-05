@@ -1,20 +1,7 @@
 ---
-title: Cypress - Installation
+title: Cypress.io
 ---
-
-import { Callout, Tabs } from 'nextra/components'
-import Video from '@components/Video'
-import MaterialSymbolsSettings from '@icons/MaterialSymbolsSettings'
-import addTeam from '/videos/add_team.mp4'
-import apiKeys from '/videos/api-keys.mp4'
-
-# Installation
-
-<Callout type="info" emoji="💡">
-This guide assumes that you already have a Cypress 10.9+ test suite. If you’re just setting up your Cypress test suite, first [follow the instructions here](https://docs.cypress.io/guides/getting-started/installing-cypress).
-</Callout>
-
-## Install the Replay plugin
+## Installation
 
 **1. Install the [@replayio/cypress](https://www.npmjs.com/package/@replayio/cypress) package in your project:**
 

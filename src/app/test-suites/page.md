@@ -7,54 +7,76 @@ Replay Test Suites bring **time-travelling DevTools to your test runs**. You’l
 
 {% basic icon="treeview" %}
 
-## Command trace
+## Test Steps Trace
 
-Replay Devtools work great with your existing test suite. Cypress and Playwright plugins allow you to rewind or fast forward to any command from your test run.
+Replay Devtools work great with your existing test suite. Cypress and Playwright plugins allow you to **rewind or fast forward** to any command from your test run.
+
+**Command details** contain information on passed arguments, returned values and targeted element. Commands are integrated with the rest of DevTools. This means you can jump from a command detail into [Elements panel](/time-travel/elements-panel), or inspect API calls in the [Network panel](/time-travel/network-panel).
 {% /basic %}
 
-{% figure alt="Playwright panel" src="/images/playwright_panel.png" /%}
+{% figure
+    alt="Playwright panel"
+    src="/images/playwright_panel.png"
+    gradient="bg-gradient-to-tr from-blue-200 via-fuchsia-300 to-orange-400"
+    height=370
+    width=640
+/%}
 
 {% basic icon="jumptocode" %}
 
-## Jump to code
+## Jump To Code
 
 **See what actually happened** when your test clicked, typed or in other way interacted with your element. Jump from a test command right into the function that was called on interaction.
+
+With information on [line hit counts](#) and [jumping through line executions](#) you’ll be able to narrow down a flake root cause in minutes.
 {% /basic %}
 
-{% figure alt="Playwright panel" src="/images/playwright_panel.png" /%}
+![Jumping to code](/images/jump_to_code.png){% class="bg-gradient-to-r from-fuchsia-600 via-pink-500 to-rose-200" %}
 
 {% basic icon="console" %}
 
-## Test flakiness insight
+## Vizualize Your Race Conditions
 
-Flakiness can be a matter of a single line of code. Reveal that line with a **print statement**.
+Flakiness can be a caused by a single line of code. Reveal that line with a **print statement**. Find race conditions, unexpected data, rendering issues,... you name&nbsp;it.
+
+We have stories of [2 pixel shifts](#) and [false positives](#) that caused headaches to test maintainers. [Learn more](#) about the power of print statements.
 {% /basic %}
 
-![Playwright panel](/images/playwright_panel.png){% class="grid justify-center" %}
+![Race condition](/images/race_condition.png){% class="bg-gradient-to-br from-sky-300 via-blue-300 to-violet-400" %}
 
 {% basic icon="insight" %}
 
-## Tests suite analytics
+## Tests Suite Analytics
 
 Test Suite Dashboard helps you stay on top of your test suite health. **Focus on your top failing, or most flaky tests**. Get insights from your newest feature branch. Focus on most common errors.
+
+Analytics give you actionable insights into your test runs and help you focus on the most important tests.
 {% /basic %}
 
-![Playwright panel](/images/playwright_panel.png){% class="grid justify-center" %}
+![Test suite analytics](/images/runs_view.png){% class="bg-gradient-to-r from-pink-300 via-teal-800 to-teal-100" %}
 
 {% basic icon="build" %}
 
-## Debug CI runs eith ease
+## Debug Ci Runs With Ease
 
-description
+**What happens on CI no longer stays on CI.** Replay Browser captures your test runs exactly as they happened and brings them to Replay DevTools where you can inspect them.
+
+You can zoom out to take a look at your whole test run, or filter out those that are failing the most.
 {% /basic %}
 
-![Playwright panel](/images/playwright_panel.png){% class="grid justify-center" %}
+![Playwright panel](/images/ci.png){% class="bg-gradient-to-t from-emerald-400 via-amber-100 to-sky-300" %}
 
 {% basic icon="bracketscurly" %}
 
-## Integrate with any framework
+## Integrate With Any Framework
 
-description
+If test flakiness pushed you to consider switching to a new testing framework, be at ease. Replay is a browser based on Chromium that can be integrated to any test framework.
+
+We have created an extra tooling around the most popular ones today - [Cypress.io](/test-suites/cypress-io) and [Playwright](/test-suites/playwright).
 {% /basic %}
 
-![Playwright panel](/images/playwright_panel.png){% class="grid justify-center" %}
+{% icon icon="cypress" class="w-9 h-9 inline-block mr-4 lg:ml-12" /%}
+{% icon icon="playwright" class="w-9 h-9 inline-block mr-4" /%}
+{% icon icon="selenium" class="w-9 h-9 inline-block mr-4" /%}
+{% icon icon="webdriverio" class="w-9 h-9 inline-block mr-4" /%}
+{% icon icon="puppeteer" class="w-9 h-9 inline-block mr-4" /%}

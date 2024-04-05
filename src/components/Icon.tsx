@@ -8,25 +8,35 @@ import { PresetsIcon } from '@/components/icons/PresetsIcon'
 import { ThemingIcon } from '@/components/icons/ThemingIcon'
 import { WarningIcon } from '@/components/icons/WarningIcon'
 import { TreeViewSolid } from '@/components/icons/TreeViewSolid'
-import { JumpToCode } from './icons/JumpToCodeIcon'
-import { InsightIcon } from './icons/InsightIcon'
-import { ConsoleIcon } from './icons/ConsoleIcon'
-import { BuildIcon } from './icons/BuildIcon'
-import { BracketsCurlyIcon } from './icons/BracketsCurlyIcon'
+import { JumpToCode } from '@/components/icons/JumpToCodeIcon'
+import { InsightIcon } from '@/components/icons/InsightIcon'
+import { ConsoleIcon } from '@/components/icons/ConsoleIcon'
+import { BuildIcon } from '@/components/icons/BuildIcon'
+import { BracketsCurlyIcon } from '@/components/icons/BracketsCurlyIcon'
+import { CypressIcon } from '@/components/icons/CypressIcon'
+import { PlaywrightIcon } from './icons/PlaywrightIcon'
+import { SeleniumIcon } from './icons/SeleniumIcon'
+import { WebdriverIOIcon } from './icons/WebdriverIOIcon'
+import { PuppeteerIcon } from './icons/PuppeteerIcon'
 
 const icons = {
   build: BuildIcon,
   bracketscurly: BracketsCurlyIcon,
   console: ConsoleIcon,
+  cypress: CypressIcon,
   insight: InsightIcon,
   installation: InstallationIcon,
   jumptocode: JumpToCode,
   lightbulb: LightbulbIcon,
+  playwright: PlaywrightIcon,
   plugins: PluginsIcon,
   presets: PresetsIcon,
+  puppeteer: PuppeteerIcon,
   theming: ThemingIcon,
   treeview: TreeViewSolid,
+  selenium: SeleniumIcon,
   warning: WarningIcon,
+  webdriverio: WebdriverIOIcon
 }
 
 export const iconStyles = {

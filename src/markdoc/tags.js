@@ -46,31 +46,9 @@ const tags = {
       alt: { type: String },
       width: { type: String },
       height: { type: String },
+      gradient: { type: String },
     },
-    render: ({ className = '', src, alt = '', children, height, width }) => {
-      const fill = !height && !width
-      const imgProps = {
-        src,
-        alt,
-        height,
-        width,
-        fill,
-        className: fill ? 'object-contain' : undefined,
-      }
-
-      return (
-        <figure title={alt} className={`not-prose flex flex-col ${className}`}>
-          <div className="relative grid h-64 justify-center sm:h-96">
-            <Image {...imgProps} />
-          </div>
-          {children ? (
-            <figcaption className="flex-shrink pt-3 text-center">
-              {children}
-            </figcaption>
-          ) : null}
-        </figure>
-      )
-    },
+    render: components.Figure,
   },
   video: {
     render: components.Video,
@@ -100,6 +78,13 @@ const tags = {
     attributes: {
       icon: { type: String },
       title: { type: String },
+    },
+  },
+  icon: {
+    render: components.Icon,
+    attributes: {
+      icon: { type: String },
+      class: { type: String },
     },
   },
 }
