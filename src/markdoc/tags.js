@@ -73,6 +73,13 @@ const tags = {
       icon: { type: String },
       title: { type: String }
     }
+  },
+  icon: {
+    render: components.Icon,
+    attributes: {
+      icon: { type: String },
+      class: { type: String }
+    }
   }
 }
 

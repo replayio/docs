@@ -13,3 +13,11 @@
 :root {
   --media-background-color: --_primary-color;
 }
+
+.prose :where(img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  @apply mt-0 mb-0
+}
+
+.prose p:has(img) {
+  @apply m-auto max-w-max rounded-lg p-4
+}

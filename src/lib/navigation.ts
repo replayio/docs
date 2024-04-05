@@ -1,6 +1,6 @@
 export interface SubPagesType {
   name: string;
-  href: '/time-travel' | '/test-suites' | '/tutorials'
+  href: '/time-travel' | '/test-suites'
 }
 
 interface NavigationItemLink {
@@ -19,7 +19,6 @@ type NavigationType = {
 export const subPages: SubPagesType[] = [
   { name: 'Time Travel DevTools', href: '/time-travel' },
   { name: 'Test Suites', href: '/test-suites' },
-  { name: 'Tutorials', href: '/tutorials' }
 ]
 
 export const navigation: NavigationType = {
@@ -79,13 +78,14 @@ export const navigation: NavigationType = {
       ],
     },
     {
-      title: "Cypress",
+      title: "Testing Frameworks",
       links: [
-        {
-          title: 'Installation', href: '/test-suites/cypress/installation'
-        }
+        { title: 'Cypress.io', href: '/test-suites/cypress-io' },
+        { title: 'Playwright', href: '/test-suites/playwright/installation' },
+        { title: 'Selenium', href: '/test-suites/selenium' },
+        { title: 'WebdriverIO', href: '/test-suites/webdriver-io' },
+        { title: 'Puppeteer', href: '/test-suites/puppeteer' }
       ]
     }
-  ],
-  '/tutorials': []
+  ]
 }
