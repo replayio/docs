@@ -7,20 +7,31 @@ import { PluginsIcon } from '@/components/icons/PluginsIcon'
 import { PresetsIcon } from '@/components/icons/PresetsIcon'
 import { ThemingIcon } from '@/components/icons/ThemingIcon'
 import { WarningIcon } from '@/components/icons/WarningIcon'
+import { TreeViewSolid } from '@/components/icons/TreeViewSolid'
+import { JumpToCode } from './icons/JumpToCodeIcon'
+import { InsightIcon } from './icons/InsightIcon'
+import { ConsoleIcon } from './icons/ConsoleIcon'
+import { BuildIcon } from './icons/BuildIcon'
+import { BracketsCurlyIcon } from './icons/BracketsCurlyIcon'
 
 const icons = {
+  build: BuildIcon,
+  bracketscurly: BracketsCurlyIcon,
+  console: ConsoleIcon,
+  insight: InsightIcon,
   installation: InstallationIcon,
-  presets: PresetsIcon,
-  plugins: PluginsIcon,
-  theming: ThemingIcon,
+  jumptocode: JumpToCode,
   lightbulb: LightbulbIcon,
+  plugins: PluginsIcon,
+  presets: PresetsIcon,
+  theming: ThemingIcon,
+  treeview: TreeViewSolid,
   warning: WarningIcon,
 }
 
-const iconStyles = {
+export const iconStyles = {
   blue: '[--icon-foreground:theme(colors.slate.900)] [--icon-background:theme(colors.white)]',
-  amber:
-    '[--icon-foreground:theme(colors.amber.900)] [--icon-background:theme(colors.amber.100)]',
+  amber:'[--icon-foreground:theme(colors.amber.900)] [--icon-background:theme(colors.amber.100)]'
 }
 
 export function Icon({

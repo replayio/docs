@@ -1,5 +1,4 @@
 import React from 'react'
-
 import components from '@/components'
 
 function toSnakeCase(str) {
@@ -68,6 +67,13 @@ const tags = {
       labels: { type: Array },
     },
   },
+  basic:  {
+    render: components.Basic,
+    attributes: {
+      icon: { type: String },
+      title: { type: String }
+    }
+  }
 }
 
 export default tags

@@ -1,3 +1,4 @@
+import { Basic } from './Basic'
 import { Button } from './Button'
 import { Callout } from './Callout'
 import { DocsHeader } from './DocsHeader'
@@ -19,6 +20,7 @@ import { Tab, Tabs } from './Tabs'
 import { Video } from './Video'
 
 export default {
+  Basic,
   Button,
   Callout,
   DocsHeader,

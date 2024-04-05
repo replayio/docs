@@ -74,7 +74,8 @@ export const navigation: NavigationType = {
     {
       title: 'Getting started',
       links: [
-        { title: "Test Suites", href: '/test-suites' }
+        { title: "Test Suites Overview", href: '/test-suites' },
+        { title: "Core concepts", href: '/test-suites/core-concepts' }
       ],
     },
     {
