@@ -4,6 +4,7 @@ import { Callout } from './Callout'
 import { DocsHeader } from './DocsHeader'
 import { DocsLayout } from './DocsLayout'
 import { Fence } from './Fence'
+import { Figure } from './Figure'
 import { Hero } from './Hero'
 import { HeroBackground } from './HeroBackground'
 import { Icon } from './Icon'
@@ -26,6 +27,7 @@ export default {
   DocsHeader,
   DocsLayout,
   Fence,
+  Figure,
   Hero,
   HeroBackground,
   Icon,

@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import components from '@/components'
 
 function toSnakeCase(str) {
@@ -17,6 +18,16 @@ const componentTags = Object.fromEntries(
 
 const tags = {
   ...componentTags,
+  image: {
+    render: Image,
+    selfClosing: true,
+    attributes: {
+      src: { type: String },
+      alt: { type: String },
+      width: { type: String },
+      height: { type: String },
+    },
+  },
   callout: {
     attributes: {
       title: { type: String },
@@ -30,19 +41,14 @@ const tags = {
     render: components.Callout,
   },
   figure: {
-    selfClosing: true,
     attributes: {
       src: { type: String },
       alt: { type: String },
-      caption: { type: String },
+      width: { type: String },
+      height: { type: String },
+      gradient: { type: String },
     },
-    render: ({ src, alt = '', caption }) => (
-      <figure>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt={alt} />
-        <figcaption>{caption}</figcaption>
-      </figure>
-    ),
+    render: components.Figure,
   },
   video: {
     render: components.Video,
@@ -67,20 +73,20 @@ const tags = {
       labels: { type: Array },
     },
   },
-  basic:  {
+  basic: {
     render: components.Basic,
     attributes: {
       icon: { type: String },
-      title: { type: String }
-    }
+      title: { type: String },
+    },
   },
   icon: {
     render: components.Icon,
     attributes: {
       icon: { type: String },
-      class: { type: String }
-    }
-  }
+      class: { type: String },
+    },
+  },
 }
 
 export default tags
