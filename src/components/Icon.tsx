@@ -18,6 +18,11 @@ import { PlaywrightIcon } from './icons/PlaywrightIcon'
 import { SeleniumIcon } from './icons/SeleniumIcon'
 import { WebdriverIOIcon } from './icons/WebdriverIOIcon'
 import { PuppeteerIcon } from './icons/PuppeteerIcon'
+import { ConditionalIcon } from './icons/ConditionalIcon'
+import { PlusButtonIcon } from './icons/PlusButtonIcon'
+import {PlayButtonIcon} from './icons/PlayButtonIcon'
+import { CommentIcon } from './icons/CommentIcon'
+import { PrefixBadgeIcon } from './icons/PrefixBadgeIcon'
 
 const icons = {
   build: BuildIcon,
@@ -36,7 +41,12 @@ const icons = {
   treeview: TreeViewSolid,
   selenium: SeleniumIcon,
   warning: WarningIcon,
-  webdriverio: WebdriverIOIcon
+  webdriverio: WebdriverIOIcon,
+  conditional: ConditionalIcon,
+  plusButton: PlusButtonIcon,
+  playButton: PlayButtonIcon,
+  comment: CommentIcon,
+  prefixBadge: PrefixBadgeIcon
 }
 
 export const iconStyles = {
