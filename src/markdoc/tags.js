@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import components from '@/components'
 
 function toSnakeCase(str) {
@@ -17,6 +18,16 @@ const componentTags = Object.fromEntries(
 
 const tags = {
   ...componentTags,
+  image: {
+    render: Image,
+    selfClosing: true,
+    attributes: {
+      src: { type: String },
+      alt: { type: String },
+      width: { type: String },
+      height: { type: String },
+    },
+  },
   callout: {
     attributes: {
       title: { type: String },
@@ -30,19 +41,36 @@ const tags = {
     render: components.Callout,
   },
   figure: {
-    selfClosing: true,
     attributes: {
       src: { type: String },
       alt: { type: String },
-      caption: { type: String },
+      width: { type: String },
+      height: { type: String },
     },
-    render: ({ src, alt = '', caption }) => (
-      <figure>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt={alt} />
-        <figcaption>{caption}</figcaption>
-      </figure>
-    ),
+    render: ({ className = '', src, alt = '', children, height, width }) => {
+      const fill = !height && !width
+      const imgProps = {
+        src,
+        alt,
+        height,
+        width,
+        fill,
+        className: fill ? 'object-contain' : undefined,
+      }
+
+      return (
+        <figure title={alt} className={`not-prose flex flex-col ${className}`}>
+          <div className="relative grid h-64 justify-center sm:h-96">
+            <Image {...imgProps} />
+          </div>
+          {children ? (
+            <figcaption className="flex-shrink pt-3 text-center">
+              {children}
+            </figcaption>
+          ) : null}
+        </figure>
+      )
+    },
   },
   video: {
     render: components.Video,
@@ -67,13 +95,13 @@ const tags = {
       labels: { type: Array },
     },
   },
-  basic:  {
+  basic: {
     render: components.Basic,
     attributes: {
       icon: { type: String },
-      title: { type: String }
-    }
-  }
+      title: { type: String },
+    },
+  },
 }
 
 export default tags
