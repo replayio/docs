@@ -5,7 +5,7 @@ export interface SubPagesType {
 
 interface NavigationItemLink {
   title: string;
-  href: string; 
+  href: string;
 }
 
 type NavigationType = {
@@ -23,50 +23,61 @@ export const subPages: SubPagesType[] = [
 
 export const navigation: NavigationType = {
   '/time-travel': [
-  {
-    title: 'Getting started',
-    links: [
-      { title: 'What is Replay.io?', href: '/' },
-      { title: 'Recording your first replay', href: '/time-travel/installation' },
-    ],
-  },
-  {
-    title: 'Replay DevTools',
-    links: [
-      {
-        title: 'Video playback',
-        href: '/time-travel/predicting-user-behavior',
-      },
-      { title: 'Inspect your application', href: '/time-travel/introduction-to-string-theory' },
-      {
-        title: 'Time travel debugging',
-        href: '/time-travel/basics-of-time-travel',
-      },
-      { title: 'Cypress + Playwright tests', href: '/time-travel/the-butterfly-effect' },
-    ],
-  },
-  {
-    title: 'Replay Teams',
-    links: [
-      { title: 'In context comments', href: '/time-travel/writing-plugins' },
-      { title: 'Sharing replays', href: '/time-travel/neuralink-integration' },
-      { title: 'Setting up a team', href: '/time-travel/temporal-paradoxes' },
-      { title: 'Managing replays', href: '/time-travel/testing' },
-      { title: 'Organization features', href: '/time-travel/compile-time-caching' },
-      {
-        title: 'Billing and payments',
-        href: '/time-travel/testing2',
-      },
-      {
-        title: 'Team settings',
-        href: '/time-travel/predictive-data-generation2',
-      },
-      {
-        title: 'Uploading source maps',
-        href: '/time-travel/predictive-data-generation3',
-      },
-    ],
-  },
+    {
+      title: 'Getting started',
+      links: [
+        { title: 'What is Replay.io?', href: '/' },
+        { title: 'Recording your first replay', href: '/time-travel/add-a-console-log' },
+      ],
+    },
+    {
+      title: 'Time travel debugging',
+      links: [
+        {
+          title: 'Add console logs',
+          href: '/time-travel/console-log',
+        },
+        { title: 'Jump to any point  in time', href: '/time-travel/introduction-to-string-theory' },
+        { title: 'Set a focus window', href: '/time-travel/basics-of-time-travel', }
+      ],
+    },
+    {
+      title: 'Replay DevTools',
+      links: [
+        {
+          title: 'Video playback',
+          href: '/time-travel/predicting-user-behavior',
+        },
+        { title: 'Inspect your application', href: '/time-travel/introduction-to-string-theory' },
+        {
+          title: 'Time travel debugging',
+          href: '/time-travel/basics-of-time-travel',
+        },
+        { title: 'Cypress + Playwright tests', href: '/time-travel/the-butterfly-effect' },
+      ],
+    },
+    {
+      title: 'Replay Teams',
+      links: [
+        { title: 'In context comments', href: '/time-travel/writing-plugins' },
+        { title: 'Sharing replays', href: '/time-travel/neuralink-integration' },
+        { title: 'Setting up a team', href: '/time-travel/temporal-paradoxes' },
+        { title: 'Managing replays', href: '/time-travel/testing' },
+        { title: 'Organization features', href: '/time-travel/compile-time-caching' },
+        {
+          title: 'Billing and payments',
+          href: '/time-travel/testing2',
+        },
+        {
+          title: 'Team settings',
+          href: '/time-travel/predictive-data-generation2',
+        },
+        {
+          title: 'Uploading source maps',
+          href: '/time-travel/predictive-data-generation3',
+        },
+      ],
+    },
 
   ],
   '/test-suites': [
