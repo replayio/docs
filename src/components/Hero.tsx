@@ -7,6 +7,7 @@ import { Button } from '@/components/Button'
 import { HeroBackground } from '@/components/HeroBackground'
 import blurCyanImage from '@/images/blur-cyan.png'
 import blurIndigoImage from '@/images/blur-indigo.png'
+import { headerFragment } from '@/lib/basehub-queries'
 
 const codeLanguage = 'javascript'
 const code = `export default {
@@ -32,7 +33,7 @@ function TrafficLightsIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function Hero() {
+export function Hero({...headerFragment}: {headerFragment: any}) {
   return (
     <div className="overflow-hidden bg-gray-900 dark:-mb-32 dark:mt-[-4.75rem] dark:pb-32 dark:pt-[4.75rem]">
       <div className="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
@@ -48,10 +49,10 @@ export function Hero() {
               priority
             />
             <div className="relative">
-              <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
-                Never miss the cache again.
+              <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-4xl tracking-tight text-transparent">
+                {headerFragment.title}
               </p>
-              <p className="mt-3 text-2xl tracking-tight text-gray-400">
+              <p className="mt-3 text-xl tracking-tight text-gray-400">
                 Cache every single thing your app could ever do ahead of time,
                 so your code never even has to run at all.
               </p>

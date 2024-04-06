@@ -49,3 +49,4 @@ src/videos/*
 public/_next-video
 
 .env
+.basehub
