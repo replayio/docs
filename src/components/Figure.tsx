@@ -1,4 +1,5 @@
 import NextImage from 'next/image'
+import DialogDemo from './Dialog'
 
 export function Figure({
   className = '',
@@ -34,6 +35,7 @@ export function Figure({
           gradient ? `rounded p-3 sm:rounded-lg sm:p-4 ${gradient}` : ''
         }`}
       >
+        <DialogDemo {...imgProps}>
         {fill && gradient ? (
           <div className="absolute bottom-3 left-3 right-3 top-3 sm:bottom-4 sm:left-4 sm:right-4 sm:top-4">
             <NextImage {...imgProps} />
@@ -41,6 +43,7 @@ export function Figure({
         ) : (
           <NextImage {...imgProps} />
         )}
+        </DialogDemo>
       </div>
       {children ? (
         <figcaption className="flex-shrink pt-3 text-center">
