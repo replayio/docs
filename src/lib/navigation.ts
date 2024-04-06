@@ -26,7 +26,8 @@ export const navigation: NavigationType = {
     {
       title: 'Getting started',
       links: [
-        { title: 'What is Replay.io?', href: '/' },
+        { title: 'Welcome to Replay', href: '/' },
+        { title: 'What is time travel?', href: '/time-travel/intro' },
         { title: 'Recording your first replay', href: '/time-travel/add-a-console-log' },
       ],
     },
