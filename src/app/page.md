@@ -1,22 +1,44 @@
 ---
-title: Getting started
+title: Welcome to Replay
 ---
 
-Learn how to get CacheAdvance set up in your project in under thirty minutes or it's free. {% .lead %}
+Learn how to record your app with the Replay browser and start time traveling with Replay DevTools. {% .lead %}
 
 {% quick-links %}
 
-{% quick-link title="Installation" icon="installation" href="/" description="Step-by-step guides to setting up your system and installing the library." /%}
+{% quick-link 
+  title="Time Travel" 
+  icon="installation" 
+  href="/" 
+  description="A new paradigm for debugging your application with lossless replay." 
+/%}
 
-{% quick-link title="Architecture guide" icon="presets" href="/" description="Learn how the internals work and contribute." /%}
 
-{% quick-link title="Plugins" icon="plugins" href="/" description="Extend the library with third-party plugins or write your own." /%}
+{% quick-link 
+  title="Replay DevTools" 
+  icon="presets" 
+  href="/time-travel" 
+  description="Step-by-step guides to setting up your system and installing the library." 
+/%}
 
-{% quick-link title="API reference" icon="theming" href="/" description="Learn to easily customize and modify your app's visual design to fit your brand." /%}
+
+{% quick-link 
+  title="Replay Test Suites" 
+  icon="plugins" 
+  href="/test-suites" 
+  description="Step-by-step guides to setting up your system and installing the library." 
+/%}
+
+
+
+{% quick-link 
+  title="Replay Teams" 
+  icon="theming" 
+  href="/" 
+  description="Learn to easily customize and modify your app's visual design to fit your brand." 
+/%}
 
 {% /quick-links %}
-
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste.
 
 ---
 
