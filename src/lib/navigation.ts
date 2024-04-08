@@ -86,7 +86,8 @@ export const navigation: NavigationType = {
       title: 'Getting started',
       links: [
         { title: "Test Suites Overview", href: '/test-suites' },
-        { title: "Core concepts", href: '/test-suites/core-concepts' }
+        { title: "Core concepts", href: '/test-suites/core-concepts' },
+        { title: "Test Dashboard", href: '/test-suites/core-concepts' }
       ],
     },
     {
@@ -97,6 +98,14 @@ export const navigation: NavigationType = {
         { title: 'Selenium', href: '/test-suites/selenium' },
         { title: 'WebdriverIO', href: '/test-suites/webdriver-io' },
         { title: 'Puppeteer', href: '/test-suites/puppeteer' }
+      ]
+    },
+    {
+      title: "Continuous integration",
+      links: [
+        { title: 'Setting up', href: '/test-suites/' },
+        { title: 'Pull request comments', href: '/test-suites/' },
+        { title: 'Recording strategies', href: '/test-suites/' }
       ]
     }
   ]

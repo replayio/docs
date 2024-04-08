@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function NotFound() {
   return (
@@ -10,8 +11,9 @@ export default function NotFound() {
         <h1 className="mt-3 font-display text-3xl tracking-tight text-gray-900 dark:text-white">
           Page not found
         </h1>
+        <Image src="/images/404.png" width={450} height={450} alt="Broken Delorean" />
         <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-          Sorry, we couldn’t find the page you’re looking for.
+          You might need to travel back in time.
         </p>
         <Link
           href="/"

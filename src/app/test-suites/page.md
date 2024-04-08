@@ -18,8 +18,8 @@ Replay Devtools work great with your existing test suite. Cypress and Playwright
     alt="Playwright panel"
     src="/images/playwright_panel.png"
     gradient="bg-gradient-to-tr from-blue-200 via-fuchsia-300 to-orange-400"
-    height=370
-    width=640
+    height=870
+    width=870
 /%}
 
 {% basic icon="jumptocode" %}
@@ -31,7 +31,13 @@ Replay Devtools work great with your existing test suite. Cypress and Playwright
 With information on [line hit counts](#) and [jumping through line executions](#) you’ll be able to narrow down a flake root cause in minutes.
 {% /basic %}
 
-![Jumping to code](/images/jump_to_code.png){% class="bg-gradient-to-r from-fuchsia-600 via-pink-500 to-rose-200" %}
+{% figure
+    alt="Jumping to code"
+    src="/images/jump_to_code.png"
+    gradient="bg-gradient-to-r from-fuchsia-600 via-pink-500 to-rose-200"
+    height=870
+    width=870
+/%} 
 
 {% basic icon="console" %}
 
@@ -42,7 +48,14 @@ Flakiness can be a caused by a single line of code. Reveal that line with a **pr
 We have stories of [2 pixel shifts](#) and [false positives](#) that caused headaches to test maintainers. [Learn more](#) about the power of print statements.
 {% /basic %}
 
-![Race condition](/images/race_condition.png){% class="bg-gradient-to-br from-sky-300 via-blue-300 to-violet-400" %}
+
+{% figure
+    alt="Race condition"
+    src="/images/race_condition.png"
+    gradient="bg-gradient-to-br from-sky-300 via-blue-300 to-violet-400"
+    height=870
+    width=870
+/%} 
 
 {% basic icon="insight" %}
 
@@ -53,7 +66,13 @@ Test Suite Dashboard helps you stay on top of your test suite health. **Focus on
 Analytics give you actionable insights into your test runs and help you focus on the most important tests.
 {% /basic %}
 
-![Test suite analytics](/images/runs_view.png){% class="bg-gradient-to-r from-pink-300 via-teal-800 to-teal-100" %}
+{% figure
+    alt="Test suite analytics"
+    src="/images/runs_view.png"
+    gradient="bg-gradient-to-r from-pink-300 via-teal-800 to-teal-100"
+    height=870
+    width=870
+/%} 
 
 {% basic icon="build" %}
 
@@ -64,7 +83,13 @@ Analytics give you actionable insights into your test runs and help you focus on
 You can zoom out to take a look at your whole test run, or filter out those that are failing the most.
 {% /basic %}
 
-![Playwright panel](/images/ci.png){% class="bg-gradient-to-t from-emerald-400 via-amber-100 to-sky-300" %}
+{% figure
+    alt="Continuous integration"
+    src="/images/ci.png"
+    gradient="bg-gradient-to-t from-emerald-400 via-amber-100 to-sky-300"
+    height=870
+    width=870
+/%} 
 
 {% basic icon="bracketscurly" %}
 
@@ -75,7 +100,7 @@ If test flakiness pushed you to consider switching to a new testing framework, b
 We have created an extra tooling around the most popular ones today - [Cypress.io](/test-suites/cypress-io) and [Playwright](/test-suites/playwright).
 {% /basic %}
 
-{% icon icon="cypress" class="w-9 h-9 inline-block mr-4 lg:ml-12" /%}
+{% icon icon="cypress" class="w-9 h-9 inline-block mr-4" /%}
 {% icon icon="playwright" class="w-9 h-9 inline-block mr-4" /%}
 {% icon icon="selenium" class="w-9 h-9 inline-block mr-4" /%}
 {% icon icon="webdriverio" class="w-9 h-9 inline-block mr-4" /%}
