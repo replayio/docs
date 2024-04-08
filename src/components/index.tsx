@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { Basic } from './Basic'
 import { Button } from './Button'
 import { Callout } from './Callout'

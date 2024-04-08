@@ -75,7 +75,7 @@ Analytics give you actionable insights into your test runs and help you focus on
 
 {% basic icon="build" %}
 
-## Debug Ci Runs With Ease
+## Debug CI Runs With Ease
 
 **What happens on CI no longer stays on CI.** Replay Browser captures your test runs exactly as they happened and brings them to Replay DevTools where you can inspect them.
 

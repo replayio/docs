@@ -1,4 +1,5 @@
-import NextImage from 'next/image'
+'use client'
+import Zoom from "next-image-zoom";
 
 export function Figure({
   className = '',
@@ -36,10 +37,10 @@ export function Figure({
       >
         {fill && gradient ? (
           <div className="absolute bottom-3 left-3 right-3 top-3 sm:bottom-4 sm:left-4 sm:right-4 sm:top-4">
-            <NextImage {...imgProps} />
+            <Zoom layout="responsive" {...imgProps} />
           </div>
         ) : (
-          <NextImage {...imgProps} />
+          <Zoom layout="responsive" {...imgProps} />
         )}
       </div>
       {children ? (

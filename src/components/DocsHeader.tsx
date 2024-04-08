@@ -15,7 +15,7 @@ export function DocsHeader({ title, description }: { title?: string, description
   }
 
   return (
-    <header className="mb-9 space-y-1">
+    <header className="space-y-1">
       {navigation && (
         <p className="font-display text-sm font-medium text-sky-500">
           {section?.title}
@@ -28,10 +28,10 @@ export function DocsHeader({ title, description }: { title?: string, description
       )}
       {description && (
         <>
-            <h1 className="pb-5 font-light text-lg tracking-tight text-gray-900 dark:text-white">
+            <h1 className="pb-5 font-light text-lg tracking-tight text-gray-900 dark:text-gray-300">
               {description}
             </h1>
-          <hr />
+          <hr className='dark:border-gray-300 border-gray-900 opacity-20'/>
         </>
       )}
     </header>

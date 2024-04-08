@@ -25,10 +25,8 @@ export function Navigation({
                 {({ open }) => (
                   <>
                   <Disclosure.Button
-                      className={clsx(
-                        'hover:bg-gray-50',
-                        'flex items-center justify-between w-full text-left rounded-md p-2 leading-6 font-semibold text-gray-700'
-                      )}
+                      className=
+                        'flex items-center justify-between w-full text-left rounded-md p-2 leading-6 font-semibold text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300'
                     >
                       {section.title}
                       <Icon icon='chevron'
