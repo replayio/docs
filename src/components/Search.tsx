@@ -22,7 +22,7 @@ import { Dialog } from '@headlessui/react'
 import clsx from 'clsx'
 import { type Result } from '@/markdoc/search.mjs'
 
-import { navigation, SubPagesType } from '@/lib/navigation'
+import { navigation } from '@/lib/navigation'
 
 type EmptyObject = Record<string, never>
 
@@ -161,9 +161,8 @@ function SearchResult({
 }) {
   let id = useId()
   let pathname = usePathname()
-  let subPage = pathname.split('/')[1] || 'time-travel'
 
-  let sectionTitle = navigation['/' + subPage as SubPagesType['href']].find((section) =>
+  let sectionTitle = navigation.find((section) =>
     section.links.find((link) => link.href === result.url.split('#')[0]),
   )?.title
   let hierarchy = [sectionTitle, result.pageTitle].filter(
