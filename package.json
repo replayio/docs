@@ -11,7 +11,7 @@
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@algolia/autocomplete-core": "^1.9.2",
-    "@headlessui/react": "^1.7.13",
+    "@headlessui/react": "^1.7.18",
     "@markdoc/markdoc": "^0.4.0",
     "@markdoc/next.js": "^0.3.4",
     "@sindresorhus/slugify": "^2.1.0",

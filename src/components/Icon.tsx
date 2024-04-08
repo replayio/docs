@@ -23,11 +23,13 @@ import { PlusButtonIcon } from './icons/PlusButtonIcon'
 import {PlayButtonIcon} from './icons/PlayButtonIcon'
 import { CommentIcon } from './icons/CommentIcon'
 import { PrefixBadgeIcon } from './icons/PrefixBadgeIcon'
+import Chevron from './icons/Chevron'
 
 const icons = {
   build: BuildIcon,
   bracketscurly: BracketsCurlyIcon,
   console: ConsoleIcon,
+  chevron: Chevron,
   cypress: CypressIcon,
   insight: InsightIcon,
   installation: InstallationIcon,

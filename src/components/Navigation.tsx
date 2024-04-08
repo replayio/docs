@@ -1,8 +1,11 @@
+'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
-import { SubPagesType, navigation } from '@/lib/navigation'
+import { navigation } from '@/lib/navigation'
+import { Disclosure } from '@headlessui/react'
+import { Icon } from './Icon'
 
 export function Navigation({
   className,
@@ -12,37 +15,56 @@ export function Navigation({
   onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
 }) {
   let pathname = usePathname()
-  let subPage = pathname.split('/')[1] || 'time-travel'
   
   return (
-    <nav className={clsx('text-base lg:text-sm', className)}>
-      <ul role="list" className="space-y-9">
-        {navigation['/' + subPage as SubPagesType['href']]?.map((section) => (
-          <li key={section.title}>
-            <h2 className="font-display font-medium text-gray-900 dark:text-white">
-              {section.title}
-            </h2>
-            <ul
-              role="list"
-              className="mt-2 space-y-2 border-l-2 border-gray-100 lg:mt-4 lg:space-y-4 lg:border-gray-200 dark:border-gray-800"
-            >
-              {section.links.map((link) => (
-                <li key={link.href} className="relative">
-                  <Link
-                    href={link.href}
-                    onClick={onLinkClick}
-                    className={clsx(
-                      'block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full',
-                      link.href === pathname
-                        ? 'font-semibold text-sky-500 before:bg-sky-500'
-                        : 'text-gray-500 before:hidden before:bg-gray-300 hover:text-gray-600 hover:before:block dark:text-gray-400 dark:before:bg-gray-700 dark:hover:text-gray-300',
-                    )}
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+    <nav className={clsx('text-base', className)}>
+      <ul role="list" className="space-y-1">
+      {navigation.map((item) => (
+          <li key={item.title}>
+            {!item.links ? (
+              <div>{item.title}</div>              
+            ) : (
+              <Disclosure as="div">
+                {({ open }) => (
+                  <>
+                  <Disclosure.Button
+                      className={clsx(
+                        'hover:bg-gray-50',
+                        'flex items-center justify-between w-full text-left rounded-md p-2 leading-6 font-semibold text-gray-700'
+                      )}
+                    >
+                      {item.title}
+                      <Icon icon='chevron'
+                        className={clsx(
+                          open ? 'rotate-90 text-gray-500' : 'text-gray-400',
+                          'h-7 w-7 shrink-0'
+                        )}
+                        aria-hidden="true"
+                      />
+                    </Disclosure.Button>
+                    <Disclosure.Panel as="ul" className="ml-3 mt-2 text-sm space-y-2 border-l-2 border-gray-100 lg:mt-4 lg:space-y-4 lg:border-gray-200 dark:border-gray-800" role="list">
+                      {item.links.map((subItem) => (
+                        <li key={subItem.title}>
+                          <Disclosure.Button className="relative">
+                            <Link href={subItem.href}
+                              onClick={onLinkClick}
+                              className={clsx(
+                              'block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full',
+                              subItem.href === pathname
+                                ? 'font-semibold text-sky-500 before:bg-sky-500'
+                                : 'text-gray-500 before:hidden before:bg-gray-300 hover:text-gray-600 hover:before:block dark:text-gray-400 dark:before:bg-gray-700 dark:hover:text-gray-300',
+                            )}>
+                            {subItem.title}
+                            </Link>
+                          </Disclosure.Button>
+                        </li>
+                      ))}
+                    </Disclosure.Panel>
+                    
+                  </>
+                )}
+              </Disclosure>
+            )}
           </li>
         ))}
       </ul>

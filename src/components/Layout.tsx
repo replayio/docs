@@ -11,7 +11,6 @@ import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
-import { subPages } from '@/lib/navigation'
 
 function GitHubIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -39,7 +38,7 @@ function Header() {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50  bg-white px-4 pt-5 shadow-md shadow-gray-900/5 transition duration-500 sm:px-6 sm:py-5 lg:px-8 lg:pb-0 dark:shadow-none',
+        'sticky top-0 z-50  bg-white px-4 py-5 shadow-md shadow-gray-900/5 transition duration-500 sm:px-6 sm:py-5 lg:px-8 dark:shadow-none',
         isScrolled
           ? 'dark:bg-gray-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-gray-900/75'
           : 'dark:bg-transparent',
@@ -66,20 +65,6 @@ function Header() {
           </Link>
         </div>
       </div>
-      <nav className="hidden lg:flex lg:space-x-8 lg:pt-4 lg:pb-0" aria-label="Global">
-          {subPages.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={clsx(
-                pathname.includes(item.href) || (item.href === '/time-travel' && pathname === '/') ? 'border-b-[rgba(240,45,94,1)] border-b-2 text-gray-900 dark:text-gray-100' : 'text-gray-900 dark:text-gray-100',
-                'inline-flex items-center py-2 px-3 text-sm font-medium'
-              )}
-            >
-              {item.name}
-            </a>
-          ))}
-        </nav>
       </div>
     </header>
   )

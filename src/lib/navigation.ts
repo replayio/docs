@@ -1,28 +1,14 @@
-export interface SubPagesType {
-  name: string;
-  href: '/time-travel' | '/test-suites'
-}
-
 interface NavigationItemLink {
   title: string;
   href: string;
 }
 
-type NavigationType = {
-  [key in SubPagesType['href']]: Array<{
+type NavigationType = Array<{
     title: string;
     links: NavigationItemLink[];
   }>;
-};
 
-
-export const subPages: SubPagesType[] = [
-  { name: 'Time Travel DevTools', href: '/time-travel' },
-  { name: 'Test Suites', href: '/test-suites' },
-]
-
-export const navigation: NavigationType = {
-  '/time-travel': [
+export const navigation: NavigationType = [
     {
       title: 'Getting started',
       links: [
@@ -79,9 +65,6 @@ export const navigation: NavigationType = {
         },
       ],
     },
-
-  ],
-  '/test-suites': [
     {
       title: 'Getting started',
       links: [
@@ -108,5 +91,4 @@ export const navigation: NavigationType = {
         { title: 'Recording strategies', href: '/test-suites/' }
       ]
     }
-  ]
-}
+]
