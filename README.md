@@ -42,3 +42,5 @@ To learn more about the technologies used in this site template, see the followi
 - [Markdoc](https://markdoc.io) - the official Markdoc documentation
 - [Algolia Autocomplete](https://www.algolia.com/doc/ui-libraries/autocomplete/introduction/what-is-autocomplete/) - the official Algolia Autocomplete documentation
 - [FlexSearch](https://github.com/nextapps-de/flexsearch) - the official FlexSearch documentation
+
+.
