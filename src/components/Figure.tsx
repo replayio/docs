@@ -1,5 +1,5 @@
 'use client'
-import Zoom from "next-image-zoom";
+import Zoom from "@/components/Zoom";
 
 export function Figure({
   className = '',
