@@ -24,6 +24,8 @@ import {PlayButtonIcon} from './icons/PlayButtonIcon'
 import { CommentIcon } from './icons/CommentIcon'
 import { PrefixBadgeIcon } from './icons/PrefixBadgeIcon'
 import Chevron from './icons/Chevron'
+import Clipboard from './icons/Clipboard'
+import FileIcon from './icons/FileIcon'
 
 const icons = {
   build: BuildIcon,
@@ -48,7 +50,9 @@ const icons = {
   plusButton: PlusButtonIcon,
   playButton: PlayButtonIcon,
   comment: CommentIcon,
-  prefixBadge: PrefixBadgeIcon
+  prefixBadge: PrefixBadgeIcon,
+  clipboard: Clipboard,
+  file: FileIcon
 }
 
 export const iconStyles = {

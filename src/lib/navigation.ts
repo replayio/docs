@@ -12,83 +12,53 @@ export const navigation: NavigationType = [
     {
       title: 'Getting started',
       links: [
-        { title: 'Welcome to Replay', href: '/' },
-        { title: 'What is time travel?', href: '/time-travel/intro' },
-        { title: 'Recording your first replay', href: '/time-travel/add-a-console-log' },
-      ],
-    },
-    {
-      title: 'Time travel debugging',
-      links: [
-        {
-          title: 'Add console logs',
-          href: '/time-travel/console-log',
-        },
-        { title: 'Jump to any point  in time', href: '/time-travel/introduction-to-string-theory' },
-        { title: 'Set a focus window', href: '/time-travel/basics-of-time-travel', }
-      ],
+        { title: 'What is time travel', href: '/getting-started/what-is-time-travel' },
+        { title: 'Add a console.log()', href: '/getting-started/add-a-console-log' },
+      ]
     },
     {
       title: 'Replay DevTools',
       links: [
-        {
-          title: 'Video playback',
-          href: '/time-travel/predicting-user-behavior',
-        },
-        { title: 'Inspect your application', href: '/time-travel/introduction-to-string-theory' },
-        {
-          title: 'Time travel debugging',
-          href: '/time-travel/basics-of-time-travel',
-        },
-        { title: 'Cypress + Playwright tests', href: '/time-travel/the-butterfly-effect' },
-      ],
-    },
-    {
-      title: 'Replay Teams',
-      links: [
-        { title: 'In context comments', href: '/time-travel/writing-plugins' },
-        { title: 'Sharing replays', href: '/time-travel/neuralink-integration' },
-        { title: 'Setting up a team', href: '/time-travel/temporal-paradoxes' },
-        { title: 'Managing replays', href: '/time-travel/testing' },
-        { title: 'Organization features', href: '/time-travel/compile-time-caching' },
-        {
-          title: 'Billing and payments',
-          href: '/time-travel/testing2',
-        },
-        {
-          title: 'Team settings',
-          href: '/time-travel/predictive-data-generation2',
-        },
-        {
-          title: 'Uploading source maps',
-          href: '/time-travel/predictive-data-generation3',
-        },
-      ],
-    },
-    {
-      title: 'Getting started',
-      links: [
-        { title: "Test Suites Overview", href: '/test-suites' },
-        { title: "Core concepts", href: '/test-suites/core-concepts' },
-        { title: "Test Dashboard", href: '/test-suites/core-concepts' }
-      ],
-    },
-    {
-      title: "Testing Frameworks",
-      links: [
-        { title: 'Cypress.io', href: '/test-suites/cypress-io' },
-        { title: 'Playwright', href: '/test-suites/playwright/installation' },
-        { title: 'Selenium', href: '/test-suites/selenium' },
-        { title: 'WebdriverIO', href: '/test-suites/webdriver-io' },
-        { title: 'Puppeteer', href: '/test-suites/puppeteer' }
+        { title: 'Console Panel', href: '/devtools/console-panel' },
+        { title: 'Events Timeline', href: '/devtools/events-timeline' },
+        { title: 'Playwright Timeline', href: '/devtools/playwright-timeline' },
+        { title: 'Source Viewer', href: '/devtools/source-viewer' },
+        { title: 'Cypress Timeline', href: '/devtools/cypress-timeline' },
+        { title: 'Network Monitor', href: '/devtools/network-monitor' },
+        { title: 'React Panel', href: '/devtools/react-panel' },
+        { title: 'Video Player', href: '/devtools/video-player' },
+        { title: 'Elements Panel', href: '/devtools/elements-panel' },
+        { title: 'Pause Panel', href: '/devtools/pause-panel' },
+        { title: 'Redux Panel', href: '/devtools/redux-panel' }
       ]
     },
     {
-      title: "Continuous integration",
+      title: "Test Runners",
       links: [
-        { title: 'Setting up', href: '/test-suites/' },
-        { title: 'Pull request comments', href: '/test-suites/' },
-        { title: 'Recording strategies', href: '/test-suites/' }
+        { title: 'Overview', href: '/test-runners' },
+        { title: 'Cypress.io', href: '/test-runners/cypress-io' },
+        { title: 'Playwright', href: '/test-runners/playwright/installation' },
+        { title: 'Selenium', href: '/test-runners/selenium' },
+        { title: 'WebdriverIO', href: '/test-runners/webdriver-io' },
+        { title: 'Puppeteer', href: '/test-runners/puppeteer' }
+      ]
+    },
+    {
+      title: 'Test Suite Management',
+      links: [
+        { title: 'Analytics', href: '/test-suite-management/analytics' },
+        { title: 'PR Comments', href: '/test-suite-management/pr-comments' },
+        { title: 'Top Failing And Flaky Tests', href: '/test-suite-management/top-failing-and-flaky-tests' },
+        { title: 'Flake Test Detection', href: '/test-suite-management/flake-test-detection' },
+        { title: 'Runs View', href: '/test-suite-management/runs-view' }
+      ]
+    },
+    {
+      title: "Running on CI/CD",
+      links: [
+        { title: 'Setting up', href: '/test-runners/' },
+        { title: 'Pull request comments', href: '/test-runners/' },
+        { title: 'Recording strategies', href: '/test-runners/' }
       ]
     }
 ]

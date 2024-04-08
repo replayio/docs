@@ -1,6 +1,5 @@
 ---
 title: Test Suites Overview
-description: Replay Test Suites bring time-travelling DevTools to your existing Cypress, Playwright or any other test suites
 ---
 
 Replay Test Suites bring **time-travelling DevTools to your test runs**. You’ll get a better insight into how your test script interacts with application under test. Besides zooming in on your test execution, you can zoom out to get a birds-eye view of your teste executions and **drive down test failures and flakes**.

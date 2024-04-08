@@ -85,7 +85,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-gray-50 dark:hidden" />
           <div className="absolute bottom-0 right-0 top-16 hidden h-12 w-px bg-gradient-to-t from-gray-800 dark:block" />
           <div className="absolute bottom-0 right-0 top-28 hidden w-px bg-gray-800 dark:block" />
-          <div className="sticky top-[4.75rem] -ml-0.5 h-[calc(100vh-4.75rem)] w-64 overflow-y-auto overflow-x-hidden py-16 pl-0.5 pr-8 xl:w-72 xl:pr-16">
+          <div className="sticky top-[4.75rem] -ml-0.5 h-[calc(100vh-4.75rem)] overflow-y-auto overflow-x-hidden py-16 pl-0.5 pr-2 w-72 xl:pr-2">
             <Navigation />
           </div>
         </div>

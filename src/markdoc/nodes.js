@@ -56,6 +56,15 @@ const nodes = {
       language: {
         type: String,
       },
+      lineNumbers: {
+        type: Boolean
+      },
+      fileName: {
+        type: Boolean
+      },
+      highlight: {
+        type: Array
+      }
     },
   },
 }

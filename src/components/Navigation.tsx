@@ -19,11 +19,8 @@ export function Navigation({
   return (
     <nav className={clsx('text-base', className)}>
       <ul role="list" className="space-y-1">
-      {navigation.map((item) => (
-          <li key={item.title}>
-            {!item.links ? (
-              <div>{item.title}</div>              
-            ) : (
+      {navigation.map((section) => (
+          <li key={section.title}>
               <Disclosure as="div">
                 {({ open }) => (
                   <>
@@ -33,7 +30,7 @@ export function Navigation({
                         'flex items-center justify-between w-full text-left rounded-md p-2 leading-6 font-semibold text-gray-700'
                       )}
                     >
-                      {item.title}
+                      {section.title}
                       <Icon icon='chevron'
                         className={clsx(
                           open ? 'rotate-90 text-gray-500' : 'text-gray-400',
@@ -42,8 +39,8 @@ export function Navigation({
                         aria-hidden="true"
                       />
                     </Disclosure.Button>
-                    <Disclosure.Panel as="ul" className="ml-3 mt-2 text-sm space-y-2 border-l-2 border-gray-100 lg:mt-4 lg:space-y-4 lg:border-gray-200 dark:border-gray-800" role="list">
-                      {item.links.map((subItem) => (
+                    <Disclosure.Panel as="ul" className="ml-3 mt-2 text-sm space-y-2 border-l-2 border-gray-100 lg:mt-4 lg:space-y-2 lg:border-gray-200 dark:border-gray-800" role="list">
+                      {section.links.map((subItem) => (
                         <li key={subItem.title}>
                           <Disclosure.Button className="relative">
                             <Link href={subItem.href}
@@ -59,12 +56,10 @@ export function Navigation({
                           </Disclosure.Button>
                         </li>
                       ))}
-                    </Disclosure.Panel>
-                    
+                    </Disclosure.Panel>                    
                   </>
                 )}
               </Disclosure>
-            )}
           </li>
         ))}
       </ul>

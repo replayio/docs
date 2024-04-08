@@ -1,5 +1,5 @@
-import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import components from '@/components'
 
 function toSnakeCase(str) {
@@ -26,6 +26,12 @@ const tags = {
       alt: { type: String },
       width: { type: String },
       height: { type: String },
+    },
+  },
+  link: {
+    render: Link,
+    attributes: {
+      href: { type: String }
     },
   },
   callout: {
