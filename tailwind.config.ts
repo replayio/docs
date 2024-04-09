@@ -28,6 +28,9 @@ export default {
       maxWidth: {
         '8xl': '88rem',
       },
+      boxShadow: {
+        ripple: `0px 0px 0px 10px rgba(255,255,255,0.1), 0px 0px 0px 20px rgba(255,255,255,0.1), 0px 0px 0px 30px rgba(255,255,255,0.1)`
+      },
       colors: {
         'pink': {
           '50': '#fff1f3',

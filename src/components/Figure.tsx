@@ -25,14 +25,14 @@ export function Figure({
     height,
     width,
     fill,
-    className: `${gradient} object-contain`,
+    className: `${gradient} object-contain rounded ${gradient ? 'shadow-ripple' : ''}`,
   }
 
   return (
     <figure title={alt} className={`not-prose flex flex-col ${className}`}>
       <div
         className={`relative grid flex-grow justify-center ${
-          gradient ? `rounded p-3 sm:rounded-lg sm:p-4 ${gradient}` : ''
+          gradient ? `rounded p-10 sm:rounded-lg sm:p-10 ${gradient}` : ''
         }`}
       >
         {fill && gradient ? (
