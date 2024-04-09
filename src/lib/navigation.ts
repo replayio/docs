@@ -1,6 +1,7 @@
 interface NavigationItemLink {
   title: string;
   href: string;
+  links?: NavigationItemLink[]
 }
 
 type NavigationType = Array<{
@@ -35,8 +36,11 @@ export const navigation: NavigationType = [
     {
       title: "Test Runners",
       links: [
-        { title: 'Overview', href: '/test-runners' },
-        { title: 'Cypress.io', href: '/test-runners/cypress-io' },
+        { title: 'Overview', href: '/test-runners/overview' },
+        { title: 'Cypress.io', href: '/test-runners/cypress-io', links: [
+          { title: 'Create Your First replay', href: '/test-runners/cypress-io/create-your-first-replay' },
+          { title: 'Debugging Tests', href: '/test-runners/cypress-io/debugging-tests' }
+        ]},
         { title: 'Playwright', href: '/test-runners/playwright/installation' },
         { title: 'Selenium', href: '/test-runners/selenium' },
         { title: 'WebdriverIO', href: '/test-runners/webdriver-io' },

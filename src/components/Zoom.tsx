@@ -88,8 +88,6 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
         <>
             {clicked
                 ? <div style={{
-                    backgroundColor: backgroundColor,
-                    opacity: backgroundOpacity,
                     position: "fixed",
                     zIndex: 40,
                     top: 0,
@@ -97,8 +95,8 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
                     width: "100%",
                     height: "100%"
                 }}
-                      className="bg-gray-900/95"
-                       onClick={closeWrapper}
+                    className="bg-gray-950 bg-opacity-70 backdrop-blur-sm"
+                    onClick={closeWrapper}
                 />
                 : null}
             <div

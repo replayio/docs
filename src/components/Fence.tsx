@@ -49,10 +49,10 @@ export function Fence({
           }
           <code>
             {tokens.map((line, lineIndex) => (
-              <>
+              <Fragment key={lineIndex}>
                 <div className={clsx(highlightedLines.includes(lineIndex + 1) && 'bg-gray-400 bg-opacity-15', 'px-3'
                 )}>
-                  <Fragment key={lineIndex}>
+                  <>
                     { lineNumbers && <span className='text-white pr-4 text-opacity-30'>{(lineIndex + 1).toString().padStart(2, ' ')}</span>}
                     {line
                       .filter((token) => !token.empty)
@@ -60,9 +60,9 @@ export function Fence({
                         <span key={tokenIndex} {...getTokenProps({ token })} />
                       ))}
                     {'\n'}
-                  </Fragment>
-                  </div>
-                </>
+                  </>
+                </div>
+              </Fragment>
             ))}
           </code>
         </pre>

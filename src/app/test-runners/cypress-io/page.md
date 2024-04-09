@@ -2,13 +2,10 @@
 title: Cypress.io
 description: Replay works great with Cypress. You can set up your project to use Replay Browser in matter of minutes and then customize it to your needs. With Replay Browser integration, you’ll be able to see all your Cypress steps as well as code of your application.
 ---
-
-{% basic icon="console" %}
-## Debug like a pro
 The most annoying test flakes are those that cannot be reproduced locally or simply don’t show up when you need them to. But we think that **what happens on CI should not stay on CI**. 
 
 Recording your test run using replay will provide more info than any test result, logger or any DOM snapshot trace ever could. That’s because a replay provides you with **context for every line of code**. For both your spec and the app you test.
-{% /basic %}
+
 
 {% figure
     alt="Jumping to code"
@@ -22,165 +19,65 @@ Cypress brings its special chaining syntax, that is fun to use, but can sometime
 
 Replay tackles this by providing you more context and deeper insight. All packaged into DevTools that we love to work with. And with time-travelling capability on top of it.
 
-### Trace back every DOM change
+## Trace back every DOM change
 Replay allows you to track every DOM change, not just those that are captured by "before" and "after" snapshots. Let’s look at the following test:
 
 ```ts {% fileName="spec.cy.ts" lineNumbers=true %}
 it('tests a stopwatch', () => {
   cy.visit('/')
   cy.get('p').should('have.text', '00:01:000')
-  cy.get('p').should('have.text', '00:02:000')
+  cy.get('p').should('have.text', '00:03:000')
 })
 ```
 There are a couple of things that could go wrong with this test:
-- stopwatch would never show time `00:01` (false positive)
-- stopwatch runs too fast for `cy.contains()` to notice milliseconds (false negative)
 
-This example is quite exaggerated, but it illustrates two main problems when it comes to DOM changes:
-1. we cannot keep track of all DOM changes
-2. DOM changes things can happen way too fast
+{% icon icon="error" class="text-red-500 inline w-4 h-4 mr-1.5" /%} stopwatch never shows the time `00:02:000` and still **passes** (false positive) \
+{% icon icon="error" class="text-red-500 inline w-4 h-4 mr-1.5" /%} stopwatch runs too fast for `.should()` command and **fails** (false negative)
 
-This is where snapshots tend to fall short. Our application is clearly operating even between test steps. Replay records this activity.
+While this example is fairly exaggerated, it illustrates two main problems of **rapid DOM changes**. 
+1. they can cause problems and still be invisible for the test script
+2. they can happen too fast for a test assertion to make it in time
 
-```ts {% fileName="spec.cy.ts" %}
-it('tests a stopwatch', () => {
-  // replay recorded what happened here
-  cy.visit('/')
-  // and here
-  cy.get('p').should('have.text', '00:01:000')
-  // even here
-  cy.get('p').should('have.text', '00:02:000')
-})
-```
-Even when your app is updated every millisecond, you can jump to the perfect spot, and see your DOM rendered exactly as it would on that moment.
+**This is where snapshots tend to fall short.** Because an application is still operating between test steps, there’s a lot that goes under the radar. Replay is not a snapshot-based recorder but instead records the whole runtime. Visualized, the difference between DOM snapshots and a replay could look like this:
 
 {% figure
-    alt="Millisecond increment"
-    src="/images/increment.png"
-    gradient="bg-gradient-to-r from-fuchsia-600 via-pink-500 to-rose-200"
+    alt="Snapshots vs. replay"
+    src="/images/snapshots.png"
     height=870
-    width=870
-%}
-DOM tree stopped at 9th millisecond 
-{% /figure %}
+    width=620
+/%}
 
-### Inspect network
-tbd
+Because of this, a flaky does not feel like an act of higher force, but can be inspected with **a microscopic precision**. Even when your app is updated every millisecond, you can jump to the perfect spot, and see your DOM rendered exactly as it would on that moment.
 
-## Record your first test
-
-Having your test recorded is just a matter of using Replay Browser instead of the default Electron during your test run. Here’s how you can record your first test in two minutes:
-
-### Install Cypress plugin
-Install the [@replayio/cypress](https://www.npmjs.com/package/@replayio/cypress) package in your project:
-
-{% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
-{% tab %}
-```sh
-npm install @replayio/cypress -D
-```
-{% /tab %}
-{% tab %}
-```sh
-yarn add @replayio/cypress -D
-```
-{% /tab %}
-{% tab %}
-```sh
-pnpm install @replayio/cypress -D
-```
-{% /tab %}
-{% tab %}
-```sh
-bun install @replayio/cypress -D
-```
-{% /tab %}
-{% /tabs %}
-
-### Integrate plugin to your project
-Simply add the Replay plugin to your project [configuration](https://docs.cypress.io/guides/references/configuration) and [support](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Support-file) files.
-
-{% tabs labels=["CommonJS", "ESM"] %}
-{% tab %}
-
-```js {% fileName="cypress/support/e2e.js" %}
-require("@replayio/cypress/support");
-```
-
-```js {% lineNumbers=true fileName="cypress.config.js" highlight=[2,"7-11"] %}
-const { defineConfig } = require("cypress");
-const { plugin: replayPlugin } = require("@replayio/cypress");
-
-module.exports = defineConfig({
-  e2e: {
-    setupNodeEvents(on, config) {
-      replayPlugin(on, config, {
-        upload: true, // automatically upload your replays do DevTools
-        apiKey: process.env.REPLAY_API_KEY,
-      });
-      return config;
-    },
-  },
-});
-```
-
-{% /tab %}
-{% tab %}
-
-```js {% fileName="cypress/support/e2e.ts" %}
-import "@replayio/cypress/support";
-```
-
-```js {% lineNumbers=true fileName="cypress.config.ts" highlight=[2,"7-11"] %}
-import defineConfig from "cypress";
-import { plugin as replayPlugin } from "@replayio/cypress";
-
-export default defineConfig({
-  e2e: {
-    setupNodeEvents(on, config) {
-      replayPlugin(on, config, {
-        upload: true, // automatically upload your replays do DevTools
-        apiKey: process.env.REPLAY_API_KEY,
-      });
-      return config;
-    },
-  },
-});
-```
-
-{% /tab %}
-{% /tabs %}
-
-{% callout title="Obtaining API key"%}
-All your recordings are stored locally and can be uploaded manually via Replay CLI. To upload your recordings automatically, log in to Replay DevTools and generate API key in your settings menu. {% link href="#" %}Read more{% /link %}.
+{% callout title="Learn more" %}
+To learn more about elements panel, head over to [Elements panel docs](/devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=kgJVauI7Obs).
 {% /callout %}
 
-### Run your test with Replay Browser
-With everything set up, you can now run your test locally:
+<!-- todo: add video here -->
 
-{% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
-{% tab %}
-```sh
-npx cypress run --spec cypress/e2e/spec.cy.ts
-```
-{% /tab %}
-{% tab %}
-```sh
-yarn cypress run --spec cypress/e2e/spec.cy.ts
-```
-{% /tab %}
-{% tab %}
-```sh
-pnpx cypress run --spec cypress/e2e/spec.cy.ts
-```
-{% /tab %}
-{% tab %}
-```sh
-bun cypress run --spec cypress/e2e/spec.cy.ts
-```
-{% /tab %}
-{% /tabs %}
+## Inspect network calls
+Replays capture all network communication and display it the same way you would expect to see it in your favourite browser’s network panel.
 
-After your test finishes it will generate a link to Replay DevTools where you can inspect your test run.
+Network calls are the biggest contributor to asynchronous issues, as responses from server return in different times and sizes. Replay DevTools allow you to inspect every API call, resource fetch and view its headers, payloads, server responses and even timings and stack trace.
 
-<!-- todo: add video -->
+<!-- todo: add a video here -->
+
+Because network panel is integrated with the rest of the tools, you’ll get even more options than in local development. Stack trace panel displays the source of an API call, that allows you to track back the very function that triggered the call.
+
+{% figure
+    alt="Jumping to code"
+    src="/images/stack_trace_network_panel.png"
+    gradient="bg-gradient-to-r from-pink-300 via-teal-800 to-teal-100"
+    height=1300
+    width=1300
+/%}
+
+Debugging tests should be a team effort whether that is collaboration between QA and devs or between different dev teams. When facing an API issue, commenting and sharing a replay will save hours of back and forth reporting. Instead of replicating the issue, share the issue exactly the way it happened. Locally or on CI.
+
+{% callout title="Learn more" %}
+To learn more about network panel, checkout [Network panel docs](/devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=rGKAOG6gZZU).
+{% /callout %}
+
+## Jump to code
+When a test clicks on an element on page, we usually **see the result**. Modal opened, API call was made, and so on. Replay shows you **how that result happened**. Interactions show "Jump to code" button that takes you to the function call made by a click, typing or other interaction. This way your test interaction is no longer disconnected from the application under test.
+

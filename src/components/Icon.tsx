@@ -26,6 +26,7 @@ import { PrefixBadgeIcon } from './icons/PrefixBadgeIcon'
 import Chevron from './icons/Chevron'
 import Clipboard from './icons/Clipboard'
 import FileIcon from './icons/FileIcon'
+import { ErrorIcon } from './icons/ErrorIcon'
 
 const icons = {
   build: BuildIcon,
@@ -52,7 +53,8 @@ const icons = {
   comment: CommentIcon,
   prefixBadge: PrefixBadgeIcon,
   clipboard: Clipboard,
-  file: FileIcon
+  file: FileIcon,
+  error: ErrorIcon
 }
 
 export const iconStyles = {

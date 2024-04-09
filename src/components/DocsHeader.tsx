@@ -31,7 +31,7 @@ export function DocsHeader({ title, description }: { title?: string, description
             <h1 className="pb-5 font-light text-lg tracking-tight text-gray-900 dark:text-gray-300">
               {description}
             </h1>
-          <hr className='dark:border-gray-300 border-gray-900 opacity-20'/>
+          <hr className='dark:border-gray-300 border-gray-900 opacity-20 py-4'/>
         </>
       )}
     </header>
