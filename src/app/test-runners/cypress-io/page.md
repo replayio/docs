@@ -2,10 +2,10 @@
 title: Cypress.io
 description: Replay works great with Cypress. You can set up your project to use Replay Browser in matter of minutes and then customize it to your needs. With Replay Browser integration, you’ll be able to see all your Cypress steps as well as code of your application.
 ---
+## Getting more insight
 The most annoying test flakes are those that cannot be reproduced locally or simply don’t show up when you need them to. But we think that **what happens on CI should not stay on CI**. 
 
 Recording your test run using replay will provide more info than any test result, logger or any DOM snapshot trace ever could. That’s because a replay provides you with **context for every line of code**. For both your spec and the app you test.
-
 
 {% figure
     alt="Jumping to code"
@@ -15,6 +15,7 @@ Recording your test run using replay will provide more info than any test result
     width=870
 /%}
 
+## Context matters
 Cypress brings its special chaining syntax, that is fun to use, but can sometimes lead to unexpected issues. Retryability mechanisms can sometimes race-condition, starting a chain of events that can be hard to trace back.
 
 Replay tackles this by providing you more context and deeper insight. All packaged into DevTools that we love to work with. And with time-travelling capability on top of it.
@@ -85,4 +86,45 @@ Interactions show "Jump to code" button that takes you to the function call made
 
 <!-- todo: add video -->
 
-This bridge between your test code and your app code is usually the first place you can start your test flake investigation. It gives you an unique insight into what is happening
+This bridge between your test code and your app code is usually the first place you can start your test flake investigation. It gives you an unique insight into what is happening during your test, not only with the test, but also the application under test.
+
+{% callout title="Learn more" %}
+Jumping from test code and utilizing timeline can further be explored [Events Timeline doc page](/devtools/events-timeline). Or you can watch the [Replay Crash course video](https://www.youtube.com/watch?v=ksxf6qE9Ymc) on this topic.
+{% /callout %}
+
+## Next steps
+Learn how record your first Replay with Cypress, manage your test suite and debug flaky tests using Replay DevTools
+
+{% quick-links %}
+
+{% quick-link 
+  title="Record Your First Cypress test" 
+  icon="cypress" 
+  href="/test-runners/cypress-io/create-your-first-replay" 
+  description="Learn how to get started with Cypress and Replay" 
+/%}
+
+{% quick-link 
+  title="Record Your CI Test Run" 
+  icon="build" 
+  href="#" 
+  description="Learn how to integrate Replay into your Continuous integration service" 
+/%}
+
+
+{% quick-link 
+  title="Replay DevTools" 
+  icon="jumptocode" 
+  href="#" 
+  description="Learn how to use Replay DevTools to debug your tests." 
+/%}
+
+
+{% quick-link 
+  title="Test Suite Management" 
+  icon="treeview" 
+  href="#" 
+  description="Test Suite Dashboard helps you stay on top of your test suite health." 
+/%}
+
+{% /quick-links %}

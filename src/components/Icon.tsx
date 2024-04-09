@@ -29,37 +29,38 @@ import FileIcon from './icons/FileIcon'
 import { ErrorIcon } from './icons/ErrorIcon'
 
 const icons = {
-  build: BuildIcon,
   bracketscurly: BracketsCurlyIcon,
-  console: ConsoleIcon,
+  build: BuildIcon,
   chevron: Chevron,
+  clipboard: Clipboard,
+  comment: CommentIcon,
+  conditional: ConditionalIcon,
+  console: ConsoleIcon,
   cypress: CypressIcon,
+  error: ErrorIcon,
+  file: FileIcon,
   insight: InsightIcon,
   installation: InstallationIcon,
   jumptocode: JumpToCode,
   lightbulb: LightbulbIcon,
+  playButton: PlayButtonIcon,
   playwright: PlaywrightIcon,
   plugins: PluginsIcon,
+  plusButton: PlusButtonIcon,
+  prefixBadge: PrefixBadgeIcon,
   presets: PresetsIcon,
   puppeteer: PuppeteerIcon,
+  selenium: SeleniumIcon,
   theming: ThemingIcon,
   treeview: TreeViewSolid,
-  selenium: SeleniumIcon,
   warning: WarningIcon,
   webdriverio: WebdriverIOIcon,
-  conditional: ConditionalIcon,
-  plusButton: PlusButtonIcon,
-  playButton: PlayButtonIcon,
-  comment: CommentIcon,
-  prefixBadge: PrefixBadgeIcon,
-  clipboard: Clipboard,
-  file: FileIcon,
-  error: ErrorIcon
 }
 
 export const iconStyles = {
   blue: '[--icon-foreground:theme(colors.slate.900)] [--icon-background:theme(colors.white)]',
-  amber:'[--icon-foreground:theme(colors.amber.900)] [--icon-background:theme(colors.amber.100)]'
+  amber:'[--icon-foreground:theme(colors.amber.900)] [--icon-background:theme(colors.amber.100)]',
+  pink:'[--icon-foreground:theme(colors.pink.900)] [--icon-background:theme(colors.pink.100)]'
 }
 
 export function Icon({
@@ -88,6 +89,11 @@ export function Icon({
 }
 
 const gradients = {
+  pink: [
+    { stopColor: '##ff537e' },
+    { stopColor: '#f41c52', offset: '.527' },
+    { stopColor: '#F02D5E', offset: 1 },
+  ],
   blue: [
     { stopColor: '#0EA5E9' },
     { stopColor: '#22D3EE', offset: '.527' },
