@@ -79,5 +79,10 @@ To learn more about network panel, checkout [Network panel docs](/devtools/eleme
 {% /callout %}
 
 ## Jump to code
-When a test clicks on an element on page, we usually **see the result**. Modal opened, API call was made, and so on. Replay shows you **how that result happened**. Interactions show "Jump to code" button that takes you to the function call made by a click, typing or other interaction. This way your test interaction is no longer disconnected from the application under test.
+When a test clicks on an element on page, we usually **see the result**. Modal opened, API call was made, and so on. Replay shows you **how that result happened**. 
 
+Interactions show "Jump to code" button that takes you to the function call made by a click, typing or other interaction. This way your test interaction is no longer disconnected from the application under test.
+
+<!-- todo: add video -->
+
+This bridge between your test code and your app code is usually the first place you can start your test flake investigation. It gives you an unique insight into what is happening

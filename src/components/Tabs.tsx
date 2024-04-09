@@ -23,7 +23,7 @@ export function Tabs({
           <li className="not-prose m-0 list-none p-0" key={label}>
             <button
               role="tab"
-              className={`-mb-0.5 mr-2 select-none rounded-t border-b-2 border-transparent px-2 pt-2 pb-1 font-medium leading-5 text-gray-300 transition-colors aria-selected:text-gray-900 dark:aria-selected:text-white dark:text-gray-600 hover:text-pink-500`}
+              className={`-mb-0.5 mr-2 select-none rounded-t border-b-2 border-transparent px-2 pt-2 pb-1 font-medium leading-5 text-gray-400 transition-colors aria-selected:text-gray-900 dark:aria-selected:text-white dark:text-gray-600 hover:text-pink-500`}
               aria-selected={index === currentTab}
               onClick={() => setCurrentTab(index)}
             >

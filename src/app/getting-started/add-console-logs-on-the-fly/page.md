@@ -1,5 +1,5 @@
 ---
-title: Add console logs on the fly
+title: Add console logs on the Fly
 description: Replay Test Suites bring time-travelling DevTools to your existing Cypress, Playwright or any other test suites
 ---
 

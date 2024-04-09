@@ -36,7 +36,7 @@ export function Navigation({
                         aria-hidden="true"
                       />
                     </Disclosure.Button>
-                    <Disclosure.Panel as="ul" className="ml-3 mt-2 text-sm space-y-2 border-l-2 border-gray-100 lg:mt-4 lg:space-y-2 lg:border-gray-200 dark:border-gray-800" role="list">
+                    <Disclosure.Panel as="ul" className="ml-3 text-sm space-y-2 border-l-2 border-gray-100 lg:space-y-2 lg:border-gray-200 dark:border-gray-800" role="list">
                       {section.links.map((item) => (
                         <li key={item.title}>
                           <Disclosure.Button className="relative">
@@ -61,7 +61,7 @@ export function Navigation({
                                     className={clsx(
                                     'block w-full pl-7 pt-1.5 text-sm',
                                     subItem.href === pathname
-                                      ? 'text-gray-200 '
+                                      ? 'text-gray-900 dark:text-gray-200 font-medium'
                                       : 'text-gray-500  hover:text-gray-600 dark:text-gray-400  dark:hover:text-gray-300',
                                   )}>
                                   {subItem.title}
