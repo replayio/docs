@@ -61,7 +61,7 @@ export function Navigation({
                                   <Link href={subItem.href}
                                     onClick={onLinkClick}
                                     className={clsx(
-                                    'block w-full pl-8 ml-[2px] pt-1.5 text-sm hover:bg-gradient-to-r hover:from-transparent hover:to-gray-100 dark:hover:to-gray-800 rounded',
+                                    'block w-full pl-12 ml-[2px] pt-1.5 text-sm hover:bg-gradient-to-r hover:from-transparent hover:to-gray-100 dark:hover:to-gray-800 rounded',
                                     subItem.href === pathname
                                       ? 'text-gray-900 dark:text-gray-200 font-medium'
                                       : 'text-gray-500  hover:text-gray-600 dark:text-gray-400  dark:hover:text-gray-300',

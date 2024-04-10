@@ -2,6 +2,7 @@
 title: Create Your First Replay
 description: Having your test recorded is just a matter of using Replay Browser instead of the default Electron during your test run. This doc shows how you can record your first test in two minutes
 ---
+{% steps %}
 
 ## Install Cypress Plugin
 Install the [@replayio/cypress](https://www.npmjs.com/package/@replayio/cypress) package in your project:
@@ -116,6 +117,8 @@ bun cypress run --spec cypress/e2e/spec.cy.ts
 After your test finishes it will generate a link to Replay DevTools where you can inspect your test run.
 
 <!-- todo: add video -->
+
+{% /steps %}
 
 ## Next steps
 Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools

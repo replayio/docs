@@ -2,7 +2,7 @@ export function ConditionalIcon() {
   return (
     <>
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-<rect x="0.25" y="0.25" width="31.5" height="31.5" rx="15.75" fill="url(#pattern0_1282_15950)" stroke="#F9F9FA" stroke-width="0.5"/>
+<rect x="0.25" y="0.25" width="31.5" height="31.5" rx="15.75" fill="url(#pattern0_1282_15950)" stroke="#F9F9FA" strokeWidth="0.5"/>
 <defs>
 <pattern id="pattern0_1282_15950" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlinkHref="#image0_1282_15950" transform="translate(-0.1875 -0.1875) scale(0.015625)"/>

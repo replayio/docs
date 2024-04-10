@@ -20,6 +20,7 @@ import { Search } from './Search'
 import { TableOfContents } from './TableOfContents'
 import { Tab, Tabs } from './Tabs'
 import { Video } from './Video'
+import { Steps } from './Steps'
 
 export default {
   Basic,
@@ -45,4 +46,5 @@ export default {
   Tabs,
   Tab,
   Video,
+  Steps,
 }
