@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev & npx next-video sync -w",
+    "dev": "next dev & npm run sync -- -w",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sync": "npx next-video sync -d ./src/videos"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
