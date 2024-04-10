@@ -1,24 +1,28 @@
 ---
 title: Puppeteer
+description: Because Replay Browser lets you record anything that happens inside it, you can simply just point your test script to the Replay Browser binary and you are all set up.
 ---
-import { Callout } from 'nextra/components'
 
-# Puppeteer
+## Set up Replay CLI 
 
-## Usage
+1. Install [@replayio/puppeteer](https://github.com/Replayio/replay-cli/tree/main/packages/puppeteer) with `npm i @replayio/puppeteer` in your project.
+2. Pass in the path to `replay-chromium` in the  `puppeteer.launch()` call. See example above.
+3. Upload recordings with the `replayio upload-all` command. See more [here](/reference-guide/recording/replay-cli).
 
-Because Replay’s recorder is a standalone browser, all you need to do to start recording your puppeteer tests is pass in the path to Replay’s fork of chromium.
+{% callout %}
+Replay is up-to-date as of Puppeteer version 13.3.1. If you are using a newer version and run into a problem, please [open a GitHub issue here](https://github.com/replayio/replay-cli) to let us know!
+{% /callout %}
 
-### Example
 
-```jsx
+## Example configuration
+
+```js {% lineNumbers="true" fileName="puppeteer.config.js" highlight=[2,7] %}
 const puppeteer = require("puppeteer");
 const { getExecutablePath } = require("@replayio/puppeteer");
 
 (async () => {
 	const browser = await puppeteer.launch({
 		headless: false,
-    /* Set the path to replay-chromium */
 		executablePath: getExecutablePath("chromium"),
 	});
 	const page = await browser.newPage();
@@ -30,14 +34,3 @@ const { getExecutablePath } = require("@replayio/puppeteer");
 })();
 ```
 
-## Setup
-
-Setting up Replay is as simple as downloading the browser, using it in your tests, and uploading the recordings.
-
-1. Install [@replayio/puppeteer](https://github.com/Replayio/replay-cli/tree/main/packages/puppeteer) with `npm i @replayio/puppeteer` in your project.
-2. Pass in the path to `replay-chromium` in the  `puppeteer.launch()` call. See example above.
-3. Upload recordings with the `npx @replayio/reply upload-all` command. See more [here](/reference-guide/recording/replay-cli).
-
-<Callout type="info" emoji="📌">
-Replay is up-to-date as of Puppeteer version 13.3.1. If you are using a newer version and run into a problem, please [open a GitHub issue here](https://github.com/replayio/replay-cli) to let us know!
-</Callout>

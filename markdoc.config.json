@@ -1,0 +1,12 @@
+[
+  {
+    "id": "docs",
+    "path": "src/app",
+    "schema": {
+      "path": "src/markdoc/config.mjs",
+      "type": "esm",
+      "property": "default",
+      "watch": true
+    }
+  }
+]
