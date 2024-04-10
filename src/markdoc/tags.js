@@ -73,6 +73,14 @@ const tags = {
       href: { type: String },
     },
   },
+  'quick-links': {
+    selfClosing: true,
+    render: components.QuickLinks,
+    attributes: {
+      title: { type: String },
+      description: { type: String }
+    },
+  },
   tabs: {
     render: components.Tabs,
     attributes: {
@@ -92,7 +100,7 @@ const tags = {
       icon: { type: String },
       class: { type: String },
     },
-  },
+  }
 }
 
 export default tags

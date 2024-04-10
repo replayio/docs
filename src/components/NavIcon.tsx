@@ -29,6 +29,7 @@ import { SnowflakeCheck } from './icons/SnowflakeCheck'
 import { RunsViewIcon } from './icons/RunsViewIcon'
 import { WrenchIcon } from './icons/WrenchIcon'
 import { StrategyIcon } from './icons/StrategyIcon'
+import { Key } from './icons/Key'
 
 export const icons = {
   file: FileIcon,
@@ -59,7 +60,8 @@ export const icons = {
   flake: SnowflakeCheck,
   runsview: RunsViewIcon,
   wrench: WrenchIcon,
-  strategy: StrategyIcon
+  strategy: StrategyIcon,
+  key: Key
 }
 export function NavIcon({
   icon = 'file',

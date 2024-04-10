@@ -26,6 +26,14 @@ export const navigation: NavigationType = [
       ]
     },
     {
+      title: 'Replay CLI',
+      links: [
+        { title: 'Create Your First Replay', href: '/replay-cli/create-your-first-replay', icon: 'overview' },
+        { title: 'Generate API key', href: '/replay-cli/generate-api-key', icon: 'key' },
+        { title: 'Commands', href: '/replay-cli/commands', icon: 'console' },
+      ]
+    },
+    {
       title: 'Replay DevTools',
       links: [
         { title: 'Video Player', href: '/devtools/video-player', icon: 'video' },

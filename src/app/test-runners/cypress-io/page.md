@@ -92,10 +92,7 @@ This bridge between your test code and your app code is usually the first place 
 Jumping from test code and utilizing timeline can further be explored [Events Timeline doc page](/devtools/events-timeline). Or you can watch the [Replay Crash course video](https://www.youtube.com/watch?v=ksxf6qE9Ymc) on this topic.
 {% /callout %}
 
-## Next steps
-Learn how record your first Replay with Cypress, manage your test suite and debug flaky tests using Replay DevTools
-
-{% quick-links %}
+{% quick-links title="Read more" description="Learn how record your first Replay with Cypress, manage your test suite and debug flaky tests using Replay DevTools" %}
 
 {% quick-link 
   title="Record Your First Cypress test" 

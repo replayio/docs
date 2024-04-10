@@ -120,10 +120,8 @@ After your test finishes it will generate a link to Replay DevTools where you ca
 
 {% /steps %}
 
-## Next steps
-Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools
 
-{% quick-links %}
+{% quick-links title="Read more" description="Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools" %}
 
 {% quick-link 
   title="Record Your CI Test Run" 
