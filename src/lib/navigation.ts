@@ -16,13 +16,7 @@ export const navigation: NavigationType = [
     {
       title: 'Getting started',
       links: [
-        { title: 'What is time travel', href: '/getting-started/what-is-time-travel', icon: 'hourglass' },
-        { title: 'Add console logs on the Fly', href: '/getting-started/add-console-logs-on-the-fly', icon: 'console' },
-        { title: 'Intro To Time Travel', href: '/getting-started/intro-to-time-travel', icon: 'timetravel' },
-        { title: 'Visualize time. Inspect state.', href: '/getting-started/visualize-time-inspect-state', icon: 'inspect' },
-        { title: 'Annotate the timeline', href: '/getting-started/annotate-the-timeline', icon: 'pencil' },
-        { title: 'Bisect the Problem', href: '/getting-started/bisect-the-problem', icon: 'razor' },
-        { title: 'How Time Travel Works', href: '/getting-started/how-time-travel-works', icon: 'questionmark' },
+        { title: 'Introduction', href: '/getting-started/introduction', icon: 'home'}
       ]
     },
     {
@@ -78,6 +72,18 @@ export const navigation: NavigationType = [
       links: [
         { title: 'Setting up', href: '/running-on-ci-cd/setting-up', icon: 'wrench' },
         { title: 'Recording strategies', href: '/running-on-ci-cd/recording-strategies', icon: 'strategy' }
+      ]
+    },
+    {
+      title: 'Time Travelling In Depth',
+      links: [
+        { title: 'What is time travel', href: '/time-travelling-in-depth/what-is-time-travel', icon: 'hourglass' },
+        { title: 'Add console logs on the Fly', href: '/time-travelling-in-depth/add-console-logs-on-the-fly', icon: 'console' },
+        { title: 'Intro To Time Travel', href: '/time-travelling-in-depth/intro-to-time-travel', icon: 'timetravel' },
+        { title: 'Visualize time. Inspect state.', href: '/time-travelling-in-depth/visualize-time-inspect-state', icon: 'inspect' },
+        { title: 'Annotate the timeline', href: '/time-travelling-in-depth/annotate-the-timeline', icon: 'pencil' },
+        { title: 'Bisect the Problem', href: '/time-travelling-in-depth/bisect-the-problem', icon: 'razor' },
+        { title: 'How Time Travel Works', href: '/time-travelling-in-depth/how-time-travel-works', icon: 'questionmark' },
       ]
     }
 ]

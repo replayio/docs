@@ -30,6 +30,7 @@ import { RunsViewIcon } from './icons/RunsViewIcon'
 import { WrenchIcon } from './icons/WrenchIcon'
 import { StrategyIcon } from './icons/StrategyIcon'
 import { Key } from './icons/Key'
+import { Home } from './icons/Home'
 
 export const icons = {
   file: FileIcon,
@@ -61,7 +62,8 @@ export const icons = {
   runsview: RunsViewIcon,
   wrench: WrenchIcon,
   strategy: StrategyIcon,
-  key: Key
+  key: Key,
+  home: Home
 }
 export function NavIcon({
   icon = 'file',
