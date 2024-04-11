@@ -1,69 +1,137 @@
 ---
 title: WebdriverIO
+description: Because Replay Browser lets you record anything that happens inside it, you can simply just point your test script to the Replay Browser binary and you are all set up.
 ---
-import { Callout } from 'nextra/components'
 
-# WebdriverIO
+{% steps %}
+## Install Replay package
+To start, you need to install `@replayio/replay` package to your project.
 
-## Setup
-
-Setting up Replay is as simple as downloading the browser, using it in your tests, and uploading the recordings.
-
-1. Download the browser with `npx @replayio/replay update-browsers chromium`
-2. Pass in the path to `chromium` in your webdriver config call. 
-3. Upload recordings with the `npx @replayio/replay upload-all` command. 
-
-## Example
-
-As a test, let’s run this simple login script:
-
-```jsx
-describe('My Login application', () => {
-  it('should login with valid credentials', async () => {
-    await browser.url(`https://the-internet.herokuapp.com/login`);
-
-    await $('#username').setValue('tomsmith');
-    await $('#password').setValue('SuperSecretPassword!');
-    await $('button[type="submit"]').click();
-    await expect($('#flash')).toBeExisting();
-    await expect($('#flash')).toHaveTextContaining('You logged into a secure area!');
-  });
-});
+{% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
+{% tab %}
+```sh
+npm i @replayio/replay
 ```
+{% /tab %}
+{% tab %}
+```sh
+yarn add @replayio/replay
+```
+{% /tab %}
+{% tab %}
+```sh
+pnpm i @replayio/replay
+```
+{% /tab %}
+{% tab %}
+```sh
+bun i @replayio/replay
+```
+{% /tab %}
+{% /tabs %}
 
-<Callout type="info" emoji="💡">
-You can try this out on your own, by forking [this example repository](https://github.com/filiphric/replay-webdriverio-example).
-</Callout>
+## Set up the browser binary
 
-Because Replay is simply a browser, we can pass it into `wdio.config.ts` file as we would with any other browser. Example configuration will look like this:
+In order to use Replay Browser in your WebdriverIO scripts, you need to point your configuration to the Replay Browser binary. The `getExecutablePath` function will take care of locating the binary on your machine.
 
-```jsx
+```js {% lineNumbers=true fileName="wdio.config.js" highlight=["1-2","11-14"] %}
+const { getPlaywrightBrowserPath } = require("@replayio/replay");
+const chromiumPath = getPlaywrightBrowserPath("chromium");
+
 exports.config = {
   specs: ["./test/*.js"],
-	automationProtocol: 'devtools',
+  automationProtocol: 'devtools',
   capabilities: [{
     maxInstances: 1,
     browserName: 'chrome',
     acceptInsecureCerts: true,
     'goog:chromeOptions': {
-        binary: '../.replay/runtimes/Replay-Chromium.app/Contents/MacOS/Chromium', // path to Replay Chromium binary, example fom MacOS
+        binary: chromiumPath,
         args: [ '--disable-infobars', '--window-size=1920,1080']
     }
   }],
 };
 ```
 
-<Callout type="info" emoji="ℹ️">
+{% callout %}
 You need to set up `automationProtocol: 'devtools'` option in your config instead of default `webdriver` protocol for now. This may change in future updates.
-</Callout>
+{% /callout %}
 
-## Uploading your replays
-After setting up everything, you will run your tests as you normally would. Replay will record all the activity inside the browser, which you can then upload and view in [Test Suite dashboard](/test-suites/features/test-suite-dashboard).
+## Run your tests
+With configration set up, you can run your tests the same way as before. After your run finishes, your recordings will be stored locally. 
 
-To upload your recording, run the following command:
+## Install Replay CLI to upload
+To download and install Replay CLI, run the following command:
+
+{% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
+{% tab %}
+```sh
+npm i -g replayio
+```
+{% /tab %}
+{% tab %}
+```sh
+yarn i -g replayio
+```
+{% /tab %}
+{% tab %}
+```sh
+pnpm i -g replayio
+```
+{% /tab %}
+{% tab %}
+```sh
+bun i -g replayio
+```
+{% /tab %}
+{% /tabs %}
+
+Upload your replays with the following command:
 
 ```sh
-npx @replayio/replay upload-all
+replayio upload --all
 ```
 
-Note: you need to provide API key, either in your shell environment, or by passing it into the command. [You can read more about Replay CLI here](/reference-guide/recording/replay-cli).
+You can use Replay CLI to manage and upload your recordings. To learn more see the [docs on Replay CLI](/replay-cli/commands).
+
+After you upload your recordings, you can view them in [Test Suite Dashboard](/test-suites/features/test-suite-dashboard).
+{% /steps%}
+
+{% callout %}
+You can try this out on your own, by forking [this example repository](https://github.com/filiphric/replay-webdriverio-example).
+{% /callout %}
+
+{% quick-links title="Read more" description="Learn how to manage your recordings, debug your app using Replay DevTools and more" %}
+
+{% quick-link 
+  title="Manage your recordings" 
+  icon="console" 
+  href="/replay-cli/commands" 
+  description="Learn how to upload, remove and view your recordings using CLI" 
+/%}
+
+{% quick-link 
+  title="Replay DevTools" 
+  icon="jumptocode" 
+  href="#" 
+  description="Learn how to use Replay DevTools to debug your tests." 
+/%}
+
+
+{% quick-link 
+  title="Record Your CI Test Run" 
+  icon="build" 
+  href="#" 
+  description="Learn how to integrate Replay into your Continuous integration service" 
+/%}
+
+
+{% quick-link 
+  title="Test Suite Management" 
+  icon="treeview" 
+  href="#" 
+  description="Test Suite Dashboard helps you stay on top of your test suite health." 
+/%}
+
+{% /quick-links %}
+

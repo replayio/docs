@@ -3,18 +3,38 @@ title: Puppeteer
 description: Because Replay Browser lets you record anything that happens inside it, you can simply just point your test script to the Replay Browser binary and you are all set up.
 ---
 
-## Set up Replay CLI 
+{% steps %}
+## Install Replay Puppeteer package
+To start, you need to install `@replayio/puppeteer` package to your project.
 
-1. Install [@replayio/puppeteer](https://github.com/Replayio/replay-cli/tree/main/packages/puppeteer) with `npm i @replayio/puppeteer` in your project.
-2. Pass in the path to `replay-chromium` in the  `puppeteer.launch()` call. See example above.
-3. Upload recordings with the `replayio upload-all` command. See more [here](/reference-guide/recording/replay-cli).
+Puppeteer package is open-source and [available on GitHub](https://github.com/Replayio/replay-cli/tree/main/packages/puppeteer)
 
-{% callout %}
-Replay is up-to-date as of Puppeteer version 13.3.1. If you are using a newer version and run into a problem, please [open a GitHub issue here](https://github.com/replayio/replay-cli) to let us know!
-{% /callout %}
+{% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
+{% tab %}
+```sh
+npm i @replayio/puppeteer
+```
+{% /tab %}
+{% tab %}
+```sh
+yarn add @replayio/puppeteer
+```
+{% /tab %}
+{% tab %}
+```sh
+pnpm i @replayio/puppeteer
+```
+{% /tab %}
+{% tab %}
+```sh
+bun i @replayio/puppeteer
+```
+{% /tab %}
+{% /tabs %}
 
+## Set up your configuration file
 
-## Example configuration
+In order to use Replay Browser in your Puppeteer scripts, you need to point your configuration to the Replay Browser binary. The `getExecutablePath` function will take care of locating the binary on your machine.
 
 ```js {% lineNumbers="true" fileName="puppeteer.config.js" highlight=[2,7] %}
 const puppeteer = require("puppeteer");
@@ -33,4 +53,76 @@ const { getExecutablePath } = require("@replayio/puppeteer");
 	await browser.close();
 })();
 ```
+## Run your tests
+With configration set up, you can run your tests the same way as before. After your run finishes, your recordings will be stored locally. 
 
+## Install Replay CLI to upload
+To download and install Replay CLI, run the following command:
+
+{% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
+{% tab %}
+```sh
+npm i -g replayio
+```
+{% /tab %}
+{% tab %}
+```sh
+yarn i -g replayio
+```
+{% /tab %}
+{% tab %}
+```sh
+pnpm i -g replayio
+```
+{% /tab %}
+{% tab %}
+```sh
+bun i -g replayio
+```
+{% /tab %}
+{% /tabs %}
+
+Upload your replays with the following command.
+
+```sh
+replayio upload-all
+```
+
+You can use Replay CLI to manage and upload your recordings. To learn more see the [docs on Replay CLI](/replay-cli/commands).
+
+After you upload your recordings, you can view them in [Test Suite Dashboard](/test-suites/features/test-suite-dashboard).
+{% /steps%}
+
+{% quick-links title="Read more" description="Learn how to manage your recordings, debug your app using Replay DevTools and more" %}
+
+{% quick-link 
+  title="Manage your recordings" 
+  icon="console" 
+  href="/replay-cli/commands" 
+  description="Learn how to upload, remove and view your recordings using CLI" 
+/%}
+
+{% quick-link 
+  title="Replay DevTools" 
+  icon="jumptocode" 
+  href="#" 
+  description="Learn how to use Replay DevTools to debug your tests." 
+/%}
+
+
+{% quick-link 
+  title="Record Your CI Test Run" 
+  icon="build" 
+  href="#" 
+  description="Learn how to integrate Replay into your Continuous integration service" 
+/%}
+
+
+{% quick-link 
+  title="Test Suite Management" 
+  icon="treeview" 
+  href="#" 
+  description="Test Suite Dashboard helps you stay on top of your test suite health." 
+/%}
+
+{% /quick-links %}
