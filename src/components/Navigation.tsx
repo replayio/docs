@@ -7,6 +7,7 @@ import { navigation } from '@/lib/navigation'
 import { Disclosure } from '@headlessui/react'
 import { Icon } from './Icon'
 import { NavIcon } from './NavIcon'
+import { useState } from 'react'
 
 export function Navigation({
   className,
@@ -21,7 +22,7 @@ export function Navigation({
       <ul role="list" className="space-y-1">
       {navigation.map((section) => (
           <li key={section.title}>
-              <Disclosure as="div">
+              <Disclosure as="div" defaultOpen={pathname.includes(section.href)}>
                 {({ open }) => (
                   <>
                   <Disclosure.Button
