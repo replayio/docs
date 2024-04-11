@@ -68,7 +68,7 @@ function Header() {
           <Link href="https://github.com/replayio" className="group" aria-label="GitHub">
             <GitHubIcon className="h-6 w-6 fill-gray-400 group-hover:fill-gray-500 dark:group-hover:fill-gray-300" />
           </Link>
-          <Link href="https://replay.io/discord" className="group" aria-label="GitHub">
+          <Link href="https://replay.io/discord" className="group" aria-label="Discord">
             <DiscordIcon className="h-6 w-6 fill-gray-400 group-hover:fill-gray-500 dark:group-hover:fill-gray-300" />
           </Link>
         </div>
@@ -84,8 +84,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="flex w-full flex-col">
-      <div className='z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none fixed'>
-        <div className="w-full flex-none flex justify-end bg-gradient-to-tr from-gray-800 via-sky-600 to-pink-500 h-screen opacity-10"></div>
+      <div className='top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none fixed -z-10'>
+        <div className="w-full flex-none flex justify-end bg-gradient-to-tr from-gray-800 via-sky-600 to-pink-500 h-screen dark:opacity-10 opacity-5"></div>
       </div>
       <Header />
 

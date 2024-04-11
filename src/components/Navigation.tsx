@@ -38,17 +38,17 @@ export function Navigation({
                         aria-hidden="true"
                       />
                     </Disclosure.Button>
-                    <Disclosure.Panel as="ul" className="ml-3 text-sm space-y-2 border-l-2 border-gray-100 lg:space-y-2 lg:border-gray-200 dark:border-gray-800" role="list">
+                    <Disclosure.Panel as="ul" className="ml-3 text-sm pr-4" role="list">
                       {section.links.map((item) => (
                         <li key={item.title}>
-                          <Disclosure.Button className="relative w-full text-left pr-4">
+                          <Disclosure.Button className="h-7 relative w-full text-left hover:bg-gray-200 rounded-md dark:hover:bg-opacity-5 transition-all dark:text-gray-400 dark:hover:bg-gray-200">
                             <Link href={item.href}
                               onClick={onLinkClick}
                               className={clsx(
-                                'block w-full pl-2.5 before:pointer-events-none before:absolute before:-left-1 before:top-3 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full  rounded before:border-gray-100 transition-all',
+                                'block w-full h-full pl-2.5 rounded',
                                 pathname.includes(item.href)
-                                ? 'font-semibold text-sky-500 before:bg-sky-500 before:shadow-nav-active'
-                                : 'text-gray-500 before:hidden before:bg-gray-300 hover:text-gray-600 hover:before:block dark:text-gray-400 dark:before:bg-gray-700 dark:hover:text-gray-300',
+                                ? 'font-semibold text-sky-500'
+                                : 'text-gray-500 hover:text-gray-600 dark:hover:text-gray-300',
                             )}>
                             <NavIcon icon={item.icon} aria-hidden="true" className="fill-inherit stroke-inherit text-inherit" />
                             {item.title}
