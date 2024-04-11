@@ -29,6 +29,7 @@ export default {
         '8xl': '88rem',
       },
       boxShadow: {
+        'nav-active': "0px 0px 5px 1px rgba(17,147,230,1)",
         ripple: `0px 0px 0px 10px rgba(255,255,255,0.1), 0px 0px 0px 20px rgba(255,255,255,0.1), 0px 0px 0px 30px rgba(255,255,255,0.1)`
       },
       colors: {

@@ -9,26 +9,29 @@ interface NavigationItemLink {
 
 type NavigationType = Array<{
     title: string;
+    href: string;
     links: NavigationItemLink[];
   }>;
 
 export const navigation: NavigationType = [
     {
       title: 'Getting started',
+      href: '/getting-started',
       links: [
         { title: 'Introduction', href: '/getting-started/introduction', icon: 'home'}
       ]
     },
     {
       title: 'Replay CLI',
+      href: '/replay-cli',
       links: [
         { title: 'Create Your First Replay', href: '/replay-cli/create-your-first-replay', icon: 'overview' },
-        { title: 'Generate API key', href: '/replay-cli/generate-api-key', icon: 'key' },
         { title: 'Commands', href: '/replay-cli/commands', icon: 'console' },
       ]
     },
     {
       title: 'Replay DevTools',
+      href: '/devtools',
       links: [
         { title: 'Video Player', href: '/devtools/video-player', icon: 'video' },
         { title: 'Events Timeline', href: '/devtools/events-timeline', icon: 'timeline' },
@@ -45,6 +48,7 @@ export const navigation: NavigationType = [
     },
     {
       title: "Test Runners",
+      href: '/test-runners',
       links: [
         { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
         { title: 'Cypress.io', href: '/test-runners/cypress-io', icon: 'cypress', links: [
@@ -59,6 +63,7 @@ export const navigation: NavigationType = [
     },
     {
       title: 'Test Suite Management',
+      href: '/test-suite-management',
       links: [
         { title: 'Analytics', href: '/test-suite-management/analytics', icon: 'analytics' },
         { title: 'PR Comments', href: '/test-suite-management/pr-comments', icon: 'pullrequest' },
@@ -69,13 +74,16 @@ export const navigation: NavigationType = [
     },
     {
       title: "Running on CI/CD",
+      href: "/running-on-ci-cd",
       links: [
         { title: 'Setting up', href: '/running-on-ci-cd/setting-up', icon: 'wrench' },
-        { title: 'Recording strategies', href: '/running-on-ci-cd/recording-strategies', icon: 'strategy' }
+        { title: 'Generate API key', href: '/running-on-ci-cd/generate-api-key', icon: 'key' },
+        { title: 'Recording strategies', href: '/running-on-ci-cd/recording-strategies', icon: 'strategy' },
       ]
     },
     {
       title: 'Time Travelling In Depth',
+      href: '/time-travelling-in-depth',
       links: [
         { title: 'What is time travel', href: '/time-travelling-in-depth/what-is-time-travel', icon: 'hourglass' },
         { title: 'Add console logs on the Fly', href: '/time-travelling-in-depth/add-console-logs-on-the-fly', icon: 'console' },

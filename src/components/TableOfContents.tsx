@@ -72,7 +72,7 @@ export function TableOfContents({
             >
               On this page
             </h2>
-            <ol role="list" className="mt-4 space-y-3 text-sm">
+            <ol role="list" className="mt-4 space-y-2 text-sm">
               {tableOfContents.map((section) => (
                 <li key={section.id}>
                   <h3>
@@ -90,7 +90,7 @@ export function TableOfContents({
                   {section.children.length > 0 && (
                     <ol
                       role="list"
-                      className="mt-2 space-y-3 pl-5 text-gray-500 dark:text-gray-400"
+                      className="mt-2 space-y-1 pl-5 text-gray-500 dark:text-gray-400"
                     >
                       {section.children.map((subSection) => (
                         <li key={subSection.id}>

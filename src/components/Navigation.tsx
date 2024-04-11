@@ -25,14 +25,14 @@ export function Navigation({
                 {({ open }) => (
                   <>
                   <Disclosure.Button
-                      className=
-                        'flex items-center justify-between w-full text-left rounded-md p-2 leading-6 font-semibold text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300'
+                      className={clsx(
+                        'flex items-center justify-between w-full text-left rounded-md p-2 leading-6 font-semibold hover:text-gray-900 dark:hover:text-gray-300', pathname.includes(section.href) ? 'dark:text-gray-200 text-gray-900' : 'dark:text-gray-400 text-gray-600')}
                     >
                       {section.title}
                       <Icon icon='chevron'
                         className={clsx(
-                          open ? 'rotate-90 text-gray-500' : 'text-gray-400',
-                          'h-7 w-7 shrink-0'
+                          open ? 'rotate-90 ' : 'text-gray-600 dark:text-gray-400',
+                          'h-7 w-7 shrink-0', pathname.includes(section.href) && 'dark:text-gray-200 text-gray-900'
                         )}
                         aria-hidden="true"
                       />
@@ -44,9 +44,9 @@ export function Navigation({
                             <Link href={item.href}
                               onClick={onLinkClick}
                               className={clsx(
-                              'block w-full pl-2.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full hover:bg-gradient-to-r hover:from-transparent hover:to-gray-100 dark:hover:to-gray-800 rounded',
-                              pathname.includes(item.href)
-                                ? 'font-semibold text-sky-500 before:bg-sky-500'
+                                'block w-full pl-2.5 before:pointer-events-none before:absolute before:-left-1 before:top-3 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full  rounded before:border-gray-100 transition-all',
+                                pathname.includes(item.href)
+                                ? 'font-semibold text-sky-500 before:bg-sky-500 before:shadow-nav-active'
                                 : 'text-gray-500 before:hidden before:bg-gray-300 hover:text-gray-600 hover:before:block dark:text-gray-400 dark:before:bg-gray-700 dark:hover:text-gray-300',
                             )}>
                             <NavIcon icon={item.icon} aria-hidden="true" className="fill-inherit stroke-inherit text-inherit" />
