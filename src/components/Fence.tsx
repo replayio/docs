@@ -32,6 +32,7 @@ export function Fence({
   highlight: string[]
 }) {
   const highlightedLines = sortHighlights(highlight)
+  language === 'sh' ? fileName = 'Terminal' : null
   return (
     <Highlight
       code={children.trimEnd()}
@@ -43,8 +44,8 @@ export function Fence({
           <CopyButton>{children}</CopyButton>
          {
           fileName &&
-            <div className='text-xs text-white pr-4 text-opacity-80 border-b border-white border-opacity-20 pt-1 pb-4 mb-4'>
-              <span className='inline'><Icon icon="file" className='w-4 h-4 inline mr-1.5' />{fileName}</span>
+            <div className='text-xs text-white pr-4 text-opacity-80 border-b border-white border-opacity-20 pb-3 mb-2'>
+              <span className='inline'><Icon icon={language === 'sh' ? "terminal" : "file"} className='w-4 h-4 inline mr-1.5' />{fileName}</span>
             </div>
           }
           <code>

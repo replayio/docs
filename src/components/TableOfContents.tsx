@@ -5,6 +5,8 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { type Section, type Subsection } from '@/lib/sections'
+import BackToTop from './BackToTop'
+import { Icon } from './Icon'
 
 export function TableOfContents({
   tableOfContents,
@@ -114,6 +116,7 @@ export function TableOfContents({
           </>
         )}
       </nav>
+      <BackToTop />
     </div>
   )
 }

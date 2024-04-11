@@ -27,6 +27,9 @@ import Chevron from './icons/Chevron'
 import Clipboard from './icons/Clipboard'
 import FileIcon from './icons/FileIcon'
 import { ErrorIcon } from './icons/ErrorIcon'
+import { ArrowUp } from './icons/ArrowUp'
+import { GitHubIcon } from './icons/GitHubIcon'
+import { ConsoleSymbol } from './icons/ConsoleSymbol'
 
 const icons = {
   bracketscurly: BracketsCurlyIcon,
@@ -55,6 +58,9 @@ const icons = {
   treeview: TreeViewSolid,
   warning: WarningIcon,
   webdriverio: WebdriverIOIcon,
+  arrowup: ArrowUp,
+  github: GitHubIcon,
+  terminal: ConsoleSymbol
 }
 
 export const iconStyles = {

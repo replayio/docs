@@ -39,14 +39,6 @@ replayio record http://localhost:3000
 {% callout showIcon=false title="First-time recording"%}
 You may be prompted to log in when you use Replay for the first time. Replay CLI will open browser for you. After logging in, you can safely close the browser and continue in terminal.
 
-{% figure
-    alt="Replay Browser Login"
-    src="/images/login.png"
-    gradient="bg-gradient-to-r from-fuchsia-600 via-pink-500 to-rose-200"
-    height=200
-    width=200
-/%}
-
 {% /callout%}
 
 <!-- todo: add video -->
@@ -54,12 +46,9 @@ You may be prompted to log in when you use Replay for the first time. Replay CLI
 ## Upload your recording
 Once you close Replay Browser, your recoding is ready to be uploaded. You’ll be prompted to confirm upload. 
 
-{% figure
-    alt="Would you like to upload recording"
-    src="/images/terminal.png"
-    height=300
-    width=600
-/%}
+```sh
+New recording found. Would you like to upload it? (Y/n)
+```
 
 If you decide to upload your recording later, you’ll be able to access it via `replayio list` command. Read more in [Replay CLI command docs](/replay-cli/commands).
 
@@ -67,12 +56,13 @@ If you decide to upload your recording later, you’ll be able to access it via 
 
 Once the upload is completed, CLI will return a link to Replay DevTools where you can start debugging.
 
-{% figure
-    alt="Recording uploaded"
-    src="/images/upload.png"
-    height=400
-    width=600
-/%}
+```sh
+Uploading recordings...
+5d663432.. localhost:3000 Now 7.5s (uploaded)
+
+View recording at:
+https://app.replay.io/recording/5d663446-d855-44c5-934-2ff20eaff9e2
+```
 
 {% /steps %}
 
