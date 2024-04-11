@@ -80,10 +80,6 @@ Replay CLI requires you to log in when uploading your recordings. In a local env
 * `[ids...]`
 * –
 ---
-* [`view`](#view)
-* `<id>`
-* –
----
 * [`help`](#help)
 * –
 * –
@@ -271,22 +267,6 @@ https://app.replay.io/recording/d1bd8025-cc11-473a-bd3d-997cb68050fa
 * displays interactive menu
 {% /table%}
 ---
-
-### view {% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
-Open a replay with a given uuid in Replay DevTools.
-
-#### Arguments
-
-{% table %}
-* Argument
-* Default
-* Description
----
-* `[id]`
-* –
-* id of a recording to be viewed
----
-{% /table%}
 
 ### help{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
 Display all available commands and their descriptions. Alternatively, you can pass `-h` or `--help` option into any of the commands to get more info.
