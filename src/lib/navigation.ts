@@ -53,7 +53,7 @@ export const navigation: NavigationType = [
       links: [
         { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
         { title: 'Cypress.io', href: '/test-runners/cypress-io', icon: 'cypress', links: [
-          { title: 'Create Your First replay', href: '/test-runners/cypress-io/create-your-first-replay' },
+          { title: 'Record Your First replay', href: '/test-runners/cypress-io/record-your-first-replay' },
           { title: 'Debugging Tests', href: '/test-runners/cypress-io/debugging-tests' }
         ]},
         { title: 'Playwright', href: '/test-runners/playwright/installation', icon: 'playwright' },

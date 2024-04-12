@@ -1,11 +1,11 @@
 ---
-title: Create Your First Replay
-description: Having your test recorded is just a matter of using Replay Browser instead of the default Electron during your test run. This doc shows how you can record your first test in two minutes
+title: Record Your First Replay
+description: Recording your test with the Replay browser is as simple as installing a Cypress plugin. This doc shows how you can record your first test in under two minutes.
 ---
 {% steps %}
 
-## Install Cypress Plugin
-Install the [@replayio/cypress](https://www.npmjs.com/package/@replayio/cypress) package in your project:
+## Install the Cypress Plugin
+Install the Cypress plugin in your project:
 
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
@@ -30,7 +30,7 @@ bun install @replayio/cypress -D
 {% /tab %}
 {% /tabs %}
 
-## Integrate Plugin To Your Project
+## Integrate The Plugin To Your Project
 Simply add the Replay plugin to your project [configuration](https://docs.cypress.io/guides/references/configuration) and [support](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Support-file) files.
 
 {% tabs labels=["CommonJS", "ESM"] %}
@@ -85,7 +85,7 @@ export default defineConfig({
 {% /tabs %}
 
 {% callout title="Obtaining API key"%}
-All your recordings are stored locally and can be uploaded manually via Replay CLI. To upload your recordings automatically, log in to Replay DevTools and generate API key in your settings menu. {% link href="#" %}Read more{% /link %}.
+In order to automatically upload your test replays you need to save an API key in your environment. To generate an API key, log in to Replay App open the settings menu. [Read more](#).
 {% /callout %}
 
 ## Run Your Test With Replay Browser
@@ -94,22 +94,22 @@ With everything set up, you can now run your test locally:
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
 ```sh
-npx cypress run --spec cypress/e2e/spec.cy.ts
+npx cypress run --broser replay-chromium
 ```
 {% /tab %}
 {% tab %}
 ```sh
-yarn cypress run --spec cypress/e2e/spec.cy.ts
+yarn cypress run --broser replay-chromium
 ```
 {% /tab %}
 {% tab %}
 ```sh
-pnpx cypress run --spec cypress/e2e/spec.cy.ts
+pnpx cypress run --broser replay-chromium
 ```
 {% /tab %}
 {% tab %}
 ```sh
-bun cypress run --spec cypress/e2e/spec.cy.ts
+bun cypress run --broser replay-chromium
 ```
 {% /tab %}
 {% /tabs %}
