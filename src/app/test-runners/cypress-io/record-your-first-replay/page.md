@@ -94,22 +94,22 @@ With everything set up, you can now run your test locally:
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
 ```sh
-npx cypress run --broser replay-chromium
+npx cypress run --browser replay-chromium
 ```
 {% /tab %}
 {% tab %}
 ```sh
-yarn cypress run --broser replay-chromium
+yarn cypress run --browser replay-chromium
 ```
 {% /tab %}
 {% tab %}
 ```sh
-pnpx cypress run --broser replay-chromium
+pnpx cypress run --browser replay-chromium
 ```
 {% /tab %}
 {% tab %}
 ```sh
-bun cypress run --broser replay-chromium
+bun cypress run --browser replay-chromium
 ```
 {% /tab %}
 {% /tabs %}
