@@ -12,7 +12,7 @@ export function Hero() {
                 Drive test flakes to{' '}
                 <span className="text-pink-500">zero.</span>
               </p>
-              <p className="mt-3 bg-white/80 text-lg tracking-tight text-gray-600">
+              <p className="light:bg-white/80 light:text-gray-600 mt-3 text-lg tracking-tight dark:text-slate-400">
                 Record your tests in CI. Debug failures with time travel
                 enhanced browser DevTools. Fix your failing tests. And get back
                 to shipping.

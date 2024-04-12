@@ -9,32 +9,33 @@ const cards: CardAttributes[] = [
     href: '/getting-started/record-your-first-replay',
   },
   {
-    icon: 'cypresssimple',
-    title: 'Record your Cypress tests',
-    content: 'Integrate Replay Browser into your test run',
-    href: '/test-runners/cypress-io',
+    icon: 'replay',
+    title: 'Intro to time travel',
+    content: 'Rewind, fast-forward and inspect your application',
+    href: '/devtools/console-panel',
   },
   {
     icon: 'rewind',
-    title: 'Time travelling DevTools',
+    title: 'Time travel DevTools',
     content: 'Rewind, fast-forward and inspect your application',
     href: '/devtools/console-panel',
   },
+  {
+    icon: 'cypresssimple',
+    title: 'Record your Cypress suite',
+    content: 'Integrate Replay Browser into your test run',
+    href: '/test-runners/cypress-io',
+  },
+
   {
     icon: 'playwrightsimple',
-    title: 'Record Playwright tests',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
-  },
-  {
-    icon: 'wrench',
-    title: 'Set up CI/CD environments',
+    title: 'Record your Playwright suite',
     content: 'Rewind, fast-forward and inspect your application',
     href: '/devtools/console-panel',
   },
   {
     icon: 'sort',
-    title: 'Test Suite management',
+    title: 'Replay Test Suites',
     content: 'Rewind, fast-forward and inspect your application',
     href: '/devtools/console-panel',
   },
@@ -84,7 +85,7 @@ export default function Page() {
     <div className="flex-autopy-16 min-w-0 max-w-2xl py-8 lg:max-w-none lg:pr-0 xl:pr-16">
       <div className="pb-20">
         <h1 className="pb-4 text-3xl font-semibold">Replay Documentation</h1>
-        <p className="sm:w-full lg:w-1/2">
+        <p className="sm:w-full lg:w-1/2 dark:text-slate-400">
           Learn how to record your first replay, integrate into your test suite,
           setup your CI/CD environment and use time-travelling DevTools
         </p>
