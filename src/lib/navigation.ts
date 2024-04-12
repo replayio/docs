@@ -18,7 +18,9 @@ export const navigation: NavigationType = [
       title: 'Getting started',
       href: '/getting-started',
       links: [
-        { title: 'Introduction', href: '/getting-started/introduction', icon: 'home'}
+        { title: 'Welcome to Replay', href: '/getting-started/welcome-to-replay', icon: 'replay'},
+        { title: 'What is time travel', href: '/getting-started/what-is-time-travel', icon: 'hourglass' },
+
       ]
     },
     {
@@ -85,7 +87,6 @@ export const navigation: NavigationType = [
       title: 'Time Travelling In Depth',
       href: '/time-travelling-in-depth',
       links: [
-        { title: 'What is time travel', href: '/time-travelling-in-depth/what-is-time-travel', icon: 'hourglass' },
         { title: 'Add console logs on the Fly', href: '/time-travelling-in-depth/add-console-logs-on-the-fly', icon: 'console' },
         { title: 'Intro To Time Travel', href: '/time-travelling-in-depth/intro-to-time-travel', icon: 'timetravel' },
         { title: 'Visualize time. Inspect state.', href: '/time-travelling-in-depth/visualize-time-inspect-state', icon: 'inspect' },

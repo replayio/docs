@@ -9,6 +9,7 @@ export function Figure({
   height,
   width,
   gradient = '',
+  ripple = false
 }: {
   className: string
   src: string
@@ -17,6 +18,7 @@ export function Figure({
   height?: number
   width?: number
   gradient?: string
+  ripple: boolean
 }) {
   const fill = !(height && width)
   const imgProps = {
@@ -25,14 +27,14 @@ export function Figure({
     height,
     width,
     fill,
-    className: `${gradient} object-contain rounded ${gradient ? 'shadow-ripple' : ''}`,
+    className: `${gradient} object-contain rounded ${ripple ? 'shadow-ripple' : ''}`,
   }
 
   return (
     <figure title={alt} className={`not-prose flex flex-col ${className}`}>
       <div
         className={`relative grid flex-grow justify-center ${
-          gradient ? `rounded p-10 sm:rounded-lg sm:p-10 ${gradient}` : ''
+          gradient ? `rounded p-10 sm:rounded-lg sm:p-10 ${gradient}` : '' 
         }`}
       >
         {fill && gradient ? (

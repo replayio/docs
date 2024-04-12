@@ -16,15 +16,14 @@ If you’re debugging a bug with browser DevTools and Console logs, you have two
     src="/images/add-console-log.png"
     gradient="bg-gradient-to-tr from-blue-200 via-fuchsia-300 to-orange-400"
     height=10
-    width=640
+    width=800
 /%}
 
 This is where time travel comes in. When you’re in Replay DevTools, you’re able to add console logs in your code and “automagically” see the messages appear in the Console. And when you want to go forwards or backwards to a new point in time, all you have to do is click the “jump” button and you’re immediately brought there.
 
 {% figure
     alt="Playwright panel"
-    src="/images/add-console-log.png"
-    gradient="bg-gradient-to-tr from-blue-200 via-fuchsia-300 to-orange-400"
+    src="/images/console-logs.png"
     height=10
     width=640
 /%}
@@ -39,8 +38,7 @@ We knew we had something valuable when six months into starting Replay some of t
 
 {% figure
     alt="Playwright panel"
-    src="/images/add-console-log.png"
-    gradient="bg-gradient-to-tr from-blue-200 via-fuchsia-300 to-orange-400"
+    src="/images/callout.png"
     height=10
     width=640
 /%}
