@@ -20,11 +20,13 @@ const BackToTop = () => {
 
   return (
     <>
-      <hr className='border-px border-gray-500 w-12 my-4 border-opacity-35'/>
-      <div className={clsx(showGoTop ? 'opacity-100' : 'opacity-0', 'transition-all font-normal text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300') } onClick={ handleScrollUp }>
-          <button className='flex'>
-              <Icon icon="arrowup" className="w-7 h-7" /><span>Back to top</span>
-          </button>
+      <div className={clsx(showGoTop ? 'opacity-100' : 'opacity-0', 'transition-all')}>
+        <hr className='border-px border-gray-500 w-12 my-4 border-opacity-35'/>
+        <div className='font-normal text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300' onClick={ handleScrollUp }>
+            <button className='flex'>
+                <Icon icon="arrowup" className="w-7 h-7" /><span>Back to top</span>
+            </button>
+        </div>
       </div>
     </>
   )

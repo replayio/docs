@@ -41,14 +41,14 @@ export function Navigation({
                     <Disclosure.Panel as="ul" className="ml-3 text-sm pr-4" role="list">
                       {section.links.map((item) => (
                         <li key={item.title}>
-                          <Disclosure.Button className="h-7 relative w-full text-left hover:bg-gray-200 rounded-md dark:hover:bg-opacity-5 transition-all dark:text-gray-400 dark:hover:bg-gray-200">
+                          <Disclosure.Button className="h-7 relative w-full text-left transition-all hover:bg-gray-500 hover:bg-opacity-10 rounded-md">
                             <Link href={item.href}
                               onClick={onLinkClick}
                               className={clsx(
-                                'block w-full h-full pl-2.5 rounded',
+                                'block w-full h-full pl-2.5 transition-all',
                                 pathname.includes(item.href)
                                 ? 'font-semibold text-sky-500'
-                                : 'text-gray-500 hover:text-gray-600 dark:hover:text-gray-300',
+                                : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300',
                             )}>
                             <NavIcon icon={item.icon} aria-hidden="true" className="fill-inherit stroke-inherit text-inherit" />
                             {item.title}
@@ -58,14 +58,14 @@ export function Navigation({
                             <Disclosure.Panel as="ul">
                               {item.links.map(subItem => (
                                 <li key={subItem.title}>
-                                  <Disclosure.Button className="relative w-full text-left pr-4">
+                                  <Disclosure.Button className="ml-8 h-7 text-left transition-all hover:bg-gray-500 hover:bg-opacity-10 rounded-md w-52">
                                   <Link href={subItem.href}
                                     onClick={onLinkClick}
                                     className={clsx(
-                                    'block w-full pl-12 ml-[2px] pt-1.5 text-sm hover:bg-gradient-to-r hover:from-transparent hover:to-gray-100 dark:hover:to-gray-800 rounded',
+                                      'block h-full pl-2.5 transition-all',
                                     subItem.href === pathname
-                                      ? 'text-gray-900 dark:text-gray-200 font-medium'
-                                      : 'text-gray-500  hover:text-gray-600 dark:text-gray-400  dark:hover:text-gray-300',
+                                    ? ' text-sky-500'
+                                    : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'
                                   )}>
                                   {subItem.title}
                                   </Link>

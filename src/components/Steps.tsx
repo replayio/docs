@@ -32,10 +32,10 @@ export function Steps({
   const splitArrayResult = splitArray(React.Children.toArray(children));
 
   return (
-    <div className='border-gray-300 border-l-2 pl-[25px] border-opacity-50 mt-12 dark:border-gray-800'>
+    <div className='border-gray-300 border-l-2 pl-[33px] border-opacity-50 mt-12 dark:border-gray-800'>
       {splitArrayResult.map((section, sectionIndex) => (
         <div key={sectionIndex} className="flex" style={{marginLeft: '-50px'}}>
-          <div className="mr-4 -mt-2 flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tl from-sky-600 to-sky-300 font-bold text-white border-8 border-white dark:border-gray-900">
+          <div className="mr-4 mt-0 flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tl from-sky-600 to-sky-300 font-bold text-white ">
             {sectionIndex + 1}
           </div>
           <div className='w-full -mt-12'>

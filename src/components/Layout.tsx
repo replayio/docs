@@ -85,7 +85,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex w-full flex-col">
       <div className='top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none fixed -z-10'>
-        <div className="w-full flex-none flex justify-end bg-gradient-to-tr from-gray-800 via-sky-600 to-pink-500 h-screen dark:opacity-10 opacity-5"></div>
+        <div className="w-full flex-none flex justify-end bg-gradient-to-tr from-white dark:from-gray-800 dark:via-sky-600 via-white to-pink-500 h-screen dark:opacity-10 opacity-5"></div>
       </div>
       <Header />
 
