@@ -54,7 +54,7 @@ Because of this, a flaky does not feel like an act of higher force, but can be i
 To learn more about elements panel, head over to [Elements panel docs](/devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=kgJVauI7Obs).
 {% /callout %}
 
-<!-- todo: add video here -->
+{% video src="elementsPanelStopWatch" /%}
 
 ## Inspect network calls
 Replays capture all network communication and display it the same way you would expect to see it in your favourite browser’s network panel.

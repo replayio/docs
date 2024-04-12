@@ -30,8 +30,17 @@ import { ErrorIcon } from './icons/ErrorIcon'
 import { ArrowUp } from './icons/ArrowUp'
 import { GitHubIcon } from './icons/GitHubIcon'
 import { ConsoleSymbol } from './icons/ConsoleSymbol'
+import { RocketIcon } from './icons/RocketIcon'
+import { CypressSimple } from './icons/CypressSimple'
+import { Record } from './icons/Record'
+import { Hourglass } from './icons/Hourglass'
+import { ReplayLogomark } from './icons/ReplayLogomark'
+import { FastRewind } from './icons/FastRewind'
+import { PlaywrightSimple } from './icons/PlaywrightSimple'
+import { WrenchIcon } from './icons/WrenchIcon'
+import { SortIcon } from './icons/SortIcon'
 
-const icons = {
+export const icons = {
   bracketscurly: BracketsCurlyIcon,
   build: BuildIcon,
   chevron: Chevron,
@@ -60,7 +69,16 @@ const icons = {
   webdriverio: WebdriverIOIcon,
   arrowup: ArrowUp,
   github: GitHubIcon,
-  terminal: ConsoleSymbol
+  terminal: ConsoleSymbol,
+  record: Record,
+  cypresssimple: CypressSimple,
+  hourglass: Hourglass,
+  rocket: RocketIcon,
+  replay: ReplayLogomark,
+  rewind: FastRewind,
+  playwrightsimple: PlaywrightSimple,
+  wrench: WrenchIcon,
+  sort: SortIcon
 }
 
 export const iconStyles = {

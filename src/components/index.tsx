@@ -1,6 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { Basic } from './Basic'
-import { Button } from './Button'
 import { Callout } from './Callout'
 import { DocsHeader } from './DocsHeader'
 import { DocsLayout } from './DocsLayout'
@@ -21,6 +20,7 @@ import { TableOfContents } from './TableOfContents'
 import { Tab, Tabs } from './Tabs'
 import { Video } from './Video'
 import { Steps } from './Steps'
+import { Button } from './Button'
 
 export default {
   Basic,

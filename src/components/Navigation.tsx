@@ -7,7 +7,6 @@ import { navigation } from '@/lib/navigation'
 import { Disclosure } from '@headlessui/react'
 import { Icon } from './Icon'
 import { NavIcon } from './NavIcon'
-import { useState } from 'react'
 
 export function Navigation({
   className,

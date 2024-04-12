@@ -25,7 +25,7 @@ interface VideoProps {
 export const Video: React.FC<VideoProps> = ({ src }) => {
   // @ts-ignore
   const video = videos[src]
-  return <NextVideo src={video} autoPlay muted loop className="pt-5"/>
+  return <NextVideo src={video} autoPlay muted loop controls={false} accentColor="#f02d5e" className='border rounded-lg overflow-clip border-transparent' />
 };
 
 export default Video;
