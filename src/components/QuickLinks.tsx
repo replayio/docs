@@ -4,7 +4,7 @@ import { Icon } from '@/components/Icon'
 
 export function QuickLinks({ children, title, description }: { children: React.ReactNode, title: string, description: string }) {
   return (
-    <div className='bg-sky-500 dark:bg-gray-900 bg-opacity-10 rounded-xl px-8 py-8 mt-12'>
+    <div className='bg-sky-500 dark:bg-gray-900 bg-opacity-5 rounded-xl px-8 py-8 mt-12'>
       { title && <div className='text-2xl dark:text-gray-100 text-gray-800 font-medium'>{title}</div> }
       { description && <p className='dark:text-gray-400 text-gray-700'>{description}</p>}
       <div className="not-prose mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">

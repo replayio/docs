@@ -20,14 +20,13 @@ export const navigation: NavigationType = [
       links: [
         { title: 'Welcome to Replay', href: '/getting-started/welcome-to-replay', icon: 'replay'},
         { title: 'What is time travel', href: '/getting-started/what-is-time-travel', icon: 'hourglass' },
-
+        { title: 'Record Your First Replay', href: '/getting-started/record-your-first-replay', icon: 'record' },
       ]
     },
     {
       title: 'Replay CLI',
       href: '/replay-cli',
       links: [
-        { title: 'Create Your First Replay', href: '/replay-cli/create-your-first-replay', icon: 'overview' },
         { title: 'Commands', href: '/replay-cli/commands', icon: 'console' },
       ]
     },

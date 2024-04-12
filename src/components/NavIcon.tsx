@@ -32,6 +32,7 @@ import { StrategyIcon } from './icons/StrategyIcon'
 import { Key } from './icons/Key'
 import { Home } from './icons/Home'
 import { ReplayLogomark } from './icons/ReplayLogomark'
+import { Record } from './icons/Record'
 
 export const icons = {
   file: FileIcon,
@@ -65,7 +66,8 @@ export const icons = {
   strategy: StrategyIcon,
   key: Key,
   home: Home,
-  replay: ReplayLogomark
+  replay: ReplayLogomark,
+  record: Record
 }
 export function NavIcon({
   icon = 'file',

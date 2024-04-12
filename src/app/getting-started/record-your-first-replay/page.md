@@ -1,6 +1,6 @@
 ---
-title: Create Your First Replay
-description: Learn how to use the Replay command-line interface (CLI) to manage and record your replays from the command line.
+title: Record Your First Replay
+description: Our goal is for recording a replay to be as easy recording a video. Today, you launch the Replay browser from the command line replayio record. This is just a stop gap solution until we’re able to release the Replay browser as a standalone development browser.
 ---
 
 {% steps %}
