@@ -1,42 +1,43 @@
 import Card, { CardAttributes } from '@/components/Card'
 import MiniCard from '@/components/MiniCard'
 
-const cards: CardAttributes[] = [{
-  icon: 'replay',
-  title: "Record your first replay",
-  content: "Learn how to record your first replay in under a minute",
-  href: '/getting-started/record-your-first-replay'
-},
-{
-  icon: 'cypresssimple',
-  title: "Record your Cypress tests",
-  content: "Integrate Replay Browser into your Cypress test runs",
-  href: '/test-runners/cypress-io'
-},
-{
-  icon: 'rewind',
-  title: "Time travelling DevTools",
-  content: "Rewind, fast-forward and inspect your application",
-  href: '/devtools/console-panel'
-},
-{
-  icon: 'playwrightsimple',
-  title: "Record Playwright tests",
-  content: "Integrate Replay Browser into your Playwright test runs",
-  href: '/test-runners/playwright'
-},
-{
-  icon: 'wrench',
-  title: "Set up CI/CD environments",
-  content: "Learn how to set up your CI/CD environment to use with Replay",
-  href: '/devtools/console-panel'
-},
-{
-  icon: 'sort',
-  title: "Test Suite management",
-  content: "Drive down flaky tests with dashboard overview",
-  href: '/devtools/console-panel'
-}
+const cards: CardAttributes[] = [
+  {
+    icon: 'replay',
+    title: 'Record your first replay',
+    content: 'Learn how to record your first replay in under a minute',
+    href: '/getting-started/record-your-first-replay',
+  },
+  {
+    icon: 'rewind',
+    title: 'Intro to time travel',
+    content: 'Rewind, fast-forward and inspect your application',
+    href: '/devtools/console-panel',
+  },
+  {
+    icon: 'terminal',
+    title: 'Time travel DevTools',
+    content: 'Rewind, fast-forward and inspect your application',
+    href: '/devtools/console-panel',
+  },
+  {
+    icon: 'cypresssimple',
+    title: 'Record Cypress suite',
+    content: 'Integrate Replay Browser into your test run',
+    href: '/test-runners/cypress-io',
+  },
+  {
+    icon: 'playwrightsimple',
+    title: 'Record Playwright suite',
+    content: 'Rewind, fast-forward and inspect your application',
+    href: '/devtools/console-panel',
+  },
+  {
+    icon: 'sort',
+    title: 'Replay Test Suites',
+    content: 'Rewind, fast-forward and inspect your application',
+    href: '/devtools/console-panel',
+  },
 ]
 
 const miniCards: CardAttributes[] = [{
