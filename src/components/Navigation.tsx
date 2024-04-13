@@ -26,7 +26,7 @@ export function Navigation({
                 <>
                   <Disclosure.Button
                     className={clsx(
-                      'flex w-full items-center justify-between rounded-md text-left  font-semibold leading-6 hover:text-gray-900 dark:hover:text-gray-300',
+                      'flex w-full items-center justify-between rounded-md text-left font-semibold leading-6 hover:text-gray-900 dark:hover:text-gray-300',
                       pathname.includes(section.href)
                         ? 'text-gray-900 dark:text-gray-200'
                         : 'text-gray-600 dark:text-gray-400',
@@ -48,7 +48,7 @@ export function Navigation({
                   </Disclosure.Button>
                   <Disclosure.Panel
                     as="ul"
-                    className="ml-3 pr-4 text-sm"
+                    className="ml-1 pr-4 text-sm"
                     role="list"
                   >
                     {section.links.map((item) => (
@@ -76,7 +76,7 @@ export function Navigation({
                           <Disclosure.Panel as="ul">
                             {item.links.map((subItem) => (
                               <li key={subItem.title}>
-                                <Disclosure.Button className="ml-8 h-7 w-52 rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
+                                <Disclosure.Button className="ml-4 h-7 w-52 rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
                                   <Link
                                     href={subItem.href}
                                     onClick={onLinkClick}

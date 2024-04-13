@@ -30,11 +30,52 @@ export const navigation: NavigationType = [
       },
     ],
   },
-
+  {
+    title: 'Intro to time travel',
+    href: '/time-travel-intro',
+    links: [
+      {
+        title: 'Add console logs on the Fly',
+        href: '/time-travel-intro/add-console-logs-on-the-fly',
+        icon: 'console',
+      },
+      {
+        title: 'Intro To Time Travel',
+        href: '/time-travel-intro/intro-to-time-travel',
+        icon: 'timetravel',
+      },
+      {
+        title: 'Visualize time. Inspect state.',
+        href: '/time-travel-intro/visualize-time-inspect-space',
+        icon: 'inspect',
+      },
+      {
+        title: 'Annotate the timeline',
+        href: '/time-travel-intro/annotate-the-timeline',
+        icon: 'pencil',
+      },
+      {
+        title: 'Bisect the Problem',
+        href: '/time-travel-intro/bisect-the-problem',
+        icon: 'razor',
+      },
+      {
+        title: 'How Time Travel Works',
+        href: '/time-travel-intro/how-time-travel-works',
+        icon: 'questionmark',
+      },
+    ],
+  },
   {
     title: 'Browser DevTools',
     href: '/browser-devtools',
     links: [
+      {
+        title: 'Replay Viewer',
+        href: '/browser-devtools/replay-viewer',
+        icon: 'video',
+      },
+
       {
         title: 'Source Viewer',
         href: '/browser-devtools/source-viewer',
@@ -88,18 +129,7 @@ export const navigation: NavigationType = [
       },
     ],
   },
-  {
-    title: 'Replay Viewer',
-    href: '/replay-viewer',
-    links: [
-      { title: 'Video Player', href: '/devtools/video-player', icon: 'video' },
-      {
-        title: 'Events Timeline',
-        href: '/devtools/events-timeline',
-        icon: 'timeline',
-      },
-    ],
-  },
+
   {
     title: 'Replay Test Suites',
     href: '/test-suites',
@@ -307,42 +337,7 @@ export const navigation: NavigationType = [
       },
     ],
   },
-  {
-    title: 'Introduction to time travel',
-    href: '/time-trave-intro',
-    links: [
-      {
-        title: 'Add console logs on the Fly',
-        href: '/time-trave-intro/add-console-logs-on-the-fly',
-        icon: 'console',
-      },
-      {
-        title: 'Intro To Time Travel',
-        href: '/time-trave-intro/intro-to-time-travel',
-        icon: 'timetravel',
-      },
-      {
-        title: 'Visualize time. Inspect state.',
-        href: '/time-trave-intro/visualize-time-inspect-state',
-        icon: 'inspect',
-      },
-      {
-        title: 'Annotate the timeline',
-        href: '/time-trave-intro/annotate-the-timeline',
-        icon: 'pencil',
-      },
-      {
-        title: 'Bisect the Problem',
-        href: '/time-trave-intro/bisect-the-problem',
-        icon: 'razor',
-      },
-      {
-        title: 'How Time Travel Works',
-        href: '/time-trave-intro/how-time-travel-works',
-        icon: 'questionmark',
-      },
-    ],
-  },
+
   {
     title: 'Comparisons',
     href: '/comparisons',
