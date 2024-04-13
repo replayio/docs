@@ -298,14 +298,17 @@ export const navigation: NavigationType = [
           {
             title: 'GraphQL API',
             href: '/integrations/replay-apis/graphql-api',
+            icon: 'console',
           },
           {
             title: 'Replay Protocol',
             href: '/integrations/replay-apis/replay-protocol',
+            icon: 'console',
           },
           {
             title: 'Replay Driver',
             href: '/integrations/replay-apis/replay-driver',
+            icon: 'console',
           },
         ],
       },
@@ -317,6 +320,7 @@ export const navigation: NavigationType = [
           {
             title: 'NextJS',
             href: '/integrations/frameworks-libraries/nextjs',
+            icon: 'console',
           },
         ],
       },
