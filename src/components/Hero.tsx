@@ -16,15 +16,8 @@ export function Hero() {
               Record your tests in CI. Debug failures with browser DevTools. Fix your failing tests. And get back to shipping.
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                <Button href="/getting-started/record-your-first-replay">
-                  Record Your first replay
-                </Button>
-                <Button
-                  variant="secondary"
-                  href="/getting-started/record-your-first-replay"
-                >
-                  Explore DevTools
-                </Button>
+                <Button href="/getting-started/record-your-first-replay">Record Your First Replay</Button>
+                <Button variant="secondary" href="/getting-started/welcome-to-replay">Explore the docs</Button>
               </div>
             </div>
           </div>

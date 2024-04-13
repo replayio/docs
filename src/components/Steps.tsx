@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react'
+'use client'
+import React, { Fragment, useCallback, useEffect, useState } from 'react'
 
 export function Steps({
   children,
@@ -30,18 +31,19 @@ export function Steps({
   }
 
   const splitArrayResult = splitArray(React.Children.toArray(children));
-
   return (
-    <div className='border-gray-300 border-l-2 border-opacity-50 mt-12 dark:border-pink-800'>
+    <div className='mt-12 relative'>
       {splitArrayResult.map((section, sectionIndex) => (
-        <div key={sectionIndex} className="flex" style={{marginLeft: '-50px'}}>
-          <div className="mr-4 mt-0 flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tl from-sky-600 to-sky-300 font-bold text-white ">
-            {sectionIndex + 1}
-          </div>
-          <div className='w-full -mt-12'>
-            {section.map((item, itemIndex) => (
-              <Fragment key={itemIndex}>{item}</Fragment>
-            ))}
+        <div key={sectionIndex}>
+          <div className="flex before:block before:relative before:-z-10 before:mt-10 before:mb-2 before:left-[18px] before:top-0 before:bottom-0 before:border-2 before:border-sky-500/20" style={{marginLeft: '-50px'}}>
+            <div className="mr-4 mt-0 flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full border-sky-500 border-[3px] font-bold text-sky-500 ">
+              {sectionIndex + 1}
+            </div>
+            <div className='w-full -mt-12 '>
+              {section.map((item, itemIndex) => (
+                <Fragment key={itemIndex}>{item}</Fragment>
+              ))}
+            </div>
           </div>
         </div>
       ))}
