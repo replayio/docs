@@ -60,4 +60,4 @@ If you are primarily interested in debugging flaky and failing tests in CI, then
 
 If you are focused on a local development for when you’re writing your tests or run tens of thousands of tests a day and want to collect high level insights about your test suite, then an observability tool like the Trace Viewer makes sense.
 
-If you have any questions about time travel debugging, how Replay DevTools works, or how you can more effectively debug your flaky playwright tests, stop by our [Discord(opens in a new tab)](https://replay.io/discord) or shoot us an email at <hey@replay.io>.
+If you have any questions about time travel debugging, how Replay DevTools works, or how you can more effectively debug your flaky playwright tests, stop by our [Discord](https://replay.io/discord) or shoot us an email at <hey@replay.io>.

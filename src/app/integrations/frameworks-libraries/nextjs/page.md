@@ -12,7 +12,7 @@ And when it comes to production, the only thing you need to setup is source maps
 
 Replay works in best with source maps that let you see the original code and add print statements in the original file retroactively.
 
-We recommend enabling source maps in production because the browser was designed to be open with “view source” by default. If you would like to enable source maps in production, Next.js makes it easy to do so. [docs(opens in a new tab)](https://nextjs.org/docs/app/api-reference/next-config-js/productionBrowserSourceMaps)
+We recommend enabling source maps in production because the browser was designed to be open with “view source” by default. If you would like to enable source maps in production, Next.js makes it easy to do so. [docs](https://nextjs.org/docs/app/api-reference/next-config-js/productionBrowserSourceMaps)
 
 ```javascript
 module.exports = {
