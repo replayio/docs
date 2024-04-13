@@ -39,6 +39,11 @@ import { FastRewind } from './icons/FastRewind'
 import { PlaywrightSimple } from './icons/PlaywrightSimple'
 import { WrenchIcon } from './icons/WrenchIcon'
 import { SortIcon } from './icons/SortIcon'
+import { TimelineOutline } from './icons/TimelineOutline'
+import { FolderOpen } from './icons/FolderOpen'
+import { PullRequestIcon } from './icons/PullRequestIcon'
+import { AnalyticsIcon } from './icons/AnalyticsIcon'
+import { ReactIcon } from './icons/ReactIcon'
 
 export const icons = {
   bracketscurly: BracketsCurlyIcon,
@@ -78,7 +83,12 @@ export const icons = {
   rewind: FastRewind,
   playwrightsimple: PlaywrightSimple,
   wrench: WrenchIcon,
-  sort: SortIcon
+  sort: SortIcon,
+  timeline: TimelineOutline,
+  folder: FolderOpen,
+  pullrequest: PullRequestIcon,
+  analytics: AnalyticsIcon,
+  react: ReactIcon
 }
 
 export const iconStyles = {

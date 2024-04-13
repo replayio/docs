@@ -1,84 +1,80 @@
 import Card, { CardAttributes } from '@/components/Card'
 import MiniCard from '@/components/MiniCard'
 
-const cards: CardAttributes[] = [
-  {
-    icon: 'replay',
-    title: 'Record your first replay',
-    content: 'Learn how to record your first replay in under a minute',
-    href: '/getting-started/record-your-first-replay',
-  },
-  {
-    icon: 'replay',
-    title: 'Intro to time travel',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
-  },
-  {
-    icon: 'rewind',
-    title: 'Time travel DevTools',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
-  },
-  {
-    icon: 'cypresssimple',
-    title: 'Record your Cypress suite',
-    content: 'Integrate Replay Browser into your test run',
-    href: '/test-runners/cypress-io',
-  },
-
-  {
-    icon: 'playwrightsimple',
-    title: 'Record your Playwright suite',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
-  },
-  {
-    icon: 'sort',
-    title: 'Replay Test Suites',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
-  },
+const cards: CardAttributes[] = [{
+  icon: 'replay',
+  title: "Record your first replay",
+  content: "Learn how to record your first replay in under a minute",
+  href: '/getting-started/record-your-first-replay'
+},
+{
+  icon: 'cypresssimple',
+  title: "Record your Cypress tests",
+  content: "Integrate Replay Browser into your Cypress test runs",
+  href: '/test-runners/cypress-io'
+},
+{
+  icon: 'rewind',
+  title: "Time travelling DevTools",
+  content: "Rewind, fast-forward and inspect your application",
+  href: '/devtools/console-panel'
+},
+{
+  icon: 'playwrightsimple',
+  title: "Record Playwright tests",
+  content: "Integrate Replay Browser into your Playwright test runs",
+  href: '/test-runners/playwright'
+},
+{
+  icon: 'wrench',
+  title: "Set up CI/CD environments",
+  content: "Learn how to set up your CI/CD environment to use with Replay",
+  href: '/devtools/console-panel'
+},
+{
+  icon: 'sort',
+  title: "Test Suite management",
+  content: "Drive down flaky tests with dashboard overview",
+  href: '/devtools/console-panel'
+}
 ]
 
-const miniCards: CardAttributes[] = [
-  {
-    icon: 'console',
-    title: 'Add print statements',
-    content: 'Learn how to record your first replay in under a minute',
-    href: '/getting-started/record-your-first-replay',
-  },
-  {
-    icon: 'cypresssimple',
-    title: 'What is time travelling',
-    content: 'Integrate Replay Browser into your test run',
-    href: '/test-runners/cypress-io',
-  },
-  {
-    icon: 'rewind',
-    title: 'Debug React Components',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
-  },
-  {
-    icon: 'rewind',
-    title: 'Pull request comments',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
-  },
-  {
-    icon: 'rewind',
-    title: 'Flaky test management',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
-  },
-  {
-    icon: 'rewind',
-    title: 'Network monitor',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
-  },
-]
+const miniCards: CardAttributes[] = [{
+  icon: 'terminal',
+  title: "Add print statements",
+  content: "How to add retroactive console logs to your replay",
+  href: '/devtools/console-panel'
+},
+{
+  icon: 'timeline',
+  title: "Events timeline",
+  content: "Travel in time and stop at a perfect moment",
+  href: '/test-runners/cypress-io'
+},
+{
+  icon: 'folder',
+  title: "Source panel",
+  content: "Search and explore your code execution",
+  href: '/devtools/console-panel'
+},
+{
+  icon: 'pullrequest',
+  title: "Pull request comments",
+  content: "Catch regressions before going to production",
+  href: '/devtools/console-panel'
+},
+{
+  icon: 'analytics',
+  title: "Test suite analytics",
+  content: "Getting ahead of test flaeks via Test suite analytics",
+  href: '/devtools/console-panel'
+},
+{
+  icon: 'react',
+  title: "React panel",
+  content: "Examine properties, state and hooks with time-travelling",
+  href: '/devtools/console-panel'
+}]
 
 export default function Page() {
   return (
