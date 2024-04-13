@@ -340,31 +340,31 @@ export const navigation: NavigationType = [
 
   {
     title: 'Comparisons',
-    href: '/comparisons',
+    href: '/comparison',
     links: [
       {
-        title: 'How Runtime Replay Compares with Playwright',
-        href: '/comparisons/playwright',
+        title: 'Playwright',
+        href: '/comparison/playwright',
         icon: 'playwright',
       },
       {
-        title: 'How Runtime Replay Compares with Cypress',
-        href: '/comparisons/cypress',
+        title: 'Cypress',
+        href: '/comparison/cypress',
         icon: 'cypress',
       },
       {
-        title: `How Runtime Replay Compares with Chrome's Recorder`,
-        href: '/comparisons/chrome',
+        title: `Chrome's Recorder`,
+        href: '/comparison/chrome',
         icon: 'console',
       },
       {
-        title: 'How Runtime Replay Compares with Loom',
-        href: '/comparisons/loom',
+        title: 'Loom',
+        href: '/comparison/loom',
         icon: 'console',
       },
       {
-        title: 'How Runtime Replay Compares with Browser DevTools',
-        href: '/comparisons/devtools',
+        title: 'Browser DevTools',
+        href: '/comparison/devtools',
         icon: 'console',
       },
     ],

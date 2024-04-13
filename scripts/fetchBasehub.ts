@@ -93,6 +93,10 @@ async function fetchBaseHub(query: string) {
 async function fetchImagesFromMarkdown(markdown: string) {
   const regex = /!\[.*\]\((.*)\)/g
   const matches = markdown.match(regex)
+  if (!fs.existsSync('out/images')) {
+    fs.mkdirSync('out/images', { recursive: true })
+  }
+
   if (matches) {
     for (const match of matches) {
       const url = match.match(/\((.*)\)/)?.[1]
@@ -150,7 +154,7 @@ async function writeArticle(data: Data) {
 
         // console.log(`    ${path}`);
         const markdown = child?.body?.markdown
-        writeFileFromMarkdown(`out/${path}.md`, childTitle, markdown)
+        writeFileFromMarkdown(`out/${path}/page.md`, childTitle, markdown)
 
         for (const subChild of child.children.items) {
           const subChildTitle = subChild._title
@@ -177,10 +181,12 @@ async function writeFileFromMarkdown(
     return
   }
 
-  console.log('writing file', path)
   await fetchImagesFromMarkdown(content)
   const m1 = replaceImagesWithFigures(content)
   const m2 = addTitleToMarkdown(title, m1)
+
+  path = path.toLowerCase()
+  console.log('writing file', path)
 
   const dir = path.split('/')
   dir.pop()
