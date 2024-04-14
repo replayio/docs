@@ -2,25 +2,28 @@
 title: Cypress.io
 description: Replay works great with Cypress. You can set up your project to use Replay Browser in matter of minutes and then customize it to your needs. With Replay Browser integration, you’ll be able to see all your Cypress steps as well as code of your application.
 ---
+
 ## Getting more insight
-The most annoying test flakes are those that cannot be reproduced locally or simply don’t show up when you need them to. But we think that **what happens on CI should not stay on CI**. 
+
+The most annoying test flakes are those that cannot be reproduced locally or simply don’t show up when you need them to. But we think that **what happens on CI should not stay on CI**.
 
 Recording your test run using replay will provide more info than any test result, logger or any DOM snapshot trace ever could. That’s because a replay provides you with **context for every line of code**. For both your spec and the app you test.
 
 {% figure
     alt="Jumping to code"
     src="/images/jump_to_code.png"
-    gradient="bg-gradient-to-r from-fuchsia-600 via-pink-500 to-rose-200"
     height=870
     width=870
 /%}
 
 ## Context matters
+
 Cypress brings its special chaining syntax, that is fun to use, but can sometimes lead to unexpected issues. Retryability mechanisms can sometimes race-condition, starting a chain of events that can be hard to trace back.
 
 Replay tackles this by providing you more context and deeper insight. All packaged into DevTools that we love to work with. And with time-travelling capability on top of it.
 
 ## Trace back every DOM change
+
 Replay allows you to track every DOM change, not just those that are captured by "before" and "after" snapshots. Let’s look at the following test:
 
 ```ts {% fileName="spec.cy.ts" lineNumbers=true %}
@@ -30,12 +33,14 @@ it('tests a stopwatch', () => {
   cy.get('p').should('have.text', '00:03:000')
 })
 ```
+
 There are a couple of things that could go wrong with this test:
 
 {% icon icon="error" class="text-red-500 inline w-4 h-4 mr-1.5" /%} stopwatch never shows the time `00:02:000` and still **passes** (false positive) \
 {% icon icon="error" class="text-red-500 inline w-4 h-4 mr-1.5" /%} stopwatch runs too fast for `.should()` command and **fails** (false negative)
 
-While this example is fairly exaggerated, it illustrates two main problems of **rapid DOM changes**. 
+While this example is fairly exaggerated, it illustrates two main problems of **rapid DOM changes**.
+
 1. they can cause problems and still be invisible for the test script
 2. they can happen too fast for a test assertion to make it in time
 
@@ -44,6 +49,7 @@ While this example is fairly exaggerated, it illustrates two main problems of **
 {% figure
     alt="Snapshots vs. replay"
     src="/images/snapshots.png"
+    showRadius=false
     height=870
     width=620
 /%}
@@ -57,6 +63,7 @@ To learn more about elements panel, head over to [Elements panel docs](/devtools
 {% video src="elementsPanelStopWatch" /%}
 
 ## Inspect network calls
+
 Replays capture all network communication and display it the same way you would expect to see it in your favourite browser’s network panel.
 
 Network calls are the biggest contributor to asynchronous issues, as responses from server return in different times and sizes. Replay DevTools allow you to inspect every API call, resource fetch and view its headers, payloads, server responses and even timings and stack trace.
@@ -68,7 +75,6 @@ Because network panel is integrated with the rest of the tools, you’ll get eve
 {% figure
     alt="Jumping to code"
     src="/images/stack_trace_network_panel.png"
-    gradient="bg-gradient-to-r from-pink-300 via-teal-800 to-teal-100"
     height=1300
     width=1300
 /%}
@@ -80,7 +86,8 @@ To learn more about network panel, checkout [Network panel docs](/devtools/eleme
 {% /callout %}
 
 ## Jump to code
-When a test clicks on an element on page, we usually **see the result**. Modal opened, API call was made, and so on. Replay shows you **how that result happened**. 
+
+When a test clicks on an element on page, we usually **see the result**. Modal opened, API call was made, and so on. Replay shows you **how that result happened**.
 
 Interactions show "Jump to code" button that takes you to the function call made by a click, typing or other interaction. This way your test interaction is no longer disconnected from the application under test.
 
@@ -94,34 +101,32 @@ Jumping from test code and utilizing timeline can further be explored [Events Ti
 
 {% quick-links title="Read more" description="Learn how record your first Replay with Cypress, manage your test suite and debug flaky tests using Replay DevTools" %}
 
-{% quick-link 
-  title="Record Your First Cypress test" 
-  icon="cypress" 
-  href="/test-runners/cypress-io/create-your-first-replay" 
-  description="Learn how to get started with Cypress and Replay" 
+{% quick-link
+  title="Record Your First Cypress test"
+  icon="cypress"
+  href="/test-runners/cypress-io/create-your-first-replay"
+  description="Learn how to get started with Cypress and Replay"
 /%}
 
-{% quick-link 
-  title="Record Your CI Test Run" 
-  icon="build" 
-  href="#" 
-  description="Learn how to integrate Replay into your Continuous integration service" 
+{% quick-link
+  title="Record Your CI Test Run"
+  icon="build"
+  href="#"
+  description="Learn how to integrate Replay into your Continuous integration service"
 /%}
 
-
-{% quick-link 
-  title="Replay DevTools" 
-  icon="jumptocode" 
-  href="#" 
-  description="Learn how to use Replay DevTools to debug your tests." 
+{% quick-link
+  title="Replay DevTools"
+  icon="jumptocode"
+  href="#"
+  description="Learn how to use Replay DevTools to debug your tests."
 /%}
 
-
-{% quick-link 
-  title="Test Suite Management" 
-  icon="treeview" 
-  href="#" 
-  description="Test Suite Dashboard helps you stay on top of your test suite health." 
+{% quick-link
+  title="Test Suite Management"
+  icon="treeview"
+  href="#"
+  description="Test Suite Dashboard helps you stay on top of your test suite health."
 /%}
 
 {% /quick-links %}
