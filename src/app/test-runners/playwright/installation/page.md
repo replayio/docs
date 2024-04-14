@@ -21,28 +21,28 @@ npm install @replayio/playwright -D
 **2. Add Replay Chromium browser and Replay Reporter to your `playwright.config.ts` file.**
 
 ```tsx {2,5-8,11,12} filename="playwright.config.ts"
-import { PlaywrightTestConfig, devices } from "@playwright/test";
-import { devices as replayDevices } from "@replayio/playwright";
+import { PlaywrightTestConfig, devices } from '@playwright/test'
+import { devices as replayDevices } from '@replayio/playwright'
 
 const config: PlaywrightTestConfig = {
   reporter: [
     [
-      "@replayio/playwright/reporter",
+      '@replayio/playwright/reporter',
       {
         apiKey: process.env.REPLAY_API_KEY,
         upload: true,
       },
     ],
-    ["line"],
+    ['line'],
   ],
   projects: [
     {
-      name: "replay-chromium",
-      use: { ...(replayDevices["Replay Chromium"] as any) },
+      name: 'replay-chromium',
+      use: { ...(replayDevices['Replay Chromium'] as any) },
     },
   ],
-};
-export default config;
+}
+export default config
 ```
 
 ## Setup Replay Dashboard
@@ -57,7 +57,7 @@ Alternatively, you can visit [this link](https://app.replay.io/team/new) to inst
 Test Suites are currently in closed Beta. If you’d like to start recording your tests, test suites need to be enabled in your team. Join our [**waitlist**](https://replayio.typeform.com/to/jTudlerL) and we’ll reach out to you as soon as possible.
 </Callout>
 
-**2. Once you’ve created a team, click on the settings <MaterialSymbolsSettings className="w-6 h-6 inline-block" /> icon next to your team name and [create a new API Key](/getting-started/teams-admin/team-settings)**
+**2. Once you’ve created a team, click on the settings <MaterialSymbolsSettings className="w-6 h-6 inline-block" /> icon next to your team name and [create a new API Key](/replay-teams/setting-up-a-team#api-keys)**
 
 <Video src={apiKeys} />
 
