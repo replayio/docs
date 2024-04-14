@@ -13,16 +13,24 @@ export function Hero() {
                 <span className="text-pink-500">zero.</span>
               </p>
               <p className="mt-3 text-2xl tracking-tight text-gray-400">
-              Record your tests in CI. Debug failures with browser DevTools. Fix your failing tests. And get back to shipping.
+                Record your tests in CI. Debug failures with browser DevTools.
+                Fix your failing tests. And get back to shipping.
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                <Button href="/getting-started/record-your-first-replay">Record Your First Replay</Button>
-                <Button variant="secondary" href="/getting-started/welcome-to-replay">Explore the docs</Button>
+                <Button href="/getting-started/record-your-first-replay">
+                  Record Your First Replay
+                </Button>
+                <Button
+                  variant="secondary"
+                  href="/getting-started/welcome-to-replay"
+                >
+                  Explore the docs
+                </Button>
               </div>
             </div>
           </div>
           <div className="relative lg:static xl:pl-10">
-            <HeroBackground className="absolute -left-[32%] -top-[45%] mix-blend-darken dark:opacity-40 dark:mix-blend-color-burn" />
+            <HeroBackground className="absolute -left-[32%] -top-[45%] mix-blend-darken dark:bg-black dark:mix-blend-color-burn" />
           </div>
         </div>
       </div>
