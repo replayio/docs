@@ -36,7 +36,7 @@ With information on [line hit counts](#) and [jumping through line executions](#
     gradient="bg-gradient-to-r from-fuchsia-600 via-pink-500 to-rose-200"
     height=870
     width=870
-/%} 
+/%}
 
 {% basic icon="console" %}
 
@@ -47,14 +47,13 @@ Flakiness can be a caused by a single line of code. Reveal that line with a **pr
 We have stories of [2 pixel shifts](#) and [false positives](#) that caused headaches to test maintainers. [Learn more](#) about the power of print statements.
 {% /basic %}
 
-
 {% figure
     alt="Race condition"
     src="/images/race_condition.png"
     gradient="bg-gradient-to-br from-sky-300 via-blue-300 to-violet-400"
     height=870
     width=870
-/%} 
+/%}
 
 {% basic icon="insight" %}
 
@@ -71,7 +70,7 @@ Analytics give you actionable insights into your test runs and help you focus on
     gradient="bg-gradient-to-r from-pink-300 via-teal-800 to-teal-100"
     height=870
     width=870
-/%} 
+/%}
 
 {% basic icon="build" %}
 
@@ -88,7 +87,7 @@ You can zoom out to take a look at your whole test run, or filter out those that
     gradient="bg-gradient-to-t from-emerald-400 via-amber-100 to-sky-300"
     height=870
     width=870
-/%} 
+/%}
 
 {% basic icon="bracketscurly" %}
 
@@ -96,7 +95,7 @@ You can zoom out to take a look at your whole test run, or filter out those that
 
 If test flakiness pushed you to consider switching to a new testing framework, be at ease. Replay is a browser based on Chromium that can be integrated to any test framework.
 
-We have created an extra tooling around the most popular ones today - [Cypress.io](/test-suites/cypress-io) and [Playwright](/test-suites/playwright).
+We have created an extra tooling around the most popular ones today - [Cypress.io](/test-runners/cypress-io) and [Playwright](/test-runners/playwright/installation).
 {% /basic %}
 
 {% icon icon="cypress" class="w-9 h-9 inline-block mr-4" /%}

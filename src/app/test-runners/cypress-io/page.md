@@ -104,7 +104,7 @@ Jumping from test code and utilizing timeline can further be explored [Events Ti
 {% quick-link
   title="Record Your First Cypress test"
   icon="cypress"
-  href="/test-runners/cypress-io/create-your-first-replay"
+  href="/test-runners/cypress-io/record-your-first-replay"
   description="Learn how to get started with Cypress and Replay"
 /%}
 
