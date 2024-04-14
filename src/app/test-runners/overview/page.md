@@ -10,7 +10,7 @@ Replay Test Suites bring **time-travelling DevTools to your test runs**. You’l
 
 Replay Devtools work great with your existing test suite. Cypress and Playwright plugins allow you to **rewind or fast forward** to any command from your test run.
 
-**Command details** contain information on passed arguments, returned values and targeted element. Commands are integrated with the rest of DevTools. This means you can jump from a command detail into [Elements panel](/time-travel/elements-panel), or inspect API calls in the [Network panel](/time-travel/network-panel).
+**Command details** contain information on passed arguments, returned values and targeted element. Commands are integrated with the rest of DevTools. This means you can jump from a command detail into [Elements panel](/browser-devtools/elements-panel), or inspect API calls in the [Network panel](/browser-devtools/network-monitor).
 {% /basic %}
 
 {% figure
@@ -57,7 +57,7 @@ We have stories of [2 pixel shifts](#) and [false positives](#) that caused head
 
 {% basic icon="insight" %}
 
-## Tests Suite Analytics
+## Test Suite Analytics
 
 Test Suite Dashboard helps you stay on top of your test suite health. **Focus on your top failing, or most flaky tests**. Get insights from your newest feature branch. Focus on most common errors.
 
