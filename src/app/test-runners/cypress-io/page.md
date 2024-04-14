@@ -57,7 +57,7 @@ While this example is fairly exaggerated, it illustrates two main problems of **
 Because of this, a flaky does not feel like an act of higher force, but can be inspected with **a microscopic precision**. Even when your app is updated every millisecond, you can jump to the perfect spot, and see your DOM rendered exactly as it would on that moment.
 
 {% callout title="Learn more" %}
-To learn more about elements panel, head over to [Elements panel docs](/devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=kgJVauI7Obs).
+To learn more about elements panel, head over to [Elements panel docs](/browser-devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=kgJVauI7Obs).
 {% /callout %}
 
 {% video src="elementsPanelStopWatch" /%}
