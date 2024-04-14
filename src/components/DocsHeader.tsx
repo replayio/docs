@@ -1,14 +1,22 @@
 'use client'
 import { usePathname } from 'next/navigation'
 import { navigation } from '@/lib/navigation'
+import { Figure } from './Figure'
 
-export function DocsHeader({ title, description }: { title?: string, description?: string }) {
-
+export function DocsHeader({
+  title,
+  description,
+  image,
+}: {
+  title?: string
+  description?: string
+  image?: string
+}) {
   let pathname = usePathname()
 
   let section = navigation.find((section) =>
-  section.links.find((link) => link.href === pathname),
-)
+    section.links.find((link) => link.href === pathname),
+  )
 
   if (!title && !section) {
     return null
@@ -28,12 +36,27 @@ export function DocsHeader({ title, description }: { title?: string, description
       )}
       {description && (
         <>
-            <h1 className="pb-5 font-light text-lg tracking-tight text-gray-900 dark:text-gray-300">
-              {description}
-            </h1>
-          <hr className='dark:border-gray-300 border-gray-900 opacity-20 py-4'/>
+          <h2 className="pb-5 text-lg font-light tracking-tight text-gray-900 dark:text-gray-300">
+            {description}
+          </h2>
         </>
       )}
+      {image && (
+        <Figure
+          src={image}
+          alt={title || ''}
+          showRadius={false}
+          className=""
+          ripple={false}
+          width={870}
+          height={870}
+        />
+      )}
+      {image || description ? (
+        <div className="py-4">
+          <hr className=" border-gray-200 dark:border-slate-600" />
+        </div>
+      ) : null}
     </header>
   )
 }

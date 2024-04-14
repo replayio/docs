@@ -1,5 +1,5 @@
 'use client'
-import Zoom from "@/components/Zoom";
+import Zoom from '@/components/Zoom'
 
 export function Figure({
   className = '',
@@ -9,14 +9,16 @@ export function Figure({
   height,
   width,
   gradient = '',
-  ripple = false
+  showRadius = true,
+  ripple = false,
 }: {
   className: string
   src: string
   alt: string
-  children: React.ReactNode
+  children?: React.ReactNode
   height?: number
   width?: number
+  showRadius?: boolean
   gradient?: string
   ripple: boolean
 }) {
@@ -27,14 +29,23 @@ export function Figure({
     height,
     width,
     fill,
-    className: `${gradient} object-contain rounded ${ripple ? 'shadow-ripple' : ''}`,
+    className: `${gradient} object-contain rounded  ${
+      ripple ? 'shadow-ripple' : ''
+    }`,
   }
 
   return (
-    <figure title={alt} className={`not-prose flex flex-col ${className}`}>
+    <figure
+      title={alt}
+      className={`not-prose flex flex-col ${
+        showRadius
+          ? 'rounded-lg border border-gray-200 p-1 dark:border-slate-600'
+          : ''
+      } ${className}`}
+    >
       <div
         className={`relative grid flex-grow justify-center ${
-          gradient ? `rounded p-10 sm:rounded-lg sm:p-10 ${gradient}` : '' 
+          gradient ? `rounded p-10 sm:rounded-lg sm:p-10 ${gradient}` : ''
         }`}
       >
         {fill && gradient ? (

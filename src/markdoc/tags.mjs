@@ -53,6 +53,7 @@ const tags = {
       width: { type: String },
       height: { type: String },
       gradient: { type: String },
+      showRadius: { type: Boolean },
     },
     render: components.Figure,
   },
