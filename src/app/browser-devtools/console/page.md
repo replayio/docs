@@ -52,7 +52,7 @@ This is one of the most egregious cases where browser DevTools will lie to you a
 
 ### **Anchor the focus window to a message**
 
-A powerful way to bisect a difficult problem down to the root cause is to set the [focus window ](http://localhost:3001/documentation/time-travel-debugging/bisect-the-problem)start or end to a console message.
+A powerful way to bisect a difficult problem down to the root cause is to set the [focus window ](/time-travel-intro/bisect-the-problem)start or end to a console message.
 
 Setting the focus window will limit the execution range in the recording which will hide the messages and other events that are outside of the window and let you progressively zero in on the root cause.
 
