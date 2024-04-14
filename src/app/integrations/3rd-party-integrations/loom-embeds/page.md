@@ -1,9 +1,8 @@
 ---
 title: Loom embeds
+image: /images/loom.png
+description: The Loom integration lets you include video comments in your replays.
 ---
-The [Loom](https://loom.com/) integration lets you include video comments in your replays.
-
-{% figure alt="Elements panel" src="/images/loom.png" height=870 width=870/%}
 
 ## Overview
 

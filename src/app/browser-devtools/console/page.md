@@ -1,9 +1,8 @@
 ---
 title: Console
+description: See how your application state changes over time with interactive console logs.
+image: /images/console.png
 ---
-**See how your application state changes over time with interactive console logs.**
-
-{% figure alt="Elements panel" src="/images/console.png" height=870 width=870/%}
 
 ## Basics
 

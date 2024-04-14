@@ -1,8 +1,7 @@
 ---
 title: Setting up a team
+image: /images/team-settings.png
 ---
-
-{% figure alt="Elements panel" showRadius=false src="/images/team-settings.png" height=870 width=870 /%}
 
 ## To create a team:
 

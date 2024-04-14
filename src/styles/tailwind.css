@@ -26,4 +26,6 @@
   @apply border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold
 }
 
-
+.prose h2 {
+  margin-top: 4rem ;
+}

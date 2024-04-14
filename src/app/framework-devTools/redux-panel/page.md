@@ -1,10 +1,8 @@
 ---
 title: Redux panel
+description: See how your application state changed over time with Replay’s Redux panel
+image: /images/redux.png
 ---
-
-**See how your application state changed over time with Replay’s Redux panel.**
-
-{% figure alt="Elements panel" src="/images/redux.png" height=870 width=870/%}
 
 ## Basics
 
@@ -13,13 +11,9 @@ The Redux panel has all of the features you’ve come to expect to find in Redux
 ### Actions
 
 - View the actions that were dispatched during the recording and jump to the point in time they were dispatched.
-
 - Filter the actions list by name
-
 - Inspect the action payload
-
 - Inspect the application state after each dispatch
-
 - Inspect the application state diff after each dispatch
 
 ## Time Travel

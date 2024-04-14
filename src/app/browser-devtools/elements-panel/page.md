@@ -1,9 +1,8 @@
 ---
 title: Elements panel
 description: Visually debug element styles and layout issues.
+image: /images/elements_panel.png
 ---
-
-{% figure alt="Elements panel" src="/images/elements_panel.png" height=870 width=870/%}
 
 ## Basics
 

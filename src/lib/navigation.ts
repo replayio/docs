@@ -83,8 +83,8 @@ export const navigation: NavigationType = [
       },
       {
         title: 'Console Panel',
-        href: '/browser-devtools/console-panel',
-        icon: 'consolepanel',
+        href: '/browser-devtools/console',
+        icon: 'console',
       },
       {
         title: 'Elements Panel',
