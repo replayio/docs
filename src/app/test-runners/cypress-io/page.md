@@ -82,7 +82,7 @@ Because network panel is integrated with the rest of the tools, you’ll get eve
 Debugging tests should be a team effort whether that is collaboration between QA and devs or between different dev teams. When facing an API issue, commenting and sharing a replay will save hours of back and forth reporting. Instead of replicating the issue, share the issue exactly the way it happened. Locally or on CI.
 
 {% callout title="Learn more" %}
-To learn more about network panel, checkout [Network panel docs](/devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=rGKAOG6gZZU).
+To learn more about network panel, checkout [Network panel docs](/browser-devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=rGKAOG6gZZU).
 {% /callout %}
 
 ## Jump to code
