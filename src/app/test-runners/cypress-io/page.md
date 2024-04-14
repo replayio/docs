@@ -96,7 +96,7 @@ Interactions show "Jump to code" button that takes you to the function call made
 This bridge between your test code and your app code is usually the first place you can start your test flake investigation. It gives you an unique insight into what is happening during your test, not only with the test, but also the application under test.
 
 {% callout title="Learn more" %}
-Jumping from test code and utilizing timeline can further be explored [Events Timeline doc page](/devtools/events-timeline). Or you can watch the [Replay Crash course video](https://www.youtube.com/watch?v=ksxf6qE9Ymc) on this topic.
+Jumping from test code and utilizing the timeline is explored in the [Replay Crash course video](https://www.youtube.com/watch?v=ksxf6qE9Ymc).
 {% /callout %}
 
 {% quick-links title="Read more" description="Learn how record your first Replay with Cypress, manage your test suite and debug flaky tests using Replay DevTools" %}

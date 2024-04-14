@@ -12,13 +12,13 @@ const cards: CardAttributes[] = [
     icon: 'rewind',
     title: 'Intro to time travel',
     content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
+    href: '/time-travel-intro/intro-to-time-travel',
   },
   {
     icon: 'terminal',
     title: 'Time travel DevTools',
     content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
+    href: '/time-travel-intro/add-console-logs-on-the-fly',
   },
   {
     icon: 'cypresssimple',
@@ -40,42 +40,44 @@ const cards: CardAttributes[] = [
   },
 ]
 
-const miniCards: CardAttributes[] = [{
-  icon: 'terminal',
-  title: "Add print statements",
-  content: "How to add retroactive console logs to your replay",
-  href: '/devtools/console-panel'
-},
-{
-  icon: 'timeline',
-  title: "Events timeline",
-  content: "Travel in time and stop at a perfect moment",
-  href: '/test-runners/cypress-io'
-},
-{
-  icon: 'folder',
-  title: "Source panel",
-  content: "Search and explore your code execution",
-  href: '/devtools/console-panel'
-},
-{
-  icon: 'pullrequest',
-  title: "Pull request comments",
-  content: "Catch regressions before going to production",
-  href: '/devtools/console-panel'
-},
-{
-  icon: 'analytics',
-  title: "Test suite analytics",
-  content: "Getting ahead of test flaeks via Test suite analytics",
-  href: '/devtools/console-panel'
-},
-{
-  icon: 'react',
-  title: "React panel",
-  content: "Examine properties, state and hooks with time-travelling",
-  href: '/devtools/console-panel'
-}]
+const miniCards: CardAttributes[] = [
+  {
+    icon: 'terminal',
+    title: 'Add print statements',
+    content: 'How to add retroactive console logs to your replay',
+    href: '/devtools/console-panel',
+  },
+  {
+    icon: 'timeline',
+    title: 'Events timeline',
+    content: 'Travel in time and stop at a perfect moment',
+    href: '/test-runners/cypress-io',
+  },
+  {
+    icon: 'folder',
+    title: 'Source panel',
+    content: 'Search and explore your code execution',
+    href: '/devtools/console-panel',
+  },
+  {
+    icon: 'pullrequest',
+    title: 'Pull request comments',
+    content: 'Catch regressions before going to production',
+    href: '/devtools/console-panel',
+  },
+  {
+    icon: 'analytics',
+    title: 'Test suite analytics',
+    content: 'Getting ahead of test flaeks via Test suite analytics',
+    href: '/devtools/console-panel',
+  },
+  {
+    icon: 'react',
+    title: 'React panel',
+    content: 'Examine properties, state and hooks with time-travelling',
+    href: '/devtools/console-panel',
+  },
+]
 
 export default function Page() {
   return (
