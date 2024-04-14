@@ -1,9 +1,8 @@
 ---
 title: Pause panel
+description: Inspect local variables and parent frames with the Pause panel.
+image: /images/pause-panel.png
 ---
-**Inspect local variables and parent frames with the Pause panel.**
-
-{% figure alt="Elements panel" src="/images/pause-panel.png" height=870 width=870/%}
 
 ## Basics
 

@@ -109,22 +109,22 @@ export const navigation: NavigationType = [
     links: [
       {
         title: 'React Panel',
-        href: '/framework-devTools/react-panel',
+        href: '/framework-devtools/react-panel',
         icon: 'react',
       },
       {
         title: 'Redux Panel',
-        href: '/framework-devTools/redux-panel',
+        href: '/framework-devtools/redux-panel',
         icon: 'redux',
       },
       {
         title: 'Cypress Timeline',
-        href: '/framework-devTools/cypress-timeline',
+        href: '/framework-devtools/cypress-timeline',
         icon: 'cypress',
       },
       {
         title: 'Playwright Timeline',
-        href: '/framework-devTools/playwright-timeline',
+        href: '/framework-devtools/playwright-timeline',
         icon: 'playwright',
       },
     ],
@@ -258,13 +258,13 @@ export const navigation: NavigationType = [
     href: '/replay-runtimes',
     links: [
       {
-        title: 'Replay Firefox',
-        href: '/replay-runtimes/replay-firefox',
+        title: 'Replay Chrome',
+        href: '/replay-runtimes/replay-chrome',
         icon: 'console',
       },
       {
-        title: 'Replay Chrome',
-        href: '/replay-runtimes/replay-chrome',
+        title: 'Replay Firefox',
+        href: '/replay-runtimes/replay-firefox',
         icon: 'console',
       },
       {
@@ -376,6 +376,17 @@ export const navigation: NavigationType = [
   {
     title: 'Additional Content',
     href: '/additional-content',
-    links: [],
+    links: [
+      {
+        title: 'Privacy principles',
+        href: '/additional-content/privacy-principles',
+        icon: 'console',
+      },
+      {
+        title: 'Security practices',
+        href: '/additional-content/security-practices',
+        icon: 'console',
+      },
+    ],
   },
 ]

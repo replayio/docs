@@ -81,12 +81,6 @@ async function fetchBaseHub(query: string) {
   })
 }
 
-;(async () => {
-  const res = await fetchBaseHub(query)
-  const data: Data = await res.json()
-  writeArticle(data)
-})()
-
 // Help me parse the images out of markdown
 // fetch them and save them to the file system
 // replace the image links with the local path
@@ -138,19 +132,21 @@ function addTitleToMarkdown(title: string, markdown: string) {
   return `---\ntitle: ${title}\n---\n${markdown}`
 }
 
-async function writeArticle(data: Data) {
+async function writeArticles(data: Data) {
   for (const sections of data.data.pages.items) {
-    const title = sections._title
+    const sectionTitle = sections._title
     const articles = sections.articles.items
+    console.log(`${sectionTitle}`)
     for (const article of articles) {
       const articleTitle = article._title
-      console.log(`${title} - ${articleTitle}`)
+      console.log(`  ${sectionTitle} :: ${articleTitle}`)
       for (const child of article.children.items) {
         const childTitle = child._title
-        const path = `${title}/${articleTitle}/${childTitle}`.replace(
+        const path = `${sectionTitle}/${articleTitle}/${childTitle}`.replace(
           /\s/g,
           '-',
         )
+        console.log(`    ${path}`)
 
         // console.log(`    ${path}`);
         const markdown = child?.body?.markdown
@@ -197,3 +193,9 @@ async function writeFileFromMarkdown(
   }
   fs.writeFileSync(path, m2)
 }
+
+;(async () => {
+  const res = await fetchBaseHub(query)
+  const data: Data = await res.json()
+  writeArticles(data)
+})()

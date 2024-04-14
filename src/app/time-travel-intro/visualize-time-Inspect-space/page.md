@@ -1,6 +1,7 @@
 ---
 title: Visualize time. Inspect space.
 ---
+
 When it comes to debugging, the oldest debate is whether it’s better to debug with breakpoints or console logs. Breakpoints help you inspect your application’s state at a single point in time. Console logs help you visualize application state across time.
 
 At Replay, our perspective is why choose? This is why we start with Live Console logs that let you add logs with a single click. And the second feature we added was the jump button which lets you jump to any console log and inspect your application state.
@@ -13,19 +14,19 @@ When put together, there’s been an environment that helps you slow down, build
 
 ## Features
 
-### **Jump to a Console message**
+### Jump to a Console message
 
 Jump to any Console message’s execution point, inspect the application state at that point in time, and evaluate expressions in the terminal.
 
-### **Jump to Cypress or Playwright test step**
+### Jump to Cypress or Playwright test step
 
 Jump from the test’s mouse click or keypress into your React component’s event handler and inspect the application state at that point in time.
 
-### **Jump to a Redux dispatch**
+### Jump to a Redux dispatch
 
 Jump to any Redux action’s dispatch and inspect the application state inside of the thunk that kicked it off.
 
-### **Jump to Network requests**
+### Jump to Network requests
 
 Jump to any Network requests fetch call and inspect the application stat inside the function that initiated the fetch.
 

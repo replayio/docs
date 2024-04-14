@@ -1,9 +1,8 @@
 ---
 title: Cypress timeline
+image: /images/cypress.png
+description: Inspect your Cypress test as if it’s running locally with the Cypress timeline.
 ---
-Inspect your Cypress test as if it’s running locally with the Cypress timeline.
-
-{% figure alt="Elements panel" src="/images/cypress.png" height=870 width=870/%}
 
 ## Basics
 

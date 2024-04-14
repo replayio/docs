@@ -1,9 +1,8 @@
 ---
 title: React panel
+image: /images/react.png
+description: Inspect React components at any point in time.
 ---
-**Inspect React components at any point in time.**
-
-{% figure alt="Elements panel" src="/images/react.png" height=870 width=870/%}
 
 ## Basics
 

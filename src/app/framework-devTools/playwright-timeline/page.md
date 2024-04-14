@@ -1,9 +1,8 @@
 ---
 title: Playwright timeline
+image: /images/playwright.png
+description: Inspect your Playwright test as if it’s running locally.
 ---
-Inspect your Playwright test as if it’s running locally.
-
-{% figure alt="Elements panel" src="/images/playwright.png" height=870 width=870/%}
 
 ## Basics
 

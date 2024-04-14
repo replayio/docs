@@ -1,10 +1,8 @@
 ---
 title: Replay Viewer
+description: Explore replays with video playback, session details, and visual comments
+image: /images/viewer.png
 ---
-
-**Explore replays with video playback, session details, and visual comments.**
-
-{% figure alt="Elements panel" src="/images/viewer.png" height=870 width=870/%}
 
 ## Basics
 

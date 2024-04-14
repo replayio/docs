@@ -1,9 +1,8 @@
 ---
 title: Source viewer
+description: Explore your code base with the source viewer
+image: /images/source-viewer.png
 ---
-**Explore your code base with the source viewer.**
-
-{% figure alt="Elements panel" src="/images/source-viewer.png" height=870 width=870/%}
 
 ## Basics
 
