@@ -6,11 +6,11 @@ It doesn’t matter if you just wrote your first “hello world” or you’re a
 
 Our goal with Replay is to design the best environment for helping you think through a problem, ask and answer questions, test your hypotheses, and ultimately reach a state a flow while debugging.
 
-This starts with the feedback loop you can achieve adding Console logs in Replay. Simply click on a line of code, add an expression, press enter, and see the messages appear in the Console as if it’s always been there.
+This starts with the feedback loop you can achieve adding console logs in Replay. Simply click on a line of code, add an expression, press enter, and see the messages appear in the Console as if it’s always been there.
 
-Under the hood, this works because when you add a Console log in Replay, there’s a browser in the cloud that runs through the recording, pauses at each execution point, evaluates the expression, and resumes. But as a user, all you have to think about is what questions you’d like to answer.
+Under the hood, this works because when you add a console log in Replay, there’s a browser in the cloud that runs through the recording, pauses at each execution point, evaluates the expression, and resumes. But as a user, all you have to think about is what questions you’d like to answer.
 
-{% figure alt="Elements panel" src="/images/add-console-logs.png" height=870 width=870 showRadius=false /%}
+{% video src="consoleLogs" %}{% /video %}
 
 ## Overview
 

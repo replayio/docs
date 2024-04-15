@@ -7,11 +7,12 @@ import bisect from '@/videos/bisect.mp4.json'
 import visualize from '@/videos/visualize.mp4.json'
 import elementsPanelStopWatch from '@/videos/elements_panel_stopwatch.mp4.json'
 import annotate from '@/videos/annotate.mp4.json'
-
+import consoleLogs from '@/videos/console-logs.mp4.json'
 // import getStarted from '@/videos/get-started.mp4';
 
 const videos = {
   bisect,
+  consoleLogs,
   visualize,
   marketingHero,
   annotate,
