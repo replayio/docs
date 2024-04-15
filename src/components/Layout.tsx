@@ -10,6 +10,7 @@ import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
+import { useTheme } from 'next-themes'
 
 function GitHubIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -47,6 +48,8 @@ function Header() {
     }
   }, [])
 
+  const { theme } = useTheme()
+
   return (
     <header
       className={clsx(
@@ -63,7 +66,7 @@ function Header() {
           </div>
           <div className="relative flex flex-grow basis-0 items-center">
             <Link href="/" aria-label="Home page">
-              <Logomark className="h-7 w-7 lg:hidden" />
+              <Logomark className="h-7 w-7 lg:hidden" fill={theme == 'dark' ? 'white' : 'dark'} />
               <Logo className="hidden h-6 w-auto fill-gray-700 lg:block dark:fill-sky-100" />
             </Link>
           </div>

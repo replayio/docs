@@ -22,7 +22,7 @@ module.exports = {
 
 If you would prefer not publishing source maps in production, you can upload your maps to Replay at build time so they’re still available while debugging.
 
-If you are using Webpack in your NextJS app you can update your next.config.js [here](https://docs.replay.io/getting-started/teams-admin/uploading-source-maps). If you are using SWC which is now the default, you can update the Vercel build step.
+If you are using Webpack in your NextJS app you can update your next.config.js [here](/replay-cli/source-maps). If you are using SWC which is now the default, you can update the Vercel build step.
 
 **vercel.json**
 
@@ -32,4 +32,4 @@ If you are using Webpack in your NextJS app you can update your next.config.js [
 }
 ```
 
-Here are the [docs](https://docs.replay.io/getting-started/teams-admin/uploading-source-maps) on the CLI.
+Here are the [docs](/replay-cli/source-maps) on the CLI.

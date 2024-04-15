@@ -54,7 +54,7 @@ Press any key to continue
 
 ## Authentication
 
-Replay CLI requires you to log in when uploading your recordings. In a local environment, you can use `replayio login` command that opens a login page in a browser. When in a CI/CD environment, it’s not possible to use the same approach, but you can create an API key in Replay DevTools and add it to your CI/CD environment. Learn more in the [docs on how to generate API key]().
+Replay CLI requires you to log in when uploading your recordings. In a local environment, you can use `replayio login` command that opens a login page in a browser. When in a CI/CD environment, it’s not possible to use the same approach, but you can create an API key in Replay DevTools and add it to your CI/CD environment. Learn more in the [docs on how to generate API key](/ci-workflows/generate-api-key).
 
 ## Available Commands
 

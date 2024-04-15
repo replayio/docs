@@ -12,7 +12,7 @@ For production use cases where sourcemaps may not be exposed publicly, we provid
 
 ### API Keys
 
-We recommend using the `REPLAY_API_KEY` environment variable to set up the API for use in all of our following examples, but each also allows passing the key directly as an argument. API Keys are available in the [Team Settings](https://docs.replay.io/getting-started/teams-admin/team-settings) modal.
+We recommend using the `REPLAY_API_KEY` environment variable to set up the API for use in all of our following examples, but each also allows passing the key directly as an argument. API Keys are available in the [Team Settings](/ci-workflows/generate-api-key) modal.
 
 ### CLI
 
