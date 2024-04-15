@@ -16,6 +16,7 @@ export default function Card({ title, content, icon, href }: CardAttributes) {
           <div className="flex flex-row items-center justify-center rounded-lg bg-slate-900/90 px-4 py-4">
             <Icon
               icon={icon}
+              viewBox={24}
               className="mx-auto w-8 self-center text-white opacity-95"
             />
           </div>

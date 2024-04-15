@@ -113,19 +113,23 @@ export const iconStyles = {
 export function Icon({
   icon,
   color = 'blue',
+  viewBox = 32,
   className,
   ...props
 }: {
   color?: keyof typeof iconStyles
   icon: keyof typeof icons
-} & Omit<React.ComponentPropsWithoutRef<'svg'>, 'color'>) {
+  viewBox?: number
+} & Omit<React.ComponentPropsWithoutRef<'svg'>, 'color' | 'viewBox'>) {
   let id = useId()
   let IconComponent = icons[icon]
+
+  const viewBoxString = `0 0 ${viewBox} ${viewBox}`
 
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 24 24"
+      viewBox={viewBoxString}
       fill="none"
       className={clsx(className, iconStyles[color])}
       {...props}
