@@ -23,7 +23,7 @@ export const navigation: NavigationType = [
     links: [
       {
         title: 'What is time travel',
-        href: '/getting-started/what-is-time-travel',
+        href: '/time-travel-intro/what-is-time-travel',
         icon: 'hourglass',
       },
       {
