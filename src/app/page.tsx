@@ -4,21 +4,21 @@ import { Hero } from '@/components/Hero'
 
 const cards: CardAttributes[] = [
   {
-    icon: 'rewind',
+    icon: 'rocket',
     title: 'Time travel',
     content: 'Learn how to inspect your application in new ways.',
     href: '/time-travel-intro/what-is-time-travel',
   },
   {
-    icon: 'terminal',
+    icon: 'inspect',
     title: 'Browser DevTools',
     content: 'Inspect your application with Browser DevTools after the fact.',
     href: '/browser-devtools/elements-panel',
   },
   {
-    icon: 'terminal',
+    icon: 'react',
     title: 'Framework DevTools',
-    content: 'Inspect your application with Framework DevTools after the fact.',
+    content: 'Inspect your application with next level Framework DevTools.',
     href: '/framework-devtools/react-panel',
   },
   {

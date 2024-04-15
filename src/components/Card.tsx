@@ -13,7 +13,12 @@ export default function Card({ title, content, icon, href }: CardAttributes) {
     <Link href={href} className="flex h-full flex-col">
       <div className="flex h-full max-w-xs flex-col overflow-hidden rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl">
         <div className="flex h-40 w-full items-center justify-center bg-gradient-to-br from-sky-500 to-pink-300">
-          <Icon icon={icon} className="h-20 w-20 text-white opacity-95" />
+          <div className="flex flex-row items-center justify-center rounded-lg bg-slate-900/90 px-4 py-4">
+            <Icon
+              icon={icon}
+              className="mx-auto w-8 self-center text-white opacity-95"
+            />
+          </div>
         </div>
         <div className="grow px-6 py-6 dark:bg-slate-700/50">
           <div className="text-md mb-1 font-bold">{title}</div>

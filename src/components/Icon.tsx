@@ -49,6 +49,7 @@ import { SecurityPrinciplesIcon } from './icons/SecurityPrinciplesIcon'
 import DebuggingTestsIcon from './icons/DebuggingTestsIcon'
 import { LinkIcon } from './icons/LinkIcon'
 import SettingUpATeamIcon from './icons/SettingUpATeamIcon'
+import { InspectLine } from './icons/InspectLine'
 
 export const icons = {
   bracketscurly: BracketsCurlyIcon,
@@ -63,6 +64,7 @@ export const icons = {
   file: FileIcon,
   insight: InsightIcon,
   installation: InstallationIcon,
+  inspect: InspectLine,
   jumptocode: JumpToCode,
   lightbulb: LightbulbIcon,
   playButton: PlayButtonIcon,
@@ -98,7 +100,7 @@ export const icons = {
   security: SecurityPrinciplesIcon,
   debbugingtests: DebuggingTestsIcon,
   link: LinkIcon,
-  settingupateam: SettingUpATeamIcon
+  settingupateam: SettingUpATeamIcon,
 }
 
 export const iconStyles = {
@@ -123,7 +125,7 @@ export function Icon({
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 32 32"
+      viewBox="0 0 24 24"
       fill="none"
       className={clsx(className, iconStyles[color])}
       {...props}
