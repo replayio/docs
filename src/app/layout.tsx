@@ -42,7 +42,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full bg-white dark:bg-gray-900">
-    
         <Providers>
           <Layout>{children}</Layout>
         </Providers>
