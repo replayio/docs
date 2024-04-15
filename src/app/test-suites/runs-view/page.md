@@ -33,13 +33,15 @@ The "Failure Rate" graph shows the trend of your test suite's performance over t
 {% /twocolumns %}
 
 ## Filters
+
 To focus on specific tests, use filters. These enable you to view only the main branch, examine failing runs, or search through runs.
 
 {% callout type="link" title="Top failures and flakes" %}
 To analyze your flaky tests, open the [Tests view](/test-suites/top-failing-and-flaky-tests). Here, you can see details of your top failures and test flakes.
 {% /callout %}
 
-## Run detail
+## Run details
+
 {% twocolumns %}
 {% group %}
 Each run detail shows details of picked test run. Replay shows you contextual information from CI, including:
@@ -65,18 +67,18 @@ Each run detail shows details of picked test run. Replay shows you contextual in
 {% /twocolumns %}
 
 ### Test status
-Tests are categorized into flaky, failed, and successful runs for easy viewing. Additionally, you can search and filter your tests for more specific insights.
 
+Tests are categorized into flaky, failed, and successful runs for easy viewing. Additionally, you can search and filter your tests for more specific insights.
 
 ## Test details
 
 {% twocolumns %}
 {% group %}
-Test details include all recorded replays from the test run. 
+Test details include all recorded replays from the test run.
 
-Common errors are displayed below to provide an overview of the test failure messages. 
+Common errors are displayed below to provide an overview of the test failure messages.
 
-Clicking on a test opens the Replay DevTools, allowing you to start debugging that specific test run.
+Clicking on a recording opens the replay so that you can inspect it with Replay DevTools.
 {% /group %}
 
 {% figure
