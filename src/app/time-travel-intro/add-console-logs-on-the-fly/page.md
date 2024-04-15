@@ -10,7 +10,7 @@ This starts with the feedback loop you can achieve adding console logs in Replay
 
 Under the hood, this works because when you add a console log in Replay, there’s a browser in the cloud that runs through the recording, pauses at each execution point, evaluates the expression, and resumes. But as a user, all you have to think about is what questions you’d like to answer.
 
-{% video src="consoleLogs" %}{% /video %}
+{% video src="consoleLogs" /%}
 
 ## Overview
 
