@@ -1,6 +1,7 @@
 ---
 title: Add console logs on the fly
 ---
+
 It doesn’t matter if you just wrote your first “hello world” or you’re a staff engineer, when you’re trying to understand how something works, you’re probably adding console logs, refreshing, and re-running your program in a loop.
 
 Our goal with Replay is to design the best environment for helping you think through a problem, ask and answer questions, test your hypotheses, and ultimately reach a state a flow while debugging.
@@ -9,7 +10,7 @@ This starts with the feedback loop you can achieve adding Console logs in Replay
 
 Under the hood, this works because when you add a Console log in Replay, there’s a browser in the cloud that runs through the recording, pauses at each execution point, evaluates the expression, and resumes. But as a user, all you have to think about is what questions you’d like to answer.
 
-{% figure alt="Elements panel" src="/images/add-console-logs.png" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/add-console-logs.png" height=870 width=870 showRadius=false /%}
 
 ## Overview
 

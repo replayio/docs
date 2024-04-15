@@ -1,11 +1,12 @@
 ---
-title: Intro to time travel
+title: Design principles
 ---
+
 Time travel debugging is a radical approach for inspecting your application, exploring how it works, seeing and understanding it in new ways.
 
 Replay DevTools looks similar to VS Code and Chrome DevTools, but once you start time traveling, you’ll quickly realize it’s a new way to think about your software and collaboratively debug the hardest problems with your team.
 
-[](https://basehub.earth/beca19b9/6hINVebd69XohfCIUX6vp/marketing-hero.mp4)
+{% video src="marketingHero" %}{% /video %}
 
 ## Design Principles
 
@@ -83,4 +84,4 @@ Debugging is all about honing in on the point when something went wrong. You sta
 
 Because bisecting is so common, we’ve designed the workflow around it called the Focus Window which lets you see only the execution that occurred in this slice of time. This is incredibly useful for seeing with functions were called in the window and ruling out functions which were not.
 
-***
+---

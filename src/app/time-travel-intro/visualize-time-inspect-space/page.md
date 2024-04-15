@@ -10,7 +10,7 @@ Ultimately, the thing that makes time travel debugging special is that **Live Co
 
 When put together, there’s been an environment that helps you slow down, build a mental model for how your application works, connect the dots, and understand the chain of events.
 
-[](https://basehub.earth/beca19b9/TdYuVQ8CBrj7gC-imPwFO/visualize.mp4)
+{% video src="visualize" %}{% /video %}
 
 ## Features
 

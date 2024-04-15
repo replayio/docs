@@ -12,9 +12,9 @@ For instance, you can leave a comment on a line of code, at a specific point in 
 
 And of course, comments can include markdown descriptions of what you’re seeing, you can at mention individuals on your team, and you can later jump to a comment and paused at that execution point.
 
-In this way, comments become a way for journaling what you’re learning, the questions that you have, and mapping the path from the user visible issue back to the root cause.
+{% video src="annotate" %}{% /video %}
 
-[](https://basehub.earth/beca19b9/YI5ezNPXIX5wVPAwobAh3/annotate-1.mp4)
+In this way, comments become a way for journaling what you’re learning, the questions that you have, and mapping the path from the user visible issue back to the root cause.
 
 ## Features
 
