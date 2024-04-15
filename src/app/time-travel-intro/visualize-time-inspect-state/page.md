@@ -1,5 +1,5 @@
 ---
-title: Visualize time. Inspect space.
+title: Visualize time. Inspect state.
 ---
 
 When it comes to debugging, the oldest debate is whether it’s better to debug with breakpoints or console logs. Breakpoints help you inspect your application’s state at a single point in time. Console logs help you visualize application state across time.

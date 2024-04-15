@@ -49,7 +49,7 @@ export const navigation: NavigationType = [
       },
       {
         title: 'Visualize time. Inspect state.',
-        href: '/time-travel-intro/visualize-time-inspect-space',
+        href: '/time-travel-intro/visualize-time-inspect-state',
         icon: 'inspect',
       },
       {
