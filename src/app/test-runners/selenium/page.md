@@ -34,7 +34,7 @@ bun i replayio
 
 In order to use Replay Browser in your Selenium scripts, you need to point your configuration to the Replay Browser binary. The `getExecutablePath` function will take care of locating the binary on your machine.
 
-```js {% lineNumbers=true fileName="spec.js" highlight=["3-4","7-8",12] %}
+```js {% lineNumbers=true fileName="spec.js" highlight=[3,5,"7-8",12] %}
 const { Builder, Browser, By, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 import { getBrowserPath } from "replayio";
