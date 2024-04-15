@@ -32,7 +32,7 @@ bun i replayio
 
 ## Set up the browser binary
 
-In order to use Replay Browser in your Selenium scripts, you need to point your configuration to the Replay Browser binary. The `getExecutablePath` function will take care of locating the binary on your machine.
+In order to use Replay Browser in your Selenium scripts, you need to point your configuration to the Replay Browser binary. The `getBrowserPath` function will take care of locating the binary on your machine.
 
 ```js {% lineNumbers=true fileName="spec.js" highlight=[3,5,"7-8",12] %}
 const { Builder, Browser, By, until } = require('selenium-webdriver');
