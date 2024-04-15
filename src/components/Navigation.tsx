@@ -21,14 +21,16 @@ function ItemLink({
 }) {
   return (
     <Link
-      href={item.href}
-      onClick={onLinkClick}
+      href={item.href !== '' ? item.href : '#'}
+      onClick={item.href !== '' ? onLinkClick : undefined}
       className={clsx(
         `ml-.5 block h-full w-full pl-1.5 transition-all`,
         className,
-        pathname.includes(item.href)
+        item.href !== '' && pathname.includes(item.href)
           ? 'font-semibold text-sky-500'
-          : 'text-gray-600 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-200',
+          : item.href !== ''
+            ? 'text-gray-600 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-200'
+            : 'cursor-default hover:bg-gray-50 dark:hover:bg-gray-900/60',
       )}
     >
       <NavIcon
@@ -57,14 +59,16 @@ export function Navigation({
             <li key={section.title}>
               <Disclosure
                 as="div"
-                defaultOpen={pathname.includes(section.href)}
+                defaultOpen={
+                  section.href !== '' && pathname.includes(section.href)
+                }
               >
                 {({ open }) => (
                   <>
                     <Disclosure.Button
                       className={clsx(
                         'flex w-full items-center justify-between rounded-md text-left font-semibold leading-6 hover:text-gray-900 dark:hover:text-gray-300',
-                        pathname.includes(section.href)
+                        section.href !== '' && pathname.includes(section.href)
                           ? 'text-gray-900 dark:text-gray-200'
                           : 'text-gray-800 dark:text-gray-200',
                       )}

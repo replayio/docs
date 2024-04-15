@@ -171,7 +171,7 @@ export const navigation: NavigationType = [
       { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
       {
         title: 'Cypress.io',
-        href: '/test-runners/cypress-io',
+        href: '',
         icon: 'cypress',
         links: [
           {
@@ -301,7 +301,7 @@ export const navigation: NavigationType = [
     links: [
       {
         title: 'Replay APIs',
-        href: '/integrations/replay-apis',
+        href: '',
         icon: 'replayapis',
         links: [
           {
@@ -323,7 +323,7 @@ export const navigation: NavigationType = [
       },
       {
         title: 'Frameworks & libraries',
-        href: '/integrations/frameworks-libraries',
+        href: '',
         icon: 'frameworks',
         links: [
           {
@@ -335,7 +335,7 @@ export const navigation: NavigationType = [
       },
       {
         title: '3rd Party integrations',
-        href: '/integrations/3rd-party-integrations',
+        href: '',
         icon: 'integrations',
         links: [
           {
