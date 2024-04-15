@@ -1,10 +1,7 @@
 import * as fs from 'fs'
 import { Glob } from 'bun'
-import MarkdownIt from 'markdown-it'
 import fetch from 'node-fetch'
 import { marked } from 'marked'
-
-const md = new MarkdownIt()
 
 const LOCAL_BASE = 'http://localhost:3000'
 

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sync": "npx next-video sync -d ./src/videos"
+    "sync": "npx next-video sync -d ./src/videos",
+    "links": "bun ./scripts/checkLinks.ts"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
