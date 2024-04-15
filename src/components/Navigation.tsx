@@ -24,7 +24,7 @@ function ItemLink({
       href={item.href}
       onClick={onLinkClick}
       className={clsx(
-        `ml-.5 block h-full w-full pl-1 transition-all`,
+        `ml-.5 block h-full w-full pl-1.5 transition-all`,
         className,
         pathname.includes(item.href)
           ? 'font-semibold text-sky-500'
@@ -101,7 +101,7 @@ export function Navigation({
                             <Disclosure.Panel as="ul">
                               {item.links.map((subItem) => (
                                 <li key={subItem.title}>
-                                  <Disclosure.Button className="ml-6 h-7 w-52 rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
+                                  <Disclosure.Button className="ml-4 h-7 w-52 rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
                                     <ItemLink
                                       item={subItem}
                                       pathname={pathname}
@@ -112,7 +112,7 @@ export function Navigation({
                                     <Disclosure.Panel as="ul">
                                       {subItem.links.map((thirdLevelItem) => (
                                         <li key={thirdLevelItem.title}>
-                                          <Disclosure.Button className="ml-4 h-7 w-52 rounded-md bg-red-500 text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
+                                          <Disclosure.Button className="ml-4 h-7 w-52 rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
                                             <Link
                                               href={thirdLevelItem.href}
                                               onClick={onLinkClick}
