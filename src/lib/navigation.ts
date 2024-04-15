@@ -308,7 +308,7 @@ export const navigation: NavigationType = [
           {
             title: 'Replay Driver',
             href: '/integrations/replay-apis/replay-driver',
-            icon: 'replay-driver',
+            icon: 'empty',
           },
         ],
       },
