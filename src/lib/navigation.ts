@@ -283,7 +283,11 @@ export const navigation: NavigationType = [
     title: 'Replay CLI',
     href: '/replay-cli',
     links: [
-      { title: 'Commands', href: '/replay-cli/commands', icon: 'commands' },
+      {
+        title: 'Replay CLI',
+        href: '/replay-cli/commands',
+        icon: 'commands',
+      },
       {
         title: 'Uploading source maps',
         href: '/replay-cli/source-maps',

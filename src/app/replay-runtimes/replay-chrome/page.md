@@ -4,8 +4,6 @@ description: Replay Chrome is our chromium browser that is able to record and de
 image: /images/chrome.png
 ---
 
----
-
 ## Basics
 
 ### What version is it based off of?
