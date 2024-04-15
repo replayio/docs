@@ -12,7 +12,7 @@ Click the play button in the bottom right or press `space` at any point to play 
 
 ### Events timeline
 
-View user interactions and page navigations in the Events timeline. Click to the row to jump to that point in time or click **Jump to Code\*\*** \*\*to jump to the JS event handler.
+View user interactions and page navigations in the Events timeline. Click to the row to jump to that point in time or click **Jump to Code** to jump to the JS event handler.
 
 ### Comments
 
