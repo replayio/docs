@@ -2,7 +2,7 @@
 title: Test Suites Overview
 ---
 
-Replay Test Suites bring **time-travelling DevTools to your test runs**. You’ll get a better insight into how your test script interacts with application under test. Besides zooming in on your test execution, you can zoom out to get a birds-eye view of your teste executions and **drive down test failures and flakes**.
+Replay Test Suites bring **time-travelling DevTools to your test runs**. You’ll get a better insight into how your test script interacts with application under test. Besides zooming in on your test execution, you can zoom out to get a birds-eye view of your test executions and **drive down test failures and flakes**.
 
 {% basic icon="treeview" %}
 
@@ -10,7 +10,7 @@ Replay Test Suites bring **time-travelling DevTools to your test runs**. You’l
 
 Replay Devtools work great with your existing test suite. Cypress and Playwright plugins allow you to **rewind or fast forward** to any command from your test run.
 
-**Command details** contain information on passed arguments, returned values and targeted element. Commands are integrated with the rest of DevTools. This means you can jump from a command detail into [Elements panel](/browser-devtools/elements-panel), or inspect API calls in the [Network panel](/browser-devtools/network-monitor).
+The **command details** panel contains information on passed arguments, returned values and targeted element. Commands are integrated with the rest of DevTools. This means you can jump from a command detail into [Elements panel](/browser-devtools/elements-panel), or inspect API calls in the [Network panel](/browser-devtools/network-monitor).
 {% /basic %}
 
 {% figure
@@ -25,7 +25,7 @@ Replay Devtools work great with your existing test suite. Cypress and Playwright
 
 ## Jump To Code
 
-**See what actually happened** when your test clicked, typed or in other way interacted with your element. Jump from a test command right into the function that was called on interaction.
+**See what actually happened** when your test clicked, typed or in other way interacted with your website. Jump from a test command right into the function that was called on interaction.
 
 With information on [line hit counts](#) and [jumping through line executions](#) you’ll be able to narrow down a flake root cause in minutes.
 {% /basic %}
@@ -42,7 +42,7 @@ With information on [line hit counts](#) and [jumping through line executions](#
 
 ## Vizualize Your Race Conditions
 
-Flakiness can be a caused by a single line of code. Reveal that line with a **print statement**. Find race conditions, unexpected data, rendering issues,... you name&nbsp;it.
+Flakiness can be a caused by a single line of code. Reveal that line with a **print statement**. Find race conditions, unexpected data, rendering issues- you name it.
 
 We have stories of [2 pixel shifts](#) and [false positives](#) that caused headaches to test maintainers. [Learn more](#) about the power of print statements.
 {% /basic %}

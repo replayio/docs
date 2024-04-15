@@ -14,7 +14,7 @@ You can add new console logs in Replay DevTools by finding a line of code, click
 
 When you’re paused, one of the best ways to get additional context is to evaluate expressions in the JS terminal at the bottom of the Console.
 
-And because you’re able to evaluate anything you’d like and then resume, it safe to try anything you’d like without fear of corrupting the local state.
+And because you’re able to evaluate anything you’d like and then resume, it's safe to try anything you’d like without fear of corrupting the local state.
 
 ### Add a console message prefixes
 
