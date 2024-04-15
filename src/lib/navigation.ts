@@ -24,7 +24,7 @@ export const navigation: NavigationType = [
         icon: 'hourglass',
       },
       {
-        title: 'Record Your First Replay',
+        title: 'Record your first feplay',
         href: '/getting-started/record-your-first-replay',
         icon: 'record',
       },
@@ -35,14 +35,9 @@ export const navigation: NavigationType = [
     href: '/time-travel-intro',
     links: [
       {
-        title: 'Add console logs on the Fly',
+        title: 'Add console logs on the fly',
         href: '/time-travel-intro/add-console-logs-on-the-fly',
         icon: 'console',
-      },
-      {
-        title: 'Intro To Time Travel',
-        href: '/time-travel-intro/intro-to-time-travel',
-        icon: 'timetravel',
       },
       {
         title: 'Visualize time. Inspect state.',
@@ -55,12 +50,17 @@ export const navigation: NavigationType = [
         icon: 'pencil',
       },
       {
-        title: 'Bisect the Problem',
+        title: 'Bisect the problem',
         href: '/time-travel-intro/bisect-the-problem',
         icon: 'razor',
       },
       {
-        title: 'How Time Travel Works',
+        title: 'Design principles',
+        href: '/time-travel-intro/intro-to-time-travel',
+        icon: 'timetravel',
+      },
+      {
+        title: 'How time travel works',
         href: '/time-travel-intro/how-time-travel-works',
         icon: 'questionmark',
       },
@@ -172,11 +172,11 @@ export const navigation: NavigationType = [
         icon: 'cypress',
         links: [
           {
-            title: 'Record Your First replay',
+            title: 'Record your first replay',
             href: '/test-runners/cypress-io/record-your-first-replay',
           },
           {
-            title: 'Debugging Tests',
+            title: 'Debugging tests',
             href: '/test-runners/cypress-io/debugging-tests',
           },
         ],
@@ -280,7 +280,7 @@ export const navigation: NavigationType = [
     links: [
       { title: 'Commands', href: '/replay-cli/commands', icon: 'console' },
       {
-        title: 'Uploading Source Maps',
+        title: 'Uploading source maps',
         href: '/replay-cli/source-maps',
         icon: 'console',
       },
@@ -313,7 +313,7 @@ export const navigation: NavigationType = [
         ],
       },
       {
-        title: 'Frameworks & Libraries',
+        title: 'Frameworks & libraries',
         href: '/integrations/frameworks-libraries',
         icon: 'console',
         links: [
@@ -325,7 +325,7 @@ export const navigation: NavigationType = [
         ],
       },
       {
-        title: '3rd Party Integrations',
+        title: '3rd Party integrations',
         href: '/integrations/3rd-party-integrations',
         icon: 'console',
         links: [
@@ -357,7 +357,7 @@ export const navigation: NavigationType = [
         icon: 'cypress',
       },
       {
-        title: `Chrome's Recorder`,
+        title: `Chrome Recorder`,
         href: '/comparison/chrome',
         icon: 'console',
       },
