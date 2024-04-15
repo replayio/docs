@@ -22,7 +22,7 @@ The scopes pane lets you inspect the values in the local scope and surrounding s
 
 Traditional debuggers let you pause at breakpoints, resume, step forward, in, and out. And when you’re stepping there’s always the risk that you stepped too far and have to refresh and redo your steps.
 
-With Repay, it’s possible to pause at a point in time, step forwards or backwards, and resume or rewind. And because you can go anywhere, you never have to worry about going too far.
+​With Replay, it’s possible to pause at a point in time, step forwards or backwards, and resume or rewind. And because you can go anywhere, you never have to worry about going too far.
 
 ### Breakpoints
 
