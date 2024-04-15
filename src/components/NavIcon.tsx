@@ -58,6 +58,8 @@ import { ManagingReplaysIcon } from './icons/ManagingReplaysIcon'
 import { BillingIcon } from './icons/BillingIcon'
 import { PrivacyPrinciplesIcon } from './icons/PrivacyPrinciplesIcon'
 import { SecurityPrinciplesIcon } from './icons/SecurityPrinciplesIcon'
+import { IntegrationsIcon } from './icons/IntegrationsIcon'
+import { FrameworksIcon } from './icons/FrameworksIcon'
 
 import { EmptyIcon } from './icons/EmptyIcon'
 
@@ -120,6 +122,9 @@ export const icons = {
   billing: BillingIcon,
   privacy: PrivacyPrinciplesIcon,
   security: SecurityPrinciplesIcon,
+  frameworks: FrameworksIcon,
+  integrations: IntegrationsIcon,
+
   empty: EmptyIcon,
 }
 export function NavIcon({

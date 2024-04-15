@@ -101,20 +101,35 @@ export function Navigation({
                             <Disclosure.Panel as="ul">
                               {item.links.map((subItem) => (
                                 <li key={subItem.title}>
-                                  <Disclosure.Button className="ml-4 h-7 w-52 rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
-                                    <Link
-                                      href={subItem.href}
-                                      onClick={onLinkClick}
-                                      className={clsx(
-                                        'block h-full pl-2.5 transition-all',
-                                        subItem.href === pathname
-                                          ? ' text-sky-500'
-                                          : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300',
-                                      )}
-                                    >
-                                      {subItem.title}
-                                    </Link>
+                                  <Disclosure.Button className="ml-6 h-7 w-52 rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
+                                    <ItemLink
+                                      item={subItem}
+                                      pathname={pathname}
+                                      onLinkClick={onLinkClick}
+                                    />
                                   </Disclosure.Button>
+                                  {subItem.links && (
+                                    <Disclosure.Panel as="ul">
+                                      {subItem.links.map((thirdLevelItem) => (
+                                        <li key={thirdLevelItem.title}>
+                                          <Disclosure.Button className="ml-4 h-7 w-52 rounded-md bg-red-500 text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
+                                            <Link
+                                              href={thirdLevelItem.href}
+                                              onClick={onLinkClick}
+                                              className={clsx(
+                                                'block h-full border pl-4 transition-all',
+                                                thirdLevelItem.href === pathname
+                                                  ? ' text-sky-500'
+                                                  : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300',
+                                              )}
+                                            >
+                                              {thirdLevelItem.title}
+                                            </Link>
+                                          </Disclosure.Button>
+                                        </li>
+                                      ))}
+                                    </Disclosure.Panel>
+                                  )}
                                 </li>
                               ))}
                             </Disclosure.Panel>

@@ -1,9 +1,15 @@
 export function NextJSIcon() {
   return (
-    <path
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
-      d="M13 19v-3h8v3zm-4.5-6L2.47 7h4.24l4.96 4.95c.58.59.58 1.55 0 2.12L6.74 19H2.5z"
-    ></path>
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      className="h-6 w-6"
+    >
+      <title>Next.js</title>
+      <path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z" />
+    </svg>
   )
 }
 

@@ -5,12 +5,15 @@ export interface NavigationItemLink {
   href: string
   icon?: keyof typeof icons
   links?: NavigationItemLink[]
+  subLinks?: NavigationItemLink[]
 }
 
 type NavigationType = Array<{
   title: string
   href: string
   links: NavigationItemLink[]
+  subLinks?: NavigationItemLink[] 
+
 }>
 
 export const navigation: NavigationType = [
@@ -185,6 +188,7 @@ export const navigation: NavigationType = [
           {
             title: 'Debugging tests',
             href: '/test-runners/cypress-io/debugging-tests',
+            icon: 'debuggingtests',
           },
         ],
       },
@@ -315,34 +319,36 @@ export const navigation: NavigationType = [
           {
             title: 'Replay Driver',
             href: '/integrations/replay-apis/replay-driver',
-            icon: 'empty',
+            icon: 'replaydriver',
           },
         ],
       },
       {
         title: 'Frameworks & libraries',
         href: '/integrations/frameworks-libraries',
-        icon: 'empty',
+        icon: 'frameworks',
         links: [
           {
             title: 'NextJS',
             href: '/integrations/frameworks-libraries/nextjs',
-            icon: 'empty',
+            icon: 'nextjs',
           },
         ],
       },
       {
         title: '3rd Party integrations',
         href: '/integrations/3rd-party-integrations',
-        icon: 'empty',
+        icon: 'integrations',
         links: [
           {
             title: 'GitHub Embeds',
             href: '/integrations/3rd-party-integrations/github-embeds',
+            icon: 'githubembeds',
           },
           {
             title: 'Loom Embeds',
             href: '/integrations/3rd-party-integrations/loom-embeds',
+            icon: 'loomembeds',
           },
         ],
       },
