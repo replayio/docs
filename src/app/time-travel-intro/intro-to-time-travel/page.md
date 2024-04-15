@@ -10,7 +10,7 @@ Replay DevTools looks similar to VS Code and Chrome DevTools, but once you start
 
 ## Design Principles
 
-### **Debugging should be fast and predictable**
+### Debugging should be fast and predictable
 
 Have you ever felt like your going in circles? You add a console.log, refresh, rerun and the issue looks a little bit different?
 
@@ -18,19 +18,19 @@ With Replay, you can add a console.log in Replay DevTools and the messages will 
 
 If you’ve ever developed with Hot Module Reloading and have made a change in your code and seen it immediately reflected in your app, this is what debugging with live console logs feels like in your app.
 
-### **Debugging is all about being at the right time and place.**
+### Debugging is all about being at the right time and place.
 
 The two reasons why debugging can be difficult are that issues can come from anywhere and you need to work backwards from where the issue first became visible to the underlying cause that triggered it.
 
 This is where time travel shines. For the first time you can jump forward and backwards in time and be paused at that line of code. Never has it been easier to
 
-### **Debugging should be a team sport**
+### Debugging should be a team sport
 
 Because traditionally everybody has to figure out how to replicate the issue, just to see it and understand, hunting down problems too often is left to a single developer.
 
 In contrast, because everyone on the team can open the replay with Browser DevTools, share their relevant context, and solve the riddle together.
 
-### **Debugging is a data visualization problem.**
+### Debugging is a data visualization problem.
 
 Have you ever felt like the crazy person with the wall of red thread, trying to connect the dots between when functions are called and data is instantiated, mutated, and destroyed?
 

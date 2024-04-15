@@ -171,7 +171,7 @@ main().then(() => {
 });
 ```
 
-### **Using `expect` with Node script configuration**
+### Using `expect` with Node script configuration
 
 You can still use `expect` from `@playwright/test` in your test code. Import the command directly like in the example below.
 
@@ -219,7 +219,7 @@ const { getExecutablePath } = require("@replayio/playwright");
 })()
 ```
 
-### **Uploading automatically as a Node script**
+### Uploading automatically as a Node script
 
 Writing your tests as a Node script allows you to upload failed recordings automatically using `@replayio/replay` as a Node module.
 

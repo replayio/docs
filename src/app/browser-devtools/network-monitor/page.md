@@ -28,10 +28,10 @@ The Jump button helps you seek to the point in time where the fetch was initiate
 
 ## Coming soon
 
-### **Search requests**
+### Search requests
 
 The search panel will help you search for resources by request and response body.
 
-### **GraphQL panel**
+### GraphQL panel
 
 The GraphQL panel will help you inspect GraphQL requests, mutations.

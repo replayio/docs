@@ -5,27 +5,27 @@ description: Because Replay Browser lets you record anything that happens inside
 
 {% steps %}
 ## Install Replay package
-To start, you need to install `@replayio/replay` package to your project.
+To start, you need to install `replayio` package to your project.
 
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
 ```sh
-npm i @replayio/replay
+npm i replayio
 ```
 {% /tab %}
 {% tab %}
 ```sh
-yarn add @replayio/replay
+yarn add replayio
 ```
 {% /tab %}
 {% tab %}
 ```sh
-pnpm i @replayio/replay
+pnpm i replayio
 ```
 {% /tab %}
 {% tab %}
 ```sh
-bun i @replayio/replay
+bun i replayio
 ```
 {% /tab %}
 {% /tabs %}
@@ -35,8 +35,9 @@ bun i @replayio/replay
 In order to use Replay Browser in your WebdriverIO scripts, you need to point your configuration to the Replay Browser binary. The `getExecutablePath` function will take care of locating the binary on your machine.
 
 ```js {% lineNumbers=true fileName="wdio.config.js" highlight=["1-2","11-14"] %}
-const { getPlaywrightBrowserPath } = require("@replayio/replay");
-const chromiumPath = getPlaywrightBrowserPath("chromium");
+import { getBrowserPath } from "replayio";
+
+const chromiumPath = getBrowserPath();
 
 exports.config = {
   specs: ["./test/*.js"],
@@ -60,39 +61,14 @@ You need to set up `automationProtocol: 'devtools'` option in your config instea
 ## Run your tests
 With configration set up, you can run your tests the same way as before. After your run finishes, your recordings will be stored locally. 
 
-## Install Replay CLI to upload
-To download and install Replay CLI, run the following command:
-
-{% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
-{% tab %}
-```sh
-npm i -g replayio
-```
-{% /tab %}
-{% tab %}
-```sh
-yarn i -g replayio
-```
-{% /tab %}
-{% tab %}
-```sh
-pnpm i -g replayio
-```
-{% /tab %}
-{% tab %}
-```sh
-bun i -g replayio
-```
-{% /tab %}
-{% /tabs %}
+## Upload your replays
 
 Upload your replays with the following command:
 
 ```sh
 replayio upload --all
 ```
-
-You can use Replay CLI to manage and upload your recordings. To learn more see the [docs on Replay CLI](/replay-cli/commands).
+To learn more see the [docs on Replay CLI](/replay-cli/commands).
 
 After you upload your recordings, you can view them in [Test Suite Dashboard](/test-suites/features/test-suite-dashboard).
 {% /steps%}

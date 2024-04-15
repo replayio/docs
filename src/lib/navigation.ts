@@ -138,7 +138,7 @@ export const navigation: NavigationType = [
     links: [
       {
         title: 'Analytics',
-        href: '/test-runners/overview#test-suite-analytics',
+        href: '/test-suites/analytics',
         icon: 'analytics',
       },
       {

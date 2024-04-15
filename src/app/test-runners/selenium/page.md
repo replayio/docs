@@ -10,22 +10,22 @@ To start, you need to install `@replayio/replay` package to your project.
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
 ```sh
-npm i @replayio/replay
+npm i replayio
 ```
 {% /tab %}
 {% tab %}
 ```sh
-yarn add @replayio/replay
+yarn add replayio
 ```
 {% /tab %}
 {% tab %}
 ```sh
-pnpm i @replayio/replay
+pnpm i replayio
 ```
 {% /tab %}
 {% tab %}
 ```sh
-bun i @replayio/replay
+bun i replayio
 ```
 {% /tab %}
 {% /tabs %}
@@ -37,8 +37,9 @@ In order to use Replay Browser in your Selenium scripts, you need to point your 
 ```js {% lineNumbers=true fileName="spec.js" highlight=["3-4","7-8",12] %}
 const { Builder, Browser, By, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-import { getPlaywrightBrowserPath } from "@replayio/replay";
-const chromiumPath = getPlaywrightBrowserPath("chromium");
+import { getBrowserPath } from "replayio";
+
+const chromiumPath = getBrowserPath();
 
 (async function test() {
   let options = new chrome.Options();
@@ -61,39 +62,14 @@ const chromiumPath = getPlaywrightBrowserPath("chromium");
 ## Run your tests
 With configration set up, you can run your tests the same way as before. After your run finishes, your recordings will be stored locally. 
 
-## Install Replay CLI to upload
-To download and install Replay CLI, run the following command:
-
-{% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
-{% tab %}
-```sh
-npm i -g replayio
-```
-{% /tab %}
-{% tab %}
-```sh
-yarn i -g replayio
-```
-{% /tab %}
-{% tab %}
-```sh
-pnpm i -g replayio
-```
-{% /tab %}
-{% tab %}
-```sh
-bun i -g replayio
-```
-{% /tab %}
-{% /tabs %}
+## Upload your replays
 
 Upload your replays with the following command:
 
 ```sh
 replayio upload --all
 ```
-
-You can use Replay CLI to manage and upload your recordings. To learn more see the [docs on Replay CLI](/replay-cli/commands).
+To learn more see the [docs on Replay CLI](/replay-cli/commands).
 
 After you upload your recordings, you can view them in [Test Suite Dashboard](/test-suites/features/test-suite-dashboard).
 {% /steps%}
