@@ -27,7 +27,7 @@ The **command details** panel contains information on passed arguments, returned
 
 **See what actually happened** when your test clicked, typed or in other way interacted with your website. Jump from a test command right into the function that was called on interaction.
 
-With information on [line hit counts](#) and [jumping through line executions](#) you’ll be able to narrow down a flake root cause in minutes.
+With information on [line hit counts](/browser-devtools/source-viewer#hit-counts) and [jumping through line executions](/browser-devtools/source-viewer#jumping-to-a-line) you’ll be able to narrow down a flake root cause in minutes.
 {% /basic %}
 
 {% figure
@@ -44,7 +44,7 @@ With information on [line hit counts](#) and [jumping through line executions](#
 
 Flakiness can be a caused by a single line of code. Reveal that line with a **print statement**. Find race conditions, unexpected data, rendering issues- you name it.
 
-We have stories of [2 pixel shifts](#) and [false positives](#) that caused headaches to test maintainers. [Learn more](#) about the power of print statements.
+We have stories of [2 pixel shifts](https://blog.replay.io/a-journey-of-driving-down-test-flakes-to-0percent-at-metabase-part-3) and [false positives](https://blog.replay.io/finding-%22false-positive%22-tests-with-replay.io) that caused headaches to test maintainers. [Learn more](/time-travel-intro/add-console-logs-on-the-fly) about the power of time-travelling console logs.
 {% /basic %}
 
 {% figure

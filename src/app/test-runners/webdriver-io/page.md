@@ -70,7 +70,7 @@ replayio upload --all
 ```
 To learn more see the [docs on Replay CLI](/replay-cli/commands).
 
-After you upload your recordings, you can view them in [Test Suite Dashboard](/test-suites/features/test-suite-dashboard).
+After you upload your recordings, you can view them in [Test Suite Dashboard](/test-suites/runs-view).
 {% /steps%}
 
 {% callout %}
@@ -79,34 +79,32 @@ You can try this out on your own, by forking [this example repository](https://g
 
 {% quick-links title="Read more" description="Learn how to manage your recordings, debug your app using Replay DevTools and more" %}
 
-{% quick-link 
-  title="Manage your recordings" 
-  icon="console" 
-  href="/replay-cli/commands" 
-  description="Learn how to upload, remove and view your recordings using CLI" 
+{% quick-link
+  title="Manage your recordings"
+  icon="console"
+  href="/replay-cli/commands"
+  description="Learn how to upload, remove and view your recordings using CLI"
 /%}
 
-{% quick-link 
-  title="Replay DevTools" 
-  icon="jumptocode" 
-  href="#" 
-  description="Learn how to use Replay DevTools to debug your tests." 
+{% quick-link
+  title="Replay DevTools"
+  icon="jumptocode"
+  href="/test-runners/overview"
+  description="Learn how to use Replay DevTools to debug your tests."
 /%}
 
-
-{% quick-link 
-  title="Record Your CI Test Run" 
-  icon="build" 
-  href="#" 
-  description="Learn how to integrate Replay into your Continuous integration service" 
+{% quick-link
+  title="Setting up a team"
+  icon="settingupateam"
+  href="/replay-teams/setting-up-a-team"
+  description="Learn how to create a team in the Replay App"
 /%}
 
-
-{% quick-link 
-  title="Test Suite Management" 
-  icon="treeview" 
-  href="#" 
-  description="Test Suite Dashboard helps you stay on top of your test suite health." 
+{% quick-link
+  title="Test Suite Management"
+  icon="treeview"
+  href="/test-suites/runs-view"
+  description="Test Suite Dashboard helps you stay on top of your test suite health."
 /%}
 
 {% /quick-links %}

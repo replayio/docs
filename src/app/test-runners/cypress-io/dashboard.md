@@ -5,7 +5,7 @@ title: Cypress Test Suite Dashboard
 ## Cypress Test Suite Dashboard
 Your tests will be automatically recorded with every test run after you have integrated Replay into your CI.
 
-You can view all your recordings in [Test Suite Dashboard](/test-suites/features/test-suite-dashboard). All your tests are grouped in with your test run.
+You can view all your recordings in [Test Suite Dashboard](/test-suites/runs-view). All your tests are grouped in with your test run.
 
 ![Replay Dashboard](/images/test-suite-dashboard.png)
 

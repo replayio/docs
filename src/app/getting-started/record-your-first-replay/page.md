@@ -91,21 +91,21 @@ https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25
 {% quick-link
   title="Replay DevTools"
   icon="jumptocode"
-  href="#"
+  href="/test-runners/overview"
   description="Learn how to use Replay DevTools to debug your tests."
 /%}
 
 {% quick-link
-  title="Record Your CI Test Run"
-  icon="build"
-  href="#"
-  description="Learn how to integrate Replay into your Continuous integration service"
+  title="Setting up a team"
+  icon="settingupateam"
+  href="/replay-teams/setting-up-a-team"
+  description="Learn how to create a team in the Replay App"
 /%}
 
 {% quick-link
   title="Test Suite Management"
   icon="treeview"
-  href="#"
+  href="/test-suites/runs-view"
   description="Test Suite Dashboard helps you stay on top of your test suite health."
 /%}
 

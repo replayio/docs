@@ -35,7 +35,7 @@ export default config;
 
 ### Options
 - `apiKey` (required) - this is the key that ensures communication with Test Suite Dashboard. Your recordings are uploaded using this key.
-- `upload` - Set to `false` by default. This option determines whether you want to upload your recordings automatically to your [Test Suite Dashboard](/test-suites/features/test-suite-dashboard). 
+- `upload` - Set to `false` by default. This option determines whether you want to upload your recordings automatically to your [Test Suite Dashboard](/test-suites/runs-view). 
 
 ## Uploading replays manually
 Recordings are created automatically when using `replay-chromium` browser, but you can choose to upload your recordings manually. You can use our [Replay CLI](/reference-guide/recording/replay-cli) for that. We recommend installing it globally:

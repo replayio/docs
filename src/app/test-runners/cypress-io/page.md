@@ -109,23 +109,23 @@ Jumping from test code and utilizing the timeline is explored in the [Replay Cra
 /%}
 
 {% quick-link
-  title="Record Your CI Test Run"
-  icon="build"
-  href="#"
-  description="Learn how to integrate Replay into your Continuous integration service"
+  title="Manage your recordings"
+  icon="console"
+  href="/replay-cli/commands"
+  description="Learn how to upload, remove and view your recordings using CLI"
 /%}
 
 {% quick-link
   title="Replay DevTools"
   icon="jumptocode"
-  href="#"
+  href="/test-runners/overview"
   description="Learn how to use Replay DevTools to debug your tests."
 /%}
 
 {% quick-link
   title="Test Suite Management"
   icon="treeview"
-  href="#"
+  href="/test-suites/runs-view"
   description="Test Suite Dashboard helps you stay on top of your test suite health."
 /%}
 
