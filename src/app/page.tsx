@@ -6,7 +6,8 @@ const cards: CardAttributes[] = [
   {
     icon: 'rewind',
     title: 'Intro to time travel',
-    content: 'Rewind, fast-forward and inspect your application',
+    content:
+      'Record, replay, and debug your application with the power of time travel',
     href: '/time-travel-intro/intro-to-time-travel',
   },
   {
@@ -29,13 +30,13 @@ const cards: CardAttributes[] = [
   },
   {
     icon: 'cypresssimple',
-    title: 'Record Cypress tests',
+    title: 'Record your Cypress tests',
     content: 'Integrate Replay Browser into your test run',
     href: '/test-runners/cypress-io',
   },
   {
     icon: 'playwrightsimple',
-    title: 'Record Playwright tests',
+    title: 'Record your Playwright tests',
     content: 'Rewind, fast-forward and inspect your application',
     href: '/devtools/console-panel',
   },

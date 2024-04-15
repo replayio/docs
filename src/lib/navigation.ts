@@ -1,6 +1,6 @@
 import { icons } from '@/components/NavIcon'
 
-interface NavigationItemLink {
+export interface NavigationItemLink {
   title: string
   href: string
   icon?: keyof typeof icons
@@ -19,12 +19,7 @@ export const navigation: NavigationType = [
     href: '/getting-started',
     links: [
       {
-        title: 'What is time travel',
-        href: '/getting-started/what-is-time-travel',
-        icon: 'hourglass',
-      },
-      {
-        title: 'Record your first feplay',
+        title: 'Record your first replay',
         href: '/getting-started/record-your-first-replay',
         icon: 'record',
       },
@@ -34,6 +29,11 @@ export const navigation: NavigationType = [
     title: 'Intro to time travel',
     href: '/time-travel-intro',
     links: [
+      {
+        title: 'What is time travel?',
+        href: '/getting-started/what-is-time-travel',
+        icon: 'hourglass',
+      },
       {
         title: 'Add console logs on the fly',
         href: '/time-travel-intro/add-console-logs-on-the-fly',
