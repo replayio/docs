@@ -28,7 +28,7 @@ function ItemLink({
         className,
         pathname.includes(item.href)
           ? 'font-semibold text-sky-500'
-          : 'text-gray-600 hover:text-gray-600 dark:text-gray-200',
+          : 'text-gray-600 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-200',
       )}
     >
       <NavIcon
@@ -90,7 +90,7 @@ export function Navigation({
                     >
                       {section.links.map((item) => (
                         <li key={item.title}>
-                          <Disclosure.Button className="relative h-7 w-full rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
+                          <Disclosure.Button className="relative h-7 w-full rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10 dark:hover:text-white">
                             <ItemLink
                               item={item}
                               pathname={pathname}
