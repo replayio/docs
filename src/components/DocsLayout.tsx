@@ -19,12 +19,17 @@ export function DocsLayout({
 
   return (
     <>
-      <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pl-16 lg:pr-0 xl:px-16">
-        <article>
-          <DocsHeader title={title} description={description} image={image} />
-          <Prose>{children}</Prose>
-        </article>
-        <PrevNextLinks />
+      <div
+        data-test-id="docs-layout"
+        className="flex min-w-0  flex-auto grow px-4 py-16 "
+      >
+        <div className="flex w-full flex-col  items-center">
+          <article className=" grow lg:max-w-4xl  lg:pl-16 lg:pr-0 xl:px-16">
+            <DocsHeader title={title} description={description} image={image} />
+            <Prose>{children}</Prose>
+          </article>
+          <PrevNextLinks />
+        </div>
       </div>
       <TableOfContents tableOfContents={tableOfContents} />
     </>
