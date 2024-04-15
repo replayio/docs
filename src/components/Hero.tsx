@@ -18,7 +18,7 @@ export function Hero() {
             </div>
           </div>
           <div className="relative lg:static xl:pl-10">
-            <HeroBackground className="absolute -left-[32%] -top-[45%] mix-blend-darken dark:bg-black dark:mix-blend-color-burn" />
+            {/* <HeroBackground className="absolute -left-[32%] -top-[45%] " /> */}
           </div>
         </div>
       </div>
