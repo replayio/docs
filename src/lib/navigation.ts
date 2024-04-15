@@ -171,9 +171,14 @@ export const navigation: NavigationType = [
       { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
       {
         title: 'Cypress.io',
-        href: '/test-runners/cypress-io',
+        href: '',
         icon: 'cypress',
         links: [
+          {
+            title: 'Getting started',
+            href: '/test-runners/cypress-io',
+            icon: 'rocket',
+          },
           {
             title: 'Record your first replay',
             href: '/test-runners/cypress-io/record-your-first-replay',
