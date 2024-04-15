@@ -18,4 +18,4 @@ Replays can be added to the team by selecting the team in the replay upload scre
 
 ## API Keys
 
-Teams can create API Keys for uploading [source maps](https://docs.replay.io/getting-started/teams-admin/uploading-source-maps) during deploys or uploading replays recorded programmatically via our [Node](<https://docs.replay.io/reference-guide/recording/replay-node-(experimental)>), [Playwright](https://docs.replay.io/test-suites/playwright/installation), or [**Puppeteer**](https://docs.replay.io/test-suites/puppeteer) recorders.
+Teams can create API Keys for uploading [source maps](/replay-cli/source-maps) during deploys or uploading replays recorded programmatically via our [Node runtime](/replay-runtimes/replay-node) or [end to end test runners](/test-runners/overview).
