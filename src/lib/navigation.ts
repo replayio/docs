@@ -19,6 +19,11 @@ export const navigation: NavigationType = [
     href: '/getting-started',
     links: [
       {
+        title: 'What is time travel',
+        href: '/getting-started/what-is-time-travel',
+        icon: 'hourglass',
+      },
+      {
         title: 'Record your first replay',
         href: '/getting-started/record-your-first-replay',
         icon: 'record',
@@ -174,6 +179,7 @@ export const navigation: NavigationType = [
           {
             title: 'Record your first replay',
             href: '/test-runners/cypress-io/record-your-first-replay',
+            icon: 'record',
           },
           {
             title: 'Debugging tests',
