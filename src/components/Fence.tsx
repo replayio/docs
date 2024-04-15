@@ -54,7 +54,7 @@ export function Fence({
                 <div className={clsx(highlightedLines.includes(lineIndex + 1) && 'bg-gray-400 bg-opacity-15', 'px-3'
                 )}>
                   <>
-                    { lineNumbers && <span className='text-white pr-4 text-opacity-30'>{(lineIndex + 1).toString().padStart(2, ' ')}</span>}
+                    { lineNumbers && <span className='text-white pr-4 text-opacity-30 select-none'>{(lineIndex + 1).toString().padStart(2, ' ')}</span>}
                     {line
                       .filter((token) => !token.empty)
                       .map((token, tokenIndex) => (
