@@ -137,14 +137,9 @@ export const navigation: NavigationType = [
     href: '/test-suites',
     links: [
       {
-        title: 'Analytics',
-        href: '/test-suites/analytics',
-        icon: 'analytics',
-      },
-      {
-        title: 'PR Comments',
-        href: '/test-suites/pr-comments',
-        icon: 'pullrequest',
+        title: 'Runs View',
+        href: '/test-suites/runs-view',
+        icon: 'runsview',
       },
       {
         title: 'Top Failing And Flaky Tests',
@@ -152,15 +147,21 @@ export const navigation: NavigationType = [
         icon: 'sort',
       },
       {
-        title: 'Flake Test Detection',
-        href: '/test-suites/flake-test-detection',
-        icon: 'flake',
+        title: 'PR Comments',
+        href: '/test-suites/pr-comments',
+        icon: 'pullrequest',
       },
-      {
-        title: 'Runs View',
-        href: '/test-suites/runs-view',
-        icon: 'runsview',
-      },
+      // {
+      //   title: 'Analytics',
+      //   href: '/test-suites/analytics',
+      //   icon: 'analytics',
+      // },
+      // {
+      //   title: 'Test Flake Detection',
+      //   href: '/test-suites/test-flake-detection',
+      //   icon: 'flake',
+      // },
+     
     ],
   },
   {
@@ -255,11 +256,11 @@ export const navigation: NavigationType = [
     title: 'CI Workflows',
     href: '/ci-workflows',
     links: [
-      {
-        title: 'Setting up',
-        href: '/ci-workflows/setting-up',
-        icon: 'wrench',
-      },
+      // {
+      //   title: 'Setting up',
+      //   href: '/ci-workflows/setting-up',
+      //   icon: 'wrench',
+      // },
       {
         title: 'Generate API key',
         href: '/ci-workflows/generate-api-key',

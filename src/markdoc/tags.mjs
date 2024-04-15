@@ -53,6 +53,7 @@ const tags = {
       width: { type: String },
       height: { type: String },
       gradient: { type: String },
+      ripple: { type: Boolean },
       showRadius: { type: Boolean },
     },
     render: components.Figure,
@@ -101,6 +102,9 @@ const tags = {
       icon: { type: String },
       class: { type: String },
     },
+  },
+  twocolumns: {
+    render: components.TwoColumns
   }
 }
 

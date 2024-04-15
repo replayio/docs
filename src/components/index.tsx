@@ -21,6 +21,7 @@ import { Tab, Tabs } from './Tabs'
 import { Video } from './Video'
 import { Steps } from './Steps'
 import { Button } from './Button'
+import { TwoColumns } from './TwoColumns'
 
 export default {
   Basic,
@@ -47,4 +48,5 @@ export default {
   Tab,
   Video,
   Steps,
+  TwoColumns
 }
