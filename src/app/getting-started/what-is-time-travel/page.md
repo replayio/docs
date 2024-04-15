@@ -12,9 +12,10 @@ The reason why debugging a bug is 2X harder than writing the software in the fir
 If you’re debugging a bug with browser DevTools and Console logs, you have two problems. The first one is obvious. When you’re inspecting the bug with browser DevTools, there’s no way to go backwards without refreshing and redoing your steps. The second is that every time you add console logs in your code, you need to replicate the bug again, in order to see the messages in the Console.
 
 {% figure
-    alt="Playwright panel"
+    alt="Adding console logs"
     src="/images/add-console-log.png"
     gradient="bg-gradient-to-tr from-blue-200 via-fuchsia-300 to-orange-400"
+    showRadius=false
     height=10
     width=800
 /%}
@@ -22,8 +23,9 @@ If you’re debugging a bug with browser DevTools and Console logs, you have two
 This is where time travel comes in. When you’re in Replay DevTools, you’re able to add console logs in your code and “automagically” see the messages appear in the Console. And when you want to go forwards or backwards to a new point in time, all you have to do is click the “jump” button and you’re immediately brought there.
 
 {% figure
-    alt="Playwright panel"
+    alt="Viewing console logs"
     src="/images/console-logs.png"
+    showRadius=false
     height=10
     width=640
 /%}
@@ -37,12 +39,13 @@ Replay started as an R&D project at Mozilla called WebReplay alongside Rust and 
 We knew we had something valuable when six months into starting Replay some of the top open source developers were using Replay to fix some of the most difficult bugs in Redux, React, and other popular open source libraries. It didn’t matter if Replay crashed every five minutes, and was as slower than a dialup modem, the ability to slow down and study a problem with Replay, was so great that some problems simply necessitated time travel.
 
 {% figure
-    alt="Playwright panel"
+    alt="Sebastian testimonial"
     src="/images/callout.png"
+    showRadius=false
     height=10
     width=640
 /%}
 
-Today Replay is used today in many of the top Open Source projects such as NextJS and  Typescript and it’s hard to work on a web app and not use a tool that’s better because of Replay. Replay also is far faster. You can record in real time and forget it’s on and Replay DevTools is as responsive as Chrome DevTools. Replay also doesn’t crash every five minutes!
+Today Replay is used today in many of the top Open Source projects such as NextJS and Typescript and it’s hard to work on a web app and not use a tool that’s better because of Replay. Replay also is far faster. You can record in real time and forget it’s on and Replay DevTools is as responsive as Chrome DevTools. Replay also doesn’t crash every five minutes!
 
 With our recent move from Firefox to Chrome, you can use Replay as your development browser, to capture the perfect bug report, and to record and replay your browser tests. It turns out that flaky test failures are timing issues and time travel debugging is perfect for understanding them. You’ll laugh the first time you fix a flaky test and then try to imagine how you would have done it before!
