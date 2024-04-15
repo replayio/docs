@@ -10,6 +10,7 @@ import consoleLogs from '@/videos/console-logs.mp4.json'
 import generateApiKey from '@/videos/generate-api-key.mp4.json'
 import recordCli  from '@/videos/record-cli.mp4.json'
 import jumpToCode from '@/videos/jump-to-code.mp4.json'
+import deleteApiKey from '@/videos/delete-api-key.mp4.json'
 // import getStarted from '@/videos/get-started.mp4';
 
 const videos = {
@@ -21,7 +22,8 @@ const videos = {
   elementsPanelStopWatch,
   generateApiKey,
   recordCli,
-  jumpToCode
+  jumpToCode,
+  deleteApiKey
 }
 
 interface VideoProps {
