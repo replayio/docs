@@ -17,19 +17,22 @@ Test runs view provides yout with a multiple column dashboard. Each part allows 
 
 ## Test runs
 
+{% twocolumns %}
+{% group %}
 The "Test Runs" column displays a list of recent test runs, sorted by the most recent. If any tests fail, the column shows the number of failed tests.
 
 The "Failure Rate" graph shows the trend of your test suite's performance over the past 7 days.
+{% /group %}
 
 {% figure
   alt="Test Suite Runs view"
   src="/images/runs-view-left-column.png"
-  showRadius=false
   height=480
   width=480
 /%}
+{% /twocolumns %}
 
-### Filters
+## Filters
 To focus on specific tests, use filters. These enable you to view only the main branch, examine failing runs, or search through runs.
 
 {% callout type="link" title="Top failures and flakes" %}
@@ -37,9 +40,10 @@ To analyze your flaky tests, open the [Tests view](/test-suites/top-failing-and-
 {% /callout %}
 
 ## Run detail
+{% twocolumns %}
+{% group %}
 Each run detail shows details of picked test run. Replay shows you contextual information from CI, including:
 
-{% twocolumns %}
 - Commit message
 - User triggering run
 - Branch name
@@ -48,6 +52,8 @@ Each run detail shows details of picked test run. Replay shows you contextual in
 - How many tests failed (if failures)
 - How many tests ran (if no failures)
 - Links to Pull request and workflow page
+
+{% /group %}
 
 {% figure
   alt="Test Suite Run detail view"
@@ -64,16 +70,23 @@ Tests are categorized into flaky, failed, and successful runs for easy viewing. 
 
 ## Test details
 
-Test details include all recorded replays from the test run. Common errors are displayed below to provide an overview of the test failure messages. Clicking on a test opens the Replay DevTools, allowing you to start debugging that specific test run.
+{% twocolumns %}
+{% group %}
+Test details include all recorded replays from the test run. 
+
+Common errors are displayed below to provide an overview of the test failure messages. 
+
+Clicking on a test opens the Replay DevTools, allowing you to start debugging that specific test run.
+{% /group %}
 
 {% figure
   alt="Test Suite Run detail view"
   src="/images/runs-view-right-column.png"
-  showRadius=false
   height=380
   width=380
 /%}
 
+{% /twocolumns %}
 
 {% callout type="link" title="PR comments" %}
 You can access the test suites dashboard directly from your Pull request using. This feature lets you quickly navigate to your flaky or failing tests from your pull request. For more details, see the [PR comment docs](test-suites/pr-comments).

@@ -74,7 +74,6 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
 
   const closeWrapper = () => {
     if (!containerRef.current) return
-
     containerRef.current.style.transform = `scale(1)`
     setClicked(false)
   }

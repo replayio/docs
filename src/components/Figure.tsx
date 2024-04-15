@@ -29,7 +29,7 @@ export function Figure({
     height,
     width,
     fill,
-    className: `${gradient} object-contain rounded  ${
+    className: `${gradient} object-contain rounded ${
       ripple ? 'shadow-ripple' : ''
     }`,
   }
@@ -37,7 +37,7 @@ export function Figure({
   return (
     <figure
       title={alt}
-      className={`not-prose flex flex-col ${
+      className={`not-prose flex flex-col mt-6 ${
         showRadius
           ? 'rounded-lg border border-gray-200 p-1 dark:border-slate-600'
           : ''
