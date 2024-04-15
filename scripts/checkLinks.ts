@@ -48,7 +48,7 @@ async function checkLinksInFile(filePath: string): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const glob = new Glob('./src/app/**/*.md')
+  const glob = new Glob('./src/app/**/page.md')
 
   for await (const file of glob.scan('.')) {
     await checkLinksInFile(file)

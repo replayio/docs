@@ -95,7 +95,7 @@ You can zoom out to take a look at your whole test run, or filter out those that
 
 If test flakiness pushed you to consider switching to a new testing framework, be at ease. Replay is a browser based on Chromium that can be integrated to any test framework.
 
-We have created an extra tooling around the most popular ones today - [Cypress.io](/test-runners/cypress-io) and [Playwright](/test-runners/playwright/installation).
+We have created an extra tooling around the most popular ones today - [Cypress.io](/test-runners/cypress-io) and [Playwright](/test-runners/playwright/record-your-first-replay).
 {% /basic %}
 
 {% icon icon="cypress" class="w-9 h-9 inline-block mr-4" /%}

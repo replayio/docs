@@ -11,7 +11,7 @@ Create another test script in `package.json` for running tests with Replay, and 
 }
 ```
 
-Lastly, add a new step in the workflow for uploading the replays once they’re generated. Run the scripts below, providing [your own API key](/getting-started/teams-admin/setting-up-a-team#api-keys):
+Lastly, add a new step in the workflow for uploading the replays once they’re generated. Run the scripts below, providing [your own API key](/ci-workflows/generate-api-key):
 
 ```sh
 # Run your tests
@@ -25,7 +25,7 @@ npx @replayio/replay metadata --init --keys source --warn
 npx @replayio/replay upload-all --api-key <api key>
 ```
 
-Lastly, [add your API key to your Secrets](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-encrypted-secrets-for-your-repository-and-organization-for-github-codespaces#adding-secrets-for-a-repository). To get an API key, create a new Replay team and generate an API key — [instructions can be found here](/getting-started/teams-admin/setting-up-a-team#api-keys).
+Lastly, [add your API key to your Secrets](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-encrypted-secrets-for-your-repository-and-organization-for-github-codespaces#adding-secrets-for-a-repository). To get an API key, create a new Replay team and generate an API key — [instructions can be found here](/ci-workflows/generate-api-key).
 
 ## CircleCI and Replay Metadata
 

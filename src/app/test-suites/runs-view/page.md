@@ -89,6 +89,6 @@ Clicking on a test opens the Replay DevTools, allowing you to start debugging th
 {% /twocolumns %}
 
 {% callout type="link" title="PR comments" %}
-You can access the test suites dashboard directly from your Pull request using. This feature lets you quickly navigate to your flaky or failing tests from your pull request. For more details, see the [PR comment docs](test-suites/pr-comments).
+You can access the test suites dashboard directly from your Pull request using. This feature lets you quickly navigate to your flaky or failing tests from your pull request. For more details, see the [PR comment docs](/test-suites/pr-comments).
 
 {% /callout %}

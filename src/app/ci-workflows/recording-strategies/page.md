@@ -1,12 +1,9 @@
 ---
 title: Recording strategies
+description: Depending on what problem you’re trying to solve, there are two primary ways of using Replay.
 ---
 
-## Recording strategies
-
-Depending on what problem you’re trying to solve, there are two primary ways of using Replay.
-
-### Record failures on PRs
+## Record failures on PRs
 
 This is useful for debugging failing tests in pull requests. It only records failing tests so there’s minimal overhead, and those replays will be available for debugging immediately after tests finish.
 
@@ -30,7 +27,7 @@ Run your tests and pass the mode `record-on-retry` .
   {% /tab %}
 {% /tabs %}
 
-### Record all on merge to master
+## Record all on merge to master
 
 This is useful for busting flakes. It only records failing tests so there’s minimal overhead, and those replays will be available for debugging immediately after tests finish.
 
