@@ -12,7 +12,7 @@ The Pause panel includes everything you’d expect to see in Chrome DevTools plu
 
 The call stacks pane lets you see the path that the program took through the code to get to the current pause.
 
-And with the ability to select a frame, and step forward or backwards from there, it’s never been easier to work backwards, and understand the sequence of events.
+And with the ability to select a frame, and step forward or backwards from there, it’s never been easier to work backwards and understand the sequence of events.
 
 ### Scopes
 
@@ -22,7 +22,7 @@ The scopes pane lets you inspect the values in the local scope and surrounding s
 
 Traditional debuggers let you pause at breakpoints, resume, step forward, in, and out. And when you’re stepping there’s always the risk that you stepped too far and have to refresh and redo your steps.
 
-With Repay, it’s possible to pause at a point in time, and step forwards and backwards, resume and rewind. And because you can go anywhere, you never have to worry about going too far.
+With Repay, it’s possible to pause at a point in time, step forwards or backwards, and resume or rewind. And because you can go anywhere, you never have to worry about going too far.
 
 ### Breakpoints
 
