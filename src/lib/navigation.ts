@@ -12,8 +12,7 @@ type NavigationType = Array<{
   title: string
   href: string
   links: NavigationItemLink[]
-  subLinks?: NavigationItemLink[] 
-
+  subLinks?: NavigationItemLink[]
 }>
 
 export const navigation: NavigationType = [
@@ -21,11 +20,6 @@ export const navigation: NavigationType = [
     title: 'Getting started',
     href: '/getting-started',
     links: [
-      {
-        title: 'What is time travel',
-        href: '/time-travel-intro/what-is-time-travel',
-        icon: 'hourglass',
-      },
       {
         title: 'Record your first replay',
         href: '/getting-started/record-your-first-replay',
