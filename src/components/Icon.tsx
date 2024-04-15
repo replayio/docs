@@ -48,6 +48,7 @@ import { PrivacyPrinciplesIcon } from './icons/PrivacyPrinciplesIcon'
 import { SecurityPrinciplesIcon } from './icons/SecurityPrinciplesIcon'
 import DebuggingTestsIcon from './icons/DebuggingTestsIcon'
 import { LinkIcon } from './icons/LinkIcon'
+import SettingUpATeamIcon from './icons/SettingUpATeamIcon'
 
 export const icons = {
   bracketscurly: BracketsCurlyIcon,
@@ -96,7 +97,8 @@ export const icons = {
   privacy: PrivacyPrinciplesIcon,
   security: SecurityPrinciplesIcon,
   debbugingtests: DebuggingTestsIcon,
-  link: LinkIcon
+  link: LinkIcon,
+  settingupateam: SettingUpATeamIcon
 }
 
 export const iconStyles = {
