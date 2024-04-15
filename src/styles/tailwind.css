@@ -22,8 +22,8 @@
   content: "";
 }
 
-.prose p > code {
-  @apply border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold
+.prose p > code, .prose li > code, .prose h2 > code {
+  @apply border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold text-nowrap
 }
 
 .prose h2 {

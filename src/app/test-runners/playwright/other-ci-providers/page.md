@@ -1,13 +1,6 @@
 ---
 title: Recording with Other CI Providers
 ---
-import { Callout } from 'nextra/components'
-
-# Recording with Other CI Providers
-
-<Callout type="info" emoji="👉">
-Have questions? We’re here to help! Contact us in [Discord](https://replay.io/discord) or at support@replay.io.
-</Callout>
 
 To record tests and upload replays in other CI providers, you’ll need to complete the following steps in your workflow.
 
@@ -23,7 +16,9 @@ If not, you’ll need to add a step to install all project dependencies, or you 
 
 By default, `@replayio/playwright` also installs the required Replay Browsers. However, if you have a setting to suppress browser installations during `npm ci` or `yarn`, you’ll need to also manually install the Replay Browsers in your workflow using:
 
-`npx @replayio/playwright install` 
+```sh
+npx @replayio/playwright install
+```
 
 ## Update test run command
 
@@ -38,7 +33,7 @@ Pass the following flags to your run command:
 
 For example, to use Replay Firefox, the command is:
 
-```yaml
+```sh
 npx playwright test --project replay-firefox --reporter=@replayio/playwright/reporter,line
 ```
 
@@ -46,7 +41,7 @@ npx playwright test --project replay-firefox --reporter=@replayio/playwright/rep
 
 ## Upload replays
 
-Use the `[@replayio/replay](https://github.com/replayio/replay-cli/tree/main/packages/replay)` CLI in your workflow to add source control metadata and upload replays to your team. 
+Use the [@replayio/replay](https://github.com/replayio/replay-cli/tree/main/packages/replay) CLI in your workflow to add source control metadata and upload replays to your team. 
 
 1. Install the CLI
 2. Add metadata for all replays generated during the test run
@@ -65,7 +60,3 @@ You can also set `REPLAY_API_KEY` as an environment variable instead of passing 
 The Replay CLI provides other commands and options, such as filtering which replays are uploaded.
 
 [Full instructions at the `@replayio/replay` repo.](https://github.com/replayio/replay-cli/tree/main/packages/replay)
-
-<Callout type="info" emoji="💡">
-Once you’ve recorded, view test results and replays using the [Test Suite Dashboard](/test-suites/features/test-suite-dashboard) and [Pull Request Comments](/test-suites/features/pull-request-comments).
-</Callout>

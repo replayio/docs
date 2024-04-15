@@ -207,7 +207,7 @@ export const navigation: NavigationType = [
       },
       {
         title: 'Playwright',
-        href: '/test-runners/playwright',
+        href: '',
         icon: 'playwright',
         links: [
           { 
@@ -222,7 +222,7 @@ export const navigation: NavigationType = [
           },
           {
             title: 'GitHub actions',
-            href: '/test-runners/playwright/githu-actions',
+            href: '/test-runners/playwright/github-actions',
             icon: 'githubembeds'
           },
           {

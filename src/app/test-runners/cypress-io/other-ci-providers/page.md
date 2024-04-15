@@ -1,21 +1,10 @@
 ---
-title: Using other CI providers
+title: Other CI providers
+description: Replay works with any CI provider. You can simply record your tests by passing Replay Browser to your Cypress run and then add a step to upload your recordings to Replay App.
 ---
-import { Callout } from 'nextra/components'
-
-# Other CI providers
-
-Make sure you have an existing `npm install` or `yarn` command to install project dependencies:
-
-```bash
-npm install
-# or
-yarn
-```
-
 Create another test script in `package.json` for running tests with Replay, and replace your current test script in your CI workflow file:
 
-```json
+```json {% fileName="package.json" %}
 "scripts": {
   "cy:run": "cypress run", // original test script
 	"cy:run:replay": "cypress run --browser=replay-chromium" // new test script
@@ -24,21 +13,19 @@ Create another test script in `package.json` for running tests with Replay, and 
 
 Lastly, add a new step in the workflow for uploading the replays once they’re generated. Run the scripts below, providing [your own API key](/getting-started/teams-admin/setting-up-a-team#api-keys):
 
-```bash
+```sh
 # Run your tests
 REPLAY_API_KEY=<api key> npm run cy:run:replay
+
 # Adds source control metadata like the commit, branch, and PR
 # that triggered this test run
 npx @replayio/replay metadata --init --keys source --warn
+
 # Uploads all replays to your team
 npx @replayio/replay upload-all --api-key <api key>
 ```
 
 Lastly, [add your API key to your Secrets](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-encrypted-secrets-for-your-repository-and-organization-for-github-codespaces#adding-secrets-for-a-repository). To get an API key, create a new Replay team and generate an API key — [instructions can be found here](/getting-started/teams-admin/setting-up-a-team#api-keys).
-
-<Callout type="info" emoji="⚠️">
-If you run into any problems, [consult our troubleshooting guide here](/test-suites/cypress/troubleshooting-guide).
-</Callout>
 
 ## CircleCI and Replay Metadata
 

@@ -1,9 +1,6 @@
 ---
-title: GitHub Actions
+title: GitHub actions
 ---
-import { Callout } from 'nextra/components'
-
-# Recording with GitHub Actions
 
 Playwright tests can be configured via `playwright.config.ts` or using [command line options](https://playwright.dev/docs/test-cli). In a real world scenario you usually end up using both.
 
@@ -11,7 +8,7 @@ Usually, the `playwright.config.ts` file specifies the default setup. Your GitHu
 
 ## Simple setup
 This configuration file contains only a single project that uses `replay-chromium` as a default browser and uses Replay as the default test reporter.
-```tsx filename="playwright.config.ts"
+```jsx {% fileName="playwright.config.ts" lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from "@playwright/test";
 import { devices as replayDevices } from "@replayio/playwright";
 
@@ -36,7 +33,7 @@ In a configuration like the one above, as simple `npx playwright test` command w
 3. Automatically upload them to Test Suite Dashboard
 
 The `workflow.yml` file will in this case look as simple as following:
-```yml filename=".github/workflows/e2e.yml" copy
+```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true %}
 name: End-to-end tests
 on: [push, pull_request]
 jobs:
@@ -57,9 +54,9 @@ Usually a Playwright project contains multiple browser projects and various brow
 ### Specifying projects to run
 You can take control of which project is ran using your worklow file. 
 
-Notice, that in this setup, you need to include an upload step. Specifying `if: ${{ always() }}{:yml}` will make sure that the "Upload replays" step is executed no matter the result of previous step.
+Notice, that in this setup, you need to include an upload step. Specifying `if: ${{ always() }}` will make sure that the "Upload replays" step is executed no matter the result of previous step.
 
-```yml {11-18} filename=".github/workflows/e2e.yml" copy
+```yml {% fileName=".github/workflows/e2e.yml" highlight=["11-18"] lineNumbers=true %}
 name: Replay tests
 on: [push, pull_request]
 jobs:
@@ -81,9 +78,9 @@ jobs:
 ```
 
 ### Uploading failed tests only
-By default, all test replays are uploaded no matter the result. If you want upload only the failed recordings, you can define the step to do so using `filter{:yml}` property:
+By default, all test replays are uploaded no matter the result. If you want upload only the failed recordings, you can define the step to do so using `filter` property:
 
-```yml {19} filename=".github/workflows/e2e.yml" copy
+```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true highlight=[19] %}
 name: Replay tests
 on: [push, pull_request]
 jobs:
@@ -104,6 +101,7 @@ jobs:
           api-key: ${{ secrets.REPLAY_API_KEY }}
           filter: ${{ 'function($v) { $v.metadata.test.result = "failed" }' }}
 ```
-<Callout type="warning" emoji="⚠️">
+
+{% callout %}
 While uploading just failed test is good for saving resources, our recommendation is to upload both failed and passed tests so that you can compare them. This can be really useful for debugging purposes.
-</Callout>
+{% /callout %}

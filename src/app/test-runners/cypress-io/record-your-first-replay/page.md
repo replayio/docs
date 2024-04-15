@@ -85,7 +85,7 @@ export default defineConfig({
 {% /tabs %}
 
 ## Generate and save your API key
-In order to automatically upload your test replays you need to save an API key in your environment. To generate an API key, log in to Replay App open the settings menu. [Read more](#).
+In order to automatically upload your test replays you need to save an API key in your environment. To generate an API key, log in to Replay App open the settings menu. [Read more](/ci-workflows/generate-api-key).
 
 {% video src="generateApiKey" /%}
 

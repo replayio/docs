@@ -171,6 +171,6 @@ workflows:
       - replay
 ```
 
-After tests are ran, the `Upload replays` step is executed. notice the `when: always{:yml}` option that ensures we run this steps independently from whether previous step fails or passes. This ensures we will upload recordings of failed tests and don’t stop the pipeline execution on previous step.
+After tests are ran, the `Upload replays` step is executed. notice the `when: always` option that ensures we run this steps independently from whether previous step fails or passes. This ensures we will upload recordings of failed tests and don’t stop the pipeline execution on previous step.
 
 The `Upload replays` step relies on `REPLAY_API_KEY` being present in the environment. To generate an API key, follow [these docs](/getting-started/teams-admin/setting-up-a-team#api-keys). To set up your API key in your CircleCI project, follow the [documentation on CircleCI](https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-project) -->
