@@ -56,6 +56,8 @@ import { OktaIntegrationIcon } from './icons/OktaIntegrationIcon'
 import { EnterpriseSecurityControlsIcon } from './icons/EnterpriseSecurityControlsIcon'
 import { ManagingReplaysIcon } from './icons/ManagingReplaysIcon'
 import { BillingIcon } from './icons/BillingIcon'
+import { PrivacyPrinciplesIcon } from './icons/PrivacyPrinciplesIcon'
+import { SecurityPrinciplesIcon } from './icons/SecurityPrinciplesIcon'
 
 import { EmptyIcon } from './icons/EmptyIcon'
 
@@ -116,6 +118,8 @@ export const icons = {
   enterprisesecuritycontrols: EnterpriseSecurityControlsIcon,
   managingreplays: ManagingReplaysIcon,
   billing: BillingIcon,
+  privacy: PrivacyPrinciplesIcon,
+  security: SecurityPrinciplesIcon,
   empty: EmptyIcon,
 }
 export function NavIcon({

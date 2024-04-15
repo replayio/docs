@@ -386,12 +386,12 @@ export const navigation: NavigationType = [
       {
         title: 'Privacy principles',
         href: '/additional-content/privacy-principles',
-        icon: 'empty',
+        icon: 'privacy',
       },
       {
         title: 'Security practices',
         href: '/additional-content/security-practices',
-        icon: 'empty',
+        icon: 'security',
       },
     ],
   },

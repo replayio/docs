@@ -20,7 +20,7 @@ import { WebdriverIOIcon } from './icons/WebdriverIOIcon'
 import { PuppeteerIcon } from './icons/PuppeteerIcon'
 import { ConditionalIcon } from './icons/ConditionalIcon'
 import { PlusButtonIcon } from './icons/PlusButtonIcon'
-import {PlayButtonIcon} from './icons/PlayButtonIcon'
+import { PlayButtonIcon } from './icons/PlayButtonIcon'
 import { CommentIcon } from './icons/CommentIcon'
 import { PrefixBadgeIcon } from './icons/PrefixBadgeIcon'
 import Chevron from './icons/Chevron'
@@ -44,6 +44,8 @@ import { FolderOpen } from './icons/FolderOpen'
 import { PullRequestIcon } from './icons/PullRequestIcon'
 import { AnalyticsIcon } from './icons/AnalyticsIcon'
 import { ReactIcon } from './icons/ReactIcon'
+import { PrivacyPrinciplesIcon } from './icons/PrivacyPrinciplesIcon'
+import { SecurityPrinciplesIcon } from './icons/SecurityPrinciplesIcon'
 
 export const icons = {
   bracketscurly: BracketsCurlyIcon,
@@ -88,13 +90,16 @@ export const icons = {
   folder: FolderOpen,
   pullrequest: PullRequestIcon,
   analytics: AnalyticsIcon,
-  react: ReactIcon
+  react: ReactIcon,
+  privacy: PrivacyPrinciplesIcon,
+  security: SecurityPrinciplesIcon,
 }
 
 export const iconStyles = {
   blue: '[--icon-foreground:theme(colors.slate.900)] [--icon-background:theme(colors.white)]',
-  amber:'[--icon-foreground:theme(colors.amber.900)] [--icon-background:theme(colors.amber.100)]',
-  pink:'[--icon-foreground:theme(colors.pink.900)] [--icon-background:theme(colors.pink.100)]'
+  amber:
+    '[--icon-foreground:theme(colors.amber.900)] [--icon-background:theme(colors.amber.100)]',
+  pink: '[--icon-foreground:theme(colors.pink.900)] [--icon-background:theme(colors.pink.100)]',
 }
 
 export function Icon({
