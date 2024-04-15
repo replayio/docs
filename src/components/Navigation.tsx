@@ -28,7 +28,7 @@ function ItemLink({
         className,
         pathname.includes(item.href)
           ? 'font-semibold text-sky-500'
-          : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300',
+          : 'text-gray-600 hover:text-gray-600 dark:text-gray-200',
       )}
     >
       <NavIcon
@@ -66,7 +66,7 @@ export function Navigation({
                         'flex w-full items-center justify-between rounded-md text-left font-semibold leading-6 hover:text-gray-900 dark:hover:text-gray-300',
                         pathname.includes(section.href)
                           ? 'text-gray-900 dark:text-gray-200'
-                          : 'text-gray-600 dark:text-gray-400',
+                          : 'text-gray-800 dark:text-gray-200',
                       )}
                     >
                       {section.title}
