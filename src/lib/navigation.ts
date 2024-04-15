@@ -36,7 +36,7 @@ export const navigation: NavigationType = [
     links: [
       {
         title: 'What is time travel?',
-        href: '/getting-started/what-is-time-travel',
+        href: '/time-travel-intro/what-is-time-travel',
         icon: 'hourglass',
       },
       {
@@ -76,22 +76,6 @@ export const navigation: NavigationType = [
     href: '/browser-devtools',
     links: [
       {
-        title: 'Replay Viewer',
-        href: '/browser-devtools/replay-viewer',
-        icon: 'video',
-      },
-
-      {
-        title: 'Source Viewer',
-        href: '/browser-devtools/source-viewer',
-        icon: 'folder',
-      },
-      {
-        title: 'Console Panel',
-        href: '/browser-devtools/console',
-        icon: 'console',
-      },
-      {
         title: 'Elements Panel',
         href: '/browser-devtools/elements-panel',
         icon: 'inspect',
@@ -102,9 +86,26 @@ export const navigation: NavigationType = [
         icon: 'rocket',
       },
       {
+        title: 'Console Panel',
+        href: '/browser-devtools/console',
+        icon: 'console',
+      },
+
+      {
+        title: 'Source Viewer',
+        href: '/browser-devtools/source-viewer',
+        icon: 'folder',
+      },
+
+      {
         title: 'Pause Panel',
         href: '/browser-devtools/pause-panel',
         icon: 'pause',
+      },
+      {
+        title: 'Replay Viewer',
+        href: '/browser-devtools/replay-viewer',
+        icon: 'video',
       },
     ],
   },

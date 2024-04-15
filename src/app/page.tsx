@@ -5,79 +5,79 @@ import { Hero } from '@/components/Hero'
 const cards: CardAttributes[] = [
   {
     icon: 'rewind',
-    title: 'Intro to time travel',
-    content:
-      'Record, replay, and debug your application with the power of time travel',
-    href: '/time-travel-intro/intro-to-time-travel',
+    title: 'Time travel',
+    content: 'Learn how to inspect your application in new ways.',
+    href: '/time-travel-intro/what-is-time-travel',
   },
   {
     icon: 'terminal',
     title: 'Browser DevTools',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/time-travel-intro/add-console-logs-on-the-fly',
+    content: 'Inspect your application with Browser DevTools after the fact.',
+    href: '/browser-devtools/elements-panel',
   },
   {
     icon: 'terminal',
     title: 'Framework DevTools',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
+    content: 'Inspect your application with Framework DevTools after the fact.',
+    href: '/framework-devtools/react-panel',
   },
   {
     icon: 'replay',
     title: 'Record your first replay',
-    content: 'Learn how to record your first replay in under a minute',
+    content: 'Record your app with with the Replay browser in under a minute.',
     href: '/getting-started/record-your-first-replay',
   },
   {
     icon: 'cypresssimple',
     title: 'Record your Cypress tests',
-    content: 'Integrate Replay Browser into your test run',
+    content: 'Learn how to setup our Cypress plugin and record your tests.',
     href: '/test-runners/cypress-io',
   },
   {
     icon: 'playwrightsimple',
     title: 'Record your Playwright tests',
-    content: 'Rewind, fast-forward and inspect your application',
-    href: '/devtools/console-panel',
+    content: 'Learn how to setup our Playwright plugin and record your tests.',
+    href: '/test-runners/playwright/installation',
   },
 ]
 
 const miniCards: CardAttributes[] = [
   {
     icon: 'terminal',
-    title: 'Add print statements',
-    content: 'How to add retroactive console logs to your replay',
-    href: '/devtools/console-panel',
-  },
-  {
-    icon: 'timeline',
-    title: 'Events timeline',
-    content: 'Travel in time and stop at a perfect moment',
-    href: '/test-runners/cypress-io',
-  },
-  {
-    icon: 'folder',
-    title: 'Source panel',
-    content: 'Search and explore your code execution',
-    href: '/devtools/console-panel',
-  },
-  {
-    icon: 'pullrequest',
-    title: 'Pull request comments',
-    content: 'Catch regressions before going to production',
-    href: '/devtools/console-panel',
-  },
-  {
-    icon: 'analytics',
-    title: 'Test suite analytics',
-    content: 'Getting ahead of test flaeks via Test suite analytics',
-    href: '/devtools/console-panel',
+    title: 'Live console logs',
+    content: 'Add console logs in your code with a single click.',
+    href: '/time-travel-intro/add-console-logs-on-the-fly',
   },
   {
     icon: 'react',
-    title: 'React panel',
-    content: 'Examine properties, state and hooks with time-travelling',
-    href: '/devtools/console-panel',
+    title: 'React components',
+    content: 'Inspect React component props, state, and hooks.',
+    href: '/framework-devtools/react-panel',
+  },
+  {
+    icon: 'folder',
+    title: 'Hit counts',
+    content: 'Explore your source code with built-in code coverage.',
+    href: '/browser-devtools/source-viewer',
+  },
+  {
+    icon: 'cypresssimple',
+    title: 'Cypress Timeline',
+    content:
+      'Debug your test as if it’s running locally with test step details.',
+    href: '/framework-devtools/cypress-timeline',
+  },
+  {
+    icon: 'analytics',
+    title: 'Top failing tests',
+    content: 'Burn down the backlog of failing and flaky tests.',
+    href: '/test-suites/top-failing-and-flaky-tests',
+  },
+  {
+    icon: 'analytics',
+    title: 'PR comments',
+    content: 'Catch regressions before they ship to prod with PR comments.',
+    href: '/test-suites/pr-comments',
   },
 ]
 
@@ -112,3 +112,18 @@ export default function Page() {
     </div>
   )
 }
+
+// **Inspect React components**
+// Inspect React component props, state, and hooks.
+
+// **Explore your source code**
+// Search, View, and explore your source code with built-in code coverage data.
+
+// **Cypress Timeline**
+// Debug your test as if it’s running locally with test step details and jump to code.
+
+// **PR comments**
+// Catch regressions before they ship to prod with PR comments.
+
+// **Top failing tests**
+// Burn down the flaky test backlog with test suite analytics.

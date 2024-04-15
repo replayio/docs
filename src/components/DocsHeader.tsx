@@ -52,7 +52,7 @@ export function DocsHeader({
           height={870}
         />
       )}
-      {image || description ? (
+      {!image && description ? (
         <div className="py-4">
           <hr className=" border-gray-200 dark:border-slate-600" />
         </div>
