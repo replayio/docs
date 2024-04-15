@@ -7,6 +7,7 @@ import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
+import Analytics from '@/components/Analytics'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,6 +22,7 @@ const lexend = localFont({
   variable: '--font-lexend',
 })
 
+const ogImage = '/images/og-image.png'
 export const metadata: Metadata = {
   title: {
     template: '%s - Docs',
@@ -28,6 +30,18 @@ export const metadata: Metadata = {
   },
   description:
     'Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.',
+  openGraph: {
+    title: 'Replay - The time-travel debugger from the future.',
+    description: 'Record and replay your application with DevTools.',
+    images: [{ url: ogImage, width: 1200, height: 630 }],
+  },
+  twitter: {
+    site: '@replayio',
+    title: 'Replay - The time-travel debugger from the future.',
+    description: 'Record and replay your application with DevTools.',
+    creator: '@replayio',
+    images: [{ url: ogImage, width: 1200, height: 630 }],
+  },
 }
 
 export default function RootLayout({
@@ -41,6 +55,9 @@ export default function RootLayout({
       className={clsx('h-full antialiased', inter.variable, lexend.variable)}
       suppressHydrationWarning
     >
+      <head>
+        <Analytics />
+      </head>
       <body className="flex min-h-full bg-white dark:bg-gray-900">
         <Providers>
           <Layout>{children}</Layout>
