@@ -33,6 +33,31 @@ import { Key } from './icons/Key'
 import { Home } from './icons/Home'
 import { ReplayLogomark } from './icons/ReplayLogomark'
 import { Record } from './icons/Record'
+import { RecordYourFirstReplayIcon } from './icons/RecordYourFirstReplayIcon'
+import { DebuggingTestsIcon } from './icons/DebuggingTestsIcon'
+import { ReplayChromeIcon } from './icons/ReplayChromeIcon'
+import { ReplayFirefoxIcon } from './icons/ReplayFirefoxIcon'
+import { ReplayNodeIcon } from './icons/ReplayNodeIcon'
+import { CommandsIcon } from './icons/CommandsIcon'
+import { UploadingSourceMapsIcon } from './icons/UploadingSourceMapsIcon'
+import { ReplayAPIsIcon } from './icons/ReplayAPIsIcon'
+import { GraphQLAPIIcon } from './icons/GraphQLAPIIcon'
+import { ReplayProtocolIcon } from './icons/ReplayProtocolIcon'
+import { ReplayDriverIcon } from './icons/ReplayDriverIcon'
+import { NextJSIcon } from './icons/NextJSIcon'
+import { GitHubEmbedsIcon } from './icons/GitHubEmbedsIcon'
+import { LoomEmbedsIcon } from './icons/LoomEmbedsIcon'
+import { ChromeRecorderIcon } from './icons/ChromeRecorderIcon'
+import { LoomIcon } from './icons/LoomIcon'
+import { BrowserDevToolsIcon } from './icons/BrowserDevToolsIcon'
+import { CLIIcon } from './icons/CLI'
+import { SettingUpATeamIcon } from './icons/SettingUpATeamIcon'
+import { OktaIntegrationIcon } from './icons/OktaIntegrationIcon'
+import { EnterpriseSecurityControlsIcon } from './icons/EnterpriseSecurityControlsIcon'
+import { ManagingReplaysIcon } from './icons/ManagingReplaysIcon'
+import { BillingIcon } from './icons/BillingIcon'
+
+import { EmptyIcon } from './icons/EmptyIcon'
 
 export const icons = {
   file: FileIcon,
@@ -67,7 +92,31 @@ export const icons = {
   key: Key,
   home: Home,
   replay: ReplayLogomark,
-  record: Record
+  record: Record,
+  recordyourfirstreplay: RecordYourFirstReplayIcon,
+  debuggingtests: DebuggingTestsIcon,
+  replaychrome: ReplayChromeIcon,
+  replayfirefox: ReplayFirefoxIcon,
+  replaynode: ReplayNodeIcon,
+  commands: CommandsIcon,
+  uploadingsourcemaps: UploadingSourceMapsIcon,
+  replayapis: ReplayAPIsIcon,
+  graphqlapi: GraphQLAPIIcon,
+  replayprotocol: ReplayProtocolIcon,
+  replaydriver: ReplayDriverIcon,
+  nextjs: NextJSIcon,
+  githubembeds: GitHubEmbedsIcon,
+  loomembeds: LoomEmbedsIcon,
+  chromerecorder: ChromeRecorderIcon,
+  loom: LoomIcon,
+  browserdevtools: BrowserDevToolsIcon,
+  cli: CLIIcon,
+  settingupateam: SettingUpATeamIcon,
+  oktaintegration: OktaIntegrationIcon,
+  enterprisesecuritycontrols: EnterpriseSecurityControlsIcon,
+  managingreplays: ManagingReplaysIcon,
+  billing: BillingIcon,
+  empty: EmptyIcon,
 }
 export function NavIcon({
   icon = 'file',
@@ -76,14 +125,17 @@ export function NavIcon({
 }: {
   icon?: keyof typeof icons
 } & Omit<React.ComponentPropsWithoutRef<'svg'>, 'color'>) {
-  let IconComponent = icons[icon]
+  let IconComponent = icons[icon] || FileIcon
 
   return (
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
       fill="none"
-      className={clsx(className, 'w-4 h-4 mr-2 fill-current text-gray-400 inline-block')}
+      className={clsx(
+        className,
+        'mr-2 inline-block h-4 w-4 fill-current text-gray-400',
+      )}
       {...props}
     >
       <IconComponent />

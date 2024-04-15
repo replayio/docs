@@ -229,27 +229,27 @@ export const navigation: NavigationType = [
       {
         title: 'Setting up a team',
         href: '/replay-teams/setting-up-a-team',
-        icon: 'console',
+        icon: 'settingupateam',
       },
       {
         title: 'Okta integration',
         href: '/replay-teams/okta-integration',
-        icon: 'console',
+        icon: 'oktaintegration',
       },
       {
         title: 'Enterprise security controls',
         href: '/replay-teams/enterprise-security-controls',
-        icon: 'console',
+        icon: 'enterprisesecuritycontrols',
       },
       {
         title: 'Managing replays',
         href: '/replay-teams/managing-replays',
-        icon: 'console',
+        icon: 'managingreplays',
       },
       {
         title: 'Billing',
         href: '/replay-teams/billing',
-        icon: 'console',
+        icon: 'billing',
       },
     ],
   },
@@ -260,17 +260,17 @@ export const navigation: NavigationType = [
       {
         title: 'Replay Chrome',
         href: '/replay-runtimes/replay-chrome',
-        icon: 'console',
+        icon: 'replaychrome',
       },
       {
         title: 'Replay Firefox',
         href: '/replay-runtimes/replay-firefox',
-        icon: 'console',
+        icon: 'replayfirefox',
       },
       {
         title: 'Replay Node',
         href: '/replay-runtimes/replay-node',
-        icon: 'console',
+        icon: 'replaynode',
       },
     ],
   },
@@ -278,11 +278,11 @@ export const navigation: NavigationType = [
     title: 'Replay CLI',
     href: '/replay-cli',
     links: [
-      { title: 'Commands', href: '/replay-cli/commands', icon: 'console' },
+      { title: 'Commands', href: '/replay-cli/commands', icon: 'empty' },
       {
         title: 'Uploading source maps',
         href: '/replay-cli/source-maps',
-        icon: 'console',
+        icon: 'cli',
       },
     ],
   },
@@ -293,41 +293,41 @@ export const navigation: NavigationType = [
       {
         title: 'Replay APIs',
         href: '/integrations/replay-apis',
-        icon: 'console',
+        icon: 'replayapis',
         links: [
           {
             title: 'GraphQL API',
             href: '/integrations/replay-apis/graphql-api',
-            icon: 'console',
+            icon: 'graphqlapi',
           },
           {
             title: 'Replay Protocol',
             href: '/integrations/replay-apis/replay-protocol',
-            icon: 'console',
+            icon: 'replayprotocol',
           },
           {
             title: 'Replay Driver',
             href: '/integrations/replay-apis/replay-driver',
-            icon: 'console',
+            icon: 'replay-driver',
           },
         ],
       },
       {
         title: 'Frameworks & libraries',
         href: '/integrations/frameworks-libraries',
-        icon: 'console',
+        icon: 'empty',
         links: [
           {
             title: 'NextJS',
             href: '/integrations/frameworks-libraries/nextjs',
-            icon: 'console',
+            icon: 'empty',
           },
         ],
       },
       {
         title: '3rd Party integrations',
         href: '/integrations/3rd-party-integrations',
-        icon: 'console',
+        icon: 'empty',
         links: [
           {
             title: 'GitHub Embeds',
@@ -359,17 +359,17 @@ export const navigation: NavigationType = [
       {
         title: `Chrome Recorder`,
         href: '/comparison/chrome',
-        icon: 'console',
+        icon: 'chromerecorder',
       },
       {
         title: 'Loom',
         href: '/comparison/loom',
-        icon: 'console',
+        icon: 'loom',
       },
       {
         title: 'Browser DevTools',
         href: '/comparison/devtools',
-        icon: 'console',
+        icon: 'browserdevtools',
       },
     ],
   },
@@ -380,12 +380,12 @@ export const navigation: NavigationType = [
       {
         title: 'Privacy principles',
         href: '/additional-content/privacy-principles',
-        icon: 'console',
+        icon: 'empty',
       },
       {
         title: 'Security practices',
         href: '/additional-content/security-practices',
-        icon: 'console',
+        icon: 'empty',
       },
     ],
   },

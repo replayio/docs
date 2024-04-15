@@ -1,4 +1,4 @@
-export function ReduxIcon() {
+export function CLIIcon() {
   return (
     <path
       fill="currentColor"
@@ -7,4 +7,4 @@ export function ReduxIcon() {
   )
 }
 
-export default ReduxIcon
+export default CLIIcon

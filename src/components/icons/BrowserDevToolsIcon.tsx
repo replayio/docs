@@ -1,4 +1,4 @@
-export function ReduxIcon() {
+export function BrowserDevToolsIcon() {
   return (
     <path
       fill="currentColor"
@@ -7,4 +7,4 @@ export function ReduxIcon() {
   )
 }
 
-export default ReduxIcon
+export default BrowserDevToolsIcon
