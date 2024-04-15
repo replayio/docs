@@ -8,13 +8,13 @@ import Faq from '@components/Faq'
 
 <Faq>
   <Faq.Question>
-  ### Do I need to use `line` reporter along with `@replayio/playwright/reporter`?
+  ## Do I need to use `line` reporter along with `@replayio/playwright/reporter`?
   </Faq.Question>
   <Faq.Answer>
   Using `line` reporter is not required. `line` reporter will print out information about playwright test run to your terminal.
   </Faq.Answer>
   <Faq.Question>
-### How do I group tests ran in a matrix or across multiple runners into the same test run?
+## How do I group tests ran in a matrix or across multiple runners into the same test run?
 </Faq.Question>
 <Faq.Answer>
 By default, each invocation of Playwright is grouped into a test run by a UUID generated when the run begins. To group multiple invocations of Playwright into the same run, set `RECORD_REPLAY_METADATA_TEST_RUN_ID` to the same UUID value and that will be used instead of generating a UUID for each.
@@ -52,7 +52,7 @@ jobs:
 </Faq.Answer>
 
 <Faq.Question>
-### What’s in the `.replay` folder?
+## What’s in the `.replay` folder?
 </Faq.Question>
 <Faq.Answer>
 `/.replay/runtimes` - this is where the replay browser(s) are installed
@@ -63,14 +63,14 @@ If you’re trying to cache the browser download, cache `~/.replay/runtimes` or 
 </Faq.Answer>
 
 <Faq.Question>
-### How do I confirm that the browsers are installed correctly
+## How do I confirm that the browsers are installed correctly
 </Faq.Question>
 <Faq.Answer>
 Run `ls -alR ~/.replay/runtimes` to see the contents of the runtimes folder.
 </Faq.Answer>
 
 <Faq.Question>
-### What other environment variables can I configure?
+## What other environment variables can I configure?
 </Faq.Question>
 <Faq.Answer>
 `REPLAY_SKIP_BROWSER_DOWNLOAD` - keeps browsers from being downloaded and installed during `npm install`
