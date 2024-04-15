@@ -171,7 +171,7 @@ export const navigation: NavigationType = [
       { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
       {
         title: 'Cypress.io',
-        href: '',
+        href: '/test-runners/cypress-io',
         icon: 'cypress',
         links: [
           {
