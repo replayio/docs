@@ -24,7 +24,7 @@ function ItemLink({
       href={item.href}
       onClick={onLinkClick}
       className={clsx(
-        `block h-full w-full pl-2.5 transition-all`,
+        `ml-.5 block h-full w-full pl-1 transition-all`,
         className,
         pathname.includes(item.href)
           ? 'font-semibold text-sky-500'
