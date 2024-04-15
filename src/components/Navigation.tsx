@@ -80,7 +80,7 @@ export function Navigation({
                           open
                             ? 'rotate-90 '
                             : 'text-gray-600 dark:text-gray-400',
-                          'h-7 w-7 shrink-0',
+                          'w-5 shrink-0',
                           pathname.includes(section.href) &&
                             'text-gray-900 dark:text-gray-200',
                         )}

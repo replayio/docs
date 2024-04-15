@@ -5,6 +5,13 @@ import { marked } from 'marked'
 
 const LOCAL_BASE = 'http://localhost:3000'
 
+const excludePage = [
+  './src/app/test-runners/cypress-io/panel.md',
+  './src/app/test-runners/cypress-io/dashboard.md',
+  './src/app/test-runners/_archive/jest.md',
+]
+const excludeUrl = ['https://webreplay.us.auth0.com/login/callback?connection=']
+
 function isFullUrl(url: string): boolean {
   // A regular expression to check if the URL starts with http://, https://, or //
   return /^(https?:\/\/|\/\/)/.test(url)
@@ -38,6 +45,10 @@ async function checkLinksInFile(filePath: string): Promise<void> {
     if (link.match(/^(mailto|blob)/)) {
       continue
     }
+
+    if (excludeUrl.includes(link)) {
+      continue
+    }
     const url = isFullUrl(link) ? link : `${LOCAL_BASE}${link}`
 
     const isOk = await checkLink(url)
@@ -51,6 +62,9 @@ async function main(): Promise<void> {
   const glob = new Glob('./src/app/**/page.md')
 
   for await (const file of glob.scan('.')) {
+    if (excludePage.includes(file)) {
+      continue
+    }
     await checkLinksInFile(file)
   }
 }
