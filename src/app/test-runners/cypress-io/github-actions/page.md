@@ -1,15 +1,12 @@
 ---
-title: Integrate Replay with Cypress on GitHub
+title: GitHub actions
 ---
-import { Callout } from 'nextra/components'
-
-# GitHub Actions
 
 Cypress team has created its [official GitHub Action](https://github.com/cypress-io/github-action). The action provides dependency installation, built-in caching, and multiple options for advanced workflow configuration. Using this GitHub Action is optional and some teams prefer their own custom setup. Replay integrates well with both workflows, as shown in examples below
 
-<Callout type="default" emoji="💡">
+{% callout %}
 These instructions assume that you have already installed [`@replayio/cypress`](https://www.npmjs.com/package/@replayio/cypress) plugin into your project. [Follow the instructions on this page](/test-suites/cypress/installation) to learn how to install the plugin.
-</Callout>
+{% /callout %}
 
 ## Using GitHub Actions with cypress-io/github-action
 

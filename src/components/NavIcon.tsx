@@ -62,6 +62,9 @@ import { IntegrationsIcon } from './icons/IntegrationsIcon'
 import { FrameworksIcon } from './icons/FrameworksIcon'
 
 import { EmptyIcon } from './icons/EmptyIcon'
+import { OtherCiProviders } from './icons/OtherCiProviders'
+import { SettingsRounded } from './icons/SettingsRounded'
+import { Faq } from './icons/Faq'
 
 export const icons = {
   file: FileIcon,
@@ -124,7 +127,9 @@ export const icons = {
   security: SecurityPrinciplesIcon,
   frameworks: FrameworksIcon,
   integrations: IntegrationsIcon,
-
+  otherciproviders: OtherCiProviders,
+  settings: SettingsRounded,
+  faq: Faq,
   empty: EmptyIcon,
 }
 export function NavIcon({

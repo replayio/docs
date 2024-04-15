@@ -1,4 +1,5 @@
 'use client'
+import clsx from 'clsx';
 import React, { Fragment, useCallback, useEffect, useState } from 'react'
 
 export function Steps({
@@ -32,14 +33,14 @@ export function Steps({
 
   const splitArrayResult = splitArray(React.Children.toArray(children));
   return (
-    <div className='mt-12 relative'>
+    <>
       {splitArrayResult.map((section, sectionIndex) => (
         <div key={sectionIndex}>
-          <div className="flex before:block before:relative before:-z-10 before:mt-10 before:mb-2 before:left-[18px] before:top-0 before:bottom-0 before:border-2 before:border-sky-500/20" style={{marginLeft: '-50px'}}>
-            <div className="mr-4 mt-0 flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full border-sky-500 border-[3px] font-bold text-sky-500 ">
+          <div className={clsx("flex before:block before:relative before:-z-10 before:mt-28 before:-mb-12 before:left-[18px] before:top-0 before:bottom-0 before:border-2 before:border-sky-500/20", sectionIndex+1 === splitArrayResult.length && 'before:-mb-0')} style={{marginLeft: '-50px'}}>
+            <div className="mr-4 mt-16 flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full border-sky-500 border-[3px] font-bold text-sky-500 ">
               {sectionIndex + 1}
             </div>
-            <div className='w-full -mt-12 '>
+            <div className='w-full'>
               {section.map((item, itemIndex) => (
                 <Fragment key={itemIndex}>{item}</Fragment>
               ))}
@@ -47,6 +48,6 @@ export function Steps({
           </div>
         </div>
       ))}
-    </div>
+    </>
   )
 }

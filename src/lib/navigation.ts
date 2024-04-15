@@ -132,7 +132,6 @@ export const navigation: NavigationType = [
       },
     ],
   },
-
   {
     title: 'Replay Test Suites',
     href: '/test-suites',
@@ -184,12 +183,59 @@ export const navigation: NavigationType = [
             href: '/test-runners/cypress-io/debugging-tests',
             icon: 'debuggingtests',
           },
+          {
+            title: 'Recording options',
+            href: '/test-runners/cypress-io/recording-options',
+            icon: 'settings',
+          },
+          {
+            title: 'GitHub actions',
+            href: '/test-runners/cypress-io/github-actions',
+            icon: 'githubembeds'
+          },
+          {
+            title: 'Other CI providers',
+            href: '/test-runners/cypress-io/other-ci-providers',
+            icon: 'otherciproviders'
+          },
+          {
+            title: 'FAQ',
+            href: '/test-runners/cypress-io/faq',
+            icon: 'faq'
+          }
         ],
       },
       {
         title: 'Playwright',
-        href: '/test-runners/playwright/installation',
+        href: '/test-runners/playwright',
         icon: 'playwright',
+        links: [
+          { 
+            title: 'Record your first replay',
+            href: '/test-runners/playwright/record-your-first-replay',
+            icon: 'record' 
+          },
+          {
+            title: 'Debugging tests',
+            href: '/test-runners/playwright/debugging-tests',
+            icon: 'debuggingtests'
+          },
+          {
+            title: 'GitHub actions',
+            href: '/test-runners/playwright/githu-actions',
+            icon: 'githubembeds'
+          },
+          {
+            title: 'Other CI providers',
+            href: '/test-runners/playwright/other-ci-providers',
+            icon: 'otherciproviders'
+          },
+          {
+            title: 'FAQ',
+            href: '/test-runners/playwright/faq',
+            icon: 'faq'
+          }
+        ]
       },
       { title: 'Selenium', href: '/test-runners/selenium', icon: 'selenium' },
       {

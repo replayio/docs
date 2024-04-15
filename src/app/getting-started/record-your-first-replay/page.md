@@ -5,12 +5,47 @@ description: Our goal is for recording a replay to be as easy recording a video.
 
 {% steps %}
 
-## Start recording
+## Install Replay CLI
 
-Run the following command to launch the Replay browser and start recording your application.
+To download and install Replay CLI, run the following command:
+
+{% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
+{% tab %}
 
 ```sh
-npx replayio record
+npm i -g replayio
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+yarn i -g replayio
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+pnpm i -g replayio
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+bun i -g replayio
+```
+
+{% /tab %}
+{% /tabs %}
+
+## Start recording
+
+Run the following command to open Replay Browser and start recording your application. Replay Browser will record everything and create a replay which you will be able to view in the next step.
+
+```sh
+replayio record
 ```
 
 {% callout showIcon=false title=""%}
@@ -18,13 +53,28 @@ You will be prompted to log into Replay with your default browser the first time
 
 {% /callout%}
 
-## View your replay
+{% video src="recordCli" /%}
 
-The CLI will upload replays in the background and give you a url every time you close a tab.
+## Upload your replay
+
+Once you close the Replay browser, your recoding is ready to be uploaded and you’ll be prompted in the CLI to confirm the upload.
 
 ```sh
-View replay of localhost:3000
-https://app.replay.io/recording/5d663446-d855-44c5-934-2ff20eaff9e2
+New recording found. Would you like to upload it? (Y/n)
+```
+
+If you decide to upload your recording later, you’ll be able to access it via `replayio list` command. Read more in [Replay CLI command docs](/replay-cli/commands).
+
+## View your replay
+
+Once the upload is completed, CLI will give you the replay url where you can go start debugging.
+
+```sh
+Uploading recordings...
+a616009e.. overboard.dev Now 7.5s (uploaded)
+
+View recording at:
+https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25
 ```
 
 {% /steps %}

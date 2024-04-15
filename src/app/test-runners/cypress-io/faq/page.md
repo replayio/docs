@@ -8,13 +8,13 @@ import Faq from '@components/Faq'
 
 <Faq>
   <Faq.Question>
-    ### How do I hide the Cypress panel?
+    ## How do I hide the Cypress panel?
   </Faq.Question>
   <Faq.Answer>
     `CYPRESS_NO_COMMAND_LOG` should work in versions less than 10 and greater than 10.3 (ish)...
   </Faq.Answer>
   <Faq.Question>
-  ### How do I get debug logs?
+  ## How do I get debug logs?
   </Faq.Question>
   <Faq.Answer>
     - Plugin debugging: logs about what the plugin is doing (no support file logs)
@@ -25,7 +25,7 @@ import Faq from '@components/Faq'
     - `DEBUG=cypress:*,replay:* RECORD_REPLAY_VERBOSE=1`
   </Faq.Answer>
   <Faq.Question>
-  ### How do I use Replay with earlier versions of Cypress?
+  ## How do I use Replay with earlier versions of Cypress?
   </Faq.Question>
   <Faq.Answer>
   Replay works best with Cypress 10.9 or later but can be used with Cypress 8 or later with some additional environment configuration:
@@ -58,7 +58,7 @@ import Faq from '@components/Faq'
   ```
   </Faq.Answer>
   <Faq.Question>
-  ### How do I group tests ran in a matrix or across multiple runners into the same test run?
+  ## How do I group tests ran in a matrix or across multiple runners into the same test run?
   </Faq.Question>
   <Faq.Answer>
   By default, each invocation of Cypress is grouped into a test run by a UUID generated when the run begins. To group multiple invocations of Cypress into the same run, set `RECORD_REPLAY_METADATA_TEST_RUN_ID` to the same UUID value and that will be used instead of generating a UUID for each.
@@ -94,7 +94,7 @@ import Faq from '@components/Faq'
   ```
   </Faq.Answer>
   <Faq.Question>
-  ### What’s in the `.replay` folder?
+  ## What’s in the `.replay` folder?
   </Faq.Question>
   <Faq.Answer>
   `/.replay/runtimes` - this is where the replay browser(s) are installed
@@ -104,13 +104,13 @@ import Faq from '@components/Faq'
   If you’re trying to cache the browser download, cache `~/.replay/runtimes` or simply cache it before creating replays.
   </Faq.Answer>
   <Faq.Question>
-  ### How do I confirm that the browsers are installed correctly
+  ## How do I confirm that the browsers are installed correctly
   </Faq.Question>
 
   Run `ls -alR ~/.replay/runtimes` to see the contents of the runtimes folder.
 
   <Faq.Question>
-  ### What other environment variables can I configure?
+  ## What other environment variables can I configure?
   </Faq.Question>
   <Faq.Answer>
   `REPLAY_SKIP_BROWSER_DOWNLOAD` - keeps browsers from being downloaded and installed during `npm install`

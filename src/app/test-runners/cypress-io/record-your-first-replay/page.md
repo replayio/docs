@@ -1,5 +1,5 @@
 ---
-title: Record Your First Replay
+title: Record your first replay
 description: Recording your test with the Replay browser is as simple as installing a Cypress plugin. This doc shows how you can record your first test in under two minutes.
 ---
 {% steps %}
@@ -84,9 +84,10 @@ export default defineConfig({
 {% /tab %}
 {% /tabs %}
 
-{% callout title="Obtaining API key"%}
+## Generate and save your API key
 In order to automatically upload your test replays you need to save an API key in your environment. To generate an API key, log in to Replay App open the settings menu. [Read more](#).
-{% /callout %}
+
+{% video src="generateApiKey" /%}
 
 ## Run Your Test With Replay Browser
 With everything set up, you can now run your test locally:
@@ -118,15 +119,17 @@ After your test finishes it will generate a link to Replay DevTools where you ca
 
 <!-- todo: add video -->
 
-{% /steps %}
+## Done!
+You’re ready to inspect your local test run in Replay DevTools now. You can also record your tests in your CI environment. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/test-runners/cypress-io/github-actions) and [other CI providers](/test-runners/cypress-io/other-ci-providers).
 
+{% /steps %}
 
 {% quick-links title="Read more" description="Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools" %}
 
 {% quick-link 
   title="Record Your CI Test Run" 
   icon="build" 
-  href="#" 
+  href="/test-runners/cypress-io/github-actions" 
   description="Learn how to integrate Replay into your Continuous integration service" 
 /%}
 
@@ -134,7 +137,7 @@ After your test finishes it will generate a link to Replay DevTools where you ca
 {% quick-link 
   title="Replay DevTools" 
   icon="jumptocode" 
-  href="#" 
+  href="/browser-devtools/console" 
   description="Learn how to use Replay DevTools to debug your tests." 
 /%}
 
@@ -142,16 +145,15 @@ After your test finishes it will generate a link to Replay DevTools where you ca
 {% quick-link 
   title="Test Suite Management" 
   icon="treeview" 
-  href="#" 
+  href="/test-suites/top-failing-and-flaky-tests" 
   description="Test Suite Dashboard helps you stay on top of your test suite health." 
 /%}
 
 {% quick-link 
   title="Debugging tips" 
-  icon="console" 
-  href="#" 
+  icon="debbugingtests" 
+  href="/test-runners/cypress-io/debugging-tests" 
   description="Learn about how to effectively debug flaky or failing tests" 
 /%}
-
 
 {% /quick-links %}

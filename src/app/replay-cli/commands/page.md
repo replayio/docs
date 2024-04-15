@@ -134,18 +134,15 @@ ID         Host               Process  Date     Duration  Status
 #### Options
 
 {% table %}
-
 - Option
 - Description
-
 ---
-
 - `--json`
 - prints out the full list of replays with details
-
 ---
 
-## {% /table%}
+{% /table %}
+---
 
 ### login{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
 
@@ -263,7 +260,7 @@ Deleting the following recording(s)
 
 ---
 
-## {% /table%}
+{% /table%}
 
 ### update{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
 
@@ -336,7 +333,8 @@ https://app.replay.io/recording/d1bd8025-cc11-473a-bd3d-997cb68050fa
 
 - –
 - displays interactive menu
-  {% /table%}
+
+{% /table%}
 
 ---
 
