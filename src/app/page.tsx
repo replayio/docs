@@ -37,7 +37,7 @@ const cards: CardAttributes[] = [
     icon: 'playwrightsimple',
     title: 'Record your Playwright tests',
     content: 'Learn how to setup our Playwright plugin and record your tests.',
-    href: '/test-runners/playwright/installation',
+    href: '/test-runners/playwright/record-your-first-replay',
   },
 ]
 
