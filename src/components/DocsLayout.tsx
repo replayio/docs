@@ -8,10 +8,12 @@ import { collectSections } from '@/lib/sections'
 
 export function DocsLayout({
   children,
+  documentTitle,
   frontmatter: { title, description, image },
   nodes,
 }: {
   children: React.ReactNode
+  documentTitle: string
   frontmatter: { title?: string; description?: string; image?: string }
   nodes: Array<Node>
 }) {
@@ -25,7 +27,12 @@ export function DocsLayout({
       >
         <div className="flex w-full flex-col  items-center">
           <article className=" grow lg:max-w-4xl  lg:pl-16 lg:pr-0 xl:px-16">
-            <DocsHeader title={title} description={description} image={image} />
+            <DocsHeader
+              description={description}
+              documentTitle={documentTitle}
+              image={image}
+              title={title}
+            />
             <Prose>{children}</Prose>
           </article>
           <PrevNextLinks />

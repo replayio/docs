@@ -1,21 +1,14 @@
 import { icons } from '@/components/NavIcon'
 
-export interface NavigationItemLink {
-  title: string
+export type NavigationItem = {
   href: string
   icon?: keyof typeof icons
-  links?: NavigationItemLink[]
-  subLinks?: NavigationItemLink[]
+  links?: NavigationItem[]
+  omitFromDocumentTitle?: boolean
+  title: string
 }
 
-type NavigationType = Array<{
-  title: string
-  href: string
-  links: NavigationItemLink[]
-  subLinks?: NavigationItemLink[]
-}>
-
-export const navigation: NavigationType = [
+export const navigation: NavigationItem[] = [
   {
     title: 'Getting started',
     href: '/getting-started',
@@ -161,12 +154,12 @@ export const navigation: NavigationType = [
       //   href: '/test-suites/test-flake-detection',
       //   icon: 'flake',
       // },
-     
     ],
   },
   {
     title: 'Test Runners',
     href: '/test-runners',
+    omitFromDocumentTitle: true,
     links: [
       { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
       {
@@ -197,18 +190,18 @@ export const navigation: NavigationType = [
           {
             title: 'GitHub actions',
             href: '/test-runners/cypress-io/github-actions',
-            icon: 'githubembeds'
+            icon: 'githubembeds',
           },
           {
             title: 'Other CI providers',
             href: '/test-runners/cypress-io/other-ci-providers',
-            icon: 'otherciproviders'
+            icon: 'otherciproviders',
           },
           {
             title: 'FAQ',
             href: '/test-runners/cypress-io/faq',
-            icon: 'faq'
-          }
+            icon: 'faq',
+          },
         ],
       },
       {
@@ -216,10 +209,10 @@ export const navigation: NavigationType = [
         href: '',
         icon: 'playwright',
         links: [
-          { 
+          {
             title: 'Record your first replay',
             href: '/test-runners/playwright/record-your-first-replay',
-            icon: 'record' 
+            icon: 'record',
           },
           // {
           //   title: 'Debugging tests',
@@ -229,19 +222,19 @@ export const navigation: NavigationType = [
           {
             title: 'GitHub actions',
             href: '/test-runners/playwright/github-actions',
-            icon: 'githubembeds'
+            icon: 'githubembeds',
           },
           {
             title: 'Other CI providers',
             href: '/test-runners/playwright/other-ci-providers',
-            icon: 'otherciproviders'
+            icon: 'otherciproviders',
           },
           {
             title: 'FAQ',
             href: '/test-runners/playwright/faq',
-            icon: 'faq'
-          }
-        ]
+            icon: 'faq',
+          },
+        ],
       },
       { title: 'Selenium', href: '/test-runners/selenium', icon: 'selenium' },
       {

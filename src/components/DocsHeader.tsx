@@ -1,21 +1,23 @@
 'use client'
-import { usePathname } from 'next/navigation'
 import { navigation } from '@/lib/navigation'
+import { usePathname } from 'next/navigation'
 import { Figure } from './Figure'
 
 export function DocsHeader({
-  title,
   description,
+  documentTitle,
   image,
+  title,
 }: {
-  title?: string
   description?: string
+  documentTitle: string
   image?: string
+  title?: string
 }) {
   let pathname = usePathname()
 
-  let section = navigation.find((section) =>
-    section.links.find((link) => link.href === pathname),
+  let section = navigation.find(
+    (section) => section.links?.find((link) => link.href === pathname),
   )
 
   if (!title && !section) {
@@ -24,6 +26,7 @@ export function DocsHeader({
 
   return (
     <header className="space-y-1">
+      <title>{documentTitle}</title>
       {navigation && (
         <p className="font-display text-sm font-medium text-sky-500">
           {section?.title}
