@@ -67,7 +67,7 @@ function Header() {
           <div className="relative flex flex-grow basis-0 items-center">
             <Link href="/" aria-label="Home page">
               <Logomark className="h-7 w-7 lg:hidden" fill={theme == 'dark' ? 'white' : 'dark'} />
-              <Logo className="hidden h-6 w-auto fill-gray-700 lg:block dark:fill-sky-100" />
+              <Logo className="hidden h-6 w-auto lg:block" fill={theme == 'dark' ? 'white' : 'dark'} />
             </Link>
           </div>
           <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
