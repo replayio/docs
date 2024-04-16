@@ -50,5 +50,5 @@ export default {
   Video,
   Steps,
   TwoColumns,
-  Group
+  Group,
 }

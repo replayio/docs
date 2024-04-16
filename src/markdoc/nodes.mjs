@@ -1,9 +1,11 @@
 import { nodes as defaultNodes, Tag } from '@markdoc/markdoc'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import yaml from 'js-yaml'
+import { headers } from 'next/headers'
 
 import { DocsLayout } from '@/components/DocsLayout'
 import { Fence } from '@/components/Fence'
+import { getDocumentTitle } from '@/lib/getDocumentTitle'
 
 let documentSlugifyMap = new Map()
 
@@ -14,9 +16,15 @@ const nodes = {
     transform(node, config) {
       documentSlugifyMap.set(config, slugifyWithCounter())
 
+      const heads = headers()
+      const pathname = heads.get('x-pathname')
+
+      const title = getDocumentTitle(pathname)
+
       return new Tag(
         this.render,
         {
+          documentTitle: title,
           frontmatter: yaml.load(node.attributes.frontmatter),
           nodes: node.children,
         },
@@ -57,14 +65,14 @@ const nodes = {
         type: String,
       },
       lineNumbers: {
-        type: Boolean
+        type: Boolean,
       },
       fileName: {
-        type: Boolean
+        type: Boolean,
       },
       highlight: {
-        type: Array
-      }
+        type: Array,
+      },
     },
   },
 }
