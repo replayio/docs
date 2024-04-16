@@ -48,8 +48,6 @@ function Header() {
     }
   }, [])
 
-  const { theme } = useTheme()
-
   return (
     <header
       className={clsx(
@@ -66,8 +64,8 @@ function Header() {
           </div>
           <div className="relative flex flex-grow basis-0 items-center">
             <Link href="/" aria-label="Home page">
-              <Logomark className="h-7 w-7 lg:hidden" fill={theme == 'dark' ? 'white' : 'dark'} />
-              <Logo className="hidden h-6 w-auto fill-gray-700 lg:block dark:fill-sky-100" />
+              <Logomark className="h-7 w-7 lg:hidden fill-black dark:fill-white"  />
+              <Logo className="hidden h-6 w-auto lg:block fill-black dark:fill-white" />
             </Link>
           </div>
           <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
