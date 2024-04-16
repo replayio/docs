@@ -13,7 +13,7 @@ export function DocsLayout({
   nodes,
 }: {
   children: React.ReactNode
-  documentTitle: string | undefined
+  documentTitle: string
   frontmatter: { title?: string; description?: string; image?: string }
   nodes: Array<Node>
 }) {

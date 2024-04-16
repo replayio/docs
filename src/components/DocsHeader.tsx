@@ -10,7 +10,7 @@ export function DocsHeader({
   title,
 }: {
   description?: string
-  documentTitle: string | undefined
+  documentTitle: string
   image?: string
   title?: string
 }) {
@@ -26,9 +26,7 @@ export function DocsHeader({
 
   return (
     <header className="space-y-1">
-      <title>
-        {documentTitle ? `Replay docs: ${documentTitle}` : 'Replay docs'}
-      </title>
+      <title>{documentTitle}</title>
       {navigation && (
         <p className="font-display text-sm font-medium text-sky-500">
           {section?.title}

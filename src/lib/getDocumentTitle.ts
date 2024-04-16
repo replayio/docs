@@ -39,4 +39,6 @@ export function getDocumentTitle(pathname: string) {
       })
     }
   }
+
+  return 'Replay docs'
 }
