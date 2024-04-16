@@ -4,16 +4,16 @@ title: Managing replays
 
 ## Moving replays between teams
 
-There are two ways to transfer a replay between teams.
+The replay Info Panel can be used to move a replay to another team:
 
-1.  The actions dropdown in the Library
+1. Click the "Share" button in the top right hand corner of the replay
+2. Click the "Team" dropdown menu
+3. Select a team
 
-2.  The privacy dropdown in the replay Info Panel
+## Sharing a replay
 
-## Moving a replay from within DevTools
+The replay Info Panel can be used to share a replay with another person:
 
-{% figure alt="Elements panel" src="/images/image.png" height=870 width=870/%}
-
-## Moving a replay from the Library
-
-{% figure alt="Elements panel" src="/images/image.png" height=870 width=870/%}
+1. Click the "Share" button in the top right hand corner of the replay
+2. Type an email address into the "Add People" input
+3. Press Enter to confirm
