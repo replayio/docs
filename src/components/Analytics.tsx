@@ -7,7 +7,10 @@ import mixpanel from 'mixpanel-browser'
 export default function Analytics() {
   useEffect(() => {
     LogRocket.init('4sdo4i/replay-docs')
-    mixpanel.init('ffaeda9ef8fb976a520ca3a65bba5014')
+    mixpanel.init('ffaeda9ef8fb976a520ca3a65bba5014', {
+      track_pageview: 'url-with-path',
+    })
+
     mixpanel.track('Loaded docs.replay.io')
   }, [])
 
