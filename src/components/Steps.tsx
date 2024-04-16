@@ -36,7 +36,7 @@ export function Steps({
     <>
       {splitArrayResult.map((section, sectionIndex) => (
         <div key={sectionIndex}>
-          <div className={clsx("flex before:block before:relative before:-z-10 before:mt-28 before:-mb-12 before:left-[18px] before:top-0 before:bottom-0 before:border-2 before:border-sky-500/20", sectionIndex+1 === splitArrayResult.length && 'before:-mb-0')} style={{marginLeft: '-50px'}}>
+          <div className={clsx("flex md:before:block before:relative before:-z-10 before:mt-28 before:-mb-12 before:left-[18px] before:top-0 before:bottom-0 before:border-2 before:border-sky-500/20 lg:-ml-[50px] ml-0", sectionIndex+1 === splitArrayResult.length && 'before:mb-0')}>
             <div className="mr-4 mt-16 flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full border-sky-500 border-[3px] font-bold text-sky-500 ">
               {sectionIndex + 1}
             </div>
