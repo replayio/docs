@@ -8,8 +8,8 @@ export function Basic({
     children: React.ReactNode 
     icon: React.ComponentProps<typeof Icon>['icon'] }) {
   return (
-    <div className="flex" style={{marginLeft: '-50px'}}>
-      <div className="mr-4 mt-12 flex-shrink-0">
+    <div className="flex lg:-ml-[50px] ml-0">
+      <div className="mr-4 mt-16 flex-shrink-0">
         <Icon icon={icon} className="h-9 w-9 fill-slate-50 dark:fill-gray-950" />
       </div>
       <div>
