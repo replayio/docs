@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
-import { navigation, NavigationItemLink } from '@/lib/navigation'
+import { navigation, NavigationItem } from '@/lib/navigation'
 import { Disclosure } from '@headlessui/react'
 import { Icon } from './Icon'
 import { NavIcon } from './NavIcon'
@@ -14,7 +14,7 @@ function ItemLink({
   onLinkClick,
   className,
 }: {
-  item: NavigationItemLink
+  item: NavigationItem
   pathname: string
   onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
   className?: string
@@ -92,7 +92,7 @@ export function Navigation({
                       className="ml-1 pr-4 text-sm"
                       role="list"
                     >
-                      {section.links.map((item) => (
+                      {section.links?.map((item) => (
                         <li key={item.title}>
                           <Disclosure.Button className="relative h-7 w-full rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10 dark:hover:text-white">
                             <ItemLink
