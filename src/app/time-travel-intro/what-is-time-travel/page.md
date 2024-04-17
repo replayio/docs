@@ -30,13 +30,13 @@ This is where time travel comes in. When you’re in Replay DevTools, you’re a
     width=640
 /%}
 
-Time travel is one of those radical ideas which sound simple when you first hear them, but then take awhile to sink in. The first time you’re in Replay DevTools, the UI will look familiar to Chrome DevTools and VS Code, but time travel will feel weird and uncomfortable. That’s okay. Give it five minutes and you’ll become a time traveler for life.
+Time travel is one of those radical ideas which sounds simple when you first hear them, but then take awhile to sink in. The first time you’re in Replay DevTools, the UI will look familiar to Chrome DevTools and VS Code, but time travel will feel weird and uncomfortable. That’s okay. Give it five minutes and you’ll become a time traveler for life.
 
 ## Bringing time travel mainstream
 
 Replay started as an R&D project at Mozilla called WebReplay alongside Rust and WebAssembly because when we built the first time travel debugger for C++ ten years ago it made some of the most difficult bugs in Firefox’s Graphics and JS engine tractable.
 
-We knew we had something valuable when six months into starting Replay some of the top open source developers were using Replay to fix some of the most difficult bugs in Redux, React, and other popular open source libraries. It didn’t matter if Replay crashed every five minutes, and was as slower than a dialup modem, the ability to slow down and study a problem with Replay, was so great that some problems simply necessitated time travel.
+We knew we had something valuable when six months into starting Replay some of the top open source developers were using Replay to fix some of the most difficult bugs in React, Redux, and other popular open source libraries. It didn’t matter if Replay crashed every five minutes, and was as slower than a dialup modem, the ability to slow down and study a problem with Replay, was so great that some problems simply necessitated time travel.
 
 {% figure
     alt="Sebastian testimonial"
@@ -46,6 +46,6 @@ We knew we had something valuable when six months into starting Replay some of t
     width=640
 /%}
 
-Today Replay is used today in many of the top Open Source projects such as NextJS and Typescript and it’s hard to work on a web app and not use a tool that’s better because of Replay. Replay also is far faster. You can record in real time and forget it’s on and Replay DevTools is as responsive as Chrome DevTools. Replay also doesn’t crash every five minutes!
+Today Replay is used today in many of the top Open Source projects such as NextJS and Typescript. It’s hard to work on a web app and not use a tool that’s better because of Replay. Replay also is far faster. You can record in real time and forget it’s on and Replay DevTools is as responsive as Chrome DevTools. 
 
-With our recent move from Firefox to Chrome, you can use Replay as your development browser, to capture the perfect bug report, and to record and replay your browser tests. It turns out that flaky test failures are timing issues and time travel debugging is perfect for understanding them. You’ll laugh the first time you fix a flaky test and then try to imagine how you would have done it before!
+With our recent move from Firefox to Chrome, you can use Replay as your development browser to capture the perfect bug report, and to record and replay your browser tests. It turns out that flaky test failures are timing issues and time travel debugging is perfect for understanding them. You’ll laugh the first time you fix a flaky test and then try to imagine how you would have done it before!

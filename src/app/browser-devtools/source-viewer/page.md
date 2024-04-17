@@ -22,15 +22,11 @@ Press `cmd+f` to search the source code for the file you’re currently viewing.
 
 Press `cmd+shift+o` or open the Source panel in the right toolbar, to view the functions defined in the current file and see the number of times each function was called.
 
-###
-
 ### Source explorer
 
 Press `cmd+p` or open the Source explorer in the right toolbar, to view the sources that were loaded in the recording.
 
 Note that because recordings can span multiple navigations and include source maps, the sources you’re viewing will include original files and could be included in multiple pages.
-
-###
 
 ### Jump to generated location
 
@@ -52,10 +48,10 @@ Source level hit counts let you see at a glance which lines of code were execute
 
 ### Adding console logs
 
-Click on the `+` button in the source viewer to add console logs. With live autocomplete and instant replay, there’s never been a faster debugging feedback loop.
+Hover over the side gutter and click on the `+` button in the source viewer to add console logs. With live autocomplete and instant replay, there’s never been a faster debugging feedback loop.
 
 ### Jumping to a line
 
 Hold down `⌘` or `⌘ + ⇧` to jump to the next or previous time a line has been hit.
 
-Alternatively, you can add a breakpoint in the gutter and select resume or rewind in the pause panel. While adding breakpoints will feel familiar, and can be useful in some cases, they come with the downside that when you resume you don’t know which breakpoint you’ll hit.
+Alternatively, you can add a breakpoint in the gutter and select resume or rewind in the pause panel. While adding breakpoints will feel familiar and can be useful in some cases, they come with the downside that when you resume you don’t know which breakpoint you’ll hit.

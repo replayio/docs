@@ -8,7 +8,7 @@ image: /images/console.png
 
 **Add live console logs**
 
-You can add new console logs in Replay DevTools by finding a line of code, clicking the `+` button, adding an expression, and pressing “save”. When you add a new log, the messages will appear in the Console as if they had always been there.
+You can add new console logs in Replay DevTools by hovering over a line of code, clicking the `+` button, adding an expression, and pressing “save”. When you add a new log, the messages will appear in the Console as if they had always been there.
 
 ### Evaluate expressions
 
@@ -18,7 +18,7 @@ And because you’re able to evaluate anything you’d like and then resume, it'
 
 ### Add a console message prefixes
 
-A nice way to spot patterns in the Console logs is to add a badge to the console messages so that you can quickly spot the pattern.
+A nice way to spot patterns in the Console logs is to add a color label to the console messages so that you can quickly spot the pattern.
 
 ### Filter console messages
 
@@ -48,7 +48,7 @@ When you jump, a browser in the cloud will pause at that execution point, repain
 
 As developers we take it for granted that we can expand object properties in the Console. What’s easy to miss though is that when you expand an object like `this`, you’ll view the properties values as they exist now and not see what they were at the time they were logged.
 
-This is one of the most egregious cases where browser DevTools will lie to you and potentially cause you to go in the wrong direction. When you expand an object property with Replay, you’ll get the correct property values because we’re able to replay to that point and go get them.
+This is one of the most egregious cases where browser DevTools will lie to you and potentially cause you to go in the wrong direction. When you expand an object property with Replay, you’ll get the correct property values and you'll see the values as they were at that exact point in time.
 
 ### Anchor the focus window to a message
 

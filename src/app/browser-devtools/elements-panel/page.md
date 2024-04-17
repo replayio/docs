@@ -20,6 +20,13 @@ The element search panel lets you find elements in the markup tree by either the
 
 By default, search is set to simple, but you can search by XPath by toggling the badge to the right.
 
+{% figure
+  alt="Elements panel search"
+  src="/images/elements-panel-search.png"
+  width=800
+  height=300
+/%}
+
 **View element event listeners**
 
 A useful way to see which JS functions could be called is to navigate to the element’s event listener’s panel and jump to where the relevant function is defined.

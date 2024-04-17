@@ -18,9 +18,9 @@ Recording your test run using replay will provide more info than any test result
 
 ## Context matters
 
-Cypress brings its special chaining syntax, that is fun to use, but can sometimes lead to unexpected issues. Retryability mechanisms can sometimes race-condition, starting a chain of events that can be hard to trace back.
+Cypress brings its special chaining syntax, but can sometimes lead to unexpected issues. Retryability mechanisms can sometimes cause a race-condition, starting a chain of events that can be hard to trace back.
 
-Replay tackles this by providing you more context and deeper insight. All packaged into DevTools that we love to work with. And with time-travelling capability on top of it.
+Replay tackles this by providing you more context and deeper insight. All packaged into DevTools that we love to work with and with time-travelling capability on top of it.
 
 ## Trace back every DOM change
 
@@ -54,7 +54,7 @@ While this example is fairly exaggerated, it illustrates two main problems of **
     width=620
 /%}
 
-Because of this, a flaky does not feel like an act of higher force, but can be inspected with **a microscopic precision**. Even when your app is updated every millisecond, you can jump to the perfect spot, and see your DOM rendered exactly as it would on that moment.
+Because of this, a flaky test does not feel like an act of higher force, but can be inspected with **a microscopic precision**. Even when your app is updated every millisecond, you can jump to the perfect spot, and see your DOM rendered exactly as it would on that moment.
 
 {% callout title="Learn more" %}
 To learn more about elements panel, head over to [Elements panel docs](/browser-devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=kgJVauI7Obs).
@@ -66,11 +66,11 @@ To learn more about elements panel, head over to [Elements panel docs](/browser-
 
 Replays capture all network communication and display it the same way you would expect to see it in your favourite browser’s network panel.
 
-Network calls are the biggest contributor to asynchronous issues, as responses from server return in different times and sizes. Replay DevTools allow you to inspect every API call, resource fetch and view its headers, payloads, server responses and even timings and stack trace.
+Network calls are the biggest contributor to asynchronous issues, as responses from server return in different times and sizes. Replay DevTools allow you to inspect every API call and resource fetch, and view headers, payloads, server responses and even timings and stack trace.
 
 <!-- todo: add a video here -->
 
-Because network panel is integrated with the rest of the tools, you’ll get even more options than in local development. Stack trace panel displays the source of an API call, that allows you to track back the very function that triggered the call.
+Because network panel is integrated with the rest of the tools, you’ll get even more options than in local development. Stack trace panel displays the source of an API call, which allows you to track back the very function that triggered the call.
 
 {% figure
     alt="Jumping to code"
@@ -93,7 +93,7 @@ Interactions show "Jump to code" button that takes you to the function call made
 
 <!-- todo: add video -->
 
-This bridge between your test code and your app code is usually the first place you can start your test flake investigation. It gives you an unique insight into what is happening during your test, not only with the test, but also the application under test.
+This bridge between your test code and your app code is usually the first place you can start your test flake investigation. It gives you a unique insight into what is happening during your test - not only with the test, but also the application under test.
 
 {% callout title="Learn more" %}
 Jumping from test code and utilizing the timeline is explored in the [Replay Crash course video](https://www.youtube.com/watch?v=ksxf6qE9Ymc).
