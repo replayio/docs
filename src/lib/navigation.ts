@@ -269,6 +269,11 @@ export const navigation: NavigationItem[] = [
         href: '/ci-workflows/recording-strategies',
         icon: 'strategy',
       },
+      {
+        title: 'Upload strategies',
+        href: '/ci-workflows/upload-strategies',
+        icon: 'upload',
+      },
     ],
   },
 
