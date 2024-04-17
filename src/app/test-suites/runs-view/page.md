@@ -1,12 +1,12 @@
 ---
-title: Recent runs
-description: Replay’s Recent Runs dashboard alerts you to new issues in your test suite so you can see which run introduced the problem and address it quickly.
+title: Recent Runs view
+description: The Recent Runs view alerts you to new issues in your test suite so you can see which run introduced the problem and address it quickly.
 image: /images/runs.png
 ---
 
 ## Overview
 
-The Recent runs dashboard serves two purposes. The first is to make it easy to spot regressions quickly. The second is to help developers see their recent runs and jump into the replays.
+The Recent runs view serves two purposes. The first is to make it easy to spot regressions quickly. The second is to help developers see their recent runs and jump into the replays.
 
 {% callout type="link" title="Shareable URLs" light=true %}
 When you notice a problem with a recent run, it’s easy to select the run, copy the URL, and share it with your team in Slack or Linear.
@@ -35,11 +35,7 @@ When you notice a problem with a recent run, it’s easy to select the run, copy
 {% twocolumns %}
 {% group %}
 
-To focus on specific tests, use filters. These enable you to view only the main branch, examine failing runs, or search through runs.
-
-{% callout type="link" title="Top failures and flakes" href="/test-suites/top-failing-and-flaky-tests"%}
-To analyze your flaky tests, open the [Tests view](/test-suites/top-failing-and-flaky-tests). Here, you can see details of your top failures and test flakes.
-{% /callout %}
+The Test Runs Filters help you view the most relevant run by branch, passing and failing runs, and commit message.
 
 {% /group %}
 
@@ -91,7 +87,20 @@ Clicking on a recording opens the replay so that you can inspect it with Replay 
 
 {% /twocolumns %}
 
-{% callout type="link" title="PR comments" href="/test-suites/pr-comments" %}
-The Replay GitHub PR comment includes a link to the test run, so it’s easy to jump to the Recent runs dashboard and view prior runs. See the PR comment docs. [PR comment docs](/test-suites/pr-comments).
+{% quick-links title="Read more" description="" %}
 
-{% /callout %}
+{% quick-link
+  title="PR comments"
+  icon="github"
+  href="/test-suites/pr-comments"
+  description="The Replay GitHub PR comment makes it easy to view a PR's recent runs."
+/%}
+
+{% quick-link
+  title="Top failing and flaky tests"
+  icon="sort"
+  href="/test-suites/top-failing-and-flaky-tes"
+  description="Go to the Failing and Flaky Tests view to see your top failing and flaky tests."
+/%}
+
+{% /quick-links %}
