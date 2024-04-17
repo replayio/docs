@@ -8,18 +8,13 @@ export type NavigationItem = {
   title: string
 }
 
+
 export const navigation: NavigationItem[] = [
   {
-    title: 'Getting started',
-    href: '/getting-started',
-    links: [
-      {
-        title: 'Record your first replay',
-        href: '/getting-started/record-your-first-replay',
-        icon: 'record',
-      },
-    ],
+    title: 'Quickstart Guide',
+    href: '/quickstart',
   },
+  
   {
     title: 'Intro to time travel',
     href: '/time-travel-intro',
