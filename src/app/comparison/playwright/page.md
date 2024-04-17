@@ -6,11 +6,11 @@ Playwright Trace Viewer is a Session Replay tool that captures application metad
 
 Here is a screenshot **Playwright Trace Viewer** for one of our Playwright tests. Apologies for the inception 🥲
 
-{% figure alt="Elements panel" src="/images/playwright-1.webp" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/playwright-1.webp"  showRadius=false height=870 width=870/%}
 
 Here is a screenshot of **Replay DevTools** for the same test. On the surface, they might seem similar, but with Replay we’re able to dive in and inspect your application with Browser DevTools.
 
-{% figure alt="Elements panel" src="/images/playwright-2.webp" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/playwright-2.webp" showRadius=false height=870 width=870/%}
 
 ## Time travel debugging
 
@@ -22,7 +22,7 @@ The biggest benefit of time travel debugging is the ability to find a line of co
 
 Flaky tests can either come from an assumption in your testing logic or application logic. In both cases, it can be helpful to work backwards from the user visible issue to the root cause with console logs that help you narrow down the timing issue. For more info on print statements, check our our [docs](/browser-devtools/console).
 
-<!-- _\[insert video]_ -->
+{% video src="addingAPrintStatement" /%}
 
 ## Inspect Console logs
 
@@ -30,15 +30,15 @@ Both Replay DevTools and Trace Viewer let you see the messages that were logged 
 
 For example, in the console logs below the `params` and `response.result` objects are hidden behind an `Object` label and are not available to be inspected.
 
-{% figure alt="Elements panel" src="/images/playwright-3.webp" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/playwright-3.webp"  showRadius=false height=870 width=870/%}
 
 In contrast, the Console logs in Replay DevTools work the same way that they do in Chrome DevTools because they’re logged at replay time instead of record time. This means that you can view any value, expand object and arrays, filter by values above.
 
-{% figure alt="Elements panel" src="/images/playwright-4.webp" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/playwright-4.webp"  showRadius=false height=870 width=870/%}
 
 And because Replay is a browser, pausing in Replay DevTools is similar to pausing in Chrome DevTools. When you’re paused, you’re able to evaluate expressions in the Console terminal like `response.result`.
 
-<!-- _\[Insert video]_ -->
+{% video src="evaluatingInTheConsole" /%}
 
 ## React + Redux DevTools
 
@@ -48,11 +48,11 @@ Typically, React DevTools can help you find the React component with the user vi
 
 In the example, below we’re using React DevTools to inspect Replay’s Console components and view the source code. If we wanted to see what the props were when the components rendered, we could add a `console.log(...)` in the code.
 
-<!-- _\[insert video]_ -->
+{% video src="reactDevTools" /%}
 
 In the example, below we’re using Redux DevTools to inspect the `pointsReceived` and `paused` actions. Unlike standard Redux DevTools, we’re able to go beyond simply looking at the action payload and application state at that point in time and jump directly into the redux dispatch. From there we can add console logs in the thunk and better understand the sequence of events that lead up to the dispatch.
 
-<!-- _\[insert video]_ -->
+{% video src="reduxDevTools" /%}
 
 ## Conclusion
 
