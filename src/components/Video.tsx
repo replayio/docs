@@ -12,6 +12,9 @@ import recordCli from '@/videos/record-cli.mp4.json'
 import jumpToCode from '@/videos/jump-to-code.mp4.json'
 import deleteApiKey from '@/videos/delete-api-key.mp4.json'
 import addingAPrintStatement from '@/videos/Adding_a_print_statement.mp4.json'
+import evaluatingInTheConsole from '@/videos/evaluating_in_the_console.mp4.json'
+import reactDevTools from '@/videos/React_DevTools.mp4.json'
+import reduxDevTools from '@/videos/redux_devtools.mp4.json'
 
 // import getStarted from '@/videos/get-started.mp4';
 
@@ -27,6 +30,9 @@ const videos = {
   recordCli,
   jumpToCode,
   deleteApiKey,
+  evaluatingInTheConsole,
+  reactDevTools,
+  reduxDevTools
 }
 
 interface VideoProps {
