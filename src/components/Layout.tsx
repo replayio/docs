@@ -51,7 +51,7 @@ function Header() {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 px-12 py-5 shadow-none shadow-gray-900/5 transition duration-500 sm:px-12 sm:py-5 lg:px-12',
+        ' sticky top-0 z-50 border-b px-12 py-5 shadow-none shadow-gray-900/5 transition duration-500 sm:px-12  sm:py-5 lg:px-12 dark:border-gray-800 dark:bg-gray-900 dark:bg-gray-900/95 dark:shadow-none dark:shadow-gray-900/5 dark:backdrop-blur dark:backdrop-blur dark:transition dark:duration-500',
         isScrolled
           ? 'backdrop-blur dark:bg-gray-900/95 [@supports(backdrop-filter:blur(0))]:bg-white/45 dark:[@supports(backdrop-filter:blur(0))]:bg-gray-900/75'
           : 'bg-transparent',
@@ -64,8 +64,8 @@ function Header() {
           </div>
           <div className="relative flex flex-grow basis-0 items-center">
             <Link href="/" aria-label="Home page">
-              <Logomark className="h-7 w-7 lg:hidden fill-black dark:fill-white"  />
-              <Logo className="hidden h-6 w-auto lg:block fill-black dark:fill-white" />
+              <Logomark className="h-7 w-7 fill-black lg:hidden dark:fill-white" />
+              <Logo className="hidden h-6 w-auto fill-black lg:block dark:fill-white" />
             </Link>
           </div>
           <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
@@ -112,7 +112,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <div className="absolute inset-y-0 right-0 w-[50vw] bg-gray-50 dark:hidden" />
               <div className="absolute bottom-0 right-0 top-16 hidden h-12 w-px bg-gradient-to-t from-gray-800 dark:block" />
               <div className="absolute bottom-0 right-0 top-28 hidden w-px bg-gray-800 dark:block" />
-              <div className="sticky top-[4.75rem] -ml-0.5 h-[calc(100vh-4.75rem)] w-72 overflow-y-auto overflow-x-hidden py-16 pl-0.5 pr-2 xl:pr-2">
+              <div className="sticky  -ml-0.5 h-[calc(100vh-4.75rem)] w-72 overflow-y-auto overflow-x-hidden py-8 pl-0.5 pr-2 xl:pr-2">
                 <Navigation />
               </div>
             </>

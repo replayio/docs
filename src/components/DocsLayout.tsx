@@ -23,7 +23,7 @@ export function DocsLayout({
     <>
       <div
         data-test-id="docs-layout"
-        className="flex min-w-0  flex-auto grow px-4 py-16 "
+        className="flex min-w-0  flex-auto grow px-4 py-8 "
       >
         <div className="flex w-full flex-col  items-center">
           <article className=" grow lg:max-w-4xl  lg:pl-16 lg:pr-0 xl:px-16">
