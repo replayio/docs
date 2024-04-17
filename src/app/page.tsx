@@ -85,7 +85,7 @@ export default function Page() {
   return (
     <div data-test-id="page" className="mx-auto flex max-w-4xl flex-col py-8">
       <Hero />
-      <h2 className="pb-8 text-2xl font-semibold">Most popular</h2>
+      <h2 className="py-8 text-2xl font-semibold">Topics</h2>
       <div className="grid place-items-center gap-4 pb-20 md:grid-cols-2 lg:grid-cols-3">
         {cards.map(({ href, content, icon, title }) => (
           <Card

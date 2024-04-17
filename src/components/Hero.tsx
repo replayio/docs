@@ -21,8 +21,16 @@ export function Hero() {
                 Replay documentation
               </p>
               <p className="mt-3 text-lg tracking-tight text-gray-600 dark:text-slate-400">
-                Get an overview on how to record your first replay, inspect your
-                app with Replay DevTools, and drive your test flakes to zero.
+                Learn to record your first replay, inspect your app with Replay
+                DevTools, and drive your test flakes to zero.{' '}
+              </p>
+              <p className="mt-8">
+                <a
+                  href="/quickstart"
+                  className="rounded-full border-2 border-sky-500 px-4 py-2 text-sky-500 transition-colors hover:bg-blue-500 hover:text-white"
+                >
+                  Get started with our Quickstart Guide
+                </a>
               </p>
             </div>
           </div>
