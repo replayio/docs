@@ -37,6 +37,10 @@ const tags = {
   callout: {
     attributes: {
       title: { type: String },
+      showIcon: {
+        type: Boolean
+      },
+      href: { type: String },
       type: {
         type: String,
         default: 'note',

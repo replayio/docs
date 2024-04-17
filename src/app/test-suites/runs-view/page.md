@@ -36,7 +36,7 @@ The "Failure Rate" graph shows the trend of your test suite's performance over t
 
 To focus on specific tests, use filters. These enable you to view only the main branch, examine failing runs, or search through runs.
 
-{% callout type="link" title="Top failures and flakes" %}
+{% callout type="link" title="Top failures and flakes" href="/test-suites/top-failing-and-flaky-tests"%}
 To analyze your flaky tests, open the [Tests view](/test-suites/top-failing-and-flaky-tests). Here, you can see details of your top failures and test flakes.
 {% /callout %}
 
@@ -90,7 +90,7 @@ Clicking on a recording opens the replay so that you can inspect it with Replay 
 
 {% /twocolumns %}
 
-{% callout type="link" title="PR comments" %}
+{% callout type="link" title="PR comments" href="/test-suites/pr-comments" %}
 You can access the test suites dashboard directly from your Pull request using. This feature lets you quickly navigate to your flaky or failing tests from your pull request. For more details, see the [PR comment docs](/test-suites/pr-comments).
 
 {% /callout %}
