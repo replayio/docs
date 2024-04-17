@@ -73,7 +73,6 @@ jobs:
         if: ${{ always() }}
         uses: replayio/action-upload@v0.5.1
         with:
-          public: true
           api-key: ${{ secrets.REPLAY_API_KEY }}
 ```
 
@@ -97,7 +96,6 @@ jobs:
         if: ${{ always() }}
         uses: replayio/action-upload@v0.5.1
         with:
-          public: true
           api-key: ${{ secrets.REPLAY_API_KEY }}
           filter: ${{ 'function($v) { $v.metadata.test.result = "failed" }' }}
 ```
