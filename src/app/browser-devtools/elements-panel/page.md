@@ -34,3 +34,8 @@ A useful way to see which JS functions could be called is to navigate to the ele
 **Jump to React component**
 
 When React Dev is enabled (typically in local development), you get a panel in the bottom right that shows the element’s parent component.
+
+## Learn more
+Watch this video to explore the Elements panel in action. You'll learn how to inspect elements and their properties, including CSS rules, layout properties, computed properties, and event listeners. You can find the whole course at [replay.help/course](https://replay.help/course)
+
+{% video src="elementsPanelCourse" autoplay=false controls=true /%}
