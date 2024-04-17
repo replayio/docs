@@ -4,9 +4,12 @@ title: Billing
 
 ## Billing FAQ
 
-### Where do invoices get sent? How do I add email addresses for the invoices to be sent to?
+### Where do invoices get sent? 
+By default, payment receipts are sent to the email address of the creator of the team. 
 
-By default, payment receipts are sent to the email address of the creator of the team. To add or update a billing email address or to request copies of invoices, contact support@replay.io.
+### How do I add email addresses for the invoices to be sent to?
+
+To add or update a billing email address or to request copies of invoices, contact support@replay.io.
 
 ### How do I add a payment method?
 
