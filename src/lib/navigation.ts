@@ -130,7 +130,7 @@ export const navigation: NavigationItem[] = [
     href: '/test-suites',
     links: [
       {
-        title: 'Runs View',
+        title: 'Recent runs ',
         href: '/test-suites/runs-view',
         icon: 'runsview',
       },
