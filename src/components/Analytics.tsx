@@ -18,7 +18,7 @@ export default function Analytics() {
     <>
       <script
         async
-        src="https://analytics.umami.is/script.js"
+        src="/stats/script.js"
         data-website-id="9dab9357-6fa2-48ab-966a-82c4e1bb67fe"
       ></script>
       <script
