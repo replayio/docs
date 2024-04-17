@@ -270,8 +270,8 @@ export const navigation: NavigationItem[] = [
         icon: 'strategy',
       },
       {
-        title: 'Uploading strategies',
-        href: '/ci-workflows/uploading-strategies',
+        title: 'Upload strategies',
+        href: '/ci-workflows/upload-strategies',
         icon: 'upload',
       },
     ],

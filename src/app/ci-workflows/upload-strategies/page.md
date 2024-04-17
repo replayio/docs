@@ -1,5 +1,5 @@
 ---
-title: Uploading strategies
+title: Upload strategies
 description: When you run tests and create recordings, they are stored locally. You can opt to upload them automatically or define your own uploading strategy. All uploaded recordings become accessible in the Replay App. 
 ---
 
@@ -7,7 +7,7 @@ description: When you run tests and create recordings, they are stored locally. 
 While uploading just failed test is good for saving resources, our recommendation is to upload both failed and passed tests so that you can compare them. This can be really useful for debugging purposes.
 {% /callout %}
 
-## Uploading failed tests only
+## Upload failed tests only
 By default, all test replays are uploaded no matter the result. If you want upload only the failed recordings, you can define the step to do so using `filter` property:
 
 ## Using GitHub Action
