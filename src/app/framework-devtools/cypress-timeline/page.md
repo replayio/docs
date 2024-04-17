@@ -24,4 +24,4 @@ Selecting a step shows the step details below with the ability to jump from the 
 
 ### Jump to code
 
-Clicking the **Jump to code **button seeks you from the test step into your React component’s event handler. There’s never been a more powerful way to start debugging a flaky test.
+Clicking the **Jump to code** button seeks you from the test step into your React component’s event handler. There’s never been a more powerful way to start debugging a flaky test.

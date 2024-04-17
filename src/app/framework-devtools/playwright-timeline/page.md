@@ -20,4 +20,4 @@ Selecting a test step shows the source code where the test step is defined.
 
 ### Jump to code
 
-When you click the **jump to code **button you seek from the step action into your React component’s event handler. There’s never been a faster way to start debugging a flaky test.
+When you click the **jump to code** button you seek from the step action into your React component’s event handler. There’s never been a faster way to start debugging a flaky test.

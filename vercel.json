@@ -1,0 +1,210 @@
+{
+  "redirects": [
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/Wh9w3KMr7J"
+    },
+    {
+      "source": "/docs/replay-oss-751fc053a0a14c32812c4766d7c65e4d",
+      "destination": "/getting-started/record-your-first-replay"
+    },
+    {
+      "source": "/docs/recording-bug-reports-80c37d7d6753485f81497570625d06f0",
+      "destination": "/getting-started/record-your-first-replay"
+    },
+    {
+      "source": "/docs/resources-and-examples-d25ae319114e4d109022458cd47f38ec",
+      "destination": "/getting-started/record-your-first-replay"
+    },
+    {
+      "source": "/docs/recording-a-web-app-5fc7ace7f3e449ce903e89e59d4b93ba",
+      "destination": "/getting-started/record-your-first-replay"
+    },
+    {
+      "source": "/docs/contact-and-community-096224a3bca4479b982ac572dc5c81d0",
+      "destination": "/discord"
+    },
+    {
+      "source": "/docs/billing-e01f0740cd9548f1b8725c9773b217f6",
+      "destination": "/replay-teams/billing"
+    },
+    {
+      "source": "/docs/case-studies-and-comparisons-3bd958ab68234ae697cdac5904bbc36e",
+      "destination": "/comparison/playwright"
+    },
+    {
+      "source": "/bug-reports",
+      "destination": "/getting-started/record-your-first-replay"
+    },
+    {
+      "source": "/reference-guide/react",
+      "destination": "/framework-devtools/react-panel"
+    },
+    {
+      "source": "/reference-guide/print-statements",
+      "destination": "/browser-devtools/console"
+    },
+    {
+      "source": "/reference-guide/events#b1a0e7f432f5426888b80e9b00e7b226",
+      "destination": "/browser-devtools/replay-viewer"
+    },
+    {
+      "source": "/resources-and-examples/security-practices",
+      "destination": "/additional-content/security-practices"
+    },
+    {
+      "source": "/recording-browser-tests-\\(beta\\)",
+      "destination": "/test-runners/overview"
+    },
+    {
+      "source": "/case-studies-and-comparisons/replay-vs.-session-replay",
+      "destination": "/test-runners/overview"
+    },
+    {
+      "source": "/case-studies-and-comparisons/replay-vs.-chrome-recorder",
+      "destination": "/comparison/chrome"
+    },
+    {
+      "source": "/case-studies-and-comparisons/replay-vs.-loom",
+      "destination": "/comparison/loom"
+    },
+    {
+      "source": "/recording-a-web-app/sharing-your-replay",
+      "destination": "/replay-teams/managing-replays#sharing-a-replay"
+    },
+    {
+      "source": "/recording-a-web-app/viewing-and-collaborating",
+      "destination": "/time-travel-intro/annotate-the-timeline"
+    },
+    {
+      "source": "/recording-browser-tests-\\(beta\\)/cypress-instructions",
+      "destination": "/test-runners/cypress-io/record-your-first-replay"
+    },
+    {
+      "source": "/recording-browser-tests-\\(beta\\)/pull-request-comments",
+      "destination": "/test-suites/pr-comments"
+    },
+    {
+      "source": "/recording-browser-tests-\\(beta\\)/test-suite-dashboard",
+      "destination": "/test-suites/runs-view"
+    },
+    {
+      "source": "/recording-browser-tests-\\(beta\\)/test-replays",
+      "destination": "/test-runners/overview"
+    },
+    {
+      "source": "/reference-guide/cypress-panel",
+      "destination": "/framework-devtools/cypress-timeline"
+    },
+    {
+      "source": "/resources-and-examples",
+      "destination": "/"
+    },
+    {
+      "source": "/resources-and-examples#7375c6180b8848f48be37c4bf1026007",
+      "destination": "/"
+    },
+    {
+      "source": "/case-studies-and-comparisons",
+      "destination": "/comparison/playwright"
+    },
+    {
+      "source": "/case-studies-and-comparisons#ff284e483831445ba1a6928c24afc2b5",
+      "destination": "/comparison/playwright"
+    },
+    {
+      "source": "/contribute",
+      "destination": "/"
+    },
+    {
+      "source": "/reference-guide/console",
+      "destination": "/browser-devtools/console"
+    },
+    {
+      "source": "/reference-guide/print-statements",
+      "destination": "/time-travel-intro/add-console-logs-on-the-fly"
+    },
+    {
+      "source": "/reference-guide/react",
+      "destination": "/framework-devtools/react-panel"
+    },
+    {
+      "source": "/reference-guide/elements",
+      "destination": "/browser-devtools/elements-panel"
+    },
+    {
+      "source": "/reference-guide/breakpoints",
+      "destination": "/browser-devtools/pause-panel"
+    },
+    {
+      "source": "/reference-guide/events",
+      "destination": "/browser-devtools/replay-viewer"
+    },
+    {
+      "source": "/reference-guide/network",
+      "destination": "/browser-devtools/network-monitor"
+    },
+    {
+      "source": "/get-help",
+      "destination": "/discord"
+    },
+    {
+      "source": "/case-studies-and-comparisons",
+      "destination": "/comparison/playwright"
+    },
+    {
+      "source": "/resources/replay.io-case-studies/midnite-builds-time-travel-workflows-for-its-fast-paced-betting-platform",
+      "destination": "https://blog.replay.io/midnite-builds-time-travel-workflows-for-its-fast-paced-betting-platform"
+    },
+    {
+      "source": "/test-suites/cypress",
+      "destination": "/test-runners/cypress-io/record-your-first-replay"
+    },
+    {
+      "source": "/test-suites/playwright",
+      "destination": "/test-runners/playwright/record-your-first-replay"
+    },
+    {
+      "source": "/docs/recording-automated-tests-5bf7d91b65cd46deab1867b07bd12bdf",
+      "destination": "/test-runners/overview"
+    },
+    {
+      "source": "/contribute/contributing-to-replay",
+      "destination": "/"
+    },
+    {
+      "source": "/getting-started/bug-reports/installing-the-replay-browser",
+      "destination": "/replay-runtimes/replay-chrome"
+    },
+    {
+      "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-replay-chrome",
+      "destination": "/replay-runtimes/replay-chrome"
+    },
+    {
+      "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-on-linux",
+      "destination": "/replay-runtimes/replay-chrome"
+    },
+    {
+      "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-on-windows",
+      "destination": "/replay-runtimes/replay-chrome"
+    },
+    {
+      "source": "/reference-guide/focus-mode",
+      "destination": "/browser-devtools/replay-viewer"
+    },
+    {
+      "source": "/debugging",
+      "destination": "/time-travel-intro/add-console-logs-on-the-fly"
+    },
+    {
+      "source": "/getting-started/replay-browser/installation",
+      "destination": "/getting-started/record-your-first-replay"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/stats/:match*",
+      "destination": "https://analytics.umami.is/:match*"
+    }
+  ]
+}
