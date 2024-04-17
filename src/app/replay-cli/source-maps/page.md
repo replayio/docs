@@ -16,11 +16,13 @@ We recommend using the `REPLAY_API_KEY` environment variable to set up the API f
 
 ### CLI
 
-You can upload source maps using the `upload-sourcemaps` command in the replay CLI `@replayio/replay`.
+You can upload source maps using the `upload-sourcemaps` command in the Replay CLI.
 
-The simplest usage will be running the following after your production JS build has finished
+The simplest usage will be running the following after your production JS build has finished.
 
-`npx @replayio/replay upload-sourcemaps --group <Version or SHA> <buildOutputDir>`
+```sh
+npx replayio upload-sourcemaps --group <Version or SHA> <buildOutputDir>
+```
 
 You must ensure that your build tool is configured to output sourcemaps into the build directory you provide.
 

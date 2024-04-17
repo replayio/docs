@@ -66,6 +66,12 @@ Replay CLI requires you to log in when uploading your recordings. In a local env
 
 ---
 
+- [`info`](#info')
+- –
+- –
+
+---
+
 - [`list`](#list')
 - –
 - `--json`
@@ -108,6 +114,12 @@ Replay CLI requires you to log in when uploading your recordings. In a local env
 
 ---
 
+- [`upload-source-maps`](#upload-sourcemaps)
+- `<paths...>`
+- `-g`, `--group`, `-x`, `--extensions`, `-i`, `--ignore`, `--root`
+
+---
+
 - [`help`](#help)
 - –
 - –
@@ -117,6 +129,18 @@ Replay CLI requires you to log in when uploading your recordings. In a local env
 {% /table %}
 
 You can pass `-h` or `--help` option into any of the commands to get more info.
+
+### info{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
+Displays information about installed Replay dependencies. This includes version of the Replay CLI package as well as the Replay Browser information.
+
+```sh
+Currently using replayio@1.0.2
+
+Replay Chromium
+• Release date: 4/11/2024
+• Forked version: 108.0.0
+```
+
 
 ### list{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
 
@@ -341,3 +365,56 @@ https://app.replay.io/recording/d1bd8025-cc11-473a-bd3d-997cb68050fa
 ### help{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
 
 Display all available commands and their descriptions. Alternatively, you can pass `-h` or `--help` option into any of the commands to get more info.
+
+---
+
+### upload-source-maps{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
+
+Uploads source-maps for a Workspace. See docs on [uploading source maps](/replay-cli/source-maps).
+
+#### Arguments
+
+{% table %}
+
+- Argument
+- Default
+- Description
+
+---
+
+- `<paths...>`
+- –
+- paths to source maps locations
+
+---
+
+{% /table%}
+
+#### Options
+
+{% table %}
+
+- Option
+- Description
+
+---
+
+- `-g`, `--group` `<name>`
+- The name to group this source map into, e.g. A commit SHA or release version. 
+
+---
+
+- `-x`, `--extensions` `<exts>` 
+- A comma-separated list of file extensions to process; default ".js,.map"  
+
+---
+
+- `-i`, `--ignore` `<pattern>`
+- Ignore files that match this pattern
+
+---
+
+- `-root` `<dirname>`
+- The base directory to use when computing relative paths  
+
+{% /table%}

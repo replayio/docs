@@ -10,7 +10,7 @@ Replay Test Suites bring **time-travelling DevTools to your test runs**. You’l
 
 Replay Devtools work great with your existing test suite. Cypress and Playwright plugins allow you to **rewind or fast forward** to any command from your test run.
 
-The **command details** panel contains information on passed arguments, returned values and targeted element. Commands are integrated with the rest of DevTools. This means you can jump from a command detail into [Elements panel](/browser-devtools/elements-panel), or inspect API calls in the [Network panel](/browser-devtools/network-monitor).
+The command details panel contains information on passed arguments, returned values and targeted element. Commands are integrated with the rest of DevTools. This means you can jump from a command detail into [Elements panel](/browser-devtools/elements-panel), or inspect API calls in the [Network panel](/browser-devtools/network-monitor).
 {% /basic %}
 
 {% figure
@@ -42,7 +42,7 @@ With information on [line hit counts](/browser-devtools/source-viewer#hit-counts
 
 ## Vizualize Your Race Conditions
 
-Flakiness can be a caused by a single line of code. Reveal that line with a **print statement**. Find race conditions, unexpected data, rendering issues- you name it.
+Flakiness can be a caused by a single line of code. Reveal that line with a **print statement**. Find race conditions, unexpected data, rendering issues - you name it.
 
 We have stories of [2 pixel shifts](https://blog.replay.io/a-journey-of-driving-down-test-flakes-to-0percent-at-metabase-part-3) and [false positives](https://blog.replay.io/finding-%22false-positive%22-tests-with-replay.io) that caused headaches to test maintainers. [Learn more](/time-travel-intro/add-console-logs-on-the-fly) about the power of time-travelling console logs.
 {% /basic %}

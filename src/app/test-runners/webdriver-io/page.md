@@ -32,7 +32,7 @@ bun i replayio
 
 ## Set up the browser binary
 
-In order to use Replay Browser in your WebdriverIO scripts, you need to point your configuration to the Replay Browser binary. The `getExecutablePath` function will take care of locating the binary on your machine.
+In order to use Replay Browser in your WebdriverIO scripts, you need to point your configuration to the Replay Browser binary. The `getBrowserPath` function will take care of locating the binary on your machine.
 
 ```js {% lineNumbers=true fileName="wdio.config.js" highlight=[1,3,"11-14"] %}
 import { getBrowserPath } from "replayio";
