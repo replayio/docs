@@ -1,19 +1,12 @@
 ---
 title: Runs view
 description: The Test Runs view shows all latest results by test run. You can take a look at your tests at a high level, drive down test flakes or jump into a particular test to start debugging.
+image: /images/runs.png
 ---
 
-{% figure
-  alt="Test Suite Runs view"
-  src="/images/runs-view-large.png"
-  gradient="bg-gradient-to-br from-sky-500 to-sky-200"
-  ripple=true
-  showRadius=false
-  height=870
-  width=870
-/%}
+## Overview
 
-Test runs view provides yout with a multiple column dashboard. Each part allows you to examine your recent test runs.
+The test runs view provides yout with a multiple column dashboard. Each part allows you to examine your recent test runs.
 
 ## Test runs
 
