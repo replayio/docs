@@ -55,3 +55,8 @@ Hover over the side gutter and click on the `+` button in the source viewer to a
 Hold down `⌘` or `⌘ + ⇧` to jump to the next or previous time a line has been hit.
 
 Alternatively, you can add a breakpoint in the gutter and select resume or rewind in the pause panel. While adding breakpoints will feel familiar and can be useful in some cases, they come with the downside that when you resume you don’t know which breakpoint you’ll hit.
+
+## Learn more
+Learn how to navigate your source code effectively. This tutorial will teach you how to search within your code, view hit counts to see how often lines are executed, and jump directly to any line of execution. You can find the whole course at [replay.help/course](https://replay.help/course)
+
+{% video src="sourceCourse" autoplay=false controls=true /%}

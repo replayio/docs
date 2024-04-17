@@ -67,6 +67,10 @@ const tags = {
     selfClosing: true,
     attributes: {
       src: { type: String },
+      controls: { type: Boolean },
+      autoplay: { type: Boolean },
+      muted: { type: Boolean },
+      loop: { type: Boolean }
     },
   },
   'quick-link': {

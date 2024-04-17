@@ -113,7 +113,7 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
         />
       ) : null}
       <div style={styles} ref={containerRef} onClick={handleImageZoom}>
-        <Image {...imageProps2} />
+        <Image {...imageProps2} placeholder='empty' />
       </div>
     </>
   )

@@ -11,7 +11,7 @@ export default function NotFound() {
         <h1 className="mt-3 font-display text-3xl tracking-tight text-gray-900 dark:text-white">
           Page not found
         </h1>
-        <Image src="/images/404.png" width={450} height={450} alt="Broken Delorean" />
+        <Image src="/images/404.png" width={450} height={450} alt="Broken Delorean" placeholder='empty' />
         <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
           You might need to travel back in time.
         </p>
