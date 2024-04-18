@@ -65,7 +65,7 @@ export function TableOfContents({
   return (
     <div
       data-testid="table-of-contents"
-      className="hidden py-8 xl:sticky xl:-mr-6 xl:block xl:h-[calc(100vh-4.75rem)] xl:flex-none xl:overflow-y-auto xl:pr-6"
+      className="hidden py-8 xl:sticky xl:-mr-6 xl:block xl:h-[calc(100vh-4.75rem)] xl:flex-none xl:overflow-y-auto xl:pr-6 xl:top-[4.75rem] xl:py-16"
     >
       <nav aria-labelledby="on-this-page-title" className="w-56">
         {tableOfContents.length > 0 && (
