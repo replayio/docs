@@ -1,6 +1,7 @@
 ---
 title: Cypress.io
-description: Replay works great with Cypress. You can set up your project to use Replay Browser in matter of minutes and then customize it to your needs. With Replay Browser integration, you’ll be able to see all your Cypress steps as well as code of your application.
+description: Add the Cypress Replay plugin to your suite and start time travel debugging in minutes.
+image: /images/Cypress-hero.png
 ---
 
 ## Getting more insight
