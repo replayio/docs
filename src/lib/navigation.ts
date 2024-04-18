@@ -10,10 +10,10 @@ export type NavigationItem = {
 
 
 export const navigation: NavigationItem[] = [
-  {
-    title: 'Quickstart Guide',
-    href: '/quickstart',
-  },
+  // {
+  //   title: 'Quickstart Guide',
+  //   href: '/quickstart',
+  // },
   
   {
     title: 'Intro to time travel',
