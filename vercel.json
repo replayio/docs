@@ -5,6 +5,50 @@
       "destination": "https://discord.gg/Wh9w3KMr7J"
     },
     {
+      "source": "/legal",
+      "destination": "https://www.replay.io/terms-of-service"
+    },
+    {
+      "source": "/reference-guide/dev-tools/react",
+      "destination": "/framework-devtools/react-panel"
+    },
+    {
+      "source": "/getting-started/teams-admin/team-settings",
+      "destination": "/replay-teams/setting-up-a-team"
+    },
+    {
+      "source": "/getting-started/teams-admin/billing",
+      "destination": "/replay-teams/billing"
+    },
+    {
+      "source": "/test-suites/test-runners/cypress/cypress-faqs",
+      "destination": "/test-runners/cypress-io/faq"
+    },
+    {
+      "source": "/getting-started/replay-browser/install-chrome",
+      "destination": "/replay-browser/install-chrome"
+    },
+    {
+      "source": "/getting-started/teams-admin/organization-features",
+      "destination": "/replay-teams/setting-up-a-team"
+    },
+    {
+      "source": "/getting-started",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/reference-guide",
+      "destination": "/"
+    },
+    {
+      "source": "/getting-started/teams-admin/managing-replays",
+      "destination": "/"
+    },
+    {
+      "source": "/getting-started/teams-admin/setting-up-a-team",
+      "destination": "/replay-teams/setting-up-a-team"
+    },
+    {
       "source": "/docs/replay-oss-751fc053a0a14c32812c4766d7c65e4d",
       "destination": "/getting-started/record-your-first-replay"
     },
