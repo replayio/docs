@@ -83,7 +83,7 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
     transition: `transform ${animationDuration}ms`,
     display: props.layout === 'fixed' ? 'inline-block' : 'block',
     width: props.layout === 'fixed' ? 'max-content' : '100%',
-    height: props.layout === 'fixed' ? 'max-content' : '100%',
+    height: props.layout === 'fixed' ? 'max-content' : 'auto',
     zIndex: clicked ? 50 : 0,
     overflow: clicked ? 'hidden' : '',
     backgroundColor: clicked ? 'rgba(0,0,0,.3)' : 'transparent',
