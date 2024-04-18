@@ -24,7 +24,7 @@ function ItemLink({
       href={item.href !== '' ? item.href : '#'}
       onClick={item.href !== '' ? onLinkClick : undefined}
       className={clsx(
-        `ml-.5 block h-full w-full pl-1.5 transition-all`,
+        `ml-.5 block h-full w-full transition-all`,
         className,
         item.href !== '' && pathname.includes(item.href)
           ? 'font-semibold text-sky-500'
@@ -36,10 +36,8 @@ function ItemLink({
       <NavIcon
         icon={item.icon}
         aria-hidden="true"
-        className="fill-inherit stroke-inherit text-inherit"
+        className="ml-1 fill-inherit stroke-inherit text-inherit"
       />
-
-
       {item.title}
     </Link>
   )
@@ -145,42 +143,6 @@ export function Navigation({
                       ))}
                     </Disclosure.Panel>
                   </>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 )}
               </Disclosure>
             </li>
