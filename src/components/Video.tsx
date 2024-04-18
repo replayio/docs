@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { default as NextVideo } from 'next-video'
 
 import marketingHero from '@/videos/marketing-hero.mp4.json'
@@ -52,24 +53,19 @@ interface VideoProps {
   src: string
   controls?: boolean
   autoplay?: boolean
-  muted?: boolean
   loop?: boolean
 }
 
-export const Video: React.FC<VideoProps> = ({
-  src,
-  controls = false,
-  autoplay = true,
-  muted = false,
-  loop = true,
-}) => {
+export const Video: React.FC<VideoProps> = ({ src, controls = false, autoplay = true, loop = true }) => {
   // @ts-ignore
   const video = videos[src]
+  const [mute, setMute] = useState(true)
   return (
     <NextVideo
+      onPlay={() => setMute(false)}
       src={video}
       autoPlay={autoplay}
-      muted={muted}
+      muted={mute}
       loop={loop}
       controls={controls}
       accentColor="#f02d5e"
