@@ -21,6 +21,7 @@ import reactPanelCourse from '@/videos/react_panel_course.mp4.json'
 import consoleLogsCourse from '@/videos/console_logs_course.mp4.json'
 import sourceCourse from '@/videos/source_course.mp4.json'
 import timelineCourse from '@/videos/timeline_course.mp4.json'
+import playwrightDebugging from '@/videos/playwright_debugging.mp4.json'
 // import getStarted from '@/videos/get-started.mp4';
 
 const videos = {
@@ -43,7 +44,8 @@ const videos = {
   reactPanelCourse,
   consoleLogsCourse,
   sourceCourse,
-  timelineCourse
+  timelineCourse,
+  playwrightDebugging,
 }
 
 interface VideoProps {
@@ -54,7 +56,13 @@ interface VideoProps {
   loop?: boolean
 }
 
-export const Video: React.FC<VideoProps> = ({ src, controls = false, autoplay = true, muted = false, loop = true }) => {
+export const Video: React.FC<VideoProps> = ({
+  src,
+  controls = false,
+  autoplay = true,
+  muted = false,
+  loop = true,
+}) => {
   // @ts-ignore
   const video = videos[src]
   return (

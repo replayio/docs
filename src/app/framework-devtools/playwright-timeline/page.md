@@ -21,3 +21,9 @@ Selecting a test step shows the source code where the test step is defined.
 ### Jump to code
 
 When you click the **jump to code** button you seek from the step action into your React component’s event handler. There’s never been a faster way to start debugging a flaky test.
+
+## See the timeline in action
+
+Learn how to use the Playwright timeline to inspect test step details, jump to code, and find timing issues in your Playwright tests.
+
+{% video src="playwrightDebugging" autoplay=false controls=true /%}
