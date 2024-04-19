@@ -1,7 +1,16 @@
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useEffect } from 'react'
+import { track } from '@vercel/analytics'
 
 export default function NotFound() {
+  useEffect(() => {
+    track('404', {
+      pathname: window.location.pathname,
+      referrer: document.referrer,
+    })
+  }, [])
   return (
     <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16">
       <div className="flex h-full flex-col items-center justify-center text-center">
@@ -11,7 +20,13 @@ export default function NotFound() {
         <h1 className="mt-3 font-display text-3xl tracking-tight text-gray-900 dark:text-white">
           Page not found
         </h1>
-        <Image src="/images/404.png" width={450} height={450} alt="Broken Delorean" placeholder='empty' />
+        <Image
+          src="/images/404.png"
+          width={450}
+          height={450}
+          alt="Broken Delorean"
+          placeholder="empty"
+        />
         <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
           You might need to travel back in time.
         </p>
