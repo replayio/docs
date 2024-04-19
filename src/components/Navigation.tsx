@@ -54,7 +54,17 @@ export function Navigation({
   return (
     <nav className={clsx('text-base', className)}>
       <ul role="list" className="space-y-1 text-sm">
-        <Link href="/quickstart" className='flex w-full items-center justify-between rounded-md text-left font-semibold leading-6 hover:text-gray-900 dark:hover:text-gray-300'>Quickstart Guide</Link>
+        <Link
+          href="/quickstart"
+          className={clsx(
+            'flex w-full items-center justify-between rounded-md text-left font-semibold leading-6',
+            pathname.includes('/quickstart')
+              ? 'text-sky-500'
+              : 'hover:text-gray-900 dark:hover:text-gray-300',
+          )}
+        >
+          Quickstart Guide
+        </Link>
         {navigation.map((section) => {
           return (
             <li key={section.title}>
