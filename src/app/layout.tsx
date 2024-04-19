@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react'
 
 import '@/styles/tailwind.css'
 import Analytics from '@/components/Analytics'
@@ -62,6 +63,7 @@ export default function RootLayout({
         <Providers>
           <Layout>{children}</Layout>
         </Providers>
+        <VercelAnalytics />
       </body>
     </html>
   )
