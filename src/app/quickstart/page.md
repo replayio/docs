@@ -1,13 +1,13 @@
 ---
 title: Quickstart guide
-description: Getting started is easy with our command line interface. In the future, we'll release a standalone Replay browser.
+description: Record your first replay with the Replay browser in under a minute.
 ---
 
 {% steps %}
 
-## Install Replay CLI
+## Install the Replay CLI
 
-To download and install Replay CLI, run the following command:
+Run the following command to download and install the Replay CLI:
 
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
@@ -42,32 +42,25 @@ bun i -g replayio
 
 ## Start recording
 
-Run the following command to open Replay Browser and start recording your application. Replay Browser will record everything and create a replay which you will be able to view in the next step.
+Run the following command to open the Replay browser and start recording.
 
 ```sh
 replayio record
 ```
 
-{% callout showIcon=false title=""%}
-You will be prompted to log into Replay with your default browser the first time you use Replay CLI.
+{% video src="recordCli" loop=true /%}
 
-{% /callout%}
+## Upload your replays
 
-{% video src="recordCli" /%}
-
-## Upload your replay
-
-Once you close the Replay browser, your recoding is ready to be uploaded and you’ll be prompted in the CLI to confirm the upload.
+When you close the browser, you'll be prompted to upload your recordings.
 
 ```sh
-New recording found. Would you like to upload it? (Y/n)
+New recordings found. Would you like to upload them? (Y/n)
 ```
-
-If you decide to upload your recording later, you’ll be able to access it via `replayio list` command. Read more in [Replay CLI command docs](/replay-cli/commands).
 
 ## View your replay
 
-Once the upload is completed, CLI will give you the replay url where you can go start debugging.
+Once the upload is completed, the CLI will give you the replay url.
 
 ```sh
 Uploading recordings...
@@ -79,7 +72,23 @@ https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25
 
 {% /steps %}
 
-{% quick-links title="Read more" description="Learn how to manage your recordings, debug your app using Replay DevTools and more" %}
+## FAQ
+
+### How do I upload recordings later?
+
+You can always upload recordings later via the `replayio upload` command. Read more in Replay CLI [docs](/replay-cli/commands).
+
+### When will the Replay browser be a standalone application?
+
+We are excited to release the Replay browser as a standalone application that you can download directly, log into, and start recording in a couple of months.
+
+In the interim, if you would perfer downloading a browser directly, you can use the [Replay Firefox](/replay-runtimes/replay-firefox) browser.
+
+### Why do I need to login to Replay?
+
+Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/time-travel-intro/how-time-travel-works)
+
+{% quick-links title="Read more"  %}
 
 {% quick-link
   title="Manage your recordings"
@@ -103,10 +112,10 @@ https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25
 /%}
 
 {% quick-link
-  title="Test Suite Management"
+  title="Test Suites"
   icon="treeview"
   href="/test-suites/runs-view"
-  description="Test Suite Dashboard helps you stay on top of your test suite health."
+  description="Stay on top of your test suite's health with Replay for Test Suites."
 /%}
 
 {% /quick-links %}
