@@ -9,19 +9,25 @@ The `@replayio/cypress` plugin includes a Cypress runner that includes diagnosti
 
 {% tabs labels=["npm", "yarn", "pnpm"] %}
 {% tab %}
+
 ```sh
 npx @replayio/cypress run --mode [mode] [...other cypress parameters]
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 yarn @replayio/cypress run --mode [mode] [...other cypress parameters]
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 pnpx @replayio/cypress run --mode [mode] [...other cypress parameters]
 ```
+
 {% /tab %}
 {% /tabs %}
 
@@ -30,64 +36,81 @@ pnpx @replayio/cypress run --mode [mode] [...other cypress parameters]
 Runs the test suite once with recording disabled and if any specs fail, those are re-ran with recording enabled.
 
 {% tabs labels=["npm", "yarn", "pnpm"] %}
-  {% tab %}
-  ```sh
-  npx @replayio/cypress run --mode record-on-retry
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  yarn @replayio/cypress run --mode record-on-retry
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  pnpx @replayio/cypress run --mode record-on-retry
-  ```
-  {% /tab %}
+{% tab %}
+
+```sh
+npx @replayio/cypress run --mode record-on-retry
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+yarn @replayio/cypress run --mode record-on-retry
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+pnpx @replayio/cypress run --mode record-on-retry
+```
+
+{% /tab %}
 {% /tabs %}
 
-
 ## Stress
+
 Runs the test suite 10 times regardless of test result. This mode is useful for diagnosing tests that have a low flakiness rate and are hard to reproduce locally.
 
 {% tabs labels=["npm", "yarn", "pnpm"] %}
-  {% tab %}
-  ```sh
-  npx @replayio/cypress run --mode stress
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  yarn @replayio/cypress run --mode stress
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  pnpx @replayio/cypress run --mode stress
-  ```
-  {% /tab %}
-{% /tabs %}
+{% tab %}
 
+```sh
+npx @replayio/cypress run --mode stress
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+yarn @replayio/cypress run --mode stress
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+pnpx @replayio/cypress run --mode stress
+```
+
+{% /tab %}
+{% /tabs %}
 
 ## Diagnostics
 
 {% tabs labels=["npm", "yarn", "pnpm"] %}
-  {% tab %}
-  ```sh
-  npx @replayio/cypress run --mode diagnostics --level basic
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  yarn @replayio/cypress run --mode diagnostics --level basic
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  pnpx @replayio/cypress run --mode diagnostics --level basic
-  ```
-  {% /tab %}
+{% tab %}
+
+```sh
+npx @replayio/cypress run --mode diagnostics --level basic
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+yarn @replayio/cypress run --mode diagnostics --level basic
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+pnpx @replayio/cypress run --mode diagnostics --level basic
+```
+
+{% /tab %}
 {% /tabs %}
 
 `--level basic`
@@ -100,27 +123,32 @@ When level is set to `basic`, the test suite is ran 3 times:
 
 `--level full`
 
-When level is set to `full`, the test suite is run *many* times with each run disabling a different browser feature. 
+When level is set to `full`, the test suite is run _many_ times with each run disabling a different browser feature.
 
 {% tabs labels=["npm", "yarn", "pnpm"] %}
-  {% tab %}
-  ```sh
-  npx @replayio/cypress run --mode diagnostics --level full --spec cypress/e2e/failing-spec.ts
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  yarn @replayio/cypress run --mode diagnostics --level full --spec cypress/e2e/failing-spec.ts
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  pnpx @replayio/cypress run --mode diagnostics --level full --spec cypress/e2e/failing-spec.ts
-  ```
-  {% /tab %}
+{% tab %}
+
+```sh
+npx @replayio/cypress run --mode diagnostics --level full --spec cypress/e2e/failing-spec.ts
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+yarn @replayio/cypress run --mode diagnostics --level full --spec cypress/e2e/failing-spec.ts
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+pnpx @replayio/cypress run --mode diagnostics --level full --spec cypress/e2e/failing-spec.ts
+```
+
+{% /tab %}
 {% /tabs %}
 
 {% callout type="warning" %}
-This mode is mostly used for diagnosing problems with integration of Replay into your test run. Due to the number of runs (currently 38), we don’t recommend using the `--level full` flag for standard test runs. Be sure to limit using this mode to a specific spec file that is failing by usiing `--spec [path to spec]`.
+This mode is mostly used for diagnosing problems with integration of Replay into your test run. Due to the number of runs (currently 38), we don’t recommend using the `--level full` flag for standard test runs. Be sure to limit using this mode to a specific spec file that is failing by using `--spec [path to spec]`.
 {% /callout %}
-

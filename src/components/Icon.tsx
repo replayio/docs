@@ -98,7 +98,7 @@ export const icons = {
   react: ReactIcon,
   privacy: PrivacyPrinciplesIcon,
   security: SecurityPrinciplesIcon,
-  debbugingtests: DebuggingTestsIcon,
+  debuggingtests: DebuggingTestsIcon,
   link: LinkIcon,
   settingupateam: SettingUpATeamIcon,
 }

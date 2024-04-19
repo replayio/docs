@@ -2,7 +2,7 @@
 title: Test Suites Overview
 ---
 
-Replay Test Suites bring **time-travelling DevTools to your test runs**. You’ll get a better insight into how your test script interacts with application under test. Besides zooming in on your test execution, you can zoom out to get a birds-eye view of your test executions and **drive down test failures and flakes**.
+Replay Test Suites bring **time-traveling DevTools to your test runs**. You’ll get a better insight into how your test script interacts with application under test. Besides zooming in on your test execution, you can zoom out to get a birds-eye view of your test executions and **drive down test failures and flakes**.
 
 {% basic icon="treeview" %}
 
@@ -40,11 +40,11 @@ With information on [line hit counts](/browser-devtools/source-viewer#hit-counts
 
 {% basic icon="console" %}
 
-## Vizualize Your Race Conditions
+## Visualize Your Race Conditions
 
 Flakiness can be a caused by a single line of code. Reveal that line with a **print statement**. Find race conditions, unexpected data, rendering issues - you name it.
 
-We have stories of [2 pixel shifts](https://blog.replay.io/a-journey-of-driving-down-test-flakes-to-0percent-at-metabase-part-3) and [false positives](https://blog.replay.io/finding-%22false-positive%22-tests-with-replay.io) that caused headaches to test maintainers. [Learn more](/time-travel-intro/add-console-logs-on-the-fly) about the power of time-travelling console logs.
+We have stories of [2 pixel shifts](https://blog.replay.io/a-journey-of-driving-down-test-flakes-to-0percent-at-metabase-part-3) and [false positives](https://blog.replay.io/finding-%22false-positive%22-tests-with-replay.io) that caused headaches to test maintainers. [Learn more](/time-travel-intro/add-console-logs-on-the-fly) about the power of time-traveling console logs.
 {% /basic %}
 
 {% figure

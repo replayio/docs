@@ -1,6 +1,7 @@
 ---
 title: Privacy principles
 ---
+
 We know that in order for Replay to become your daily debugging tool we need to earn your trust. Here are a couple of our commitments:
 
 1.  **Private by default.** You can always opt-into making replays public and sharing them with teams and collaborators, but replays default to private.

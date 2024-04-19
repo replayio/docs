@@ -3,9 +3,11 @@ title: Frequently asked questions
 ---
 
 ## Do I need to use `line` reporter along with `@replayio/playwright/reporter`?
+
 Using `line` reporter is not required. `line` reporter will print out information about playwright test run to your terminal.
 
 ## How do I group tests ran in a matrix or across multiple runners into the same test run?
+
 By default, each invocation of Playwright is grouped into a test run by a UUID generated when the run begins. To group multiple invocations of Playwright into the same run, set `RECORD_REPLAY_METADATA_TEST_RUN_ID` to the same UUID value and that will be used instead of generating a UUID for each.
 
 Below is an example which runs three test suites using a matrix in Github Actions but groups the results into the same test run in Replay:
@@ -36,10 +38,10 @@ jobs:
         run: npm run test-${{ matrix.product }}
         env:
           RECORD_REPLAY_METADATA_TEST_RUN_ID: ${{ needs.test-run-id.outputs.testRunId }}
-
 ```
 
 ## What’s in the `.replay` folder?
+
 `/.replay/runtimes` - this is where the replay browser(s) are installed
 
 `/` - recorded replays are saved locally in the root folder
@@ -47,9 +49,11 @@ jobs:
 If you’re trying to cache the browser download, cache `~/.replay/runtimes` or simply cache it before creating replays.
 
 ## How do I confirm that the browsers are installed correctly
+
 Run `ls -alR ~/.replay/runtimes` to see the contents of the runtimes folder.
 
 ## What other environment variables can I configure?
+
 `REPLAY_SKIP_BROWSER_DOWNLOAD` - keeps browsers from being downloaded and installed during `npm install`
 
 `RECORD_REPLAY_METADATA_TEST_RUN_TITLE` - manually apply a test run title, instead of being inferred from the latest commit

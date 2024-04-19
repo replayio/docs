@@ -27,9 +27,10 @@ The Jump button helps you seek to the point in time where the fetch was initiate
 5.  **Timings** Shows the timing information which is useful for understanding the waterfall.
 
 ## Learn more
+
 Watch this video to see the Network panel in action. Learn how to use the network panel to search and filter requests, examine details like status codes, payloads, and response headers, and discover how to quickly navigate to specific requests. You can find the whole course at [replay.help/course](https://replay.help/course)
 
-{% video src="newtworkPanelCourse" autoplay=false controls=true /%}
+{% video src="networkPanelCourse" autoplay=false controls=true /%}
 
 ## Coming soon
 

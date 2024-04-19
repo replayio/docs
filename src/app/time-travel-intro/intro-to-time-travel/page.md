@@ -40,9 +40,9 @@ With Replay DevTools, we want to help visualize the sequence of events so that i
 
 ### Deeper understanding
 
-**Fewer bandaids**
+**Fewer band-aids**
 
-One of the fastest ways to increase the tech debt of a codebase is to ship bandaids and workarounds. We hope Replay helps you better understand your software and address the issue at the source.
+One of the fastest ways to increase the tech debt of a codebase is to ship band-aids and workarounds. We hope Replay helps you better understand your software and address the issue at the source.
 
 **Fewer re-writes**
 

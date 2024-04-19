@@ -1,5 +1,51 @@
 {
   "files.associations": {
     "*.md": "markdoc"
-  }
+  },
+  "cSpell.enableFiletypes": [
+    "markdoc"
+  ],
+  "cSpell.words": [
+    "automagically",
+    "autoplay",
+    "bracketscurly",
+    "callout",
+    "casue",
+    "chromedriver",
+    "configration",
+    "debuggingtests",
+    "devs",
+    "dpkg",
+    "Embeddable",
+    "ENOENT",
+    "Filip",
+    "Gelbaugh",
+    "Hric",
+    "hrmsr",
+    "infobars",
+    "Jori",
+    "journaling",
+    "jumptocode",
+    "Kailash",
+    "keypress",
+    "libc",
+    "navigations",
+    "nextra",
+    "Pathak",
+    "pnpx",
+    "pxxca",
+    "recordreplay",
+    "replayability",
+    "replayio",
+    "Retryability",
+    "runtimes",
+    "Schwering",
+    "settingupateam",
+    "sourcemaps",
+    "Todos",
+    "treeview",
+    "twocolumns",
+    "wdio",
+    "webdriverio"
+  ]
 }

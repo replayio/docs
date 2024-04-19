@@ -1,6 +1,6 @@
 ---
 title: Replay Protocol
-description: The Replay Protocol is useful for creating programatic debugging sessions.
+description: The Replay Protocol is useful for creating programmatic debugging sessions.
 
 image: /images/protocol.png
 ---

@@ -7,7 +7,9 @@ Playwright tests can be configured via `playwright.config.ts` or using [command 
 Usually, the `playwright.config.ts` file specifies the default setup. Your GitHub Action `workflow.yml` file will then define additional options passed via command line.
 
 ## Simple setup
+
 This configuration file contains only a single project that uses `replay-chromium` as a default browser and uses Replay as the default test reporter.
+
 ```jsx {% fileName="playwright.config.ts" lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from "@playwright/test";
 import { devices as replayDevices } from "@replayio/playwright";
@@ -28,11 +30,13 @@ export default config;
 ```
 
 In a configuration like the one above, as simple `npx playwright test` command will:
+
 1. Run all your Playwright tests
 2. Automatically create replays
 3. Automatically upload them to Test Suite Dashboard
 
 The `workflow.yml` file will in this case look as simple as following:
+
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true %}
 name: End-to-end tests
 on: [push, pull_request]
@@ -49,10 +53,12 @@ jobs:
 ```
 
 ## Advanced setup
+
 Usually a Playwright project contains multiple browser projects and various browser reporters. By default, Playwright will run all your projects and use all defined reporters. The `replay-chromium` browser will take care of recording your tests.
 
 ### Specifying projects to run
-You can take control of which project is ran using your worklow file. 
+
+You can take control of which project is ran using your workflow file.
 
 Notice, that in this setup, you need to include an upload step. Specifying `if: ${{ always() }}` will make sure that the "Upload replays" step is executed no matter the result of previous step.
 
@@ -77,6 +83,7 @@ jobs:
 ```
 
 ### Uploading failed tests only
+
 By default, all test replays are uploaded no matter the result. If you want upload only the failed recordings, you can define the step to do so using `filter` property:
 
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true highlight=[19] %}

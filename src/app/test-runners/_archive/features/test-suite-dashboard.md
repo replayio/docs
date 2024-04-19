@@ -1,13 +1,14 @@
 ---
 title: Test Suite Dashboard
 ---
+
 import { Callout } from 'nextra/components'
 
 # Test Suite Dashboard
 
 ![Untitled (3).png](/images/test-suite-dashboard.png)
 
-The **Test Suite Dashboard** is a powerful debugging interface for your test runs and individual test cases. 
+The **Test Suite Dashboard** is a powerful debugging interface for your test runs and individual test cases.
 
 Test in CI can fail for many reasons:
 
@@ -37,7 +38,7 @@ Replay shows you contextual information from CI, including:
 This information can help you make critical triage decisions and offer insights for debugging. For example:
 
 - A test failure triggered by a release may be user-impacting
-- A failure on a work-in-progress branch may be deprioritized
+- A failure on a work-in-progress branch may be de-prioritized
 - If there is a subsequent passing run for the same branch, the failure may have been resolved
 - If all tests failed, it may point to an issue in the environment or with the test runner
 - The commit message may give context, like “trying something, may break”

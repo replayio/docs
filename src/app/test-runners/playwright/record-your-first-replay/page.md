@@ -3,29 +3,38 @@ title: Playwright
 ---
 
 {% steps %}
-## Install the Playwrigh Plugin package into your project
+
+## Install the Playwright Plugin package into your project
 
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
-  {% tab %}
-  ```sh
-  npm install @replayio/playwright -D
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  yarn add @replayio/playwright -D
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  pnpm install @replayio/playwright -D
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  bun install @replayio/playwright -D
-  ```
-  {% /tab %}
+{% tab %}
+
+```sh
+npm install @replayio/playwright -D
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+yarn add @replayio/playwright -D
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+pnpm install @replayio/playwright -D
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+bun install @replayio/playwright -D
+```
+
+{% /tab %}
 {% /tabs %}
 
 ## Update your configuration
@@ -56,6 +65,7 @@ export default config
 ```
 
 ## Generate and save your API key
+
 In order to automatically upload your test replays you need to save an API key in your environment. To generate an API key, log in to Replay App open the settings menu. [Read more](/ci-workflows/generate-api-key).
 
 {% video src="generateApiKey" /%}
@@ -97,34 +107,32 @@ You’re ready to inspect your local test run in Replay DevTools now. You can al
 
 {% quick-links title="Read more" description="Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools" %}
 
-{% quick-link 
-  title="Record Your CI Test Run" 
-  icon="build" 
-  href="/test-runners/playwright/github-actions" 
-  description="Learn how to integrate Replay into your Continuous integration service" 
+{% quick-link
+  title="Record Your CI Test Run"
+  icon="build"
+  href="/test-runners/playwright/github-actions"
+  description="Learn how to integrate Replay into your Continuous integration service"
 /%}
 
-
-{% quick-link 
-  title="Replay DevTools" 
-  icon="jumptocode" 
-  href="/browser-devtools/console" 
-  description="Learn how to use Replay DevTools to debug your tests." 
+{% quick-link
+  title="Replay DevTools"
+  icon="jumptocode"
+  href="/browser-devtools/console"
+  description="Learn how to use Replay DevTools to debug your tests."
 /%}
 
-
-{% quick-link 
-  title="Test Suite Management" 
-  icon="treeview" 
-  href="/test-suites/top-failing-and-flaky-tests" 
-  description="Test Suite Dashboard helps you stay on top of your test suite health." 
+{% quick-link
+  title="Test Suite Management"
+  icon="treeview"
+  href="/test-suites/top-failing-and-flaky-tests"
+  description="Test Suite Dashboard helps you stay on top of your test suite health."
 /%}
 
-{% quick-link 
-  title="Debugging tips" 
-  icon="debbugingtests" 
-  href="/test-runners/playwright/debugging-tests" 
-  description="Learn about how to effectively debug flaky or failing tests" 
+{% quick-link
+  title="Debugging tips"
+  icon="debuggingtests"
+  href="/test-runners/playwright/debugging-tests"
+  description="Learn about how to effectively debug flaky or failing tests"
 /%}
 
 {% /quick-links %}

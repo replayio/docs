@@ -16,7 +16,7 @@ import addingAPrintStatement from '@/videos/Adding_a_print_statement.mp4.json'
 import evaluatingInTheConsole from '@/videos/evaluating_in_the_console.mp4.json'
 import reactDevTools from '@/videos/React_DevTools.mp4.json'
 import reduxDevTools from '@/videos/redux_devtools.mp4.json'
-import newtworkPanelCourse from '@/videos/network_panel_course.mp4.json'
+import networkPanelCourse from '@/videos/network_panel_course.mp4.json'
 import elementsPanelCourse from '@/videos/elements_panel_course.mp4.json'
 import reactPanelCourse from '@/videos/react_panel_course.mp4.json'
 import consoleLogsCourse from '@/videos/console_logs_course.mp4.json'
@@ -40,7 +40,7 @@ const videos = {
   evaluatingInTheConsole,
   reactDevTools,
   reduxDevTools,
-  newtworkPanelCourse,
+  networkPanelCourse,
   elementsPanelCourse,
   reactPanelCourse,
   consoleLogsCourse,
@@ -56,7 +56,12 @@ interface VideoProps {
   loop?: boolean
 }
 
-export const Video: React.FC<VideoProps> = ({ src, controls = false, autoplay = true, loop = true }) => {
+export const Video: React.FC<VideoProps> = ({
+  src,
+  controls = false,
+  autoplay = true,
+  loop = true,
+}) => {
   // @ts-ignore
   const video = videos[src]
   const [mute, setMute] = useState(true)

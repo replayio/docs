@@ -21,7 +21,7 @@ Recording your test run using replay will provide more info than any test result
 
 Cypress brings its special chaining syntax, but can sometimes lead to unexpected issues. Retryability mechanisms can sometimes cause a race-condition, starting a chain of events that can be hard to trace back.
 
-Replay tackles this by providing you more context and deeper insight. All packaged into DevTools that we love to work with and with time-travelling capability on top of it.
+Replay tackles this by providing you more context and deeper insight. All packaged into DevTools that we love to work with and with time-traveling capability on top of it.
 
 ## Trace back every DOM change
 
@@ -65,7 +65,7 @@ To learn more about elements panel, head over to [Elements panel docs](/browser-
 
 ## Inspect network calls
 
-Replays capture all network communication and display it the same way you would expect to see it in your favourite browser’s network panel.
+Replays capture all network communication and display it the same way you would expect to see it in your favorite browser’s network panel.
 
 Network calls are the biggest contributor to asynchronous issues, as responses from server return in different times and sizes. Replay DevTools allow you to inspect every API call and resource fetch, and view headers, payloads, server responses and even timings and stack trace.
 

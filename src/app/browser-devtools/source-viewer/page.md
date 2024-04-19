@@ -36,7 +36,7 @@ We default to showing the original source code because we want viewing the sourc
 
 ### Source Map explorer
 
-Most of the time you should not have to think about the source mapping betweeen your original code and the generated minified code that runs in the browser.
+Most of the time you should not have to think about the source mapping between your original code and the generated minified code that runs in the browser.
 
 When you believe there’s a source mapping issue though, it can be helpful to click on the source map explorer button in the footer and view the mappings.
 
@@ -57,6 +57,7 @@ Hold down `⌘` or `⌘ + ⇧` to jump to the next or previous time a line has b
 Alternatively, you can add a breakpoint in the gutter and select resume or rewind in the pause panel. While adding breakpoints will feel familiar and can be useful in some cases, they come with the downside that when you resume you don’t know which breakpoint you’ll hit.
 
 ## Learn more
+
 Learn how to navigate your source code effectively. This tutorial will teach you how to search within your code, view hit counts to see how often lines are executed, and jump directly to any line of execution. You can find the whole course at [replay.help/course](https://replay.help/course)
 
 {% video src="sourceCourse" autoplay=false controls=true /%}

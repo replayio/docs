@@ -20,11 +20,11 @@ The reason so much of the web is recordable with Replay is that we primarily rec
 
 Some of the functionality you would not expect to work, but does natively is Web Workers, Canvas and Web Assembly. Some of the functionality that is not yet implemented is WebGL and Web Audio. If you find other features that are not yet implemented, reach out and we’ll add it to our roadmap.
 
-### What is it’s recordihng overhead?
+### What is its recording overhead?
 
 The first time you use Replay you’ll be shocked at how fast recording with Replay is. There are two reasons for this.
 
-The first is that when Replay is recording it’s running in almost exactly the same way that it runs normally. Browsers are designed to be fast, so if you don’t change anything, they’ll continue to be fast.
+The first is that when Replay is recording, it's running in almost exactly the same way that it runs normally. Browsers are designed to be fast, so if you don’t change anything, they’ll continue to be fast.
 
 The second reason is that intercepting the library calls, which is what’s primarily captured while recording is really fast. The overhead is about 3.5% which is significantly less than comparable observability tools like DataDog and Sentry.
 
