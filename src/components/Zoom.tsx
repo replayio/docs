@@ -1,5 +1,6 @@
 import React, { CSSProperties, useRef, useState } from 'react'
 import { default as Image, ImageProps } from 'next/image.js'
+import { track } from '@vercel/analytics'
 
 interface ZoomProps {
   zoomPercentage?: number
@@ -38,6 +39,7 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
   const [clicked, setClicked] = useState(false)
 
   const handleImageZoom = () => {
+    track('Zoom', {})
     if (!containerRef.current || clicked) return
 
     const containerRect = containerRef.current.getBoundingClientRect()
@@ -73,6 +75,8 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
   }
 
   const closeWrapper = () => {
+    track('Zoom Out', {})
+
     if (!containerRef.current) return
     containerRef.current.style.transform = `scale(1)`
     setClicked(false)
@@ -113,7 +117,7 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
         />
       ) : null}
       <div style={styles} ref={containerRef} onClick={handleImageZoom}>
-        <Image {...imageProps2} placeholder='empty' />
+        <Image {...imageProps2} placeholder="empty" />
       </div>
     </>
   )
