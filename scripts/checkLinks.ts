@@ -27,20 +27,8 @@ async function checkLink(url: string): Promise<boolean> {
   }
 }
 
-async function checkLinksInFile(filePath: string): Promise<void> {
-  const content = fs.readFileSync(filePath, 'utf8')
-  const links: string[] = []
-
-  const renderer = new marked.Renderer()
-  const originalLinkRenderer = renderer.link
-
-  renderer.link = (href, title, text) => {
-    links.push(href)
-    return originalLinkRenderer.call(renderer, href, title, text)
-  }
-
-  marked(content, { renderer })
-
+async function checkLinksInFile(filePath: string, links: string[]) {
+  const failedLinks = []
   for (const link of links) {
     if (link.match(/^(mailto|blob)/)) {
       continue
@@ -53,19 +41,61 @@ async function checkLinksInFile(filePath: string): Promise<void> {
 
     const isOk = await checkLink(url)
     if (!isOk) {
-      console.error(`${filePath} :: ${link} is broken`)
+      const message = `Link ${url} in ${filePath} is broken`
+      console.error(message)
+      failedLinks.push(message)
     }
   }
+  return failedLinks
+}
+
+async function collectLinksInFile(
+  filePath: string,
+): Promise<{ file: string; links: string[] }> {
+  const content = fs.readFileSync(filePath, 'utf8')
+  const links: string[] = []
+
+  const renderer = new marked.Renderer()
+  const originalLinkRenderer = renderer.link
+
+  renderer.link = (href, title, text) => {
+    links.push(href)
+    return originalLinkRenderer.call(renderer, href, title, text)
+  }
+
+  marked(content, { renderer })
+  return { file: filePath, links }
 }
 
 async function main(): Promise<void> {
   const glob = new Glob('./src/app/**/page.md')
 
+  const files = []
   for await (const file of glob.scan('.')) {
     if (excludePage.includes(file)) {
       continue
     }
-    await checkLinksInFile(file)
+    const newLinks = await collectLinksInFile(file)
+    files.push(newLinks)
+  }
+
+  console.log(`Checking ${files.length} files...`)
+
+  const failedLinks = []
+  for (const file of files.slice(0, 5)) {
+    const { file: filePath, links } = file
+    console.log(`${filePath}`)
+    failedLinks.push(...(await checkLinksInFile(filePath, links)))
+  }
+
+  if (failedLinks.length > 0) {
+    console.error('\nThe following links are broken:')
+    for (const link of failedLinks) {
+      console.error(link)
+    }
+    process.exit(1)
+  } else {
+    console.log('All links are working')
   }
 }
 
