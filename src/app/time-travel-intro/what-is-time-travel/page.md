@@ -1,9 +1,6 @@
 ---
 title: What is time travel?
-description: Replay Test Suites bring time-traveling DevTools to your existing Cypress, Playwright or any other test suites
 ---
-
-Software development should feel magical, but when you’re stuck and feeling alone it does not. Replay restores that feeling of magic by making it easier to see and understand how software works and by making debugging faster and collaborative.
 
 Time travel debugging is not a new idea. In fact it’s one of the oldest. Ever since the first bugs were created, folks have been trying to figure out how to record and replay them, so they can capture them once, put them under the microscope, and figure out how they occurred.
 
@@ -32,11 +29,13 @@ This is where time travel comes in. When you’re in Replay DevTools, you’re a
 
 Time travel is one of those radical ideas which sounds simple when you first hear them, but then take awhile to sink in. The first time you’re in Replay DevTools, the UI will look familiar to Chrome DevTools and VS Code, but time travel will feel weird and uncomfortable. That’s okay. Give it five minutes and you’ll become a time traveler for life.
 
-## Bringing time travel mainstream
+## History of time travel
 
-Replay started as an R&D project at Mozilla called WebReplay alongside Rust and WebAssembly because when we built the first time travel debugger for C++ ten years ago it made some of the most difficult bugs in Firefox’s Graphics and JS engine tractable.
+In the 1960s, researchers like Lamport and Clapp demonstrated that it was possible to record and deterministicly replay the runtime after the fact. In the early 2000s, researchers like Lewis, Shapiro, and Sagiv showed that it was possible to effiently query execution state after the fact.
 
-We knew we had something valuable when six months into starting Replay some of the top open source developers were using Replay to fix some of the most difficult bugs in React, Redux, and other popular open source libraries. It didn’t matter if Replay crashed every five minutes, and was as slower than a dial-up modem, the ability to slow down and study a problem with Replay, was so great that some problems simply necessitated time travel.
+In the early 2010s, Mozilla was the first to build a production grade recorder for C++ which made fixing some of the most difficult graphics and JS bugs possible. At that point, the question became, if we could record and replay the browser, could we bring time travel debugging to the web?
+
+Replay started off as an R&D project inside of Mozilla called WebReplay in 2015 and we spun it out of Mozilla in the summer of 2020. We knew we had something valuable when six months later some of the top open source developers were using Replay to fix some of the most difficult bugs in React, Redux, and other popular open source libraries. It didn’t matter if Replay crashed every five minutes, and was as slower than a dial-up modem, the ability to slow down and study a problem with Replay, was so great that some problems simply necessitated time travel.
 
 {% figure
     alt="Sebastian testimonial"
@@ -49,3 +48,7 @@ We knew we had something valuable when six months into starting Replay some of t
 Today Replay is used today in many of the top Open Source projects such as NextJS and Typescript. It’s hard to work on a web app and not use a tool that’s better because of Replay. Replay also is far faster. You can record in real time and forget it’s on and Replay DevTools is as responsive as Chrome DevTools.
 
 With our recent move from Firefox to Chrome, you can use Replay as your development browser to capture the perfect bug report, and to record and replay your browser tests. It turns out that flaky test failures are timing issues and time travel debugging is perfect for understanding them. You’ll laugh the first time you fix a flaky test and then try to imagine how you would have done it before!
+
+## The mission of Time Travel
+
+Software development should feel magical, but when you’re stuck and feeling alone it does not. Replay restores that feeling of magic by making it easier to see and understand how software works and by making debugging faster and collaborative.
