@@ -5,6 +5,10 @@
       "destination": "https://discord.gg/Wh9w3KMr7J"
     },
     {
+      "source": "/resources/comparisons/playwright-trace-viewer-vs-replay-devtools",
+      "destination": "/comparison/playwright"
+    }
+    {
       "source": "/legal",
       "destination": "https://www.replay.io/terms-of-service"
     },
