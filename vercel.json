@@ -234,7 +234,7 @@
     },
     {
       "source": "/getting-started/bug-reports/installing-the-replay-browser",
-      "destination": "/replay-runtimes/replay-chrome"
+      "destination": "/quickstart"
     },
     {
       "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-replay-chrome",
@@ -259,6 +259,14 @@
     {
       "source": "/getting-started/replay-browser/installation",
       "destination": "/getting-started/record-your-first-replay"
+    },
+    {
+      "source": "/replay-browser/install-chrome",
+      "destination": "/replay-runtimes/replay-chrome"
+    },
+    {
+      "source": "/reference-guide/recording/replay-browser",
+      "destination": "/quickstart"
     }
   ],
   "rewrites": [
