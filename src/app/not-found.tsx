@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect } from 'react'
 import { track } from '@vercel/analytics'
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react'
 
 export default function NotFound() {
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function NotFound() {
           Go back home
         </Link>
       </div>
+      <VercelAnalytics />
     </div>
   )
 }
