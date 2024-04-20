@@ -2,6 +2,8 @@ import * as fs from 'fs'
 import { Glob } from 'bun'
 import fetch from 'node-fetch'
 import { marked } from 'marked'
+import vercelConfig from "../vercel.json"
+
 
 const LOCAL_BASE = 'http://localhost:3000'
 
@@ -10,7 +12,7 @@ const excludePage = [
   './src/app/test-runners/cypress-io/dashboard.md',
   './src/app/test-runners/_archive/jest.md',
 ]
-const excludeUrl = ['https://webreplay.us.auth0.com/login/callback?connection=']
+const excludeUrl = ['https://webreplay.us.auth0.com/login/callback?connection=', '/discord']
 
 function isFullUrl(url: string): boolean {
   // A regular expression to check if the URL starts with http://, https://, or //
@@ -41,7 +43,7 @@ async function checkLinksInFile(filePath: string, links: string[]) {
 
     const isOk = await checkLink(url)
     if (!isOk) {
-      const message = `Link ${url} in ${filePath} is broken`
+      const message = `${filePath} :: ${url} is broken`
       console.error(message)
       failedLinks.push(message)
     }
@@ -87,6 +89,9 @@ async function main(): Promise<void> {
     console.log(`${filePath}`)
     failedLinks.push(...(await checkLinksInFile(filePath, links)))
   }
+
+  failedLinks.push(... await checkLinksInFile('vercel.json', (vercelConfig.redirects.map(l => l.destination))))
+
 
   if (failedLinks.length > 0) {
     console.error('\nThe following links are broken:')

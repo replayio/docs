@@ -42,7 +42,7 @@
     },
     {
       "source": "/getting-started/replay-browser/install-chrome",
-      "destination": "/replay-browser/install-chrome"
+      "destination": "/quickstart"
     },
     {
       "source": "/getting-started/teams-admin/organization-features",
@@ -129,28 +129,12 @@
       "destination": "/comparison/loom"
     },
     {
-      "source": "/recording-a-web-app/sharing-your-replay",
-      "destination": "/replay-teams/managing-replays#sharing-a-replay"
+      "source": "/recording-a-web-app/*",
+      "destination": "/"
     },
     {
-      "source": "/recording-a-web-app/viewing-and-collaborating",
-      "destination": "/time-travel-intro/annotate-the-timeline"
-    },
-    {
-      "source": "/recording-browser-tests-\\(beta\\)/cypress-instructions",
-      "destination": "/test-runners/cypress-io/record-your-first-replay"
-    },
-    {
-      "source": "/recording-browser-tests-\\(beta\\)/pull-request-comments",
-      "destination": "/test-suites/pr-comments"
-    },
-    {
-      "source": "/recording-browser-tests-\\(beta\\)/test-suite-dashboard",
-      "destination": "/test-suites/runs-view"
-    },
-    {
-      "source": "/recording-browser-tests-\\(beta\\)/test-replays",
-      "destination": "/test-runners/overview"
+      "source": "/recording-browser-tests-\\(beta\\)/*",
+      "destination": "/"
     },
     {
       "source": "/reference-guide/cypress-panel",
@@ -233,20 +217,8 @@
       "destination": "/"
     },
     {
-      "source": "/getting-started/bug-reports/installing-the-replay-browser",
-      "destination": "/quickstart"
-    },
-    {
-      "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-replay-chrome",
-      "destination": "/replay-runtimes/replay-chrome"
-    },
-    {
-      "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-on-linux",
-      "destination": "/replay-runtimes/replay-chrome"
-    },
-    {
-      "source": "/getting-started/bug-reports/installing-the-replay-browser/installing-on-windows",
-      "destination": "/replay-runtimes/replay-chrome"
+      "source": "/getting-started/bug-reports/*",
+      "destination": "/"
     },
     {
       "source": "/reference-guide/focus-mode",
@@ -257,12 +229,12 @@
       "destination": "/time-travel-intro/add-console-logs-on-the-fly"
     },
     {
-      "source": "/getting-started/replay-browser/installation",
-      "destination": "/getting-started/record-your-first-replay"
+      "source": "/getting-started/replay-browser/*",
+      "destination": "/quickstart"
     },
     {
-      "source": "/replay-browser/install-chrome",
-      "destination": "/replay-runtimes/replay-chrome"
+      "source": "/replay-browser/*",
+      "destination": "/"
     },
     {
       "source": "/reference-guide/recording/replay-browser",
