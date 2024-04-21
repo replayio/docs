@@ -129,7 +129,7 @@
       "destination": "/comparison/loom"
     },
     {
-      "source": "/recording-a-web-app/*",
+      "source": "/recording-a-web-app/(.*)",
       "destination": "/"
     },
     {
