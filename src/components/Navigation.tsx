@@ -7,6 +7,7 @@ import { navigation, NavigationItem } from '@/lib/navigation'
 import { Disclosure } from '@headlessui/react'
 import { Icon } from './Icon'
 import { NavIcon } from './NavIcon'
+import styles from './Navigation.module.css'
 
 function ItemLink({
   item,
@@ -21,16 +22,12 @@ function ItemLink({
 }) {
   return (
     <Link
-      href={item.href !== '' ? item.href : '#'}
-      onClick={item.href !== '' ? onLinkClick : undefined}
+      href={item.href || '#'}
+      onClick={item.href ? onLinkClick : undefined}
       className={clsx(
-        `ml-.5 block h-full w-full transition-all`,
+        styles.item,
         className,
-        item.href !== '' && pathname.includes(item.href)
-          ? 'font-semibold text-sky-500'
-          : item.href !== ''
-            ? 'text-gray-600 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-200'
-            : 'cursor-default hover:bg-gray-50 dark:hover:bg-gray-900/60',
+        item.href && pathname.includes(item.href) && styles.selected,
       )}
     >
       <NavIcon
@@ -57,7 +54,7 @@ export function Navigation({
         <Link
           href="/quickstart"
           className={clsx(
-            'flex w-full items-center justify-between rounded-md text-left font-semibold leading-6',
+            'flex w-full items-center justify-between rounded-md pb-1 text-left leading-6',
             pathname.includes('/quickstart')
               ? 'text-sky-500'
               : 'hover:text-gray-900 dark:hover:text-gray-300',
@@ -78,10 +75,8 @@ export function Navigation({
                   <>
                     <Disclosure.Button
                       className={clsx(
-                        'flex w-full items-center justify-between rounded-md text-left font-semibold leading-6 hover:text-gray-900 dark:hover:text-gray-300',
-                        section.href !== '' && pathname.includes(section.href)
-                          ? 'text-gray-900 dark:text-gray-200'
-                          : 'text-gray-800 dark:text-gray-200',
+                        styles.category,
+                        section.href !== '' && pathname.includes(section.href),
                       )}
                     >
                       {section.title}
@@ -105,7 +100,7 @@ export function Navigation({
                     >
                       {section.links?.map((item) => (
                         <li key={item.title}>
-                          <Disclosure.Button className="relative h-7 w-full rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10 dark:hover:text-white">
+                          <Disclosure.Button className={styles.button}>
                             <ItemLink
                               item={item}
                               pathname={pathname}
@@ -116,7 +111,9 @@ export function Navigation({
                             <Disclosure.Panel as="ul">
                               {item.links.map((subItem) => (
                                 <li key={subItem.title}>
-                                  <Disclosure.Button className="ml-4 h-7 w-52 rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
+                                  <Disclosure.Button
+                                    className={`${styles.button} ${styles.tertiary}`}
+                                  >
                                     <ItemLink
                                       item={subItem}
                                       pathname={pathname}
@@ -125,20 +122,17 @@ export function Navigation({
                                   </Disclosure.Button>
                                   {subItem.links && (
                                     <Disclosure.Panel as="ul">
-                                      {subItem.links.map((thirdLevelItem) => (
-                                        <li key={thirdLevelItem.title}>
-                                          <Disclosure.Button className="ml-4 h-7 w-52 rounded-md text-left transition-all hover:bg-gray-500 hover:bg-opacity-10">
+                                      {subItem.links.map((tertiary) => (
+                                        <li key={tertiary.title}>
+                                          <Disclosure.Button
+                                            className={`${styles.button} ${styles.tertiary}`}
+                                          >
                                             <Link
-                                              href={thirdLevelItem.href}
+                                              href={tertiary.href}
                                               onClick={onLinkClick}
-                                              className={clsx(
-                                                'block h-full border pl-4 transition-all',
-                                                thirdLevelItem.href === pathname
-                                                  ? ' text-sky-500'
-                                                  : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300',
-                                              )}
+                                              className={clsx(styles.item)}
                                             >
-                                              {thirdLevelItem.title}
+                                              {tertiary.title}
                                             </Link>
                                           </Disclosure.Button>
                                         </li>

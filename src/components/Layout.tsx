@@ -97,6 +97,17 @@ function Header() {
 export function Layout({ children }: { children: React.ReactNode }) {
   let pathname = usePathname()
   let isHomePage = pathname === '/'
+  let { theme } = useTheme()
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+      console.log('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      console.log('no dark')
+    }
+  }, [theme])
 
   return (
     <div className="flex w-full flex-col">
