@@ -129,9 +129,9 @@
       "destination": "/comparison/loom"
     },
     {
-      "source": "/recording-a-web-app/*",
+      "source": "/recording-a-web-app/(.*)",
       "destination": "/"
-    },
+    }
     {
       "source": "/recording-browser-tests-\\(beta\\)/*",
       "destination": "/"
