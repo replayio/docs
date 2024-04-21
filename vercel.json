@@ -131,7 +131,7 @@
     {
       "source": "/recording-a-web-app/(.*)",
       "destination": "/"
-    }
+    },
     {
       "source": "/recording-browser-tests-\\(beta\\)/*",
       "destination": "/"
