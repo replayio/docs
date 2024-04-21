@@ -129,7 +129,7 @@
       "destination": "/"
     },
     {
-      "source": "/recording-browser-tests-\\(beta\\)/*",
+      "source": "/recording-browser-tests-\\(beta\\)/(.*)",
       "destination": "/"
     },
     {
@@ -213,7 +213,7 @@
       "destination": "/"
     },
     {
-      "source": "/getting-started/bug-reports/*",
+      "source": "/getting-started/bug-reports/(.*)",
       "destination": "/"
     },
     {
@@ -225,11 +225,11 @@
       "destination": "/time-travel-intro/add-console-logs-on-the-fly"
     },
     {
-      "source": "/getting-started/replay-browser/*",
+      "source": "/getting-started/replay-browser/(.*)",
       "destination": "/quickstart"
     },
     {
-      "source": "/replay-browser/*",
+      "source": "/replay-browser/(.*)",
       "destination": "/"
     },
     {
