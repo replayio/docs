@@ -7,6 +7,7 @@ import { navigation, NavigationItem } from '@/lib/navigation'
 import { Disclosure } from '@headlessui/react'
 import { Icon } from './Icon'
 import { NavIcon } from './NavIcon'
+import styles from './Navigation.module.css'
 
 function ItemLink({
   item,
@@ -24,10 +25,10 @@ function ItemLink({
       href={item.href !== '' ? item.href : '#'}
       onClick={item.href !== '' ? onLinkClick : undefined}
       className={clsx(
-        `ml-.5 block h-full w-full transition-all`,
+        styles.item,
         className,
         item.href !== '' && pathname.includes(item.href)
-          ? 'font-semibold text-sky-500'
+          ? styles.selected
           : item.href !== ''
             ? 'text-gray-600 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-200'
             : 'cursor-default hover:bg-gray-50 dark:hover:bg-gray-900/60',
@@ -57,7 +58,7 @@ export function Navigation({
         <Link
           href="/quickstart"
           className={clsx(
-            'flex w-full items-center justify-between rounded-md text-left font-semibold leading-6',
+            'flex w-full items-center justify-between rounded-md pb-1 text-left leading-6',
             pathname.includes('/quickstart')
               ? 'text-sky-500'
               : 'hover:text-gray-900 dark:hover:text-gray-300',
@@ -78,7 +79,7 @@ export function Navigation({
                   <>
                     <Disclosure.Button
                       className={clsx(
-                        'flex w-full items-center justify-between rounded-md text-left font-semibold leading-6 hover:text-gray-900 dark:hover:text-gray-300',
+                        styles.category,
                         section.href !== '' && pathname.includes(section.href)
                           ? 'text-gray-900 dark:text-gray-200'
                           : 'text-gray-800 dark:text-gray-200',
