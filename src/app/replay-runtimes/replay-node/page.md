@@ -53,3 +53,13 @@ https://app.replay.io/recording/8a5ab266-96ec-47d5-a56a-2b49fa2b999b
 ```
 
 {% /steps %}
+
+## FAQ
+
+### How do I use Replay Node with TypeScript?
+
+Replay Node supports an `--exec` flag that lets you execute Node scripts like `ts-node`.
+
+```sh
+replay-node --exec ts-node <script>
+```
