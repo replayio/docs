@@ -113,10 +113,6 @@
       "destination": "/additional-content/security-practices"
     },
     {
-      "source": "/recording-browser-tests-\\(beta\\)",
-      "destination": "/test-runners/overview"
-    },
-    {
       "source": "/case-studies-and-comparisons/replay-vs.-session-replay",
       "destination": "/test-runners/overview"
     },
