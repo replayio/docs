@@ -67,7 +67,7 @@ export const Video: React.FC<VideoProps> = ({
   const [mute, setMute] = useState(true)
   return (
     <NextVideo
-      onPlay={() => setMute(false)}
+      onPlay={() => !autoplay && setMute(false)}
       src={video}
       autoPlay={autoplay}
       muted={mute}

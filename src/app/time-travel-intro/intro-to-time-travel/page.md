@@ -6,7 +6,7 @@ Time travel debugging is a radical approach for inspecting your application, exp
 
 Replay DevTools looks similar to VS Code and Chrome DevTools, but once you start time traveling, you’ll quickly realize it’s a new way to think about your software and collaboratively debug the hardest problems with your team.
 
-{% video src="marketingHero" %}{% /video %}
+{% video src="marketingHero" /%}
 
 ## Design Principles
 
