@@ -22,7 +22,7 @@ If you’ve ever developed with Hot Module Reloading and have made a change in y
 
 The two reasons why debugging can be difficult are that issues can come from anywhere and you need to work backwards from where the issue first became visible to the underlying cause that triggered it.
 
-This is where time travel shines. For the first time you can jump forward and backwards in time and be paused at that line of code. Never has it been easier to
+This is where time travel shines. For the first time you can jump forward and backwards in time and be paused at that line of code.
 
 ### Debugging should be a team sport
 
