@@ -23,6 +23,7 @@ import consoleLogsCourse from '@/videos/console_logs_course.mp4.json'
 import sourceCourse from '@/videos/source_course.mp4.json'
 import timelineCourse from '@/videos/timeline_course.mp4.json'
 import playwrightDebugging from '@/videos/playwright_debugging.mp4.json'
+import networkPanelCypress from '@/videos/network_panel_cypress.mp4.json'
 // import getStarted from '@/videos/get-started.mp4';
 
 const videos = {
@@ -47,6 +48,7 @@ const videos = {
   sourceCourse,
   timelineCourse,
   playwrightDebugging,
+  networkPanelCypress
 }
 
 interface VideoProps {
