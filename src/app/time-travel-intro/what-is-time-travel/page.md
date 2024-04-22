@@ -4,6 +4,15 @@ title: What is time travel?
 
 Time travel debugging is the simple idea that you should be able to go backwards or forwards in time when debugging an issue. This is a much quicker and more helpful way to debug compared to the traditional way, which doesn’t let you go backwards. Because of this limitation, most developers debug by adjusting some code, reloading the app, checking the logs, and repeating the loop. With time travel debugging, you can go forwards or backwards through your code’s execution, adding console logs on the fly. It’s a simple idea with huge implications.
 
+{% figure
+    alt="Adding console logs"
+    src="/images/set_print_statement.gif"
+    gradient="bg-gradient-to-tr from-blue-200 via-fuchsia-300 to-orange-400"
+    showRadius=false
+    height=3
+    width=600
+/%}
+
 Using Replay is designed to feel familiar, like Chrome DevTools and VS Code. But it’s the time travel element that can feel a bit weird and uncomfortable at first. But once you understand how to wield its time traveling powers, it’s hard to go back to the old way of debugging. Check out the nav to learn more, starting with Adding console messages on the fly.
 
 ## A brief history
