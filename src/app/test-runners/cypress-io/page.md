@@ -69,7 +69,7 @@ Replays capture all network communication and display it the same way you would 
 
 Network calls are the biggest contributor to asynchronous issues, as responses from server return in different times and sizes. Replay DevTools allow you to inspect every API call and resource fetch, and view headers, payloads, server responses and even timings and stack trace.
 
-<!-- todo: add a video here -->
+{% video src="networkPanelCypress" /%}
 
 Because network panel is integrated with the rest of the tools, you’ll get even more options than in local development. Stack trace panel displays the source of an API call, which allows you to track back the very function that triggered the call.
 
@@ -92,7 +92,7 @@ When a test clicks on an element on page, we usually **see the result**. Modal o
 
 Interactions show "Jump to code" button that takes you to the function call made by a click, typing or other interaction. This way your test interaction is no longer disconnected from the application under test.
 
-<!-- todo: add video -->
+{% video src="jumpToCode" /%}
 
 This bridge between your test code and your app code is usually the first place you can start your test flake investigation. It gives you a unique insight into what is happening during your test - not only with the test, but also the application under test.
 
