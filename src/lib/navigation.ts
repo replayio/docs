@@ -209,11 +209,11 @@ export const navigation: NavigationItem[] = [
             href: '/test-runners/playwright/record-your-first-replay',
             icon: 'record',
           },
-          // {
-          //   title: 'Debugging tests',
-          //   href: '/test-runners/playwright/debugging-tests',
-          //   icon: 'debuggingtests'
-          // },
+          {
+            title: 'Debugging tests',
+            href: '/test-runners/playwright/debugging-tests',
+            icon: 'debuggingtests'
+          },
           {
             title: 'GitHub actions',
             href: '/test-runners/playwright/github-actions',

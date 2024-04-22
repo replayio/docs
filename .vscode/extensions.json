@@ -1,5 +1,6 @@
 {
   "recommendations": [
-    "stripe.markdoc-language-support"
+    "stripe.markdoc-language-support",
+    "streetsidesoftware.code-spell-checker"
   ]
 }

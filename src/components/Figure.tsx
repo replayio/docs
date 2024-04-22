@@ -30,18 +30,15 @@ export function Figure({
     width,
     fill,
     className: `${gradient} object-contain rounded ${
-      ripple ? 'shadow-ripple' : ''
+      ripple && 'shadow-ripple'} ${showRadius && 'rounded-lg border border-gray-200 p-1 dark:border-slate-600'
+      }
     }`,
   }
 
   return (
     <figure
       title={alt}
-      className={`not-prose flex flex-col mt-6 ${
-        showRadius
-          ? 'rounded-lg border border-gray-200 p-1 dark:border-slate-600'
-          : ''
-      } ${className}`}
+      className={`not-prose flex flex-col mt-6 ${className}`}
     >
       <div
         className={`relative grid flex-grow justify-center ${
