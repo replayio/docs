@@ -20,8 +20,8 @@ export const navigation: NavigationItem[] = [
     href: '/time-travel-intro',
     links: [
       {
-        title: 'What is time travel?',
-        href: '/time-travel-intro/what-is-time-travel',
+        title: 'Why time travel?',
+        href: '/time-travel-intro/why-time-travel',
         icon: 'hourglass',
       },
       {
