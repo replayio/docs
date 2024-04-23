@@ -27,7 +27,7 @@ export default function NotFound() {
           width={450}
           height={450}
           alt="Broken Delorean"
-          placeholder={`data:image/svg+xml;base64,${window.btoa(LoaderAnimation)}`}
+          placeholder={LoaderAnimation}
         />
         <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
           You might need to travel back in time.
