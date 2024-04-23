@@ -32,12 +32,13 @@ Watch this video to see the Network panel in action. Learn how to use the networ
 
 {% video src="networkPanelCourse" autoplay=false controls=true /%}
 
-## Coming soon
+{% callout title="Coming soon" showIcon=false %}
 
-### Search requests
+## Search requests
 
 The search panel will help you search for resources by request and response body.
 
-### GraphQL panel
+## GraphQL panel
 
 The GraphQL panel will help you inspect GraphQL requests, mutations.
+{% /callout %}
