@@ -57,7 +57,7 @@ export function Callout({
     </p>
 
   return (
-    <div className={clsx('my-8 flex rounded-3xl p-6', styles[type].container)}>
+    <div className={clsx('my-8 flex rounded-3xl p-6 callout', styles[type].container)}>
       { showIcon && <IconComponent className="h-8 w-8 flex-none" /> }
       <div className="ml-4 flex-auto">
         { title && getTitleComponent() }
