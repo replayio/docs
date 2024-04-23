@@ -37,3 +37,8 @@
 .callout h2 {
   @apply dark:text-gray-200 mb-2 mt-6 text-lg
 }
+
+/* loading image animation */
+img[style*="background-image"] {
+  background-size: contain !important;
+}

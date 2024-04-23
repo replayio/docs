@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import { track } from '@vercel/analytics'
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react'
+import { LoaderAnimation } from '@/components/icons/LoaderAnimation'
 
 export default function NotFound() {
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function NotFound() {
           width={450}
           height={450}
           alt="Broken Delorean"
-          placeholder="empty"
+          placeholder={LoaderAnimation}
         />
         <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
           You might need to travel back in time.
