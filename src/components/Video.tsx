@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { default as NextVideo } from 'next-video'
+import Zoom from './Zoom'
 
 import marketingHero from '@/videos/marketing-hero.mp4.json'
 import bisect from '@/videos/bisect.mp4.json'
@@ -68,16 +69,18 @@ export const Video: React.FC<VideoProps> = ({
   const video = videos[src]
   const [mute, setMute] = useState(true)
   return (
-    <NextVideo
-      onPlay={() => !autoplay && setMute(false)}
-      src={video}
-      autoPlay={autoplay}
-      muted={mute}
-      loop={loop}
-      controls={controls}
-      accentColor="#f02d5e"
-      className="overflow-clip rounded-xl border border-transparent"
-    />
+    <Zoom>
+        <NextVideo
+        onPlay={() => !autoplay && setMute(false)}
+        src={video}
+        autoPlay={autoplay}
+        muted={mute}
+        loop={loop}
+        controls={controls}
+        accentColor="#f02d5e"
+        className="overflow-clip rounded-xl border border-transparent"
+      />
+    </Zoom>
   )
 }
 

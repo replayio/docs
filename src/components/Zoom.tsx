@@ -1,38 +1,7 @@
 import React, { CSSProperties, useRef, useState } from 'react'
-import { default as Image, ImageProps } from 'next/image.js'
 import { track } from '@vercel/analytics'
 
-interface ZoomProps {
-  zoomPercentage?: number
-  backgroundColor?: string
-  backgroundOpacity?: number
-  animationDuration?: number
-}
-
-/**
- * Zoom component
- * @param {ImageProps & ZoomProps} props
- */
-export const Zoom = (props: ImageProps & ZoomProps) => {
-  const {
-    zoomPercentage = 90,
-    backgroundOpacity = 0.8,
-    backgroundColor = 'black',
-    animationDuration = 300,
-    ...imageProps
-  } = props
-
-  if (zoomPercentage === undefined) {
-    throw 'Zoom percentage cannot be undefined!'
-  }
-
-  if (zoomPercentage < 1 || zoomPercentage > 100) {
-    throw 'Zoom percentage must be between 1 and 100'
-  }
-
-  if (backgroundOpacity < 0 || backgroundOpacity > 1) {
-    throw 'Background opacity must be between 0 and 1'
-  }
+export const Zoom = ({ children }: {children: React.ReactNode}) => {
 
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -51,7 +20,7 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
     const cL = containerRect.left
     const cT = containerRect.top
 
-    const zoomPerc = zoomPercentage / 100
+    const zoomPerc = 0.9
     if (
       ((window.innerHeight * zoomPerc) / clientHeight) * clientWidth >=
       window.innerWidth
@@ -70,6 +39,7 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
     }
 
     window.document.addEventListener('scroll', closeWrapper, { once: true })
+    window.document.addEventListener('click', closeWrapper, { once: true })
 
     setClicked(true)
   }
@@ -84,20 +54,14 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
 
   const styles: CSSProperties = {
     position: 'relative',
-    transition: `transform ${animationDuration}ms`,
-    display: props.layout === 'fixed' ? 'inline-block' : 'block',
-    width: props.layout === 'fixed' ? 'max-content' : '100%',
-    height: props.layout === 'fixed' ? 'max-content' : 'auto',
+    transition: `transform 300ms`,
+    display:  'block',
+    width:  '100%',
+    height:  'auto',
     zIndex: clicked ? 50 : 0,
     overflow: clicked ? 'hidden' : '',
-    backgroundColor: clicked ? 'rgba(0,0,0,.3)' : 'transparent',
-  }
-
-  const imageProps2 = {
-    ...imageProps,
-    className: `${imageProps.className}  ${
-      clicked ? 'cursor-zoom-out' : 'cursor-zoom-in'
-    }`,
+    backgroundColor: 'transparent',
+    cursor:  clicked ? 'zoom-out' : 'zoom-in'
   }
 
   return (
@@ -117,7 +81,7 @@ export const Zoom = (props: ImageProps & ZoomProps) => {
         />
       ) : null}
       <div style={styles} ref={containerRef} onClick={handleImageZoom}>
-        <Image {...imageProps2} placeholder="empty" />
+        {children}
       </div>
     </>
   )
