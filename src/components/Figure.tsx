@@ -1,5 +1,6 @@
 'use client'
 import Zoom from '@/components/Zoom'
+import Image from 'next/image'
 
 export function Figure({
   className = '',
@@ -47,10 +48,10 @@ export function Figure({
       >
         {fill && gradient ? (
           <div className="absolute bottom-3 left-3 right-3 top-3 sm:bottom-4 sm:left-4 sm:right-4 sm:top-4">
-            <Zoom {...imgProps} />
+            <Zoom><Image {...imgProps} placeholder="empty" /></Zoom>
           </div>
         ) : (
-          <Zoom {...imgProps} />
+          <Zoom><Image {...imgProps} placeholder="empty" /></Zoom>
         )}
       </div>
       {children ? (
