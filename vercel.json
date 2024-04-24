@@ -9,6 +9,10 @@
       "destination": "/time-travel-intro/why-time-travel"
     },
     {
+      "source": "/time-travel-intro/intro-to-time-travel",
+      "destination": "/time-travel-intro/why-time-travel"
+    },
+    {
       "source": "/resources/comparisons/live-debugging-vs-time-travel-debugging",
       "destination": "/comparison/devtools"
     },

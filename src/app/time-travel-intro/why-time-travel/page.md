@@ -9,11 +9,15 @@ Problems in complex web applications often depend on particular network, timing,
 
 Replay is the first deterministic browser, so all bugs recorded with Replay are **reproducible**, no matter how complex or rare they are. This means your engineers **don’t have to spend days** trying to reproduce a flaky test or rare customer support issue.
 
+[Learn more](/browser-devtools/elements-panel)
+
 ## Debugging is fast and predictable
 
 Diagnosing and fixing bugs hard-to-reproduce bugs in complex web applications often feels more like a **guessing game** than the scientific method. When you add a console log, refresh, and re-run, there’s no guarantee you’ll reproduce the problem.
 
 Replay lets you debug your application with **perfect reproducibility**. When you add a console log, the messages “automagically” appear in the Console as if they’ve always been there. This makes it easy to find the root cause, and fix the hardest issues at the source.
+
+[Learn more](/time-travel-intro/add-console-logs-on-the-fly)
 
 ## Root causes are addressed at the source
 
@@ -36,3 +40,5 @@ With Replay you can debug a flaky test as if it is **failing consistently on you
 Because traditionally everybody has to **figure out how to replicate an issue**, just to be able to see it and understand it, investigating difficult issues has fallen on a single developer, required inefficient Zoom calls, and expensive context switching.
 
 When anyone can view the replay on **their own schedule**, investigate the problem, and share their perspective, debugging begins to feel like the **team sport** it should be. And as Linus Torvalds famously said, “with enough eye balls, all bugs are shallow”.
+
+[Learn more](/browser-devtools/replay-viewer)

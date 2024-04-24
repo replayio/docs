@@ -45,11 +45,6 @@ export const navigation: NavigationItem[] = [
         icon: 'razor',
       },
       {
-        title: 'Design principles',
-        href: '/time-travel-intro/intro-to-time-travel',
-        icon: 'timetravel',
-      },
-      {
         title: 'How time travel works',
         href: '/time-travel-intro/how-time-travel-works',
         icon: 'questionmark',
