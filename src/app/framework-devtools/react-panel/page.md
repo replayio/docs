@@ -45,4 +45,4 @@ Because we’re not concerned about the performance overhead of processing sourc
 ## Learn more
 Learn how to use the React panel to examine hooks and properties, and observe how they change over time. This tutorial will also teach you how to navigate from the React panel to the specific element that it rendered. You can find the whole course at [replay.help/course](https://replay.help/course)
 
-{% video src="reactPanelCourse" autoplay=false controls=true /%}
+{% video src="reactPanelCourse" autoplay=false /%}

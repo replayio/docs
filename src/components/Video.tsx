@@ -25,6 +25,10 @@ import sourceCourse from '@/videos/source_course.mp4.json'
 import timelineCourse from '@/videos/timeline_course.mp4.json'
 import playwrightDebugging from '@/videos/playwright_debugging.mp4.json'
 import networkPanelCypress from '@/videos/network_panel_cypress.mp4.json'
+import introductionCourse from '@/videos/introduction_course.mp4.json'
+import firstReplayCourse from '@/videos/first_replay_course.mp4.json'
+import devtoolsCourse from '@/videos/devtools_course.mp4.json'
+import commentingCourse from '@/videos/commenting_course.mp4.json'
 // import getStarted from '@/videos/get-started.mp4';
 
 const videos = {
@@ -49,7 +53,11 @@ const videos = {
   sourceCourse,
   timelineCourse,
   playwrightDebugging,
-  networkPanelCypress
+  networkPanelCypress,
+  introductionCourse,
+  firstReplayCourse,
+  devtoolsCourse,
+  commentingCourse
 }
 
 interface VideoProps {
@@ -61,26 +69,33 @@ interface VideoProps {
 
 export const Video: React.FC<VideoProps> = ({
   src,
-  controls = false,
-  autoplay = true,
-  loop = true,
+  autoplay = true
 }) => {
-  // @ts-ignore
-  const video = videos[src]
-  const [mute, setMute] = useState(true)
+  const commonProps = {
+    // @ts-ignore
+    src: videos[src],
+    autoPlay: autoplay,
+    accentColor: "#f02d5e",
+    className: "overflow-clip rounded-xl border border-transparent",
+    poster: "",
+  }
   return (
-    <Zoom>
-        <NextVideo
-        onPlay={() => !autoplay && setMute(false)}
-        src={video}
-        autoPlay={autoplay}
-        muted={mute}
-        loop={loop}
-        controls={controls}
-        accentColor="#f02d5e"
-        className="overflow-clip rounded-xl border border-transparent"
+    autoplay ?
+      <Zoom>
+          <NextVideo
+          muted={true}
+          loop={true}
+          controls={false}
+          
+          {...commonProps}
+          />
+      </Zoom> : 
+      <NextVideo
+        muted={false}
+        loop={false}
+        controls={true}
+        {...commonProps}
       />
-    </Zoom>
   )
 }
 

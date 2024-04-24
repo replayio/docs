@@ -70,7 +70,8 @@ const tags = {
       controls: { type: Boolean },
       autoplay: { type: Boolean },
       muted: { type: Boolean },
-      loop: { type: Boolean }
+      loop: { type: Boolean },
+      thumbnailTime: { type: Number }
     },
   },
   'quick-link': {
