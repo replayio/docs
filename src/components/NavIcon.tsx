@@ -66,6 +66,7 @@ import { OtherCiProviders } from './icons/OtherCiProviders'
 import { SettingsRounded } from './icons/SettingsRounded'
 import { Faq } from './icons/Faq'
 import { UploadIcon } from './icons/UploadIcon'
+import { University } from './icons/University'
 
 export const icons = {
   file: FileIcon,
@@ -132,7 +133,8 @@ export const icons = {
   settings: SettingsRounded,
   faq: Faq,
   empty: EmptyIcon,
-  upload: UploadIcon
+  upload: UploadIcon,
+  university: University
 }
 export function NavIcon({
   icon = 'file',

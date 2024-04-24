@@ -100,7 +100,7 @@ export const icons = {
   security: SecurityPrinciplesIcon,
   debuggingtests: DebuggingTestsIcon,
   link: LinkIcon,
-  settingupateam: SettingUpATeamIcon,
+  settingupateam: SettingUpATeamIcon
 }
 
 export const iconStyles = {

@@ -9,12 +9,7 @@ export type NavigationItem = {
 }
 
 
-export const navigation: NavigationItem[] = [
-  // {
-  //   title: 'Quickstart Guide',
-  //   href: '/quickstart',
-  // },
-  
+export const navigation: NavigationItem[] = [ 
   {
     title: 'Intro to time travel',
     href: '/time-travel-intro',
@@ -425,7 +420,7 @@ export const navigation: NavigationItem[] = [
     ],
   },
   {
-    title: 'Additional Content',
+    title: 'Additional content',
     href: '/additional-content',
     links: [
       {
@@ -437,6 +432,11 @@ export const navigation: NavigationItem[] = [
         title: 'Security practices',
         href: '/additional-content/security-practices',
         icon: 'security',
+      },
+      {
+        title: 'Crash course',
+        href: '/additional-content/crash-course',
+        icon: 'university',
       },
     ],
   },

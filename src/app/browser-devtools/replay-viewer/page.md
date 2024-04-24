@@ -31,4 +31,4 @@ Typically when something goes wrong, a user interaction like a mouse click or ke
 ## Learn more
 Discover how to use the timeline to navigate to specific points in your code execution. Learn about the focus mode, which allows you to filter the console logs you view. Additionally, see how to jump to the next or previous execution of a specific line in your code. You can find the whole course at [replay.help/course](https://replay.help/course)
 
-{% video src="timelineCourse" autoplay=false controls=true /%}
+{% video src="timelineCourse" autoplay=false /%}

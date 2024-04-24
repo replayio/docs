@@ -63,4 +63,4 @@ One of the easiest ways to see which JS function handled a user click, random sc
 ## Learn more
 Learn how to use console logs to print information from your source code. This tutorial will show you how to navigate the timeline by fast forwarding or going back, and how to filter your console logs for more efficient debugging. You can find the whole course at [replay.help/course](https://replay.help/course)
 
-{% video src="consoleLogsCourse" autoplay=false controls=true /%}
+{% video src="consoleLogsCourse" autoplay=false /%}
