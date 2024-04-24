@@ -32,7 +32,7 @@ export function Figure({
     width,
     fill,
     className: `${gradient} object-contain rounded ${
-      ripple && 'shadow-ripple'} ${showRadius && 'rounded-lg border border-gray-200 p-1 dark:border-slate-600'
+      ripple && 'shadow-ripple'} ${(showRadius && !gradient) && 'rounded-lg border border-gray-200 p-1 dark:border-slate-600'
       }
     }`,
   }
