@@ -16,6 +16,7 @@
     "@headlessui/react": "^1.7.18",
     "@markdoc/markdoc": "^0.4.0",
     "@markdoc/next.js": "^0.3.7",
+    "@replayio/playwright": "^2.0.0-alpha.10",
     "@sindresorhus/slugify": "^2.1.0",
     "@tailwindcss/typography": "^0.5.7",
     "@types/node": "^20.10.8",
@@ -42,6 +43,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.37.0",
     "@types/bun": "^1.0.12",
     "@types/mixpanel-browser": "^2.49.0",
     "eslint": "^8.56.0",
