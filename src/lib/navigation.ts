@@ -20,8 +20,8 @@ export const navigation: NavigationItem[] = [
     href: '/time-travel-intro',
     links: [
       {
-        title: 'What is time travel?',
-        href: '/time-travel-intro/what-is-time-travel',
+        title: 'Why time travel?',
+        href: '/time-travel-intro/why-time-travel',
         icon: 'hourglass',
       },
       {
@@ -43,11 +43,6 @@ export const navigation: NavigationItem[] = [
         title: 'Bisect the problem',
         href: '/time-travel-intro/bisect-the-problem',
         icon: 'razor',
-      },
-      {
-        title: 'Design principles',
-        href: '/time-travel-intro/intro-to-time-travel',
-        icon: 'timetravel',
       },
       {
         title: 'How time travel works',
