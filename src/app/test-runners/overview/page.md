@@ -1,8 +1,8 @@
 ---
 title: Test Suites Overview
+image: /images/Cypress-hero.png
+description: Capture flakes in CI. Investigate failures with browser DevTools. And achieve a 99.9% pass rate.
 ---
-
-Replay Test Suites bring **time-traveling DevTools to your test runs**. You’ll get a better insight into how your test script interacts with application under test. Besides zooming in on your test execution, you can zoom out to get a birds-eye view of your test executions and **drive down test failures and flakes**.
 
 {% basic icon="treeview" %}
 
@@ -16,7 +16,6 @@ The command details panel contains information on passed arguments, returned val
 {% figure
     alt="Playwright panel"
     src="/images/playwright_panel.png"
-    gradient="bg-gradient-to-tr from-blue-200 via-fuchsia-300 to-orange-400"
     height=870
     width=870
 /%}
@@ -33,7 +32,6 @@ With information on [line hit counts](/browser-devtools/source-viewer#hit-counts
 {% figure
     alt="Jumping to code"
     src="/images/jump_to_code.png"
-    gradient="bg-gradient-to-r from-fuchsia-600 via-pink-500 to-rose-200"
     height=870
     width=870
 /%}
@@ -48,11 +46,11 @@ We have stories of [2 pixel shifts](https://blog.replay.io/a-journey-of-driving-
 {% /basic %}
 
 {% figure
-    alt="Race condition"
-    src="/images/race_condition.png"
-    gradient="bg-gradient-to-br from-sky-300 via-blue-300 to-violet-400"
-    height=870
-    width=870
+alt="Race condition"
+src="/images/race_condition.png"
+gradient="bg-gradient-to-br from-sky-300 via-blue-300 to-violet-400"
+height=870
+width=870
 /%}
 
 {% basic icon="insight" %}
@@ -67,7 +65,6 @@ Analytics give you actionable insights into your test runs and help you focus on
 {% figure
     alt="Test suite analytics"
     src="/images/runs_view.png"
-    gradient="bg-gradient-to-r from-pink-300 via-teal-800 to-teal-100"
     height=870
     width=870
 /%}
@@ -84,7 +81,6 @@ You can zoom out to take a look at your whole test run, or filter out those that
 {% figure
     alt="Continuous integration"
     src="/images/ci.png"
-    gradient="bg-gradient-to-t from-emerald-400 via-amber-100 to-sky-300"
     height=870
     width=870
 /%}
