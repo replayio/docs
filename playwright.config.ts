@@ -1,5 +1,7 @@
 import { PlaywrightTestConfig } from '@playwright/test'
 import { devices as replayDevices } from '@replayio/playwright'
+import dotenv from 'dotenv';
+dotenv.config();
 
 const config: PlaywrightTestConfig = {
   use: {
