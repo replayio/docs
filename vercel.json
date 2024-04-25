@@ -238,6 +238,10 @@
     },
     {
       "source": "/getting-started/recording-your-first-replay",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/bug-reports/recording-a-replay",
       "destination": "/getting-started/record-your-first-replay"
     },
     {
@@ -294,6 +298,10 @@
     },
     {
       "source": "/getting-started/test-suite-integration",
+      "destination": "/test-suites/runs-view"
+    },
+    {
+      "source": "/test-suites",
       "destination": "/test-suites/runs-view"
     },
     {
