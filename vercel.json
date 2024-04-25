@@ -9,24 +9,12 @@
       "destination": "/time-travel-intro/why-time-travel"
     },
     {
-      "source": "/time-travel-intro/intro-to-time-travel",
-      "destination": "/time-travel-intro/why-time-travel"
+      "source": "/getting-started/recording-your-first-replay",
+      "destination": "/quickstart"
     },
     {
-      "source": "/resources/comparisons/live-debugging-vs-time-travel-debugging",
-      "destination": "/comparison/devtools"
-    },
-    {
-      "source": "/test-suites/puppeteer",
-      "destination": "/test-runners/puppeteer"
-    },
-    {
-      "source": "/resources/comparisons/playwright-trace-viewer-vs-replay-devtools",
-      "destination": "/comparison/playwright"
-    },
-    {
-      "source": "/resources/comparisons/chrome-recorder-vs-replay",
-      "destination": "/comparison/playwright"
+      "source": "/workflows/recording-bug-reports",
+      "destination": "/quickstart"
     },
     {
       "source": "/legal",
@@ -390,7 +378,7 @@
     },
     {
       "source": "/learn-more/workflows/recording-bug-reports",
-      "destination": "/test-runners/cypress-io/record-your-first-replay"
+      "destination": "/quickstart"
     },
     {
       "source": "/reference-guide/debugger/breakpoints",
