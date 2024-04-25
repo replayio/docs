@@ -20,7 +20,7 @@ npm i -g replayio
 {% tab %}
 
 ```sh
-yarn i -g replayio
+yarn add -g replayio
 ```
 
 {% /tab %}
