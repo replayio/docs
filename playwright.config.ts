@@ -5,7 +5,7 @@ dotenv.config();
 
 const config: PlaywrightTestConfig = {
   use: {
-    baseURL: "http://localhost:3000"
+    baseURL: process.env.CI ? process.env.BASE_URL : "http://localhost:3000"
   },
   reporter: [
     [
