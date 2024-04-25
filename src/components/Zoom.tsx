@@ -68,6 +68,7 @@ export const Zoom = ({ children }: {children: React.ReactNode}) => {
     <>
       {clicked ? (
         <div
+          data-testid="zoomed-in-player"
           style={{
             position: 'fixed',
             zIndex: 40,
@@ -80,7 +81,7 @@ export const Zoom = ({ children }: {children: React.ReactNode}) => {
           onClick={closeWrapper}
         />
       ) : null}
-      <div style={styles} ref={containerRef} onClick={handleImageZoom}>
+      <div data-testid="zoomed-out-player" style={styles} ref={containerRef} onClick={handleImageZoom}>
         {children}
       </div>
     </>

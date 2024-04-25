@@ -16,6 +16,7 @@
     "@headlessui/react": "^1.7.18",
     "@markdoc/markdoc": "^0.4.0",
     "@markdoc/next.js": "^0.3.7",
+    "@replayio/playwright": "^2.0.0-alpha.10",
     "@sindresorhus/slugify": "^2.1.0",
     "@tailwindcss/typography": "^0.5.7",
     "@types/node": "^20.10.8",
@@ -25,6 +26,7 @@
     "@vercel/analytics": "^1.2.2",
     "autoprefixer": "^10.4.12",
     "clsx": "^2.1.0",
+    "dotenv": "^16.4.5",
     "fast-glob": "^3.2.12",
     "flexsearch": "^0.7.31",
     "js-yaml": "^4.1.0",
@@ -42,6 +44,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.37.0",
     "@types/bun": "^1.0.12",
     "@types/mixpanel-browser": "^2.49.0",
     "eslint": "^8.56.0",

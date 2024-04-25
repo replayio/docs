@@ -50,3 +50,7 @@ public/_next-video
 
 .env
 out
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
