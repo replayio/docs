@@ -8,8 +8,7 @@ export type NavigationItem = {
   title: string
 }
 
-
-export const navigation: NavigationItem[] = [ 
+export const navigation: NavigationItem[] = [
   {
     title: 'Intro to time travel',
     href: '/time-travel-intro',
@@ -149,7 +148,7 @@ export const navigation: NavigationItem[] = [
       { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
       {
         title: 'Cypress.io',
-        href: '',
+        href: '/test-runners/cypress-io',
         icon: 'cypress',
         links: [
           {
@@ -191,7 +190,7 @@ export const navigation: NavigationItem[] = [
       },
       {
         title: 'Playwright',
-        href: '',
+        href: '/test-runners/playwright/record-your-first-replay',
         icon: 'playwright',
         links: [
           {
@@ -202,7 +201,7 @@ export const navigation: NavigationItem[] = [
           {
             title: 'Debugging tests',
             href: '/test-runners/playwright/debugging-tests',
-            icon: 'debuggingtests'
+            icon: 'debuggingtests',
           },
           {
             title: 'GitHub actions',
