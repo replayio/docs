@@ -21,10 +21,6 @@ export default function Analytics() {
         src="/stats/script.js"
         data-website-id="9dab9357-6fa2-48ab-966a-82c4e1bb67fe"
       ></script>
-      <script
-        async
-        src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
-      ></script>
     </>
   )
 }
