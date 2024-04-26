@@ -335,7 +335,7 @@ export const navigation: NavigationItem[] = [
     links: [
       {
         title: 'Replay APIs',
-        href: '',
+        href: '/integrations/replay-apis/graphql-api',
         icon: 'replayapis',
         links: [
           {
@@ -357,7 +357,7 @@ export const navigation: NavigationItem[] = [
       },
       {
         title: 'Frameworks & libraries',
-        href: '',
+        href: '/integrations/frameworks-libraries/nextjs',
         icon: 'frameworks',
         links: [
           {
@@ -369,7 +369,7 @@ export const navigation: NavigationItem[] = [
       },
       {
         title: '3rd Party integrations',
-        href: '',
+        href: '/integrations/3rd-party-integrations/github-embeds',
         icon: 'integrations',
         links: [
           {
