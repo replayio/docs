@@ -69,13 +69,13 @@ function flattenNavigation(navigation: NavigationItem[]): NavigationItem[] {
   return flatList
 }
 
+const allLinks = flattenNavigation(navigation)
 export function PrevNextLinks() {
-  let pathname = usePathname()
-  let allLinks = flattenNavigation(navigation)
+  const pathname = usePathname()
 
-  let linkIndex = allLinks.findIndex((link) => link.href === pathname)
-  let previousPage = linkIndex > -1 ? allLinks[linkIndex - 1] : null
-  let nextPage = linkIndex > -1 ? allLinks[linkIndex + 1] : null
+  const linkIndex = allLinks.findIndex((link) => link.href === pathname)
+  const previousPage = linkIndex > -1 ? allLinks[linkIndex - 1] : null
+  const nextPage = linkIndex > -1 ? allLinks[linkIndex + 1] : null
 
   if (!nextPage && !previousPage) {
     return null
