@@ -10,25 +10,30 @@ import { NavIcon } from './NavIcon'
 import styles from './Navigation.module.css'
 
 function ItemLink({
-  item,
-  pathname,
-  onLinkClick,
   className,
+  item,
+  onLinkClick,
+  parent,
+  pathname,
 }: {
-  item: NavigationItem
-  pathname: string
-  onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
   className?: string
+  item: NavigationItem
+  onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
+  parent?: NavigationItem
+  pathname: string
 }) {
+  const isSelected =
+    parent && item.href === parent.href
+      ? // This is for sub item with same link as parent (For example: Cypress of Test Runner)
+        pathname === parent.href
+      : // Rest of items
+        item.href && pathname.includes(item.href)
+
   return (
     <Link
       href={item.href || '#'}
       onClick={item.href ? onLinkClick : undefined}
-      className={clsx(
-        styles.item,
-        className,
-        item.href && pathname.includes(item.href) && styles.selected,
-      )}
+      className={clsx(styles.item, className, isSelected && styles.selected)}
     >
       <NavIcon
         icon={item.icon}
@@ -116,29 +121,11 @@ export function Navigation({
                                   >
                                     <ItemLink
                                       item={subItem}
+                                      parent={item}
                                       pathname={pathname}
                                       onLinkClick={onLinkClick}
                                     />
                                   </Disclosure.Button>
-                                  {subItem.links && (
-                                    <Disclosure.Panel as="ul">
-                                      {subItem.links.map((tertiary) => (
-                                        <li key={tertiary.title}>
-                                          <Disclosure.Button
-                                            className={`${styles.button} ${styles.tertiary}`}
-                                          >
-                                            <Link
-                                              href={tertiary.href}
-                                              onClick={onLinkClick}
-                                              className={clsx(styles.item)}
-                                            >
-                                              {tertiary.title}
-                                            </Link>
-                                          </Disclosure.Button>
-                                        </li>
-                                      ))}
-                                    </Disclosure.Panel>
-                                  )}
                                 </li>
                               ))}
                             </Disclosure.Panel>

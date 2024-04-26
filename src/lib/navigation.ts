@@ -8,8 +8,7 @@ export type NavigationItem = {
   title: string
 }
 
-
-export const navigation: NavigationItem[] = [ 
+export const navigation: NavigationItem[] = [
   {
     title: 'Intro to time travel',
     href: '/time-travel-intro',
@@ -149,7 +148,7 @@ export const navigation: NavigationItem[] = [
       { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
       {
         title: 'Cypress.io',
-        href: '',
+        href: '/test-runners/cypress-io',
         icon: 'cypress',
         links: [
           {
@@ -191,7 +190,7 @@ export const navigation: NavigationItem[] = [
       },
       {
         title: 'Playwright',
-        href: '',
+        href: '/test-runners/playwright/record-your-first-replay',
         icon: 'playwright',
         links: [
           {
@@ -202,7 +201,7 @@ export const navigation: NavigationItem[] = [
           {
             title: 'Debugging tests',
             href: '/test-runners/playwright/debugging-tests',
-            icon: 'debuggingtests'
+            icon: 'debuggingtests',
           },
           {
             title: 'GitHub actions',
@@ -336,7 +335,7 @@ export const navigation: NavigationItem[] = [
     links: [
       {
         title: 'Replay APIs',
-        href: '',
+        href: '/integrations/replay-apis/graphql-api',
         icon: 'replayapis',
         links: [
           {
@@ -358,7 +357,7 @@ export const navigation: NavigationItem[] = [
       },
       {
         title: 'Frameworks & libraries',
-        href: '',
+        href: '/integrations/frameworks-libraries/nextjs',
         icon: 'frameworks',
         links: [
           {
@@ -370,7 +369,7 @@ export const navigation: NavigationItem[] = [
       },
       {
         title: '3rd Party integrations',
-        href: '',
+        href: '/integrations/3rd-party-integrations/github-embeds',
         icon: 'integrations',
         links: [
           {
