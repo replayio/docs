@@ -5,8 +5,8 @@ description: Your API key authenticates you with Replay App and allows you to re
 
 ## Creating a new API key
 
-1. To generate a new API key, go to Replay app and open **API Keys** section in the settings window.
-2. Create a label for your API key and click "Add"
+1. To generate a new API key, go to Replay app and **API Keys** section in the team settings section.
+2. Add permissions and name to your API key and click "Add"
 3. Copy your API key
 
 {% video src="generateApiKey" /%}
@@ -17,7 +17,7 @@ Make sure to copy and save your key immediately as you will not be able to see i
 
 ## Delete API key
 
-Your API keys are accessible in your settings. You can delete any API key if necessary. A list of all active API keys is also available in the settings.
+Your API keys are accessible in your team settings. You can delete any API key if necessary. A list of all active API keys is also available in the team settings.
 
 {% video src="deleteApiKey" /%}
 
