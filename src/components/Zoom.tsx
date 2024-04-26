@@ -81,7 +81,7 @@ export const Zoom = ({ children }: {children: React.ReactNode}) => {
           onClick={closeWrapper}
         />
       ) : null}
-      <div data-testid="zoomed-out-player" style={styles} ref={containerRef} onClick={handleImageZoom}>
+      <div data-testid="image-with-zoom" style={styles} ref={containerRef} onClick={handleImageZoom}>
         {children}
       </div>
     </>
