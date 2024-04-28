@@ -14,26 +14,95 @@ When the browser is replaying, it should think it is running live for the first 
 
 Replaying your browser is similar to writing a good test. If you’re testing a deterministic function like `fibonacci`, there’s nothing you need to do. Every time the test is run, it will return the same value.
 
-{% figure alt="Elements panel" src="/images/fib-1.png" height=870 width=870/%}
-.
-{% figure alt="Elements panel" src="/images/fib-2.png" height=870 width=870/%}
+```javascript
+describe('fibonacci', () => {
+  it('can calculate fibonacci(10)', () => {
+    expect(fibonacci(10)).toBe(55);
+  });
+});
+```
+
+```javascript
+function fibonacci(n) {
+    if (n <= 1) return n;
+
+    let prev = 0, current = 1;
+    for (let i = 2; i <= n; i++) {
+        let next = prev + current;
+        prev = current;
+        current = next;
+    }
+    return current;
+}
+```
 
 If we change fibonacci slightly so that it doesn’t take `n`, but instead reads it from a file, we’ll need to mock `readFileSync` so that when the test runs, it always returns the same value.
 
-{% figure alt="Elements panel" src="/images/fib-3.png" height=870 width=870/%}
-.
-{% figure alt="Elements panel" src="/images/fib-4.png" height=870 width=870/%}
+```javascript
+describe("fibonacci", () => {
+    it("can calculate fibonacci(10)", () => {
+        fs.readFileSync.mockReturnValue('10');
+        expect(fibonacci()). toEqual(55)
+    })
+})
+```
+
+```javascript
+function fibonacci( ) {
+    const data = fs.readFileSync('input.txt', 'utf8');
+    const n = parseInt(data, 10);
+
+    if (n <= 1) return n;
+
+    let prev = 0, current = 1;
+    for (let i = 2; i <= n; i++) {
+        let next = prev + current;
+        prev = current;
+        current = next;
+    }
+    return current;
+}
+```
 
 Recording a runtime like Chrome is fairly similar in theory to recording our non-deterministic fibonacci function. The one caveat is that instead of writing a test function that mocks a single non-deterministic function, we need to write a little bit of inline assembly code that can intercept low level OS library calls and replaying them later.
 
-{% figure alt="Elements panel" src="/images/asm-1.png" height=870 width=870/%}
+```asm
+extern size_t
+RecordReplayRedirectCall(...);
+
+__asm(
+    "_RecordReplayRedirectCall:"
+    
+    // Save the system call's original function and arguments
+    "movq %rdi, 0(%rsp);"
+    "movq rsi, 8(%rsp);"
+    "movq %rdx, 16(%rsp);"
+    "movq %rcx, 24(%rsp);"
+    "movq %r8, 32(%rsp);"
+    "movq %r9, 40(rsp);"
+    "movsd %xmm0, 48(%rsp);"
+    "movsd %xmm1, 56(%rsp);"
+    "movsd %xmm2, 64(%rsp);"
+    
+    // Call our real Intercept function
+    "call RecordReplayInterceptCall;"
+)
+```
 
 Once we’re able to intercept calls, and we know their signatures, the remaining task is to enumerate all of the calls that the runtime will make.
 
-{% figure alt="Elements panel" src="/images/asm-2.png" height=870 width=870/%}
+
+```asm
+// Specify every function that is being redirected. MACRO is invoked with the
+// function's name, followed by any hooks associated with the redirection for
+// saving its output or adding a preamble.
+#define FOR_EACH_REDIRECTION(MACRO)
+    MACRO(mmap, nullptr, Preamble_mmap)                            \
+    MACRO(munmap, nullptr, Preamble_munmap)                        \
+    MACRO(read, SaveRvalHadErrorNegative<WriteBufferViaRval<1, 2>>) \
+    MACRO(open, SaveRvalHadErrorNegative)                       \
+```
 
 This approach might sound crazy, and in many ways it is, but there’s an elegance to it in that the libc level is fairly stable and well defined. Also it turns out that intercepting libc calls is incredibly cheap.
 
 The overhead in practice is 3% and recordings are tiny compared to traces. A typical [Replay.io](https://replay.io/) recording is less than a Mb a second where as computers execute billions of options a second and traces are measured in GBs.
-
-###
