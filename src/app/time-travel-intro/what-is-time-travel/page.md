@@ -4,11 +4,11 @@ title: What is time travel?
 
 The most common question we get is “how is time travel (or Runtime Replay) different from Session Replay?” At a high level, Session Replay tools replay the DOM and Runtime Replay tools re-run the runtime so that you can inspect the session with browser DevTools. That's a lot to unpack. Lets dive in!
 
-## How Runtime Replay works?
+## How Runtime Replay works
 
-Runtime Replay refers to the act of recording the underlying runtime such that you can replay it later exactly as it ran before.
+Runtime Replay refers to the act of recording the underlying runtime so you can replay it later exactly as it ran before.
 
-When the browser is replaying, it should think it is running live for the first time and should have all of the same semantics. Functions should be called at the same time. Promises should be resolved in the same order. Network requests should be made at the same time and returned at the same time. If anything user visible happens in a different order, you have failed.
+When the browser is replaying, it should think it is running live for the first time and should have all of the same semantics. Functions should be called at the same time. Promises should be resolved in the same order. Network requests should be made at the same time and returned at the same time. If anything user-visible happens in a different order, you have failed.
 
 Replaying your browser is similar to writing a good test. If you’re testing a deterministic function like `fibonacci`, there’s nothing you need to do. Every time the test is run, it will return the same value.
 
@@ -64,7 +64,7 @@ function fibonacci() {
 }
 ```
 
-Recording a runtime like Chrome is fairly similar in theory to recording our non-deterministic fibonacci function. The one caveat is that instead of writing a test function that mocks a single non-deterministic function, we need to write a little bit of inline assembly code that can intercept low level OS library calls and replaying them later.
+Recording a runtime like Chrome is fairly similar in theory to recording our non-deterministic fibonacci function. The one caveat is that instead of writing a test function that mocks a single non-deterministic function, we need to write a little bit of inline assembly code that can intercept low level OS library calls and replay them later.
 
 ```asm
 extern size_t
@@ -102,7 +102,7 @@ Once we’re able to intercept calls, and we know their signatures, the remainin
     MACRO(open, SaveRvalHadErrorNegative)                       \
 ```
 
-This approach might sound crazy, and in many ways it is, but there’s an elegance to it in that the libc level is fairly stable and well defined. Also it turns out that intercepting libc calls is incredibly cheap.
+This approach might sound crazy, and in many ways it is. But it's also elegant, because the libc level is fairly stable and well-defined, and intercepting libc calls is incredibly cheap.
 
 **Additional reading**
 
@@ -112,13 +112,13 @@ This approach might sound crazy, and in many ways it is, but there’s an elegan
 
 ## Recording overhead
 
-It’s counter intuitive, but recording the runtime’s essential non-determinism is actually very light weight. There are three reasons for that.
+It’s counter-intuitive, but recording the runtime’s essential non-determinism is actually very lightweight. There are three reasons for that.
 
-The first is that, 99.99% of compute is deterministic. There actually isn’t that many calls to the OS that need to be captured. On average, it’s about a Mb per second, which is nothing when you consider that computers execute billions of operations a second and traces are measured in GBs.
+The first is that 99.99% of compute is deterministic. There actually aren't many calls to the OS that need to be captured. On average, it’s about a Mb per second, which is nothing when you consider that computers execute billions of operations a second and traces are measured in GBs.
 
-The second reason is that the inline assembly needed to intercept the libc calls is highly optimized and only introduces about 3% of overhead. This is nothing when you consider that most instrumentation approaches introduce 10% or more overhead.
+The second reason is that the inline assembly needed to intercept the libc calls is highly optimized and only introduces about 3% of overhead. This is nothing when you consider that most instrumentation approaches introduce 10% or more.
 
-The third reason is that everything you see in Replay DevTools is computed at replay time and not record time. A great example is that is the video which is created the first time we replay the recording and can often be larger than the recording itself!
+The third reason is that everything you see in Replay DevTools is computed at replay time and not record time. This is why, for example, the video created the first time we replay the recording is often larger than the recording itself!
 
 ## Replay protocol
 
@@ -126,7 +126,7 @@ Being able to deterministically replay the runtime is necessary, but not suffici
 
 There are several domains that are important for evaluating expressions, inspecting DOM elements, and viewing Console messages. Fortunately, they all bubble up to three core commands: run to execution point, pause at point, and evaluate expression.
 
-**When you add a console log on a line of code three things happen:**
+**Three things happen when you add a console log on a line of code:**
 
 1. The client looks up the **hit points** for that line of code which was computed the first time the recording was replayed.
 2. The client issues a `runEvaluation` command with the executions points and expression which triggers the backend to replay to these points and execute the eval.
@@ -148,11 +148,11 @@ The beautiful thing about this approach is that the browser behaves the same way
 
 ## Replay performance
 
-One of the things you’ll notice when you open a replay, is that adding a console log is really fast. In fact, a good analogy is Hot Module Reloading where when you edit your code, your application immediately updates, without you having to refresh and re-run. Console logs in Replay work a similar way, you add the log, and the messages appear in the Console in under a second.
+One of the things you’ll notice when you open a replay is adding a console log is really fast. A good comparison is Hot Module Reloading, which is when you can edit your code and your application immediately updates without you having to refresh and re-run. Console logs in Replay work a similar way. You add the log and the messages appear in the Console in under a second.
 
-But, how is it so fast? The short answer is that we cheat. One of the fundamental laws of time travel, is that you cannot re-execute a program faster than you initially executed it. If the recording is 60s of compute, then it will take approximately 60s to replay, but console logs will still return in under a second! How?
+But how is it so fast? One of the fundamental laws of time travel is you cannot re-execute a program faster than you initially executed it. If the recording is 60s of compute, then it will take approximately 60s to replay, but console logs will still return in under a second! How? The short answer is that we cheat.
 
-The answer is that when you’re inspecting a replay, you’re not interacting with a single browser process running the cloud, you’re interacting with potentially hundreds. We’ve invented two mechanisms which make this possible. The first is the ability to fork a browser process. The second is the ability to snapshot a browser process.
+When you’re inspecting a replay, you’re not interacting with a single browser process running the cloud, you’re interacting with potentially hundreds. We’ve invented two mechanisms which make this possible. The first is the ability to fork a browser process. The second is the ability to snapshot a browser process.
 
 {% figure
     alt="Time travel protocol performance"
@@ -161,7 +161,7 @@ The answer is that when you’re inspecting a replay, you’re not interacting w
     width=870
 /%}
 
-These two mechanisms make it possible to efficiently keep a pool of browser processes available during the lifetime of the debugging session and efficiently restore them the next time. This means that when you add the console log, we’re able to find the closest browser processes, fork them, run to the relevant points, and evaluate the expression. And because all of the work is done in parallel, and there’s never a point more than 100ms away from a browser process, we’re able to return the results in low logarithmic time.
+These two mechanisms make it possible to efficiently keep a pool of browser processes available during the lifetime of the debugging session and efficiently restore them the next time. This means that when you add the console log, we’re able to find the closest browser processes, fork them, run to the relevant points, and evaluate the expression. Because all of the work is done in parallel, and there’s never a point more than 100ms away from a browser process, we’re able to return the results in low logarithmic time.
 
 **Additional reading**
 
