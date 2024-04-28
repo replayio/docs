@@ -9,7 +9,7 @@ export default function MiniCard({
   href,
 }: CardAttributes) {
   return (
-    <Link href={href}>
+    <Link href={href} className="w-full">
       <li
         key={title}
         className="col-span-1 flex rounded-md bg-gray-100/70 bg-opacity-30 shadow-md transition-colors hover:bg-gray-200/90 dark:bg-gray-950/50 dark:hover:bg-gray-900/50"
