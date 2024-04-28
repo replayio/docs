@@ -39,8 +39,8 @@ export const navigation: NavigationItem[] = [
         icon: 'razor',
       },
       {
-        title: 'How time travel works',
-        href: '/time-travel-intro/how-time-travel-works',
+        title: 'What is time travel?',
+        href: '/time-travel-intro/what-is-time-travel',
         icon: 'questionmark',
       },
     ],

@@ -691,6 +691,10 @@
     {
       "source": "/test-suites/webdriver-io",
       "destination": "/test-runners/webdriver-io"
+    },
+    {
+      "source": "/time-travel-intro/how-time-travel-works",
+      "destination": "/time-travel-intro/what-is-time-travel"
     }
   ],
   "rewrites": [
