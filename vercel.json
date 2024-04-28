@@ -5,10 +5,6 @@
       "destination": "https://discord.gg/Wh9w3KMr7J"
     },
     {
-      "source": "/time-travel-intro/what-is-time-travel",
-      "destination": "/time-travel-intro/why-time-travel"
-    },
-    {
       "source": "/getting-started/recording-your-first-replay",
       "destination": "/quickstart"
     },
