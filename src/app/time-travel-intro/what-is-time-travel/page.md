@@ -156,7 +156,7 @@ When you’re inspecting a replay, you’re not interacting with a single browse
 
 {% figure
     alt="Time travel protocol performance"
-    src="/images/time-travel.png"
+    src="/images/time-travel.svg"
     showRadius=false
     height=870
     width=870
