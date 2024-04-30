@@ -6,12 +6,14 @@ import clsx from 'clsx'
 
 import { type Section, type Subsection } from '@/lib/sections'
 import BackToTop from './BackToTop'
+import { useParams } from 'next/navigation'
 
 export function TableOfContents({
   tableOfContents,
 }: {
   tableOfContents: Array<Section>
 }) {
+  const params = useParams()
   let [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)
 
   let getHeadings = useCallback((tableOfContents: Array<Section>) => {
@@ -32,8 +34,9 @@ export function TableOfContents({
 
   useEffect(() => {
     if (tableOfContents.length === 0) return
-    let headings = getHeadings(tableOfContents)
-    function onScroll() {
+
+    const headings = getHeadings(tableOfContents)
+    function findRightSection() {
       let top = window.scrollY
       let current = headings[0].id
       for (let heading of headings) {
@@ -45,12 +48,18 @@ export function TableOfContents({
       }
       setCurrentSection(current)
     }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => {
-      window.removeEventListener('scroll', onScroll)
+
+    window.addEventListener('scroll', findRightSection, { passive: true })
+    const hash = window.location.hash.replace('#', '')
+    if (hash) {
+      setCurrentSection(hash)
     }
-  }, [getHeadings, tableOfContents])
+
+    return () => {
+      window.removeEventListener('scroll', findRightSection)
+    }
+    // params is dependecy to trigger update from hash change
+  }, [getHeadings, tableOfContents, params])
 
   function isActive(section: Section | Subsection) {
     if (section.id === currentSection) {
@@ -65,7 +74,7 @@ export function TableOfContents({
   return (
     <div
       data-testid="table-of-contents"
-      className="hidden py-8 xl:sticky xl:-mr-6 xl:block xl:h-[calc(100vh-4.75rem)] xl:flex-none xl:overflow-y-auto xl:pr-6 xl:top-[4.75rem] xl:py-16"
+      className="hidden py-8 xl:sticky xl:top-[4.75rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.75rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6"
     >
       <nav aria-labelledby="on-this-page-title" className="w-56">
         {tableOfContents.length > 0 && (
