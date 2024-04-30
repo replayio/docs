@@ -7,7 +7,7 @@ const cards: CardAttributes[] = [
     icon: 'rocket',
     title: 'Time travel',
     content: 'Learn how to inspect your application in new ways.',
-    href: '/time-travel-intro/what-is-time-travel',
+    href: '/time-travel-intro/why-time-travel',
   },
   {
     icon: 'inspect',
