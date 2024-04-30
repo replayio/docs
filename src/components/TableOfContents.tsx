@@ -36,7 +36,14 @@ export function TableOfContents({
     if (tableOfContents.length === 0) return
 
     const headings = getHeadings(tableOfContents)
+    let ignoreScrollUpdate = false
+
     function findRightSection() {
+      // Ignore scroll updates immediately after a hash change
+      if (ignoreScrollUpdate) {
+        ignoreScrollUpdate = false
+        return
+      }
       let top = window.scrollY
       let current = headings[0].id
       for (let heading of headings) {
@@ -53,6 +60,7 @@ export function TableOfContents({
     const hash = window.location.hash.replace('#', '')
     if (hash) {
       setCurrentSection(hash)
+      ignoreScrollUpdate = true
     }
 
     return () => {
