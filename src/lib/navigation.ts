@@ -437,6 +437,12 @@ export const navigation: NavigationItem[] = [
         href: '/additional-content/crash-course',
         icon: 'university',
       },
+      {
+        title: 'Advanced settings',
+        href: '/additional-content/advanced-settings',
+        icon: 'pencil',
+      },
+
     ],
   },
 ]
