@@ -24,6 +24,7 @@ import { Steps } from './Steps'
 import { Button } from './Button'
 import { TwoColumns } from './TwoColumns'
 import { Group } from './Group'
+import { SnapshotsVsReplay } from './SnapshotsVsReplay'
 
 export default {
   Accordion,
@@ -54,4 +55,5 @@ export default {
   Steps,
   TwoColumns,
   Group,
+  SnapshotsVsReplay
 }
