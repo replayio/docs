@@ -39,7 +39,7 @@ bun install @replayio/playwright -D
 
 ## Update your configuration
 
-```js {% fileName="playwright.config.ts" highlight=[2,"7-11","16-19"] lineNumbers=true %}
+```js {% fileName="playwright.config.ts" highlight=[2,"6-12","16-19"] lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from '@playwright/test'
 import { devices as replayDevices } from '@replayio/playwright'
 
