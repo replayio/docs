@@ -41,7 +41,7 @@ The `workflow.yml` file will in this case look as simple as following:
 name: End-to-end tests
 on: [push, pull_request]
 jobs:
-  cypress-run:
+  e2e-tests:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -66,7 +66,7 @@ Notice, that in this setup, you need to include an upload step. Specifying `if: 
 name: Replay tests
 on: [push, pull_request]
 jobs:
-  cypress-run:
+  e2e-tests:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -90,7 +90,7 @@ By default, all test replays are uploaded no matter the result. If you want uplo
 name: Replay tests
 on: [push, pull_request]
 jobs:
-  cypress-run:
+  e2e-tests:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
