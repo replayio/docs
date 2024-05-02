@@ -20,7 +20,7 @@ const config: PlaywrightTestConfig = {
   projects: [
     {
       name: 'replay-chromium',
-      use: { ...(replayDevices['Replay Chromium'] as any) },
+      use: { ...replayDevices['Replay Chromium'] },
     },
     {
       name: 'chromium',
