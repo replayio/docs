@@ -1,6 +1,6 @@
 ---
 title: Upload strategies
-description: When you run tests and create recordings, they are stored locally. You can opt to upload them automatically or define your own uploading strategy. All uploaded recordings become accessible in the Replay App. 
+description: When you run tests and create recordings, they are stored locally. You can opt to upload them automatically or define your own uploading strategy. All uploaded recordings become accessible in the Replay App.
 ---
 
 {% callout %}
@@ -50,7 +50,7 @@ By default, all test replays are uploaded no matter the result. If you want to u
     projects: [
       {
         name: "replay-chromium",
-        use: { ...replayDevices["Replay Chromium"] as any },
+        use: { ...replayDevices["Replay Chromium"] },
       }
     ],
   };
@@ -120,7 +120,7 @@ The recording metadata includes some details about the source control including 
     projects: [
       {
         name: "replay-chromium",
-        use: { ...replayDevices["Replay Chromium"] as any },
+        use: { ...replayDevices["Replay Chromium"] },
       }
     ],
   };
@@ -190,7 +190,7 @@ If you've adopted one the configurations above but would also like to periodical
     projects: [
       {
         name: "replay-chromium",
-        use: { ...replayDevices["Replay Chromium"] as any },
+        use: { ...replayDevices["Replay Chromium"] },
       }
     ],
   };
