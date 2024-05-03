@@ -42,8 +42,6 @@ This discussion came up on Twitter recently, and Addy Osmani from the Google Chr
 
 {% figure alt="Elements panel" src="/images/addy-osmani-tweet.png" height=870 width=870/%}
 
-##
-
 ## Conclusion
 
 Ultimately, if you are more interested in the **user flow**, you can use Chrome Recorder. If you are more interested in the **application functionality** for validation or debugging, reach for Replay.

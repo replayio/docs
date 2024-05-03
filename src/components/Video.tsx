@@ -29,10 +29,12 @@ import introductionCourse from '@/videos/introduction_course.mp4.json'
 import firstReplayCourse from '@/videos/first_replay_course.mp4.json'
 import devtoolsCourse from '@/videos/devtools_course.mp4.json'
 import commentingCourse from '@/videos/commenting_course.mp4.json'
+import addingAComment from '@/videos/adding_a_comment3.mp4.json'
 // import getStarted from '@/videos/get-started.mp4';
 
 const videos = {
   addingAPrintStatement,
+  addingAComment,
   bisect,
   consoleLogs,
   visualize,
@@ -57,7 +59,7 @@ const videos = {
   introductionCourse,
   firstReplayCourse,
   devtoolsCourse,
-  commentingCourse
+  commentingCourse,
 }
 
 interface VideoProps {
@@ -67,35 +69,21 @@ interface VideoProps {
   loop?: boolean
 }
 
-export const Video: React.FC<VideoProps> = ({
-  src,
-  autoplay = true
-}) => {
+export const Video: React.FC<VideoProps> = ({ src, autoplay = true }) => {
   const commonProps = {
     // @ts-ignore
     src: videos[src],
     autoPlay: autoplay,
-    accentColor: "#f02d5e",
-    className: "overflow-clip rounded-xl border border-transparent",
-    poster: "",
+    accentColor: '#f02d5e',
+    className: 'overflow-clip rounded-xl border border-transparent',
+    poster: '',
   }
-  return (
-    autoplay ?
-      <Zoom>
-          <NextVideo
-          muted={true}
-          loop={true}
-          controls={false}
-          
-          {...commonProps}
-          />
-      </Zoom> : 
-      <NextVideo
-        muted={false}
-        loop={false}
-        controls={true}
-        {...commonProps}
-      />
+  return autoplay ? (
+    <Zoom>
+      <NextVideo muted={true} loop={true} controls={false} {...commonProps} />
+    </Zoom>
+  ) : (
+    <NextVideo muted={false} loop={false} controls={true} {...commonProps} />
   )
 }
 
