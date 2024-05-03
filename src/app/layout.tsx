@@ -30,16 +30,18 @@ export const metadata: Metadata = {
     default: 'Replay docs',
   },
   description:
-    'Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.',
+    'Replay is the first deterministic browser. Once a bug or flaky test is captured, anyone can inspect it with Browser DevTools without having to replicate it locally.',
   openGraph: {
-    title: 'Replay - The time-travel debugger from the future.',
-    description: 'Record and replay your application with DevTools.',
+    title: 'Replay - Browser DevTools from the future.',
+    description:
+      'Investigate bugs and flaky tests with perfect reproducibility.',
     images: [{ url: ogImage, width: 1200, height: 630 }],
   },
   twitter: {
     site: '@replayio',
-    title: 'Replay - The time-travel debugger from the future.',
-    description: 'Record and replay your application with DevTools.',
+    title: 'Replay - Browser DevTools from the future.',
+    description:
+      'Investigate bugs and flaky tests with perfect reproducibility.',
     creator: '@replayio',
     images: [{ url: ogImage, width: 1200, height: 630 }],
   },
