@@ -24,6 +24,11 @@ export const navigation: NavigationItem[] = [
         icon: 'console',
       },
       {
+        title: 'Collaborative devtools',
+        href: '/time-travel-intro/collaborative-devtools',
+        icon: 'person',
+      },
+      {
         title: 'Visualize time. Inspect state.',
         href: '/time-travel-intro/visualize-time-inspect-state',
         icon: 'inspect',
@@ -442,7 +447,6 @@ export const navigation: NavigationItem[] = [
         href: '/additional-content/advanced-settings',
         icon: 'pencil',
       },
-
     ],
   },
 ]

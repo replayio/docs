@@ -67,6 +67,7 @@ import { SettingsRounded } from './icons/SettingsRounded'
 import { Faq } from './icons/Faq'
 import { UploadIcon } from './icons/UploadIcon'
 import { University } from './icons/University'
+import { Person } from './icons/Person'
 
 export const icons = {
   file: FileIcon,
@@ -75,6 +76,7 @@ export const icons = {
   timetravel: TimeTravelIcon,
   inspect: InspectLine,
   pencil: LeadPencil,
+  person: Person,
   razor: RazorBlade,
   questionmark: TwotoneQuestionMark,
   video: VideocamSharp,
@@ -134,7 +136,7 @@ export const icons = {
   faq: Faq,
   empty: EmptyIcon,
   upload: UploadIcon,
-  university: University
+  university: University,
 }
 export function NavIcon({
   icon = 'file',
