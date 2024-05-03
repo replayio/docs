@@ -41,9 +41,11 @@ const nodes = {
       let text = children.filter((child) => typeof child === 'string').join(' ')
       let id = attributes.id ?? slugify(text)
 
-      return new Tag(`a`, { href: `#${id}`, ...attributes }, [
-        new Tag(`h${node.attributes.level}`, { id }, children),
-      ])
+      return new Tag(
+        `h${node.attributes.level}`,
+        { ...attributes, id },
+        children,
+      )
     },
   },
   th: {
