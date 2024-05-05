@@ -1,5 +1,5 @@
 ---
-title: Collabritve devtools
+title: Collaborative devtools
 ---
 
 The best part of software development is that it's a team sport that allows you to work on your own schedule. It's so good that we take it for granted, and forget that there was ever a time when you couldn't open a PR and ask for a review.
