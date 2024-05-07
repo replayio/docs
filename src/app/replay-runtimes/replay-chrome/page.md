@@ -43,3 +43,23 @@ There will always be a headless browser which is great for recording in automati
 There are a couple of use cases here that we’re aiming for. The first is an **always on recorder **that you can use while QAing your application and press save to capture any issues that you see. The second is a **development browser** designed for debugging React applications.
 
 There’s an obvious overlap between these two goals. An always on recorder with realtime replay has the ability to augment your existing live browser DevTools. In fact when we started, that was the workflow. You’d pause at a breakpoint, and step forward or backwards. More exciting though would be bringing our [Live Console Logs ](/time-travel-intro/add-console-logs-on-the-fly)and time travel enhanced React functionality back into browser DevTools.
+
+## Using the executable directly
+
+We recommend using the `replayio` command to launch the browser, but it's also possible to use the executable directly.
+
+```sh
+npx replayio update
+RECORD_ALL_CONTENT=1 ~/.replay/runtimes/Replay-Chromium.app/Contents/MacOS/Chromium
+npx replayio upload
+```
+
+### Recording a chrome extension
+
+This [repo](https://github.com/replayio-public/chrome-extension-example) shows how you can pass in a path to a chrome extension to be loaded into the browser.
+
+```sh
+npx replayio update
+RECORD_ALL_CONTENT=1 ~/.replay/runtimes/Replay-Chromium.app/Contents/MacOS/Chromium --load-extension=./extension
+npx replayio upload
+```
