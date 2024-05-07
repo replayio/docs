@@ -5,11 +5,11 @@ description: Record your first replay with the Replay browser in under a minute.
 
 Recording your application with the Replay browser lets you capture a bug once and inspect it after the fact without having to reproduce it again. This makes it possible to
 
-- Share the replay as a URL with your team so others can inspect it as if they were there when you recorded it.
-- Debug the replay with instant Console logs that automagically appear in the Console.
-- Inspect Network requests, React components, and DOM elements as if the application were running live on your laptop.
+- [Share the replay as a URL with your team so others can inspect it as if they were there when you recorded it.](/time-travel-intro/collaborative-devtools)
+- [Debug the replay with `console.log` added in at any point of the recording.](/time-travel-intro/add-console-logs-on-the-fly)
+- [Inspect Network requests](/browser-devtools/network-monitor), [React components](/framework-devtools/react-panel), and [DOM elements](browser-devtools/elements-panel) as if the application were running live on your laptop.
 
-The ability to record and deterministically replay runtimes like Chrome is referred to as time travel and has been the holy grail of Computer Science research for the past 60 years because if you can capture the bug once and replay it, anything is possible.
+The ability to record and deterministically replay runtimes like Chrome is referred to as ["time travel"](/time-travel-intro/why-time-travel).
 
 Let's use the Replay CLI to record our first replay so you too can start time traveling:
 
