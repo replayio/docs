@@ -2,6 +2,7 @@
 title: Network monitor
 description: Inspect requests with the Network monitor.
 image: /images/net-monitor.png
+imageHeight: 504
 ---
 
 ## Viewing the resource list

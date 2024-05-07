@@ -2,6 +2,7 @@
 title: Source viewer
 description: Explore your code base with the source viewer
 image: /images/source-viewer.png
+imageHeight: 344
 ---
 
 ## Basics

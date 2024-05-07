@@ -1,6 +1,7 @@
 ---
 title: Cypress timeline
 image: /images/cypress.png
+imageHeight: 418
 description: Inspect your Cypress test as if it’s running locally with the Cypress timeline.
 ---
 

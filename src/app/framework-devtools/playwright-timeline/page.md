@@ -1,6 +1,7 @@
 ---
 title: Playwright timeline
 image: /images/playwright.png
+imageHeight: 433
 description: Inspect your Playwright test as if it’s running locally.
 ---
 
