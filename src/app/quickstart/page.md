@@ -3,6 +3,17 @@ title: Quickstart guide
 description: Record your first replay with the Replay browser in under a minute.
 ---
 
+Using Replay allows you to record a series of user interactions that you can then "replay" later on. This replay is the ultimate debugging tool, enabling you to:
+
+- See a timeline of events that you can rewind and scrub through, like a video
+- [Collaborate with other team members to hunt down a bug](/time-travel-intro/collaborative-devtools)
+- [Add `console.log`s and `debugger` statements after-the-fact](/time-travel-intro/add-console-logs-on-the-fly)
+- [Inspect network requests as they were made during the recording](/browser-devtools/network-monitor)
+
+We call this ability to interact with and debug the browser at any point of time ["Time traveling"](/time-travel-intro/why-time-travel).
+
+Let's use the Replay CLI to record our first session so you can time travel yourself:
+
 {% steps %}
 
 ## Install the Replay CLI
@@ -49,6 +60,12 @@ replayio record
 ```
 
 {% video src="recordCli" loop=true /%}
+
+This command will:
+
+- Prompt you to login to your Replay account (if not already logged in)
+- Install the Replay browser (if not already installed)
+- Open the Replay browser for you to record an interaction to dive deeper into
 
 ## Upload your replays
 
