@@ -2,6 +2,10 @@
 title: Debugging tests
 ---
 
+{% callout type="replay" %}
+[Check out this replay](https://replay.help/playwright-flake-debug) for a detailed walkthrough on debugging a flaky Playwright test. You'll see the capabilities of Replay DevTools and walk through the debugging process of identifying the root cause.
+{% /callout %}
+
 ## Jump to code
 {% twocolumns %}
 {% group %}

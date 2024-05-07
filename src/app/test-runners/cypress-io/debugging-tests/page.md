@@ -3,6 +3,10 @@ title: Debugging Tips
 description: Replay can help you gather more information about a flaky test. There are many strategies that can help you narrow down the root cause of a test failure or flake. Replay DevTools enable you to deep-dive into your code and print out values that would otherwise be hidden from you.
 ---
 
+{% callout type="replay" %}
+[Check out this replay](https://replay.help/cypress-flake-debug) for a detailed walkthrough on debugging a flaky Cypress test. You'll see the capabilities of Replay DevTools and walk through the debugging process of identifying the root cause.
+{% /callout %}
+
 ## Comparing passed and failed test
 
 Great way to narrow down the root cause of a flaky test is to open two replays - one with a passed test and one with the failed one. Usually the recording can give you enough information to notice the moment when these two tests start to diverge.
