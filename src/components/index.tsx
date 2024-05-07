@@ -1,4 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
+import { Accordion, AccordionItem } from './Accordian'
 import { Basic } from './Basic'
 import { Callout } from './Callout'
 import { DocsHeader } from './DocsHeader'
@@ -25,6 +26,8 @@ import { TwoColumns } from './TwoColumns'
 import { Group } from './Group'
 
 export default {
+  Accordion,
+  AccordionItem,
   Basic,
   Button,
   Callout,

@@ -74,19 +74,29 @@ https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25
 
 ## FAQ
 
-### How do I upload recordings later?
+{% accordion %}
+
+{% accordion-item title="How do I upload recordings later?" %}
 
 You can always upload recordings later via the `replayio upload` command. Read more in Replay CLI [docs](/replay-cli/commands).
 
-### When will the Replay browser be a standalone application?
+{% /accordion-item %}
+
+{% accordion-item title="When will the Replay browser be a standalone application?" %}
 
 We are excited to release the Replay browser as a standalone application that you can download directly, log into, and start recording in a couple of months.
 
 In the interim, if you would perfer downloading a browser directly, you can use the [Replay Firefox](/replay-runtimes/replay-firefox) browser.
 
-### Why do I need to login to Replay?
+{% /accordion-item %}
+
+{% accordion-item title="Why do I need to login to Replay?" %}
 
 Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/time-travel-intro/how-time-travel-works)
+
+{% /accordion-item %}
+
+{% /accordion %}
 
 {% quick-links title="Read more"  %}
 
