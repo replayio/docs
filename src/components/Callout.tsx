@@ -16,6 +16,12 @@ const styles = {
     title: 'text-sky-900 dark:text-sky-400',
     body: 'text-sky-800 [--tw-prose-background:theme(colors.sky.50)] prose-a:text-sky-900 prose-code:text-sky-900 dark:text-gray-300 dark:prose-code:text-gray-300',
   },
+  replay: {
+    container:
+      'bg-sky-50 dark:bg-gray-800/60 dark:ring-1 dark:ring-gray-300/10',
+    title: 'text-sky-900 dark:text-sky-400',
+    body: 'text-sky-800 [--tw-prose-background:theme(colors.sky.50)] prose-a:text-sky-900 prose-code:text-sky-900 dark:text-gray-300 dark:prose-code:text-gray-300',
+  },
   warning: {
     container:
       'bg-amber-50 dark:bg-gray-800/60 dark:ring-1 dark:ring-gray-300/10',
@@ -30,6 +36,7 @@ const icons = {
   warning: (props: { className?: string }) => (
     <Icon icon="warning" color="amber" {...props} />
   ),
+  replay: (props: { className?: string }) => <Icon icon="replay" {...props} />,
   none: ''
 }
 

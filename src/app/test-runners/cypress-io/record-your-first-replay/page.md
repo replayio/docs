@@ -146,6 +146,10 @@ You’re ready to inspect your local test run in Replay DevTools now. You can al
 
 {% /steps %}
 
+{% callout type="replay" %}
+[Check out this replay](https://replay.help/cypress-flake-debug) for a detailed walkthrough on debugging a flaky Cypress test. You'll see the capabilities of Replay DevTools and walk through the debugging process of identifying the root cause.
+{% /callout %}
+
 {% quick-links title="Read more" description="Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools" %}
 
 {% quick-link

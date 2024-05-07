@@ -26,3 +26,7 @@ Selecting a step shows the step details below with the ability to jump from the 
 ### Jump to code
 
 Clicking the **Jump to code** button seeks you from the test step into your React component’s event handler. There’s never been a more powerful way to start debugging a flaky test.
+
+{% callout type="replay" %}
+[Check out this replay](https://replay.help/cypress-flake-debug) for a detailed walkthrough on debugging a flaky Cypress test. You'll see the capabilities of Replay DevTools and walk through the debugging process of identifying the root cause.
+{% /callout %}
