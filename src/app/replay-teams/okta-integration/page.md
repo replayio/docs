@@ -6,7 +6,7 @@ title: Okta integration
 
 Logging in with SSO, is as easy as going to app.replay.io, clicking Sign In with SSO, and entering your email. When you enter your email, you will be routed to your standard SSO (Okta provider).
 
-{% figure alt="Elements panel" src="/images/okta-1.png" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/okta-1.png" height=440 width=870/%}
 
 ## Configuration Info from Replay
 
@@ -41,11 +41,11 @@ Logging in with SSO, is as easy as going to app.replay.io, clicking Sign In with
 To make this change, you must have Admin access to your Okta deployment.
 
 1. Find the necessary dialogue to add an App by going to Admin → Applications → Applications. Here’s an example of the screen you should see:
-   {% figure alt="Elements panel" src="/images/okta-2.webp" height=870 width=870/%}
+   {% figure alt="Elements panel" src="/images/okta-2.webp" height=440 width=870/%}
 
 2. Click on “Create App Integration”, select “SAML 2.0” and click on Next.
 3. In General Settings give the name to the app: “Replay” and click Next.
-   {% figure alt="Elements panel" src="/images/okta-3.webp" height=870 width=870/%}
+   {% figure alt="Elements panel" src="/images/okta-3.webp" height=440 width=870/%}
 
 4. Using the configuration info sent from Replay (and referencing the above) fill out the next screen. Here is an example of that screen filled out with example information:
 

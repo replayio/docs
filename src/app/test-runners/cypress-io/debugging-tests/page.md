@@ -25,7 +25,7 @@ Console logs can also be useful when debugging test data. Common use case in e2e
 
 {% figure
   src="/images/cypress-env-console-log.png"
-  height=870
+  height=440
   width=870
   alt="Logging out the Cypress.env() object"
 /%}

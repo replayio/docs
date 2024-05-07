@@ -40,7 +40,7 @@ Chrome Recorder, as the name implies, is specific to the Chrome browser and reco
 
 This discussion came up on Twitter recently, and Addy Osmani from the Google Chrome team outlines the differences in this tweet.
 
-{% figure alt="Elements panel" src="/images/addy-osmani-tweet.png" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/addy-osmani-tweet.png" height=440 width=870/%}
 
 ## Conclusion
 

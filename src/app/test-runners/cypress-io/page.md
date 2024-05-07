@@ -13,7 +13,7 @@ Recording your test run using replay will provide more info than any test result
 {% figure
     alt="Jumping to code"
     src="/images/jump_to_code.png"
-    height=870
+    height=440
     width=870
 /%}
 
@@ -51,7 +51,7 @@ While this example is fairly exaggerated, it illustrates two main problems of **
     alt="Snapshots vs. replay"
     src="/images/snapshots.png"
     showRadius=false
-    height=870
+    height=440
     width=620
 /%}
 

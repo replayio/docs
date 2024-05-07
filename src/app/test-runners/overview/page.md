@@ -16,7 +16,7 @@ The command details panel contains information on passed arguments, returned val
 {% figure
     alt="Playwright panel"
     src="/images/playwright_panel.png"
-    height=870
+    height=440
     width=870
 /%}
 
@@ -32,7 +32,7 @@ With information on [line hit counts](/browser-devtools/source-viewer#hit-counts
 {% figure
     alt="Jumping to code"
     src="/images/jump_to_code.png"
-    height=870
+    height=440
     width=870
 /%}
 
@@ -49,7 +49,7 @@ We have stories of [2 pixel shifts](https://blog.replay.io/a-journey-of-driving-
 alt="Race condition"
 src="/images/race_condition.png"
 gradient="bg-gradient-to-br from-sky-300 via-blue-300 to-violet-400"
-height=870
+height=440
 width=870
 /%}
 
@@ -65,7 +65,7 @@ Analytics give you actionable insights into your test runs and help you focus on
 {% figure
     alt="Test suite analytics"
     src="/images/runs_view.png"
-    height=870
+    height=440
     width=870
 /%}
 
@@ -81,7 +81,7 @@ You can zoom out to take a look at your whole test run, or filter out those that
 {% figure
     alt="Continuous integration"
     src="/images/ci.png"
-    height=870
+    height=440
     width=870
 /%}
 

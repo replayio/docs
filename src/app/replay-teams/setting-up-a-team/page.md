@@ -14,7 +14,7 @@ image: /images/team-settings.png
 
 Replays can be added to the team by selecting the team in the replay upload screen right after stopping the recording.
 
-{% figure alt="Elements panel" src="/images/teams-2.png" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/teams-2.png" height=440 width=870/%}
 
 ## API Keys
 

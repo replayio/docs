@@ -4,8 +4,9 @@ title: Billing
 
 ## Billing FAQ
 
-### Where do invoices get sent? 
-By default, payment receipts are sent to the email address of the creator of the team. 
+### Where do invoices get sent?
+
+By default, payment receipts are sent to the email address of the creator of the team.
 
 ### How do I add email addresses for the invoices to be sent to?
 
@@ -15,7 +16,7 @@ To add or update a billing email address or to request copies of invoices, conta
 
 A payment method can be added from the Billing section in Team Settings. To update a payment method, delete the current card and you will be able to add a new one.
 
-{% figure alt="Payment method" src="/images/billing-1.webp" height=870 width=870/%}
+{% figure alt="Payment method" src="/images/billing-1.webp" height=440 width=870/%}
 
 ### My trial is expiring soon, will you provide an extension?
 
@@ -25,7 +26,7 @@ Reach out to your Replay point of contact, we aim to be flexible around trials t
 
 If you would like to cancel your subscription, you can either remove the payment method or delete the team.
 
-{% figure alt="cancel subscription" src="/images/billing-2.webp" height=870 width=870/%}
+{% figure alt="cancel subscription" src="/images/billing-2.webp" height=440 width=870/%}
 
 ## Pricing Plan FAQ
 

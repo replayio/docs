@@ -136,7 +136,7 @@ There are several domains that are important for evaluating expressions, inspect
     alt="Adding a console log"
     src="/images/console log.png"
     showRadius=false
-    height=870
+    height=440
     width=870
 /%}
 
@@ -158,7 +158,7 @@ When you’re inspecting a replay, you’re not interacting with a single browse
     alt="Time travel protocol performance"
     src="/images/time-travel.svg"
     showRadius=false
-    height=870
+    height=440
     width=870
 /%}
 
