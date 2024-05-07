@@ -16,6 +16,7 @@
     "@headlessui/react": "^1.7.18",
     "@markdoc/markdoc": "^0.4.0",
     "@markdoc/next.js": "^0.3.7",
+    "@radix-ui/react-accordion": "^1.1.2",
     "@replayio/playwright": "^2.0.0-alpha.10",
     "@sindresorhus/slugify": "^2.1.0",
     "@tailwindcss/typography": "^0.5.7",
