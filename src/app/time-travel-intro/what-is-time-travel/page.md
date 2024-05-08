@@ -109,6 +109,7 @@ This approach might sound crazy, and in many ways it is. But it's also elegant, 
 - [How Replay works](https://blog.replay.io/how-replay-works)
 - [Recording and replaying](https://blog.replay.io/recording-and-replaying)
 - [Effective determinism](https://blog.replay.io/effective-determinism)
+- [How to time travel every time](https://blog.replay.io/how-to-time-travel-every-time)
 
 ## Recording overhead
 
