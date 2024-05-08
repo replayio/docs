@@ -8,16 +8,12 @@ image: /images/Cypress-hero.png
 
 The most annoying test flakes are those that cannot be reproduced locally or simply don’t show up when you need them to. But we think that **what happens on CI should not stay on CI**.
 
-{% callout type="replay" %}
-[Check out this replay](https://replay.help/cypress-flake-debug) for a detailed walkthrough on debugging a flaky Cypress test. You'll see the capabilities of Replay DevTools and walk through the debugging process of identifying the root cause.
-{% /callout %}
-
 Recording your test run using replay will provide more info than any test result, logger or any DOM snapshot trace ever could. That’s because a replay provides you with **context for every line of code**. For both your spec and the app you test.
 
 {% figure
     alt="Jumping to code"
     src="/images/jump_to_code.png"
-    height=440
+    height=870
     width=870
 /%}
 
@@ -51,13 +47,7 @@ While this example is fairly exaggerated, it illustrates two main problems of **
 
 **This is where snapshots tend to fall short.** Because an application is still operating between test steps, there’s a lot that goes under the radar. Replay is not a snapshot-based recorder but instead records the whole runtime. Visualized, the difference between DOM snapshots and a replay could look like this:
 
-{% figure
-    alt="Snapshots vs. replay"
-    src="/images/snapshots.png"
-    showRadius=false
-    height=440
-    width=620
-/%}
+{% snapshotsvsreplay /%}
 
 Because of this, a flaky test does not feel like an act of higher force, but can be inspected with **a microscopic precision**. Even when your app is updated every millisecond, you can jump to the perfect spot, and see your DOM rendered exactly as it would on that moment.
 

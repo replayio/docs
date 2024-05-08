@@ -125,6 +125,9 @@ const tags = {
       title: { type: String },
     },
   },
+  snapshotsvsreplay: {
+    render: components.SnapshotsVsReplay
+  },
 }
 
 export default tags

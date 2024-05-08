@@ -18,7 +18,6 @@ A test failure usually ends in "element not found" or other similar message, but
   height=470
   width=470
   alt="Comparing failed and passed test"
-  showRadius=false
 /%}
 
 ## Adding console logs in the spec file

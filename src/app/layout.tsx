@@ -23,6 +23,12 @@ const lexend = localFont({
   variable: '--font-lexend',
 })
 
+const virgil = localFont({
+  src: '../fonts/Virgil.woff2',
+  display: 'swap',
+  variable: '--font-virgil',
+})
+
 const ogImage = '/images/og-image.png'
 export const metadata: Metadata = {
   title: {
@@ -55,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx('h-full antialiased', inter.variable, lexend.variable)}
+      className={clsx('h-full antialiased', inter.variable, lexend.variable, virgil.variable)}
       suppressHydrationWarning
     >
       <head>

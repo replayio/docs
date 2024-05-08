@@ -24,9 +24,7 @@ If you would prefer not publishing source maps in production, you can upload you
 
 If you are using Webpack in your NextJS app you can update your next.config.js [here](/replay-cli/source-maps). If you are using SWC which is now the default, you can update the Vercel build step.
 
-**vercel.json**
-
-```json
+```json {% fileName="vercel.json" %}
 {
   "buildCommand": "next build; npx @replayio/replay upload-sourcemaps ./next"
 }
