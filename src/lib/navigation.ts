@@ -153,7 +153,7 @@ export const navigation: NavigationItem[] = [
       { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
       {
         title: 'Cypress.io',
-        href: '/test-runners/cypress-io',
+        href: '/test-runners/cypress-io/getting-started',
         icon: 'cypress',
         links: [
           {
