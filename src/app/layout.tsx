@@ -24,7 +24,7 @@ const lexend = localFont({
 })
 
 const virgil = localFont({
-  src: '../fonts/virgil.woff2',
+  src: '../fonts/Virgil.woff2',
   display: 'swap',
   variable: '--font-virgil',
 })
