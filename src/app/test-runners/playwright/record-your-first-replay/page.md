@@ -39,9 +39,10 @@ bun install @replayio/playwright -D
 
 ## Update your configuration
 
-```js {% fileName="playwright.config.ts" highlight=[2,"6-12","16-19"] lineNumbers=true %}
+```js {% fileName="playwright.config.ts" highlight=[2,"7-13","17-20"] lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from '@playwright/test'
 import { devices as replayDevices } from '@replayio/playwright'
+import 'dotenv/config'
 
 const config: PlaywrightTestConfig = {
   reporter: [
@@ -66,9 +67,30 @@ export default config
 
 ## Generate and save your API key
 
-In order to automatically upload your test replays you need to save an API key in your environment. To generate an API key, log in to Replay App open the settings menu. [Read more](/ci-workflows/generate-api-key).
+In order to upload your test replays you need to generate an API key and save it to your environment. You can generate an API key once you [created a team in Replay App](/replay-teams/setting-up-a-team). API key management section can be found in the team settings menu. [Read more about API keys here](/ci-workflows/generate-api-key).
 
 {% video src="generateApiKey" /%}
+
+To use your API key, you can either use [dotenv package](https://www.npmjs.com/package/dotenv) and save it to a `.env` file or add the API key to your environment directly.
+
+{% tabs labels=[".env", "macOS/Linux", "Windows"] %}
+{% tab %}
+```bash {% fileName=".env" %}
+REPLAY_API_KEY=<your_api_key>
+```
+{% /tab %}
+{% tab %}
+```sh
+export REPLAY_API_KEY=<your_api_key>
+```
+{% /tab %}
+{% tab %}
+```sh
+set REPLAY_API_KEY=<your_api_key>
+```
+{% /tab %}
+{% /tabs %}
+
 
 ## Record your test
 
