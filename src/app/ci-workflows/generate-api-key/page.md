@@ -44,6 +44,14 @@ set REPLAY_APP_API_KEY=<Your-API-Key>
 {% /tab %}
 {% /tabs %}
 
+### Using `.env` file
+
+For local development and easier environment secrets management, you can use [dotenv package](https://www.npmjs.com/package/dotenv) and save your API key to a `.env` file. Make sure this file is listed in your `.gitignore` file so that you accidentally don’t expose it.
+
+```bash {% fileName=".env" %}
+REPLAY_API_KEY=<your_api_key>
+```
+
 ### Saving API key to remote environment
 
 Most CI/CD providers (e.g. [GitHub](https://docs.github.com/en/actions/learn-github-actions/variables), [CircleCI](https://circleci.com/docs/env-vars/)) offer an interface where you can securely add repository secrets or store your environment variables.

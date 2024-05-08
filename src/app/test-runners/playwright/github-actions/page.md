@@ -44,6 +44,8 @@ jobs:
         run: npm ci
       - name: Run Playwright tests
         run: npx playwright test
+        env:
+          REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
 ```
 
 ## Advanced setup
