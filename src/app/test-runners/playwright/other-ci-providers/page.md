@@ -8,21 +8,21 @@ To record tests and upload replays in other CI providers, you’ll need to compl
 
 `@replayio/playwright` must be installed in your CI environment before the tests execute.
 
-If your workflow has an existing `npm ci` or `yarn` command to install project dependencies, then you are all set. 
+If your workflow has an existing `npm ci` or `yarn` command to install project dependencies, then you are all set.
 
-If not, you’ll need to add a step to install all project dependencies, or you can manually install just the Replay package directly with `npm i @replayio/playwright` .
+If not, you’ll need to add a step to install all project dependencies, or you can manually install just the Replay package directly with `npm i @replayio/playwright@alpha` .
 
 ## Installing Replay Browsers
 
 By default, `@replayio/playwright` also installs the required Replay Browsers. However, if you have a setting to suppress browser installations during `npm ci` or `yarn`, you’ll need to also manually install the Replay Browsers in your workflow using:
 
 ```sh
-npx @replayio/playwright install
+npx @replayio/playwright@alpha install
 ```
 
 ## Update test run command
 
-Your existing test run command (for example, `npx playwright test`) must be updated to include the name of a Replay Browser and required environment variables to record. 
+Your existing test run command (for example, `npx playwright test`) must be updated to include the name of a Replay Browser and required environment variables to record.
 
 You should make this update wherever your run command is defined, typically in `package.json` or directly in the workflow file.
 
@@ -41,7 +41,7 @@ npx playwright test --project replay-firefox --reporter=@replayio/playwright/rep
 
 ## Upload replays
 
-Use the [@replayio/replay](https://github.com/replayio/replay-cli/tree/main/packages/replay) CLI in your workflow to add source control metadata and upload replays to your team. 
+Use the [@replayio/replay](https://github.com/replayio/replay-cli/tree/main/packages/replay) CLI in your workflow to add source control metadata and upload replays to your team.
 
 1. Install the CLI
 2. Add metadata for all replays generated during the test run

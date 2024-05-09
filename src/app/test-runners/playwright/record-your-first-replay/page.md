@@ -10,32 +10,36 @@ title: Playwright
 {% tab %}
 
 ```sh
-npm install @replayio/playwright -D
+npm install @replayio/playwright@alpha -D
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-yarn add @replayio/playwright -D
+yarn add @replayio/playwright@alpha -D
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-pnpm install @replayio/playwright -D
+pnpm install @replayio/playwright@alpha -D
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-bun install @replayio/playwright -D
+bun install @replayio/playwright@alpha -D
 ```
 
 {% /tab %}
 {% /tabs %}
+
+{% callout title="Note" type="note" %}
+We recommend using the current `@alpha` version of this plugin. It's more robust and better but we are still polishing it. If you encounter any problems with it you can use `@replayio/playwright@alpha`. We'd appreciate feedback and bug reports to be reported [here](https://github.com/replayio/replay-cli/issues/new).
+{% /callout %}
 
 ## Update your configuration
 
@@ -75,22 +79,27 @@ To use your API key, you can either use [dotenv package](https://www.npmjs.com/p
 
 {% tabs labels=[".env", "macOS/Linux", "Windows"] %}
 {% tab %}
+
 ```bash {% fileName=".env" %}
 REPLAY_API_KEY=<your_api_key>
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 export REPLAY_API_KEY=<your_api_key>
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 set REPLAY_API_KEY=<your_api_key>
 ```
+
 {% /tab %}
 {% /tabs %}
-
 
 ## Record your test
 
