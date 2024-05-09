@@ -38,7 +38,7 @@ bun install @replayio/playwright@alpha -D
 {% /tabs %}
 
 {% callout title="Note" type="note" %}
-We recommend using the current `@alpha` version of this plugin. It's more robust and better but we are still polishing it. If you encounter any problems with it you can use `@replayio/playwright@alpha`. We'd appreciate feedback and bug reports to be reported [here](https://github.com/replayio/replay-cli/issues/new).
+We recommend using the current `@alpha` version of this plugin. It's more robust and better but we are still polishing it. If you encounter any problems with it you can use `@replayio/playwright@latest`. We'd appreciate feedback and bug reports to be reported [here](https://github.com/replayio/replay-cli/issues/new).
 {% /callout %}
 
 ## Update your configuration
