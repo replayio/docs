@@ -695,6 +695,47 @@
     {
       "source": "/recording-browser-tests-(beta)",
       "destination": "/test-suites/pr-comments"
+    },
+    {
+      "source": "/framework-devtools/react-panel",
+      "destination": "/replay-devtools/framework-devtools/react-panel"
+    },
+    {
+      "source": "/framework-devtools/redux-panel",
+      "destination": "/replay-devtools/framework-devtools/redux-panel"
+    },
+    {
+      "source": "/framework-devtools/cypress-timeline",
+      "destination": "/replay-devtools/framework-devtools/cypress-timeline"
+    },
+    {
+      "source": "/framework-devtools/playwright-timeline",
+      "destination": "/replay-devtools/framework-devtools/playwright-timeline"
+    },
+    {
+      "source": "/browser-devtools/elements-panel",
+      "destination": "/replay-devtools/browser-devtools/elements-panel"
+    },
+
+    {
+      "source": "/browser-devtools/network-monitor",
+      "destination": "/replay-devtools/browser-devtools/network-monitor"
+    },
+    {
+      "source": "/browser-devtools/console",
+      "destination": "/replay-devtools/browser-devtools/console"
+    },
+    {
+      "source": "/browser-devtools/source-viewer",
+      "destination": "/replay-devtools/browser-devtools/source-viewer"
+    },
+    {
+      "source": "/browser-devtools/pause-panel",
+      "destination": "/replay-devtools/browser-devtools/pause-panel"
+    },
+    {
+      "source": "/browser-devtools/replay-viewer",
+      "destination": "/replay-devtools/browser-devtools/replay-viewer"
     }
   ],
   "rewrites": [

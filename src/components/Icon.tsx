@@ -50,6 +50,10 @@ import DebuggingTestsIcon from './icons/DebuggingTestsIcon'
 import { LinkIcon } from './icons/LinkIcon'
 import SettingUpATeamIcon from './icons/SettingUpATeamIcon'
 import { InspectLine } from './icons/InspectLine'
+import { WifiIcon } from '@heroicons/react/24/outline'
+import { PauseIcon } from './icons/PauseIcon'
+import { VideocamSharp } from './icons/VideocamSharp'
+import { ReduxIcon } from './icons/ReduxIcon'
 
 export const icons = {
   bracketscurly: BracketsCurlyIcon,
@@ -100,7 +104,11 @@ export const icons = {
   security: SecurityPrinciplesIcon,
   debuggingtests: DebuggingTestsIcon,
   link: LinkIcon,
-  settingupateam: SettingUpATeamIcon
+  settingupateam: SettingUpATeamIcon,
+  wifi: WifiIcon,
+  pause: PauseIcon,
+  video: VideocamSharp,
+  redux: ReduxIcon,
 }
 
 export const iconStyles = {
