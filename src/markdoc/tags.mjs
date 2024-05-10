@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import components from '@/components'
-import {Accordion} from "../components/Accordian";
+import { Accordion } from '../components/Accordian'
 
 function toSnakeCase(str) {
   return (str[0] + str.substr(1).replace(/([A-Z])/g, '-$1')).toLowerCase()
@@ -83,6 +83,7 @@ const tags = {
       description: { type: String },
       icon: { type: String },
       href: { type: String },
+      mini: { type: Boolean },
     },
   },
   'quick-links': {
@@ -91,6 +92,7 @@ const tags = {
     attributes: {
       title: { type: String },
       description: { type: String },
+      mini: { type: Boolean },
     },
   },
   tabs: {
@@ -126,7 +128,7 @@ const tags = {
     },
   },
   snapshotsvsreplay: {
-    render: components.SnapshotsVsReplay
+    render: components.SnapshotsVsReplay,
   },
 }
 
