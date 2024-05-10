@@ -1,6 +1,6 @@
 {
   "files.associations": {
-    "*.md": "markdoc"
+    "*.md": "markdown"
   },
   "cSpell.enableFiletypes": [
     "markdoc"

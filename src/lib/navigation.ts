@@ -52,71 +52,75 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Replay DevTools',
-    href: '/browser-devtools',
+    href: '/replay-devtools',
     omitFromDocumentTitle: true,
     links: [
-      // { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
+      {
+        title: 'Overview',
+        href: '/replay-devtools/overview',
+        icon: 'overview',
+      },
       {
         title: 'Framework DevTools',
-        href: '/framework-devtools',
+        href: '/replay-devtools/framework-devtools/react-panel',
         icon: 'rocket',
         links: [
           {
             title: 'React Panel',
-            href: '/framework-devtools/react-panel',
+            href: '/replay-devtools/framework-devtools/react-panel',
             icon: 'react',
           },
           {
             title: 'Redux Panel',
-            href: '/framework-devtools/redux-panel',
+            href: '/replay-devtools/framework-devtools/redux-panel',
             icon: 'redux',
           },
           {
             title: 'Cypress Timeline',
-            href: '/framework-devtools/cypress-timeline',
+            href: '/replay-devtools/framework-devtools/cypress-timeline',
             icon: 'cypress',
           },
           {
             title: 'Playwright Timeline',
-            href: '/framework-devtools/playwright-timeline',
+            href: '/replay-devtools/framework-devtools/playwright-timeline',
             icon: 'playwright',
           },
         ],
       },
       {
         title: 'Browser DevTools',
-        href: '/browser-devtools',
+        href: '/replay-devtools/browser-devtools/elements-panel',
         icon: 'magnifying',
         links: [
           {
             title: 'Elements Panel',
-            href: '/browser-devtools/elements-panel',
+            href: '/replay-devtools/browser-devtools/elements-panel',
             icon: 'inspect',
           },
           {
             title: 'Network Monitor',
-            href: '/browser-devtools/network-monitor',
+            href: '/replay-devtools/browser-devtools/network-monitor',
             icon: 'wifi',
           },
           {
             title: 'Console Panel',
-            href: '/browser-devtools/console',
+            href: '/replay-devtools/browser-devtools/console',
             icon: 'console',
           },
 
           {
             title: 'Source Viewer',
-            href: '/browser-devtools/source-viewer',
+            href: '/replay-devtools/browser-devtools/source-viewer',
             icon: 'folder',
           },
           {
             title: 'Pause Panel',
-            href: '/browser-devtools/pause-panel',
+            href: '/replay-devtools/browser-devtools/pause-panel',
             icon: 'pause',
           },
           {
             title: 'Replay Viewer',
-            href: '/browser-devtools/replay-viewer',
+            href: '/replay-devtools/browser-devtools/replay-viewer',
             icon: 'video',
           },
         ],
