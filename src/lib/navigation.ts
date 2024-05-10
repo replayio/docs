@@ -51,46 +51,8 @@ export const navigation: NavigationItem[] = [
     ],
   },
   {
-    title: 'Browser DevTools',
+    title: 'Replay DevTools',
     href: '/browser-devtools',
-    links: [
-      {
-        title: 'Elements Panel',
-        href: '/browser-devtools/elements-panel',
-        icon: 'inspect',
-      },
-      {
-        title: 'Network Monitor',
-        href: '/browser-devtools/network-monitor',
-        icon: 'rocket',
-      },
-      {
-        title: 'Console Panel',
-        href: '/browser-devtools/console',
-        icon: 'console',
-      },
-
-      {
-        title: 'Source Viewer',
-        href: '/browser-devtools/source-viewer',
-        icon: 'folder',
-      },
-
-      {
-        title: 'Pause Panel',
-        href: '/browser-devtools/pause-panel',
-        icon: 'pause',
-      },
-      {
-        title: 'Replay Viewer',
-        href: '/browser-devtools/replay-viewer',
-        icon: 'video',
-      },
-    ],
-  },
-  {
-    title: 'Framework DevTools',
-    href: '/devtools',
     links: [
       {
         title: 'React Panel',
@@ -111,6 +73,37 @@ export const navigation: NavigationItem[] = [
         title: 'Playwright Timeline',
         href: '/framework-devtools/playwright-timeline',
         icon: 'playwright',
+      },
+      {
+        title: 'Elements Panel',
+        href: '/browser-devtools/elements-panel',
+        icon: 'inspect',
+      },
+      {
+        title: 'Network Monitor',
+        href: '/browser-devtools/network-monitor',
+        icon: 'wifi',
+      },
+      {
+        title: 'Console Panel',
+        href: '/browser-devtools/console',
+        icon: 'console',
+      },
+
+      {
+        title: 'Source Viewer',
+        href: '/browser-devtools/source-viewer',
+        icon: 'folder',
+      },
+      {
+        title: 'Pause Panel',
+        href: '/browser-devtools/pause-panel',
+        icon: 'pause',
+      },
+      {
+        title: 'Replay Viewer',
+        href: '/browser-devtools/replay-viewer',
+        icon: 'video',
       },
     ],
   },

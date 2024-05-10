@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { WifiIcon } from '@heroicons/react/24/outline'
 
 import FileIcon from './icons/FileIcon'
 import { Hourglass } from './icons/Hourglass'
@@ -137,6 +138,7 @@ export const icons = {
   empty: EmptyIcon,
   upload: UploadIcon,
   university: University,
+  wifi: WifiIcon,
 }
 export function NavIcon({
   icon = 'file',
