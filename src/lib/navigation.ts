@@ -53,57 +53,73 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Replay DevTools',
     href: '/browser-devtools',
+    omitFromDocumentTitle: true,
     links: [
+      // { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
       {
-        title: 'React Panel',
-        href: '/framework-devtools/react-panel',
-        icon: 'react',
+        title: 'Framework DevTools',
+        href: '/framework-devtools',
+        icon: 'rocket',
+        links: [
+          {
+            title: 'React Panel',
+            href: '/framework-devtools/react-panel',
+            icon: 'react',
+          },
+          {
+            title: 'Redux Panel',
+            href: '/framework-devtools/redux-panel',
+            icon: 'redux',
+          },
+          {
+            title: 'Cypress Timeline',
+            href: '/framework-devtools/cypress-timeline',
+            icon: 'cypress',
+          },
+          {
+            title: 'Playwright Timeline',
+            href: '/framework-devtools/playwright-timeline',
+            icon: 'playwright',
+          },
+        ],
       },
       {
-        title: 'Redux Panel',
-        href: '/framework-devtools/redux-panel',
-        icon: 'redux',
-      },
-      {
-        title: 'Cypress Timeline',
-        href: '/framework-devtools/cypress-timeline',
-        icon: 'cypress',
-      },
-      {
-        title: 'Playwright Timeline',
-        href: '/framework-devtools/playwright-timeline',
-        icon: 'playwright',
-      },
-      {
-        title: 'Elements Panel',
-        href: '/browser-devtools/elements-panel',
-        icon: 'inspect',
-      },
-      {
-        title: 'Network Monitor',
-        href: '/browser-devtools/network-monitor',
-        icon: 'wifi',
-      },
-      {
-        title: 'Console Panel',
-        href: '/browser-devtools/console',
-        icon: 'console',
-      },
+        title: 'Browser DevTools',
+        href: '/browser-devtools',
+        icon: 'magnifying',
+        links: [
+          {
+            title: 'Elements Panel',
+            href: '/browser-devtools/elements-panel',
+            icon: 'inspect',
+          },
+          {
+            title: 'Network Monitor',
+            href: '/browser-devtools/network-monitor',
+            icon: 'wifi',
+          },
+          {
+            title: 'Console Panel',
+            href: '/browser-devtools/console',
+            icon: 'console',
+          },
 
-      {
-        title: 'Source Viewer',
-        href: '/browser-devtools/source-viewer',
-        icon: 'folder',
-      },
-      {
-        title: 'Pause Panel',
-        href: '/browser-devtools/pause-panel',
-        icon: 'pause',
-      },
-      {
-        title: 'Replay Viewer',
-        href: '/browser-devtools/replay-viewer',
-        icon: 'video',
+          {
+            title: 'Source Viewer',
+            href: '/browser-devtools/source-viewer',
+            icon: 'folder',
+          },
+          {
+            title: 'Pause Panel',
+            href: '/browser-devtools/pause-panel',
+            icon: 'pause',
+          },
+          {
+            title: 'Replay Viewer',
+            href: '/browser-devtools/replay-viewer',
+            icon: 'video',
+          },
+        ],
       },
     ],
   },
