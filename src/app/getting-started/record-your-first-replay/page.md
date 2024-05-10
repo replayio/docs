@@ -1,5 +1,5 @@
 ---
-title: Record Your First Replay
+title: Record your first replay
 description: Our goal is for recording a replay to be as easy recording a video. Today, you launch the Replay browser from the command line replayio record. This is just a stop gap solution until we’re able to release the Replay browser as a standalone development browser.
 ---
 
