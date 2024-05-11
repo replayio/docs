@@ -43,20 +43,20 @@ We recommend using the current `@alpha` version of this plugin. It's more robust
 
 ## Update your configuration
 
-```js {% fileName="playwright.config.ts" highlight=[2,"7-13","17-20"] lineNumbers=true %}
+```js {% fileName="playwright.config.ts" highlight=["2-5","10-13","17-20"] lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from '@playwright/test'
-import { devices as replayDevices } from '@replayio/playwright'
+import {
+  createReplayReporterConfig,
+  devices as replayDevices,
+} from "@replayio/playwright";
 import 'dotenv/config'
 
 const config: PlaywrightTestConfig = {
   reporter: [
-    [
-      '@replayio/playwright/reporter',
-      {
-        apiKey: process.env.REPLAY_API_KEY,
-        upload: true,
-      },
-    ],
+    createReplayReporterConfig({
+      apiKey: process.env.REPLAY_API_KEY,
+      upload: true,
+    }),
     ['line'],
   ],
   projects: [

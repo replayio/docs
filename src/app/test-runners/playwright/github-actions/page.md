@@ -12,13 +12,19 @@ In the setup below, we update the `playwright.config.ts` file to use the Replay 
 
 ```jsx {% fileName="playwright.config.ts" lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from "@playwright/test";
-import { devices as replayDevices } from "@replayio/playwright";
+import {
+    createReplayReporterConfig,
+    devices as replayDevices,
+} from "@replayio/playwright";
 
 const config: PlaywrightTestConfig = {
-  reporter: [["@replayio/playwright/reporter", {
-    apiKey: process.env.REPLAY_API_KEY,
-    upload: true
-  }], ['line']],
+  reporter: [
+      createReplayReporterConfig({
+          apiKey: process.env.REPLAY_API_KEY,
+          upload: true,
+      }),
+      ['line']
+  ],
   projects: [
     {
       name: "replay-chromium",
