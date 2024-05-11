@@ -86,6 +86,39 @@ View recording at:
 https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25
 ```
 
+> This URL is a real recording. [Press the link to inspect the site](https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25)!
+
+When you open the "View recording" link in a browser, you'll be greeted with a dialog asking if you want to upload the recording to a specific team.
+
+![An upload preview of www.overboard.dev that says "only you can view this" with an option to add other people to see the upload](/images/upload_perms.png)
+
+> If you don't have a team yet, you can [create a team in the Replay dashboard.](/replay-teams/setting-up-a-team)
+
+## Inspect your replay
+
+Once your recording is uploaded, you're able to inspect it through [the Replay dashboard](https://app.replay.io/).
+
+![A preview of the website that was recorded; Overboard. It includes a sidebar of events the user took. The site itself is an "Add to cart" button underneath a checkout for fictional hoverboards](/images/recording_landing_page.png)
+
+By default, you're set to "Viewer" mode. You can change the view to "DevTools" mode either by pressing the toggle in the top-right corner or by selecting an "Event" and pressing "Jump to code"
+
+Let's jump to the last "Click" before the recording hit an error and see the code related to it:
+
+![A code environment with highlighted React code and a DevTools tab in the bottom-right corner](/images/recording_devtools.png)
+
+It looks like we're making a `"POST"` to an endpoint of `"/api/purchase"`. Let's open our network panel and see what the request looks like:
+
+![The network tab in the DevTools panel which shows a 400 error on the purchase](/images/network_tab.png)
+
+Selecting the `400` error in the network panel allows us to look at the request and reply. Here, the request is indicating that `"Color is not found, recieved: undefined"` was the response from our backend:
+
+![A response subtab on the network request panel showing the error message](/images/response_body.png)
+
+But looking at the request body, it looks like we're sending the color along just fine:
+
+![The request subtab on the network request panel showing the request body with "{color: blue}"](/images/request_body.png)
+With this information, we can go to our backend team more informed with how to report a ticket to solve this.
+
 {% /steps %}
 
 ## FAQ
