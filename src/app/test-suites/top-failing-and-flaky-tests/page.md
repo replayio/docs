@@ -15,7 +15,7 @@ The percentage shown in the icon indicates how often this test fails across all 
 {% figure
   alt="Test runs sorted by failure rate"
   src="/images/sort-by-failed.png"
-  height=870
+  height=440
   width=970
 /%}
 {% /twocolumns %}
@@ -33,7 +33,7 @@ These cause inconsistent results across test executions.
 {% figure
   alt="Test runs sorted by flakiness rate"
   src="/images/sort-by-flaky.png"
-  height=870
+  height=440
   width=870
 /%}
 {% /twocolumns %}

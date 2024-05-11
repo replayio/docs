@@ -8,11 +8,13 @@ export function DocsHeader({
   documentTitle,
   image,
   title,
+  imageHeight,
 }: {
   description?: string
   documentTitle: string
   image?: string
   title?: string
+  imageHeight?: number
 }) {
   let pathname = usePathname()
 
@@ -52,7 +54,7 @@ export function DocsHeader({
           className=""
           ripple={false}
           width={870}
-          height={870}
+          height={imageHeight || 420}
         />
       )}
       {!image && description ? (

@@ -3,6 +3,16 @@ title: Quickstart guide
 description: Record your first replay with the Replay browser in under a minute.
 ---
 
+Recording your application with the Replay browser lets you capture a bug once and inspect it after the fact without having to reproduce it again. This makes it possible to
+
+- [Share the replay as a URL with your team so others can inspect it as if they were there when you recorded it.](/time-travel-intro/collaborative-devtools)
+- [Debug the replay with `console.log` added in at any point of the recording.](/time-travel-intro/add-console-logs-on-the-fly)
+- [Inspect Network requests](/browser-devtools/network-monitor), [React components](/framework-devtools/react-panel), and [DOM elements](browser-devtools/elements-panel) as if the application were running live on your laptop.
+
+The ability to record and deterministically replay runtimes like Chrome is referred to as ["time travel"](/time-travel-intro/why-time-travel).
+
+Let's use the Replay CLI to record our first replay so you too can start time traveling:
+
 {% steps %}
 
 ## Install the Replay CLI
@@ -50,6 +60,12 @@ replayio record
 
 {% video src="recordCli" loop=true /%}
 
+This command will:
+
+- Prompt you to login to your Replay account (if not already logged in)
+- Install the Replay browser (if not already installed)
+- Open the Replay browser for you to record an interaction to dive deeper into
+
 ## Upload your replays
 
 When you close the browser, you'll be prompted to upload your recordings.
@@ -74,19 +90,29 @@ https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25
 
 ## FAQ
 
-### How do I upload recordings later?
+{% accordion %}
+
+{% accordion-item title="How do I upload recordings later?" %}
 
 You can always upload recordings later via the `replayio upload` command. Read more in Replay CLI [docs](/replay-cli/commands).
 
-### When will the Replay browser be a standalone application?
+{% /accordion-item %}
+
+{% accordion-item title="When will the Replay browser be a standalone application?" %}
 
 We are excited to release the Replay browser as a standalone application that you can download directly, log into, and start recording in a couple of months.
 
 In the interim, if you would perfer downloading a browser directly, you can use the [Replay Firefox](/replay-runtimes/replay-firefox) browser.
 
-### Why do I need to login to Replay?
+{% /accordion-item %}
+
+{% accordion-item title="Why do I need to login to Replay?" %}
 
 Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/time-travel-intro/how-time-travel-works)
+
+{% /accordion-item %}
+
+{% /accordion %}
 
 {% quick-links title="Read more"  %}
 

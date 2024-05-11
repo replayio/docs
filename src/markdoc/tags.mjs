@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import components from '@/components'
+import { Accordion } from '../components/Accordian'
 
 function toSnakeCase(str) {
   return (str[0] + str.substr(1).replace(/([A-Z])/g, '-$1')).toLowerCase()
@@ -31,14 +32,14 @@ const tags = {
   link: {
     render: Link,
     attributes: {
-      href: { type: String }
+      href: { type: String },
     },
   },
   callout: {
     attributes: {
       title: { type: String },
       showIcon: {
-        type: Boolean
+        type: Boolean,
       },
       href: { type: String },
       type: {
@@ -71,7 +72,7 @@ const tags = {
       autoplay: { type: Boolean },
       muted: { type: Boolean },
       loop: { type: Boolean },
-      thumbnailTime: { type: Number }
+      thumbnailTime: { type: Number },
     },
   },
   'quick-link': {
@@ -82,6 +83,7 @@ const tags = {
       description: { type: String },
       icon: { type: String },
       href: { type: String },
+      mini: { type: Boolean },
     },
   },
   'quick-links': {
@@ -89,7 +91,8 @@ const tags = {
     render: components.QuickLinks,
     attributes: {
       title: { type: String },
-      description: { type: String }
+      description: { type: String },
+      mini: { type: Boolean },
     },
   },
   tabs: {
@@ -113,8 +116,20 @@ const tags = {
     },
   },
   twocolumns: {
-    render: components.TwoColumns
-  }
+    render: components.TwoColumns,
+  },
+  accordion: {
+    render: components.Accordion,
+  },
+  'accordion-item': {
+    render: components.AccordionItem,
+    attributes: {
+      title: { type: String },
+    },
+  },
+  snapshotsvsreplay: {
+    render: components.SnapshotsVsReplay,
+  },
 }
 
 export default tags

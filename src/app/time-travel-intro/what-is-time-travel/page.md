@@ -109,6 +109,7 @@ This approach might sound crazy, and in many ways it is. But it's also elegant, 
 - [How Replay works](https://blog.replay.io/how-replay-works)
 - [Recording and replaying](https://blog.replay.io/recording-and-replaying)
 - [Effective determinism](https://blog.replay.io/effective-determinism)
+- [How to time travel every time](https://blog.replay.io/how-to-time-travel-every-time)
 
 ## Recording overhead
 
@@ -136,7 +137,7 @@ There are several domains that are important for evaluating expressions, inspect
     alt="Adding a console log"
     src="/images/console log.png"
     showRadius=false
-    height=870
+    height=440
     width=870
 /%}
 
@@ -158,7 +159,7 @@ When you’re inspecting a replay, you’re not interacting with a single browse
     alt="Time travel protocol performance"
     src="/images/time-travel.svg"
     showRadius=false
-    height=870
+    height=440
     width=870
 /%}
 

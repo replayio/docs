@@ -2,6 +2,7 @@
 title: Pause panel
 description: Inspect local variables and parent frames with the Pause panel.
 image: /images/pause-panel.png
+imageHeight: 448
 ---
 
 ## Basics

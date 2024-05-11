@@ -2,6 +2,7 @@
 title: Console
 description: See how your application state changes over time with interactive console logs.
 image: /images/console.png
+imageHeight: 392
 ---
 
 ## Basics
@@ -61,6 +62,7 @@ Setting the focus window will limit the execution range in the recording which w
 One of the easiest ways to see which JS function handled a user click, random scroll event, or websocket message, is to open the Console sidebar, select the relevant event listener category, and log the handlers to the Console.
 
 ## Learn more
+
 Learn how to use console logs to print information from your source code. This tutorial will show you how to navigate the timeline by fast forwarding or going back, and how to filter your console logs for more efficient debugging. You can find the whole course at [replay.help/course](https://replay.help/course)
 
 {% video src="consoleLogsCourse" autoplay=false /%}

@@ -14,23 +14,23 @@ Intermittent test failures can be challenging to debug because there’s no way 
 
 In the example below, we’ll walk through how you can use Replay DevTools to understand where the timing issue is coming from within the React component. This example comes from Filip Hric’s excellent video so if you are a visual learner, feel free to check out the video instead ([link](https://www.youtube.com/watch?v=4wL8Qi9vjho)).
 
-{% figure alt="Elements panel" src="/images/cypress-1.png" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/cypress-1.png" height=440 width=870/%}
 
 The reason why this test fails the first time and passes the second time is that the API call `/add-to-cart` fails returns a `400` because the requested quantity was 0. Viewing the Network Monitor helps us see that the quantify field defaults to 0 and is updated when the `check-availability` API call is returned.
 
-{% figure alt="Elements panel" src="/images/cypress-2.png" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/cypress-2.png" height=440 width=870/%}
 
 We can fix this test by telling it to wait for the `/api/check-availability` network request, but it’s possible that our users could also be hitting this issue as well. And in general, every time we add a `cy.wait` we should ask ourselves, “is there a way to make our application safer”?
 
-{% figure alt="Elements panel" src="/images/cypress-3.png" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/cypress-3.png" height=440 width=870/%}
 
 Because Replay is a browser, we can go one step further and inspect the **ProductDetail** React component. When we look at the component, we see that when `/api/check-availability` returns, it sets the `quantity` value.
 
-{% figure alt="Elements panel" src="/images/cypress-4.webp" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/cypress-4.webp" height=440 width=870/%}
 
 Once we know we know that the Add To Cart button should be disabled when the `quantity` is 0, it is fairly easy add a disabled property to the **AddToCartButton** component.
 
-{% figure alt="Elements panel" src="/images/cypress-5.webp" height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/cypress-5.webp" height=440 width=870/%}
 
 And now that the Add To Cart button is safer, we can go back to our Cypress test and remove the `cy.wait` because it is no longer necessary.
 

@@ -7,7 +7,7 @@ const cards: CardAttributes[] = [
     icon: 'rocket',
     title: 'Time travel',
     content: 'Learn how to inspect your application in new ways.',
-    href: '/time-travel-intro/what-is-time-travel',
+    href: '/time-travel-intro/why-time-travel',
   },
   {
     icon: 'inspect',
@@ -83,7 +83,10 @@ const miniCards: CardAttributes[] = [
 
 export default function Page() {
   return (
-    <div data-test-id="page" className="mx-auto flex max-w-4xl flex-col px-4 py-8">
+    <div
+      data-test-id="page"
+      className="mx-auto flex max-w-4xl flex-col px-4 py-8"
+    >
       <Hero />
       <h2 className="py-8 text-2xl font-semibold">Topics</h2>
       <div className="grid place-items-center gap-4 pb-20 md:grid-cols-2 lg:grid-cols-3">
@@ -98,7 +101,7 @@ export default function Page() {
         ))}
       </div>
       <h2 className="pb-8 text-2xl font-semibold">Learn the basics</h2>
-      <div className="grid place-items-center gap-4 pb-20 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid place-items-stretch gap-4 pb-20 md:grid-cols-2 lg:grid-cols-3">
         {miniCards.map(({ href, content, icon, title }) => (
           <MiniCard
             key={href}

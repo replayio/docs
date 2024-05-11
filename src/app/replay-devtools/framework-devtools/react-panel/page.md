@@ -1,6 +1,7 @@
 ---
 title: React panel
 image: /images/react.png
+imageHeight: 433
 description: Inspect React components at any point in time.
 ---
 
@@ -43,6 +44,7 @@ Because we’re able to collect more information at while replaying the recordin
 Because we’re not concerned about the performance overhead of processing sourcemaps while replaying, we’re able to source map component names so you’re able to see the original names.
 
 ## Learn more
+
 Learn how to use the React panel to examine hooks and properties, and observe how they change over time. This tutorial will also teach you how to navigate from the React panel to the specific element that it rendered. You can find the whole course at [replay.help/course](https://replay.help/course)
 
 {% video src="reactPanelCourse" autoplay=false /%}

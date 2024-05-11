@@ -2,6 +2,7 @@
 title: Redux panel
 description: See how your application state changed over time with Replay’s Redux panel
 image: /images/redux.png
+imageHeight: 414
 ---
 
 ## Basics

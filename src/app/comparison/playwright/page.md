@@ -6,11 +6,11 @@ Playwright Trace Viewer is a Session Replay tool that captures application metad
 
 Here is a screenshot **Playwright Trace Viewer** for one of our Playwright tests. Apologies for the inception 🥲
 
-{% figure alt="Elements panel" src="/images/playwright-1.webp"  showRadius=false height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/playwright-1.webp"  showRadius=false height=440 width=870/%}
 
 Here is a screenshot of **Replay DevTools** for the same test. On the surface, they might seem similar, but with Replay we’re able to dive in and inspect your application with Browser DevTools.
 
-{% figure alt="Elements panel" src="/images/playwright-2.webp" showRadius=false height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/playwright-2.webp" showRadius=false height=440 width=870/%}
 
 ## Time travel debugging
 
@@ -30,11 +30,11 @@ Both Replay DevTools and Trace Viewer let you see the messages that were logged 
 
 For example, in the console logs below the `params` and `response.result` objects are hidden behind an `Object` label and are not available to be inspected.
 
-{% figure alt="Elements panel" src="/images/playwright-3.webp"  showRadius=false height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/playwright-3.webp"  showRadius=false height=440 width=870/%}
 
 In contrast, the Console logs in Replay DevTools work the same way that they do in Chrome DevTools because they’re logged at replay time instead of record time. This means that you can view any value, expand object and arrays, filter by values above.
 
-{% figure alt="Elements panel" src="/images/playwright-4.webp"  showRadius=false height=870 width=870/%}
+{% figure alt="Elements panel" src="/images/playwright-4.webp"  showRadius=false height=440 width=870/%}
 
 And because Replay is a browser, pausing in Replay DevTools is similar to pausing in Chrome DevTools. When you’re paused, you’re able to evaluate expressions in the Console terminal like `response.result`.
 

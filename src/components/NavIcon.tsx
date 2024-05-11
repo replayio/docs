@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { WifiIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
 import FileIcon from './icons/FileIcon'
 import { Hourglass } from './icons/Hourglass'
@@ -67,6 +68,37 @@ import { SettingsRounded } from './icons/SettingsRounded'
 import { Faq } from './icons/Faq'
 import { UploadIcon } from './icons/UploadIcon'
 import { University } from './icons/University'
+import { Person } from './icons/Person'
+
+// import { InstallationIcon } from '@/components/icons/InstallationIcon'
+// import { LightbulbIcon } from '@/components/icons/LightbulbIcon'
+// import { PluginsIcon } from '@/components/icons/PluginsIcon'
+// import { PresetsIcon } from '@/components/icons/PresetsIcon'
+// import { ThemingIcon } from '@/components/icons/ThemingIcon'
+// import { WarningIcon } from '@/components/icons/WarningIcon'
+// import { TreeViewSolid } from '@/components/icons/TreeViewSolid'
+// import { JumpToCode } from '@/components/icons/JumpToCodeIcon'
+// import { InsightIcon } from '@/components/icons/InsightIcon'
+// import { ConsoleIcon } from '@/components/icons/ConsoleIcon'
+// import { BuildIcon } from '@/components/icons/BuildIcon'
+// import { BracketsCurlyIcon } from '@/components/icons/BracketsCurlyIcon'
+// import { CypressIcon } from '@/components/icons/CypressIcon'
+// import { PlaywrightIcon } from './icons/PlaywrightIcon'
+// import { SeleniumIcon } from './icons/SeleniumIcon'
+// import { WebdriverIOIcon } from './icons/WebdriverIOIcon'
+// import { PuppeteerIcon } from './icons/PuppeteerIcon'
+// import { ConditionalIcon } from './icons/ConditionalIcon'
+// import { PlusButtonIcon } from './icons/PlusButtonIcon'
+// import { PlayButtonIcon } from './icons/PlayButtonIcon'
+// import { CommentIcon } from './icons/CommentIcon'
+// import { PrefixBadgeIcon } from './icons/PrefixBadgeIcon'
+// import Chevron from './icons/Chevron'
+// import Clipboard from './icons/Clipboard'
+// import { ErrorIcon } from './icons/ErrorIcon'
+// import { ArrowUp } from './icons/ArrowUp'
+// import { GitHubIcon } from './icons/GitHubIcon'
+// import { FastRewind } from './icons/FastRewind'
+// import { LinkIcon } from './icons/LinkIcon'
 
 export const icons = {
   file: FileIcon,
@@ -75,6 +107,7 @@ export const icons = {
   timetravel: TimeTravelIcon,
   inspect: InspectLine,
   pencil: LeadPencil,
+  person: Person,
   razor: RazorBlade,
   questionmark: TwotoneQuestionMark,
   video: VideocamSharp,
@@ -134,7 +167,9 @@ export const icons = {
   faq: Faq,
   empty: EmptyIcon,
   upload: UploadIcon,
-  university: University
+  university: University,
+  wifi: WifiIcon,
+  magnifying: MagnifyingGlassIcon,
 }
 export function NavIcon({
   icon = 'file',

@@ -1,4 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
+import { Accordion, AccordionItem } from './Accordian'
 import { Basic } from './Basic'
 import { Callout } from './Callout'
 import { DocsHeader } from './DocsHeader'
@@ -23,8 +24,11 @@ import { Steps } from './Steps'
 import { Button } from './Button'
 import { TwoColumns } from './TwoColumns'
 import { Group } from './Group'
+import { SnapshotsVsReplay } from './SnapshotsVsReplay'
 
 export default {
+  Accordion,
+  AccordionItem,
   Basic,
   Button,
   Callout,
@@ -51,4 +55,5 @@ export default {
   Steps,
   TwoColumns,
   Group,
+  SnapshotsVsReplay
 }

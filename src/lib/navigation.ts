@@ -23,6 +23,10 @@ export const navigation: NavigationItem[] = [
         href: '/time-travel-intro/add-console-logs-on-the-fly',
       },
       {
+        title: 'Collaborative devtools',
+        href: '/time-travel-intro/collaborative-devtools',
+      },
+      {
         title: 'Visualize time. Inspect state.',
         href: '/time-travel-intro/visualize-time-inspect-state',
       },
@@ -41,58 +45,67 @@ export const navigation: NavigationItem[] = [
     ],
   },
   {
-    title: 'Browser DevTools',
-    href: '/browser-devtools',
+    title: 'Replay DevTools',
+    href: '/replay-devtools',
     icon: "browserdevtools",
+    omitFromDocumentTitle: true,
     links: [
       {
-        title: 'Elements Panel',
-        href: '/browser-devtools/elements-panel',
+        title: 'Overview',
+        href: '/replay-devtools/overview',
       },
       {
-        title: 'Network Monitor',
-        href: '/browser-devtools/network-monitor',
+        title: 'Framework DevTools',
+        href: '/replay-devtools/framework-devtools/react-panel',
+        links: [
+          {
+            title: 'React Panel',
+            href: '/replay-devtools/framework-devtools/react-panel',
+          },
+          {
+            title: 'Redux Panel',
+            href: '/replay-devtools/framework-devtools/redux-panel',
+          },
+          {
+            title: 'Cypress Timeline',
+            href: '/replay-devtools/framework-devtools/cypress-timeline',
+          },
+          {
+            title: 'Playwright Timeline',
+            href: '/replay-devtools/framework-devtools/playwright-timeline',
+          },
+        ],
       },
       {
-        title: 'Console Panel',
-        href: '/browser-devtools/console',
-      },
+        title: 'Browser DevTools',
+        href: '/replay-devtools/browser-devtools/elements-panel',
+        links: [
+          {
+            title: 'Elements Panel',
+            href: '/replay-devtools/browser-devtools/elements-panel',
+          },
+          {
+            title: 'Network Monitor',
+            href: '/replay-devtools/browser-devtools/network-monitor',
+          },
+          {
+            title: 'Console Panel',
+            href: '/replay-devtools/browser-devtools/console',
+          },
 
-      {
-        title: 'Source Viewer',
-        href: '/browser-devtools/source-viewer',
-      },
-
-      {
-        title: 'Pause Panel',
-        href: '/browser-devtools/pause-panel',
-      },
-      {
-        title: 'Replay Viewer',
-        href: '/browser-devtools/replay-viewer',
-      },
-    ],
-  },
-  {
-    title: 'Framework DevTools',
-    href: '/devtools',
-    icon: "frameworks",
-    links: [
-      {
-        title: 'React Panel',
-        href: '/framework-devtools/react-panel',
-      },
-      {
-        title: 'Redux Panel',
-        href: '/framework-devtools/redux-panel',
-      },
-      {
-        title: 'Cypress Timeline',
-        href: '/framework-devtools/cypress-timeline',
-      },
-      {
-        title: 'Playwright Timeline',
-        href: '/framework-devtools/playwright-timeline',
+          {
+            title: 'Source Viewer',
+            href: '/replay-devtools/browser-devtools/source-viewer',
+          },
+          {
+            title: 'Pause Panel',
+            href: '/replay-devtools/browser-devtools/pause-panel',
+          },
+          {
+            title: 'Replay Viewer',
+            href: '/replay-devtools/browser-devtools/replay-viewer',
+          },
+        ],
       },
     ],
   },
@@ -116,10 +129,12 @@ export const navigation: NavigationItem[] = [
       // {
       //   title: 'Analytics',
       //   href: '/test-suites/analytics',
+      //
       // },
       // {
       //   title: 'Test Flake Detection',
       //   href: '/test-suites/test-flake-detection',
+      //
       // },
     ],
   },
@@ -127,16 +142,16 @@ export const navigation: NavigationItem[] = [
     title: 'Test Runners',
     href: '/test-runners',
     omitFromDocumentTitle: true,
-    icon: "otherciproviders",
+    icon: "frameworks",
     links: [
-      { title: 'Overview', href: '/test-runners/overview' },
+      { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
       {
         title: 'Cypress.io',
-        href: '/test-runners/cypress-io',
+        href: '/test-runners/cypress-io/getting-started',
         links: [
           {
             title: 'Getting started',
-            href: '/test-runners/cypress-io',
+            href: '/test-runners/cypress-io/getting-started',
           },
           {
             title: 'Record your first replay',
@@ -190,7 +205,7 @@ export const navigation: NavigationItem[] = [
           },
         ],
       },
-      { title: 'Selenium', href: '/test-runners/selenium' },
+      { title: 'Selenium', href: '/test-runners/selenium', icon: 'selenium' },
       {
         title: 'WebdriverIO',
         href: '/test-runners/webdriver-io',
@@ -201,6 +216,7 @@ export const navigation: NavigationItem[] = [
       },
     ],
   },
+
   {
     title: 'CI Workflows',
     href: '/ci-workflows',
@@ -209,6 +225,7 @@ export const navigation: NavigationItem[] = [
       // {
       //   title: 'Setting up',
       //   href: '/ci-workflows/setting-up',
+      //
       // },
       {
         title: 'Generate API key',
@@ -335,6 +352,7 @@ export const navigation: NavigationItem[] = [
       },
     ],
   },
+
   {
     title: 'Comparisons',
     href: '/comparison',
@@ -378,6 +396,10 @@ export const navigation: NavigationItem[] = [
       {
         title: 'Crash course',
         href: '/additional-content/crash-course',
+      },
+      {
+        title: 'Advanced settings',
+        href: '/additional-content/advanced-settings',
       },
     ],
   },

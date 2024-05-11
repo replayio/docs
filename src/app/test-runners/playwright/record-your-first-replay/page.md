@@ -10,38 +10,43 @@ title: Playwright
 {% tab %}
 
 ```sh
-npm install @replayio/playwright -D
+npm install @replayio/playwright@alpha -D
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-yarn add @replayio/playwright -D
+yarn add @replayio/playwright@alpha -D
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-pnpm install @replayio/playwright -D
+pnpm install @replayio/playwright@alpha -D
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-bun install @replayio/playwright -D
+bun install @replayio/playwright@alpha -D
 ```
 
 {% /tab %}
 {% /tabs %}
 
+{% callout title="Note" type="note" %}
+We recommend using the current `@alpha` version of this plugin. It's more robust and better but we are still polishing it. If you encounter any problems with it you can use `@replayio/playwright@latest`. We'd appreciate feedback and bug reports to be reported [here](https://github.com/replayio/replay-cli/issues/new).
+{% /callout %}
+
 ## Update your configuration
 
-```js {% fileName="playwright.config.ts" highlight=[2,"7-11","16-19"] lineNumbers=true %}
+```js {% fileName="playwright.config.ts" highlight=[2,"7-13","17-20"] lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from '@playwright/test'
 import { devices as replayDevices } from '@replayio/playwright'
+import 'dotenv/config'
 
 const config: PlaywrightTestConfig = {
   reporter: [
@@ -57,7 +62,7 @@ const config: PlaywrightTestConfig = {
   projects: [
     {
       name: 'replay-chromium',
-      use: { ...(replayDevices['Replay Chromium'] as any) },
+      use: { ...replayDevices['Replay Chromium'] },
     },
   ],
 }
@@ -66,9 +71,35 @@ export default config
 
 ## Generate and save your API key
 
-In order to automatically upload your test replays you need to save an API key in your environment. To generate an API key, log in to Replay App open the settings menu. [Read more](/ci-workflows/generate-api-key).
+In order to upload your test replays you need to generate an API key and save it to your environment. You can generate an API key once you [created a team in Replay App](/replay-teams/setting-up-a-team). API key management section can be found in the team settings menu. [Read more about API keys here](/ci-workflows/generate-api-key).
 
 {% video src="generateApiKey" /%}
+
+To use your API key, you can either use [dotenv package](https://www.npmjs.com/package/dotenv) and save it to a `.env` file or add the API key to your environment directly.
+
+{% tabs labels=[".env", "macOS/Linux", "Windows"] %}
+{% tab %}
+
+```bash {% fileName=".env" %}
+REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+export REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+set REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% /tabs %}
 
 ## Record your test
 
@@ -104,6 +135,10 @@ Here are basic configurations for some of the most popular providers which you c
 You’re ready to inspect your local test run in Replay DevTools now. You can also record your tests in your CI environment. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/test-runners/playwright/github-actions) and [other CI providers](/test-runners/playwright/other-ci-providers).
 
 {% /steps %}
+
+{% callout type="replay" %}
+[Check out this replay](https://replay.help/playwright-flake-debug) for a detailed walkthrough on debugging a flaky Playwright test. You'll see the capabilities of Replay DevTools and walk through the debugging process of identifying the root cause.
+{% /callout %}
 
 {% quick-links title="Read more" description="Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools" %}
 

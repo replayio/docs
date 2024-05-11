@@ -9,12 +9,17 @@ import { collectSections } from '@/lib/sections'
 export function DocsLayout({
   children,
   documentTitle,
-  frontmatter: { title, description, image },
+  frontmatter: { title, description, image, imageHeight },
   nodes,
 }: {
   children: React.ReactNode
   documentTitle: string
-  frontmatter: { title?: string; description?: string; image?: string }
+  frontmatter: {
+    title?: string
+    description?: string
+    image?: string
+    imageHeight?: number
+  }
   nodes: Array<Node>
 }) {
   let tableOfContents = collectSections(nodes)
@@ -30,6 +35,7 @@ export function DocsLayout({
             <DocsHeader
               description={description}
               documentTitle={documentTitle}
+              imageHeight={imageHeight}
               image={image}
               title={title}
             />

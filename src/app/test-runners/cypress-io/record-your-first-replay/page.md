@@ -51,9 +51,10 @@ Simply add the Replay plugin to your project [configuration](https://docs.cypres
 require('@replayio/cypress/support')
 ```
 
-```js {% lineNumbers=true fileName="cypress.config.js" highlight=[2,"7-11"] %}
+```js {% lineNumbers=true fileName="cypress.config.js" highlight=[2,"8-12"] %}
 const { defineConfig } = require('cypress')
 const { plugin: replayPlugin } = require('@replayio/cypress')
+require('dotenv').config()
 
 module.exports = defineConfig({
   e2e: {
@@ -75,9 +76,10 @@ module.exports = defineConfig({
 import '@replayio/cypress/support'
 ```
 
-```js {% lineNumbers=true fileName="cypress.config.ts" highlight=[2,"7-11"] %}
-import defineConfig from 'cypress'
+```js {% lineNumbers=true fileName="cypress.config.ts" highlight=[2,"8-12"] %}
+import { defineConfig } from 'cypress'
 import { plugin as replayPlugin } from '@replayio/cypress'
+import 'dotenv/config'
 
 export default defineConfig({
   e2e: {
@@ -97,9 +99,35 @@ export default defineConfig({
 
 ## Generate and save your API key
 
-In order to automatically upload your test replays you need to save an API key in your environment. To generate an API key, log in to Replay App open the settings menu. [Read more](/ci-workflows/generate-api-key).
+In order to upload your test replays you need to generate an API key and save it to your environment. You can generate an API key once you [created a team in Replay App](/replay-teams/setting-up-a-team). API key management section can be found in the team settings menu. [Read more about API keys here](/ci-workflows/generate-api-key).
 
 {% video src="generateApiKey" /%}
+
+To use your API key, you can either use [dotenv package](https://www.npmjs.com/package/dotenv) and save it to a `.env` file or add the API key to your environment directly.
+
+{% tabs labels=[".env", "macOS/Linux", "Windows"] %}
+{% tab %}
+
+```bash {% fileName=".env" %}
+REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+export REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+set REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% /tabs %}
 
 ## Run Your Test With Replay Browser
 
@@ -145,6 +173,10 @@ After your test finishes it will generate a link to Replay DevTools where you ca
 You’re ready to inspect your local test run in Replay DevTools now. You can also record your tests in your CI environment. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/test-runners/cypress-io/github-actions) and [other CI providers](/test-runners/cypress-io/other-ci-providers).
 
 {% /steps %}
+
+{% callout type="replay" %}
+[Check out this replay](https://replay.help/cypress-flake-debug) for a detailed walkthrough on debugging a flaky Cypress test. You'll see the capabilities of Replay DevTools and walk through the debugging process of identifying the root cause.
+{% /callout %}
 
 {% quick-links title="Read more" description="Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools" %}
 

@@ -21,19 +21,38 @@ export default {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      screens: {
+        sm: '750px',
+      },
       fontFamily: {
         sans: 'var(--font-inter)',
         display: ['var(--font-lexend)', { fontFeatureSettings: '"ss01"' }],
+        handdrawn: 'var(--font-virgil)',
       },
       maxWidth: {
         '8xl': '88rem',
+        '90vw': '90vw',
       },
       boxShadow: {
-        'nav-active': "0px 0px 5px 1px rgba(17,147,230,1)",
-        ripple: `0px 0px 0px 10px rgba(255,255,255,0.1), 0px 0px 0px 20px rgba(255,255,255,0.1), 0px 0px 0px 30px rgba(255,255,255,0.1)`
+        'nav-active': '0px 0px 5px 1px rgba(17,147,230,1)',
+        ripple: `0px 0px 0px 10px rgba(255,255,255,0.1), 0px 0px 0px 20px rgba(255,255,255,0.1), 0px 0px 0px 30px rgba(255,255,255,0.1)`,
       },
       colors: {
-        'pink': {
+        pink: {
           '50': '#fff1f3',
           '100': '#ffe4e8',
           '200': '#fdced8',
@@ -46,7 +65,7 @@ export default {
           '900': '#861541',
           '950': '#4b061f',
         },
-        'sky': {
+        sky: {
           '50': '#f0f8ff',
           '100': '#e0f0fe',
           '200': '#bbe1fc',
@@ -58,8 +77,8 @@ export default {
           '800': '#094f83',
           '900': '#0d426d',
           '950': '#092a48',
+        },
       },
-      }
     },
   },
   plugins: [typographyPlugin],
