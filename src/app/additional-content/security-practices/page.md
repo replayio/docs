@@ -2,19 +2,15 @@
 title: Security practices
 ---
 
+## Overview
+
 Security has always been a top priority at Replay. We have focused on making all aspects of the service secure, including product design, server architecture, and employee access. Now, automated monitoring through [Vanta ](https://www.vanta.com/)with formal policies that allow us to stay up to date on our security posture at all times.
 
 We do our best to document our approach to Software Development, Encryption, Authentication, Access Control and other topics in our [Security and Privacy](https://www.replay.io/security-privacy) page.
 
 Feel free to reach out to <security@replay.io> if you would like more information about our security practices or a copy of our SOC 2 Type 1 and Type 2 reports.
 
----
-
 ## Security Baseline
-
-### Compliance with SOC2 Type ||
-
-We began our SOC2 journey in late 2021 and made improvements to our security posture across all aspects of our operations. _We’re never done working on our security program and we’re committed to sharing information about our security improvements going forward._
 
 ### Strong Identity and Access Management Practices
 

@@ -386,6 +386,10 @@ export const navigation: NavigationItem[] = [
     icon: 'university',
     links: [
       {
+        title: 'Compliance measures',
+        href: '/additional-content/compliance-measures',
+      },
+      {
         title: 'Privacy principles',
         href: '/additional-content/privacy-principles',
       },
