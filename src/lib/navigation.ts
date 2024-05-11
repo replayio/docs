@@ -4,6 +4,7 @@ export type NavigationItem = {
   href: string
   icon?: keyof typeof icons
   links?: NavigationItem[]
+  badge?: string
   omitFromDocumentTitle?: boolean
   title: string
 }
@@ -125,6 +126,16 @@ export const navigation: NavigationItem[] = [
       {
         title: 'PR Comments',
         href: '/test-suites/pr-comments',
+      },
+      {
+        title: 'Performance Analysis',
+        badge: 'experimental',
+        href: '/test-suites/performance-analysis',
+      },
+      {
+        title: 'Root Cause Analysis',
+        badge: 'experimental',
+        href: '/test-suites/root-cause-analysis',
       },
       // {
       //   title: 'Analytics',

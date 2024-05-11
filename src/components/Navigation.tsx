@@ -9,6 +9,16 @@ import { Icon } from './Icon'
 import { NavIcon } from './NavIcon'
 import styles from './Navigation.module.css'
 
+function Badge({ type }: { type: string }) {
+  const icon = type === 'experimental' ? 'beaker' : 'wifi'
+  return (
+    <NavIcon
+      icon={icon}
+      className="ml-2 h-4 w-4 text-gray-500 dark:text-gray-400"
+    />
+  )
+}
+
 function ItemLink({
   className,
   item,
@@ -35,8 +45,9 @@ function ItemLink({
       onClick={item.href ? onLinkClick : undefined}
       className={clsx(styles.item, className, isSelected && styles.selected)}
     >
-      <span className="ml-6">
+      <span className="ml-6 flex items-center justify-between ">
         {item.title}
+        {item.badge && <Badge type={item.badge} />}
       </span>
     </Link>
   )
@@ -63,7 +74,7 @@ export function Navigation({
           )}
         >
           <NavIcon
-            icon={"home"}
+            icon={'home'}
             aria-hidden="true"
             className="ml-1 fill-inherit stroke-inherit text-inherit"
           />
