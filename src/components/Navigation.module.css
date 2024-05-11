@@ -17,6 +17,10 @@
   transition: all;
 }
 
+.button a {
+  vertical-align: middle;
+}
+
 .tertiary {
   margin-left: 0.75rem;
 }
