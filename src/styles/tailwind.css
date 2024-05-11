@@ -10,6 +10,14 @@
 
 }
 
+@layer base {
+  *,
+  ::before,
+  ::after {
+    @apply dark:border-gray-600;
+  }
+}
+
 :root {
   --media-background-color: --_primary-color;
 }
@@ -42,3 +50,4 @@
 img[style*="background-image"] {
   background-size: contain !important;
 }
+
