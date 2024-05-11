@@ -12,7 +12,7 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Intro to time travel',
     href: '/time-travel-intro',
-    icon: "hourglass",
+    icon: 'rocket',
     links: [
       {
         title: 'Why time travel?',
@@ -47,7 +47,7 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Replay DevTools',
     href: '/replay-devtools',
-    icon: "browserdevtools",
+    icon: 'browserdevtools',
     omitFromDocumentTitle: true,
     links: [
       {
@@ -112,7 +112,7 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Replay Test Suites',
     href: '/test-suites',
-    icon: "replay",
+    icon: 'analytics',
     links: [
       {
         title: 'Recent runs ',
@@ -142,7 +142,7 @@ export const navigation: NavigationItem[] = [
     title: 'Test Runners',
     href: '/test-runners',
     omitFromDocumentTitle: true,
-    icon: "frameworks",
+    icon: 'commands',
     links: [
       { title: 'Overview', href: '/test-runners/overview', icon: 'overview' },
       {
@@ -220,7 +220,7 @@ export const navigation: NavigationItem[] = [
   {
     title: 'CI Workflows',
     href: '/ci-workflows',
-    icon: "settings",
+    icon: 'settings',
     links: [
       // {
       //   title: 'Setting up',
@@ -245,7 +245,7 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Replay Teams',
     href: '/replay-teams',
-    icon: "settingupateam",
+    icon: 'settingupateam',
     links: [
       {
         title: 'Setting up a team',
@@ -272,7 +272,7 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Replay Runtimes',
     href: '/replay-runtimes',
-    icon: "runsview",
+    icon: 'replaychrome',
     links: [
       {
         title: 'Replay Chrome',
@@ -291,7 +291,7 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Replay CLI',
     href: '/replay-cli',
-    icon: "cli",
+    icon: 'cli',
     links: [
       {
         title: 'Replay CLI',
@@ -306,7 +306,7 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Integrations',
     href: '/integrations',
-    icon: "integrations",
+    icon: 'integrations',
     links: [
       {
         title: 'Replay APIs',
@@ -356,7 +356,7 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Comparisons',
     href: '/comparison',
-    icon: "sort",
+    icon: 'sort',
     links: [
       {
         title: 'Playwright',
@@ -383,7 +383,7 @@ export const navigation: NavigationItem[] = [
   {
     title: 'Additional content',
     href: '/additional-content',
-    icon: "university",
+    icon: 'university',
     links: [
       {
         title: 'Privacy principles',
