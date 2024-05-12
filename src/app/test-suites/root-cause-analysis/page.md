@@ -1,6 +1,6 @@
 ---
-title: Root Cause Analysis
-description: Root Cause Analysis identifies the underlying issues in your application responsible for the majority of test failures.
+title: Root Cause analysis
+description: Root Cause analysis identifies the underlying issues in your application responsible for the majority of test failures.
 image: /images/Root-cause-analysis.png
 ---
 
@@ -44,8 +44,8 @@ Our goal with Root Cause Analysis is to show you the top buckets which if fixed 
   width=480
 /%}
 
-{% callout title="Become a design partner"  %}
+{% callout title="Root Cause analysis waitlist"  %}
 
-[Join our waitlist](https://replay.help/rca-waitlist) and let us know if you'd like to work with us to help co-design Root Cause Analysis.
+[Join our waitlist](https://replay.help/rca-waitlist) and let us know if you'd like to become a design partner and help us co-design Root Cause Analysis.
 
 {%/callout%}
