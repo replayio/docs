@@ -3,7 +3,7 @@ title: Quickstart guide
 description: Record your first replay with the Replay browser in under a minute.
 ---
 
-Recording your application with the Replay browser lets you capture a bug once and inspect it after the fact without having to reproduce it again. This makes it possible to
+Recording your application with the Replay browser lets you capture a bug once and inspect it after the fact without having to reproduce it again. This makes it possible to:
 
 - [Share the replay as a URL with your team so others can inspect it as if they were there when you recorded it.](/time-travel-intro/collaborative-devtools)
 - [Debug the replay with `console.log` added in at any point of the recording.](/time-travel-intro/add-console-logs-on-the-fly)
@@ -92,11 +92,11 @@ When you open the "View recording" link in a browser, you'll be greeted with a d
 
 ![An upload preview of www.overboard.dev that says "only you can view this" with an option to add other people to see the upload](/images/upload_perms.png)
 
-> If you don't have a team yet, you can [create a team in the Replay dashboard.](/replay-teams/setting-up-a-team)
+> If you don't have a team yet, you can [create a team in the Replay Library.](/replay-teams/setting-up-a-team)
 
 ## Inspect your replay
 
-Once your recording is uploaded, you're able to inspect it through [the Replay dashboard](https://app.replay.io/).
+Once your recording is uploaded, you're able to inspect it through [the Replay DevTools](https://app.replay.io/).
 
 ![A preview of the website that was recorded; Overboard. It includes a sidebar of events the user took. The site itself is an "Add to cart" button underneath a checkout for fictional hoverboards](/images/recording_landing_page.png)
 
@@ -118,6 +118,8 @@ But looking at the request body, it looks like we're sending the color along jus
 
 ![The request subtab on the network request panel showing the request body with "{color: blue}"](/images/request_body.png)
 With this information, we can go to our backend team more informed with how to report a ticket to solve this.
+
+We can even integrate Replay into our [CI/CD pipeline to help debug flakey tests much more efficiently.](/test-runners/overview)
 
 {% /steps %}
 
