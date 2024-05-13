@@ -31,6 +31,7 @@ import devtoolsCourse from '@/videos/devtools_course.mp4.json'
 import commentingCourse from '@/videos/commenting_course.mp4.json'
 import addingAComment from '@/videos/adding_a_comment3.mp4.json'
 import settingUpTeam from '@/videos/setting-up-team.mp4.json'
+import devtoolsClickToEvent from '@/videos/devtools_click_to_event.mp4.json'
 // import getStarted from '@/videos/get-started.mp4';
 
 const videos = {
@@ -61,7 +62,8 @@ const videos = {
   firstReplayCourse,
   devtoolsCourse,
   commentingCourse,
-  settingUpTeam
+  settingUpTeam,
+  devtoolsClickToEvent
 }
 
 interface VideoProps {
