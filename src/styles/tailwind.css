@@ -10,6 +10,14 @@
 
 }
 
+@layer base {
+  *,
+  ::before,
+  ::after {
+    @apply dark:border-gray-600;
+  }
+}
+
 :root {
   --media-background-color: --_primary-color;
 }
@@ -30,7 +38,7 @@
   margin-top: 4rem ;
 }
 
-.prose-a\:shadow-\[inset_0_-2px_0_0_var\(--tw-prose-background\2c \#fff\)\2c inset_0_calc\(-1\*\(var\(--tw-prose-underline-size\2c 4px\)\+2px\)\)_0_0_var\(--tw-prose-underline\2c theme\(colors\.sky\.300\)\)\] :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))):has(code) {
+.prose-a\:shadow-\[inset_0_-2px_0_0_var\(--tw-prose-background\2c \#fff\)\2c inset_0_calc\(-1\*\(var\(--tw-prose-underline-size\2c 4px\)\+2px\)\)_0_0_var\(--tw-prose-underline\2c theme\(colors\.sky\.300\)\)\] :is(:where(a):not(:where(li > a,[class~="not-prose"],[class~="not-prose"] *))):has(code) {
   box-shadow: none;
 }
 
@@ -42,3 +50,4 @@
 img[style*="background-image"] {
   background-size: contain !important;
 }
+
