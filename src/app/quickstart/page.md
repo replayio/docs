@@ -104,7 +104,7 @@ By default, you're set to "Viewer" mode. You can change the view to "DevTools" m
 
 Let's jump to the last "Click" before the recording hit an error and see the code related to it:
 
-![A code environment with highlighted React code and a DevTools tab in the bottom-right corner](/images/recording_devtools.png)
+{% video src="devtoolsClickToEvent" /%}
 
 It looks like we're making a `"POST"` to an endpoint of `"/api/purchase"`. Let's open our network panel and see what the request looks like:
 
