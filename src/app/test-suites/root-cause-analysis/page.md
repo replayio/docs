@@ -2,7 +2,12 @@
 title: Root Cause analysis
 description: Root Cause analysis identifies the underlying issues in your application responsible for the majority of test failures.
 image: /images/Root-cause-analysis.png
+badge: experimental
 ---
+
+{% callout  %}
+Root Cause Analysis in in active development. [Join the waitlist](https://replay.help/rca-waitlist) and be the first in line.
+{%/callout%}
 
 ## Overview
 
@@ -43,9 +48,3 @@ Our goal with Root Cause Analysis is to show you the top buckets which if fixed 
   height=300
   width=480
 /%}
-
-{% callout title="Root Cause analysis waitlist"  %}
-
-[Join our waitlist](https://replay.help/rca-waitlist) and let us know if you'd like to become a design partner and help us co-design Root Cause Analysis.
-
-{%/callout%}

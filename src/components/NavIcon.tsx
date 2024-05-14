@@ -161,8 +161,8 @@ export function NavIcon({
       viewBox="0 0 24 24"
       fill="none"
       className={clsx(
-        className,
         'mr-2 inline-block h-4 w-4 fill-current text-gray-400',
+        className,
       )}
       {...props}
     >
