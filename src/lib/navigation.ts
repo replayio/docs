@@ -185,6 +185,10 @@ export const navigation: NavigationItem[] = [
             href: '/test-runners/cypress-io/other-ci-providers',
           },
           {
+            title: 'Examples',
+            href: '/test-runners/cypress-io/examples',
+          },
+          {
             title: 'FAQ',
             href: '/test-runners/cypress-io/faq',
           },
@@ -209,6 +213,10 @@ export const navigation: NavigationItem[] = [
           {
             title: 'Other CI providers',
             href: '/test-runners/playwright/other-ci-providers',
+          },
+          {
+            title: 'Examples',
+            href: '/test-runners/playwright/examples',
           },
           {
             title: 'FAQ',

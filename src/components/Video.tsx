@@ -32,6 +32,8 @@ import commentingCourse from '@/videos/commenting_course.mp4.json'
 import addingAComment from '@/videos/adding_a_comment3.mp4.json'
 import settingUpTeam from '@/videos/setting-up-team.mp4.json'
 import devtoolsClickToEvent from '@/videos/devtools_click_to_event.mp4.json'
+import cypressDebuggingLoom from '@/videos/cypress_debugging_loom.mp4.json'
+import playwrightDebuggingLoom from '@/videos/playwright_debugging_loom.mp4.json'
 // import getStarted from '@/videos/get-started.mp4';
 
 const videos = {
@@ -63,7 +65,9 @@ const videos = {
   devtoolsCourse,
   commentingCourse,
   settingUpTeam,
-  devtoolsClickToEvent
+  devtoolsClickToEvent,
+  cypressDebuggingLoom,
+  playwrightDebuggingLoom
 }
 
 interface VideoProps {
@@ -71,9 +75,10 @@ interface VideoProps {
   controls?: boolean
   autoplay?: boolean
   loop?: boolean
+  children: React.ReactNode
 }
 
-export const Video: React.FC<VideoProps> = ({ src, autoplay = true }) => {
+export const Video: React.FC<VideoProps> = ({ src, autoplay = true, children }) => {
   const commonProps = {
     // @ts-ignore
     src: videos[src],
@@ -81,13 +86,26 @@ export const Video: React.FC<VideoProps> = ({ src, autoplay = true }) => {
     accentColor: '#f02d5e',
     className: 'overflow-clip rounded-xl border border-transparent',
     poster: '',
+    children
   }
   return autoplay ? (
     <Zoom>
       <NextVideo muted={true} loop={true} controls={false} {...commonProps} />
+      {children ? (
+        <figcaption className="flex-shrink text-center">
+          {children}
+        </figcaption>
+      ) : null}
     </Zoom>
   ) : (
+    <>
     <NextVideo muted={false} loop={false} controls={true} {...commonProps} />
+      {children ? (
+        <figcaption className="flex-shrink text-center">
+          {children}
+        </figcaption>
+      ) : null}
+    </>
   )
 }
 
