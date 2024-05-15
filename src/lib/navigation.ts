@@ -215,6 +215,10 @@ export const navigation: NavigationItem[] = [
             href: '/test-runners/playwright/other-ci-providers',
           },
           {
+            title: 'Examples',
+            href: '/test-runners/playwright/examples',
+          },
+          {
             title: 'FAQ',
             href: '/test-runners/playwright/faq',
           },

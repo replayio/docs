@@ -33,6 +33,7 @@ import addingAComment from '@/videos/adding_a_comment3.mp4.json'
 import settingUpTeam from '@/videos/setting-up-team.mp4.json'
 import devtoolsClickToEvent from '@/videos/devtools_click_to_event.mp4.json'
 import cypressDebuggingLoom from '@/videos/cypress_debugging_loom.mp4.json'
+import playwrightDebuggingLoom from '@/videos/playwright_debugging_loom.mp4.json'
 // import getStarted from '@/videos/get-started.mp4';
 
 const videos = {
@@ -65,7 +66,8 @@ const videos = {
   commentingCourse,
   settingUpTeam,
   devtoolsClickToEvent,
-  cypressDebuggingLoom
+  cypressDebuggingLoom,
+  playwrightDebuggingLoom
 }
 
 interface VideoProps {
