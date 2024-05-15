@@ -156,11 +156,11 @@ But how is it so fast? One of the fundamental laws of time travel is you cannot 
 When you’re inspecting a replay, you’re not interacting with a single browser process running the cloud, you’re interacting with potentially hundreds. We’ve invented two mechanisms which make this possible. The first is the ability to fork a browser process. The second is the ability to snapshot a browser process.
 
 {% figure
-    alt="Time travel protocol performance"
-    src="/images/time-travel.svg"
+    alt="Replay performance"
+    src="/images/replay-perf.svg"
     showRadius=false
-    height=440
-    width=870
+    height=262
+    width=500
 /%}
 
 These two mechanisms make it possible to efficiently keep a pool of browser processes available during the lifetime of the debugging session and efficiently restore them the next time. This means that when you add the console log, we’re able to find the closest browser processes, fork them, run to the relevant points, and evaluate the expression. Because all of the work is done in parallel, and there’s never a point more than 100ms away from a browser process, we’re able to return the results in low logarithmic time.

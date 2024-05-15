@@ -19,8 +19,8 @@ This is where Replay Performance analysis comes in. At replay time, we’re able
 
 {% figure
   alt="Limiting path"
-  src="/images/limiting-path-graph.svg"
-  height=238
+  src="/images/limiting-path-line.svg"
+  height=200
   width=480
   showRadius=false
 /%}
@@ -32,6 +32,8 @@ Performance analysis works by transforming the application’s execution into a 
 Once the DAG is computed, it’s possible to find the critical paths that govern page loads and user interactions and impact metrics such as LCP, INP, and CLS. Once these paths are identified, it’s possible to do two things: compare these paths against the prior run to find performance regressions, and detect new limiting paths that extend the critical path and cause it to take longer to complete.
 
 If you'd like additional context on how paths are computed, checkout our blog post on [Limiting Paths in React applications](https://blog.replay.io/performance-limiting-paths-in-react-applications).
+
+### Regression
 
 In the visual below, Performance analysis alerted us to a network request that we added inside of an effect call inside of our `App` component that blocked rendering the rest of the applications!
 
