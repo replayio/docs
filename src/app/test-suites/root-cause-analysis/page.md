@@ -1,6 +1,6 @@
 ---
-title: Root Cause analysis
-description: Root Cause analysis identifies the underlying issues in your application responsible for the majority of test failures.
+title: Root Cause Analysis
+description: Root Cause Analysis identifies the underlying issues in your application responsible for the majority of test failures.
 image: /images/Root-cause-analysis.png
 badge: experimental
 ---
