@@ -86,7 +86,7 @@ export function Navigation({
               <Disclosure
                 as="div"
                 defaultOpen={
-                  Boolean(section.links?.find(link => {
+                  Boolean(pathname !== "/" && section.links?.find(link => {
                     return link.links ?
                     // sublinks
                     link.links.find(l => l.href?.includes(pathname)) :
