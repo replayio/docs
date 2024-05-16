@@ -31,12 +31,12 @@ const cards: CardAttributes[] = [
     icon: 'cypresssimple',
     title: 'Record your Cypress tests',
     content: 'Learn how to setup our Cypress plugin and record your tests.',
-    href: '/test-runners/cypress-io',
+    href: '/test-runners/cypress-io/getting-started',
   },
   {
     icon: 'playwrightsimple',
     title: 'Record your Playwright tests',
-    content: 'Learn how to setup our Playwright plugin and record your tests.',
+    content: 'Learn how to set up our Playwright plugin and record your tests.',
     href: '/test-runners/playwright/record-your-first-replay',
   },
 ]
