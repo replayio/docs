@@ -5,11 +5,11 @@ image: /images/create-team.png
 
 ## How to create a team
 
-1.  Navigate to the [Replay App](https.//app.replay.io).
+1.  Navigate to the [Replay App](https://app.replay.io).
 2.  Click "Create Team" in the sidebar.
 3.  Choose your team type.
-3.  Give your team a name.
-4.  Invite users by email address or invite link.
+4.  Give your team a name.
+5.  Invite users by email address or invite link.
 
 {% video src="settingUpTeam" /%}
 
