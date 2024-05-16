@@ -1,7 +1,7 @@
 import { icons } from '@/components/NavIcon'
 
 export type NavigationItem = {
-  href: string
+  href?: string
   icon?: keyof typeof icons
   links?: NavigationItem[]
   badge?: string
@@ -10,9 +10,9 @@ export type NavigationItem = {
 }
 
 export const navigation: NavigationItem[] = [
+  // quickstart guide page is hardcoded into Navigation.tsx component
   {
     title: 'Intro to time travel',
-    href: '/time-travel-intro',
     icon: 'rocket',
     links: [
       {
@@ -47,7 +47,6 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Replay DevTools',
-    href: '/replay-devtools',
     icon: 'browserdevtools',
     omitFromDocumentTitle: true,
     links: [
@@ -112,7 +111,6 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Replay Test Suites',
-    href: '/test-suites',
     icon: 'analytics',
     links: [
       {
@@ -151,7 +149,6 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Test Runners',
-    href: '/test-runners',
     omitFromDocumentTitle: true,
     icon: 'commands',
     links: [
@@ -235,10 +232,8 @@ export const navigation: NavigationItem[] = [
       },
     ],
   },
-
   {
     title: 'CI Workflows',
-    href: '/ci-workflows',
     icon: 'settings',
     links: [
       // {
@@ -260,10 +255,8 @@ export const navigation: NavigationItem[] = [
       },
     ],
   },
-
   {
     title: 'Replay Teams',
-    href: '/replay-teams',
     icon: 'settingupateam',
     links: [
       {
@@ -290,7 +283,6 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Replay Runtimes',
-    href: '/replay-runtimes',
     icon: 'replaychrome',
     links: [
       {
@@ -309,7 +301,6 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Replay CLI',
-    href: '/replay-cli',
     icon: 'cli',
     links: [
       {
@@ -324,7 +315,6 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Integrations',
-    href: '/integrations',
     icon: 'integrations',
     links: [
       {
@@ -371,10 +361,8 @@ export const navigation: NavigationItem[] = [
       },
     ],
   },
-
   {
     title: 'Comparisons',
-    href: '/comparison',
     icon: 'sort',
     links: [
       {
@@ -401,7 +389,6 @@ export const navigation: NavigationItem[] = [
   },
   {
     title: 'Additional content',
-    href: '/additional-content',
     icon: 'university',
     links: [
       {

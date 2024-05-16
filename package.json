@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "sync": "npx next-video sync -d ./src/videos",
+    "test": "playwright test",
     "links": "bun ./scripts/checkLinks.ts"
   },
   "browserslist": "defaults, not ie <= 11",
@@ -18,7 +19,7 @@
     "@markdoc/markdoc": "^0.4.0",
     "@markdoc/next.js": "^0.3.7",
     "@radix-ui/react-accordion": "^1.1.2",
-    "@replayio/playwright": "^2.0.0-alpha.10",
+    "@replayio/playwright": "^3.0.0-alpha.10",
     "@sindresorhus/slugify": "^2.1.0",
     "@tailwindcss/typography": "^0.5.7",
     "@types/node": "^20.10.8",
