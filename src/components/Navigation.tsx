@@ -86,7 +86,13 @@ export function Navigation({
               <Disclosure
                 as="div"
                 defaultOpen={
-                  section.href !== '' && pathname.includes(section.href)
+                  Boolean(section.links?.find(link => {
+                    return link.links ?
+                    // sublinks
+                    link.links.find(l => l.href?.includes(pathname)) :
+                    // links
+                    link.href?.includes(pathname)
+                  }))
                 }
               >
                 {({ open }) => (
@@ -94,7 +100,6 @@ export function Navigation({
                     <Disclosure.Button
                       className={clsx(
                         styles.category,
-                        section.href !== '' && pathname.includes(section.href),
                       )}
                     >
                       <NavIcon
@@ -109,9 +114,7 @@ export function Navigation({
                           open
                             ? 'rotate-90 '
                             : 'text-gray-600 dark:text-gray-400',
-                          'ml-auto w-5 shrink-0',
-                          pathname.includes(section.href) &&
-                            'text-gray-900 dark:text-gray-200',
+                          'ml-auto w-5 shrink-0'
                         )}
                         aria-hidden="true"
                       />
