@@ -4,6 +4,32 @@ image: /images/Cypress-hero.png
 description: Capture flakes in CI. Investigate failures with browser DevTools. And achieve a 99.9% pass rate.
 ---
 
+## Using Replay with your test suite
+Replay is a drop-in replacement for the browser you currently use when running your end-to-end tests. Whether you use Playwright, Cypress, or other test runners, you simply swap your current browser with **Replay Browser** and that’s it.
+
+Explained in simplest possible terms, this is how your test script looks when Replay is integrated:
+
+{% icon icon="playwright" class="w-6 h-5 inline-block mr-1 mb-1" /%} Playwright:{% class="font-semibold"%}
+```sh
+npx playwright test --project replay-chromium
+```
+{% icon icon="cypress" class="w-6 h-5 inline-block mr-1 mb-1" /%} Cypress:{% class="font-semibold"%}
+```sh
+npx cypress run --browser replay-chromium
+```
+
+### Difference when using Replay Browser
+Under the hood, Replay Browser is just Chromium browser, just like Google Chrome, or Microsoft Edge. But as you run your tests, Replay Browser creates a recording of your runtime. 
+
+At the first glance, that recording may look like a series of snapshots of your application, but you’ll learn that *a replay* is actually a very different concept. In fact, there are zero snapshots created during recording, which results in a minimal overhead as you run your tests. And yet, the information gathered is infinitely more robust.
+
+### When to use Replay with your tests
+There are a [couple of strategies](/ci-workflows/recording-strategies) you can adopt, but generally you can use Replay Browser with every test run on your CI, as there is both short-term and long-term value. 
+
+When a test fails on CI, you don’t need to replicate it locally anymore. A recording captures your test run **exactly** as it happened and will provide you better insight than if you tried to locally reproduce an issue from CI.
+
+If you battle with flaky tests, you can [compare a failing and a passing test](https://replay.help/playwright-flake-debug) to detect the difference. This can be caused by inconsistent data, race condition, test running too fast, or any other reason. What’s important is that the reason will no longer be a mystery, because Replay Browser records your test steps, your app, and everything in between. If you were able to capture the test flake, you’ll be able to debug it. Soon, we’ll be able to [help you find the root cause](/test-suites/root-cause-analysis).
+
 {% basic icon="treeview" %}
 
 ## Test Steps Trace
