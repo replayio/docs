@@ -13,13 +13,13 @@ const cards: CardAttributes[] = [
     icon: 'inspect',
     title: 'Browser DevTools',
     content: 'Inspect your application with Browser DevTools after the fact.',
-    href: '/browser-devtools/elements-panel',
+    href: '/replay-devtools/browser-devtools/elements-panel',
   },
   {
     icon: 'react',
     title: 'Framework DevTools',
     content: 'Inspect your application with next level Framework DevTools.',
-    href: '/framework-devtools/react-panel',
+    href: '/replay-devtools/framework-devtools/react-panel',
   },
   {
     icon: 'replay',
@@ -52,7 +52,7 @@ const miniCards: CardAttributes[] = [
     icon: 'react',
     title: 'React components',
     content: 'Inspect React component props, state, and hooks.',
-    href: '/framework-devtools/react-panel',
+    href: '/replay-devtools/framework-devtools/react-panel',
   },
   {
     icon: 'folder',
@@ -65,7 +65,7 @@ const miniCards: CardAttributes[] = [
     title: 'Cypress Timeline',
     content:
       'Debug your test as if it’s running locally with test step details.',
-    href: '/framework-devtools/cypress-timeline',
+    href: '/replay-devtools/framework-devtools/cypress-timeline',
   },
   {
     icon: 'analytics',

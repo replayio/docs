@@ -18,7 +18,7 @@
     },
     {
       "source": "/reference-guide/dev-tools/react",
-      "destination": "/framework-devtools/react-panel"
+      "destination": "/replay-devtools/framework-devtools/react-panel"
     },
     {
       "source": "/getting-started/teams-admin/team-settings",
@@ -90,15 +90,15 @@
     },
     {
       "source": "/reference-guide/react",
-      "destination": "/framework-devtools/react-panel"
+      "destination": "/replay-devtools/framework-devtools/react-panel"
     },
     {
       "source": "/reference-guide/print-statements",
-      "destination": "/browser-devtools/console"
+      "destination": "/replay-devtools/browser-devtools/console"
     },
     {
       "source": "/reference-guide/events#b1a0e7f432f5426888b80e9b00e7b226",
-      "destination": "/browser-devtools/replay-viewer"
+      "destination": "/replay-devtools/browser-devtools/replay-viewer"
     },
     {
       "source": "/resources-and-examples/security-practices",
@@ -126,7 +126,7 @@
     },
     {
       "source": "/reference-guide/cypress-panel",
-      "destination": "/framework-devtools/cypress-timeline"
+      "destination": "/replay-devtools/framework-devtools/cypress-timeline"
     },
     {
       "source": "/resources-and-examples",
@@ -150,7 +150,7 @@
     },
     {
       "source": "/reference-guide/console",
-      "destination": "/browser-devtools/console"
+      "destination": "/replay-devtools/browser-devtools/console"
     },
     {
       "source": "/reference-guide/print-statements",
@@ -158,23 +158,23 @@
     },
     {
       "source": "/reference-guide/react",
-      "destination": "/framework-devtools/react-panel"
+      "destination": "/replay-devtools/framework-devtools/react-panel"
     },
     {
       "source": "/reference-guide/elements",
-      "destination": "/browser-devtools/elements-panel"
+      "destination": "/replay-devtools/browser-devtools/elements-panel"
     },
     {
       "source": "/reference-guide/breakpoints",
-      "destination": "/browser-devtools/pause-panel"
+      "destination": "/replay-devtools/browser-devtools/pause-panel "
     },
     {
       "source": "/reference-guide/events",
-      "destination": "/browser-devtools/replay-viewer"
+      "destination": "/replay-devtools/browser-devtools/replay-viewer"
     },
     {
       "source": "/reference-guide/network",
-      "destination": "/browser-devtools/network-monitor"
+      "destination": "/replay-devtools/browser-devtools/network-monitor"
     },
     {
       "source": "/get-help",
@@ -210,7 +210,7 @@
     },
     {
       "source": "/reference-guide/focus-mode",
-      "destination": "/browser-devtools/replay-viewer"
+      "destination": "/replay-devtools/browser-devtools/replay-viewer"
     },
     {
       "source": "/debugging",
@@ -254,11 +254,11 @@
     },
     {
       "source": "/getting-started/replay-browser/sharing-your-replay",
-      "destination": "/browser-devtools/replay-viewer"
+      "destination": "/replay-devtools/browser-devtools/replay-viewer"
     },
     {
       "source": "/getting-started/replay-browser/viewing-and-collaborating",
-      "destination": "/browser-devtools/replay-viewer"
+      "destination": "/replay-devtools/browser-devtools/replay-viewer"
     },
     {
       "source": "/getting-started/teams-admin/billing",
@@ -314,19 +314,19 @@
     },
     {
       "source": "/learn-more/contribute/expanding-replay",
-      "destination": "/framework-devtools/cypress-timeline"
+      "destination": "/replay-devtools/framework-devtools/cypress-timeline"
     },
     {
       "source": "/learn-more/contribute/how-replay-works",
-      "destination": "/time-travel-intro/how-time-travel-works"
+      "destination": "/time-travel-intro/what-is-time-travel"
     },
     {
       "source": "/learn-more/contribute/how-replay-works/how-programmatic-recordings-work",
-      "destination": "/time-travel-intro/how-time-travel-works"
+      "destination": "/time-travel-intro/what-is-time-travel"
     },
     {
       "source": "/learn-more/contribute/how-replay-works/our-approach-for-source-maps",
-      "destination": "/framework-devtools/redux-panel"
+      "destination": "/replay-devtools/framework-devtools/redux-panel"
     },
     {
       "source": "/learn-more/contribute/replay-for-new-contributors",
@@ -358,7 +358,7 @@
     },
     {
       "source": "/learn-more/replay-in-action",
-      "destination": "/browser-devtools/pause-panel"
+      "destination": "/replay-devtools/browser-devtools/pause-panel"
     },
     {
       "source": "/learn-more/resources",
@@ -374,7 +374,7 @@
     },
     {
       "source": "/learn-more/workflows/exploring-a-codebase",
-      "destination": "/browser-devtools/source-viewer"
+      "destination": "/replay-devtools/browser-devtools/source-viewer"
     },
     {
       "source": "/learn-more/workflows/oss-projects",
@@ -386,15 +386,15 @@
     },
     {
       "source": "/reference-guide/debugger/breakpoints",
-      "destination": "/browser-devtools/pause-panel"
+      "destination": "/replay-devtools/browser-devtools/pause-panel"
     },
     {
       "source": "/reference-guide/debugger/search",
-      "destination": "/browser-devtools/source-viewer"
+      "destination": "/replay-devtools/browser-devtools/source-viewer"
     },
     {
       "source": "/reference-guide/debugger/sources",
-      "destination": "/browser-devtools/source-viewer"
+      "destination": "/replay-devtools/browser-devtools/source-viewer"
     },
     {
       "source": "/reference-guide/debugging/commenting",
@@ -414,27 +414,27 @@
     },
     {
       "source": "/reference-guide/dev-tools",
-      "destination": "/framework-devtools/react-panel"
+      "destination": "/replay-devtools/framework-devtools/react-panel"
     },
     {
       "source": "/reference-guide/dev-tools/console",
-      "destination": "/browser-devtools/console"
+      "destination": "/replay-devtools/browser-devtools/console"
     },
     {
       "source": "/reference-guide/dev-tools/elements",
-      "destination": "/browser-devtools/elements-panel"
+      "destination": "/replay-devtools/browser-devtools/elements-panel"
     },
     {
       "source": "/reference-guide/dev-tools/network",
-      "destination": "/browser-devtools/network-monitor"
+      "destination": "/replay-devtools/browser-devtools/network-monitor"
     },
     {
       "source": "/reference-guide/dev-tools/react",
-      "destination": "/framework-devtools/react-panel"
+      "destination": "/replay-devtools/framework-devtools/react-panel"
     },
     {
       "source": "/reference-guide/dev-tools/redux",
-      "destination": "/framework-devtools/redux-panel"
+      "destination": "/replay-devtools/framework-devtools/redux-panel"
     },
     {
       "source": "/reference-guide/library",
@@ -454,15 +454,15 @@
     },
     {
       "source": "/reference-guide/viewer",
-      "destination": "/browser-devtools/replay-viewer"
+      "destination": "/replay-devtools/browser-devtools/replay-viewer"
     },
     {
       "source": "/reference-guide/viewer/collaboration",
-      "destination": "/browser-devtools/replay-viewer"
+      "destination": "/replay-devtools/browser-devtools/replay-viewer"
     },
     {
       "source": "/reference-guide/viewer/events",
-      "destination": "/browser-devtools/replay-viewer"
+      "destination": "/replay-devtools/browser-devtools/replay-viewer"
     },
     {
       "source": "/resources/comparisons",
@@ -578,11 +578,11 @@
     },
     {
       "source": "/test-suites/cypress/_archive/cypress-replays",
-      "destination": "/test-runners/cypress-io"
+      "destination": "/test-runners/cypress-io/getting-started"
     },
     {
       "source": "/test-suites/cypress/configuration",
-      "destination": "/test-runners/cypress-io"
+      "destination": "/test-runners/cypress-io/getting-started"
     },
     {
       "source": "/test-suites/cypress/continuous-integration",
@@ -610,11 +610,11 @@
     },
     {
       "source": "/test-suites/cypress/installation",
-      "destination": "/test-runners/cypress-io"
+      "destination": "/test-runners/cypress-io/getting-started"
     },
     {
       "source": "/test-suites/cypress/panel",
-      "destination": "/test-runners/cypress-io"
+      "destination": "/test-runners/cypress-io/getting-started"
     },
     {
       "source": "/test-suites/cypress/troubleshooting-guide",
@@ -626,7 +626,7 @@
     },
     {
       "source": "/test-suites/features/replay-devtools",
-      "destination": "/framework-devtools/react-panel"
+      "destination": "/replay-devtools/framework-devtools/react-panel"
     },
     {
       "source": "/test-suites/features/test-suite-dashboard",

@@ -152,7 +152,7 @@ You’re ready to inspect your local test run in Replay DevTools now. You can al
 {% quick-link
   title="Replay DevTools"
   icon="jumptocode"
-  href="/browser-devtools/console"
+  href="/replay-devtools/browser-devtools/console"
   description="Learn how to use Replay DevTools to debug your tests."
 /%}
 

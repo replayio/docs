@@ -20,7 +20,7 @@ Because Replay is simply a browser, you can start recording your tests by adding
 
 The biggest benefit of time travel debugging is the ability to find a line of code and add a retroactive print statement. In the example below, we’ll add a `console.log("gPendingMessages", gPendingMessgages, msg)` on the line where `gPendingMessages.push` is called and see what was in the array and `msg` at the time.
 
-Flaky tests can either come from an assumption in your testing logic or application logic. In both cases, it can be helpful to work backwards from the user visible issue to the root cause with console logs that help you narrow down the timing issue. For more info on print statements, check our our [docs](/browser-devtools/console).
+Flaky tests can either come from an assumption in your testing logic or application logic. In both cases, it can be helpful to work backwards from the user visible issue to the root cause with console logs that help you narrow down the timing issue. For more info on print statements, check our our [docs](/replay-devtools/browser-devtools/console).
 
 {% video src="addingAPrintStatement" /%}
 

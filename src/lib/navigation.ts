@@ -99,7 +99,7 @@ export const navigation: NavigationItem[] = [
           },
           {
             title: 'Pause Panel',
-            href: '/replay-devtools/browser-devtools/pause-panel',
+            href: '/replay-devtools/browser-devtools/pause-panel  ',
           },
           {
             title: 'Replay Viewer',
