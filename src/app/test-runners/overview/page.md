@@ -5,26 +5,32 @@ description: Capture flakes in CI. Investigate failures with browser DevTools. A
 ---
 
 ## Using Replay with your test suite
+
 Replay is a drop-in replacement for the browser you currently use when running your end-to-end tests. Whether you use Playwright, Cypress, or other test runners, you simply swap your current browser with **Replay Browser** and that’s it.
 
 Explained in simplest possible terms, this is how your test script looks when Replay is integrated:
 
 {% icon icon="playwright" class="w-6 h-5 inline-block mr-1 mb-1" /%} Playwright:{% class="font-semibold"%}
+
 ```sh
 npx playwright test --project replay-chromium
 ```
+
 {% icon icon="cypress" class="w-6 h-5 inline-block mr-1 mb-1" /%} Cypress:{% class="font-semibold"%}
+
 ```sh
 npx cypress run --browser replay-chromium
 ```
 
 ### Difference when using Replay Browser
-Under the hood, Replay Browser is just Chromium browser, just like Google Chrome, or Microsoft Edge. But as you run your tests, Replay Browser creates a recording of your runtime. 
 
-At the first glance, that recording may look like a series of snapshots of your application, but you’ll learn that *a replay* is actually a very different concept. In fact, there are zero snapshots created during recording, which results in a minimal overhead as you run your tests. And yet, the information gathered is infinitely more robust.
+Under the hood, Replay Browser is just Chromium browser, just like Google Chrome, or Microsoft Edge. But as you run your tests, Replay Browser creates a recording of your runtime.
+
+At the first glance, that recording may look like a series of snapshots of your application, but you’ll learn that _a replay_ is actually a very different concept. In fact, there are zero snapshots created during recording, which results in a minimal overhead as you run your tests. And yet, the information gathered is infinitely more robust.
 
 ### When to use Replay with your tests
-There are a [couple of strategies](/ci-workflows/recording-strategies) you can adopt, but generally you can use Replay Browser with every test run on your CI, as there is both short-term and long-term value. 
+
+There are a [couple of strategies](/ci-workflows/recording-strategies) you can adopt, but generally you can use Replay Browser with every test run on your CI, as there is both short-term and long-term value.
 
 When a test fails on CI, you don’t need to replicate it locally anymore. A recording captures your test run **exactly** as it happened and will provide you better insight than if you tried to locally reproduce an issue from CI.
 
@@ -36,7 +42,7 @@ If you battle with flaky tests, you can [compare a failing and a passing test](h
 
 Replay Devtools work great with your existing test suite. Cypress and Playwright plugins allow you to **rewind or fast forward** to any command from your test run.
 
-The command details panel contains information on passed arguments, returned values and targeted element. Commands are integrated with the rest of DevTools. This means you can jump from a command detail into [Elements panel](/browser-devtools/elements-panel), or inspect API calls in the [Network panel](/browser-devtools/network-monitor).
+The command details panel contains information on passed arguments, returned values and targeted element. Commands are integrated with the rest of DevTools. This means you can jump from a command detail into [Elements panel](/replay-devtools/browser-devtools/elements-panel), or inspect API calls in the [Network panel](/replay-devtools/browser-devtools/network-monitor).
 {% /basic %}
 
 {% figure
@@ -52,7 +58,7 @@ The command details panel contains information on passed arguments, returned val
 
 **See what actually happened** when your test clicked, typed or in other way interacted with your website. Jump from a test command right into the function that was called on interaction.
 
-With information on [line hit counts](/browser-devtools/source-viewer#hit-counts) and [jumping through line executions](/browser-devtools/source-viewer#jumping-to-a-line) you’ll be able to narrow down a flake root cause in minutes.
+With information on [line hit counts](/replay-devtools/browser-devtools/source-viewer#hit-counts) and [jumping through line executions](/replay-devtools/browser-devtools/source-viewer#jumping-to-a-line) you’ll be able to narrow down a flake root cause in minutes.
 {% /basic %}
 
 {% figure

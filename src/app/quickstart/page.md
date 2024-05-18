@@ -7,7 +7,7 @@ Recording your application with the Replay browser lets you capture a bug once a
 
 - [Share the replay as a URL with your team so others can inspect it as if they were there when you recorded it.](/time-travel-intro/collaborative-devtools)
 - [Debug the replay with `console.log` added in at any point of the recording.](/time-travel-intro/add-console-logs-on-the-fly)
-- [Inspect Network requests](/browser-devtools/network-monitor), [React components](/framework-devtools/react-panel), and [DOM elements](browser-devtools/elements-panel) as if the application were running live on your laptop.
+- [Inspect Network requests](/replay-devtools/browser-devtools/network-monitor), [React components](/replay-devtools/framework-devtools/react-panel), and [DOM elements](/replay-devtools/browser-devtools/elements-panel) as if the application were running live on your laptop.
 
 The ability to record and deterministically replay runtimes like Chrome is referred to as ["time travel"](/time-travel-intro/why-time-travel).
 
@@ -143,7 +143,7 @@ In the interim, if you would perfer downloading a browser directly, you can use 
 
 {% accordion-item title="Why do I need to login to Replay?" %}
 
-Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/time-travel-intro/how-time-travel-works)
+Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/time-travel-intro/what-is-time-travel)
 
 {% /accordion-item %}
 
