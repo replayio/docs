@@ -34,6 +34,9 @@ import settingUpTeam from '@/videos/setting-up-team.mp4.json'
 import devtoolsClickToEvent from '@/videos/devtools_click_to_event.mp4.json'
 import cypressDebuggingLoom from '@/videos/cypress_debugging_loom.mp4.json'
 import playwrightDebuggingLoom from '@/videos/playwright_debugging_loom.mp4.json'
+import codegen from '@/videos/codegen.mp4.json'
+import codegen2 from '@/videos/codegen 2.1.mp4.json'
+import codegen3 from '@/videos/codegen 3.mp4.json'
 // import getStarted from '@/videos/get-started.mp4';
 
 const videos = {
@@ -67,7 +70,10 @@ const videos = {
   settingUpTeam,
   devtoolsClickToEvent,
   cypressDebuggingLoom,
-  playwrightDebuggingLoom
+  playwrightDebuggingLoom,
+  codegen,
+  codegen2,
+  codegen3,
 }
 
 interface VideoProps {
@@ -78,7 +84,11 @@ interface VideoProps {
   children: React.ReactNode
 }
 
-export const Video: React.FC<VideoProps> = ({ src, autoplay = true, children }) => {
+export const Video: React.FC<VideoProps> = ({
+  src,
+  autoplay = true,
+  children,
+}) => {
   const commonProps = {
     // @ts-ignore
     src: videos[src],
@@ -86,24 +96,20 @@ export const Video: React.FC<VideoProps> = ({ src, autoplay = true, children }) 
     accentColor: '#f02d5e',
     className: 'overflow-clip rounded-xl border border-transparent',
     poster: '',
-    children
+    children,
   }
   return autoplay ? (
     <Zoom>
       <NextVideo muted={true} loop={true} controls={false} {...commonProps} />
       {children ? (
-        <figcaption className="flex-shrink text-center">
-          {children}
-        </figcaption>
+        <figcaption className="flex-shrink text-center">{children}</figcaption>
       ) : null}
     </Zoom>
   ) : (
     <>
-    <NextVideo muted={false} loop={false} controls={true} {...commonProps} />
+      <NextVideo muted={false} loop={false} controls={true} {...commonProps} />
       {children ? (
-        <figcaption className="flex-shrink text-center">
-          {children}
-        </figcaption>
+        <figcaption className="flex-shrink text-center">{children}</figcaption>
       ) : null}
     </>
   )

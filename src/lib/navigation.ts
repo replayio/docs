@@ -216,6 +216,10 @@ export const navigation: NavigationItem[] = [
             href: '/test-runners/playwright/examples',
           },
           {
+            title: 'Writing new tests',
+            href: '/test-runners/playwright/writing-new-tests',
+          },
+          {
             title: 'FAQ',
             href: '/test-runners/playwright/faq',
           },
