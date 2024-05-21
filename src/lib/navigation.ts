@@ -421,6 +421,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           title: 'Cypress.io',
           href: '/learn/examples/cypress-io'
         },
+        {
+          title: 'Next.js',
+          href: '/learn/examples/nextjs'
+        }
       ]
     },
     {
