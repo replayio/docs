@@ -4,6 +4,18 @@ title: Playwright
 
 {% steps %}
 
+## Create a new testsuite team
+
+Start by visiting our [new testsuite form](https://app.replay.io/team/new/tests).
+It will create an API key and guide you through each step.
+
+{% figure
+    alt="Jumping to code"
+    src="/images/new-team-tests.png"
+    height=870
+    width=870
+/%}
+
 ## Install the Playwright Plugin package into your project
 
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
@@ -41,6 +53,34 @@ bun install @replayio/playwright@alpha -D
 We recommend using the current `@alpha` version of this plugin. It's more robust and better but we are still polishing it. If you encounter any problems with it you can use `@replayio/playwright@latest`. We'd appreciate feedback and bug reports to be reported [here](https://github.com/replayio/replay-cli/issues/new).
 {% /callout %}
 
+## Save your API key
+
+To use your API key, you can either use [dotenv package](https://www.npmjs.com/package/dotenv) and save it to a `.env` file or add the API key to your environment directly.
+
+{% tabs labels=[".env", "macOS/Linux", "Windows"] %}
+{% tab %}
+
+```bash {% fileName=".env" %}
+REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+export REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+set REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% /tabs %}
+
 ## Update your configuration
 
 ```js {% fileName="playwright.config.ts" highlight=["2-5","10-13","17-20"] lineNumbers=true %}
@@ -68,38 +108,6 @@ const config: PlaywrightTestConfig = {
 }
 export default config
 ```
-
-## Generate and save your API key
-
-In order to upload your test replays you need to generate an API key and save it to your environment. You can generate an API key once you [created a team in Replay App](/replay-teams/setting-up-a-team). API key management section can be found in the team settings menu. [Read more about API keys here](/ci-workflows/generate-api-key).
-
-{% video src="generateApiKey" /%}
-
-To use your API key, you can either use [dotenv package](https://www.npmjs.com/package/dotenv) and save it to a `.env` file or add the API key to your environment directly.
-
-{% tabs labels=[".env", "macOS/Linux", "Windows"] %}
-{% tab %}
-
-```bash {% fileName=".env" %}
-REPLAY_API_KEY=<your_api_key>
-```
-
-{% /tab %}
-{% tab %}
-
-```sh
-export REPLAY_API_KEY=<your_api_key>
-```
-
-{% /tab %}
-{% tab %}
-
-```sh
-set REPLAY_API_KEY=<your_api_key>
-```
-
-{% /tab %}
-{% /tabs %}
 
 ## Record your test
 
