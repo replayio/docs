@@ -34,6 +34,10 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: npm ci
+      - name: Install Chromium dependencies
+        run: npx playwright install-deps chromium
+      - name: Install Replay Chromium
+        run: npx replayio update
       - name: Run
         run: npm run test-${{ matrix.product }}
         env:

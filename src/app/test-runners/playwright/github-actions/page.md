@@ -12,24 +12,21 @@ In the setup below, we update the `playwright.config.ts` file to use the Replay 
 
 ```jsx {% fileName="playwright.config.ts" lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from "@playwright/test";
-import {
-    createReplayReporterConfig,
-    devices as replayDevices,
-} from "@replayio/playwright";
+import { devices as replayDevices, replayReporter } from "@replayio/playwright";
 
 const config: PlaywrightTestConfig = {
   reporter: [
-      createReplayReporterConfig({
-          apiKey: process.env.REPLAY_API_KEY,
-          upload: true,
-      }),
-      ['line']
+    replayReporter({
+      apiKey: process.env.REPLAY_API_KEY,
+      upload: true,
+    }),
+    ["line"],
   ],
   projects: [
     {
       name: "replay-chromium",
       use: { ...replayDevices["Replay Chromium"] },
-    }
+    },
   ],
 };
 export default config;
@@ -48,6 +45,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
+      - name: Install Chromium dependencies
+        run: npx playwright install-deps chromium
+      - name: Install Replay Chromium
+        run: npx replayio update
       - name: Run Playwright tests
         run: npx playwright test
         env:
@@ -73,6 +74,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
+      - name: Install Chromium dependencies
+        run: npx playwright install-deps chromium
+      - name: Install Replay Chromium
+        run: npx replayio update
       - name: Run Playwright tests
         run: npx playwright test
       - name: Upload replays
@@ -104,6 +109,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
+      - name: Install Chromium dependencies
+        run: npx playwright install-deps chromium
+      - name: Install Replay Chromium
+        run: npx replayio update
       - name: Run Playwright tests with Replay Browser
         run: npx playwright test --project replay-chromium --reporter=@replayio/playwright/reporter,line
       - name: Upload replays
@@ -132,6 +141,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
+      - name: Install Chromium dependencies
+        run: npx playwright install-deps chromium
+      - name: Install Replay Chromium
+        run: npx replayio update
       - name: Run Playwright tests
         run: npx playwright test
       - name: Upload replays

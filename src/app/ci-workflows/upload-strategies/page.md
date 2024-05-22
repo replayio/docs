@@ -35,23 +35,28 @@ By default, all test replays are uploaded no matter the result. If you want to u
   {% /tab %}
   {% tab %}
   ```js
+  import { replayDevices, replayReporter } from "@replayio/playwright";
+
   const config: PlaywrightTestConfig = {
-    reporter: [["@replayio/playwright/reporter", {
-      apiKey: process.env.REPLAY_API_KEY,
-      upload: true
-      filter: function (recording) {
-        // upload runtime crashes and any failed tests
-        return (
-          recording.status === "crashed" ||
-          recording.metadata.test.result === "failed"
-        );
-      }
-    }], ['line']],
+    reporter: [
+      replayReporter({
+        apiKey: process.env.REPLAY_API_KEY,
+        upload: true,
+        filter: function (recording) {
+          // upload runtime crashes and any failed tests
+          return (
+            recording.status === "crashed" ||
+            recording.metadata.test.result === "failed"
+          );
+        },
+      }),
+      ["line"],
+    ],
     projects: [
       {
         name: "replay-chromium",
         use: { ...replayDevices["Replay Chromium"] },
-      }
+      },
     ],
   };
   export default config;
@@ -109,19 +114,24 @@ The recording metadata includes some details about the source control including 
   {% /tab %}
   {% tab %}
   ```js
+  import { replayDevices, replayReporter } from "@replayio/playwright";
+
   const config: PlaywrightTestConfig = {
-    reporter: [["@replayio/playwright/reporter", {
-      apiKey: process.env.REPLAY_API_KEY,
-      upload: true
-      filter: function (recording) {
-        return recording.metadata.source.branch === "main";
-      }
-    }], ['line']],
+    reporter: [
+      replayReporter({
+        apiKey: process.env.REPLAY_API_KEY,
+        upload: true,
+        filter: function (recording) {
+          return recording.metadata.source.branch === "main";
+        },
+      }),
+      ["line"],
+    ],
     projects: [
       {
         name: "replay-chromium",
         use: { ...replayDevices["Replay Chromium"] },
-      }
+      },
     ],
   };
   export default config;
@@ -167,31 +177,36 @@ If you've adopted one the configurations above but would also like to periodical
   {% /tab %}
   {% tab %}
   ```js
+  import { replayDevices, replayReporter } from "@replayio/playwright";
+
   const convertStringToInt = string =>
     string.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0);
 
   const config: PlaywrightTestConfig = {
-    reporter: [["@replayio/playwright/reporter", {
-      apiKey: process.env.REPLAY_API_KEY,
-      upload: true
-      filter: function (recording) {
-        // randomly upload 10% of all test runs
-        if (convertStringToInt(r.metadata.test.run.id) % 10 === 1) {
-          return true;
-        }
+    reporter: [
+      replayReporter({
+        apiKey: process.env.REPLAY_API_KEY,
+        upload: true,
+        filter: function (recording) {
+          // randomly upload 10% of all test runs
+          if (convertStringToInt(r.metadata.test.run.id) % 10 === 1) {
+            return true;
+          }
 
-        // upload runtime crashes and any failed tests
-        return (
-          recording.status === "crashed" ||
-          recording.metadata.test.result === "failed"
-        );
-      }
-    }], ['line']],
+          // upload runtime crashes and any failed tests
+          return (
+            recording.status === "crashed" ||
+            recording.metadata.test.result === "failed"
+          );
+        },
+      }),
+      ["line"],
+    ],
     projects: [
       {
         name: "replay-chromium",
         use: { ...replayDevices["Replay Chromium"] },
-      }
+      },
     ],
   };
   export default config;
@@ -211,6 +226,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
+      - name: Install Chromium dependencies
+        run: npx playwright install-deps chromium
+      - name: Install Replay Chromium
+        run: npx replayio install
       - name: Run Playwright tests with Replay Browser
         run: npx playwright test --project replay-chromium --reporter=@replayio/playwright/reporter,line
       - name: Upload replays

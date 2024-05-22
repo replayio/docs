@@ -16,7 +16,7 @@ You can write tests as a function that uses `playwright.[browser].launch()`. Thi
 In this configuration, you’ll use the `getExecutablePath()` function from `@replayio/playwright` to ensure the Replay-enabled browser is used.
 
 <Callout type="info" emoji="👉">
- Passing the `RECORD_ALL_CONTENT: 1`  is only required for Replay Firefox.
+ Passing the `RECORD_ALL_CONTENT: 1`  is only required for Replay Chromium.
 </Callout>
 
 ## Metadata
@@ -35,15 +35,15 @@ Currently, this metadata is only available locally except for `title`
 ### New Browser per Test
 
 ```jsx
-// firefox.spec.js
+// chromium.spec.js
 
 const playwright = require("playwright");
 const { getExecutablePath } = require("@replayio/playwright");
 
 (async () => {
-	const browser = await playwright.firefox.launch({
+	const browser = await playwright.chromium.launch({
 		headless: true,
-		executablePath: getExecutablePath("firefox"),
+		executablePath: getExecutablePath(),
 		env: {
       ...process.env,
 			RECORD_ALL_CONTENT: 1,
@@ -62,7 +62,7 @@ const { getExecutablePath } = require("@replayio/playwright");
 
 ```
 
-Run `node firefox.spec.js` to run and record your tests. This will generate a new replay for each test.
+Run `node chromium.spec.js` to run and record your tests. This will generate a new replay for each test.
 
 ### Shared Browser between Tests
 
@@ -78,9 +78,9 @@ const { getExecutablePath } = require("@replayio/playwright");
 		"replay-metadata-file.json"
 	);
 
-	const browser = await playwright.firefox.launch({
+	const browser = await playwright.chromium.launch({
 		headless: true,
-		executablePath: getExecutablePath("firefox"),
+		executablePath: getExecutablePath(),
 		env: {
       ...process.env,
 			RECORD_ALL_CONTENT: 1,
@@ -115,7 +115,7 @@ const { getExecutablePath } = require("@replayio/playwright");
 
 ```
 
-Run `node firefox.spec.js` to run and record your tests. This will generate a single replay of all the test code in the file. 
+Run `node chromium.spec.js` to run and record your tests. This will generate a single replay of all the test code in the file. 
 
 ## Uploading recordings
 
@@ -176,16 +176,16 @@ main().then(() => {
 You can still use `expect` from `@playwright/test` in your test code. Import the command directly like in the example below.
 
 ```jsx
-// firefox-expect.spec.js
+// chromium-expect.spec.js
 
 const playwright = require("playwright");
 const { expect } = require('@playwright/test');
 const { getExecutablePath } = require("@replayio/playwright");
 
 (async () => {
-  const browser = await playwright.firefox.launch({
+  const browser = await playwright.chromium.launch({
 		headless: true,
-		executablePath: getExecutablePath("firefox"),
+		executablePath: getExecutablePath(),
 		env: {
       ...process.env,
 			RECORD_ALL_CONTENT: 1,
@@ -234,9 +234,9 @@ const { getExecutablePath } = require("@replayio/playwright");
 const replayCli = require("@replayio/replay");
 
 async function test() {
-	const browser = await playwright.firefox.launch({
+	const browser = await playwright.chromium.launch({
 		headless: true,
-		executablePath: getExecutablePath("firefox"),
+		executablePath: getExecutablePath(),
 		env: {
       ...process.env,
 			RECORD_ALL_CONTENT: 1,

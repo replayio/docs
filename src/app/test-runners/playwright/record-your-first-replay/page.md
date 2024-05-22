@@ -22,28 +22,28 @@ It will create an API key and guide you through each step.
 {% tab %}
 
 ```sh
-npm install @replayio/playwright@alpha -D
+npm install @replayio/playwright -D
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-yarn add @replayio/playwright@alpha -D
+yarn add @replayio/playwright -D
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-pnpm install @replayio/playwright@alpha -D
+pnpm install @replayio/playwright -D
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-bun install @replayio/playwright@alpha -D
+bun install @replayio/playwright -D
 ```
 
 {% /tab %}
@@ -84,29 +84,26 @@ set REPLAY_API_KEY=<your_api_key>
 ## Update your configuration
 
 ```js {% fileName="playwright.config.ts" highlight=["2-5","10-13","17-20"] lineNumbers=true %}
-import { PlaywrightTestConfig, devices } from '@playwright/test'
-import {
-  createReplayReporterConfig,
-  devices as replayDevices,
-} from "@replayio/playwright";
-import 'dotenv/config'
+import { PlaywrightTestConfig, devices } from "@playwright/test";
+import { devices as replayDevices, replayReporter } from "@replayio/playwright";
+import "dotenv/config";
 
 const config: PlaywrightTestConfig = {
   reporter: [
-    createReplayReporterConfig({
+    replayReporter({
       apiKey: process.env.REPLAY_API_KEY,
       upload: true,
     }),
-    ['line'],
+    ["line"],
   ],
   projects: [
     {
-      name: 'replay-chromium',
-      use: { ...replayDevices['Replay Chromium'] },
+      name: "replay-chromium",
+      use: { ...replayDevices["Replay Chromium"] },
     },
   ],
-}
-export default config
+};
+export default config;
 ```
 
 ## Record your test

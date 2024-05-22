@@ -10,14 +10,14 @@ To record tests and upload replays in other CI providers, you’ll need to compl
 
 If your workflow has an existing `npm ci` or `yarn` command to install project dependencies, then you are all set.
 
-If not, you’ll need to add a step to install all project dependencies, or you can manually install just the Replay package directly with `npm i @replayio/playwright@alpha` .
+If not, you’ll need to add a step to install all project dependencies, or you can manually install just the Replay package directly with `npm i @replayio/playwright` .
 
 ## Installing Replay Browsers
 
-By default, `@replayio/playwright` also installs the required Replay Browsers. However, if you have a setting to suppress browser installations during `npm ci` or `yarn`, you’ll need to also manually install the Replay Browsers in your workflow using:
+To install the Replay Browser in your workflow run:
 
 ```sh
-npx @replayio/playwright@alpha install
+npx replayio install
 ```
 
 ## Update test run command
@@ -28,7 +28,7 @@ You should make this update wherever your run command is defined, typically in `
 
 Pass the following flags to your run command:
 
-- `--project project-name` (`replay-firefox` or `replay-chromium`)
+- `--project replay-chromium` (`replay-firefox` or `replay-chromium`)
 - `--reporter=@replayio/playwright/reporter,line`
 
 For example, to use Replay Firefox, the command is:
