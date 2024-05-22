@@ -49,10 +49,6 @@ bun install @replayio/playwright -D
 {% /tab %}
 {% /tabs %}
 
-{% callout title="Note" type="note" %}
-We recommend using the current `@alpha` version of this plugin. It's more robust and better but we are still polishing it. If you encounter any problems with it you can use `@replayio/playwright@latest`. We'd appreciate feedback and bug reports to be reported [here](https://github.com/replayio/replay-cli/issues/new).
-{% /callout %}
-
 ## Save your API key
 
 To use your API key, you can either use [dotenv package](https://www.npmjs.com/package/dotenv) and save it to a `.env` file or add the API key to your environment directly.
