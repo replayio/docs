@@ -20,7 +20,7 @@ To install the Replay Browser in your workflow run:
 npx replayio install
 ```
 
-Sometimes you might also have to run a step to install Chromium dependencies:
+You might also have to run a step to install Chromium dependencies:
 
 ```sh
 npx playwright install-deps chromium
