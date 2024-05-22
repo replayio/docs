@@ -37,7 +37,7 @@ Pass the following flags to your run command:
 - `--project replay-chromium` (or other project name that uses Replay browser)
 - `--reporter=@replayio/playwright/reporter,line`
 
-For example, to use Replay Firefox, the command is:
+For example, to use Replay Chromium, the command is:
 
 ```sh
 npx playwright test --project replay-chromium --reporter=@replayio/playwright/reporter,line
