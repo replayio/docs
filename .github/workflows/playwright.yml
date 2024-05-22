@@ -6,16 +6,18 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test --project replay-chromium
-      env:
-        BASE_URL: ${{ github.event.deployment_status.target_url }}
-        REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Chromium dependencies
+        run: npx playwright install-deps chromium
+      - name: Install Replay Chromium
+        run: npx replayio update
+      - name: Run Playwright tests
+        run: npx playwright test --project replay-chromium
+        env:
+          BASE_URL: ${{ github.event.deployment_status.target_url }}
+          REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
