@@ -36,7 +36,10 @@ Now that the playwright config is set up, you can run the tests with `npx playwr
 
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true %}
 name: End-to-end tests
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches: [main]
 jobs:
   e2e-tests:
     runs-on: ubuntu-22.04
@@ -63,7 +66,10 @@ By default, all test replays are uploaded no matter the result. If you want to o
 
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true highlight=["13-18"] %}
 name: Replay tests
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches: [main]
 jobs:
   e2e-tests:
     runs-on: ubuntu-22.04
@@ -96,7 +102,10 @@ Note that when you specify the browser from the command line, you will also need
 
 ```yml {% fileName=".github/workflows/e2e.yml" highlight=["11-18"] lineNumbers=true %}
 name: Replay tests
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches: [main]
 jobs:
   e2e-tests:
     runs-on: ubuntu-22.04
@@ -126,7 +135,10 @@ By default, all test replays are private. If you want to make them public, you c
 
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true highlight=["13-18"] %}
 name: Replay tests
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches: [main]
 jobs:
   e2e-tests:
     runs-on: ubuntu-22.04

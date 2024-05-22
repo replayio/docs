@@ -232,7 +232,10 @@ export default config;
 
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true highlight=[19] %}
 name: Replay tests
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches: [main]
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
