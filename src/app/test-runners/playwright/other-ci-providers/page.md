@@ -20,6 +20,12 @@ To install the Replay Browser in your workflow run:
 npx replayio install
 ```
 
+Sometimes you might also have to run a step to install Chromium dependencies:
+
+```sh
+npx playwright install-deps chromium
+```
+
 ## Update test run command
 
 Your existing test run command (for example, `npx playwright test`) must be updated to include the name of a Replay Browser and required environment variables to record.
@@ -28,13 +34,13 @@ You should make this update wherever your run command is defined, typically in `
 
 Pass the following flags to your run command:
 
-- `--project replay-chromium` (`replay-firefox` or `replay-chromium`)
+- `--project replay-chromium` (or other project name that uses Replay browser)
 - `--reporter=@replayio/playwright/reporter,line`
 
 For example, to use Replay Firefox, the command is:
 
 ```sh
-npx playwright test --project replay-firefox --reporter=@replayio/playwright/reporter,line
+npx playwright test --project replay-chromium --reporter=@replayio/playwright/reporter,line
 ```
 
 **If you don’t specify a project, all projects defined in your config will run.**
