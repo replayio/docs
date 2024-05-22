@@ -17,17 +17,14 @@ Basic configuration of your Playwright project may look something like this. The
 
 ```tsx {2,5-8,11,12} filename="playwright.config.ts"
 import { PlaywrightTestConfig, devices } from '@playwright/test'
-import { devices as replayDevices } from '@replayio/playwright'
+import { devices as replayDevices, replayReporter } from '@replayio/playwright'
 
 const config: PlaywrightTestConfig = {
   reporter: [
-    [
-      '@replayio/playwright/reporter',
-      {
-        apiKey: process.env.REPLAY_API_KEY,
-        upload: true,
-      },
-    ],
+    replayReporter({
+      apiKey: process.env.REPLAY_API_KEY,
+      upload: true,
+    }),
     ['line'],
   ],
   projects: [

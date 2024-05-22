@@ -12,24 +12,21 @@ In the setup below, we update the `playwright.config.ts` file to use the Replay 
 
 ```jsx {% fileName="playwright.config.ts" lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from "@playwright/test";
-import {
-    createReplayReporterConfig,
-    devices as replayDevices,
-} from "@replayio/playwright";
+import { devices as replayDevices, replayReporter } from "@replayio/playwright";
 
 const config: PlaywrightTestConfig = {
   reporter: [
-      createReplayReporterConfig({
-          apiKey: process.env.REPLAY_API_KEY,
-          upload: true,
-      }),
-      ['line']
+    replayReporter({
+      apiKey: process.env.REPLAY_API_KEY,
+      upload: true,
+    }),
+    ["line"],
   ],
   projects: [
     {
       name: "replay-chromium",
       use: { ...replayDevices["Replay Chromium"] },
-    }
+    },
   ],
 };
 export default config;
@@ -39,7 +36,10 @@ Now that the playwright config is set up, you can run the tests with `npx playwr
 
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true %}
 name: End-to-end tests
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches: [main]
 jobs:
   e2e-tests:
     runs-on: ubuntu-22.04
@@ -48,6 +48,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
+      - name: Install Replay Chromium
+        run: npx replayio install
       - name: Run Playwright tests
         run: npx playwright test
         env:
@@ -64,7 +66,10 @@ By default, all test replays are uploaded no matter the result. If you want to o
 
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true highlight=["13-18"] %}
 name: Replay tests
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches: [main]
 jobs:
   e2e-tests:
     runs-on: ubuntu-22.04
@@ -73,6 +78,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
+      - name: Install Replay Chromium
+        run: npx replayio install
       - name: Run Playwright tests
         run: npx playwright test
       - name: Upload replays
@@ -95,7 +102,10 @@ Note that when you specify the browser from the command line, you will also need
 
 ```yml {% fileName=".github/workflows/e2e.yml" highlight=["11-18"] lineNumbers=true %}
 name: Replay tests
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches: [main]
 jobs:
   e2e-tests:
     runs-on: ubuntu-22.04
@@ -104,6 +114,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
+      - name: Install Replay Chromium
+        run: npx replayio install
       - name: Run Playwright tests with Replay Browser
         run: npx playwright test --project replay-chromium --reporter=@replayio/playwright/reporter,line
       - name: Upload replays
@@ -123,7 +135,10 @@ By default, all test replays are private. If you want to make them public, you c
 
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true highlight=["13-18"] %}
 name: Replay tests
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches: [main]
 jobs:
   e2e-tests:
     runs-on: ubuntu-22.04
@@ -132,6 +147,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
+      - name: Install Replay Chromium
+        run: npx replayio install
       - name: Run Playwright tests
         run: npx playwright test
       - name: Upload replays

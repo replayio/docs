@@ -12,10 +12,8 @@ jobs:
           node-version: lts/*
       - name: Install dependencies
         run: npm ci
-      - name: Install Chromium dependencies
-        run: npx playwright install-deps chromium
       - name: Install Replay Chromium
-        run: npx replayio update
+        run: npx replayio install
       - name: Run Playwright tests
         run: npx playwright test --project replay-chromium
         env:

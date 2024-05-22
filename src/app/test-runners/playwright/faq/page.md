@@ -34,6 +34,8 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: npm ci
+      - name: Install Replay Chromium
+        run: npx replayio install
       - name: Run
         run: npm run test-${{ matrix.product }}
         env:
