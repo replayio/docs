@@ -200,10 +200,6 @@ export const navigation: NavigationItem[] = [
             href: '/test-runners/playwright/record-your-first-replay',
           },
           {
-            title: 'Debugging tests',
-            href: '/test-runners/playwright/debugging-tests',
-          },
-          {
             title: 'GitHub actions',
             href: '/test-runners/playwright/github-actions',
           },
@@ -212,12 +208,24 @@ export const navigation: NavigationItem[] = [
             href: '/test-runners/playwright/other-ci-providers',
           },
           {
+            title: 'Recording Playwright core',
+            href: '/test-runners/playwright/playwright-core',
+          },
+          {
+            title: 'Debugging tests',
+            href: '/test-runners/playwright/debugging-tests',
+          },
+          {
             title: 'Examples',
             href: '/test-runners/playwright/examples',
           },
           {
             title: 'Writing new tests',
             href: '/test-runners/playwright/writing-new-tests',
+          },
+          {
+            title: 'Troubleshooting',
+            href: '/test-runners/playwright/troubleshooting',
           },
           {
             title: 'FAQ',

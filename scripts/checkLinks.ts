@@ -1,3 +1,10 @@
+/*
+  This script is used to check all links in the docs and verify that they are working.
+
+  To run the script, run:
+  bun scripts/checkLinks.ts
+*/
+
 import * as fs from 'fs'
 import { Glob } from 'bun'
 import fetch from 'node-fetch'
