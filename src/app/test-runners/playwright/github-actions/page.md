@@ -45,10 +45,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
-      - name: Install Chromium dependencies
-        run: npx playwright install-deps chromium
       - name: Install Replay Chromium
-        run: npx replayio update
+        run: npx replayio install
       - name: Run Playwright tests
         run: npx playwright test
         env:
@@ -74,10 +72,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
-      - name: Install Chromium dependencies
-        run: npx playwright install-deps chromium
       - name: Install Replay Chromium
-        run: npx replayio update
+        run: npx replayio install
       - name: Run Playwright tests
         run: npx playwright test
       - name: Upload replays
@@ -109,10 +105,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
-      - name: Install Chromium dependencies
-        run: npx playwright install-deps chromium
       - name: Install Replay Chromium
-        run: npx replayio update
+        run: npx replayio install
       - name: Run Playwright tests with Replay Browser
         run: npx playwright test --project replay-chromium --reporter=@replayio/playwright/reporter,line
       - name: Upload replays
@@ -141,10 +135,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
-      - name: Install Chromium dependencies
-        run: npx playwright install-deps chromium
       - name: Install Replay Chromium
-        run: npx replayio update
+        run: npx replayio install
       - name: Run Playwright tests
         run: npx playwright test
       - name: Upload replays
