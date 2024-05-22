@@ -1,4 +1,4 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test'
+import { PlaywrightTestConfig } from '@playwright/test'
 import { devices as replayDevices, replayReporter } from '@replayio/playwright'
 import dotenv from 'dotenv'
 dotenv.config()
@@ -18,10 +18,6 @@ const config: PlaywrightTestConfig = {
     {
       name: 'replay-chromium',
       use: { ...replayDevices['Replay Chromium'] },
-    },
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
     },
   ],
 }
