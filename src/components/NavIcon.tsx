@@ -1,4 +1,9 @@
 import clsx from 'clsx'
+import {
+  BeakerIcon,
+  WifiIcon,
+  MagnifyingGlassIcon,
+} from '@heroicons/react/24/outline'
 
 import FileIcon from './icons/FileIcon'
 import { Hourglass } from './icons/Hourglass'
@@ -137,6 +142,9 @@ export const icons = {
   empty: EmptyIcon,
   upload: UploadIcon,
   university: University,
+  wifi: WifiIcon,
+  magnifying: MagnifyingGlassIcon,
+  beaker: BeakerIcon,
 }
 export function NavIcon({
   icon = 'file',
@@ -153,8 +161,8 @@ export function NavIcon({
       viewBox="0 0 24 24"
       fill="none"
       className={clsx(
-        className,
         'mr-2 inline-block h-4 w-4 fill-current text-gray-400',
+        className,
       )}
       {...props}
     >

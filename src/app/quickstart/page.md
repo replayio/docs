@@ -3,6 +3,16 @@ title: Quickstart guide
 description: Record your first replay with the Replay browser in under a minute.
 ---
 
+Recording your application with the Replay browser lets you capture a bug once and inspect it after the fact without having to reproduce it again. This makes it possible to:
+
+- [Share the replay as a URL with your team so others can inspect it as if they were there when you recorded it.](/time-travel-intro/collaborative-devtools)
+- [Debug the replay with `console.log` added in at any point of the recording.](/time-travel-intro/add-console-logs-on-the-fly)
+- [Inspect Network requests](/replay-devtools/browser-devtools/network-monitor), [React components](/replay-devtools/framework-devtools/react-panel), and [DOM elements](/replay-devtools/browser-devtools/elements-panel) as if the application were running live on your laptop.
+
+The ability to record and deterministically replay runtimes like Chrome is referred to as ["time travel"](/time-travel-intro/why-time-travel).
+
+Let's use the Replay CLI to record our first replay so you too can start time traveling:
+
 {% steps %}
 
 ## Install the Replay CLI
@@ -50,6 +60,12 @@ replayio record
 
 {% video src="recordCli" loop=true /%}
 
+This command will:
+
+- Prompt you to login to your Replay account (if not already logged in)
+- Install the Replay browser (if not already installed)
+- Open the Replay browser for you to record an interaction to dive deeper into
+
 ## Upload your replays
 
 When you close the browser, you'll be prompted to upload your recordings.
@@ -69,6 +85,41 @@ a616009e.. overboard.dev Now 7.5s (uploaded)
 View recording at:
 https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25
 ```
+
+> This URL is a real recording. [Press the link to inspect the site](https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25)!
+
+When you open the "View recording" link in a browser, you'll be greeted with a dialog asking if you want to upload the recording to a specific team.
+
+![An upload preview of www.overboard.dev that says "only you can view this" with an option to add other people to see the upload](/images/upload_perms.png)
+
+> If you don't have a team yet, you can [create a team in the Replay Library.](/replay-teams/setting-up-a-team)
+
+## Inspect your replay
+
+Once your recording is uploaded, you're able to inspect it through [the Replay DevTools](https://app.replay.io/).
+
+![A preview of the website that was recorded; Overboard. It includes a sidebar of events the user took. The site itself is an "Add to cart" button underneath a checkout for fictional hoverboards](/images/recording_landing_page.png)
+
+By default, you're set to "Viewer" mode. You can change the view to "DevTools" mode either by pressing the toggle in the top-right corner or by selecting an "Event" and pressing "Jump to code"
+
+Let's jump to the last "Click" before the recording hit an error and see the code related to it:
+
+{% video src="devtoolsClickToEvent" /%}
+
+It looks like we're making a `"POST"` to an endpoint of `"/api/purchase"`. Let's open our network panel and see what the request looks like:
+
+![The network tab in the DevTools panel which shows a 400 error on the purchase](/images/network_tab.png)
+
+Selecting the `400` error in the network panel allows us to look at the request and reply. Here, the request is indicating that `"Color is not found, recieved: undefined"` was the response from our backend:
+
+![A response subtab on the network request panel showing the error message](/images/response_body.png)
+
+But looking at the request body, it looks like we're sending the color along just fine:
+
+![The request subtab on the network request panel showing the request body with "{color: blue}"](/images/request_body.png)
+With this information, we can go to our backend team more informed with how to report a ticket to solve this.
+
+We can even integrate Replay into our [CI/CD pipeline to help debug flakey tests much more efficiently.](/test-runners/overview)
 
 {% /steps %}
 
@@ -92,7 +143,7 @@ In the interim, if you would perfer downloading a browser directly, you can use 
 
 {% accordion-item title="Why do I need to login to Replay?" %}
 
-Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/time-travel-intro/how-time-travel-works)
+Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/time-travel-intro/what-is-time-travel)
 
 {% /accordion-item %}
 

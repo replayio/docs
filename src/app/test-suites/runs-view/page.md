@@ -99,7 +99,7 @@ Clicking on a recording opens the replay so that you can inspect it with Replay 
 {% quick-link
   title="Top failing and flaky tests"
   icon="sort"
-  href="/test-suites/top-failing-and-flaky-tes"
+  href="/test-suites/top-failing-and-flaky-tests"
   description="Go to the Failing and Flaky Tests view to see your top failing and flaky tests."
 /%}
 

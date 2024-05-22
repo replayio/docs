@@ -21,31 +21,33 @@ function PageLink({
   ...props
 }: Omit<React.ComponentPropsWithoutRef<'div'>, 'dir' | 'title'> & {
   title: string
-  href: string
+  href?: string
   dir?: 'previous' | 'next'
 }) {
   return (
     <div {...props}>
-      <dt className="font-display text-sm font-medium text-gray-900 dark:text-white">
-        {dir === 'next' ? 'Next' : 'Previous'}
-      </dt>
-      <dd className="mt-1">
-        <Link
-          href={href}
-          className={clsx(
-            'flex items-center gap-x-1 text-base font-semibold text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300',
-            dir === 'previous' && 'flex-row-reverse',
-          )}
-        >
-          {title}
-          <ArrowIcon
-            className={clsx(
-              'h-4 w-4 flex-none fill-current',
-              dir === 'previous' && '-scale-x-100',
-            )}
-          />
-        </Link>
-      </dd>
+      { href &&
+        <>
+          <dt className="font-display text-sm font-medium text-gray-900 dark:text-white">
+            {dir === 'next' ? 'Next' : 'Previous'}
+          </dt><dd className="mt-1">
+              <Link
+                href={href}
+                className={clsx(
+                  'flex items-center gap-x-1 text-base font-semibold text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300',
+                  dir === 'previous' && 'flex-row-reverse'
+                )}
+              >
+                {title}
+                <ArrowIcon
+                  className={clsx(
+                    'h-4 w-4 flex-none fill-current',
+                    dir === 'previous' && '-scale-x-100'
+                  )} />
+              </Link>
+          </dd>
+        </>
+      }
     </div>
   )
 }
@@ -55,7 +57,7 @@ function flattenNavigation(navigation: NavigationItem[]): NavigationItem[] {
   const flatList: NavigationItem[] = []
 
   function processItem(item: NavigationItem) {
-    if (!seen.has(item.href)) {
+    if (item.href && !seen.has(item.href)) {
       seen.add(item.href)
       flatList.push({ ...item, links: undefined })
     }

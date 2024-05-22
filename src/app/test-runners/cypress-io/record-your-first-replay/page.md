@@ -77,7 +77,7 @@ import '@replayio/cypress/support'
 ```
 
 ```js {% lineNumbers=true fileName="cypress.config.ts" highlight=[2,"8-12"] %}
-import defineConfig from 'cypress'
+import { defineConfig } from 'cypress'
 import { plugin as replayPlugin } from '@replayio/cypress'
 import 'dotenv/config'
 
@@ -107,19 +107,25 @@ To use your API key, you can either use [dotenv package](https://www.npmjs.com/p
 
 {% tabs labels=[".env", "macOS/Linux", "Windows"] %}
 {% tab %}
+
 ```bash {% fileName=".env" %}
 REPLAY_API_KEY=<your_api_key>
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 export REPLAY_API_KEY=<your_api_key>
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 set REPLAY_API_KEY=<your_api_key>
 ```
+
 {% /tab %}
 {% /tabs %}
 
@@ -184,7 +190,7 @@ You’re ready to inspect your local test run in Replay DevTools now. You can al
 {% quick-link
   title="Replay DevTools"
   icon="jumptocode"
-  href="/browser-devtools/console"
+  href="/replay-devtools/browser-devtools/console"
   description="Learn how to use Replay DevTools to debug your tests."
 /%}
 

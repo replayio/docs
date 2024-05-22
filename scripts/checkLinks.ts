@@ -2,17 +2,19 @@ import * as fs from 'fs'
 import { Glob } from 'bun'
 import fetch from 'node-fetch'
 import { marked } from 'marked'
-import vercelConfig from "../vercel.json"
+import vercelConfig from '../vercel.json'
 
-
-const LOCAL_BASE = 'http://localhost:3000'
+const LOCAL_BASE = process.env.BASE_URL || 'http://localhost:3000'
 
 const excludePage = [
   './src/app/test-runners/cypress-io/panel.md',
   './src/app/test-runners/cypress-io/dashboard.md',
   './src/app/test-runners/_archive/jest.md',
 ]
-const excludeUrl = ['https://webreplay.us.auth0.com/login/callback?connection=', '/discord']
+const excludeUrl = [
+  'https://webreplay.us.auth0.com/login/callback?connection=',
+  '/discord',
+]
 
 function isFullUrl(url: string): boolean {
   // A regular expression to check if the URL starts with http://, https://, or //
@@ -20,34 +22,56 @@ function isFullUrl(url: string): boolean {
 }
 
 async function checkLink(url: string): Promise<boolean> {
+  let timeout
   try {
-    const response = await fetch(url)
+    // cancel after 10 seconds
+    const controller = new AbortController()
+    timeout = setTimeout(() => controller.abort(), 10_000)
+
+    const response = await fetch(url, { signal: controller.signal })
     return response.ok // Returns true if the response is 2xx
   } catch (error) {
     console.error(`Error checking ${url}: ${error}`)
     return false
+  } finally {
+    clearTimeout(timeout)
+  }
+}
+
+async function checkLinkInFile(
+  link: string,
+  filePath: string,
+): Promise<boolean> {
+  if (link.match(/^(mailto|blob)/)) {
+    return true
+  }
+
+  if (excludeUrl.includes(link)) {
+    return true
+  }
+  const url = isFullUrl(link) ? link : `${LOCAL_BASE}${link}`
+
+  const isOk = await checkLink(url)
+
+  if (!isOk) {
+    process.stdout.write('x')
+    return false
+  } else {
+    // write a dot to the same line
+    process.stdout.write('.')
+    return true
   }
 }
 
 async function checkLinksInFile(filePath: string, links: string[]) {
   const failedLinks = []
   for (const link of links) {
-    if (link.match(/^(mailto|blob)/)) {
-      continue
-    }
-
-    if (excludeUrl.includes(link)) {
-      continue
-    }
-    const url = isFullUrl(link) ? link : `${LOCAL_BASE}${link}`
-
-    const isOk = await checkLink(url)
+    const isOk = await checkLinkInFile(link, filePath)
     if (!isOk) {
-      const message = `${filePath} :: ${url} is broken`
-      console.error(message)
-      failedLinks.push(message)
+      failedLinks.push(link)
     }
   }
+
   return failedLinks
 }
 
@@ -84,23 +108,32 @@ async function main(): Promise<void> {
   console.log(`Checking ${files.length} files...`)
 
   const failedLinks = []
-  for (const file of files.slice(0, 5)) {
+  for (const [index, file] of files.entries()) {
     const { file: filePath, links } = file
-    console.log(`${filePath}`)
+    process.stdout.write(`${index + 1} ${filePath} `)
     failedLinks.push(...(await checkLinksInFile(filePath, links)))
+    process.stdout.write('\n')
   }
 
-  failedLinks.push(... await checkLinksInFile('vercel.json', (vercelConfig.redirects.map(l => l.destination))))
+  console.log('Checking links in Vercel.json')
+  failedLinks.push(
+    ...(await checkLinksInFile(
+      'vercel.json',
+      vercelConfig.redirects.map((l) => l.destination),
+    )),
+  )
 
+  const dedupedFailedLinks = [...new Set(failedLinks)]
 
   if (failedLinks.length > 0) {
     console.error('\nThe following links are broken:')
-    for (const link of failedLinks) {
+    for (const link of dedupedFailedLinks) {
       console.error(link)
     }
     process.exit(1)
   } else {
-    console.log('All links are working')
+    console.log('\nAll links are working')
+    process.exit(0)
   }
 }
 

@@ -9,7 +9,7 @@ Problems in complex web applications often depend on particular network, timing,
 
 Replay is the first deterministic browser, so all bugs recorded with Replay are **reproducible**, no matter how complex or rare they are. This means your engineers **don’t have to spend days** trying to reproduce a flaky test or rare customer support issue.
 
-[Learn more](/browser-devtools/elements-panel)
+[Learn more](/replay-devtools/overview)
 
 ## Debugging is fast and predictable
 
@@ -41,4 +41,4 @@ Because traditionally everybody has to **figure out how to replicate an issue**,
 
 When anyone can view the replay on **their own schedule**, investigate the problem, and share their perspective, debugging begins to feel like the **team sport** it should be. And as Linus Torvalds famously said, “with enough eye balls, all bugs are shallow”.
 
-[Learn more](/browser-devtools/replay-viewer)
+[Learn more](/replay-devtools/browser-devtools/replay-viewer)

@@ -9,7 +9,7 @@ import { collectSections } from '@/lib/sections'
 export function DocsLayout({
   children,
   documentTitle,
-  frontmatter: { title, description, image, imageHeight },
+  frontmatter: { title, description, image, imageHeight, badge },
   nodes,
 }: {
   children: React.ReactNode
@@ -19,6 +19,7 @@ export function DocsLayout({
     description?: string
     image?: string
     imageHeight?: number
+    badge?: string
   }
   nodes: Array<Node>
 }) {
@@ -37,6 +38,7 @@ export function DocsLayout({
               documentTitle={documentTitle}
               imageHeight={imageHeight}
               image={image}
+              badge={badge}
               title={title}
             />
             <Prose>{children}</Prose>

@@ -9,6 +9,16 @@ import { Icon } from './Icon'
 import { NavIcon } from './NavIcon'
 import styles from './Navigation.module.css'
 
+function Badge({ type }: { type: string }) {
+  const icon = type === 'experimental' ? 'beaker' : 'wifi'
+  return (
+    <NavIcon
+      icon={icon}
+      className="ml-2 h-4 w-4 text-gray-500 dark:text-gray-400"
+    />
+  )
+}
+
 function ItemLink({
   className,
   item,
@@ -35,12 +45,10 @@ function ItemLink({
       onClick={item.href ? onLinkClick : undefined}
       className={clsx(styles.item, className, isSelected && styles.selected)}
     >
-      <NavIcon
-        icon={item.icon}
-        aria-hidden="true"
-        className="ml-1 fill-inherit stroke-inherit text-inherit"
-      />
-      {item.title}
+      <span className="ml-6 flex items-center justify-between ">
+        {item.title}
+        {item.badge && <Badge type={item.badge} />}
+      </span>
     </Link>
   )
 }
@@ -59,12 +67,17 @@ export function Navigation({
         <Link
           href="/quickstart"
           className={clsx(
-            'flex w-full items-center justify-between rounded-md pb-1 text-left leading-6',
+            'flex w-full items-center rounded-md pb-1 text-left leading-6',
             pathname.includes('/quickstart')
               ? 'text-sky-500'
               : 'hover:text-gray-900 dark:hover:text-gray-300',
           )}
         >
+          <NavIcon
+            icon={'home'}
+            aria-hidden="true"
+            className="ml-1 fill-inherit stroke-inherit text-inherit"
+          />
           Quickstart Guide
         </Link>
         {navigation.map((section) => {
@@ -73,7 +86,13 @@ export function Navigation({
               <Disclosure
                 as="div"
                 defaultOpen={
-                  section.href !== '' && pathname.includes(section.href)
+                  Boolean(pathname !== "/" && section.links?.find(link => {
+                    return link.links ?
+                    // sublinks
+                    link.links.find(l => l.href?.includes(pathname)) :
+                    // links
+                    link.href?.includes(pathname)
+                  }))
                 }
               >
                 {({ open }) => (
@@ -81,9 +100,13 @@ export function Navigation({
                     <Disclosure.Button
                       className={clsx(
                         styles.category,
-                        section.href !== '' && pathname.includes(section.href),
                       )}
                     >
+                      <NavIcon
+                        icon={section.icon}
+                        aria-hidden="true"
+                        className="ml-1 fill-inherit stroke-inherit text-inherit"
+                      />
                       {section.title}
                       <Icon
                         icon="chevron"
@@ -91,9 +114,7 @@ export function Navigation({
                           open
                             ? 'rotate-90 '
                             : 'text-gray-600 dark:text-gray-400',
-                          'w-5 shrink-0',
-                          pathname.includes(section.href) &&
-                            'text-gray-900 dark:text-gray-200',
+                          'ml-auto w-5 shrink-0'
                         )}
                         aria-hidden="true"
                       />

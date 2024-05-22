@@ -1,0 +1,23 @@
+name: Check for broken links
+
+on: [deployment_status]
+
+jobs:
+  check-links:
+    name: check broken links
+    if: github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: volta-cli/action@v1
+        with:
+          node-version: 20.12.0
+
+      - name: Install packages
+        run: npm install
+      - name: Install bun
+        run: npm install -g bun
+      - name: Links
+        run: npm run links
+        env:
+          BASE_URL: ${{ github.event.deployment_status.target_url }}
