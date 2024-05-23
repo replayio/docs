@@ -163,7 +163,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <div
         className={clsx(
-          'sticky top-0 z-50',
+          'sticky top-0 z-20',
           isScrolled
             ? 'backdrop-blur dark:bg-gray-900/95 [@supports(backdrop-filter:blur(0))]:bg-white/45 dark:[@supports(backdrop-filter:blur(0))]:bg-gray-900/75'
             : 'bg-transparent',
