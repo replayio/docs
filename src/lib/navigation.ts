@@ -129,7 +129,45 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           ],
         },
       ]
-    }
+    },
+    {
+      title: 'Test Suite Dashboard',
+      icon: 'analytics',
+      links: [
+        {
+          title: 'Recent runs',
+          href: '/basics/test-suites/recent-runs',
+        },
+        {
+          title: 'Top Failing And Flaky Tests',
+          href: '/basics/test-suites/top-failing-and-flaky-tests',
+        },
+        {
+          title: 'PR Comments',
+          href: '/basics/test-suites/pr-comments',
+        },
+        {
+          title: 'Performance Analysis',
+          badge: 'experimental',
+          href: '/basics/test-suites/performance-analysis',
+        },
+        {
+          title: 'Root Cause Analysis',
+          badge: 'experimental',
+          href: '/basics/test-suites/root-cause-analysis',
+        },
+        // {
+        //   title: 'Analytics',
+        //   href: '/basics/test-suites/analytics',
+        //
+        // },
+        // {
+        //   title: 'Test Flake Detection',
+        //   href: '/basics/test-suites/test-flake-detection',
+        //
+        // },
+      ],
+    },
   ],
   resources: [],
   learn: [
@@ -168,44 +206,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
       ],
     },
-    {
-      title: 'Replay Test Suites',
-      icon: 'analytics',
-      links: [
-        {
-          title: 'Recent runs ',
-          href: '/test-suites/runs-view',
-        },
-        {
-          title: 'Top Failing And Flaky Tests',
-          href: '/test-suites/top-failing-and-flaky-tests',
-        },
-        {
-          title: 'PR Comments',
-          href: '/test-suites/pr-comments',
-        },
-        {
-          title: 'Performance Analysis',
-          badge: 'experimental',
-          href: '/test-suites/performance-analysis',
-        },
-        {
-          title: 'Root Cause Analysis',
-          badge: 'experimental',
-          href: '/test-suites/root-cause-analysis',
-        },
-        // {
-        //   title: 'Analytics',
-        //   href: '/test-suites/analytics',
-        //
-        // },
-        // {
-        //   title: 'Test Flake Detection',
-        //   href: '/test-suites/test-flake-detection',
-        //
-        // },
-      ],
-    },
+
     {
       title: 'Test Runners',
       omitFromDocumentTitle: true,
