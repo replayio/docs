@@ -94,10 +94,10 @@ function Header() {
   )
 }
 
-function SubheaderNavigationLink({ href, name }: { href: string; name: string }) {
+function SubheaderNavigationLink({ href, baseHref, name }: { href: string; baseHref: string; name: string }) {
   let pathname = usePathname()
 
-  const isActive = pathname.startsWith(href);
+  const isActive = pathname.startsWith(baseHref);
 
   return (
     <a
@@ -115,9 +115,9 @@ function SubheaderNavigation() {
     <div className="h-pages-nav border-y border-gray-200 bg-gray-50">
       <div className="container px-12">
         <nav className="flex h-full items-center gap-4">
-          <SubheaderNavigationLink name={"Basics"} href={"/basics"}/>
-          <SubheaderNavigationLink name={"Learn"} href={"/learn"}/>
-          <SubheaderNavigationLink name={"Resources"} href={"/resources"}/>
+          <SubheaderNavigationLink name={"Basics"} baseHref={"/basics"} href={"/basics/overview/why-time-travel"}/>
+          <SubheaderNavigationLink name={"Learn"} baseHref={"/learn"}  href={"/learn/replay-course"}/>
+          <SubheaderNavigationLink name={"Resources"} baseHref={"/resources"} href={"/resources/test-runners/overview"}/>
         </nav>
     </div>
     </div>
@@ -125,8 +125,6 @@ function SubheaderNavigation() {
 }
 
 export function Layout({children}: { children: React.ReactNode }) {
-  let pathname = usePathname()
-  let isHomePage = pathname === '/'
   let {theme} = useTheme()
 
   useEffect(() => {
