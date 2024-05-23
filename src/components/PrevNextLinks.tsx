@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
-import { NavigationItem, navigation } from '@/lib/navigation'
+import {NavigationItem, navigation, flatNavigation} from '@/lib/navigation'
 
 function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -66,12 +66,12 @@ function flattenNavigation(navigation: NavigationItem[]): NavigationItem[] {
       item.links.forEach(processItem)
     }
   }
-  navigation.forEach(processItem)
+  flatNavigation.forEach(processItem)
 
   return flatList
 }
 
-const allLinks = flattenNavigation(navigation)
+const allLinks = flattenNavigation(flatNavigation)
 export function PrevNextLinks() {
   const pathname = usePathname()
 

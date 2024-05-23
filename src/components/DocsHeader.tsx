@@ -1,5 +1,5 @@
 'use client'
-import { navigation } from '@/lib/navigation'
+import {flatNavigation, navigation} from '@/lib/navigation'
 import { usePathname } from 'next/navigation'
 import { Figure } from './Figure'
 import { NavIcon } from './NavIcon'
@@ -32,7 +32,7 @@ export function DocsHeader({
 }) {
   let pathname = usePathname()
 
-  let section = navigation.find(
+  let section = flatNavigation.find(
     (section) => section.links?.find((link) => link.href === pathname),
   )
 

@@ -61,26 +61,17 @@ export function Navigation({
   onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
 }) {
   let pathname = usePathname()
+  let initialRoute = pathname.split('/')[1] as 'basics' | 'learn' | 'resources' | undefined;
+  if (!initialRoute || !['basics', 'learn', 'resources'].includes(initialRoute)) {
+    initialRoute = 'basics';
+  }
+
+  const localizedNavigation = navigation[initialRoute] ?? [];
+
   return (
     <nav className={clsx('text-base', className)}>
       <ul role="list" className="space-y-1 text-sm">
-        <Link
-          href="/quickstart"
-          className={clsx(
-            'flex w-full items-center rounded-md pb-1 text-left leading-6',
-            pathname.includes('/quickstart')
-              ? 'text-sky-500'
-              : 'hover:text-gray-900 dark:hover:text-gray-300',
-          )}
-        >
-          <NavIcon
-            icon={'home'}
-            aria-hidden="true"
-            className="ml-1 fill-inherit stroke-inherit text-inherit"
-          />
-          Quickstart Guide
-        </Link>
-        {navigation.map((section) => {
+        {localizedNavigation.map((section) => {
           return (
             <li key={section.title}>
               <Disclosure

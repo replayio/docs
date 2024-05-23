@@ -1,12 +1,12 @@
 import assert from 'assert'
-import { NavigationItem, navigation } from './navigation'
+import {NavigationItem, navigation, flatNavigation} from './navigation'
 
 export function getDocumentTitle(pathname: string) {
   let queue: Array<
     NavigationItem & {
       parent?: NavigationItem
     }
-  > = [...navigation]
+  > = [...flatNavigation]
 
   while (queue.length > 0) {
     let current = queue.pop()
