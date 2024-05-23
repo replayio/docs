@@ -83,7 +83,7 @@ function SubheaderNavigationLink({
   href: string
   baseHref: string
   name: string
-  isDefault: boolean
+  isDefault?: boolean
 }) {
   let pathname = usePathname()
 
