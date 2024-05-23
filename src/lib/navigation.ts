@@ -169,7 +169,223 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
   ],
-  resources: [],
+  resources: [
+    {
+      title: 'Test Runners',
+      omitFromDocumentTitle: true,
+      icon: 'commands',
+      links: [
+        {title: 'Overview', href: '/resources/test-runners/overview', icon: 'overview'},
+        {
+          title: 'Cypress.io',
+          href: '/resources/test-runners/cypress-io/getting-started',
+          links: [
+            {
+              title: 'Getting started',
+              href: '/resources/test-runners/cypress-io/getting-started',
+            },
+            {
+              title: 'Record your first replay',
+              href: '/resources/test-runners/cypress-io/record-your-first-replay',
+            },
+            {
+              title: 'Debugging tests',
+              href: '/resources/test-runners/cypress-io/debugging-tests',
+            },
+            {
+              title: 'Recording options',
+              href: '/resources/test-runners/cypress-io/recording-options',
+            },
+            {
+              title: 'GitHub actions',
+              href: '/resources/test-runners/cypress-io/github-actions',
+            },
+            {
+              title: 'Other CI providers',
+              href: '/resources/test-runners/cypress-io/other-ci-providers',
+            },
+            {
+              title: 'Examples',
+              href: '/resources/test-runners/cypress-io/examples',
+            },
+            {
+              title: 'FAQ',
+              href: '/resources/test-runners/cypress-io/faq',
+            },
+          ],
+        },
+        {
+          title: 'Playwright',
+          href: '/resources/test-runners/playwright/record-your-first-replay',
+          links: [
+            {
+              title: 'Record your first replay',
+              href: '/resources/test-runners/playwright/record-your-first-replay',
+            },
+            {
+              title: 'Debugging tests',
+              href: '/resources/test-runners/playwright/debugging-tests',
+            },
+            {
+              title: 'GitHub actions',
+              href: '/resources/test-runners/playwright/github-actions',
+            },
+            {
+              title: 'Other CI providers',
+              href: '/resources/test-runners/playwright/other-ci-providers',
+            },
+            {
+              title: 'Examples',
+              href: '/resources/test-runners/playwright/examples',
+            },
+            {
+              title: 'Writing new tests',
+              href: '/resources/test-runners/playwright/writing-new-tests',
+            },
+            {
+              title: 'FAQ',
+              href: '/resources/test-runners/playwright/faq',
+            },
+          ],
+        },
+        {title: 'Selenium', href: '/resources/test-runners/selenium', icon: 'selenium'},
+        {
+          title: 'WebdriverIO',
+          href: '/resources/test-runners/webdriver-io',
+        },
+        {
+          title: 'Puppeteer',
+          href: '/resources/test-runners/puppeteer',
+        },
+      ],
+    },
+    {
+      title: 'CI Workflows',
+      icon: 'settings',
+      links: [
+        // {
+        //   title: 'Setting up',
+        //   href: '/resources/ci-workflows/setting-up',
+        // },
+        {
+          title: 'Generate API key',
+          href: '/resources/ci-workflows/generate-api-key',
+        },
+        {
+          title: 'Recording strategies',
+          href: '/resources/ci-workflows/recording-strategies',
+        },
+        {
+          title: 'Upload strategies',
+          href: '/resources/ci-workflows/upload-strategies',
+        },
+      ],
+    },
+    {
+      title: 'Replay Runtimes',
+      icon: 'replaychrome',
+      links: [
+        {
+          title: 'Replay Chrome',
+          href: '/resources/replay-runtimes/replay-chrome',
+        },
+        {
+          title: 'Replay Firefox',
+          href: '/resources/replay-runtimes/replay-firefox',
+        },
+        {
+          title: 'Replay Node',
+          href: '/resources/replay-runtimes/replay-node',
+        },
+      ],
+    },
+    {
+      title: 'Replay CLI',
+      icon: 'cli',
+      links: [
+        {
+          title: 'Replay CLI',
+          href: '/resources/replay-cli/commands',
+        },
+        {
+          title: 'Uploading source maps',
+          href: '/resources/replay-cli/source-maps',
+        },
+      ],
+    },
+    {
+      title: 'Integrations',
+      icon: 'integrations',
+      links: [
+        {
+          title: 'Replay APIs',
+          href: '/resources/integrations/replay-apis/graphql-api',
+          links: [
+            {
+              title: 'GraphQL API',
+              href: '/resources/integrations/replay-apis/graphql-api',
+            },
+            {
+              title: 'Replay Protocol',
+              href: '/resources/integrations/replay-apis/replay-protocol',
+            },
+            {
+              title: 'Replay Driver',
+              href: '/resources/integrations/replay-apis/replay-driver',
+            },
+          ],
+        },
+        {
+          title: 'Frameworks & libraries',
+          href: '/resources/integrations/frameworks-libraries/nextjs',
+          links: [
+            {
+              title: 'NextJS',
+              href: '/resources/integrations/frameworks-libraries/nextjs',
+            },
+          ],
+        },
+        {
+          title: '3rd Party integrations',
+          href: '/resources/integrations/3rd-party-integrations/github-embeds',
+          links: [
+            {
+              title: 'GitHub Embeds',
+              href: '/resources/integrations/3rd-party-integrations/github-embeds',
+            },
+            {
+              title: 'Loom Embeds',
+              href: '/resources/integrations/3rd-party-integrations/loom-embeds',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Security + Privacy",
+      icon: 'security',
+      links: [
+        {
+          title: 'Security practices',
+          href: '/resources/security-and-privacy/security-practices',
+        },
+        {
+          title: 'Privacy principles',
+          href: '/resources/security-and-privacy/privacy-principles',
+        },
+      ],
+    },
+    {
+      title: "Additional Resources",
+      icon: 'university',
+      links: [
+        {
+          title: 'Advanced settings',
+          href: '/resources/additional-content/advanced-settings',
+        },
+      ],
+    }
+  ],
   learn: [
     // quickstart guide page is hardcoded into Navigation.tsx component
     {
@@ -206,119 +422,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
       ],
     },
-
-    {
-      title: 'Test Runners',
-      omitFromDocumentTitle: true,
-      icon: 'commands',
-      links: [
-        {title: 'Overview', href: '/test-runners/overview', icon: 'overview'},
-        {
-          title: 'Cypress.io',
-          href: '/test-runners/cypress-io/getting-started',
-          links: [
-            {
-              title: 'Getting started',
-              href: '/test-runners/cypress-io/getting-started',
-            },
-            {
-              title: 'Record your first replay',
-              href: '/test-runners/cypress-io/record-your-first-replay',
-            },
-            {
-              title: 'Debugging tests',
-              href: '/test-runners/cypress-io/debugging-tests',
-            },
-            {
-              title: 'Recording options',
-              href: '/test-runners/cypress-io/recording-options',
-            },
-            {
-              title: 'GitHub actions',
-              href: '/test-runners/cypress-io/github-actions',
-            },
-            {
-              title: 'Other CI providers',
-              href: '/test-runners/cypress-io/other-ci-providers',
-            },
-            {
-              title: 'Examples',
-              href: '/test-runners/cypress-io/examples',
-            },
-            {
-              title: 'FAQ',
-              href: '/test-runners/cypress-io/faq',
-            },
-          ],
-        },
-        {
-          title: 'Playwright',
-          href: '/test-runners/playwright/record-your-first-replay',
-          links: [
-            {
-              title: 'Record your first replay',
-              href: '/test-runners/playwright/record-your-first-replay',
-            },
-            {
-              title: 'Debugging tests',
-              href: '/test-runners/playwright/debugging-tests',
-            },
-            {
-              title: 'GitHub actions',
-              href: '/test-runners/playwright/github-actions',
-            },
-            {
-              title: 'Other CI providers',
-              href: '/test-runners/playwright/other-ci-providers',
-            },
-            {
-              title: 'Examples',
-              href: '/test-runners/playwright/examples',
-            },
-            {
-              title: 'Writing new tests',
-              href: '/test-runners/playwright/writing-new-tests',
-            },
-            {
-              title: 'FAQ',
-              href: '/test-runners/playwright/faq',
-            },
-          ],
-        },
-        {title: 'Selenium', href: '/test-runners/selenium', icon: 'selenium'},
-        {
-          title: 'WebdriverIO',
-          href: '/test-runners/webdriver-io',
-        },
-        {
-          title: 'Puppeteer',
-          href: '/test-runners/puppeteer',
-        },
-      ],
-    },
-    {
-      title: 'CI Workflows',
-      icon: 'settings',
-      links: [
-        // {
-        //   title: 'Setting up',
-        //   href: '/ci-workflows/setting-up',
-        //
-        // },
-        {
-          title: 'Generate API key',
-          href: '/ci-workflows/generate-api-key',
-        },
-        {
-          title: 'Recording strategies',
-          href: '/ci-workflows/recording-strategies',
-        },
-        {
-          title: 'Upload strategies',
-          href: '/ci-workflows/upload-strategies',
-        },
-      ],
-    },
     {
       title: 'Replay Teams',
       icon: 'settingupateam',
@@ -342,86 +445,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         {
           title: 'Billing',
           href: '/replay-teams/billing',
-        },
-      ],
-    },
-    {
-      title: 'Replay Runtimes',
-      icon: 'replaychrome',
-      links: [
-        {
-          title: 'Replay Chrome',
-          href: '/replay-runtimes/replay-chrome',
-        },
-        {
-          title: 'Replay Firefox',
-          href: '/replay-runtimes/replay-firefox',
-        },
-        {
-          title: 'Replay Node',
-          href: '/replay-runtimes/replay-node',
-        },
-      ],
-    },
-    {
-      title: 'Replay CLI',
-      icon: 'cli',
-      links: [
-        {
-          title: 'Replay CLI',
-          href: '/replay-cli/commands',
-        },
-        {
-          title: 'Uploading source maps',
-          href: '/replay-cli/source-maps',
-        },
-      ],
-    },
-    {
-      title: 'Integrations',
-      icon: 'integrations',
-      links: [
-        {
-          title: 'Replay APIs',
-          href: '/integrations/replay-apis/graphql-api',
-          links: [
-            {
-              title: 'GraphQL API',
-              href: '/integrations/replay-apis/graphql-api',
-            },
-            {
-              title: 'Replay Protocol',
-              href: '/integrations/replay-apis/replay-protocol',
-            },
-            {
-              title: 'Replay Driver',
-              href: '/integrations/replay-apis/replay-driver',
-            },
-          ],
-        },
-        {
-          title: 'Frameworks & libraries',
-          href: '/integrations/frameworks-libraries/nextjs',
-          links: [
-            {
-              title: 'NextJS',
-              href: '/integrations/frameworks-libraries/nextjs',
-            },
-          ],
-        },
-        {
-          title: '3rd Party integrations',
-          href: '/integrations/3rd-party-integrations/github-embeds',
-          links: [
-            {
-              title: 'GitHub Embeds',
-              href: '/integrations/3rd-party-integrations/github-embeds',
-            },
-            {
-              title: 'Loom Embeds',
-              href: '/integrations/3rd-party-integrations/loom-embeds',
-            },
-          ],
         },
       ],
     },
