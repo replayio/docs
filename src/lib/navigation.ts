@@ -175,7 +175,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       omitFromDocumentTitle: true,
       icon: 'commands',
       links: [
-        {title: 'Overview', href: '/resources/test-runners/overview', icon: 'overview'},
+        {title: 'Overview', href: '/resources/test-runners/overview'},
         {
           title: 'Cypress.io',
           href: '/resources/test-runners/cypress-io/getting-started',
@@ -248,7 +248,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
             },
           ],
         },
-        {title: 'Selenium', href: '/resources/test-runners/selenium', icon: 'selenium'},
+        {title: 'Selenium', href: '/resources/test-runners/selenium'},
         {
           title: 'WebdriverIO',
           href: '/resources/test-runners/webdriver-io',
