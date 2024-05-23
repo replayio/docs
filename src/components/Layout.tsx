@@ -36,9 +36,7 @@ function DiscordIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function Header() {
   return (
-    <header
-      className="border-b px-12 py-5 shadow-none shadow-gray-900/5 transition duration-500 sm:px-12  sm:py-5 lg:px-12 dark:border-gray-800 dark:bg-gray-900 dark:bg-gray-900/95 dark:shadow-none dark:shadow-gray-900/5 dark:backdrop-blur dark:transition dark:duration-500"
-    >
+    <header className="border-b px-12 py-5 shadow-none shadow-gray-900/5 transition duration-500 sm:px-12  sm:py-5 lg:px-12 dark:border-gray-800 dark:bg-gray-900 dark:bg-gray-900/95 dark:shadow-none dark:shadow-gray-900/5 dark:backdrop-blur dark:transition dark:duration-500">
       <div>
         <div className="flex flex-none flex-wrap items-center justify-between">
           <div className="mr-6 flex lg:hidden">
@@ -80,14 +78,17 @@ function SubheaderNavigationLink({
   href,
   baseHref,
   name,
+  isDefault,
 }: {
   href: string
   baseHref: string
   name: string
+  isDefault: boolean
 }) {
   let pathname = usePathname()
 
-  const isActive = pathname.startsWith(baseHref)
+  const isActive =
+    pathname.startsWith(baseHref) || (isDefault && pathname === '/')
 
   return (
     <a
@@ -109,6 +110,7 @@ function SubheaderNavigation() {
         <nav className="flex h-full items-center gap-4">
           <SubheaderNavigationLink
             name={'Basics'}
+            isDefault={true}
             baseHref={'/basics'}
             href={'/basics/overview/why-time-travel'}
           />
@@ -159,9 +161,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <div className="pointer-events-none fixed inset-x-0 top-0 -z-10 flex justify-center overflow-hidden">
         <div className="flex h-screen w-full flex-none justify-end bg-gradient-to-tr from-white via-white to-pink-500 opacity-5 dark:from-gray-800 dark:via-sky-600 dark:opacity-10"></div>
       </div>
-      <div className={clsx("z-50 sticky top-0",  isScrolled
-        ? 'backdrop-blur dark:bg-gray-900/95 [@supports(backdrop-filter:blur(0))]:bg-white/45 dark:[@supports(backdrop-filter:blur(0))]:bg-gray-900/75'
-        : 'bg-transparent',)}>
+      <div
+        className={clsx(
+          'sticky top-0 z-50',
+          isScrolled
+            ? 'backdrop-blur dark:bg-gray-900/95 [@supports(backdrop-filter:blur(0))]:bg-white/45 dark:[@supports(backdrop-filter:blur(0))]:bg-gray-900/75'
+            : 'bg-transparent',
+        )}
+      >
         <Header />
         <SubheaderNavigation />
       </div>
