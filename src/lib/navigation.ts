@@ -377,7 +377,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     },
     {
       title: "Additional Resources",
-      icon: 'university',
+      icon: 'overview',
       links: [
         {
           title: 'Advanced settings',
@@ -389,6 +389,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
   learn: [
     {
       title: 'Replay course',
+      icon: "university",
       href: '/learn/replay-course',
     },
     {
