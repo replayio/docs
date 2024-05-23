@@ -94,10 +94,40 @@ function Header() {
   )
 }
 
-export function Layout({ children }: { children: React.ReactNode }) {
+function SubheaderNavigationLink({ href, name }: { href: string; name: string }) {
+  let pathname = usePathname()
+
+  const isActive = pathname.startsWith(href);
+
+  return (
+    <a
+      className="py-3 relative flex h-full items-center text-sm font-medium text-gray-500"
+      href={href}
+    >
+      {name}
+      {isActive && <div className="absolute -bottom-px h-1 w-full rounded-full bg-sky-500"></div>}
+    </a>
+  )
+}
+
+function SubheaderNavigation() {
+  return (
+    <div className="h-pages-nav border-y border-gray-200 bg-gray-50">
+      <div className="container px-12">
+        <nav className="flex h-full items-center gap-4">
+          <SubheaderNavigationLink name={"Basics"} href={"/basics"}/>
+          <SubheaderNavigationLink name={"Learn"} href={"/learn"}/>
+          <SubheaderNavigationLink name={"Resources"} href={"/resources"}/>
+        </nav>
+    </div>
+    </div>
+  )
+}
+
+export function Layout({children}: { children: React.ReactNode }) {
   let pathname = usePathname()
   let isHomePage = pathname === '/'
-  let { theme } = useTheme()
+  let {theme} = useTheme()
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -112,16 +142,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex w-full flex-col">
       <div className="pointer-events-none fixed inset-x-0 top-0 -z-10 flex justify-center overflow-hidden">
-        <div className="flex h-screen w-full flex-none justify-end bg-gradient-to-tr from-white via-white to-pink-500 opacity-5 dark:from-gray-800 dark:via-sky-600 dark:opacity-10"></div>
+        <div
+          className="flex h-screen w-full flex-none justify-end bg-gradient-to-tr from-white via-white to-pink-500 opacity-5 dark:from-gray-800 dark:via-sky-600 dark:opacity-10"></div>
       </div>
-      <Header />
+      <Header/>
+      <SubheaderNavigation/>
 
       <div className="relative mx-auto flex w-full  flex-auto  sm:px-2 lg:px-8 xl:px-12">
         <div className="mr-12 hidden lg:relative lg:block lg:flex-none">
           {
             <>
-              <div className="absolute inset-y-0 right-0 w-[50vw] bg-gray-50 dark:hidden" />
-              <div className="absolute bottom-0 right-0 top-16 hidden h-12 w-px bg-gradient-to-t from-gray-800 dark:block" />
+              <div className="absolute inset-y-0 right-0 w-[50vw] border-r-gray-200 border-r dark:hidden"/>
+              <div
+                className="absolute bottom-0 right-0 top-16 hidden h-12 w-px bg-gradient-to-t from-gray-800 dark:block" />
               <div className="absolute bottom-0 right-0 top-28 hidden w-px bg-gray-800 dark:block" />
               <div className="sticky top-[4.75rem] -ml-0.5 h-[calc(100vh-4.75rem)] w-72 overflow-y-auto overflow-x-hidden py-8 pl-0.5 pr-2 xl:pr-2">
                 <Navigation />
