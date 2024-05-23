@@ -12,7 +12,125 @@ export type NavigationItem = {
 type NavigationNames = 'basics' | 'learn' | 'resources';
 
 export const navigation: Record<NavigationNames, NavigationItem[]> = {
-  basics: [],
+  basics: [
+    {
+      title: "Overview",
+      icon: 'home',
+      links: [
+        {
+          title: 'Why time-travel?',
+          href: '/basics/overview/why-time-travel',
+        },
+        {
+          title: 'Design Principals',
+          href: '/basics/overview/design-principals',
+        },
+        {
+          title: 'How does time-travel work?',
+          href: '/basics/overview/how-does-time-travel-work',
+        },
+      ]
+    },
+    {
+      title: "Getting Started",
+      icon: 'rocket',
+      links: [
+        {
+          title: 'Record your app',
+          href: '/basics/getting-started/record-your-app',
+        },
+      ],
+    },
+    {
+      title: "Replay DevTools",
+      icon: 'browserdevtools',
+      links: [
+        {
+          title: "Overview",
+          href: '/basics/replay-devtools/overview',
+        },
+        {
+          title: "Time Travel DevTools",
+          href: '/basics/replay-devtools/time-travel-devtools/live-console-logs',
+          links: [
+            {
+              title: "Live Console logs",
+              href: '/basics/replay-devtools/time-travel-devtools/live-console-logs',
+            },
+            {
+              title: "Collaborative DevTools",
+              href: '/basics/replay-devtools/time-travel-devtools/collaborative-devtools',
+            },
+            {
+              title: "Timeline annotation",
+              href: '/basics/replay-devtools/time-travel-devtools/timeline-annotation',
+            },
+            {
+              title: "Jump to event",
+              href: '/basics/replay-devtools/time-travel-devtools/jump-to-event',
+            },
+            {
+              title: "Focus window",
+              href: '/basics/replay-devtools/time-travel-devtools/focus-window',
+            }
+          ]
+        },
+        {
+          title: 'Framework DevTools',
+          href: '/basics/replay-devtools/framework-devtools/react-panel',
+          links: [
+            {
+              title: 'React Panel',
+              href: '/basics/replay-devtools/framework-devtools/react-panel',
+            },
+            {
+              title: 'Redux Panel',
+              href: '/basics/replay-devtools/framework-devtools/redux-panel',
+            },
+            {
+              title: 'Cypress Timeline',
+              href: '/basics/replay-devtools/framework-devtools/cypress-timeline',
+            },
+            {
+              title: 'Playwright Timeline',
+              href: '/basics/replay-devtools/framework-devtools/playwright-timeline',
+            },
+          ],
+        },
+        {
+          title: 'Browser DevTools',
+          href: '/basics/replay-devtools/browser-devtools/elements-panel',
+          links: [
+            {
+              title: 'Elements Panel',
+              href: '/basics/replay-devtools/browser-devtools/elements-panel',
+            },
+            {
+              title: 'Network Monitor',
+              href: '/basics/replay-devtools/browser-devtools/network-monitor',
+            },
+            {
+              title: 'Console Panel',
+              href: '/basics/replay-devtools/browser-devtools/console',
+            },
+
+            {
+              title: 'Source Viewer',
+              href: '/basics/replay-devtools/browser-devtools/source-viewer',
+            },
+            {
+              title: 'Pause Panel',
+              href: '/basics/replay-devtools/browser-devtools/pause-panel',
+            },
+            {
+              title: 'Replay Viewer',
+              href: '/basics/replay-devtools/browser-devtools/replay-viewer',
+            },
+          ],
+        },
+      ]
+    }
+  ],
   resources: [],
   learn: [
     // quickstart guide page is hardcoded into Navigation.tsx component
@@ -47,70 +165,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         {
           title: 'What is time travel?',
           href: '/time-travel-intro/what-is-time-travel',
-        },
-      ],
-    },
-    {
-      title: 'Replay DevTools',
-      icon: 'browserdevtools',
-      omitFromDocumentTitle: true,
-      links: [
-        {
-          title: 'Overview',
-          href: '/replay-devtools/overview',
-        },
-        {
-          title: 'Framework DevTools',
-          href: '/replay-devtools/framework-devtools/react-panel',
-          links: [
-            {
-              title: 'React Panel',
-              href: '/replay-devtools/framework-devtools/react-panel',
-            },
-            {
-              title: 'Redux Panel',
-              href: '/replay-devtools/framework-devtools/redux-panel',
-            },
-            {
-              title: 'Cypress Timeline',
-              href: '/replay-devtools/framework-devtools/cypress-timeline',
-            },
-            {
-              title: 'Playwright Timeline',
-              href: '/replay-devtools/framework-devtools/playwright-timeline',
-            },
-          ],
-        },
-        {
-          title: 'Browser DevTools',
-          href: '/replay-devtools/browser-devtools/elements-panel',
-          links: [
-            {
-              title: 'Elements Panel',
-              href: '/replay-devtools/browser-devtools/elements-panel',
-            },
-            {
-              title: 'Network Monitor',
-              href: '/replay-devtools/browser-devtools/network-monitor',
-            },
-            {
-              title: 'Console Panel',
-              href: '/replay-devtools/browser-devtools/console',
-            },
-
-            {
-              title: 'Source Viewer',
-              href: '/replay-devtools/browser-devtools/source-viewer',
-            },
-            {
-              title: 'Pause Panel',
-              href: '/replay-devtools/browser-devtools/pause-panel  ',
-            },
-            {
-              title: 'Replay Viewer',
-              href: '/replay-devtools/browser-devtools/replay-viewer',
-            },
-          ],
         },
       ],
     },
