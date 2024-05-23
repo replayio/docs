@@ -387,66 +387,9 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     }
   ],
   learn: [
-    // quickstart guide page is hardcoded into Navigation.tsx component
     {
-      title: 'Intro to time travel',
-      icon: 'rocket',
-      links: [
-        {
-          title: 'Why time travel?',
-          href: '/time-travel-intro/why-time-travel',
-        },
-        {
-          title: 'Add console logs on the fly',
-          href: '/time-travel-intro/add-console-logs-on-the-fly',
-        },
-        {
-          title: 'Collaborative devtools',
-          href: '/time-travel-intro/collaborative-devtools',
-        },
-        {
-          title: 'Visualize time. Inspect state.',
-          href: '/time-travel-intro/visualize-time-inspect-state',
-        },
-        {
-          title: 'Annotate the timeline',
-          href: '/time-travel-intro/annotate-the-timeline',
-        },
-        {
-          title: 'Bisect the problem',
-          href: '/time-travel-intro/bisect-the-problem',
-        },
-        {
-          title: 'What is time travel?',
-          href: '/time-travel-intro/what-is-time-travel',
-        },
-      ],
-    },
-    {
-      title: 'Replay Teams',
-      icon: 'settingupateam',
-      links: [
-        {
-          title: 'Setting up a team',
-          href: '/replay-teams/setting-up-a-team',
-        },
-        {
-          title: 'Okta integration',
-          href: '/replay-teams/okta-integration',
-        },
-        {
-          title: 'Enterprise security controls',
-          href: '/replay-teams/enterprise-security-controls',
-        },
-        {
-          title: 'Managing replays',
-          href: '/replay-teams/managing-replays',
-        },
-        {
-          title: 'Billing',
-          href: '/replay-teams/billing',
-        },
-      ],
+      title: 'Replay course',
+      href: '/learn/replay-course',
     },
     {
       title: 'Comparisons',
@@ -454,45 +397,23 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       links: [
         {
           title: 'Playwright',
-          href: '/comparison/playwright',
+          href: '/learn/comparison/playwright',
         },
         {
           title: 'Cypress',
-          href: '/comparison/cypress',
+          href: '/learn/comparison/cypress',
         },
         {
           title: `Chrome Recorder`,
-          href: '/comparison/chrome',
+          href: '/learn/comparison/chrome',
         },
         {
           title: 'Loom',
-          href: '/comparison/loom',
+          href: '/learn/comparison/loom',
         },
         {
           title: 'Browser DevTools',
-          href: '/comparison/devtools',
-        },
-      ],
-    },
-    {
-      title: 'Additional content',
-      icon: 'university',
-      links: [
-        {
-          title: 'Privacy principles',
-          href: '/additional-content/privacy-principles',
-        },
-        {
-          title: 'Security practices',
-          href: '/additional-content/security-practices',
-        },
-        {
-          title: 'Crash course',
-          href: '/additional-content/crash-course',
-        },
-        {
-          title: 'Advanced settings',
-          href: '/additional-content/advanced-settings',
+          href: '/learn/comparison/devtools',
         },
       ],
     },
