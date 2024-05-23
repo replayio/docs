@@ -55,18 +55,16 @@ bun i -g replayio
 Run the following command to open the Replay browser and start recording.
 
 ```sh
-replayio record
+replayio record first.replay.io/
 ```
-
-{% video src="recordCli" loop=true /%}
 
 This command will:
 
-- Prompt you to login to your Replay account (if not already logged in)
+- Prompt you to login to your Replay account with Google (if not already logged in)
 - Install the Replay browser (if not already installed)
-- Open the Replay browser for you to record an interaction to dive deeper into
+- Open the Replay browser to begin recording first.replay.io
 
-## Upload your replays
+## Upload your replay
 
 When you close the browser, you'll be prompted to upload your recordings.
 
