@@ -88,9 +88,9 @@ Upload your replays with the following command.
 replayio upload-all
 ```
 
-You can use Replay CLI to manage and upload your recordings. To learn more see the [docs on Replay CLI](/replay-cli/commands).
+You can use Replay CLI to manage and upload your recordings. To learn more see the [docs on Replay CLI](/reference/replay-cli/commands).
 
-After you upload your recordings, you can view them in [Test Suite Dashboard](/test-suites/runs-view).
+After you upload your recordings, you can view them in [Test Suite Dashboard](/basics/test-suites/recent-runs).
 {% /steps%}
 
 {% quick-links title="Read more" description="Learn how to manage your recordings, debug your app using Replay DevTools and more" %}

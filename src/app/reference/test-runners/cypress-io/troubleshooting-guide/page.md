@@ -83,7 +83,7 @@ sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb
 
 If you’re using DeploySentinel, you may notice that either you are unable to record replays or the replays created do not show the Cypress Panel when you open them. This is caused by environment variables set by our plugin that are not passed on by DeploySentinel.
 
-Fortunately, you can set this manually on the command line or in your CI configuration. Follow the [instructions for running with earlier versions of Cypress](/test-suites/cypress/faq) to configure `RECORD_REPLAY_METADATA_FILE` (and `RECORD_ALL_CONTENT` if you’re using Firefox).
+Fortunately, you can set this manually on the command line or in your CI configuration. Follow the [instructions for running with earlier versions of Cypress](/reference/test-runners/cypress-io/faq) to configure `RECORD_REPLAY_METADATA_FILE` (and `RECORD_ALL_CONTENT` if you’re using Firefox).
 
 ```bash
 RECORD_REPLAY_METADATA_FILE=/tmp/replay-metadata.json npx run cypress
@@ -99,7 +99,7 @@ You can run the test in **diagnostic mode** by passing in a mode flag.
 npx @replayio/cypress run --mode diagnostics --level full 
 ```
 
-For more information, see [Diagnostic modes](/test-suites/cypress/configuration#diagnostic-modes) 
+For more information, see [Diagnostic modes](/reference/test-runners/cypress-io/getting-started) 
 
 We also recommend going for the simplest reproduction which includes running the fewest specs possible and setting a timeout so that the test fails as soon as possible.
 

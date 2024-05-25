@@ -14,6 +14,6 @@ image: /images/create-team.png
 
 ## Managing API Keys
 
-Teams can create API Keys for uploading [source maps](/replay-cli/source-maps) during deploys or uploading replays recorded programmatically via our [Node runtime](/replay-runtimes/replay-node) or [end to end test runners](/test-runners/overview).
+Teams can create API Keys for uploading [source maps](/reference/replay-cli/source-maps) during deploys or uploading replays recorded programmatically via our [Node runtime](/reference/replay-runtimes/replay-node) or [end to end test runners](/reference/test-runners/overview).
 
-Check out the [docs on generating API keys](/ci-workflows/generate-api-key) to learn more.
+Check out the [docs on generating API keys](/reference/ci-workflows/generate-api-key) to learn more.

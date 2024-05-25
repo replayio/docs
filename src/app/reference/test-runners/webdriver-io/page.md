@@ -55,7 +55,7 @@ exports.config = {
 ```
 
 {% callout %}
-You need to set up `automationProtocol: 'devtools'` option in your config instead of default `webdriver` protocol for now. This may change in future updates.
+You need to set up `automationProtocol: 'devtools'` option in your config instead of default `webdriver` protocol for now. This may change in future updates.
 {% /callout %}
 
 ## Run your tests
@@ -68,9 +68,9 @@ Upload your replays with the following command:
 ```sh
 replayio upload --all
 ```
-To learn more see the [docs on Replay CLI](/replay-cli/commands).
+To learn more see the [docs on Replay CLI](/reference/replay-cli/commands).
 
-After you upload your recordings, you can view them in [Test Suite Dashboard](/test-suites/runs-view).
+After you upload your recordings, you can view them in [Test Suite Dashboard](/basics/test-suites/recent-runs).
 {% /steps%}
 
 {% callout %}

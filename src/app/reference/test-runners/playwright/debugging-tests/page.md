@@ -72,10 +72,10 @@ This enables you to jump into each function that was called, providing a detaile
 
 ## React panel
 
-When you view Component props, state, and hooks in the React panel, you’ll see the values which triggered the last render. This is one of those useful features that you didn’t realize you were missing until you have. [Learn more about React panel here](/replay-devtools/framework-devtools/react-panel).
+When you view Component props, state, and hooks in the React panel, you’ll see the values which triggered the last render. This is one of those useful features that you didn’t realize you were missing until you have. [Learn more about React panel here](/basics/replay-devtools/framework-devtools/react-panel).
 
 ## Replay vs. Playwright trace viewer
 
 Replay offers capabilities similar to Playwright’s trace-viewer but with more features and more power. In addition to exploring DOM snapshots, network information, and test steps, Replay allows you to view the source code of the application under test.
 
-This enables a deeper understanding not only of the effects of your tests but also of the flow of your application's logic, providing comprehensive insights into how your application responds during testing. You can read more about these differences in the [comparison article](/comparison/playwright).
+This enables a deeper understanding not only of the effects of your tests but also of the flow of your application's logic, providing comprehensive insights into how your application responds during testing. You can read more about these differences in the [comparison article](/learn/comparisons/playwright).

@@ -34,5 +34,5 @@ This is useful for busting flakes. It only records failing tests so there’s mi
 Run your tests as usual, but set the trigger to only run on merge to master.
 
 {% callout type="link" title="Upload strategies" href="/ci-workflows/upload-strategies" %}
-You have the flexibility to choose not only when to record but also when to upload your recordings. For details on various uploading strategies, [see the documentation](/ci-workflows/upload-strategies).
+You have the flexibility to choose not only when to record but also when to upload your recordings. For details on various uploading strategies, [see the documentation](/reference/ci-workflows/upload-strategies).
 {% /callout %}

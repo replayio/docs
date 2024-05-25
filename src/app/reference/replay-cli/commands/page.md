@@ -54,7 +54,7 @@ Press any key to continue
 
 ## Authentication
 
-Replay CLI requires you to log in when uploading your recordings. In a local environment, you can use `replayio login` command that opens a login page in a browser. When in a CI/CD environment, it’s not possible to use the same approach, but you can create an API key in Replay DevTools and add it to your CI/CD environment. Learn more in the [docs on how to generate API key](/ci-workflows/generate-api-key).
+Replay CLI requires you to log in when uploading your recordings. In a local environment, you can use `replayio login` command that opens a login page in a browser. When in a CI/CD environment, it’s not possible to use the same approach, but you can create an API key in Replay DevTools and add it to your CI/CD environment. Learn more in the [docs on how to generate API key](/reference/ci-workflows/generate-api-key).
 
 ## Available Commands
 
@@ -370,7 +370,7 @@ Display all available commands and their descriptions. Alternatively, you can pa
 
 ### upload-source-maps{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
 
-Uploads source-maps for a Workspace. See docs on [uploading source maps](/replay-cli/source-maps).
+Uploads source-maps for a Workspace. See docs on [uploading source maps](/reference/replay-cli/source-maps).
 
 #### Arguments
 

@@ -5,11 +5,11 @@ description: Record your first replay with the Replay browser in under a minute.
 
 Recording your application with the Replay browser lets you capture a bug once and inspect it after the fact without having to reproduce it again. This makes it possible to:
 
-- [Share the replay as a URL with your team so others can inspect it as if they were there when you recorded it.](/time-travel-intro/collaborative-devtools)
-- [Debug the replay with `console.log` added in at any point of the recording.](/time-travel-intro/add-console-logs-on-the-fly)
-- [Inspect Network requests](/replay-devtools/browser-devtools/network-monitor), [React components](/replay-devtools/framework-devtools/react-panel), and [DOM elements](/replay-devtools/browser-devtools/elements-panel) as if the application were running live on your laptop.
+- [Share the replay as a URL with your team so others can inspect it as if they were there when you recorded it.](/basics/replay-devtools/time-travel-devtools/collaborative-devtools)
+- [Debug the replay with `console.log` added in at any point of the recording.](/basics/replay-devtools/time-travel-devtools/live-console-logs)
+- [Inspect Network requests](/basics/replay-devtools/browser-devtools/network-monitor), [React components](/basics/replay-devtools/framework-devtools/react-panel), and [DOM elements](/basics/replay-devtools/browser-devtools/elements-panel) as if the application were running live on your laptop.
 
-The ability to record and deterministically replay runtimes like Chrome is referred to as ["time travel"](/time-travel-intro/why-time-travel).
+The ability to record and deterministically replay runtimes like Chrome is referred to as ["time travel"](/basics/overview/why-time-travel).
 
 Let's use the Replay CLI to record our first replay so you too can start time traveling:
 
@@ -92,7 +92,7 @@ When you open the "View recording" link in a browser, you'll be greeted with a d
 
 ![An upload preview of www.overboard.dev that says "only you can view this" with an option to add other people to see the upload](/images/upload_perms.png)
 
-> If you don't have a team yet, you can [create a team in the Replay Library.](/replay-teams/setting-up-a-team)
+> If you don't have a team yet, you can [create a team in the Replay Library.](/basics/replay-teams/setting-up-a-team)
 
 ## Inspect your replay
 
@@ -119,7 +119,7 @@ But looking at the request body, it looks like we're sending the color along jus
 ![The request subtab on the network request panel showing the request body with "{color: blue}"](/images/request_body.png)
 With this information, we can go to our backend team more informed with how to report a ticket to solve this.
 
-We can even integrate Replay into our [CI/CD pipeline to help debug flakey tests much more efficiently.](/test-runners/overview)
+We can even integrate Replay into our [CI/CD pipeline to help debug flakey tests much more efficiently.](/reference/test-runners/overview)
 
 {% /steps %}
 
@@ -129,7 +129,7 @@ We can even integrate Replay into our [CI/CD pipeline to help debug flakey tests
 
 {% accordion-item title="How do I upload recordings later?" %}
 
-You can always upload recordings later via the `replayio upload` command. Read more in Replay CLI [docs](/replay-cli/commands).
+You can always upload recordings later via the `replayio upload` command. Read more in Replay CLI [docs](/reference/replay-cli/commands).
 
 {% /accordion-item %}
 
@@ -137,13 +137,13 @@ You can always upload recordings later via the `replayio upload` command. Read m
 
 We are excited to release the Replay browser as a standalone application that you can download directly, log into, and start recording in a couple of months.
 
-In the interim, if you would perfer downloading a browser directly, you can use the [Replay Firefox](/replay-runtimes/replay-firefox) browser.
+In the interim, if you would perfer downloading a browser directly, you can use the [Replay Firefox](/reference/replay-runtimes/replay-firefox) browser.
 
 {% /accordion-item %}
 
 {% accordion-item title="Why do I need to login to Replay?" %}
 
-Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/time-travel-intro/what-is-time-travel)
+Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/basics/overview/how-does-time-travel-work)
 
 {% /accordion-item %}
 

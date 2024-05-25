@@ -52,7 +52,7 @@ While this example is fairly exaggerated, it illustrates two main problems of **
 Because of this, a flaky test does not feel like an act of higher force, but can be inspected with **a microscopic precision**. Even when your app is updated every millisecond, you can jump to the perfect spot, and see your DOM rendered exactly as it would on that moment.
 
 {% callout title="Learn more" %}
-To learn more about elements panel, head over to [Elements panel docs](/replay-devtools/browser-devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=kgJVauI7Obs).
+To learn more about elements panel, head over to [Elements panel docs](/basics/replay-devtools/browser-devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=kgJVauI7Obs).
 {% /callout %}
 
 {% video src="elementsPanelStopWatch" /%}
@@ -77,7 +77,7 @@ Because network panel is integrated with the rest of the tools, you’ll get eve
 Debugging tests should be a team effort whether that is collaboration between QA and devs or between different dev teams. When facing an API issue, commenting and sharing a replay will save hours of back and forth reporting. Instead of replicating the issue, share the issue exactly the way it happened. Locally or on CI.
 
 {% callout title="Learn more" %}
-To learn more about network panel, checkout [Network panel docs](/replay-devtools/browser-devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=rGKAOG6gZZU).
+To learn more about network panel, checkout [Network panel docs](/basics/replay-devtools/browser-devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=rGKAOG6gZZU).
 {% /callout %}
 
 ## Jump to code

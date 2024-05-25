@@ -9,7 +9,7 @@ Problems in complex web applications often depend on particular network, timing,
 
 Replay is the first deterministic browser, so all bugs recorded with Replay are **reproducible**, no matter how complex or rare they are. This means your engineers **don’t have to spend days** trying to reproduce a flaky test or rare customer support issue.
 
-[Learn more](/replay-devtools/overview)
+[Learn more](/basics/replay-devtools/overview)
 
 ## Debugging is fast and predictable
 
@@ -17,15 +17,15 @@ Diagnosing and fixing bugs hard-to-reproduce bugs in complex web applications of
 
 Replay lets you debug your application with **perfect reproducibility**. When you add a console log, the messages “automagically” appear in the Console as if they’ve always been there. This makes it easy to find the root cause, and fix the hardest issues at the source.
 
-[Learn more](/time-travel-intro/add-console-logs-on-the-fly)
+[Learn more](/basics/replay-devtools/time-travel-devtools/live-console-logs)
 
 ## Root causes are addressed at the source
 
-Even when a bug has been diagnosed and a fix applied, it can be **difficult to verify** whether the fix has really eliminated the bug. This increases the likelihood of rollbacks and future regressions.
+Even when a bug has been diagnosed and a fix applied, it can be **difficult to verify** whether the fix has really eliminated the bug. This increases the likelihood of rollbacks and future regressions.
 
 Time travel provides an environment where it’s easier to ask questions, generate new hypotheses and test your assumptions. When you’re able to see the **sequence of events that lead to the issue**, you’re able to write more confident code and build a more resilient and maintainable system.
 
-[Learn more](/time-travel-intro/annotate-the-timeline)
+[Learn more](/basics/replay-devtools/time-travel-devtools/timeline-annotation)
 
 ## End-to-end tests pass 99.9% of the time
 
@@ -33,7 +33,7 @@ Despite end-to-end tests being the best way to verify whether a change is safe t
 
 With Replay you can debug a flaky test as if it is **failing consistently on your laptop.** This makes it easy to hone in on the root cause, address the problem at the source, and maintain a healthy suite that passes **more than 90% of the time**.
 
-[Learn more](/test-runners/overview)
+[Learn more](/reference/test-runners/overview)
 
 ## Debug the hardest issues as a team
 
@@ -41,4 +41,4 @@ Because traditionally everybody has to **figure out how to replicate an issue**,
 
 When anyone can view the replay on **their own schedule**, investigate the problem, and share their perspective, debugging begins to feel like the **team sport** it should be. And as Linus Torvalds famously said, “with enough eye balls, all bugs are shallow”.
 
-[Learn more](/replay-devtools/browser-devtools/replay-viewer)
+[Learn more](/basics/replay-devtools/browser-devtools/replay-viewer)

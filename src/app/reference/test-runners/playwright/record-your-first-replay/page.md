@@ -133,7 +133,7 @@ Here are basic configurations for some of the most popular providers which you c
 
 ## Done!
 
-You’re ready to inspect your local test run in Replay DevTools now. You can also record your tests in your CI environment. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/test-runners/playwright/github-actions) and [other CI providers](/test-runners/playwright/other-ci-providers).
+You’re ready to inspect your local test run in Replay DevTools now. You can also record your tests in your CI environment. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/reference/test-runners/playwright/github-actions) and [other CI providers](/reference/test-runners/playwright/other-ci-providers).
 
 {% /steps %}
 

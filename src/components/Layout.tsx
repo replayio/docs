@@ -120,7 +120,7 @@ function SubheaderNavigation() {
             href={'/learn/replay-course'}
           />
           <SubheaderNavigationLink
-            name={'Resources'}
+            name={'Reference'}
             baseHref={'/reference'}
             href={'/reference/test-runners/overview'}
           />

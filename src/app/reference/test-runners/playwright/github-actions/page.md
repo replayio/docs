@@ -8,7 +8,7 @@ In real world scenarios, the `playwright.config.ts` has the defualt setup and is
 
 ## Simple setup
 
-In the setup below, we update the `playwright.config.ts` file to use the Replay chromium browser and Replay reporter which will record all tests by default and upload them to your [Test Suite Dashboard](/test-suites/runs-view).
+In the setup below, we update the `playwright.config.ts` file to use the Replay chromium browser and Replay reporter which will record all tests by default and upload them to your [Test Suite Dashboard](/basics/test-suites/recent-runs).
 
 ```jsx {% fileName="playwright.config.ts" lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from "@playwright/test";

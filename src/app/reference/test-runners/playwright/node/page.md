@@ -1,13 +1,10 @@
 ---
 title: Playwright Node
 ---
-import { Callout } from 'nextra/components'
 
 # Playwright Node
 
-<Callout type="info" emoji="❗">
-This implementation is experimental and does not provide the same features as using Playwright Test. It is not configured for use with Replay Test Teams.
-</Callout>
+> This implementation is experimental and does not provide the same features as using Playwright Test. It is not configured for use with Replay Test Teams.
 
 ## Recording with Playwright as a Node script
 
@@ -15,17 +12,13 @@ You can write tests as a function that uses `playwright.[browser].launch()`. Thi
 
 In this configuration, you’ll use the `getExecutablePath()` function from `@replayio/playwright` to ensure the Replay-enabled browser is used.
 
-<Callout type="info" emoji="👉">
- Passing the `RECORD_ALL_CONTENT: 1`  is only required for Replay Chromium.
-</Callout>
+> Passing the `RECORD_ALL_CONTENT: 1`  is only required for Replay Chromium.
 
 ## Metadata
 
 You can add metadata to your playwright recordings using either the `RECORD_REPLAY_METADATA` or `RECORD_REPLAY_METADATA_FILE` environment variable. If both are set, `RECORD_REPLAY_METADATA_FILE` takes precedence.
 
-<Callout type="info" emoji="👉">
-Currently, this metadata is only available locally except for `title`
-</Callout>
+> Currently, this metadata is only available locally except for `title`
 
 - `RECORD_REPLAY_METADATA_FILE` - The path to a file containing JSON-formatted metadata
 - `RECORD_REPLAY_METADATA` - JSON-formatted metadata string
@@ -223,7 +216,7 @@ const { getExecutablePath } = require("@replayio/playwright");
 
 Writing your tests as a Node script allows you to upload failed recordings automatically using `@replayio/replay` as a Node module.
 
-For the example below, use `REPLAY_API_KEY=123 node upload-failure.spec.js` to execute and record the test.
+For the example below, use `REPLAY_API_KEY=123 node upload-failure.spec.js` to execute and record the test.
 
 ```jsx
 //upload-failure.spec.js

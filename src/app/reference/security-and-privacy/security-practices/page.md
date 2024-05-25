@@ -2,7 +2,7 @@
 title: Security practices
 ---
 
-Security has always been a top priority at Replay. We have focused on making all aspects of the service secure, including product design, server architecture, and employee access. Now, automated monitoring through [Vanta ](https://www.vanta.com/)with formal policies that allow us to stay up to date on our security posture at all times.
+Security has always been a top priority at Replay. We have focused on making all aspects of the service secure, including product design, server architecture, and employee access. Now, automated monitoring through [Vanta ](https://www.vanta.com/)with formal policies that allow us to stay up to date on our security posture at all times.
 
 We do our best to document our approach to Software Development, Encryption, Authentication, Access Control and other topics in our [Security and Privacy](https://www.replay.io/security-privacy) page.
 

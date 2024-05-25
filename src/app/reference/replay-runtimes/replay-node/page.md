@@ -31,7 +31,7 @@ replay-node <script>
 
 ## Upload your replay
 
-Upload your recordings with the [Replay CLI](/replay-cli/commands):
+Upload your recordings with the [Replay CLI](/reference/replay-cli/commands):
 
 ```sh
 replayio upload

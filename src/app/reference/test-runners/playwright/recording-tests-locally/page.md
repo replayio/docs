@@ -40,7 +40,7 @@ export default config
 ### Options
 
 - `apiKey` (required) - this is the key that ensures communication with Test Suite Dashboard. Your recordings are uploaded using this key.
-- `upload` - Set to `false` by default. This option determines whether you want to upload your recordings automatically to your [Test Suite Dashboard](/test-suites/runs-view).
+- `upload` - Set to `false` by default. This option determines whether you want to upload your recordings automatically to your [Test Suite Dashboard](/basics/test-suites/recent-runs).
 
 ## Uploading replays manually
 

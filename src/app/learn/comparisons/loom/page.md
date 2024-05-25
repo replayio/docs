@@ -18,7 +18,7 @@ In this post, we’ll quickly explain how they’re different and when you’d u
 
 ### Replay records the entire browser session
 
-Replay is for recording everything happening in a particular **session** of the application. With Replay, we are recording **everything**, including the user events, network requests, the state of the application at every point in time, and what code was executing **during the recording**. This makes it particularly useful for reproducing issues and debugging.
+Replay is for recording everything happening in a particular **session** of the application. With Replay, we are recording **everything**, including the user events, network requests, the state of the application at every point in time, and what code was executing **during the recording**. This makes it particularly useful for reproducing issues and debugging.
 
 ### Replay is a debugger
 
@@ -26,7 +26,7 @@ Replay is a time-travel debugger that comes along with developer tools you’re 
 
 ### Replay records runtimes and automated tests
 
-Chrome Recorder, as the name implies, is specific to the Chrome browser and records manual user flows. Replay has versions for Firefox and Chromium, and can be used to record automated tests in CI. There is also [`replay-node-cli` for recording Node runtimes](/replay-runtimes/replay-node), no browser required.
+Chrome Recorder, as the name implies, is specific to the Chrome browser and records manual user flows. Replay has versions for Firefox and Chromium, and can be used to record automated tests in CI. There is also [`replay-node-cli` for recording Node runtimes](/reference/replay-runtimes/replay-node), no browser required.
 
 [Here](https://medium.com/replay-io/session-replay-vs-time-travel-debugging-14a1357e2fc3) is a post on Replay (Time Travel debugging) vs. Session Replay, another common comparison.
 

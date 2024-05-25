@@ -22,7 +22,7 @@ The use cases would be user flow validation for product, measuring how performan
 
 ### Replay records the entire browser session
 
-Replay is for recording everything happening in a particular **session** of the application. With Replay, we are recording **everything**, including the user events, network requests, the state of the application at every point in time, and what code was executing **during the recording**. This makes it particularly useful for reproducing issues and debugging.
+Replay is for recording everything happening in a particular **session** of the application. With Replay, we are recording **everything**, including the user events, network requests, the state of the application at every point in time, and what code was executing **during the recording**. This makes it particularly useful for reproducing issues and debugging.
 
 ### Replay is a debugger
 

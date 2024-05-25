@@ -7,7 +7,7 @@ Cypress team has created its [official GitHub Action](https://github.com/cypress
 Using this GitHub Action is optional and some teams prefer their own custom setup. Replay integrates well with both workflows, as shown in examples below
 
 {% callout %}
-These instructions assume that you have already installed [`@replayio/cypress`](https://www.npmjs.com/package/@replayio/cypress) plugin into your project. [Follow the instructions on this page](/test-runners/cypress-io/record-your-first-replay) to learn how to install the plugin.
+These instructions assume that you have already installed [`@replayio/cypress`](https://www.npmjs.com/package/@replayio/cypress) plugin into your project. [Follow the instructions on this page](/reference/test-runners/cypress-io/record-your-first-replay) to learn how to install the plugin.
 {% /callout %}
 
 ## Using GitHub Actions with `cypress-io/github-action`
@@ -72,5 +72,5 @@ Add a new step to run after your Cypress tests for uploading the replays:
 ```
 
 {% callout title="Recording strategies" %}
-There are different strategies for creating your replays. For example you can use Replay only when retrying a failed test, or choose to upload recordings from failed tests only. See [docs on recording strategies](/ci-workflows/recording-strategies) to learn more.
+There are different strategies for creating your replays. For example you can use Replay only when retrying a failed test, or choose to upload recordings from failed tests only. See [docs on recording strategies](/reference/ci-workflows/recording-strategies) to learn more.
 {% /callout %}

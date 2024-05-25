@@ -99,7 +99,7 @@ export default defineConfig({
 
 ## Generate and save your API key
 
-In order to upload your test replays you need to generate an API key and save it to your environment. You can generate an API key once you [created a team in Replay App](/replay-teams/setting-up-a-team). API key management section can be found in the team settings menu. [Read more about API keys here](/ci-workflows/generate-api-key).
+In order to upload your test replays you need to generate an API key and save it to your environment. You can generate an API key once you [created a team in Replay App](/basics/replay-teams/setting-up-a-team). API key management section can be found in the team settings menu. [Read more about API keys here](/reference/ci-workflows/generate-api-key).
 
 {% video src="generateApiKey" /%}
 
@@ -170,7 +170,7 @@ After your test finishes it will generate a link to Replay DevTools where you ca
 
 ## Done!
 
-You’re ready to inspect your local test run in Replay DevTools now. You can also record your tests in your CI environment. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/test-runners/cypress-io/github-actions) and [other CI providers](/test-runners/cypress-io/other-ci-providers).
+You’re ready to inspect your local test run in Replay DevTools now. You can also record your tests in your CI environment. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/reference/test-runners/cypress-io/github-actions) and [other CI providers](/reference/test-runners/cypress-io/other-ci-providers).
 
 {% /steps %}
 
