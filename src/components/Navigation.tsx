@@ -158,11 +158,11 @@ export function Navigation({
   let initialRoute = pathname.split('/')[1] as
     | 'basics'
     | 'learn'
-    | 'resources'
+    | 'reference'
     | undefined
   if (
     !initialRoute ||
-    !['basics', 'learn', 'resources'].includes(initialRoute)
+    !['basics', 'learn', 'reference'].includes(initialRoute)
   ) {
     initialRoute = 'basics'
   }

@@ -121,8 +121,8 @@ function SubheaderNavigation() {
           />
           <SubheaderNavigationLink
             name={'Resources'}
-            baseHref={'/resources'}
-            href={'/resources/test-runners/overview'}
+            baseHref={'/reference'}
+            href={'/reference/test-runners/overview'}
           />
         </nav>
       </div>

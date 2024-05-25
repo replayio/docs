@@ -9,7 +9,7 @@ export type NavigationItem = {
   title: string
 }
 
-type NavigationNames = 'basics' | 'learn' | 'resources';
+type NavigationNames = 'basics' | 'learn' | 'reference';
 
 export const navigation: Record<NavigationNames, NavigationItem[]> = {
   basics: [
@@ -169,93 +169,93 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
   ],
-  resources: [
+  reference: [
     {
       title: 'Test Runners',
       omitFromDocumentTitle: true,
       icon: 'commands',
       links: [
-        {title: 'Overview', href: '/resources/test-runners/overview'},
+        {title: 'Overview', href: '/reference/test-runners/overview'},
         {
           title: 'Cypress.io',
-          href: '/resources/test-runners/cypress-io/getting-started',
+          href: '/reference/test-runners/cypress-io/getting-started',
           links: [
             {
               title: 'Getting started',
-              href: '/resources/test-runners/cypress-io/getting-started',
+              href: '/reference/test-runners/cypress-io/getting-started',
             },
             {
               title: 'Record your first replay',
-              href: '/resources/test-runners/cypress-io/record-your-first-replay',
+              href: '/reference/test-runners/cypress-io/record-your-first-replay',
             },
             {
               title: 'Debugging tests',
-              href: '/resources/test-runners/cypress-io/debugging-tests',
+              href: '/reference/test-runners/cypress-io/debugging-tests',
             },
             {
               title: 'Recording options',
-              href: '/resources/test-runners/cypress-io/recording-options',
+              href: '/reference/test-runners/cypress-io/recording-options',
             },
             {
               title: 'GitHub actions',
-              href: '/resources/test-runners/cypress-io/github-actions',
+              href: '/reference/test-runners/cypress-io/github-actions',
             },
             {
               title: 'Other CI providers',
-              href: '/resources/test-runners/cypress-io/other-ci-providers',
+              href: '/reference/test-runners/cypress-io/other-ci-providers',
             },
             {
               title: 'Examples',
-              href: '/resources/test-runners/cypress-io/examples',
+              href: '/reference/test-runners/cypress-io/examples',
             },
             {
               title: 'FAQ',
-              href: '/resources/test-runners/cypress-io/faq',
+              href: '/reference/test-runners/cypress-io/faq',
             },
           ],
         },
         {
           title: 'Playwright',
-          href: '/resources/test-runners/playwright/record-your-first-replay',
+          href: '/reference/test-runners/playwright/record-your-first-replay',
           links: [
             {
               title: 'Record your first replay',
-              href: '/resources/test-runners/playwright/record-your-first-replay',
+              href: '/reference/test-runners/playwright/record-your-first-replay',
             },
             {
               title: 'Debugging tests',
-              href: '/resources/test-runners/playwright/debugging-tests',
+              href: '/reference/test-runners/playwright/debugging-tests',
             },
             {
               title: 'GitHub actions',
-              href: '/resources/test-runners/playwright/github-actions',
+              href: '/reference/test-runners/playwright/github-actions',
             },
             {
               title: 'Other CI providers',
-              href: '/resources/test-runners/playwright/other-ci-providers',
+              href: '/reference/test-runners/playwright/other-ci-providers',
             },
             {
               title: 'Examples',
-              href: '/resources/test-runners/playwright/examples',
+              href: '/reference/test-runners/playwright/examples',
             },
             {
               title: 'Writing new tests',
-              href: '/resources/test-runners/playwright/writing-new-tests',
+              href: '/reference/test-runners/playwright/writing-new-tests',
             },
             {
               title: 'FAQ',
-              href: '/resources/test-runners/playwright/faq',
+              href: '/reference/test-runners/playwright/faq',
             },
           ],
         },
-        {title: 'Selenium', href: '/resources/test-runners/selenium'},
+        {title: 'Selenium', href: '/reference/test-runners/selenium'},
         {
           title: 'WebdriverIO',
-          href: '/resources/test-runners/webdriver-io',
+          href: '/reference/test-runners/webdriver-io',
         },
         {
           title: 'Puppeteer',
-          href: '/resources/test-runners/puppeteer',
+          href: '/reference/test-runners/puppeteer',
         },
       ],
     },
@@ -265,19 +265,19 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       links: [
         // {
         //   title: 'Setting up',
-        //   href: '/resources/ci-workflows/setting-up',
+        //   href: '/reference/ci-workflows/setting-up',
         // },
         {
           title: 'Generate API key',
-          href: '/resources/ci-workflows/generate-api-key',
+          href: '/reference/ci-workflows/generate-api-key',
         },
         {
           title: 'Recording strategies',
-          href: '/resources/ci-workflows/recording-strategies',
+          href: '/reference/ci-workflows/recording-strategies',
         },
         {
           title: 'Upload strategies',
-          href: '/resources/ci-workflows/upload-strategies',
+          href: '/reference/ci-workflows/upload-strategies',
         },
       ],
     },
@@ -287,15 +287,15 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       links: [
         {
           title: 'Replay Chrome',
-          href: '/resources/replay-runtimes/replay-chrome',
+          href: '/reference/replay-runtimes/replay-chrome',
         },
         {
           title: 'Replay Firefox',
-          href: '/resources/replay-runtimes/replay-firefox',
+          href: '/reference/replay-runtimes/replay-firefox',
         },
         {
           title: 'Replay Node',
-          href: '/resources/replay-runtimes/replay-node',
+          href: '/reference/replay-runtimes/replay-node',
         },
       ],
     },
@@ -305,11 +305,11 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       links: [
         {
           title: 'Replay CLI',
-          href: '/resources/replay-cli/commands',
+          href: '/reference/replay-cli/commands',
         },
         {
           title: 'Uploading source maps',
-          href: '/resources/replay-cli/source-maps',
+          href: '/reference/replay-cli/source-maps',
         },
       ],
     },
@@ -319,43 +319,43 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       links: [
         {
           title: 'Replay APIs',
-          href: '/resources/integrations/replay-apis/graphql-api',
+          href: '/reference/integrations/replay-apis/graphql-api',
           links: [
             {
               title: 'GraphQL API',
-              href: '/resources/integrations/replay-apis/graphql-api',
+              href: '/reference/integrations/replay-apis/graphql-api',
             },
             {
               title: 'Replay Protocol',
-              href: '/resources/integrations/replay-apis/replay-protocol',
+              href: '/reference/integrations/replay-apis/replay-protocol',
             },
             {
               title: 'Replay Driver',
-              href: '/resources/integrations/replay-apis/replay-driver',
+              href: '/reference/integrations/replay-apis/replay-driver',
             },
           ],
         },
         {
           title: 'Frameworks & libraries',
-          href: '/resources/integrations/frameworks-libraries/nextjs',
+          href: '/reference/integrations/frameworks-libraries/nextjs',
           links: [
             {
               title: 'NextJS',
-              href: '/resources/integrations/frameworks-libraries/nextjs',
+              href: '/reference/integrations/frameworks-libraries/nextjs',
             },
           ],
         },
         {
           title: '3rd Party integrations',
-          href: '/resources/integrations/3rd-party-integrations/github-embeds',
+          href: '/reference/integrations/3rd-party-integrations/github-embeds',
           links: [
             {
               title: 'GitHub Embeds',
-              href: '/resources/integrations/3rd-party-integrations/github-embeds',
+              href: '/reference/integrations/3rd-party-integrations/github-embeds',
             },
             {
               title: 'Loom Embeds',
-              href: '/resources/integrations/3rd-party-integrations/loom-embeds',
+              href: '/reference/integrations/3rd-party-integrations/loom-embeds',
             },
           ],
         },
@@ -367,21 +367,21 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       links: [
         {
           title: 'Security practices',
-          href: '/resources/security-and-privacy/security-practices',
+          href: '/reference/security-and-privacy/security-practices',
         },
         {
           title: 'Privacy principles',
-          href: '/resources/security-and-privacy/privacy-principles',
+          href: '/reference/security-and-privacy/privacy-principles',
         },
       ],
     },
     {
-      title: "Additional Resources",
+      title: "Additional reference",
       icon: 'overview',
       links: [
         {
           title: 'Advanced settings',
-          href: '/resources/additional-content/advanced-settings',
+          href: '/reference/additional-content/advanced-settings',
         },
       ],
     }

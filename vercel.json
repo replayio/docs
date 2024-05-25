@@ -30,7 +30,7 @@
     },
     {
       "source": "/test-suites/test-runners/cypress/cypress-faqs",
-      "destination": "/resources/test-runners/cypress-io/faq"
+      "destination": "/reference/test-runners/cypress-io/faq"
     },
     {
       "source": "/getting-started/replay-browser/install-chrome",
@@ -65,7 +65,7 @@
       "destination": "/basics/getting-started/record-your-app"
     },
     {
-      "source": "/docs/resources-and-examples-d25ae319114e4d109022458cd47f38ec",
+      "source": "/docs/reference-and-examples-d25ae319114e4d109022458cd47f38ec",
       "destination": "/basics/getting-started/record-your-app"
     },
     {
@@ -101,12 +101,12 @@
       "destination": "/basics/replay-devtools/browser-devtools/replay-viewer"
     },
     {
-      "source": "/resources-and-examples/security-practices",
-      "destination": "/resources/security-and-privacy/security-practices"
+      "source": "/reference-and-examples/security-practices",
+      "destination": "/reference/security-and-privacy/security-practices"
     },
     {
       "source": "/case-studies-and-comparisons/replay-vs.-session-replay",
-      "destination": "/resources/test-runners/overview"
+      "destination": "/reference/test-runners/overview"
     },
     {
       "source": "/case-studies-and-comparisons/replay-vs.-chrome-recorder",
@@ -129,11 +129,11 @@
       "destination": "/basics/replay-devtools/framework-devtools/cypress-timeline"
     },
     {
-      "source": "/resources-and-examples",
+      "source": "/reference-and-examples",
       "destination": "/"
     },
     {
-      "source": "/resources-and-examples#7375c6180b8848f48be37c4bf1026007",
+      "source": "/reference-and-examples#7375c6180b8848f48be37c4bf1026007",
       "destination": "/"
     },
     {
@@ -185,20 +185,20 @@
       "destination": "/learn/comparisons/playwright"
     },
     {
-      "source": "/resources/replay.io-case-studies/midnite-builds-time-travel-workflows-for-its-fast-paced-betting-platform",
+      "source": "/reference/replay.io-case-studies/midnite-builds-time-travel-workflows-for-its-fast-paced-betting-platform",
       "destination": "https://blog.replay.io/midnite-builds-time-travel-workflows-for-its-fast-paced-betting-platform"
     },
     {
       "source": "/test-suites/cypress",
-      "destination": "/resources/test-runners/cypress-io/record-your-first-replay"
+      "destination": "/reference/test-runners/cypress-io/record-your-first-replay"
     },
     {
       "source": "/test-suites/playwright",
-      "destination": "/resources/test-runners/playwright/record-your-first-replay"
+      "destination": "/reference/test-runners/playwright/record-your-first-replay"
     },
     {
       "source": "/docs/recording-automated-tests-5bf7d91b65cd46deab1867b07bd12bdf",
-      "destination": "/resources/test-runners/overview"
+      "destination": "/reference/test-runners/overview"
     },
     {
       "source": "/contribute/contributing-to-replay",
@@ -242,11 +242,11 @@
     },
     {
       "source": "/getting-started/replay-browser/install-chrome",
-      "destination": "/resources/replay-runtimes/replay-chrome"
+      "destination": "/reference/replay-runtimes/replay-chrome"
     },
     {
       "source": "/getting-started/replay-browser/install-firefox",
-      "destination": "/resources/replay-runtimes/replay-firefox"
+      "destination": "/reference/replay-runtimes/replay-firefox"
     },
     {
       "source": "/getting-started/replay-browser/linux-support",
@@ -290,7 +290,7 @@
     },
     {
       "source": "/getting-started/teams-admin/uploading-source-maps",
-      "destination": "/resources/replay-cli/source-maps"
+      "destination": "/reference/replay-cli/source-maps"
     },
     {
       "source": "/getting-started/test-suite-integration",
@@ -306,11 +306,11 @@
     },
     {
       "source": "/learn-more/contribute",
-      "destination": "/resources/integrations/3rd-party-integrations/github-embeds"
+      "destination": "/reference/integrations/3rd-party-integrations/github-embeds"
     },
     {
       "source": "/learn-more/contribute/contributing-to-replay",
-      "destination": "/resources/integrations/3rd-party-integrations/github-embeds"
+      "destination": "/reference/integrations/3rd-party-integrations/github-embeds"
     },
     {
       "source": "/learn-more/contribute/expanding-replay",
@@ -330,19 +330,19 @@
     },
     {
       "source": "/learn-more/contribute/replay-for-new-contributors",
-      "destination": "/resources/test-runners/cypress-io/record-your-first-replay"
+      "destination": "/reference/test-runners/cypress-io/record-your-first-replay"
     },
     {
       "source": "/learn-more/debugging-examples",
-      "destination": "/resources/test-runners/cypress-io/debugging-tests"
+      "destination": "/reference/test-runners/cypress-io/debugging-tests"
     },
     {
       "source": "/learn-more/debugging-examples/blog-debugging-stately-with-replay-node",
-      "destination": "/resources/test-runners/cypress-io/debugging-tests"
+      "destination": "/reference/test-runners/cypress-io/debugging-tests"
     },
     {
       "source": "/learn-more/debugging-examples/debugging-navigation-issues",
-      "destination": "/resources/test-runners/playwright/debugging-tests"
+      "destination": "/reference/test-runners/playwright/debugging-tests"
     },
     {
       "source": "/learn-more/examples-of-flaky-tests",
@@ -361,12 +361,12 @@
       "destination": "/basics/replay-devtools/browser-devtools/pause-panel"
     },
     {
-      "source": "/learn-more/resources",
+      "source": "/learn-more/reference",
       "destination": "/"
     },
     {
       "source": "/learn-more/workflows",
-      "destination": "/resources/ci-workflows/generate-api-key"
+      "destination": "/reference/ci-workflows/generate-api-key"
     },
     {
       "source": "/learn-more/workflows/documenting-pull-requests",
@@ -378,7 +378,7 @@
     },
     {
       "source": "/learn-more/workflows/oss-projects",
-      "destination": "/resources/test-runners/overview"
+      "destination": "/reference/test-runners/overview"
     },
     {
       "source": "/learn-more/workflows/recording-bug-reports",
@@ -442,15 +442,15 @@
     },
     {
       "source": "/reference-guide/recording/replay-browser",
-      "destination": "/resources/replay-runtimes/replay-chrome"
+      "destination": "/reference/replay-runtimes/replay-chrome"
     },
     {
       "source": "/reference-guide/recording/replay-cli",
-      "destination": "/resources/replay-cli/commands"
+      "destination": "/reference/replay-cli/commands"
     },
     {
       "source": "/reference-guide/recording/replay-node-(experimental)",
-      "destination": "/resources/replay-runtimes/replay-node"
+      "destination": "/reference/replay-runtimes/replay-node"
     },
     {
       "source": "/reference-guide/viewer",
@@ -465,136 +465,136 @@
       "destination": "/basics/replay-devtools/browser-devtools/replay-viewer"
     },
     {
-      "source": "/resources/comparisons",
+      "source": "/reference/comparisons",
       "destination": "/learn/comparisons/chrome"
     },
     {
-      "source": "/resources/comparisons/chrome-recorder-vs-replay",
+      "source": "/reference/comparisons/chrome-recorder-vs-replay",
       "destination": "/learn/comparisons/chrome"
     },
     {
-      "source": "/resources/comparisons/cypress-test-replay-vs-replay-devtools",
+      "source": "/reference/comparisons/cypress-test-replay-vs-replay-devtools",
       "destination": "/learn/comparisons/cypress"
     },
     {
-      "source": "/resources/comparisons/live-debugging-vs-time-travel-debugging",
+      "source": "/reference/comparisons/live-debugging-vs-time-travel-debugging",
       "destination": "/learn/comparisons/chrome"
     },
     {
-      "source": "/resources/comparisons/loom-vs-replay",
+      "source": "/reference/comparisons/loom-vs-replay",
       "destination": "/learn/comparisons/loom"
     },
     {
-      "source": "/resources/comparisons/playwright-trace-viewer-vs-replay-devtools",
+      "source": "/reference/comparisons/playwright-trace-viewer-vs-replay-devtools",
       "destination": "/learn/comparisons/playwright"
     },
     {
-      "source": "/resources/comparisons/sentry-vs-replay",
+      "source": "/reference/comparisons/sentry-vs-replay",
       "destination": "/learn/comparisons/devtools"
     },
     {
-      "source": "/resources/comparisons/session-replay-vs-runtime-replay",
+      "source": "/reference/comparisons/session-replay-vs-runtime-replay",
       "destination": "/learn/comparisons/session-replay"
     },
     {
-      "source": "/resources/get-help",
+      "source": "/reference/get-help",
       "destination": "/"
     },
     {
-      "source": "/resources/get-help/contact-community",
+      "source": "/reference/get-help/contact-community",
       "destination": "/"
     },
     {
-      "source": "/resources/get-help/experimental-features",
+      "source": "/reference/get-help/experimental-features",
       "destination": "/"
     },
     {
-      "source": "/resources/get-help/limitations",
+      "source": "/reference/get-help/limitations",
       "destination": "/"
     },
     {
-      "source": "/resources/get-help/recording-platform-support",
+      "source": "/reference/get-help/recording-platform-support",
       "destination": "/"
     },
     {
-      "source": "/resources/get-help/troubleshooting",
+      "source": "/reference/get-help/troubleshooting",
       "destination": "/"
     },
     {
-      "source": "/resources/get-help/user-settings",
+      "source": "/reference/get-help/user-settings",
       "destination": "/"
     },
     {
-      "source": "/resources/get-help/windows-support/wsl-deprecated",
+      "source": "/reference/get-help/windows-support/wsl-deprecated",
       "destination": "/"
     },
     {
-      "source": "/resources/graphql-api",
-      "destination": "/resources/integrations/replay-apis/graphql-api"
+      "source": "/reference/graphql-api",
+      "destination": "/reference/integrations/replay-apis/graphql-api"
     },
     {
-      "source": "/resources/next-js",
-      "destination": "/resources/integrations/frameworks-libraries/nextjs"
+      "source": "/reference/next-js",
+      "destination": "/reference/integrations/frameworks-libraries/nextjs"
     },
     {
-      "source": "/resources/privacy-guarantees",
-      "destination": "/resources/security-and-privacy/privacy-principles"
+      "source": "/reference/privacy-guarantees",
+      "destination": "/reference/security-and-privacy/privacy-principles"
     },
     {
-      "source": "/resources/replay-io-case-studies",
+      "source": "/reference/replay-io-case-studies",
       "destination": "/"
     },
     {
-      "source": "/resources/replay-io-case-studies/glide-saves-40-hours-weekly-by-eliminating-the-rep",
+      "source": "/reference/replay-io-case-studies/glide-saves-40-hours-weekly-by-eliminating-the-rep",
       "destination": "https://blog.replay.io/glide-saves-40-hours-weekly-by-eliminating-the-%22reproducibility%22-problem"
     },
     {
-      "source": "/resources/replay-io-case-studies/midnite-builds-time-travel-workflows-for-its-fast",
+      "source": "/reference/replay-io-case-studies/midnite-builds-time-travel-workflows-for-its-fast",
       "destination": "https://blog.replay.io/midnite-builds-time-travel-workflows-for-its-fast-paced-betting-platform"
     },
     {
-      "source": "/resources/replay-io-case-studies/pantheon-solves-performance-bottlenecks-improving",
+      "source": "/reference/replay-io-case-studies/pantheon-solves-performance-bottlenecks-improving",
       "destination": "https://blog.replay.io/pantheon-solves-performance-bottlenecks-improving-load-time-by-5x"
     },
     {
-      "source": "/resources/replay-io-case-studies/tablecheck-transforms-qa-dev-communication-to-supp",
+      "source": "/reference/replay-io-case-studies/tablecheck-transforms-qa-dev-communication-to-supp",
       "destination": "https://blog.replay.io/tablecheck-transforms-qa-lessgreater-dev-communication-to-support-thousands-of-restaurants-and-hotel-chains"
     },
     {
-      "source": "/resources/security-practices",
-      "destination": "/resources/security-and-privacy/security-practices"
+      "source": "/reference/security-practices",
+      "destination": "/reference/security-and-privacy/security-practices"
     },
     {
-      "source": "/resources/what-is-runtime-replay",
+      "source": "/reference/what-is-runtime-replay",
       "destination": "/basics/overview/why-time-travel"
     },
     {
       "source": "/test-suites/_archive/ci-integration/circle-ci",
-      "destination": "/resources/ci-workflows/recording-strategies"
+      "destination": "/reference/ci-workflows/recording-strategies"
     },
     {
       "source": "/test-suites/_archive/ci-integration/github-actions",
-      "destination": "/resources/test-runners/cypress-io/github-actions"
+      "destination": "/reference/test-runners/cypress-io/github-actions"
     },
     {
       "source": "/test-suites/cypress/_archive/cypress-replays",
-      "destination": "/resources/test-runners/cypress-io/getting-started"
+      "destination": "/reference/test-runners/cypress-io/getting-started"
     },
     {
       "source": "/test-suites/cypress/configuration",
-      "destination": "/resources/test-runners/cypress-io/getting-started"
+      "destination": "/reference/test-runners/cypress-io/getting-started"
     },
     {
       "source": "/test-suites/cypress/continuous-integration",
-      "destination": "/resources/test-runners/cypress-io/other-ci-providers"
+      "destination": "/reference/test-runners/cypress-io/other-ci-providers"
     },
     {
       "source": "/test-suites/cypress/continuous-integration/github",
-      "destination": "/resources/test-runners/cypress-io/github-actions"
+      "destination": "/reference/test-runners/cypress-io/github-actions"
     },
     {
       "source": "/test-suites/cypress/continuous-integration/other-ci-providers",
-      "destination": "/resources/test-runners/cypress-io/other-ci-providers"
+      "destination": "/reference/test-runners/cypress-io/other-ci-providers"
     },
     {
       "source": "/test-suites/cypress/dashboard",
@@ -602,23 +602,23 @@
     },
     {
       "source": "/test-suites/cypress/debugging-tips",
-      "destination": "/resources/test-runners/cypress-io/debugging-tests"
+      "destination": "/reference/test-runners/cypress-io/debugging-tests"
     },
     {
       "source": "/test-suites/cypress/faq",
-      "destination": "/resources/test-runners/cypress-io/faq"
+      "destination": "/reference/test-runners/cypress-io/faq"
     },
     {
       "source": "/test-suites/cypress/installation",
-      "destination": "/resources/test-runners/cypress-io/getting-started"
+      "destination": "/reference/test-runners/cypress-io/getting-started"
     },
     {
       "source": "/test-suites/cypress/panel",
-      "destination": "/resources/test-runners/cypress-io/getting-started"
+      "destination": "/reference/test-runners/cypress-io/getting-started"
     },
     {
       "source": "/test-suites/cypress/troubleshooting-guide",
-      "destination": "/resources/test-runners/cypress-io/faq"
+      "destination": "/reference/test-runners/cypress-io/faq"
     },
     {
       "source": "/test-suites/features/pull-request-comments",
@@ -634,51 +634,51 @@
     },
     {
       "source": "/test-suites/index",
-      "destination": "/resources/test-runners/overview"
+      "destination": "/reference/test-runners/overview"
     },
     {
       "source": "/test-suites/jest",
-      "destination": "/resources/test-runners/overview"
+      "destination": "/reference/test-runners/overview"
     },
     {
       "source": "/test-suites/playwright/continuous-integration",
-      "destination": "/resources/test-runners/playwright/github-actions"
+      "destination": "/reference/test-runners/playwright/github-actions"
     },
     {
       "source": "/test-suites/playwright/continuous-integration/git-hub-actions",
-      "destination": "/resources/test-runners/playwright/github-actions"
+      "destination": "/reference/test-runners/playwright/github-actions"
     },
     {
       "source": "/test-suites/playwright/continuous-integration/other-ci-providers",
-      "destination": "/resources/test-runners/playwright/other-ci-providers"
+      "destination": "/reference/test-runners/playwright/other-ci-providers"
     },
     {
       "source": "/test-suites/playwright/faq",
-      "destination": "/resources/test-runners/playwright/faq"
+      "destination": "/reference/test-runners/playwright/faq"
     },
     {
       "source": "/test-suites/playwright/installation",
-      "destination": "/resources/test-runners/playwright/record-your-first-replay"
+      "destination": "/reference/test-runners/playwright/record-your-first-replay"
     },
     {
       "source": "/test-suites/playwright/node",
-      "destination": "/resources/test-runners/playwright/record-your-first-replay"
+      "destination": "/reference/test-runners/playwright/record-your-first-replay"
     },
     {
       "source": "/test-suites/playwright/recording-tests-locally",
-      "destination": "/resources/test-runners/playwright/record-your-first-replay"
+      "destination": "/reference/test-runners/playwright/record-your-first-replay"
     },
     {
       "source": "/test-suites/playwright/troubleshooting-guide",
-      "destination": "/resources/test-runners/playwright/faq"
+      "destination": "/reference/test-runners/playwright/faq"
     },
     {
       "source": "/test-suites/puppeteer",
-      "destination": "/resources/test-runners/puppeteer"
+      "destination": "/reference/test-runners/puppeteer"
     },
     {
       "source": "/test-suites/selenium",
-      "destination": "/resources/test-runners/selenium"
+      "destination": "/reference/test-runners/selenium"
     },
     {
       "source": "/test-suites/test-suites-faq",
@@ -686,7 +686,7 @@
     },
     {
       "source": "/test-suites/webdriver-io",
-      "destination": "/resources/test-runners/webdriver-io"
+      "destination": "/reference/test-runners/webdriver-io"
     },
     {
       "source": "/time-travel-intro/how-time-travel-works",
