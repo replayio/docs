@@ -2,9 +2,7 @@
 title: Troubleshooting Guide
 ---
 
-# Troubleshooting Guide
-
-### Failed to initialize metadata file
+# Failed to initialize metadata file
 
 ```bash
 Failed to initialize metadata file at /home/runner/.replay/PLAYWRIGHT_METADATA_0

@@ -736,6 +736,322 @@
     {
       "source": "/browser-devtools/replay-viewer",
       "destination": "/basics/replay-devtools/browser-devtools/replay-viewer"
+    },
+    {
+      "source": "/quickstart",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/time-travel-intro/intro-to-time-travel",
+      "destination": "/basics/overview/design-principals"
+    },
+    {
+      "source": "/time-travel-intro/what-is-time-travel",
+      "destination": "/basics/overview/how-does-time-travel-work"
+    },
+    {
+      "source": "/time-travel-intro/why-time-travel",
+      "destination": "/basics/overview/why-time-travel"
+    },
+    {
+      "source": "/replay-devtools/browser-devtools/console",
+      "destination": "/basics/replay-devtools/browser-devtools/console"
+    },
+    {
+      "source": "/replay-devtools/browser-devtools/elements-panel",
+      "destination": "/basics/replay-devtools/browser-devtools/elements-panel"
+    },
+    {
+      "source": "/replay-devtools/browser-devtools/network-monitor",
+      "destination": "/basics/replay-devtools/browser-devtools/network-monitor"
+    },
+    {
+      "source": "/replay-devtools/browser-devtools/pause-panel",
+      "destination": "/basics/replay-devtools/browser-devtools/pause-panel"
+    },
+    {
+      "source": "/replay-devtools/browser-devtools/replay-viewer",
+      "destination": "/basics/replay-devtools/browser-devtools/replay-viewer"
+    },
+    {
+      "source": "/replay-devtools/browser-devtools/source-viewer",
+      "destination": "/basics/replay-devtools/browser-devtools/source-viewer"
+    },
+    {
+      "source": "/replay-devtools/framework-devtools/cypress-timeline",
+      "destination": "/basics/replay-devtools/framework-devtools/cypress-timeline"
+    },
+    {
+      "source": "/replay-devtools/framework-devtools/playwright-timeline",
+      "destination": "/basics/replay-devtools/framework-devtools/playwright-timeline"
+    },
+    {
+      "source": "/replay-devtools/framework-devtools/react-panel",
+      "destination": "/basics/replay-devtools/framework-devtools/react-panel"
+    },
+    {
+      "source": "/replay-devtools/framework-devtools/redux-panel",
+      "destination": "/basics/replay-devtools/framework-devtools/redux-panel"
+    },
+    {
+      "source": "/replay-devtools/overview",
+      "destination": "/basics/replay-devtools/overview"
+    },
+    {
+      "source": "/time-travel-intro/collaborative-devtools",
+      "destination": "/basics/replay-devtools/time-travel-devtools/collaborative-devtools"
+    },
+    {
+      "source": "/time-travel-intro/bisect-the-problem",
+      "destination": "/basics/replay-devtools/time-travel-devtools/focus-window"
+    },
+    {
+      "source": "/time-travel-intro/visualize-time-inspect-state",
+      "destination": "/basics/replay-devtools/time-travel-devtools/jump-to-event"
+    },
+    {
+      "source": "/time-travel-intro/add-console-logs-on-the-fly",
+      "destination": "/basics/replay-devtools/time-travel-devtools/live-console-logs"
+    },
+    {
+      "source": "/time-travel-intro/annotate-the-timeline",
+      "destination": "/basics/replay-devtools/time-travel-devtools/timeline-annotation"
+    },
+    {
+      "source": "/replay-teams/billing",
+      "destination": "/basics/replay-teams/billing"
+    },
+    {
+      "source": "/replay-teams/enterprise-security-controls",
+      "destination": "/basics/replay-teams/enterprise-security-controls"
+    },
+    {
+      "source": "/replay-teams/managing-replays",
+      "destination": "/basics/replay-teams/managing-replays"
+    },
+    {
+      "source": "/replay-teams/okta-integration",
+      "destination": "/basics/replay-teams/okta-integration"
+    },
+    {
+      "source": "/replay-teams/setting-up-a-team",
+      "destination": "/basics/replay-teams/setting-up-a-team"
+    },
+    {
+      "source": "/test-suites/performance-analysis",
+      "destination": "/basics/test-suites/performance-analysis"
+    },
+    {
+      "source": "/test-suites/pr-comments",
+      "destination": "/basics/test-suites/pr-comments"
+    },
+    {
+      "source": "/test-suites/runs-view",
+      "destination": "/basics/test-suites/recent-runs"
+    },
+    {
+      "source": "/test-suites/root-cause-analysis",
+      "destination": "/basics/test-suites/root-cause-analysis"
+    },
+    {
+      "source": "/test-suites/top-failing-and-flaky-tests",
+      "destination": "/basics/test-suites/top-failing-and-flaky-tests"
+    },
+    {
+      "source": "/comparison/chrome",
+      "destination": "/learn/comparisons/chrome"
+    },
+    {
+      "source": "/comparison/cypress",
+      "destination": "/learn/comparisons/cypress"
+    },
+    {
+      "source": "/comparison/devtools",
+      "destination": "/learn/comparisons/devtools"
+    },
+    {
+      "source": "/comparison/loom",
+      "destination": "/learn/comparisons/loom"
+    },
+    {
+      "source": "/comparison/playwright",
+      "destination": "/learn/comparisons/playwright"
+    },
+    {
+      "source": "/comparison/session-replay",
+      "destination": "/learn/comparisons/session-replay"
+    },
+    {
+      "source": "/additional-content/crash-course",
+      "destination": "/learn/replay-course"
+    },
+    {
+      "source": "/additional-content/advanced-settings",
+      "destination": "/reference/additional-content/advanced-settings"
+    },
+    {
+      "source": "/ci-workflows/generate-api-key",
+      "destination": "/reference/ci-workflows/generate-api-key"
+    },
+    {
+      "source": "/ci-workflows/recording-strategies",
+      "destination": "/reference/ci-workflows/recording-strategies"
+    },
+    {
+      "source": "/ci-workflows/upload-strategies",
+      "destination": "/reference/ci-workflows/upload-strategies"
+    },
+    {
+      "source": "/integrations/3rd-party-integrations/github-embeds",
+      "destination": "/reference/integrations/3rd-party-integrations/github-embeds"
+    },
+    {
+      "source": "/integrations/3rd-party-integrations/loom-embeds",
+      "destination": "/reference/integrations/3rd-party-integrations/loom-embeds"
+    },
+    {
+      "source": "/integrations/frameworks-libraries/nextjs",
+      "destination": "/reference/integrations/frameworks-libraries/nextjs"
+    },
+    {
+      "source": "/integrations/replay-apis/graphql-api",
+      "destination": "/reference/integrations/replay-apis/graphql-api"
+    },
+    {
+      "source": "/integrations/replay-apis/replay-driver",
+      "destination": "/reference/integrations/replay-apis/replay-driver"
+    },
+    {
+      "source": "/integrations/replay-apis/replay-protocol",
+      "destination": "/reference/integrations/replay-apis/replay-protocol"
+    },
+    {
+      "source": "/replay-cli/commands",
+      "destination": "/reference/replay-cli/commands"
+    },
+    {
+      "source": "/replay-cli/source-maps",
+      "destination": "/reference/replay-cli/source-maps"
+    },
+    {
+      "source": "/replay-runtimes/replay-chrome",
+      "destination": "/reference/replay-runtimes/replay-chrome"
+    },
+    {
+      "source": "/replay-runtimes/replay-firefox",
+      "destination": "/reference/replay-runtimes/replay-firefox"
+    },
+    {
+      "source": "/replay-runtimes/replay-node",
+      "destination": "/reference/replay-runtimes/replay-node"
+    },
+    {
+      "source": "/additional-content/privacy-principles",
+      "destination": "/reference/security-and-privacy/privacy-principles"
+    },
+    {
+      "source": "/additional-content/security-practices",
+      "destination": "/reference/security-and-privacy/security-practices"
+    },
+    {
+      "source": "/test-runners/cypress-io/dashboard",
+      "destination": "/reference/test-runners/cypress-io/dashboard"
+    },
+    {
+      "source": "/test-runners/cypress-io/debugging-tests",
+      "destination": "/reference/test-runners/cypress-io/debugging-tests"
+    },
+    {
+      "source": "/test-runners/cypress-io/examples",
+      "destination": "/reference/test-runners/cypress-io/examples"
+    },
+    {
+      "source": "/test-runners/cypress-io/faq",
+      "destination": "/reference/test-runners/cypress-io/faq"
+    },
+    {
+      "source": "/test-runners/cypress-io/getting-started",
+      "destination": "/reference/test-runners/cypress-io/getting-started"
+    },
+    {
+      "source": "/test-runners/cypress-io/github-actions",
+      "destination": "/reference/test-runners/cypress-io/github-actions"
+    },
+    {
+      "source": "/test-runners/cypress-io/other-ci-providers",
+      "destination": "/reference/test-runners/cypress-io/other-ci-providers"
+    },
+    {
+      "source": "/test-runners/cypress-io/panel",
+      "destination": "/reference/test-runners/cypress-io/panel"
+    },
+    {
+      "source": "/test-runners/cypress-io/record-your-first-replay",
+      "destination": "/reference/test-runners/cypress-io/record-your-first-replay"
+    },
+    {
+      "source": "/test-runners/cypress-io/recording-options",
+      "destination": "/reference/test-runners/cypress-io/recording-options"
+    },
+    {
+      "source": "/test-runners/cypress-io/troubleshooting-guide",
+      "destination": "/reference/test-runners/cypress-io/troubleshooting-guide"
+    },
+    {
+      "source": "/test-runners/overview",
+      "destination": "/reference/test-runners/overview"
+    },
+    {
+      "source": "/test-runners/playwright/debugging-tests",
+      "destination": "/reference/test-runners/playwright/debugging-tests"
+    },
+    {
+      "source": "/test-runners/playwright/examples",
+      "destination": "/reference/test-runners/playwright/examples"
+    },
+    {
+      "source": "/test-runners/playwright/faq",
+      "destination": "/reference/test-runners/playwright/faq"
+    },
+    {
+      "source": "/test-runners/playwright/github-actions",
+      "destination": "/reference/test-runners/playwright/github-actions"
+    },
+    {
+      "source": "/test-runners/playwright/node",
+      "destination": "/reference/test-runners/playwright/node"
+    },
+    {
+      "source": "/test-runners/playwright/other-ci-providers",
+      "destination": "/reference/test-runners/playwright/other-ci-providers"
+    },
+    {
+      "source": "/test-runners/playwright/record-your-first-replay",
+      "destination": "/reference/test-runners/playwright/record-your-first-replay"
+    },
+    {
+      "source": "/test-runners/playwright/recording-tests-locally",
+      "destination": "/reference/test-runners/playwright/recording-tests-locally"
+    },
+    {
+      "source": "/test-runners/playwright/troubleshooting-guide",
+      "destination": "/reference/test-runners/playwright/troubleshooting-guide"
+    },
+    {
+      "source": "/test-runners/playwright/writing-new-tests",
+      "destination": "/reference/test-runners/playwright/writing-new-tests"
+    },
+    {
+      "source": "/test-runners/puppeteer",
+      "destination": "/reference/test-runners/puppeteer"
+    },
+    {
+      "source": "/test-runners/selenium",
+      "destination": "/reference/test-runners/selenium"
+    },
+    {
+      "source": "/test-runners/webdriver-io",
+      "destination": "/reference/test-runners/webdriver-io"
     }
   ],
   "rewrites": [

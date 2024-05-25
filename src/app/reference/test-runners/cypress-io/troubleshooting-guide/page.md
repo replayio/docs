@@ -2,15 +2,9 @@
 title: Cypress Troubleshooting Guide
 ---
 
-import { Callout } from 'nextra/components'
+> If your run into troubles and cannot find help here, feel free to hop into our [Discord server](https://replay.io/discord), where we’ll be happy to help you out.
 
-# Cypress Troubleshooting Guide
-
-<Callout type="default" emoji="💡">
-If your run into troubles and cannot find help here, feel free to hop into our [Discord server](https://replay.io/discord), where we’ll be happy to help you out.
-</Callout>
-
-### Cypress won’t start
+# Cypress won’t start
 
 `Can’t run because you’ve entered an invalid browser name`
 
@@ -45,7 +39,7 @@ Available browsers found on your system are:
 - The environment variable `[CYPRESS_INSTALL_BINARY](https://docs.cypress.io/guides/references/advanced-installation)` may be suppressing the browser install step. If it’s set to `0`, make sure to add an explicit workflow step to install the browsers (`npx @replayio/cypress install`)
 - Your caching strategy might be keeping our plugin from pulling in the correct browser. Start debugging it by turning off all caching, e.g. `actions/cache`
 
-### How do I use Replay with versions earlier than 10.9?
+# How do I use Replay with versions earlier than 10.9?
 
 Replay works best with Cypress 10.9 or later but can be used with Cypress 8 or later with some additional environment configuration:
 
@@ -76,7 +70,7 @@ On CI, you can set these environment variables on the task that runs your tests:
 
 ```
 
-### Replay browser runs but doesn’t record
+# Replay browser runs but doesn’t record
 
 The Replay browser is compiled against OpenSSL 1.1 which has been deprecated and is not included on some more recent platforms. To manually install it on ubuntu, run the following:
 
@@ -85,7 +79,7 @@ wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubu
 sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb
 ```
 
-### DeploySentinel
+# DeploySentinel
 
 If you’re using DeploySentinel, you may notice that either you are unable to record replays or the replays created do not show the Cypress Panel when you open them. This is caused by environment variables set by our plugin that are not passed on by DeploySentinel.
 
@@ -95,7 +89,7 @@ Fortunately, you can set this manually on the command line or in your CI configu
 RECORD_REPLAY_METADATA_FILE=/tmp/replay-metadata.json npx run cypress
 ```
 
-### Browser Hangs
+# Browser Hangs
 
 When the browser hangs while running a test, it is likely an interaction between the test and our browser recording features. In that case, it’s helpful to run the test in diagnostic mode which will run the test in a variety of scenarios with different browser features enabled.
 
@@ -126,14 +120,14 @@ You can set a single spec to run, by using the `--spec` flag
 npx @replayio/cypress run --mode diagnostics --level full --spec tests/logout.spec.ts
 ```
 
-### Providing us with Logs
+# Providing us with Logs
 
 Add the following environment variables to your CI run:
 
 - `RECORD_REPLAY_VERBOSE: 1`
 - `DEBUG: cypress:*`
 
-### Minimizing test runtime overhead
+# Minimizing test runtime overhead
 
 Add the following environment variables when running Cypress with `Replay Chromium` to turn off diagnostics and get a true read on the runtime overhead.
 
