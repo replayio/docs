@@ -125,21 +125,13 @@ Running 1 test using 1 worker
   1 passed (2.1s)
 ```
 
-### Integrate into your CI workflow
+> [Check out this replay](https://replay.help/playwright-flake-debug) for a detailed walkthrough on debugging a flaky Playwright test.
 
-Replay is designed to record tests in CI so you can debug when tests fail. Without Replay, test failures in CI are like a black box, with little insights into what went wrong. By recording with Replay, you get a full recording of the test run with debugging tools built in.
+## Record your tests in CI
 
-Here are basic configurations for some of the most popular providers which you can add to you project
-
-## Done!
-
-You’re ready to inspect your local test run in Replay DevTools now. You can also record your tests in your CI environment. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/test-runners/playwright/github-actions) and [other CI providers](/test-runners/playwright/other-ci-providers).
+Now that you're ready to inspect your local tests, the next step is to record your tests in CI. Learn how to set up Replay with your Playwright tests on [GitHub Actions](/test-runners/playwright/github-actions) and [other CI providers](/test-runners/playwright/other-ci-providers).
 
 {% /steps %}
-
-{% callout type="replay" %}
-[Check out this replay](https://replay.help/playwright-flake-debug) for a detailed walkthrough on debugging a flaky Playwright test. You'll see the capabilities of Replay DevTools and walk through the debugging process of identifying the root cause.
-{% /callout %}
 
 {% quick-links title="Read more" description="Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools" %}
 
