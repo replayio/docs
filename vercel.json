@@ -983,7 +983,7 @@
     },
     {
       "source": "/test-runners/cypress-io/panel",
-      "destination": "/reference/test-runners/cypress-io/panel"
+      "destination": "/"
     },
     {
       "source": "/test-runners/cypress-io/record-your-first-replay",

@@ -44,7 +44,7 @@ export default config
 
 ## Uploading replays manually
 
-Recordings are created automatically when using `replay-chromium` browser, but you can choose to upload your recordings manually. You can use our [Replay CLI](/reference-guide/recording/replay-cli) for that. We recommend installing it globally:
+Recordings are created automatically when using `replay-chromium` browser, but you can choose to upload your recordings manually. You can use our [Replay CLI](/reference/replay-cli/commands) for that. We recommend installing it globally:
 
 ```sh npm2yarn
 npm install @replayio/replay -g
@@ -83,5 +83,5 @@ replay upload 7585b8f4-6475-4535-995d-4d8a0c50f829 # example replay id
 
 ## Learn more
 
-- [Replay CLI documentation](/reference-guide/recording/replay-cli)
+- [Replay CLI documentation](/reference/replay-cli/commands)
 - [Replay CLI readme on GitHub](https://github.com/replayio/replay-cli/tree/main/packages/replay)
