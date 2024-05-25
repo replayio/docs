@@ -9,12 +9,12 @@ export type NavigationItem = {
   title: string
 }
 
-type NavigationNames = 'basics' | 'learn' | 'reference';
+type NavigationNames = 'basics' | 'learn' | 'reference'
 
 export const navigation: Record<NavigationNames, NavigationItem[]> = {
   basics: [
     {
-      title: "Overview",
+      title: 'Overview',
       icon: 'home',
       links: [
         {
@@ -29,10 +29,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           title: 'How does time-travel work?',
           href: '/basics/overview/how-does-time-travel-work',
         },
-      ]
+      ],
     },
     {
-      title: "Getting Started",
+      title: 'Getting Started',
       icon: 'rocket',
       links: [
         {
@@ -42,38 +42,38 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
     {
-      title: "Replay DevTools",
+      title: 'Replay DevTools',
       icon: 'browserdevtools',
       links: [
         {
-          title: "Overview",
+          title: 'Overview',
           href: '/basics/replay-devtools/overview',
         },
         {
-          title: "Time Travel DevTools",
+          title: 'Time Travel DevTools',
           href: '/basics/replay-devtools/time-travel-devtools/live-console-logs',
           links: [
             {
-              title: "Live Console logs",
+              title: 'Live Console logs',
               href: '/basics/replay-devtools/time-travel-devtools/live-console-logs',
             },
             {
-              title: "Collaborative DevTools",
+              title: 'Collaborative DevTools',
               href: '/basics/replay-devtools/time-travel-devtools/collaborative-devtools',
             },
             {
-              title: "Timeline annotation",
+              title: 'Timeline annotation',
               href: '/basics/replay-devtools/time-travel-devtools/timeline-annotation',
             },
             {
-              title: "Jump to event",
+              title: 'Jump to event',
               href: '/basics/replay-devtools/time-travel-devtools/jump-to-event',
             },
             {
-              title: "Focus window",
+              title: 'Focus window',
               href: '/basics/replay-devtools/time-travel-devtools/focus-window',
-            }
-          ]
+            },
+          ],
         },
         {
           title: 'Framework DevTools',
@@ -128,7 +128,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
             },
           ],
         },
-      ]
+      ],
     },
     {
       title: 'Test Suite Dashboard',
@@ -175,7 +175,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       omitFromDocumentTitle: true,
       icon: 'commands',
       links: [
-        {title: 'Overview', href: '/reference/test-runners/overview'},
+        { title: 'Overview', href: '/reference/test-runners/overview' },
         {
           title: 'Cypress.io',
           href: '/reference/test-runners/cypress-io/getting-started',
@@ -223,6 +223,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               href: '/reference/test-runners/playwright/record-your-first-replay',
             },
             {
+              title: 'Recording Playwright core',
+              href: '/reference/test-runners/playwright/playwright-core',
+            },
+            {
               title: 'Debugging tests',
               href: '/reference/test-runners/playwright/debugging-tests',
             },
@@ -243,12 +247,16 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               href: '/reference/test-runners/playwright/writing-new-tests',
             },
             {
+              title: 'Troubleshooting',
+              href: '/reference/test-runners/playwright/troubleshooting',
+            },
+            {
               title: 'FAQ',
               href: '/reference/test-runners/playwright/faq',
             },
           ],
         },
-        {title: 'Selenium', href: '/reference/test-runners/selenium'},
+        { title: 'Selenium', href: '/reference/test-runners/selenium' },
         {
           title: 'WebdriverIO',
           href: '/reference/test-runners/webdriver-io',
@@ -362,7 +370,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
     {
-      title: "Security + Privacy",
+      title: 'Security + Privacy',
       icon: 'security',
       links: [
         {
@@ -376,7 +384,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
     {
-      title: "Additional reference",
+      title: 'Additional reference',
       icon: 'overview',
       links: [
         {
@@ -384,12 +392,12 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           href: '/reference/additional-content/advanced-settings',
         },
       ],
-    }
+    },
   ],
   learn: [
     {
       title: 'Replay course',
-      icon: "university",
+      icon: 'university',
       href: '/learn/replay-course',
     },
     {
@@ -418,7 +426,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
       ],
     },
-  ]
+  ],
 }
 
 export const flatNavigation = Object.keys(navigation).reduce((acc, key) => {
