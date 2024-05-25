@@ -79,7 +79,7 @@ set REPLAY_API_KEY=<your_api_key>
 
 ## Update your configuration
 
-```js {% fileName="playwright.config.ts" highlight=["2-5","10-13","17-20"] lineNumbers=true %}
+```js {% fileName="playwright.config.ts" highlight=[2, "7-10","14-17"] lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from "@playwright/test";
 import { devices as replayDevices, replayReporter } from "@replayio/playwright";
 import "dotenv/config";
