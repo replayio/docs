@@ -102,13 +102,28 @@ export function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark')
-      console.log('dark')
     } else {
       document.documentElement.classList.remove('dark')
-      console.log('no dark')
     }
   }, [theme])
 
+  useEffect(() => {
+    // find spans with the text https://app.replay.io
+    const links = document.querySelectorAll('span')
+    for (const link of links) {
+      if (
+        link.textContent?.includes('app.replay.io/recording') ||
+        link.textContent?.includes('replay.run')
+      ) {
+        console.log('found link', link)
+        // replace the text with a link to the replay.io website
+        const replayLink = document.createElement('a')
+        replayLink.href = link.textContent
+        replayLink.textContent = link.textContent
+        link.replaceWith(replayLink)
+      }
+    }
+  }, [])
   return (
     <div className="flex w-full flex-col">
       <div className="pointer-events-none fixed inset-x-0 top-0 -z-10 flex justify-center overflow-hidden">
