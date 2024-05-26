@@ -103,34 +103,34 @@ Replays need to be uploaded so that the browser can be replayed in the Replay Cl
 
 {% /accordion %}
 
-{% quick-links title="Read more"  %}
+{% quick-links title="Next Steps"  %}
 
 {% quick-link
-  title="Manage your recordings"
+  title="Inspect our replay"
   icon="console"
-  href="/replay-cli/commands"
-  description="Learn how to upload, remove and view your recordings using CLI"
+  href="/quickstart/inspect-replay"
+  description="Walk through the steps of inspecting our new replay."
 /%}
 
 {% quick-link
   title="Replay DevTools"
   icon="jumptocode"
-  href="/test-runners/overview"
-  description="Learn how to use Replay DevTools to debug your tests."
+  href="/replay-devtools/overview"
+  description="Overview of Replay's browser, framework, and time travel DevTools."
 /%}
 
 {% quick-link
-  title="Setting up a team"
+  title="Setup a team"
   icon="settingupateam"
   href="/replay-teams/setting-up-a-team"
-  description="Learn how to create a team in the Replay App"
+  description="Learn how to share replays as a team."
 /%}
 
 {% quick-link
-  title="Test Suites"
+  title="Test Suites Analytics"
   icon="treeview"
   href="/test-suites/runs-view"
-  description="Stay on top of your test suite's health with Replay for Test Suites."
+  description="Stay on top of your Test Suite's health."
 /%}
 
 {% /quick-links %}
