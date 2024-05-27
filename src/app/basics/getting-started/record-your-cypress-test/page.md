@@ -1,6 +1,5 @@
 ---
-title: Record your first replay
-description: Recording your test with the Replay browser is as simple as installing a Cypress plugin. This doc shows how you can record your first test in under two minutes.
+title: Record your Cypress.io test
 ---
 
 {% steps %}

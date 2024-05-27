@@ -190,11 +190,11 @@
     },
     {
       "source": "/test-suites/cypress",
-      "destination": "/reference/test-runners/cypress-io/record-your-first-replay"
+      "destination": "/basics/getting-started/record-your-cypress-test"
     },
     {
       "source": "/test-suites/playwright",
-      "destination": "/reference/test-runners/playwright/record-your-first-replay"
+      "destination": "/basics/getting-started/record-your-playwright-test"
     },
     {
       "source": "/docs/recording-automated-tests-5bf7d91b65cd46deab1867b07bd12bdf",
@@ -230,7 +230,7 @@
     },
     {
       "source": "/getting-started/introduction-to-debugging",
-      "destination": "/basics/overview/why-time-travel"
+      "destination": "/basics/exploration/why-time-travel"
     },
     {
       "source": "/getting-started/recording-your-first-replay",
@@ -302,7 +302,7 @@
     },
     {
       "source": "/getting-started/what-is-replay-io",
-      "destination": "/basics/overview/why-time-travel"
+      "destination": "/basics/exploration/why-time-travel"
     },
     {
       "source": "/learn-more/contribute",
@@ -318,11 +318,11 @@
     },
     {
       "source": "/learn-more/contribute/how-replay-works",
-      "destination": "/basics/overview/how-does-time-travel-work"
+      "destination": "/basics/exploration/how-does-time-travel-work"
     },
     {
       "source": "/learn-more/contribute/how-replay-works/how-programmatic-recordings-work",
-      "destination": "/basics/overview/how-does-time-travel-work"
+      "destination": "/basics/exploration/how-does-time-travel-work"
     },
     {
       "source": "/learn-more/contribute/how-replay-works/our-approach-for-source-maps",
@@ -330,7 +330,7 @@
     },
     {
       "source": "/learn-more/contribute/replay-for-new-contributors",
-      "destination": "/reference/test-runners/cypress-io/record-your-first-replay"
+      "destination": "/basics/getting-started/record-your-cypress-test"
     },
     {
       "source": "/learn-more/debugging-examples",
@@ -566,7 +566,7 @@
     },
     {
       "source": "/reference/what-is-runtime-replay",
-      "destination": "/basics/overview/why-time-travel"
+      "destination": "/basics/exploration/why-time-travel"
     },
     {
       "source": "/test-suites/_archive/ci-integration/circle-ci",
@@ -658,15 +658,15 @@
     },
     {
       "source": "/test-suites/playwright/installation",
-      "destination": "/reference/test-runners/playwright/record-your-first-replay"
+      "destination": "/basics/getting-started/record-your-playwright-test"
     },
     {
       "source": "/test-suites/playwright/node",
-      "destination": "/reference/test-runners/playwright/record-your-first-replay"
+      "destination": "/basics/getting-started/record-your-playwright-test"
     },
     {
       "source": "/test-suites/playwright/recording-tests-locally",
-      "destination": "/reference/test-runners/playwright/record-your-first-replay"
+      "destination": "/basics/getting-started/record-your-playwright-test"
     },
     {
       "source": "/test-suites/playwright/troubleshooting-guide",
@@ -690,7 +690,7 @@
     },
     {
       "source": "/time-travel-intro/how-time-travel-works",
-      "destination": "/basics/overview/how-does-time-travel-work"
+      "destination": "/basics/exploration/how-does-time-travel-work"
     },
     {
       "source": "/recording-browser-tests-(beta)",
@@ -747,11 +747,11 @@
     },
     {
       "source": "/time-travel-intro/what-is-time-travel",
-      "destination": "/basics/overview/how-does-time-travel-work"
+      "destination": "/basics/exploration/how-does-time-travel-work"
     },
     {
       "source": "/time-travel-intro/why-time-travel",
-      "destination": "/basics/overview/why-time-travel"
+      "destination": "/basics/exploration/why-time-travel"
     },
     {
       "source": "/replay-devtools/browser-devtools/console",
@@ -987,7 +987,7 @@
     },
     {
       "source": "/test-runners/cypress-io/record-your-first-replay",
-      "destination": "/reference/test-runners/cypress-io/record-your-first-replay"
+      "destination": "/basics/getting-started/record-your-cypress-test"
     },
     {
       "source": "/test-runners/cypress-io/recording-options",
@@ -1027,7 +1027,7 @@
     },
     {
       "source": "/test-runners/playwright/record-your-first-replay",
-      "destination": "/reference/test-runners/playwright/record-your-first-replay"
+      "destination": "/basics/getting-started/record-your-playwright-test"
     },
     {
       "source": "/test-runners/playwright/recording-tests-locally",

@@ -1,5 +1,5 @@
 ---
-title: Cypress.io
+title: Cypress.io Overview
 description: Add the Cypress Replay plugin to your suite and start time travel debugging in minutes.
 image: /images/Cypress-hero.png
 ---

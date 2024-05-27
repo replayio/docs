@@ -15,28 +15,36 @@ type NavigationNames = 'basics' | 'learn' | 'reference'
 export const navigation: Record<NavigationNames, NavigationItem[]> = {
   basics: [
     {
-      title: 'Overview',
-      icon: 'home',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Why time-travel?',
-          href: '/basics/overview/why-time-travel',
-        },
-        {
-          title: 'How does time-travel work?',
-          href: '/basics/overview/how-does-time-travel-work',
-        },
-      ],
-    },
-    {
       title: 'Getting Started',
-      icon: 'rocket',
+      icon: 'home',
       defaultOpen: true,
       links: [
         {
           title: 'Record your app',
           href: '/basics/getting-started/record-your-app',
+        },
+        {
+          title: 'Record your Cypress.io test',
+          href: '/basics/getting-started/record-your-cypress-test',
+        },
+        {
+          title: 'Record your Playwright test',
+          href: '/basics/getting-started/record-your-playwright-test',
+        },
+      ],
+    },
+    {
+      title: 'Exploration',
+      icon: 'rocket',
+      defaultOpen: true,
+      links: [
+        {
+          title: 'Why time-travel?',
+          href: '/basics/exploration/why-time-travel',
+        },
+        {
+          title: 'How does time-travel work?',
+          href: '/basics/exploration/how-does-time-travel-work',
         },
       ],
     },
@@ -177,15 +185,11 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         { title: 'Overview', href: '/reference/test-runners/overview' },
         {
           title: 'Cypress.io',
-          href: '/reference/test-runners/cypress-io/getting-started',
+          href: '/reference/test-runners/cypress-io/overview',
           links: [
             {
-              title: 'Getting started',
-              href: '/reference/test-runners/cypress-io/getting-started',
-            },
-            {
-              title: 'Record your first replay',
-              href: '/reference/test-runners/cypress-io/record-your-first-replay',
+              title: 'Overview',
+              href: '/reference/test-runners/cypress-io/overview',
             },
             {
               title: 'Debugging tests',
@@ -217,10 +221,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           title: 'Playwright',
           href: '/reference/test-runners/playwright/record-your-first-replay',
           links: [
-            {
-              title: 'Record your first replay',
-              href: '/reference/test-runners/playwright/record-your-first-replay',
-            },
             {
               title: 'Recording Playwright core',
               href: '/reference/test-runners/playwright/playwright-core',
