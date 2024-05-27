@@ -92,7 +92,7 @@ function SubheaderNavigationLink({
 
   return (
     <a
-      className="relative flex h-full items-center py-3 text-sm font-medium text-gray-500"
+      className="relative flex h-full items-center py-3 text-sm font-medium text-gray-500 dark:text-gray-300"
       href={href}
     >
       {name}
@@ -105,7 +105,7 @@ function SubheaderNavigationLink({
 
 function SubheaderNavigation() {
   return (
-    <div className="h-pages-nav border-y border-gray-200 bg-gray-50">
+    <div className="h-pages-nav border-y border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
       <div className="container px-12">
         <nav className="flex h-full items-center gap-4">
           <SubheaderNavigationLink
