@@ -24,14 +24,16 @@ function ItemLinkInnerItem({
   parent,
   pathname,
   open,
+  className,
 }: {
   item: NavigationItem
   parent?: NavigationItem
   pathname: string
   open?: boolean
+  className?: string
 }) {
   return (
-    <div className="flex items-center justify-between">
+    <div className={clsx('flex items-center justify-between p-0.5', className)}>
       <span className={'flex items-center'}>
         {item.icon && (
           <NavIcon
@@ -62,11 +64,13 @@ function ItemLinkDisclosure({
   onLinkClick,
   parent,
   pathname,
+  className,
 }: {
   item: NavigationItem
   onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
   parent?: NavigationItem
   pathname: string
+  className?: string
 }) {
   return (
     <Disclosure
@@ -85,26 +89,29 @@ function ItemLinkDisclosure({
     >
       {({ open }) => (
         <>
-          <Disclosure.Button className="w-full">
+          <Disclosure.Button className={clsx('w-full', styles.item)}>
             <ItemLinkInnerItem
               item={item}
               parent={parent}
               pathname={pathname}
               open={open}
+              className={className}
             />
           </Disclosure.Button>
-          <Disclosure.Panel className="ml-7" as="ul" role="list">
+          <Disclosure.Panel as="ul" role="list" className="ml-4">
             {item.links?.map((subitem) => (
               <li key={subitem.title}>
                 {subitem.links ? (
                   <ItemLinkDisclosure
                     item={subitem}
+                    className="ml-3"
                     parent={item}
                     pathname={pathname}
                   />
                 ) : (
                   <ItemLink
                     item={subitem}
+                    className="ml-3"
                     parent={item}
                     pathname={pathname}
                     onLinkClick={onLinkClick}
@@ -124,11 +131,13 @@ function ItemLink({
   onLinkClick,
   parent,
   pathname,
+  className,
 }: {
   item: NavigationItem
   onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
   parent?: NavigationItem
   pathname: string
+  className?: string
 }) {
   const isSelected =
     parent && item.href === parent.href
@@ -141,9 +150,14 @@ function ItemLink({
     <Link
       href={item.href || '#'}
       onClick={item.href ? onLinkClick : undefined}
-      className={clsx(isSelected && styles.selected)}
+      className={clsx(styles.item, isSelected && styles.selected)}
     >
-      <ItemLinkInnerItem item={item} parent={parent} pathname={pathname} />
+      <ItemLinkInnerItem
+        item={item}
+        className={className}
+        parent={parent}
+        pathname={pathname}
+      />
     </Link>
   )
 }
