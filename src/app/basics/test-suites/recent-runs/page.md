@@ -92,14 +92,14 @@ Clicking on a recording opens the replay so that you can inspect it with Replay 
 {% quick-link
   title="PR comments"
   icon="github"
-  href="/test-suites/pr-comments"
+  href="/basics/test-suites/pr-comments"
   description="The Replay GitHub PR comment makes it easy to view a PR's recent runs."
 /%}
 
 {% quick-link
   title="Top failing and flaky tests"
   icon="sort"
-  href="/test-suites/top-failing-and-flaky-tests"
+  href="/basics/test-suites/top-failing-and-flaky-tests"
   description="Go to the Failing and Flaky Tests view to see your top failing and flaky tests."
 /%}
 

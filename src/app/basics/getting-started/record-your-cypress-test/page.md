@@ -182,28 +182,28 @@ You’re ready to inspect your local test run in Replay DevTools now. You can al
 {% quick-link
   title="Record Your CI Test Run"
   icon="build"
-  href="/test-runners/cypress-io/github-actions"
+  href="/reference/test-runners/cypress-io/github-actions"
   description="Learn how to integrate Replay into your Continuous integration service"
 /%}
 
 {% quick-link
   title="Replay DevTools"
   icon="jumptocode"
-  href="/replay-devtools/browser-devtools/console"
+  href="/basics/replay-devtools/browser-devtools/console"
   description="Learn how to use Replay DevTools to debug your tests."
 /%}
 
 {% quick-link
   title="Test Suite Management"
   icon="treeview"
-  href="/test-suites/top-failing-and-flaky-tests"
+  href="/basics/test-suites/top-failing-and-flaky-tests"
   description="Test Suite Dashboard helps you stay on top of your test suite health."
 /%}
 
 {% quick-link
   title="Debugging tips"
   icon="debuggingtests"
-  href="/test-runners/cypress-io/debugging-tests"
+  href="/reference/test-runners/cypress-io/debugging-tests"
   description="Learn about how to effectively debug flaky or failing tests"
 /%}
 

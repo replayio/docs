@@ -71,18 +71,17 @@ function ItemLinkDisclosure({
   return (
     <Disclosure
       as="div"
-      defaultOpen={
-        !!item.defaultOpen ||
-        Boolean(
-          item.links?.find((link) => {
-            return link.links
-              ? // sublinks
-                link.links.find((l) => l.href?.includes(pathname))
-              : // links
-                link.href?.includes(pathname)
-          }),
-        )
-      }
+      defaultOpen={Boolean(
+        item.defaultOpen ||
+          (pathname !== '/' &&
+            item.links?.find((link) => {
+              return link.links
+                ? // sublinks
+                  link.links.find((l) => l.href?.includes(pathname))
+                : // links
+                  link.href?.includes(pathname)
+            })),
+      )}
     >
       {({ open }) => (
         <>

@@ -99,28 +99,28 @@ Jumping from test code and utilizing the timeline is explored in the [Replay Cra
 {% quick-link
   title="Record Your First Cypress test"
   icon="cypress"
-  href="/test-runners/cypress-io/record-your-first-replay"
+  href="/basics/getting-started/record-your-cypress-test"
   description="Learn how to get started with Cypress and Replay"
 /%}
 
 {% quick-link
   title="Manage your recordings"
   icon="console"
-  href="/replay-cli/commands"
+  href="/reference/replay-cli/commands"
   description="Learn how to upload, remove and view your recordings using CLI"
 /%}
 
 {% quick-link
   title="Replay DevTools"
   icon="jumptocode"
-  href="/test-runners/overview"
+  href="/reference/test-runners/overview"
   description="Learn how to use Replay DevTools to debug your tests."
 /%}
 
 {% quick-link
   title="Test Suite Management"
   icon="treeview"
-  href="/test-suites/runs-view"
+  href="/basics/test-suites/recent-runs"
   description="Test Suite Dashboard helps you stay on top of your test suite health."
 /%}
 

@@ -82,28 +82,28 @@ You can try this out on your own, by forking [this example repository](https://g
 {% quick-link
   title="Manage your recordings"
   icon="console"
-  href="/replay-cli/commands"
+  href="/reference/replay-cli/commands"
   description="Learn how to upload, remove and view your recordings using CLI"
 /%}
 
 {% quick-link
   title="Replay DevTools"
   icon="jumptocode"
-  href="/test-runners/overview"
+  href="/reference/test-runners/overview"
   description="Learn how to use Replay DevTools to debug your tests."
 /%}
 
 {% quick-link
   title="Setting up a team"
   icon="settingupateam"
-  href="/replay-teams/setting-up-a-team"
+  href="/basics/replay-teams/setting-up-a-team"
   description="Learn how to create a team in the Replay App"
 /%}
 
 {% quick-link
   title="Test Suite Management"
   icon="treeview"
-  href="/test-suites/runs-view"
+  href="/basics/test-suites/recent-runs"
   description="Test Suite Dashboard helps you stay on top of your test suite health."
 /%}
 
