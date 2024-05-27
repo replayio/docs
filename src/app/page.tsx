@@ -7,37 +7,37 @@ const cards: CardAttributes[] = [
     icon: 'rocket',
     title: 'Time travel',
     content: 'Learn how to inspect your application in new ways.',
-    href: '/time-travel-intro/why-time-travel',
+    href: '/basics/exploration/why-time-travel',
   },
   {
     icon: 'inspect',
     title: 'Browser DevTools',
     content: 'Inspect your application with Browser DevTools after the fact.',
-    href: '/replay-devtools/browser-devtools/elements-panel',
+    href: '/basics/replay-devtools/browser-devtools/elements-panel',
   },
   {
     icon: 'react',
     title: 'Framework DevTools',
     content: 'Inspect your application with next level Framework DevTools.',
-    href: '/replay-devtools/framework-devtools/react-panel',
+    href: '/basics/replay-devtools/framework-devtools/react-panel',
   },
   {
     icon: 'replay',
     title: 'Record your first replay',
     content: 'Record your app with with the Replay browser in under a minute.',
-    href: '/getting-started/record-your-first-replay',
+    href: '/basics/getting-started/record-your-app',
   },
   {
     icon: 'cypresssimple',
     title: 'Record your Cypress tests',
     content: 'Learn how to setup our Cypress plugin and record your tests.',
-    href: '/test-runners/cypress-io/getting-started',
+    href: '/basics/getting-started/record-your-cypress-test',
   },
   {
     icon: 'playwrightsimple',
     title: 'Record your Playwright tests',
     content: 'Learn how to set up our Playwright plugin and record your tests.',
-    href: '/test-runners/playwright/record-your-first-replay',
+    href: '/basics/getting-started/record-your-playwright-test',
   },
 ]
 
@@ -46,38 +46,38 @@ const miniCards: CardAttributes[] = [
     icon: 'terminal',
     title: 'Live console logs',
     content: 'Add console logs in your code with a single click.',
-    href: '/time-travel-intro/add-console-logs-on-the-fly',
+    href: '/basics/replay-devtools/time-travel-devtools/live-console-logs',
   },
   {
     icon: 'react',
     title: 'React components',
     content: 'Inspect React component props, state, and hooks.',
-    href: '/replay-devtools/framework-devtools/react-panel',
+    href: '/basics/replay-devtools/framework-devtools/react-panel',
   },
   {
     icon: 'folder',
     title: 'Hit counts',
     content: 'Explore your source code with built-in code coverage.',
-    href: '/browser-devtools/source-viewer',
+    href: '/basics/replay-devtools/browser-devtools/source-viewer',
   },
   {
     icon: 'cypresssimple',
     title: 'Cypress Timeline',
     content:
       'Debug your test as if it’s running locally with test step details.',
-    href: '/replay-devtools/framework-devtools/cypress-timeline',
+    href: '/basics/replay-devtools/framework-devtools/cypress-timeline',
   },
   {
     icon: 'analytics',
     title: 'Top failing tests',
     content: 'Burn down the backlog of failing and flaky tests.',
-    href: '/test-suites/top-failing-and-flaky-tests',
+    href: '/basics/test-suites/top-failing-and-flaky-tests',
   },
   {
     icon: 'analytics',
     title: 'PR comments',
     content: 'Catch regressions before they ship to prod with PR comments.',
-    href: '/test-suites/pr-comments',
+    href: '/basics/test-suites/pr-comments',
   },
 ]
 
