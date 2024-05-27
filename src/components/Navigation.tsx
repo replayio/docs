@@ -71,8 +71,9 @@ function ItemLinkDisclosure({
   return (
     <Disclosure
       as="div"
-      defaultOpen={Boolean(
-        pathname !== '/' &&
+      defaultOpen={
+        !!item.defaultOpen ||
+        Boolean(
           item.links?.find((link) => {
             return link.links
               ? // sublinks
@@ -80,7 +81,8 @@ function ItemLinkDisclosure({
               : // links
                 link.href?.includes(pathname)
           }),
-      )}
+        )
+      }
     >
       {({ open }) => (
         <>

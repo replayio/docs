@@ -7,6 +7,7 @@ export type NavigationItem = {
   badge?: string
   omitFromDocumentTitle?: boolean
   title: string
+  defaultOpen?: boolean
 }
 
 type NavigationNames = 'basics' | 'learn' | 'reference'
@@ -16,6 +17,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     {
       title: 'Overview',
       icon: 'home',
+      defaultOpen: true,
       links: [
         {
           title: 'Why time-travel?',
@@ -30,6 +32,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     {
       title: 'Getting Started',
       icon: 'rocket',
+      defaultOpen: true,
       links: [
         {
           title: 'Record your app',
@@ -399,6 +402,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     {
       title: 'Comparisons',
       icon: 'sort',
+      defaultOpen: true,
       links: [
         {
           title: 'Playwright',
