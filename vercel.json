@@ -743,7 +743,7 @@
     },
     {
       "source": "/time-travel-intro/intro-to-time-travel",
-      "destination": "/basics/overview/design-principals"
+      "destination": "/"
     },
     {
       "source": "/time-travel-intro/what-is-time-travel",

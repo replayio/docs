@@ -22,10 +22,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           href: '/basics/overview/why-time-travel',
         },
         {
-          title: 'Design Principals',
-          href: '/basics/overview/design-principals',
-        },
-        {
           title: 'How does time-travel work?',
           href: '/basics/overview/how-does-time-travel-work',
         },
