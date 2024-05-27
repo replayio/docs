@@ -136,12 +136,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark')
-      console.log('dark')
     } else {
       document.documentElement.classList.remove('dark')
-      console.log('no dark')
     }
   }, [theme])
+
+  useEffect(() => {
+    // find spans with the text https://app.replay.io
+    const links = document.querySelectorAll('span')
+    for (const link of links) {
+      if (
+        link.textContent?.includes('app.replay.io/recording') ||
+        link.textContent?.includes('replay.run')
+      ) {
+        // replace the text with a link to the replay.io website
+        const replayLink = document.createElement('a')
+        replayLink.href = link.textContent
+        replayLink.textContent = link.textContent
+        link.replaceWith(replayLink)
+      }
+    }
+  }, [])
 
   let [isScrolled, setIsScrolled] = useState(false)
 
