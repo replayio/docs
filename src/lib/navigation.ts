@@ -215,10 +215,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               href: '/reference/test-runners/cypress-io/other-ci-providers',
             },
             {
-              title: 'Examples',
-              href: '/reference/test-runners/cypress-io/examples',
-            },
-            {
               title: 'FAQ',
               href: '/reference/test-runners/cypress-io/faq',
             },
@@ -247,10 +243,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
             {
               title: 'Other CI providers',
               href: '/reference/test-runners/playwright/other-ci-providers',
-            },
-            {
-              title: 'Examples',
-              href: '/reference/test-runners/playwright/examples',
             },
             {
               title: 'Writing new tests',
@@ -415,6 +407,21 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       title: 'Replay course',
       icon: 'university',
       href: '/learn/replay-course',
+    },
+    {
+      title: 'Examples',
+      icon: 'additionalcontent',
+      defaultOpen: true,
+      links: [
+        {
+          title: 'Playwright',
+          href: '/learn/examples/playwright'
+        },
+        {
+          title: 'Cypress.io',
+          href: '/learn/examples/cypress-io'
+        },
+      ]
     },
     {
       title: 'Comparisons',
