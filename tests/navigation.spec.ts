@@ -3,21 +3,21 @@ import { test, expect } from '@playwright/test'
 test('navigation expanding works', async ({ page }) => {
 
   await page.goto('/')
-  await page.getByText('Intro to time travel').click()
-  const navigationItem = page.getByText('Why time travel?')
+  await page.getByText('Test Suite Dashboard').click()
+  const navigationItem = page.getByText('Recent runs')
   await expect(navigationItem).toBeVisible()
 
 })
 
 test('navigation collapsing works', async ({ page }) => {
 
-  await page.goto('/time-travel-intro/why-time-travel')
+  await page.goto('/basics/test-suites/recent-runs')
   // sidebar items are expanded
-  const navigationItem = page.getByText('Annotate the timeline', {exact: true})
+  const navigationItem = page.getByText('PR Comments', {exact: true})
   await expect(navigationItem).toBeVisible()
-  
+
   const nav = page.locator('nav')
-  await nav.getByText('Intro to time travel').click()
+  await nav.getByText('Test Suite Dashboard').click()
   await expect(navigationItem).not.toBeVisible()
 
 })
