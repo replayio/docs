@@ -99,7 +99,7 @@ You can run the test in **diagnostic mode** by passing in a mode flag.
 npx @replayio/cypress run --mode diagnostics --level full 
 ```
 
-For more information, see [Diagnostic modes](/reference/test-runners/cypress-io/getting-started) 
+For more information, see [Diagnostic modes](/reference/test-runners/cypress-io/overview) 
 
 We also recommend going for the simplest reproduction which includes running the fewest specs possible and setting a timeout so that the test fails as soon as possible.
 

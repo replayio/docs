@@ -1,7 +1,8 @@
 ---
 title: Writing new tests
-description: This page walks through the steps of creating a new test with [Playwright Codegen](https://playwright.dev/docs/codegen).
 ---
+
+This page walks through the steps of creating a new test with [Playwright Codegen](https://playwright.dev/docs/codegen).
 
 ## Creating a new test
 

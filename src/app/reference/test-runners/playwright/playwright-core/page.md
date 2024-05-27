@@ -56,7 +56,7 @@ Run `node test.js` to run and record your tests. And then run `replayio upload` 
 {% accordion %}
 
 {% accordion-item title="Why is the Playwright panel missing?" %}
-The [Playwright panel](/replay-devtools/framework-devtools/playwright-timeline) is currently only suppored for Playwright Test tests where we're able to capture the playwright test steps via the reporter.
+The [Playwright panel](/basics/replay-devtools/framework-devtools/playwright-timeline) is currently only suppored for Playwright Test tests where we're able to capture the playwright test steps via the reporter.
 
 {% /accordion-item %}
 

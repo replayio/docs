@@ -219,7 +219,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
         {
           title: 'Playwright',
-          href: '/reference/test-runners/playwright/record-your-first-replay',
+          href: '/reference/test-runners/playwright/playwright-core',
           links: [
             {
               title: 'Recording Playwright core',

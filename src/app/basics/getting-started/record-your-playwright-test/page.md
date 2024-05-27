@@ -129,7 +129,7 @@ Running 1 test using 1 worker
 
 ## Record your tests in CI
 
-Now that you're ready to inspect your local tests, the next step is to record your tests in CI. Learn how to set up Replay with your Playwright tests on [GitHub Actions](/test-runners/playwright/github-actions) and [other CI providers](/test-runners/playwright/other-ci-providers).
+Now that you're ready to inspect your local tests, the next step is to record your tests in CI. Learn how to set up Replay with your Playwright tests on [GitHub Actions](/reference/test-runners/playwright/github-actions) and [other CI providers](/reference/test-runners/playwright/other-ci-providers).
 
 {% /steps %}
 

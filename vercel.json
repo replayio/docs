@@ -578,11 +578,11 @@
     },
     {
       "source": "/test-suites/cypress/_archive/cypress-replays",
-      "destination": "/reference/test-runners/cypress-io/getting-started"
+      "destination": "/reference/test-runners/cypress-io/overview"
     },
     {
       "source": "/test-suites/cypress/configuration",
-      "destination": "/reference/test-runners/cypress-io/getting-started"
+      "destination": "/reference/test-runners/cypress-io/overview"
     },
     {
       "source": "/test-suites/cypress/continuous-integration",
@@ -610,11 +610,11 @@
     },
     {
       "source": "/test-suites/cypress/installation",
-      "destination": "/reference/test-runners/cypress-io/getting-started"
+      "destination": "/reference/test-runners/cypress-io/overview"
     },
     {
       "source": "/test-suites/cypress/panel",
-      "destination": "/reference/test-runners/cypress-io/getting-started"
+      "destination": "/reference/test-runners/cypress-io/overview"
     },
     {
       "source": "/test-suites/cypress/troubleshooting-guide",
@@ -971,7 +971,7 @@
     },
     {
       "source": "/test-runners/cypress-io/getting-started",
-      "destination": "/reference/test-runners/cypress-io/getting-started"
+      "destination": "/reference/test-runners/cypress-io/overview"
     },
     {
       "source": "/test-runners/cypress-io/github-actions",
@@ -1019,7 +1019,7 @@
     },
     {
       "source": "/test-runners/playwright/node",
-      "destination": "/reference/test-runners/playwright/node"
+      "destination": "/"
     },
     {
       "source": "/test-runners/playwright/other-ci-providers",
@@ -1031,11 +1031,11 @@
     },
     {
       "source": "/test-runners/playwright/recording-tests-locally",
-      "destination": "/reference/test-runners/playwright/recording-tests-locally"
+      "destination": "/"
     },
     {
       "source": "/test-runners/playwright/troubleshooting-guide",
-      "destination": "/reference/test-runners/playwright/troubleshooting-guide"
+      "destination": "/reference/test-runners/playwright/troubleshooting"
     },
     {
       "source": "/test-runners/playwright/writing-new-tests",
@@ -1052,6 +1052,10 @@
     {
       "source": "/test-runners/webdriver-io",
       "destination": "/reference/test-runners/webdriver-io"
+    },
+    {
+      "source": "/reference/test-runners/cypress-io/getting-started",
+      "destination": "/reference/test-runners/cypress-io/overview"
     }
   ],
   "rewrites": [
