@@ -1,6 +1,6 @@
-import Link from 'next/link'
-
 import { Icon } from '@/components/Icon'
+import Link from 'next/link'
+import { ReactNode } from 'react'
 
 export function QuickLinks({
   children,
@@ -10,11 +10,16 @@ export function QuickLinks({
 }: {
   children: React.ReactNode
   title: string
-  description: string
+  description: ReactNode
   mini?: boolean
 }) {
+  let className
+  if (description || title) {
+    className = mini ? 'mt-12' : 'mt-12 rounded-xl py-8'
+  }
+
   return (
-    <div className={mini ? 'mt-12' : 'mt-12 rounded-xl py-8 '}>
+    <div className={className}>
       {title && (
         <div className="text-2xl font-medium text-gray-800 dark:text-gray-100">
           {title}
