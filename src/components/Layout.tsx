@@ -35,28 +35,8 @@ function DiscordIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 function Header() {
-  let [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    function onScroll() {
-      setIsScrolled(window.scrollY > 0)
-    }
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-    }
-  }, [])
-
   return (
-    <header
-      className={clsx(
-        'sticky top-0 z-50 border-b px-12 py-5 shadow-none shadow-gray-900/5 transition duration-500 sm:px-12  sm:py-5 lg:px-12 dark:border-gray-800 dark:bg-gray-900 dark:bg-gray-900/95 dark:shadow-none dark:shadow-gray-900/5 dark:backdrop-blur dark:transition dark:duration-500',
-        isScrolled
-          ? 'backdrop-blur dark:bg-gray-900/95 [@supports(backdrop-filter:blur(0))]:bg-white/45 dark:[@supports(backdrop-filter:blur(0))]:bg-gray-900/75'
-          : 'bg-transparent',
-      )}
-    >
+    <header className="border-b px-12 py-5 shadow-none shadow-gray-900/5 transition duration-500 sm:px-12  sm:py-5 lg:px-12 dark:border-gray-800 dark:bg-gray-900 dark:bg-gray-900/95 dark:shadow-none dark:shadow-gray-900/5 dark:backdrop-blur dark:transition dark:duration-500">
       <div>
         <div className="flex flex-none flex-wrap items-center justify-between">
           <div className="mr-6 flex lg:hidden">
@@ -72,7 +52,7 @@ function Header() {
             <Search />
           </div>
           <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
-            <ThemeSelector className="relative z-10" />
+            <ThemeSelector className="relative z-30" />
             <Link
               href="https://github.com/replayio"
               className="group"
@@ -94,9 +74,63 @@ function Header() {
   )
 }
 
-export function Layout({ children }: { children: React.ReactNode }) {
+function SubheaderNavigationLink({
+  href,
+  baseHref,
+  name,
+  isDefault,
+}: {
+  href: string
+  baseHref: string
+  name: string
+  isDefault?: boolean
+}) {
   let pathname = usePathname()
-  let isHomePage = pathname === '/'
+
+  const isActive =
+    pathname.startsWith(baseHref) || (isDefault && pathname === '/')
+
+  return (
+    <a
+      className="relative flex h-full items-center py-3 text-sm font-medium text-gray-500 dark:text-gray-300"
+      href={href}
+    >
+      {name}
+      {isActive && (
+        <div className="absolute -bottom-px h-1 w-full rounded-full bg-sky-500"></div>
+      )}
+    </a>
+  )
+}
+
+function SubheaderNavigation() {
+  return (
+    <div className="h-pages-nav border-y border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
+      <div className="container px-12">
+        <nav className="flex h-full items-center gap-4">
+          <SubheaderNavigationLink
+            name={'Basics'}
+            isDefault={true}
+            baseHref={'/basics'}
+            href={'/basics/time-travel/why-time-travel'}
+          />
+          <SubheaderNavigationLink
+            name={'Learn'}
+            baseHref={'/learn'}
+            href={'/learn/replay-course'}
+          />
+          <SubheaderNavigationLink
+            name={'Reference'}
+            baseHref={'/reference'}
+            href={'/reference/test-runners/overview'}
+          />
+        </nav>
+      </div>
+    </div>
+  )
+}
+
+export function Layout({ children }: { children: React.ReactNode }) {
   let { theme } = useTheme()
 
   useEffect(() => {
@@ -115,7 +149,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         link.textContent?.includes('app.replay.io/recording') ||
         link.textContent?.includes('replay.run')
       ) {
-        console.log('found link', link)
         // replace the text with a link to the replay.io website
         const replayLink = document.createElement('a')
         replayLink.href = link.textContent
@@ -124,21 +157,45 @@ export function Layout({ children }: { children: React.ReactNode }) {
       }
     }
   }, [])
+
+  let [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    function onScroll() {
+      setIsScrolled(window.scrollY > 0)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [])
+
   return (
     <div className="flex w-full flex-col">
       <div className="pointer-events-none fixed inset-x-0 top-0 -z-10 flex justify-center overflow-hidden">
         <div className="flex h-screen w-full flex-none justify-end bg-gradient-to-tr from-white via-white to-pink-500 opacity-5 dark:from-gray-800 dark:via-sky-600 dark:opacity-10"></div>
       </div>
-      <Header />
+      <div
+        className={clsx(
+          'sticky top-0 z-20',
+          isScrolled
+            ? 'backdrop-blur dark:bg-gray-900/95 [@supports(backdrop-filter:blur(0))]:bg-white/45 dark:[@supports(backdrop-filter:blur(0))]:bg-gray-900/75'
+            : 'bg-transparent',
+        )}
+      >
+        <Header />
+        <SubheaderNavigation />
+      </div>
 
       <div className="relative mx-auto flex w-full  flex-auto  sm:px-2 lg:px-8 xl:px-12">
         <div className="mr-12 hidden lg:relative lg:block lg:flex-none">
           {
             <>
-              <div className="absolute inset-y-0 right-0 w-[50vw] bg-gray-50 dark:hidden" />
+              <div className="absolute inset-y-0 right-0 w-[50vw] border-r border-r-gray-200 dark:hidden" />
               <div className="absolute bottom-0 right-0 top-16 hidden h-12 w-px bg-gradient-to-t from-gray-800 dark:block" />
               <div className="absolute bottom-0 right-0 top-28 hidden w-px bg-gray-800 dark:block" />
-              <div className="sticky top-[4.75rem] -ml-0.5 h-[calc(100vh-4.75rem)] w-72 overflow-y-auto overflow-x-hidden py-8 pl-0.5 pr-2 xl:pr-2">
+              <div className="sticky top-[6rem] -ml-0.5 h-[calc(100vh-6rem)] w-72 overflow-y-auto overflow-x-hidden py-8 pl-0.5 pr-2 xl:pr-2">
                 <Navigation />
               </div>
             </>

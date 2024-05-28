@@ -19,18 +19,125 @@ function Badge({ type }: { type: string }) {
   )
 }
 
-function ItemLink({
+function ItemLinkInnerItem({
+  item,
+  parent,
+  pathname,
+  open,
   className,
+}: {
+  item: NavigationItem
+  parent?: NavigationItem
+  pathname: string
+  open?: boolean
+  className?: string
+}) {
+  return (
+    <div className={clsx('flex items-center justify-between p-0.5', className)}>
+      <span className={'flex items-center'}>
+        {item.icon && (
+          <NavIcon
+            icon={item.icon}
+            aria-hidden="true"
+            className="ml-1 fill-inherit stroke-inherit text-inherit"
+          />
+        )}
+        {item.title}
+      </span>
+      {item.badge && <Badge type={item.badge} />}
+      {item.links && (
+        <Icon
+          icon="chevron"
+          className={clsx(
+            open ? 'rotate-90 ' : 'text-gray-600 dark:text-gray-400',
+            'ml-auto w-5 shrink-0',
+          )}
+          aria-hidden="true"
+        />
+      )}
+    </div>
+  )
+}
+
+function ItemLinkDisclosure({
   item,
   onLinkClick,
   parent,
   pathname,
+  className,
 }: {
-  className?: string
   item: NavigationItem
   onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
   parent?: NavigationItem
   pathname: string
+  className?: string
+}) {
+  return (
+    <Disclosure
+      as="div"
+      defaultOpen={Boolean(
+        item.defaultOpen ||
+          (pathname !== '/' &&
+            item.links?.find((link) => {
+              return link.links
+                ? // sublinks
+                  link.links.find((l) => l.href?.includes(pathname))
+                : // links
+                  link.href?.includes(pathname)
+            })),
+      )}
+    >
+      {({ open }) => (
+        <>
+          <Disclosure.Button className={clsx('w-full', styles.item)}>
+            <ItemLinkInnerItem
+              item={item}
+              parent={parent}
+              pathname={pathname}
+              open={open}
+              className={className}
+            />
+          </Disclosure.Button>
+          <Disclosure.Panel as="ul" role="list" className="ml-4">
+            {item.links?.map((subitem) => (
+              <li key={subitem.title}>
+                {subitem.links ? (
+                  <ItemLinkDisclosure
+                    item={subitem}
+                    className="ml-3"
+                    parent={item}
+                    pathname={pathname}
+                  />
+                ) : (
+                  <ItemLink
+                    item={subitem}
+                    className="ml-3"
+                    parent={item}
+                    pathname={pathname}
+                    onLinkClick={onLinkClick}
+                  />
+                )}
+              </li>
+            ))}
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
+  )
+}
+
+function ItemLink({
+  item,
+  onLinkClick,
+  parent,
+  pathname,
+  className,
+}: {
+  item: NavigationItem
+  onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
+  parent?: NavigationItem
+  pathname: string
+  className?: string
 }) {
   const isSelected =
     parent && item.href === parent.href
@@ -43,12 +150,14 @@ function ItemLink({
     <Link
       href={item.href || '#'}
       onClick={item.href ? onLinkClick : undefined}
-      className={clsx(styles.item, className, isSelected && styles.selected)}
+      className={clsx(styles.item, isSelected && styles.selected)}
     >
-      <span className="ml-6 flex items-center justify-between ">
-        {item.title}
-        {item.badge && <Badge type={item.badge} />}
-      </span>
+      <ItemLinkInnerItem
+        item={item}
+        className={className}
+        parent={parent}
+        pathname={pathname}
+      />
     </Link>
   )
 }
@@ -61,102 +170,39 @@ export function Navigation({
   onLinkClick?: React.MouseEventHandler<HTMLAnchorElement>
 }) {
   let pathname = usePathname()
+  let initialRoute = pathname.split('/')[1] as
+    | 'basics'
+    | 'learn'
+    | 'reference'
+    | undefined
+  if (
+    !initialRoute ||
+    !['basics', 'learn', 'reference'].includes(initialRoute)
+  ) {
+    initialRoute = 'basics'
+  }
+
+  const localizedNavigation = navigation[initialRoute] ?? []
+
   return (
     <nav className={clsx('text-base', className)}>
       <ul role="list" className="space-y-1 text-sm">
-        <Link
-          href="/quickstart"
-          className={clsx(
-            'flex w-full items-center rounded-md pb-1 text-left leading-6',
-            pathname.includes('/quickstart')
-              ? 'text-sky-500'
-              : 'hover:text-gray-900 dark:hover:text-gray-300',
-          )}
-        >
-          <NavIcon
-            icon={'home'}
-            aria-hidden="true"
-            className="ml-1 fill-inherit stroke-inherit text-inherit"
-          />
-          Quickstart Guide
-        </Link>
-        {navigation.map((section) => {
+        {localizedNavigation.map((section) => {
           return (
             <li key={section.title}>
-              <Disclosure
-                as="div"
-                defaultOpen={
-                  Boolean(pathname !== "/" && section.links?.find(link => {
-                    return link.links ?
-                    // sublinks
-                    link.links.find(l => l.href?.includes(pathname)) :
-                    // links
-                    link.href?.includes(pathname)
-                  }))
-                }
-              >
-                {({ open }) => (
-                  <>
-                    <Disclosure.Button
-                      className={clsx(
-                        styles.category,
-                      )}
-                    >
-                      <NavIcon
-                        icon={section.icon}
-                        aria-hidden="true"
-                        className="ml-1 fill-inherit stroke-inherit text-inherit"
-                      />
-                      {section.title}
-                      <Icon
-                        icon="chevron"
-                        className={clsx(
-                          open
-                            ? 'rotate-90 '
-                            : 'text-gray-600 dark:text-gray-400',
-                          'ml-auto w-5 shrink-0'
-                        )}
-                        aria-hidden="true"
-                      />
-                    </Disclosure.Button>
-                    <Disclosure.Panel
-                      as="ul"
-                      className="ml-1 pr-4 text-sm"
-                      role="list"
-                    >
-                      {section.links?.map((item) => (
-                        <li key={item.title}>
-                          <Disclosure.Button className={styles.button}>
-                            <ItemLink
-                              item={item}
-                              pathname={pathname}
-                              onLinkClick={onLinkClick}
-                            />
-                          </Disclosure.Button>
-                          {item.links && (
-                            <Disclosure.Panel as="ul">
-                              {item.links.map((subItem) => (
-                                <li key={subItem.title}>
-                                  <Disclosure.Button
-                                    className={`${styles.button} ${styles.tertiary}`}
-                                  >
-                                    <ItemLink
-                                      item={subItem}
-                                      parent={item}
-                                      pathname={pathname}
-                                      onLinkClick={onLinkClick}
-                                    />
-                                  </Disclosure.Button>
-                                </li>
-                              ))}
-                            </Disclosure.Panel>
-                          )}
-                        </li>
-                      ))}
-                    </Disclosure.Panel>
-                  </>
-                )}
-              </Disclosure>
+              {section.links ? (
+                <ItemLinkDisclosure
+                  item={section}
+                  pathname={pathname}
+                  onLinkClick={onLinkClick}
+                />
+              ) : (
+                <ItemLink
+                  item={section}
+                  pathname={pathname}
+                  onLinkClick={onLinkClick}
+                />
+              )}
             </li>
           )
         })}
