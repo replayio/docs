@@ -1,5 +1,5 @@
 ---
-title: Record your Playwright test
+title: Record your Playwright tests
 ---
 
 {% steps %}

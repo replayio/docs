@@ -99,7 +99,7 @@ Jumping from test code and utilizing the timeline is explored in the [Replay Cra
 {% quick-link
   title="Record Your First Cypress test"
   icon="cypress"
-  href="/basics/getting-started/record-your-cypress-test"
+  href="/basics/getting-started/record-your-cypress-tests"
   description="Learn how to get started with Cypress and Replay"
 /%}
 

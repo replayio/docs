@@ -1,5 +1,5 @@
 ---
-title: Record your Cypress.io test
+title: Record your Cypress.io tests
 ---
 
 {% steps %}

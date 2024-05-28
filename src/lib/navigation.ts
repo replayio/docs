@@ -25,11 +25,11 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
         {
           title: 'Record your Cypress.io test',
-          href: '/basics/getting-started/record-your-cypress-test',
+          href: '/basics/getting-started/record-your-cypress-tests',
         },
         {
           title: 'Record your Playwright test',
-          href: '/basics/getting-started/record-your-playwright-test',
+          href: '/basics/getting-started/record-your-playwright-tests',
         },
       ],
     },

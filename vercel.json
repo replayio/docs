@@ -190,11 +190,11 @@
     },
     {
       "source": "/test-suites/cypress",
-      "destination": "/basics/getting-started/record-your-cypress-test"
+      "destination": "/basics/getting-started/record-your-cypress-tests"
     },
     {
       "source": "/test-suites/playwright",
-      "destination": "/basics/getting-started/record-your-playwright-test"
+      "destination": "/basics/getting-started/record-your-playwright-tests"
     },
     {
       "source": "/docs/recording-automated-tests-5bf7d91b65cd46deab1867b07bd12bdf",
@@ -330,7 +330,7 @@
     },
     {
       "source": "/learn-more/contribute/replay-for-new-contributors",
-      "destination": "/basics/getting-started/record-your-cypress-test"
+      "destination": "/basics/getting-started/record-your-cypress-tests"
     },
     {
       "source": "/learn-more/debugging-examples",
@@ -658,15 +658,15 @@
     },
     {
       "source": "/test-suites/playwright/installation",
-      "destination": "/basics/getting-started/record-your-playwright-test"
+      "destination": "/basics/getting-started/record-your-playwright-tests"
     },
     {
       "source": "/test-suites/playwright/node",
-      "destination": "/basics/getting-started/record-your-playwright-test"
+      "destination": "/basics/getting-started/record-your-playwright-tests"
     },
     {
       "source": "/test-suites/playwright/recording-tests-locally",
-      "destination": "/basics/getting-started/record-your-playwright-test"
+      "destination": "/basics/getting-started/record-your-playwright-tests"
     },
     {
       "source": "/test-suites/playwright/troubleshooting-guide",
@@ -987,7 +987,7 @@
     },
     {
       "source": "/test-runners/cypress-io/record-your-first-replay",
-      "destination": "/basics/getting-started/record-your-cypress-test"
+      "destination": "/basics/getting-started/record-your-cypress-tests"
     },
     {
       "source": "/test-runners/cypress-io/recording-options",
@@ -1027,7 +1027,7 @@
     },
     {
       "source": "/test-runners/playwright/record-your-first-replay",
-      "destination": "/basics/getting-started/record-your-playwright-test"
+      "destination": "/basics/getting-started/record-your-playwright-tests"
     },
     {
       "source": "/test-runners/playwright/recording-tests-locally",

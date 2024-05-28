@@ -14,7 +14,7 @@ Here is a screenshot of **Replay DevTools** for the same test. On the surface, t
 
 ## Time travel debugging
 
-Because Replay is simply a browser, you can start recording your tests by adding `Replay Chromium` in your playwright config [here](/basics/getting-started/record-your-playwright-test). And when you open a replay you can start time traveling!
+Because Replay is simply a browser, you can start recording your tests by adding `Replay Chromium` in your playwright config [here](/basics/getting-started/record-your-playwright-tests). And when you open a replay you can start time traveling!
 
 ### Retroactive print statements
 
