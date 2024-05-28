@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test'
 test('navigation expanding works', async ({ page }) => {
 
   await page.goto('/')
-  await page.getByText('Test Suite Dashboard').click()
-  const navigationItem = page.getByText('Recent runs')
+  await page.getByText('Time Travel DevTools').click()
+  const navigationItem = page.getByText('Live Console logs', {exact: true})
   await expect(navigationItem).toBeVisible()
 
 })
