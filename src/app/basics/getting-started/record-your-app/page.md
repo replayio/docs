@@ -97,7 +97,7 @@ In the interim, if you would perfer downloading a browser directly, you can use 
 
 {% accordion-item title="Why do I need to login to Replay?" %}
 
-Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/basics/exploration/how-does-time-travel-work)
+Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/basics/time-travel/how-does-time-travel-work)
 
 {% /accordion-item %}
 

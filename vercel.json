@@ -230,7 +230,7 @@
     },
     {
       "source": "/getting-started/introduction-to-debugging",
-      "destination": "/basics/exploration/why-time-travel"
+      "destination": "/basics/time-travel/why-time-travel"
     },
     {
       "source": "/getting-started/recording-your-first-replay",
@@ -302,7 +302,7 @@
     },
     {
       "source": "/getting-started/what-is-replay-io",
-      "destination": "/basics/exploration/why-time-travel"
+      "destination": "/basics/time-travel/why-time-travel"
     },
     {
       "source": "/learn-more/contribute",
@@ -318,11 +318,11 @@
     },
     {
       "source": "/learn-more/contribute/how-replay-works",
-      "destination": "/basics/exploration/how-does-time-travel-work"
+      "destination": "/basics/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/learn-more/contribute/how-replay-works/how-programmatic-recordings-work",
-      "destination": "/basics/exploration/how-does-time-travel-work"
+      "destination": "/basics/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/learn-more/contribute/how-replay-works/our-approach-for-source-maps",
@@ -566,7 +566,7 @@
     },
     {
       "source": "/reference/what-is-runtime-replay",
-      "destination": "/basics/exploration/why-time-travel"
+      "destination": "/basics/time-travel/why-time-travel"
     },
     {
       "source": "/test-suites/_archive/ci-integration/circle-ci",
@@ -690,7 +690,7 @@
     },
     {
       "source": "/time-travel-intro/how-time-travel-works",
-      "destination": "/basics/exploration/how-does-time-travel-work"
+      "destination": "/basics/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/recording-browser-tests-(beta)",
@@ -747,11 +747,11 @@
     },
     {
       "source": "/time-travel-intro/what-is-time-travel",
-      "destination": "/basics/exploration/how-does-time-travel-work"
+      "destination": "/basics/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/time-travel-intro/why-time-travel",
-      "destination": "/basics/exploration/why-time-travel"
+      "destination": "/basics/time-travel/why-time-travel"
     },
     {
       "source": "/replay-devtools/browser-devtools/console",

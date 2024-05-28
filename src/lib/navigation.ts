@@ -34,23 +34,24 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
     {
-      title: 'Exploration',
+      title: 'Time Travel',
       icon: 'rocket',
       defaultOpen: true,
       links: [
         {
-          title: 'Why time-travel?',
-          href: '/basics/exploration/why-time-travel',
+          title: 'Why time travel?',
+          href: '/basics/time-travel/why-time-travel',
         },
         {
-          title: 'How does time-travel work?',
-          href: '/basics/exploration/how-does-time-travel-work',
+          title: 'How does time travel work?',
+          href: '/basics/time-travel/how-does-time-travel-work',
         },
       ],
     },
     {
       title: 'Replay DevTools',
       icon: 'browserdevtools',
+      defaultOpen: true,
       links: [
         {
           title: 'Overview',
@@ -140,6 +141,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     {
       title: 'Test Suite Dashboard',
       icon: 'analytics',
+      defaultOpen: true,
       links: [
         {
           title: 'Recent runs',
@@ -181,6 +183,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       title: 'Test Runners',
       omitFromDocumentTitle: true,
       icon: 'commands',
+      defaultOpen: true,
       links: [
         { title: 'Overview', href: '/reference/test-runners/overview' },
         {
@@ -269,6 +272,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     {
       title: 'CI Workflows',
       icon: 'settings',
+      defaultOpen: true,
       links: [
         // {
         //   title: 'Setting up',
@@ -291,6 +295,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     {
       title: 'Replay Runtimes',
       icon: 'replaychrome',
+      defaultOpen: true,
       links: [
         {
           title: 'Replay Chrome',
@@ -309,6 +314,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     {
       title: 'Replay CLI',
       icon: 'cli',
+      defaultOpen: true,
       links: [
         {
           title: 'Replay CLI',
@@ -323,6 +329,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     {
       title: 'Integrations',
       icon: 'integrations',
+      defaultOpen: true,
       links: [
         {
           title: 'Replay APIs',
@@ -371,6 +378,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     {
       title: 'Security + Privacy',
       icon: 'security',
+      defaultOpen: true,
       links: [
         {
           title: 'Security practices',
@@ -385,6 +393,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     {
       title: 'Additional reference',
       icon: 'overview',
+      defaultOpen: true,
       links: [
         {
           title: 'Advanced settings',

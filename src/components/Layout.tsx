@@ -112,7 +112,7 @@ function SubheaderNavigation() {
             name={'Basics'}
             isDefault={true}
             baseHref={'/basics'}
-            href={'/basics/exploration/why-time-travel'}
+            href={'/basics/time-travel/why-time-travel'}
           />
           <SubheaderNavigationLink
             name={'Learn'}
