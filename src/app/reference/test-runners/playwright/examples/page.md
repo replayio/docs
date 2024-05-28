@@ -19,7 +19,8 @@ Take a look at the YAML file for the workflow definition. We recommend diving in
 
 - [project repository](https://github.com/replayio-public/overboard)
 - [workflow file](https://github.com/replayio-public/overboard/blob/main/.github/workflows/playwright.yml)
-  {% /callout %}
+
+{% /callout %}
 
 ## Debugging a Playwright test flake on CI
 
@@ -36,7 +37,8 @@ The replay shown in video [can be found on this link](https://replay.help/playwr
 {% callout title="Debugging a flaky test" type="link" %}
 
 - [link to the replay showing flaky Cypress test](https://replay.help/playwrgiht-flake-debug)
-  {% /callout %}
+
+{% /callout %}
 
 ## Running tests against Vercel Deployment branch
 
@@ -56,4 +58,5 @@ You can read about the debugging process in this blogpost. If you want to see th
 
 - [example project](https://github.com/replayio/replay-examples/tree/main/examples/03_accessibility_false_positive)
 - [blogpost about the false positive case](https://blog.replay.io/finding-%22false-positive%22-tests-with-replay.io)
-  {% /callout %}
+
+{% /callout %}
