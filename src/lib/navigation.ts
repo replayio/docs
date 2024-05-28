@@ -406,23 +406,23 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       links: [
         {
           title: 'Playwright',
-          href: '/learn/comparison/playwright',
+          href: '/learn/comparisons/playwright',
         },
         {
           title: 'Cypress',
-          href: '/learn/comparison/cypress',
+          href: '/learn/comparisons/cypress',
         },
         {
           title: `Chrome Recorder`,
-          href: '/learn/comparison/chrome',
+          href: '/learn/comparisons/chrome',
         },
         {
           title: 'Loom',
-          href: '/learn/comparison/loom',
+          href: '/learn/comparisons/loom',
         },
         {
           title: 'Browser DevTools',
-          href: '/learn/comparison/devtools',
+          href: '/learn/comparisons/devtools',
         },
       ],
     },
