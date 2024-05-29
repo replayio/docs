@@ -144,6 +144,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       defaultOpen: true,
       links: [
         {
+          title: 'Overview',
+          href: '/basics/test-suites/overview',
+        },
+        {
           title: 'Recent runs',
           href: '/basics/test-suites/recent-runs',
         },
