@@ -1,5 +1,5 @@
 ---
-title: What is time travel?
+title: How does time travel work?
 ---
 
 The most common question we get is “how is time travel (or Runtime Replay) different from Session Replay?” At a high level, Session Replay tools replay the DOM and Runtime Replay tools re-run the runtime so that you can inspect the session with browser DevTools. That's a lot to unpack. Lets dive in!
