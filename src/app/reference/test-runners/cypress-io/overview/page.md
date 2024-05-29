@@ -1,100 +1,16 @@
 ---
 title: Cypress.io Overview
-description: Add the Cypress Replay plugin to your suite and start time travel debugging in minutes.
-image: /images/Cypress-hero.png
 ---
 
-## Getting more insight
+To use Replay to record your Cypress.io tests, you can replace the browser you're using to record your tests with [the Replay Chrome driver](/reference/replay-runtimes/replay-chrome):
 
-The most annoying test flakes are those that cannot be reproduced locally or simply don’t show up when you need them to. But we think that **what happens on CI should not stay on CI**.
+{% icon icon="cypress" class="w-6 h-5 inline-block mr-1 mb-1" /%} Cypress:{% class="font-semibold"%}
 
-Recording your test run using replay will provide more info than any test result, logger or any DOM snapshot trace ever could. That’s because a replay provides you with **context for every line of code**. For both your spec and the app you test.
-
-{% figure
-    alt="Jumping to code"
-    src="/images/jump_to_code.png"
-    height=870
-    width=870
-/%}
-
-## Context matters
-
-Cypress brings its special chaining syntax, but can sometimes lead to unexpected issues. Retryability mechanisms can sometimes cause a race-condition, starting a chain of events that can be hard to trace back.
-
-Replay tackles this by providing you more context and deeper insight. All packaged into DevTools that we love to work with and with time-traveling capability on top of it.
-
-## Trace back every DOM change
-
-Replay allows you to track every DOM change, not just those that are captured by "before" and "after" snapshots. Let’s look at the following test:
-
-```ts {% fileName="spec.cy.ts" lineNumbers=true %}
-it('tests a stopwatch', () => {
-  cy.visit('/')
-  cy.get('p').should('have.text', '00:01:000')
-  cy.get('p').should('have.text', '00:03:000')
-})
+```sh
+npx cypress run --browser replay-chromium
 ```
 
-There are a couple of things that could go wrong with this test:
-
-{% icon icon="error" class="text-red-500 inline w-4 h-4 mr-1.5" /%} stopwatch never shows the time `00:02:000` and still **passes** (false positive) \
-{% icon icon="error" class="text-red-500 inline w-4 h-4 mr-1.5" /%} stopwatch runs too fast for `.should()` command and **fails** (false negative)
-
-While this example is fairly exaggerated, it illustrates two main problems of **rapid DOM changes**.
-
-1. they can cause problems and still be invisible for the test script
-2. they can happen too fast for a test assertion to make it in time
-
-**This is where snapshots tend to fall short.** Because an application is still operating between test steps, there’s a lot that goes under the radar. Replay is not a snapshot-based recorder but instead records the whole runtime. Visualized, the difference between DOM snapshots and a replay could look like this:
-
-{% snapshotsvsreplay /%}
-
-Because of this, a flaky test does not feel like an act of higher force, but can be inspected with **a microscopic precision**. Even when your app is updated every millisecond, you can jump to the perfect spot, and see your DOM rendered exactly as it would on that moment.
-
-{% callout title="Learn more" %}
-To learn more about elements panel, head over to [Elements panel docs](/basics/replay-devtools/browser-devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=kgJVauI7Obs).
-{% /callout %}
-
-{% video src="elementsPanelStopWatch" /%}
-
-## Inspect network calls
-
-Replays capture all network communication and display it the same way you would expect to see it in your favorite browser’s network panel.
-
-Network calls are the biggest contributor to asynchronous issues, as responses from server return in different times and sizes. Replay DevTools allow you to inspect every API call and resource fetch, and view headers, payloads, server responses and even timings and stack trace.
-
-{% video src="networkPanelCypress" /%}
-
-Because network panel is integrated with the rest of the tools, you’ll get even more options than in local development. Stack trace panel displays the source of an API call, which allows you to track back the very function that triggered the call.
-
-{% figure
-    alt="Jumping to code"
-    src="/images/stack_trace_network_panel.png"
-    height=1300
-    width=1300
-/%}
-
-Debugging tests should be a team effort whether that is collaboration between QA and devs or between different dev teams. When facing an API issue, commenting and sharing a replay will save hours of back and forth reporting. Instead of replicating the issue, share the issue exactly the way it happened. Locally or on CI.
-
-{% callout title="Learn more" %}
-To learn more about network panel, checkout [Network panel docs](/basics/replay-devtools/browser-devtools/elements-panel) or watch the [Replay Crash course](https://www.youtube.com/watch?v=rGKAOG6gZZU).
-{% /callout %}
-
-## Jump to code
-
-When a test clicks on an element on page, we usually **see the result**. Modal opened, API call was made, and so on. Replay shows you **how that result happened**.
-
-Interactions show "Jump to code" button that takes you to the function call made by a click, typing or other interaction. This way your test interaction is no longer disconnected from the application under test.
-
-{% video src="jumpToCode" /%}
-
-This bridge between your test code and your app code is usually the first place you can start your test flake investigation. It gives you a unique insight into what is happening during your test - not only with the test, but also the application under test.
-
-{% callout title="Learn more" %}
-Jumping from test code and utilizing the timeline is explored in the [Replay Crash course video](https://www.youtube.com/watch?v=ksxf6qE9Ymc).
-{% /callout %}
-
-{% quick-links title="Read more" description="Learn how record your first Replay with Cypress, manage your test suite and debug flaky tests using Replay DevTools" %}
+{% quick-links title="Read more" description="See how you're able to improve your Replay experience by integrating with different CI solutions and other reference documentation." %}
 
 {% quick-link
   title="Record Your First Cypress test"
@@ -104,24 +20,24 @@ Jumping from test code and utilizing the timeline is explored in the [Replay Cra
 /%}
 
 {% quick-link
-  title="Manage your recordings"
-  icon="console"
-  href="/reference/replay-cli/commands"
-  description="Learn how to upload, remove and view your recordings using CLI"
+  title="Recording options"
+  icon="record"
+  href="/reference/test-runners/cypress-io/recording-options"
+  description="See what recording options are available for Cypress.io and Replay"
 /%}
 
 {% quick-link
-  title="Replay DevTools"
-  icon="jumptocode"
-  href="/reference/test-runners/overview"
-  description="Learn how to use Replay DevTools to debug your tests."
+  title="GitHub Actions"
+  icon="github"
+  href="/reference/test-runners/cypress-io/github-actions"
+  description="See how you can record all of your Cypress.io tests in GitHub Actions"
 /%}
 
 {% quick-link
-  title="Test Suite Management"
-  icon="treeview"
-  href="/basics/test-suites/recent-runs"
-  description="Test Suite Dashboard helps you stay on top of your test suite health."
+  title="Other CI Providers"
+  icon="timeline"
+  href="/reference/test-runners/cypress-io/other-ci-providers"
+  description="Record your Cypress.io tests using other CI providers."
 /%}
 
 {% /quick-links %}
