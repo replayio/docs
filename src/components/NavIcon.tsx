@@ -65,6 +65,7 @@ import { PrivacyPrinciplesIcon } from './icons/PrivacyPrinciplesIcon'
 import { SecurityPrinciplesIcon } from './icons/SecurityPrinciplesIcon'
 import { IntegrationsIcon } from './icons/IntegrationsIcon'
 import { FrameworksIcon } from './icons/FrameworksIcon'
+import { AdditionalContent } from './icons/AdditionalContent'
 
 import { EmptyIcon } from './icons/EmptyIcon'
 import { OtherCiProviders } from './icons/OtherCiProviders'
@@ -145,6 +146,7 @@ export const icons = {
   wifi: WifiIcon,
   magnifying: MagnifyingGlassIcon,
   beaker: BeakerIcon,
+  additionalcontent: AdditionalContent
 }
 export function NavIcon({
   icon = 'file',

@@ -1,5 +1,5 @@
 ---
-title: Examples
+title: Cypress.io Examples
 description: This page shows some real-life examples of using Replay with a Cypress test suite. You will learn about debugging a flaky test, setting up a simple CI workflow file and find links to example repositories and projects.
 ---
 
@@ -31,7 +31,7 @@ The replay shown in video [can be found on this link](https://replay.help/cypres
 ## False positive accessibility check
 We generally think of test failures as something bad. Overall we prefer our tests to be green. But as they say - "never trust a test that you haven’t seen fail". 
 
-False positives can be a nightmare and an example from our client demonstrated this. An accessibility check that ran before the page was fully loaded made a test fail *sometimes*, but it should have failed *everytime*.
+False positives can be a nightmare, and an example from our client demonstrated this. An accessibility check that ran before the page was fully loaded made a test fail *sometimes*, but it should have failed *everytime*.
 
 You can read about the debugging process in this blogpost. If you want to see the example yourself, you can take a look into the repository and see the flaky test run.
 

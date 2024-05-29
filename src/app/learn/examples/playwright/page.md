@@ -1,5 +1,5 @@
 ---
-title: Examples
+title: Playwright Examples
 description: This page shows some real-life examples of using Replay with a Playwright test suite. You will learn about debugging a flaky test, setting up a simple CI workflow file and find links to example repositories and projects.
 ---
 

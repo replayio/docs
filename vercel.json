@@ -963,7 +963,7 @@
     },
     {
       "source": "/test-runners/cypress-io/examples",
-      "destination": "/reference/test-runners/cypress-io/examples"
+      "destination": "/learn/examples/cypress-io"
     },
     {
       "source": "/test-runners/cypress-io/faq",
@@ -1007,7 +1007,7 @@
     },
     {
       "source": "/test-runners/playwright/examples",
-      "destination": "/reference/test-runners/playwright/examples"
+      "destination": "/learn/examples/playwright"
     },
     {
       "source": "/test-runners/playwright/faq",
@@ -1056,6 +1056,14 @@
     {
       "source": "/reference/test-runners/cypress-io/getting-started",
       "destination": "/reference/test-runners/cypress-io/overview"
+    },
+    {
+      "source": "/reference/test-runners/cypress-io/examples",
+      "destination": "/learn/examples/cypress-io"
+    },
+    {
+      "source": "/reference/test-runners/playwright/examples",
+      "destination": "/learn/examples/playwright"
     }
   ],
   "rewrites": [
