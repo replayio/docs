@@ -226,8 +226,12 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
         {
           title: 'Playwright',
-          href: '/reference/test-runners/playwright/playwright-core',
+          href: '/reference/test-runners/playwright/overview',
           links: [
+            {
+              title: 'Overview',
+              href: '/reference/test-runners/playwright/overview',
+            },
             {
               title: 'Recording Playwright core',
               href: '/reference/test-runners/playwright/playwright-core',
