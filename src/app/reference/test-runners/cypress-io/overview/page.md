@@ -1,7 +1,5 @@
 ---
 title: Cypress.io Overview
-description: Add the Cypress Replay plugin to your suite and start time travel debugging in minutes.
-image: /images/Cypress-hero.png
 ---
 
 To use Replay to record your Cypress.io tests, you can replace the browser you're using to record your tests with [the Replay Chrome driver](/reference/replay-runtimes/replay-chrome):
@@ -12,7 +10,7 @@ To use Replay to record your Cypress.io tests, you can replace the browser you'r
 npx cypress run --browser replay-chromium
 ```
 
-{% quick-links title="Read more" description="See how you're able to improve your Replay experience by integrating with different CI/CD solutions and other reference documentation." %}
+{% quick-links title="Read more" description="See how you're able to improve your Replay experience by integrating with different CI solutions and other reference documentation." %}
 
 {% quick-link
   title="Record Your First Cypress test"
