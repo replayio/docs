@@ -6,7 +6,8 @@ title: Record your Cypress.io tests
 
 ## Create a new Test Suite team
 
-Start by visiting our new test suite form. It will create an API key and guide you through each step.
+Start by visiting our [new test suite form](https://app.replay.io/team/new/tests).
+It will create an API key and guide you through each step.
 
 {% figure
     alt="Create a cypress team"
