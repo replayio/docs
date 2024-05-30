@@ -6,7 +6,7 @@ title: Record your Playwright tests
 
 ## Create a new Test Suite team
 
-Start by visiting our [new testsuite form](https://app.replay.io/team/new/tests).
+Start by visiting our [new test suite form](https://app.replay.io/team/new/tests).
 It will create an API key and guide you through each step.
 
 {% figure
