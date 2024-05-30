@@ -4,19 +4,19 @@ title: Record your Playwright tests
 
 {% steps %}
 
-## Create a new testsuite team
+## Create a new Test Suite team
 
 Start by visiting our [new testsuite form](https://app.replay.io/team/new/tests).
 It will create an API key and guide you through each step.
 
 {% figure
-    alt="Jumping to code"
+    alt="New playwright team"
     src="/images/new-team-tests.png"
-    height=870
-    width=870
+    height=415
+    width=766
 /%}
 
-## Install the Playwright Plugin package into your project
+## Install the Replay Playwright plugin
 
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
@@ -77,7 +77,7 @@ set REPLAY_API_KEY=<your_api_key>
 {% /tab %}
 {% /tabs %}
 
-## Update your configuration
+## Update playwright.config.js
 
 ```js {% fileName="playwright.config.ts" highlight=[2, "7-10","14-17"] lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from "@playwright/test";
@@ -104,9 +104,7 @@ export default config;
 
 ## Record your test
 
-Once you have added Chromium Replay Browser to your project, you are ready to create your recordings. You can run your tests normally, using `npx playwright test` command.
-
-If your project has multiple browsers set up, you can run Replay Browser only:
+With everything set up, you can now run `playwright test` to record and upload your first Playwright replays.
 
 ```sh
 npx playwright test --project replay-chromium

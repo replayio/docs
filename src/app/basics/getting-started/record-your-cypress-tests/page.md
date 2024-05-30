@@ -4,9 +4,18 @@ title: Record your Cypress.io tests
 
 {% steps %}
 
-## Install the Cypress Plugin
+## Create a new Test Suite team
 
-Install the Cypress plugin in your project:
+Start by visiting our new testsuite form. It will create an API key and guide you through each step.
+
+{% figure
+    alt="Create a cypress team"
+    src="/images/cypress-team.png"
+    height=374
+    width=679
+/%}
+
+## Install the Replay Cypress plugin
 
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
@@ -39,9 +48,37 @@ bun install @replayio/cypress -D
 {% /tab %}
 {% /tabs %}
 
-## Integrate The Plugin To Your Project
+## Save your API key
 
-Simply add the Replay plugin to your project [configuration](https://docs.cypress.io/guides/references/configuration) and [support](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Support-file) files.
+To use your API key, you can either use [dotenv package](https://www.npmjs.com/package/dotenv) and save it to a `.env` file or add the API key to your environment directly.
+
+{% tabs labels=[".env", "macOS/Linux", "Windows"] %}
+{% tab %}
+
+```bash {% fileName=".env" %}
+REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+export REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+set REPLAY_API_KEY=<your_api_key>
+```
+
+{% /tab %}
+{% /tabs %}
+
+## Add the plugin to your project
+
+Installing Replay Cypress is as simple as adding the plugin to your [cypress.config.js](https://docs.cypress.io/guides/references/configuration) and [support](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Support-file) files. Once installed, the plugin will let you record your tests with the [Replay Chrome browser](/reference/replay-runtimes/replay-chrome) and add the Cypress timeline to Replay DevTools.
 
 {% tabs labels=["CommonJS", "ESM"] %}
 {% tab %}
@@ -84,7 +121,7 @@ export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       replayPlugin(on, config, {
-        upload: true, // automatically upload your replays do DevTools
+        upload: true, // automatically upload your replays to your team
         apiKey: process.env.REPLAY_API_KEY,
       })
       return config
@@ -96,41 +133,9 @@ export default defineConfig({
 {% /tab %}
 {% /tabs %}
 
-## Generate and save your API key
+## Run Your test
 
-In order to upload your test replays you need to generate an API key and save it to your environment. You can generate an API key once you [created a team in Replay App](/basics/replay-teams/setting-up-a-team). API key management section can be found in the team settings menu. [Read more about API keys here](/reference/ci-workflows/generate-api-key).
-
-{% video src="generateApiKey" /%}
-
-To use your API key, you can either use [dotenv package](https://www.npmjs.com/package/dotenv) and save it to a `.env` file or add the API key to your environment directly.
-
-{% tabs labels=[".env", "macOS/Linux", "Windows"] %}
-{% tab %}
-
-```bash {% fileName=".env" %}
-REPLAY_API_KEY=<your_api_key>
-```
-
-{% /tab %}
-{% tab %}
-
-```sh
-export REPLAY_API_KEY=<your_api_key>
-```
-
-{% /tab %}
-{% tab %}
-
-```sh
-set REPLAY_API_KEY=<your_api_key>
-```
-
-{% /tab %}
-{% /tabs %}
-
-## Run Your Test With Replay Browser
-
-With everything set up, you can now run your test locally:
+With everything set up, you can now run `cypress run` to record and upload your first Cypress replays.
 
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
@@ -163,19 +168,22 @@ bun cypress run --browser replay-chromium
 {% /tab %}
 {% /tabs %}
 
-After your test finishes it will generate a link to Replay DevTools where you can inspect your test run.
+```sh
+🕑 Completing some outstanding work ...
+🚀 Successfully uploaded 2 recordings:
 
-<!-- todo: add video -->
+❌ cypress/e2e/spec.cy.ts
+https://app.replay.io/recording/5bab992d-34dd-4853-9f6a-09375a66de98
 
-## Done!
-
-You’re ready to inspect your local test run in Replay DevTools now. You can also record your tests in your CI environment. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/reference/test-runners/cypress-io/github-actions) and [other CI providers](/reference/test-runners/cypress-io/other-ci-providers).
+✅ cypress/e2e/clearCart.cy.js
+https://app.replay.io/recording/b37abe67-031c-4d23-ba8b-0224fcd3e0d5
+```
 
 {% /steps %}
 
-{% callout type="replay" %}
-[Check out this replay](https://replay.help/cypress-flake-debug) for a detailed walkthrough on debugging a flaky Cypress test. You'll see the capabilities of Replay DevTools and walk through the debugging process of identifying the root cause.
-{% /callout %}
+## Record your suite in CI
+
+Now that you're ready to inspect your local tests, the next step is to record your tests in CI. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/reference/test-runners/cypress-io/github-actions) and [other CI providers](/reference/test-runners/cypress-io/other-ci-providers).
 
 {% quick-links title="Read more" description="Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools" %}
 
