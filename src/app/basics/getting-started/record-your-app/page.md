@@ -61,7 +61,7 @@ This command:
 - Installs the Replay browser (if not already installed)
 - Opens the Replay browser to begin recording `https://first.replay.io`
 
-## Inspect your recording
+## Inspect your replay
 
 When you close the browser, you'll be prompted to upload your recordings. Once the upload is completed, you will get a URL where you can inspect your application with Replay DevTools.
 
@@ -97,7 +97,7 @@ In the interim, if you would perfer downloading a browser directly, you can use 
 
 {% accordion-item title="Why do I need to login to Replay?" %}
 
-Recordings need to be uploaded so the browser can be replayed in the Replay Cloud. See [How time travel works](/basics/time-travel/how-does-time-travel-work) for more information.
+Replays need to be uploaded so the browser can be replayed in the Replay Cloud. See [How time travel works](/basics/time-travel/how-does-time-travel-work) for more information.
 
 {% /accordion-item %}
 
@@ -106,10 +106,10 @@ Recordings need to be uploaded so the browser can be replayed in the Replay Clou
 {% quick-links title="Next Steps"  %}
 
 {% quick-link
-  title="Inspect your first recording"
+  title="Inspect your replay"
   icon="console"
   href="/basics/getting-started/inspect-replay"
-  description="Walk through the steps of inspecting our new replay."
+  description="Walk through the steps of inspecting your new replay."
 /%}
 
 {% quick-link
