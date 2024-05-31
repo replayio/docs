@@ -1,5 +1,5 @@
 ---
-title: Record your app
+title: Record your application
 ---
 
 Recording your application with the Replay browser lets you capture a bug once and inspect it after the fact without having to reproduce it again. This makes it possible to:
@@ -63,7 +63,7 @@ This command:
 
 ## Inspect your recording
 
-When you close the browser, you'll be prompted to upload your recordings. Once the upload is completed, you will get a URL where you can inspect your app with Replay DevTools.
+When you close the browser, you'll be prompted to upload your recordings. Once the upload is completed, you will get a URL where you can inspect your application with Replay DevTools.
 
 ```sh
 Uploading recordings...
