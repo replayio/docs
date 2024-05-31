@@ -8,7 +8,7 @@ Recording your application with the Replay browser lets you capture a bug once a
 - [Debug your application by adding new `console.log` statements anywhere in the recording.](/basics/replay-devtools/time-travel-devtools/live-console-logs)
 - [Inspect Network requests](/basics/replay-devtools/browser-devtools/network-monitor), [React components](/basics/replay-devtools/framework-devtools/react-panel), and [DOM elements](/basics/replay-devtools/browser-devtools/elements-panel) as if the application were running live on your laptop.
 
-In this guide, we'll use the Replay CLI to record your interactions on the page https://first.replay.io/. If you'd like to record your Playwright or Cypress tests instead, feel free to [jump ahead](/reference/test-runners/overview).
+In this guide, we'll use the Replay CLI to record your interactions on the page `https://first.replay.io`. If you'd like to record your Playwright or Cypress tests instead, feel free to [jump ahead](/reference/test-runners/overview).
 
 {% steps %}
 
@@ -52,14 +52,14 @@ bun i -g replayio
 Run the following command to open the Replay browser and start recording.
 
 ```sh
-replayio record https://first.replay.io/
+replayio record https://first.replay.io
 ```
 
 This command:
 
 - Prompts you to log in to your Replay account with Google (if not already logged in)
 - Installs the Replay browser (if not already installed)
-- Opens the Replay browser to begin recording `https://first.replay.io/`
+- Opens the Replay browser to begin recording `https://first.replay.io`
 
 ## Inspect your recording
 
