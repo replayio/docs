@@ -5,10 +5,10 @@ title: Record your app
 Recording your application with the Replay browser lets you capture a bug once and inspect it after the fact without having to reproduce it again. This makes it possible to:
 
 - [Share the replay as a URL with your team so others can inspect it as if they were there when you recorded it.](/basics/replay-devtools/time-travel-devtools/collaborative-devtools)
-- [Debug the replay by adding new `console.log` statements anywhere in the recording.](/basics/replay-devtools/time-travel-devtools/live-console-logs)
+- [Debug your application by adding new `console.log` statements anywhere in the recording.](/basics/replay-devtools/time-travel-devtools/live-console-logs)
 - [Inspect Network requests](/basics/replay-devtools/browser-devtools/network-monitor), [React components](/basics/replay-devtools/framework-devtools/react-panel), and [DOM elements](/basics/replay-devtools/browser-devtools/elements-panel) as if the application were running live on your laptop.
 
-In this guide, we'll use the Replay CLI to record the website https://first.replay.io/. If you'd like to record your Playwright or Cypress tests, feel free to [jump ahead](/reference/test-runners/overview).
+In this guide, we'll use the Replay CLI to record your interactions on the page https://first.replay.io/. If you'd like to record your Playwright or Cypress tests instead, feel free to [jump ahead](/reference/test-runners/overview).
 
 {% steps %}
 
