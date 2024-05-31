@@ -29,10 +29,10 @@ export function DocsLayout({
     <>
       <div
         data-test-id="docs-layout"
-        className="flex min-w-0  flex-auto grow px-4 py-8 "
+        className="flex min-w-0  flex-auto grow py-8 pl-16 pr-4 "
       >
         <div className="flex w-full flex-col  items-center">
-          <article className=" grow lg:max-w-4xl  lg:pl-16 lg:pr-0 xl:px-4">
+          <article className="grow lg:max-w-4xl lg:pl-16 lg:pr-0 xl:px-4">
             <DocsHeader
               description={description}
               documentTitle={documentTitle}
