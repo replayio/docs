@@ -32,7 +32,7 @@ export function DocsLayout({
         className="flex min-w-0  flex-auto grow px-4 py-8 "
       >
         <div className="flex w-full flex-col  items-center">
-          <article className=" grow lg:max-w-4xl  lg:pl-16 lg:pr-0 xl:px-16">
+          <article className=" grow lg:max-w-4xl  lg:pl-16 lg:pr-0 xl:px-4">
             <DocsHeader
               description={description}
               documentTitle={documentTitle}
