@@ -7,7 +7,8 @@ test('table of contents redirects to proper item', async ({ page }) => {
   await toc.getByText('Inspect your replay').click()
   await expect(page).toHaveURL(/.*\/record-your-app#inspect-your-replay/)
 
-  const article = page.locator('article')
-  const heading = article.getByText('Inspect your replay')
+  const heading = page
+    .getByRole('link', { name: 'Inspect your replay' })
+    .first()
   await expect(heading).toBeVisible()
 })
