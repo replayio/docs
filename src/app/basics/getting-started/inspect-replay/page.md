@@ -1,6 +1,6 @@
 ---
 title: Inspect your replay
-description: Once your recording is uploaded, you're able to inspect it with Replay DevTools.
+description: Once your recording is uploaded, you can inspect it with Replay DevTools.
 image: /images/recording_landing_page.png
 ---
 
@@ -27,7 +27,7 @@ height=188
 width=550
 /%}
 
-Selecting the `400` error in the network panel allows us to look at the request and reply. Here, the request is indicating that `"Color is not found, recieved: undefined"` was the response from our backend:
+Selecting the `400` error in the network panel allows us to look at the request and response. Here, the response from our backend was `"Color is not found, received: undefined"`:
 
 {% figure
 alt="The request subtab on the network request panel showing the request body with \"{color: blue}\""
@@ -45,6 +45,6 @@ height=235
 width=450
 /%}
 
-With this information, we can go to our backend team more informed with how to report a ticket to solve this.
+With this information, we can send our backend team a more detailed bug report.
 
 {% /steps %}
