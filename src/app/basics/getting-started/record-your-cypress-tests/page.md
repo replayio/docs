@@ -22,21 +22,21 @@ It will create an API key and guide you through each step.
 {% tab %}
 
 ```sh
-npm install @replayio/cypress -D
+npm install --save-dev @replayio/cypress
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-yarn add @replayio/cypress -D
+yarn add --save-dev @replayio/cypress
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-pnpm install @replayio/cypress -D
+pnpm install --save-dev @replayio/cypress
 ```
 
 {% /tab %}
@@ -48,6 +48,12 @@ bun install @replayio/cypress -D
 
 {% /tab %}
 {% /tabs %}
+
+## Install the Replay browser
+
+```sh
+npx replayio install
+```
 
 ## Save your API key
 

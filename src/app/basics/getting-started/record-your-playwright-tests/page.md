@@ -49,7 +49,7 @@ bun install --save-dev @replayio/playwright
 {% /tab %}
 {% /tabs %}
 
-## Install the Replay browser.
+## Install the Replay browser
 
 ```sh
 npx replayio install
