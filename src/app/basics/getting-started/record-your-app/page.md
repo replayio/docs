@@ -5,10 +5,10 @@ title: Record your app
 Recording your application with the Replay browser lets you capture a bug once and inspect it after the fact without having to reproduce it again. This makes it possible to:
 
 - [Share the replay as a URL with your team so others can inspect it as if they were there when you recorded it.](/basics/replay-devtools/time-travel-devtools/collaborative-devtools)
-- [Debug the replay with `console.log` added in at any point of the recording.](/basics/replay-devtools/time-travel-devtools/live-console-logs)
+- [Debug the replay by adding new `console.log` statements anywhere in the recording.](/basics/replay-devtools/time-travel-devtools/live-console-logs)
 - [Inspect Network requests](/basics/replay-devtools/browser-devtools/network-monitor), [React components](/basics/replay-devtools/framework-devtools/react-panel), and [DOM elements](/basics/replay-devtools/browser-devtools/elements-panel) as if the application were running live on your laptop.
 
-In this guide, we'll use the Replay CLI to record first.replay.io. If you'd like to record your Playwright or Cypress tests, feel free to [jump ahead](/reference/test-runners/overview).
+In this guide, we'll use the Replay CLI to record the website https://first.replay.io/. If you'd like to record your Playwright or Cypress tests, feel free to [jump ahead](/reference/test-runners/overview).
 
 {% steps %}
 
@@ -52,18 +52,18 @@ bun i -g replayio
 Run the following command to open the Replay browser and start recording.
 
 ```sh
-replayio record first.replay.io/
+replayio record https://first.replay.io/
 ```
 
 This command will:
 
 - Prompt you to login to your Replay account with Google (if not already logged in)
 - Install the Replay browser (if not already installed)
-- Open the Replay browser to begin recording `first.replay.io`
+- Open the Replay browser to begin recording `https://first.replay.io/`
 
-## Inspect your replay
+## Inspect your recording
 
-When you close the browser, you'll be prompted to upload your recordings. Once the upload is completed, you will get a url where you can inspect your app with Replay DevTools.
+When you close the browser, you'll be prompted to upload your recordings. Once the upload is completed, you will get a URL where you can inspect your app with Replay DevTools.
 
 ```sh
 Uploading recordings...
@@ -73,7 +73,7 @@ View recording at:
 https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25
 ```
 
-Now that we've recorded our first [replay](https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25), lets look at what it looks like to [inspect it with Replay DevTools](/basics/getting-started/inspect-replay).
+Now that we've recorded our first [replay](https://app.replay.io/recording/a616009e-b825-4c54-83b4-e20bd8c0cb25), let's [inspect it with Replay DevTools](/basics/getting-started/inspect-replay).
 
 {% /steps %}
 
@@ -97,7 +97,7 @@ In the interim, if you would perfer downloading a browser directly, you can use 
 
 {% accordion-item title="Why do I need to login to Replay?" %}
 
-Replays need to be uploaded so that the browser can be replayed in the Replay Cloud. [How time travel works](/basics/time-travel/how-does-time-travel-work)
+Recordings need to be uploaded so the browser can be replayed in the Replay Cloud. See [How time travel works](/basics/time-travel/how-does-time-travel-work) for more information.
 
 {% /accordion-item %}
 
@@ -106,7 +106,7 @@ Replays need to be uploaded so that the browser can be replayed in the Replay Cl
 {% quick-links title="Next Steps"  %}
 
 {% quick-link
-  title="Inspect our replay"
+  title="Inspect your first recording"
   icon="console"
   href="/basics/getting-started/inspect-replay"
   description="Walk through the steps of inspecting our new replay."
@@ -120,7 +120,7 @@ Replays need to be uploaded so that the browser can be replayed in the Replay Cl
 /%}
 
 {% quick-link
-  title="Setup a team"
+  title="Set up a team"
   icon="settingupateam"
   href="/basics/replay-teams/setting-up-a-team"
   description="Learn how to share replays as a team."
