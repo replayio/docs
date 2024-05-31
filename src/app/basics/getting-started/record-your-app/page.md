@@ -106,10 +106,10 @@ Replays need to be uploaded so the browser can be replayed in the Replay Cloud. 
 {% quick-links title="Next Steps"  %}
 
 {% quick-link
-  title="Inspect your replay"
+  title="Inspect our replay"
   icon="console"
   href="/basics/getting-started/inspect-replay"
-  description="Walk through the steps of inspecting your new replay."
+  description="Walk through the steps of inspecting our new replay."
 /%}
 
 {% quick-link
