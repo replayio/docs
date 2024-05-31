@@ -27,7 +27,7 @@ height=188
 width=550
 /%}
 
-Selecting the `400` error in the network panel allows us to look at the request and response. Here, the response is indicating that `"Color is not found, recieved: undefined"` was the reply from our backend:
+Selecting the `400` error in the network panel allows us to look at the request and response. Here, the response from our backend was `"Color is not found, received: undefined"`:
 
 {% figure
 alt="The request subtab on the network request panel showing the request body with \"{color: blue}\""
