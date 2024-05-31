@@ -55,11 +55,11 @@ Run the following command to open the Replay browser and start recording.
 replayio record https://first.replay.io/
 ```
 
-This command will:
+This command:
 
-- Prompt you to login to your Replay account with Google (if not already logged in)
-- Install the Replay browser (if not already installed)
-- Open the Replay browser to begin recording `https://first.replay.io/`
+- Prompts you to log in to your Replay account with Google (if not already logged in)
+- Installs the Replay browser (if not already installed)
+- Opens the Replay browser to begin recording `https://first.replay.io/`
 
 ## Inspect your recording
 
