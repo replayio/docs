@@ -81,7 +81,10 @@ set REPLAY_API_KEY=<your_api_key>
 
 ```js {% fileName="playwright.config.ts" highlight=[2, "7-10","14-17"] lineNumbers=true %}
 import { PlaywrightTestConfig, devices } from "@playwright/test";
-import { devices as replayDevices, replayReporter } from "@replayio/playwright";
+import {
+  devices as replayDevices,
+  replayReporter
+} from "@replayio/playwright";
 import "dotenv/config";
 
 const config: PlaywrightTestConfig = {
