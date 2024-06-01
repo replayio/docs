@@ -51,7 +51,7 @@ bun install @replayio/cypress -D
 
 ## Save your API key
 
-To use your API key, you can either use [dotenv package](https://www.npmjs.com/package/dotenv) and save it to a `.env` file or add the API key to your environment directly.
+To use your API key, you can either use the [dotenv package](https://www.npmjs.com/package/dotenv) and save it to a `.env` file or add the API key to your environment directly.
 
 {% tabs labels=[".env", "macOS/Linux", "Windows"] %}
 {% tab %}
@@ -97,7 +97,7 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       replayPlugin(on, config, {
-        upload: true, // automatically upload your replays do DevTools
+        upload: true, // automatically upload your replays to DevTools
         apiKey: process.env.REPLAY_API_KEY,
       })
       return config
@@ -186,27 +186,27 @@ https://app.replay.io/recording/b37abe67-031c-4d23-ba8b-0224fcd3e0d5
 
 Now that you're ready to inspect your local tests, the next step is to record your tests in CI. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/reference/test-runners/cypress-io/github-actions) and [other CI providers](/reference/test-runners/cypress-io/other-ci-providers).
 
-{% quick-links title="Read more" description="Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools" %}
+{% quick-links title="Read more" description="Learn how to record your tests, manage your test suite, and debug flaky tests using Replay DevTools." %}
 
 {% quick-link
-  title="Record Your CI Test Run"
+  title="Record your CI test run"
   icon="build"
   href="/reference/test-runners/cypress-io/github-actions"
-  description="Learn how to integrate Replay into your Continuous integration service"
+  description="Learn how to integrate Replay into your CI service"
 /%}
 
 {% quick-link
   title="Replay DevTools"
   icon="jumptocode"
   href="/basics/replay-devtools/browser-devtools/console"
-  description="Learn how to use Replay DevTools to debug your tests."
+  description="Learn how to use Replay DevTools to debug your tests"
 /%}
 
 {% quick-link
-  title="Test Suite Management"
+  title="Test Suite management"
   icon="treeview"
   href="/basics/test-suites/top-failing-and-flaky-tests"
-  description="Test Suite Dashboard helps you stay on top of your test suite health."
+  description="The Test Suite Dashboard helps you stay on top of your test suite health"
 /%}
 
 {% quick-link
