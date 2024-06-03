@@ -93,7 +93,7 @@ export function TableOfContents({
             >
               On this page
             </h2>
-            <ol role="list" className="mt-4 space-y-2 text-sm">
+            <ol role="list" className="w-42 mt-4 space-y-2 text-sm">
               {tableOfContents.map((section) => (
                 <li key={section.id}>
                   <h3>
@@ -101,8 +101,8 @@ export function TableOfContents({
                       href={`#${section.id}`}
                       className={clsx(
                         isActive(section)
-                          ? 'text-sky-500'
-                          : 'font-normal text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300',
+                          ? 'leading-tight text-sky-500'
+                          : 'font-normal leading-tight text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300',
                       )}
                     >
                       {section.title}
