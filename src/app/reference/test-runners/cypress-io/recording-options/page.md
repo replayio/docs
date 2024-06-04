@@ -1,6 +1,6 @@
 ---
 title: Configuration
-description: There are different modes and strategies that help you create your recordings more effectively. By default, every test is recorded, but you can choose to create your recordings only when problems appear, saving costs and time.
+description: There are different modes and strategies that help you create your replays more effectively. By default, every test is recorded, but you can choose to create your replays only when problems appear, saving costs and time.
 ---
 
 ## Diagnostic Modes

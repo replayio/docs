@@ -37,7 +37,7 @@ Because we’re able to compare the current component’s render with the prior,
 
 ### View hook values
 
-Because we’re able to collect more information at while replaying the recording, we’re able to stop showing the hook index and start showing the hook value and function definition.
+Because we’re able to collect more information at while replaying the replay, we’re able to stop showing the hook index and start showing the hook value and function definition.
 
 ### Mapped component names
 

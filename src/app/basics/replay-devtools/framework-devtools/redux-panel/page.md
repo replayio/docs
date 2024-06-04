@@ -11,7 +11,7 @@ The Redux panel has all of the features you’ve come to expect to find in Redux
 
 ### Actions
 
-- View the actions that were dispatched during the recording and jump to the point in time they were dispatched.
+- View the actions that were dispatched during the replay and jump to the point in time they were dispatched.
 - Filter the actions list by name
 - Inspect the action payload
 - Inspect the application state after each dispatch

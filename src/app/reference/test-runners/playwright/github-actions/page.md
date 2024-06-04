@@ -62,7 +62,7 @@ In most setups, you'll want to to have additional control. In these cases, it's 
 
 ### Only uploading failed tests
 
-By default, all test replays are uploaded no matter the result. If you want to only upload the failed recordings, you can do so by passing the `filter` property to the `replayio/action-upload` action:
+By default, all test replays are uploaded no matter the result. If you want to only upload the failed replays, you can do so by passing the `filter` property to the `replayio/action-upload` action:
 
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true highlight=["13-18"] %}
 name: Replay tests

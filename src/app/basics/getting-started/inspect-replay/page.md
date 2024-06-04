@@ -1,6 +1,6 @@
 ---
 title: Inspect your replay
-description: Once your recording is uploaded, you can inspect it with Replay DevTools.
+description: Once your replay is uploaded, you can inspect it with Replay DevTools.
 image: /images/recording_landing_page.png
 ---
 
@@ -12,7 +12,7 @@ By default, you're set to "Viewer" mode. You can change the view to "DevTools" m
 
 ## Jump to an event
 
-Let's jump to the last "Click" before the recording hit an error and see the code related to it:
+Let's jump to the last "Click" before the replay hit an error and see the code related to it:
 
 {% video src="devtoolsClickToEvent" /%}
 

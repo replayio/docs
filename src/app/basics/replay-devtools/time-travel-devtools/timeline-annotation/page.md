@@ -53,9 +53,10 @@ When text comments are not enough to share what you’re seeing, it can be helpf
 With sharable URLs and embed previews for Twitter, Slack, and Discord, replays are designed to be shared. The URLs will include the execution point you’re currently paused at and other relevant context as well.
 
 {% callout title="Coming soon" showIcon=false %}
+
 ## Include expressions
 
-Expressions will let you include expressions that you’ve evaluated at the comment’s execution point so that you can see their values at that point in time and see how they changed over the course of the recording.
+Expressions will let you include expressions that you’ve evaluated at the comment’s execution point so that you can see their values at that point in time and see how they changed over the course of the replay.
 
 ## Linear and Jira integrations
 

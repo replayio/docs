@@ -8,7 +8,7 @@ Source maps exist to try and preserve the original debugging experience as best 
 
 ## Upload Process
 
-For production use cases where sourcemaps may not be exposed publicly, we provide tooling for preemptively uploading sourcemaps to our servers so that when recordings are made, they can make use of these maps. We provide both a CLI command, and a Webpack plugin to make integrating this into your build process as easy as possible.
+For production use cases where sourcemaps may not be exposed publicly, we provide tooling for preemptively uploading sourcemaps to our servers so that when replays are made, they can make use of these maps. We provide both a CLI command, and a Webpack plugin to make integrating this into your build process as easy as possible.
 
 ### API Keys
 

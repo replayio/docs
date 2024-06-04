@@ -1,6 +1,6 @@
 ---
 title: Replay Driver
-description: The Replay Driver is a dynamically linked library which can be loaded by applications which want to record their behavior and upload those recordings for inspection using the Replay Protocol.
+description: The Replay Driver is a dynamically linked library which can be loaded by applications which want to record their behavior and upload those replay for inspection using the Replay Protocol.
 image: /images/chrome.png
 ---
 
