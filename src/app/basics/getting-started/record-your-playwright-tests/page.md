@@ -22,32 +22,38 @@ It will create an API key and guide you through each step.
 {% tab %}
 
 ```sh
-npm install @replayio/playwright -D
+npm install --save-dev @replayio/playwright
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-yarn add @replayio/playwright -D
+yarn add --dev @replayio/playwright
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-pnpm install @replayio/playwright -D
+pnpm add --save-dev @replayio/playwright
 ```
 
 {% /tab %}
 {% tab %}
 
 ```sh
-bun install @replayio/playwright -D
+bun add --dev @replayio/playwright
 ```
 
 {% /tab %}
 {% /tabs %}
+
+## Install the Replay browser
+
+```sh
+npx replayio install
+```
 
 ## Save your API key
 
