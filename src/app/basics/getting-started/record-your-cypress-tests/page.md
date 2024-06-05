@@ -43,7 +43,7 @@ pnpm add --save-dev @replayio/cypress
 {% tab %}
 
 ```sh
-bun install @replayio/cypress -D
+bun add --dev @replayio/cypress
 ```
 
 {% /tab %}
