@@ -29,7 +29,7 @@ npm install --save-dev @replayio/playwright
 {% tab %}
 
 ```sh
-yarn add --save-dev @replayio/playwright
+yarn add --dev @replayio/playwright
 ```
 
 {% /tab %}
