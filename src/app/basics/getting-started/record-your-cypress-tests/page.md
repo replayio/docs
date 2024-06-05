@@ -29,7 +29,7 @@ npm install --save-dev @replayio/cypress
 {% tab %}
 
 ```sh
-yarn add --save-dev @replayio/cypress
+yarn add --dev @replayio/cypress
 ```
 
 {% /tab %}
