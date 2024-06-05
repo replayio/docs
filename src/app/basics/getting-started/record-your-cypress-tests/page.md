@@ -36,7 +36,7 @@ yarn add --dev @replayio/cypress
 {% tab %}
 
 ```sh
-pnpm install --save-dev @replayio/cypress
+pnpm add --save-dev @replayio/cypress
 ```
 
 {% /tab %}
