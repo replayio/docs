@@ -43,7 +43,7 @@ pnpm add --save-dev @replayio/playwright
 {% tab %}
 
 ```sh
-bun install --save-dev @replayio/playwright
+bun add --dev @replayio/playwright
 ```
 
 {% /tab %}
