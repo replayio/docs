@@ -17,7 +17,8 @@ By default, all test replays are uploaded no matter the result. If you want to u
 ```js
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(cyOn, config) {
+      const on = wrapOn(cyOn)
       replayPlugin(on, config, {
         upload: true,
         apiKey: process.env.REPLAY_API_KEY,
@@ -76,7 +77,8 @@ By default, all test replays are uploaded no matter the result. If you want to u
 ```js
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(cyOn, config) {
+      const on = wrapOn(cyOn)
       replayPlugin(on, config, {
         upload: true,
         apiKey: process.env.REPLAY_API_KEY,
@@ -106,7 +108,8 @@ The recording metadata includes some details about the source control including 
 ```js
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(cyOn, config) {
+      const on = wrapOn(cyOn)
       replayPlugin(on, config, {
         upload: true,
         apiKey: process.env.REPLAY_API_KEY,
@@ -163,7 +166,8 @@ const convertStringToInt = (string) =>
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(cyOn, config) {
+      const on = wrapOn(cyOn)
       replayPlugin(on, config, {
         upload: true,
         apiKey: process.env.REPLAY_API_KEY,
