@@ -25,9 +25,9 @@ Press `cmd+shift+o` or open the Source panel in the right toolbar, to view the f
 
 ### Source explorer
 
-Press `cmd+p` or open the Source explorer in the right toolbar, to view the sources that were loaded in the recording.
+Press `cmd+p` or open the Source explorer in the right toolbar, to view the sources that were loaded in the replay.
 
-Note that because recordings can span multiple navigations and include source maps, the sources you’re viewing will include original files and could be included in multiple pages.
+Note that because replays can span multiple navigations and include source maps, the sources you’re viewing will include original files and could be included in multiple pages.
 
 ### Jump to generated location
 

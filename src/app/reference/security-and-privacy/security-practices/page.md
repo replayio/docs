@@ -36,7 +36,7 @@ Replay runs on top of Firefox, Chromium, and Node. It benefits from the security
 
 ### Design and Architecture
 
-Maintaining the security of our infrastructure is simple because viewing a Replay does not make real network connections, interactions with the filesystem, or other syscalls. When viewing a Replay, your recording is containerized in a separate kubernetes pod from other recordings.
+Maintaining the security of our infrastructure is simple because viewing a Replay does not make real network connections, interactions with the filesystem, or other syscalls. When viewing a Replay, your recording is containerized in a separate kubernetes pod from other replays.
 
 ### We anonymize production data before using it for testing.
 
@@ -48,7 +48,7 @@ We use Tailscale as a VPN to provide secure access to our network.
 
 ### We provide the security features you need
 
-Your Replay recordings are yours, not ours. We offer “_Bring your own bucket_” to our enterprise customers. All customers are able to use SSO and OIDC without any additional cost, without an [**SSO tax**](https://sso.tax/).
+Your replays are yours, not ours. We offer “_Bring your own bucket_” to our enterprise customers. All customers are able to use SSO and OIDC without any additional cost, without an [**SSO tax**](https://sso.tax/).
 
 ## Privacy + Security Policies
 

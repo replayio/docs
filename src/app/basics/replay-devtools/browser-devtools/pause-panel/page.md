@@ -27,11 +27,11 @@ Traditional debuggers let you pause at breakpoints, resume, step forward, in, an
 
 ### Breakpoints
 
-The breakpoints pane helps you manage the breakpoints you’ve set in the recording and see the breakpoints that others have set as well.
+The breakpoints pane helps you manage the breakpoints you’ve set in the replay and see the breakpoints that others have set as well.
 
 ### Print statements
 
-The print statements pane helps you manage the console logs you’ve set in the recording and see the console logs that others have set as well.
+The print statements pane helps you manage the console logs you’ve set in the replay and see the console logs that others have set as well.
 
 ## Time Travel
 

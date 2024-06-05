@@ -37,12 +37,12 @@ Our plan details are at replay.io/pricing.
 If more than 10 people from your team use Replay, then an Organization or Enterprise plan is the recommended plan. See Premium Features for more details.
 
 {% callout emoji="🏉" title=""%}
-Org + Enterprise plans include added features like SSO integration, more configurability of user settings, libraries, and higher limits for recordings and API keys.
+Org + Enterprise plans include added features like SSO integration, more configurability of user settings, libraries, and higher limits for replays and API keys.
 {% /callout%}
 
 ### What is the maximum number of users on Team Plan?
 
-You can have up to 10 users total (Developers + Users) on the Team plan. We charge based on Developer seats. Any Replay User can make a recording for the Team.
+You can have up to 10 users total (Developers + Users) on the Team plan. We charge based on Developer seats. Any Replay User can make a replay for the Team.
 
 ### What are the differences between a Developer and a User role?
 

@@ -8,7 +8,7 @@ Our goal with Replay is to design the best environment for helping you think thr
 
 This starts with the feedback loop you can achieve adding console logs in Replay. Simply click on a line of code, add an expression, press enter, and see the messages appear in the Console as if it’s always been there.
 
-Under the hood, this works because when you add a console log in Replay, there’s a browser in the cloud that runs through the recording, pauses at each execution point, evaluates the expression, and resumes. But as a user, all you have to think about is what questions you’d like to answer.
+Under the hood, this works because when you add a console log in Replay, there’s a browser in the cloud that runs through the replay, pauses at each execution point, evaluates the expression, and resumes. But as a user, all you have to think about is what questions you’d like to answer.
 
 {% video src="consoleLogs" /%}
 

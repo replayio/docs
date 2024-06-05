@@ -10,4 +10,4 @@ We know that in order for Replay to become your daily debugging tool we need to 
 
 3.  **Browser privacy model.** When you’re debugging a replay, we run the browser in a secure sandbox that only trusted users can access. For more information, see our [security practices](/reference/security-and-privacy/security-practices).
 
-4.  **You own your data.** Recordings are encrypted at rest and only available to trusted users. You can delete your own data at any point.
+4.  **You own your data.** Replays are encrypted at rest and only available to trusted users. You can delete your own data at any point.
