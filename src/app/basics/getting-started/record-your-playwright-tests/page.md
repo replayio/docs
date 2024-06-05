@@ -36,7 +36,7 @@ yarn add --dev @replayio/playwright
 {% tab %}
 
 ```sh
-pnpm install --save-dev @replayio/playwright
+pnpm add --save-dev @replayio/playwright
 ```
 
 {% /tab %}
