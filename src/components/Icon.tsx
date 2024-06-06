@@ -54,6 +54,7 @@ import { WifiIcon } from '@heroicons/react/24/outline'
 import { PauseIcon } from './icons/PauseIcon'
 import { VideocamSharp } from './icons/VideocamSharp'
 import { ReduxIcon } from './icons/ReduxIcon'
+import { Vercel } from './icons/Vercel'
 
 export const icons = {
   bracketscurly: BracketsCurlyIcon,
@@ -109,6 +110,7 @@ export const icons = {
   pause: PauseIcon,
   video: VideocamSharp,
   redux: ReduxIcon,
+  vercel: Vercel
 }
 
 export const iconStyles = {
