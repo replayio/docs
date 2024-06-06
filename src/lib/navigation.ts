@@ -181,6 +181,33 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         // },
       ],
     },
+    {
+      title: 'Replay Teams',
+      icon: 'person',
+      defaultOpen: true,
+      links: [
+        {
+          title: 'Setting up a team',
+          href: '/basics/replay-teams/setting-up-a-team'
+        },
+        {
+          title: 'Managing replays',
+          href: '/basics/replay-teams/managing-replays'
+        },
+        {
+          title: 'Billing',
+          href: '/basics/replay-teams/billing'
+        },
+        {
+          title: 'Enterprise security controls',
+          href: '/basics/replay-teams/enterprise-security-controls'
+        },
+        {
+          title: 'Okta integration',
+          href: '/basics/replay-teams/okta-integration'
+        }
+      ]
+    }
   ],
   reference: [
     {
