@@ -2,6 +2,18 @@ name: Playwright Tests
 on: [pull_request]
 
 jobs:
+  wait-for-vercel:
+     name: Wait for vercel
+     runs-on: ubuntu-latest
+     steps:
+       - name: Wait for Vercel preview deployment to be ready
+         uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
+         id: wait
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
+           max_timeout: 120
+     outputs:
+       preview_url: ${{ steps.wait.outputs.url }}
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
