@@ -424,6 +424,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         {
           title: 'Next.js',
           href: '/learn/examples/nextjs'
+        },
+        {
+          title: 'Vercel',
+          href: '/learn/examples/vercel'
         }
       ]
     },
