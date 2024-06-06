@@ -96,12 +96,13 @@ require('@replayio/cypress/support')
 
 ```js {% lineNumbers=true fileName="cypress.config.js" highlight=[2,"8-12"] %}
 const { defineConfig } = require('cypress')
-const { plugin: replayPlugin } = require('@replayio/cypress')
+const { plugin: replayPlugin, wrapOn } = require('@replayio/cypress')
 require('dotenv').config()
 
 module.exports = defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(cyOn, config) {
+      const on = wrapOn(cyOn)
       replayPlugin(on, config, {
         upload: true, // automatically upload your replays do DevTools
         apiKey: process.env.REPLAY_API_KEY,
@@ -121,12 +122,13 @@ import '@replayio/cypress/support'
 
 ```js {% lineNumbers=true fileName="cypress.config.ts" highlight=[2,"8-12"] %}
 import { defineConfig } from 'cypress'
-import { plugin as replayPlugin } from '@replayio/cypress'
+import { plugin as replayPlugin, wrapOn } from '@replayio/cypress'
 import 'dotenv/config'
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(cyOn, config) {
+      const on = wrapOn(cyOn)
       replayPlugin(on, config, {
         upload: true, // automatically upload your replays to your team
         apiKey: process.env.REPLAY_API_KEY,

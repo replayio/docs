@@ -64,6 +64,23 @@ If you’re trying to cache the browser download, cache `~/.replay/runtimes` or 
 ## How do I confirm that the browsers are installed correctly
 Run `ls -alR ~/.replay/runtimes` to see the contents of the runtimes folder.
 
+## How do I troubleshoot recordings not being created?
+
+To function properly `@replayio/cypress` listens for `after:run` events from Cypress. Cypress's `on` function doesn't support multiple listeners. If you have multiple plugins listening for this event this can prevent them from functioning properly. For that reason, we export `wrapOn` function that you can use like this in your `setupNodeEvents`:
+
+```js
+export default defineConfig({
+  e2e: {
+    setupNodeEvents(cyOn, config) {
+      const on = wrapOn(cyOn)
+      // ... rest of your plugins-related code
+    }
+  }
+})
+```
+
+const on = wrapOn(cyOn)
+
 ## What other environment variables can I configure?
 `REPLAY_SKIP_BROWSER_DOWNLOAD` - keeps browsers from being downloaded and installed during `npm install`
 
