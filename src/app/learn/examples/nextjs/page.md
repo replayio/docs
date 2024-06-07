@@ -188,7 +188,7 @@ If you are experiencing issues with your tests, such as random failures or flaki
 
 You can choose to set this setting to `false` and use `replayio upload` command from CLI to upload your test recordings manually.
 
-For examples on how to record your tests on a CI pipeline, check out [reference docs](/reference/test-runners/playwright/github-actions) or examples on how to record a [Vercel preview deployment](/learn/examplesvercel).
+For examples on how to record your tests on a CI pipeline, check out [reference docs](/reference/test-runners/playwright/github-actions) or examples on how to record a [Vercel preview deployment](/learn/examples/vercel).
 
 {% callout title="Generating API key" %}
 In order to upload your replays, an API key needs to be set up in your environment. Check out the reference guide to learn how to [generate an API key](/reference/ci-workflows/generate-api-key)

@@ -34,4 +34,17 @@ jobs:
 ## Run your tests
 After you run your test, PR comment bot will collect links from your test step, and show them as a comment in your pull request conversation tab on GitHub.
 
+{% figure
+    alt="PR Comment bot in GitHub"
+    src="/images/pull-request-comments.png"
+    height=440
+    width=870
+/%}
+
+{% callout %}
+PR comment bot currently only listens to `pull_request` event, which means that comments will not appear on events such as `push` or `workflow_dispatch`. If you are running your tests against Vercel preview deployments, you can [check out this page](/learn/examples/vercel) to learn how to set up your workflow file.
+{% /callout %}
+
 {% /steps %}
+
+
