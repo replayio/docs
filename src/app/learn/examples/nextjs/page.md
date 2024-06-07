@@ -271,7 +271,7 @@ Replay takes this concept further. You are getting all the advantages of trace-v
 
 When facing flaky tests, reproducing an issue locally is no longer needed, because all of the information is already captured.
 
-You can read more about [comparison with Playwright’s trace-viewer here](/comparisons/playwright).
+You can read more about [comparison with Playwright’s trace-viewer here](/learn/comparisons/playwright).
 
 {% quick-links title="Read more" description="Learn how to record your tests, manage your test suite and debug flaky tests using Replay DevTools" %}
 
