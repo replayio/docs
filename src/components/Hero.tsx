@@ -27,7 +27,7 @@ export function Hero() {
               <p className="mt-8">
                 <a
                   href="/basics/getting-started/record-your-app"
-                  className="rounded-full border-2 border-sky-500 px-4 py-2 text-sky-500 transition-colors hover:bg-blue-500 hover:text-white"
+                  className="rounded-full border-2 border-blue-500 px-4 py-2 text-blue-500 transition-colors hover:bg-blue-500 hover:text-white"
                 >
                   Get started with our Quickstart Guide
                 </a>

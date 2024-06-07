@@ -11,6 +11,7 @@ import { Navigation } from '@/components/Navigation'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 import { useTheme } from 'next-themes'
+import { ReplayLogomark } from './icons/ReplayLogomark'
 
 function GitHubIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -51,7 +52,7 @@ function Header() {
           <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
             <Search />
           </div>
-          <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
+          <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow items-center">
             <ThemeSelector className="relative z-30" />
             <Link
               href="https://github.com/replayio"
@@ -66,6 +67,13 @@ function Header() {
               aria-label="Discord"
             >
               <DiscordIcon className="h-6 w-6 fill-gray-400 group-hover:fill-gray-500 dark:group-hover:fill-gray-300" />
+            </Link>
+            <Link
+              href="https://app.replay.io"
+              className="group rounded-full border-2 border-blue-500 px-4 py-1 text-blue-500 transition-colors hover:bg-blue-500 hover:text-white lg:block hidden"
+              aria-label="Replay"
+            >
+             Log in
             </Link>
           </div>
         </div>
