@@ -4,7 +4,7 @@ title: GitHub actions
 
 Playwright tests can be configured via `playwright.config.ts` and the [command line](https://playwright.dev/docs/test-cli).
 
-In real world scenarios, the `playwright.config.ts` has the defualt setup and is extended by the command line options in either the terminal, `package.json` or github action.
+In real world scenarios, the `playwright.config.ts` has the default setup and is extended by the command line options in either the terminal, `package.json` or github action.
 
 ## Simple setup
 
@@ -46,15 +46,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # If you're using Yarn or PNPM, use the appropriate install command here
       - name: Install dependencies
         run: npm ci
       - name: Install Replay Chromium
         run: npx replayio install
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --project replay-chromium
         env:
           REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
 ```
+
+Finally, add the workspace API key you were given to the Github repo settings as `REPLAY_API_KEY`, so that the CI job uploads to the right workspace.
 
 ## Advanced setup
 
