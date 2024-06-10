@@ -23,6 +23,7 @@ You can upload source maps using the `replayio upload-source-maps` command in th
 The simplest usage will be running the following after your production JS build has finished.
 
 ```sh
+npm run build
 npx replayio upload-source-maps --group <Version or SHA> <buildOutputDir>
 ```
 
