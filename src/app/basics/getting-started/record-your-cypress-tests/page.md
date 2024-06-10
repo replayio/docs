@@ -190,7 +190,7 @@ https://app.replay.io/recording/b37abe67-031c-4d23-ba8b-0224fcd3e0d5
 
 {% /steps %}
 
-## Record your suite in CI
+## Record your test suite in CI
 
 Now that you're ready to inspect your local tests, the next step is to record your tests in CI. Learn how to set up Replay with your Cypress tests on [GitHub Actions](/reference/test-runners/cypress-io/github-actions) and [other CI providers](/reference/test-runners/cypress-io/other-ci-providers).
 
