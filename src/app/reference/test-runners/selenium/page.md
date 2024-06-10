@@ -109,7 +109,7 @@ After you upload your recordings, you can view them in [Test Suite Dashboard](/b
 {% quick-link
   title="Setting up a team"
   icon="settingupateam"
-  href="/basics/replay-teams/setting-up-a-team"
+  href="/reference/replay-teams/setting-up-a-team"
   description="Learn how to create a team in the Replay App"
 /%}
 
@@ -162,4 +162,4 @@ workflows:
 
 After tests are run, the `Upload replays` step is executed. notice the `when: always` option that ensures we run this steps independently from whether previous step fails or passes. This ensures we will upload replays of failed tests and don’t stop the pipeline execution on previous step.
 
-The `Upload replays` step relies on `REPLAY_API_KEY` being present in the environment. To generate an API key, follow [these docs](/basics/replay-teams/setting-up-a-team#api-keys). To set up your API key in your CircleCI project, follow the [documentation on CircleCI](https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-project) -->
+The `Upload replays` step relies on `REPLAY_API_KEY` being present in the environment. To generate an API key, follow [these docs](/reference/replay-teams/setting-up-a-team#api-keys). To set up your API key in your CircleCI project, follow the [documentation on CircleCI](https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-project) -->

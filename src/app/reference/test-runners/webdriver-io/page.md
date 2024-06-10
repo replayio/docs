@@ -96,7 +96,7 @@ You can try this out on your own, by forking [this example repository](https://g
 {% quick-link
   title="Setting up a team"
   icon="settingupateam"
-  href="/basics/replay-teams/setting-up-a-team"
+  href="/reference/replay-teams/setting-up-a-team"
   description="Learn how to create a team in the Replay App"
 /%}
 

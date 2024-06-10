@@ -112,7 +112,7 @@ After you upload your recordings, you can view them in [Test Suite Dashboard](/b
 {% quick-link
   title="Setting up a team"
   icon="settingupateam"
-  href="/basics/replay-teams/setting-up-a-team"
+  href="/reference/replay-teams/setting-up-a-team"
   description="Learn how to create a team in the Replay App"
 /%}
 

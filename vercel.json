@@ -22,11 +22,11 @@
     },
     {
       "source": "/getting-started/teams-admin/team-settings",
-      "destination": "/basics/replay-teams/setting-up-a-team"
+      "destination": "/reference/replay-teams/setting-up-a-team"
     },
     {
       "source": "/getting-started/teams-admin/billing",
-      "destination": "/basics/replay-teams/billing"
+      "destination": "/reference/replay-teams/billing"
     },
     {
       "source": "/test-suites/test-runners/cypress/cypress-faqs",
@@ -38,7 +38,7 @@
     },
     {
       "source": "/getting-started/teams-admin/organization-features",
-      "destination": "/basics/replay-teams/setting-up-a-team"
+      "destination": "/reference/replay-teams/setting-up-a-team"
     },
     {
       "source": "/getting-started",
@@ -54,7 +54,7 @@
     },
     {
       "source": "/getting-started/teams-admin/setting-up-a-team",
-      "destination": "/basics/replay-teams/setting-up-a-team"
+      "destination": "/reference/replay-teams/setting-up-a-team"
     },
     {
       "source": "/docs/replay-oss-751fc053a0a14c32812c4766d7c65e4d",
@@ -78,7 +78,7 @@
     },
     {
       "source": "/docs/billing-e01f0740cd9548f1b8725c9773b217f6",
-      "destination": "/basics/replay-teams/billing"
+      "destination": "/reference/replay-teams/billing"
     },
     {
       "source": "/docs/case-studies-and-comparisons-3bd958ab68234ae697cdac5904bbc36e",
@@ -262,31 +262,31 @@
     },
     {
       "source": "/getting-started/teams-admin/billing",
-      "destination": "/basics/replay-teams/billing"
+      "destination": "/reference/replay-teams/billing"
     },
     {
       "source": "/getting-started/teams-admin/managing-replays",
-      "destination": "/basics/replay-teams/managing-replays"
+      "destination": "/reference/replay-teams/managing-replays"
     },
     {
       "source": "/getting-started/teams-admin/organization-features",
-      "destination": "/basics/replay-teams/enterprise-security-controls"
+      "destination": "/reference/replay-teams/enterprise-security-controls"
     },
     {
       "source": "/getting-started/teams-admin/organization-features/enterprise-security-features",
-      "destination": "/basics/replay-teams/enterprise-security-controls"
+      "destination": "/reference/replay-teams/enterprise-security-controls"
     },
     {
       "source": "/getting-started/teams-admin/organization-features/okta-integration-with-auth0",
-      "destination": "/basics/replay-teams/okta-integration"
+      "destination": "/reference/replay-teams/okta-integration"
     },
     {
       "source": "/getting-started/teams-admin/setting-up-a-team",
-      "destination": "/basics/replay-teams/setting-up-a-team"
+      "destination": "/reference/replay-teams/setting-up-a-team"
     },
     {
       "source": "/getting-started/teams-admin/team-settings",
-      "destination": "/basics/replay-teams/setting-up-a-team"
+      "destination": "/reference/replay-teams/setting-up-a-team"
     },
     {
       "source": "/getting-started/teams-admin/uploading-source-maps",
@@ -819,23 +819,23 @@
     },
     {
       "source": "/replay-teams/billing",
-      "destination": "/basics/replay-teams/billing"
+      "destination": "/reference/replay-teams/billing"
     },
     {
       "source": "/replay-teams/enterprise-security-controls",
-      "destination": "/basics/replay-teams/enterprise-security-controls"
+      "destination": "/reference/replay-teams/enterprise-security-controls"
     },
     {
       "source": "/replay-teams/managing-replays",
-      "destination": "/basics/replay-teams/managing-replays"
+      "destination": "/reference/replay-teams/managing-replays"
     },
     {
       "source": "/replay-teams/okta-integration",
-      "destination": "/basics/replay-teams/okta-integration"
+      "destination": "/reference/replay-teams/okta-integration"
     },
     {
       "source": "/replay-teams/setting-up-a-team",
-      "destination": "/basics/replay-teams/setting-up-a-team"
+      "destination": "/reference/replay-teams/setting-up-a-team"
     },
     {
       "source": "/test-suites/performance-analysis",
