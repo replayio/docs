@@ -181,35 +181,35 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         // },
       ],
     },
+  ],
+  reference: [
     {
       title: 'Replay Teams',
       icon: 'person',
       defaultOpen: true,
       links: [
-        {
-          title: 'Setting up a team',
-          href: '/basics/replay-teams/setting-up-a-team'
-        },
+        // {
+        //   title: 'Setting up a team',
+        //   href: '/reference/replay-teams/setting-up-a-team',
+        // },
         {
           title: 'Managing replays',
-          href: '/basics/replay-teams/managing-replays'
+          href: '/reference/replay-teams/managing-replays',
         },
         {
           title: 'Billing',
-          href: '/basics/replay-teams/billing'
+          href: '/reference/replay-teams/billing',
         },
         {
           title: 'Enterprise security controls',
-          href: '/basics/replay-teams/enterprise-security-controls'
+          href: '/reference/replay-teams/enterprise-security-controls',
         },
         {
           title: 'Okta integration',
-          href: '/basics/replay-teams/okta-integration'
-        }
-      ]
-    }
-  ],
-  reference: [
+          href: '/reference/replay-teams/okta-integration',
+        },
+      ],
+    },
     {
       title: 'Test Runners',
       omitFromDocumentTitle: true,
@@ -442,21 +442,21 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       links: [
         {
           title: 'Playwright',
-          href: '/learn/examples/playwright'
+          href: '/learn/examples/playwright',
         },
         {
           title: 'Cypress.io',
-          href: '/learn/examples/cypress-io'
+          href: '/learn/examples/cypress-io',
         },
         {
           title: 'Next.js',
-          href: '/learn/examples/nextjs'
+          href: '/learn/examples/nextjs',
         },
         {
           title: 'Vercel',
-          href: '/learn/examples/vercel'
-        }
-      ]
+          href: '/learn/examples/vercel',
+        },
+      ],
     },
     {
       title: 'Comparisons',

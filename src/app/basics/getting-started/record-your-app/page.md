@@ -122,7 +122,7 @@ Replays need to be uploaded so the browser can be replayed in the Replay Cloud. 
 {% quick-link
   title="Set up a team"
   icon="settingupateam"
-  href="/basics/replay-teams/setting-up-a-team"
+  href="/reference/replay-teams/setting-up-a-team"
   description="Learn how to share replays as a team."
 /%}
 
