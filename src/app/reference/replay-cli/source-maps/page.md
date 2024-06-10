@@ -234,7 +234,9 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-As mentioned, NextJS's `buildId` can be useful, but please [see their docs](https://nextjs.org/docs/api-reference/next.config.js/configuring-the-build-id) to ensure verify if it is a good fit for your application.
+You can see [a full working example of Next config with sourcemap deletion here](https://github.com/replayio-public/replay-sourcemap-upload-example/blob/main/next.config.mjs), and check out [the demo site](https://replay-sourcemap-upload-example-site.vercel.app/) to confirm that the original app source code is not included in the production site.
+
+Also see the Next.js [docs on "Configuring the Build ID"](https://nextjs.org/docs/api-reference/next.config.js/configuring-the-build-id) for details on generating a consistent build ID, such as with a Git hash.
 
 ## Debugging problems
 
