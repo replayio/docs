@@ -4,7 +4,7 @@ title: GitHub actions
 
 Playwright tests can be configured via `playwright.config.ts` and the [command line](https://playwright.dev/docs/test-cli).
 
-In real world scenarios, the `playwright.config.ts` has the defualt setup and is extended by the command line options in either the terminal, `package.json` or github action.
+In real world scenarios, the `playwright.config.ts` has the default setup and is extended by the command line options in either the terminal, `package.json` or github action.
 
 ## Simple setup
 
