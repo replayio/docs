@@ -24,3 +24,5 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_SITE_URL: 'https://replay.io'
+      - name: Check formatting
+        run: npm run prettier:ci
