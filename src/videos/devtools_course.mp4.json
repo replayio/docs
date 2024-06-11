@@ -1,1 +1,23 @@
-{"status":"ready","originalFilePath":"src/videos/devtools_course.mp4","provider":"mux","providerMetadata":{"mux":{"uploadId":"hOyTOXjjr985s7P8qA1qMZpHgSTYb01ZhLUbj5tVXk4E","assetId":"hXlSDD00VvhaZ8sIpnaY7g3wJbyAvh1Lx9irP601abeQ00","playbackId":"hteR01K01uJLOxENwIidqTipDY502SA1vSAb5qkWulROoQ"}},"createdAt":1713962382405,"updatedAt":1713962387270,"size":12014276,"sources":[{"src":"https://stream.mux.com/hteR01K01uJLOxENwIidqTipDY502SA1vSAb5qkWulROoQ.m3u8","type":"application/x-mpegURL"}],"poster":"https://image.mux.com/hteR01K01uJLOxENwIidqTipDY502SA1vSAb5qkWulROoQ/thumbnail.webp","blurDataURL":"data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAAkAAQAcJQBOhaMwNeMr+PAA/v4pb/qi7NCgBa8mRW6mvAcOHA07FvnlftGs8Pjah0vptP0RYJIbXBdiObw42gRebiqvVKRlPXtoVEURwcIgAAA="}
+{
+  "status": "ready",
+  "originalFilePath": "src/videos/devtools_course.mp4",
+  "provider": "mux",
+  "providerMetadata": {
+    "mux": {
+      "uploadId": "hOyTOXjjr985s7P8qA1qMZpHgSTYb01ZhLUbj5tVXk4E",
+      "assetId": "hXlSDD00VvhaZ8sIpnaY7g3wJbyAvh1Lx9irP601abeQ00",
+      "playbackId": "hteR01K01uJLOxENwIidqTipDY502SA1vSAb5qkWulROoQ"
+    }
+  },
+  "createdAt": 1713962382405,
+  "updatedAt": 1713962387270,
+  "size": 12014276,
+  "sources": [
+    {
+      "src": "https://stream.mux.com/hteR01K01uJLOxENwIidqTipDY502SA1vSAb5qkWulROoQ.m3u8",
+      "type": "application/x-mpegURL"
+    }
+  ],
+  "poster": "https://image.mux.com/hteR01K01uJLOxENwIidqTipDY502SA1vSAb5qkWulROoQ/thumbnail.webp",
+  "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAAkAAQAcJQBOhaMwNeMr+PAA/v4pb/qi7NCgBa8mRW6mvAcOHA07FvnlftGs8Pjah0vptP0RYJIbXBdiObw42gRebiqvVKRlPXtoVEURwcIgAAA="
+}

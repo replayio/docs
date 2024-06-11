@@ -52,7 +52,7 @@ function Header() {
           <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
             <Search />
           </div>
-          <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow items-center">
+          <div className="relative flex basis-0 items-center justify-end gap-6 sm:gap-8 md:flex-grow">
             <ThemeSelector className="relative z-30" />
             <Link
               href="https://github.com/replayio"
@@ -70,10 +70,10 @@ function Header() {
             </Link>
             <Link
               href="https://app.replay.io"
-              className="group rounded-full border-2 border-blue-500 px-4 py-1 text-blue-500 transition-colors hover:bg-blue-500 hover:text-white lg:block hidden"
+              className="group hidden rounded-full border-2 border-blue-500 px-4 py-1 text-blue-500 transition-colors hover:bg-blue-500 hover:text-white lg:block"
               aria-label="Replay"
             >
-             Log in
+              Log in
             </Link>
           </div>
         </div>

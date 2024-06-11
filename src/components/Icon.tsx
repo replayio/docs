@@ -110,7 +110,7 @@ export const icons = {
   pause: PauseIcon,
   video: VideocamSharp,
   redux: ReduxIcon,
-  vercel: Vercel
+  vercel: Vercel,
 }
 
 export const iconStyles = {

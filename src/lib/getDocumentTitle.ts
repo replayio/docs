@@ -1,5 +1,5 @@
 import assert from 'assert'
-import {NavigationItem, navigation, flatNavigation} from './navigation'
+import { NavigationItem, navigation, flatNavigation } from './navigation'
 
 export function getDocumentTitle(pathname: string) {
   let queue: Array<

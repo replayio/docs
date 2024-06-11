@@ -12,8 +12,6 @@ When they open the replay, they can jump to the same point in the execution you 
 
 {% video src="addingAComment" /%}
 
-
-
 ## Basics
 
 ### Shareable URLs
@@ -30,7 +28,7 @@ There are two ways to leave a comment on a line of code. The first is to right c
 
 ### Comment on a Console message
 
-If you'd like to leave a comment on a specific console message, you can hover on the message, click "Fast forward" or "Rewind", and then click "Add comment". 
+If you'd like to leave a comment on a specific console message, you can hover on the message, click "Fast forward" or "Rewind", and then click "Add comment".
 
 ### Comment on a Network resource
 
@@ -40,11 +38,7 @@ If you'd like to comment on a specific Network resource, you can select it and t
 
 If you'd like to share the steps you've taken while investigating the bug, you can use Loom to record a quick video, and drop the Loom URL into a comment.
 
-
-
 ## Time travel
-
-
 
 ### Shared console logs
 

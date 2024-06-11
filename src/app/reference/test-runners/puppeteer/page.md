@@ -4,31 +4,41 @@ description: Because Replay Browser lets you record anything that happens inside
 ---
 
 {% steps %}
+
 ## Install Replay Puppeteer package
+
 To start, you need to install `@replayio/puppeteer` package to your project.
 
 Puppeteer package is open-source and [available on GitHub](https://github.com/Replayio/replay-cli/tree/main/packages/puppeteer)
 
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
+
 ```sh
 npm i @replayio/puppeteer
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 yarn add @replayio/puppeteer
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 pnpm i @replayio/puppeteer
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 bun i @replayio/puppeteer
 ```
+
 {% /tab %}
 {% /tabs %}
 
@@ -37,48 +47,59 @@ bun i @replayio/puppeteer
 In order to use Replay Browser in your Puppeteer scripts, you need to point your configuration to the Replay Browser binary. The `getExecutablePath` function will take care of locating the binary on your machine.
 
 ```js {% lineNumbers="true" fileName="puppeteer.config.js" highlight=[2,7] %}
-const puppeteer = require("puppeteer");
-const { getExecutablePath } = require("@replayio/puppeteer");
+const puppeteer = require('puppeteer')
+const { getExecutablePath } = require('@replayio/puppeteer')
 
-(async () => {
-	const browser = await puppeteer.launch({
-		headless: false,
-		executablePath: getExecutablePath("chromium"),
-	});
-	const page = await browser.newPage();
-	await page.goto("https://replay.io");
-	await page.screenshot({ path: "replay.png" });
+;(async () => {
+  const browser = await puppeteer.launch({
+    headless: false,
+    executablePath: getExecutablePath('chromium'),
+  })
+  const page = await browser.newPage()
+  await page.goto('https://replay.io')
+  await page.screenshot({ path: 'replay.png' })
 
-	await page.close();
-	await browser.close();
-})();
+  await page.close()
+  await browser.close()
+})()
 ```
+
 ## Run your tests
-With configration set up, you can run your tests the same way as before. After your run finishes, your recordings will be stored locally. 
+
+With configration set up, you can run your tests the same way as before. After your run finishes, your recordings will be stored locally.
 
 ## Install Replay CLI to upload
+
 To download and install Replay CLI, run the following command:
 
 {% tabs labels=["npm", "yarn", "pnpm", "bun"] %}
 {% tab %}
+
 ```sh
 npm i -g replayio
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 yarn add -g replayio
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 pnpm i -g replayio
 ```
+
 {% /tab %}
 {% tab %}
+
 ```sh
 bun i -g replayio
 ```
+
 {% /tab %}
 {% /tabs %}
 

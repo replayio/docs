@@ -1,1 +1,23 @@
-{"status":"ready","originalFilePath":"src/videos/Playwright debugging.mp4","provider":"mux","providerMetadata":{"mux":{"uploadId":"R017V52UharQGkKrax45fG1P00YVA3h00SKLVSY5Nz98z4","assetId":"6NppCMDo31jEt4qNPY7D01hrE8RRmRfhNZZOW2kLLaGk","playbackId":"5MATBuvgE6H2hD4gHcfPvNTJs24fxldU00E78w01LZZMU"}},"createdAt":1713461587050,"updatedAt":1713461591794,"size":19646340,"sources":[{"src":"https://stream.mux.com/5MATBuvgE6H2hD4gHcfPvNTJs24fxldU00E78w01LZZMU.m3u8","type":"application/x-mpegURL"}],"poster":"https://image.mux.com/5MATBuvgE6H2hD4gHcfPvNTJs24fxldU00E78w01LZZMU/thumbnail.webp","blurDataURL":"data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAQCdASoQAAoAAQAcJQBOgCG8bgJH+AD+/qkWqwGgB9mtn9eP4zQq3h6KTFNdxWuGmr0DDYPz7m2rYGEHP5y6VsjA1npeenuz7W7+etd3SZVDHkSopQDgn2d+fAqez/wuCkdgAAA="}
+{
+  "status": "ready",
+  "originalFilePath": "src/videos/Playwright debugging.mp4",
+  "provider": "mux",
+  "providerMetadata": {
+    "mux": {
+      "uploadId": "R017V52UharQGkKrax45fG1P00YVA3h00SKLVSY5Nz98z4",
+      "assetId": "6NppCMDo31jEt4qNPY7D01hrE8RRmRfhNZZOW2kLLaGk",
+      "playbackId": "5MATBuvgE6H2hD4gHcfPvNTJs24fxldU00E78w01LZZMU"
+    }
+  },
+  "createdAt": 1713461587050,
+  "updatedAt": 1713461591794,
+  "size": 19646340,
+  "sources": [
+    {
+      "src": "https://stream.mux.com/5MATBuvgE6H2hD4gHcfPvNTJs24fxldU00E78w01LZZMU.m3u8",
+      "type": "application/x-mpegURL"
+    }
+  ],
+  "poster": "https://image.mux.com/5MATBuvgE6H2hD4gHcfPvNTJs24fxldU00E78w01LZZMU/thumbnail.webp",
+  "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAQCdASoQAAoAAQAcJQBOgCG8bgJH+AD+/qkWqwGgB9mtn9eP4zQq3h6KTFNdxWuGmr0DDYPz7m2rYGEHP5y6VsjA1npeenuz7W7+etd3SZVDHkSopQDgn2d+fAqez/wuCkdgAAA="
+}

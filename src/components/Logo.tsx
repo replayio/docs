@@ -17,10 +17,7 @@ function LogomarkPaths() {
   )
 }
 
-export function Logomark({
-  ...props
-}:  React.ComponentPropsWithoutRef<'svg'>) {
-
+export function Logomark({ ...props }: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg aria-hidden="true" viewBox="0 0 115 115" fill="inherit" {...props}>
       <LogomarkPaths />
@@ -28,10 +25,7 @@ export function Logomark({
   )
 }
 
-export function Logo({
-  ...props
-}:  React.ComponentPropsWithoutRef<'svg'>) {
-
+export function Logo({ ...props }: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg aria-hidden="true" viewBox="0 0 422 115" fill="inherit" {...props}>
       <LogomarkPaths />

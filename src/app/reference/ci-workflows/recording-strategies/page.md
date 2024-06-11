@@ -10,21 +10,27 @@ This is useful for debugging failing tests in pull requests. It only records fai
 Run your tests and pass the mode `record-on-retry` .
 
 {% tabs labels=["npm", "yarn", "pnpm"] %}
-  {% tab %}
-  ```sh
-  npx @replayio/cypress run --mode record-on-retry
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  yarn @replayio/cypress run --mode record-on-retry
-  ```
-  {% /tab %}
-  {% tab %}
-  ```sh
-  pnpx @replayio/cypress run --mode record-on-retry
-  ```
-  {% /tab %}
+{% tab %}
+
+```sh
+npx @replayio/cypress run --mode record-on-retry
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+yarn @replayio/cypress run --mode record-on-retry
+```
+
+{% /tab %}
+{% tab %}
+
+```sh
+pnpx @replayio/cypress run --mode record-on-retry
+```
+
+{% /tab %}
 {% /tabs %}
 
 ## Record all on merge to master

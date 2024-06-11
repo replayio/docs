@@ -11,7 +11,9 @@ Once you have your test suites integrated with Replay in CI, you can add our bot
 The comment also includes links to replays of the tests and the test run in the Test Suite Dashboard. The comment will automatically update with the most recent results every time a new commit is pushed.
 
 {% steps %}
+
 ## Install the app
+
 Go to the Replay [Github App](https://github.com/apps/replay-io) page and click on **Configure**. You will be prompted to select the organization and repositories that the PR Comments bot will access to.
 
 {% figure
@@ -22,6 +24,7 @@ Go to the Replay [Github App](https://github.com/apps/replay-io) page and click 
 /%}
 
 ## Set up your workflow file
+
 The PR Comment bot listens to the `pull_request` event. It will collect links from your test runs and show them as a comment in your pull request conversation tab on GitHub. This means that your workflow file needs to have run on the `pull_request` event.
 
 ```yml
@@ -32,6 +35,7 @@ jobs:
 ```
 
 ## Run your tests
+
 After you run your test, PR comment bot will collect links from your test step, and show them as a comment in your pull request conversation tab on GitHub.
 
 {% figure
@@ -46,5 +50,3 @@ PR comment bot currently only listens to `pull_request` event, which means that 
 {% /callout %}
 
 {% /steps %}
-
-
