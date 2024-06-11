@@ -2,7 +2,7 @@
 title: GitHub actions
 ---
 
-Cypress team has created its [official GitHub Action](https://github.com/cypress-io/github-action). The action provides dependency installation, built-in caching, and multiple options for advanced workflow configuration. 
+Cypress team has created its [official GitHub Action](https://github.com/cypress-io/github-action). The action provides dependency installation, built-in caching, and multiple options for advanced workflow configuration.
 
 Using this GitHub Action is optional and some teams prefer their own custom setup. Replay integrates well with both workflows, as shown in examples below
 
@@ -25,6 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install Replay Chromium
+        run: npx replayio install
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
@@ -41,10 +43,12 @@ jobs:
 ## Using GitHub Actions without `cypress-io/github-action`
 
 Without using GitHub Actions and running your Cypress tests by calling a script, the main principles stay the same:
+
 - you need to make sure to pass `REPLAY_API_KEY` to your test run
 - add step to your pipeline to upload your replays
 
 There are a couple of different ways to achieve this. For example, you can update your `package.json` file with a custom script that runs your Cypress tests with Replay Browser
+
 ```json {% fileName="package.json" highlight=[3] %}
 "scripts": {
   "cy:run": "cypress run", // original test script
