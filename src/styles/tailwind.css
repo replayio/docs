@@ -7,7 +7,6 @@
   [inert] ::-webkit-scrollbar {
     display: none;
   }
-
 }
 
 @layer base {
@@ -22,32 +21,49 @@
   --media-background-color: --_primary-color;
 }
 
-.prose :where(img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  @apply mt-0 mb-0
+.prose :where(img):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  @apply mb-0 mt-0;
 }
 
-.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::after, .prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
-  content: "";
+.prose
+  :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::after,
+.prose
+  :where(code):not(
+    :where([class~='not-prose'], [class~='not-prose'] *)
+  )::before {
+  content: '';
 }
 
-.prose p > code, .prose li > code, .prose h2 > code {
-  @apply border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold text-nowrap
+.prose p > code,
+.prose li > code,
+.prose h2 > code {
+  @apply mx-0.5 text-nowrap rounded-md border border-gray-500 border-opacity-30 bg-gray-500 bg-opacity-10 px-1 py-1 font-semibold;
 }
 
 .prose h2 {
-  margin-top: 4rem ;
+  margin-top: 4rem;
 }
 
-.prose-a\:shadow-\[inset_0_-2px_0_0_var\(--tw-prose-background\2c \#fff\)\2c inset_0_calc\(-1\*\(var\(--tw-prose-underline-size\2c 4px\)\+2px\)\)_0_0_var\(--tw-prose-underline\2c theme\(colors\.sky\.300\)\)\] :is(:where(a):not(:where(li > a,[class~="not-prose"],[class~="not-prose"] *))):has(code) {
+.prose h3 {
+  margin: 0;
+}
+
+.prose-a\:shadow-\[inset_0_-2px_0_0_var\(--tw-prose-background\2c
+  \#fff\)\2c
+  inset_0_calc\(-1\*\(var\(--tw-prose-underline-size\2c
+  4px\)\+2px\)\)_0_0_var\(--tw-prose-underline\2c
+  theme\(colors\.sky\.300\)\)\]
+  :is(
+    :where(a):not(:where(li > a, [class~='not-prose'], [class~='not-prose'] *))
+  ):has(code) {
   box-shadow: none;
 }
 
 .callout h2 {
-  @apply dark:text-gray-200 mb-2 mt-6 text-lg
+  @apply mb-2 mt-6 text-lg dark:text-gray-200;
 }
 
 /* loading image animation */
-img[style*="background-image"] {
+img[style*='background-image'] {
   background-size: contain !important;
 }
-
