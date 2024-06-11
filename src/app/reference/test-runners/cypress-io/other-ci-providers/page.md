@@ -2,6 +2,7 @@
 title: Other CI providers
 description: Replay works with any CI provider. You can simply record your tests by passing Replay Browser to your Cypress run and then add a step to upload your recordings to Replay App.
 ---
+
 Create another test script in `package.json` for running tests with Replay, and replace your current test script in your CI workflow file:
 
 ```json {% fileName="package.json" %}

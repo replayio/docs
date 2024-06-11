@@ -131,6 +131,7 @@ Replay CLI requires you to log in when uploading your recordings. In a local env
 You can pass `-h` or `--help` option into any of the commands to get more info.
 
 ### info{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
+
 Displays information about installed Replay dependencies. This includes version of the Replay CLI package as well as the Replay Browser information.
 
 ```sh
@@ -140,7 +141,6 @@ Replay Chromium
 • Release date: 4/11/2024
 • Forked version: 108.0.0
 ```
-
 
 ### list{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
 
@@ -158,15 +158,18 @@ ID         Host               Process  Date     Duration  Status
 #### Options
 
 {% table %}
+
 - Option
 - Description
----
-- `--json`
-- prints out the full list of replays with details
+
 ---
 
-{% /table %}
+- `--json`
+- prints out the full list of replays with details
+
 ---
+
+## {% /table %}
 
 ### login{% class="!font-mono border border-opacity-30 border-gray-500 rounded-md px-1 py-1 mx-0.5 bg-gray-500 bg-opacity-10 font-semibold inline-block mb-4" %}
 
@@ -400,12 +403,12 @@ Uploads source-maps for a Workspace. See docs on [uploading source maps](/refere
 ---
 
 - `-g`, `--group` `<name>`
-- The name to group this source map into, e.g. A commit SHA or release version. 
+- The name to group this source map into, e.g. A commit SHA or release version.
 
 ---
 
-- `-x`, `--extensions` `<exts>` 
-- A comma-separated list of file extensions to process; default ".js,.map"  
+- `-x`, `--extensions` `<exts>`
+- A comma-separated list of file extensions to process; default ".js,.map"
 
 ---
 
@@ -415,6 +418,6 @@ Uploads source-maps for a Workspace. See docs on [uploading source maps](/refere
 ---
 
 - `-root` `<dirname>`
-- The base directory to use when computing relative paths  
+- The base directory to use when computing relative paths
 
 {% /table%}

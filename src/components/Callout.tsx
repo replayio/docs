@@ -37,7 +37,7 @@ const icons = {
     <Icon icon="warning" color="amber" {...props} />
   ),
   replay: (props: { className?: string }) => <Icon icon="replay" {...props} />,
-  none: ''
+  none: '',
 }
 
 export function Callout({
@@ -45,7 +45,7 @@ export function Callout({
   children,
   type = 'note',
   showIcon = true,
-  href
+  href,
 }: {
   title: string
   children: React.ReactNode
@@ -55,22 +55,33 @@ export function Callout({
 }) {
   let IconComponent = icons[type]
 
-  const getTitleComponent = () => href ? 
-    <Link href={href} className={clsx('m-0 font-display text-xl', styles[type].title)}>
-      {title}
-    </Link> :
-    title && <p className={clsx('m-0 font-display text-xl', styles[type].title)}>
-      {title}
-    </p>
+  const getTitleComponent = () =>
+    href ? (
+      <Link
+        href={href}
+        className={clsx('m-0 font-display text-xl', styles[type].title)}
+      >
+        {title}
+      </Link>
+    ) : (
+      title && (
+        <p className={clsx('m-0 font-display text-xl', styles[type].title)}>
+          {title}
+        </p>
+      )
+    )
 
   return (
-    <div className={clsx('my-8 flex rounded-3xl p-6 callout', styles[type].container)}>
-      { showIcon && <IconComponent className="h-8 w-8 flex-none" /> }
+    <div
+      className={clsx(
+        'callout my-8 flex rounded-3xl p-6',
+        styles[type].container,
+      )}
+    >
+      {showIcon && <IconComponent className="h-8 w-8 flex-none" />}
       <div className="ml-4 flex-auto">
-        { title && getTitleComponent() }
-        <div className={clsx('prose', styles[type].body)}>
-          {children}
-        </div>
+        {title && getTitleComponent()}
+        <div className={clsx('prose', styles[type].body)}>{children}</div>
       </div>
     </div>
   )

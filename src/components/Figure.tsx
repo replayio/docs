@@ -32,16 +32,17 @@ export function Figure({
     width,
     fill,
     className: `${gradient} object-contain rounded ${
-      ripple && 'shadow-ripple'} ${(showRadius && !gradient) && 'rounded-lg border border-gray-200 p-1 dark:border-slate-600'
-      }
+      ripple && 'shadow-ripple'
+    } ${
+      showRadius &&
+      !gradient &&
+      'rounded-lg border border-gray-200 p-1 dark:border-slate-600'
+    }
     }`,
   }
 
   return (
-    <figure
-      title={alt}
-      className={`not-prose flex flex-col mt-6 ${className}`}
-    >
+    <figure title={alt} className={`not-prose mt-6 flex flex-col ${className}`}>
       <div
         className={`relative grid flex-grow justify-center ${
           gradient ? `rounded p-10 sm:rounded-lg sm:p-10 ${gradient}` : ''
@@ -49,10 +50,14 @@ export function Figure({
       >
         {fill && gradient ? (
           <div className="absolute bottom-3 left-3 right-3 top-3 sm:bottom-4 sm:left-4 sm:right-4 sm:top-4">
-            <Zoom><Image {...imgProps} placeholder={LoaderAnimation} /></Zoom>
+            <Zoom>
+              <Image {...imgProps} placeholder={LoaderAnimation} />
+            </Zoom>
           </div>
         ) : (
-          <Zoom><Image {...imgProps} placeholder={LoaderAnimation} /></Zoom>
+          <Zoom>
+            <Image {...imgProps} placeholder={LoaderAnimation} />
+          </Zoom>
         )}
       </div>
       {children ? (

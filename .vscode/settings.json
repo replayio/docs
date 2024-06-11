@@ -2,9 +2,7 @@
   "files.associations": {
     "*.md": "markdown"
   },
-  "cSpell.enableFiletypes": [
-    "markdoc"
-  ],
+  "cSpell.enableFiletypes": ["markdoc"],
   "cSpell.words": [
     "automagically",
     "autoplay",

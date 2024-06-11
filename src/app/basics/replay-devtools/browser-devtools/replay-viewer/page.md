@@ -29,6 +29,7 @@ The Replay info panel includes the url, author, date created, access control, an
 Typically when something goes wrong, a user interaction like a mouse click or key press occurs right before. The challenge is knowing which React component handled the event and kicked off a sequence of events. That’s why, clicking on the event’s **Jump to Code** button is often a good place to start.
 
 ## Learn more
+
 Discover how to use the timeline to navigate to specific points in your code execution. Learn about the focus mode, which allows you to filter the console logs you view. Additionally, see how to jump to the next or previous execution of a specific line in your code. You can find the whole course at [replay.help/course](https://replay.help/course)
 
 {% video src="timelineCourse" autoplay=false /%}

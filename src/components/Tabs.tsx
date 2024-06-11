@@ -17,13 +17,13 @@ export function Tabs({
     <TabContext.Provider value={currentTab}>
       <ul
         role="tablist"
-        className="text-xs m-0 pb-px flex justify-end w-max min-w-full dark:border-neutral-800"
+        className="m-0 flex w-max min-w-full justify-end pb-px text-xs dark:border-neutral-800"
       >
         {labels.map((label, index) => (
           <li className="not-prose m-0 list-none p-0" key={label}>
             <button
               role="tab"
-              className={`-mb-0.5 mr-2 select-none rounded-t border-b-2 border-transparent px-2 pt-2 pb-1 font-medium leading-5 text-gray-400 transition-colors aria-selected:text-gray-900 dark:aria-selected:text-white dark:text-gray-600 hover:text-pink-500`}
+              className={`-mb-0.5 mr-2 select-none rounded-t border-b-2 border-transparent px-2 pb-1 pt-2 font-medium leading-5 text-gray-400 transition-colors hover:text-pink-500 aria-selected:text-gray-900 dark:text-gray-600 dark:aria-selected:text-white`}
               aria-selected={index === currentTab}
               onClick={() => setCurrentTab(index)}
             >

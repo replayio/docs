@@ -1,8 +1,7 @@
 import React, { CSSProperties, useRef, useState } from 'react'
 import { track } from '@vercel/analytics'
 
-export const Zoom = ({ children }: {children: React.ReactNode}) => {
-
+export const Zoom = ({ children }: { children: React.ReactNode }) => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   const [clicked, setClicked] = useState(false)
@@ -55,13 +54,13 @@ export const Zoom = ({ children }: {children: React.ReactNode}) => {
   const styles: CSSProperties = {
     position: 'relative',
     transition: `transform 300ms`,
-    display:  'block',
-    width:  '100%',
-    height:  'auto',
+    display: 'block',
+    width: '100%',
+    height: 'auto',
     zIndex: clicked ? 50 : 0,
     overflow: clicked ? 'hidden' : '',
     backgroundColor: 'transparent',
-    cursor:  clicked ? 'zoom-out' : 'zoom-in'
+    cursor: clicked ? 'zoom-out' : 'zoom-in',
   }
 
   return (
@@ -81,7 +80,12 @@ export const Zoom = ({ children }: {children: React.ReactNode}) => {
           onClick={closeWrapper}
         />
       ) : null}
-      <div data-testid="image-with-zoom" style={styles} ref={containerRef} onClick={handleImageZoom}>
+      <div
+        data-testid="image-with-zoom"
+        style={styles}
+        ref={containerRef}
+        onClick={handleImageZoom}
+      >
         {children}
       </div>
     </>

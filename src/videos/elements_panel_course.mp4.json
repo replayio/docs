@@ -1,1 +1,23 @@
-{"status":"ready","originalFilePath":"src/videos/08 - Elements panel (Replay.io course).mp4","provider":"mux","providerMetadata":{"mux":{"uploadId":"5xwMPt6y9Q7ccZyn2QhC01267W2tM8v2rtzxxSk7ONXc","assetId":"vnYMbE1INenx01ioMpuk9HYjSnLnva01JBP01LKvGyDMzA","playbackId":"MASxCshi57fllxXnJAxx01YkgqR8j9TXo2gn23JwYS9Y"}},"createdAt":1713376724926,"updatedAt":1713376730388,"size":11828146,"sources":[{"src":"https://stream.mux.com/MASxCshi57fllxXnJAxx01YkgqR8j9TXo2gn23JwYS9Y.m3u8","type":"application/x-mpegURL"}],"poster":"https://image.mux.com/MASxCshi57fllxXnJAxx01YkgqR8j9TXo2gn23JwYS9Y/thumbnail.webp","blurDataURL":"data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwAQCdASoQAAkAAQAcJQBOgB5QFLGKAP78diFHgFMrOZBM4Z8IwKoNlF0kAONqrT8i4yqAGTz9aF8RV/FcKfKXFzFv8thwBJlMtRfOoeGds48jyY/vr3QHNbt3jR+uAlw3oThKAAA="}
+{
+  "status": "ready",
+  "originalFilePath": "src/videos/08 - Elements panel (Replay.io course).mp4",
+  "provider": "mux",
+  "providerMetadata": {
+    "mux": {
+      "uploadId": "5xwMPt6y9Q7ccZyn2QhC01267W2tM8v2rtzxxSk7ONXc",
+      "assetId": "vnYMbE1INenx01ioMpuk9HYjSnLnva01JBP01LKvGyDMzA",
+      "playbackId": "MASxCshi57fllxXnJAxx01YkgqR8j9TXo2gn23JwYS9Y"
+    }
+  },
+  "createdAt": 1713376724926,
+  "updatedAt": 1713376730388,
+  "size": 11828146,
+  "sources": [
+    {
+      "src": "https://stream.mux.com/MASxCshi57fllxXnJAxx01YkgqR8j9TXo2gn23JwYS9Y.m3u8",
+      "type": "application/x-mpegURL"
+    }
+  ],
+  "poster": "https://image.mux.com/MASxCshi57fllxXnJAxx01YkgqR8j9TXo2gn23JwYS9Y/thumbnail.webp",
+  "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwAQCdASoQAAkAAQAcJQBOgB5QFLGKAP78diFHgFMrOZBM4Z8IwKoNlF0kAONqrT8i4yqAGTz9aF8RV/FcKfKXFzFv8thwBJlMtRfOoeGds48jyY/vr3QHNbt3jR+uAlw3oThKAAA="
+}

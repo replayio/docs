@@ -22,7 +22,7 @@ import { Dialog } from '@headlessui/react'
 import clsx from 'clsx'
 import { type Result } from '@/markdoc/search.mjs'
 
-import {flatNavigation, navigation} from '@/lib/navigation'
+import { flatNavigation, navigation } from '@/lib/navigation'
 
 type EmptyObject = Record<string, never>
 
@@ -162,9 +162,8 @@ function SearchResult({
   let id = useId()
   let pathname = usePathname()
 
-  let sectionTitle = flatNavigation.find(
-    (section) =>
-      section.links?.find((link) => link.href === result.url.split('#')[0]),
+  let sectionTitle = flatNavigation.find((section) =>
+    section.links?.find((link) => link.href === result.url.split('#')[0]),
   )?.title
   let hierarchy = [sectionTitle, result.pageTitle].filter(
     (x): x is string => typeof x === 'string',

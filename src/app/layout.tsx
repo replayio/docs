@@ -61,7 +61,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx('h-full antialiased', inter.variable, lexend.variable, virgil.variable)}
+      className={clsx(
+        'h-full antialiased',
+        inter.variable,
+        lexend.variable,
+        virgil.variable,
+      )}
       suppressHydrationWarning
     >
       <head>

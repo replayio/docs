@@ -55,5 +55,5 @@ export default {
   Steps,
   TwoColumns,
   Group,
-  SnapshotsVsReplay
+  SnapshotsVsReplay,
 }

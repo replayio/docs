@@ -146,7 +146,7 @@ export const icons = {
   wifi: WifiIcon,
   magnifying: MagnifyingGlassIcon,
   beaker: BeakerIcon,
-  additionalcontent: AdditionalContent
+  additionalcontent: AdditionalContent,
 }
 export function NavIcon({
   icon = 'file',

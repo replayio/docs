@@ -1,16 +1,16 @@
 export function sortHighlights(arr: any[]) {
-  const expandedArray: number[] = [];
+  const expandedArray: number[] = []
 
   arr?.forEach((item: string) => {
     if (typeof item === 'string') {
-      const [start, end] = item.split('-').map(Number);
+      const [start, end] = item.split('-').map(Number)
       for (let i = start; i <= end; i++) {
-        expandedArray.push(i);
+        expandedArray.push(i)
       }
     } else {
-      expandedArray.push(item);
+      expandedArray.push(item)
     }
-  });
+  })
 
-  return expandedArray.sort((a, b) => a - b);
+  return expandedArray.sort((a, b) => a - b)
 }

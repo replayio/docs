@@ -49,7 +49,7 @@ This lesson focuses on the capabilities of the network panel in Replay DevTools.
 
 ## Elements panel
 
-This lesson explores the capabilities of the Elements panel in Replay DevTools. You'll learn how to inspect the DOM tree and view properties of any element, including styling, event listeners, and more. 
+This lesson explores the capabilities of the Elements panel in Replay DevTools. You'll learn how to inspect the DOM tree and view properties of any element, including styling, event listeners, and more.
 
 {% video src="elementsPanelCourse" autoplay=false /%}
 
