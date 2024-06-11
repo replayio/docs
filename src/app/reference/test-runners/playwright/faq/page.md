@@ -66,8 +66,6 @@ Run `ls -alR ~/.replay/runtimes` to see the contents of the runtimes folder.
 
 {% accordion-item title="What other environment variables can I configure?" %}
 
-`REPLAY_SKIP_BROWSER_DOWNLOAD` - keeps browsers from being downloaded and installed during `npm install`
-
 `RECORD_REPLAY_METADATA_TEST_RUN_TITLE` - manually apply a test run title, instead of being inferred from the latest commit
 
 `RECORD_REPLAY_DIRECTORY` - set a custom directory (default: `~/.replay`)
