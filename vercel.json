@@ -570,7 +570,7 @@
     },
     {
       "source": "/test-suites/_archive/ci-integration/circle-ci",
-      "destination": "/reference/ci-workflows/recording-strategies"
+      "destination": "/reference/ci-workflows/upload-strategies"
     },
     {
       "source": "/test-suites/_archive/ci-integration/github-actions",
@@ -895,7 +895,11 @@
     },
     {
       "source": "/ci-workflows/recording-strategies",
-      "destination": "/reference/ci-workflows/recording-strategies"
+      "destination": "/reference/ci-workflows/upload-strategies"
+    },
+    {
+      "source": "/reference/ci-workflows/recording-strategies",
+      "destination": "/reference/ci-workflows/upload-strategies"
     },
     {
       "source": "/ci-workflows/upload-strategies",
@@ -991,7 +995,11 @@
     },
     {
       "source": "/test-runners/cypress-io/recording-options",
-      "destination": "/reference/test-runners/cypress-io/recording-options"
+      "destination": "/reference/test-runners/cypress-io"
+    },
+    {
+      "source": "/reference/test-runners/cypress-io/recording-options",
+      "destination": "/reference/test-runners/cypress-io"
     },
     {
       "source": "/test-runners/cypress-io/troubleshooting-guide",

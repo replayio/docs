@@ -75,6 +75,6 @@ Add a new step to run after your Cypress tests for uploading the replays:
     api-key: ${{ secrets.REPLAY_API_KEY }}
 ```
 
-{% callout title="Recording strategies" %}
-There are different strategies for creating your replays. For example you can use Replay only when retrying a failed test, or choose to upload recordings from failed tests only. See [docs on recording strategies](/reference/ci-workflows/recording-strategies) to learn more.
+{% callout title="Upload strategies" %}
+There are different strategies for uploading your replays. For example you can use Replay only when retrying a failed test, or choose to upload recordings from failed tests only. See [docs on upload strategies](/reference/ci-workflows/upload-strategies) to learn more.
 {% /callout %}

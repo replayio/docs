@@ -230,10 +230,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               href: '/reference/test-runners/cypress-io/debugging-tests',
             },
             {
-              title: 'Recording options',
-              href: '/reference/test-runners/cypress-io/recording-options',
-            },
-            {
               title: 'GitHub actions',
               href: '/reference/test-runners/cypress-io/github-actions',
             },
@@ -308,10 +304,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         {
           title: 'Generate API key',
           href: '/reference/ci-workflows/generate-api-key',
-        },
-        {
-          title: 'Recording strategies',
-          href: '/reference/ci-workflows/recording-strategies',
         },
         {
           title: 'Upload strategies',
