@@ -1,5 +1,5 @@
 ---
-title: How Runtime Replay compares with Playwright's trace viewer?
+title: How Runtime Replay compares with Playwright's trace viewer
 ---
 
 Playwright Trace Viewer is a Session Replay tool that captures application metadata like console logs, test steps, and screenshots while the test is running. Replay is a browser that lets you record your test and debug it later with retroactive print statements and Browser DevTools.

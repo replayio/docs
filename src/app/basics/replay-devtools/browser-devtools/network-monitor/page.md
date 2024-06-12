@@ -25,7 +25,7 @@ The Jump button helps you seek to the point in time where the fetch was initiate
 2.  **Request** Shows the request body.
 3.  **Response** Shows the response body.
 4.  **Stack trace** Shows the stack trace associated with the request which is useful for jumping to the relevant source code.
-5.  **Timings** Shows the timing information which is useful for understanding the waterfall.
+5.  **Timing** Shows the timing information which is useful for understanding the waterfall.
 
 ## Learn more
 
