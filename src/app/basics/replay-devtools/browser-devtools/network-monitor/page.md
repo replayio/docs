@@ -19,6 +19,13 @@ To filter the requests shown in the list, focus on search input on the top of th
 
 The Jump button helps you seek to the point in time where the fetch was initiated and inspect the local state.
 
+{% figure
+alt="The network tab with a fast-forward button"
+src="/images/network-jump.png"
+height=231
+width=414
+/%}
+
 ## Inspecting resource details
 
 1.  **Headers** Shows HTTP headers and general information about the resource such as status code.
