@@ -20,13 +20,6 @@ npx cypress run --browser replay-chromium
 /%}
 
 {% quick-link
-  title="Recording options"
-  icon="record"
-  href="/reference/test-runners/cypress-io/recording-options"
-  description="See what recording options are available for Cypress.io and Replay"
-/%}
-
-{% quick-link
   title="GitHub Actions"
   icon="github"
   href="/reference/test-runners/cypress-io/github-actions"

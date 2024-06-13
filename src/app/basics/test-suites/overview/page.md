@@ -149,7 +149,7 @@ At the first glance, that recording may look like a series of snapshots of your 
 
 {% accordion-item title="When do I use Replay with my tests?" %}
 
-There are a [couple of strategies](/reference/ci-workflows/recording-strategies) you can adopt, but generally you can use Replay Browser with every test run on your CI, as there is both short-term and long-term value.
+There are a couple of strategies you can adopt, but generally you can use Replay Browser with every test run on your CI, as there is both short-term and long-term value.
 
 When a test fails on CI, you don’t need to replicate it locally anymore. A replay captures your test run **exactly** as it happened and will provide you better insight than if you tried to locally reproduce an issue from CI.
 
