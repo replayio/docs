@@ -118,23 +118,27 @@ async function main(): Promise<void> {
   for (const [index, file] of files.entries()) {
     const { file: filePath, links } = file
     process.stdout.write(`${index + 1} ${filePath} `)
-    failedLinks.push(...(await checkLinksInFile(filePath, links)))
+    failedLinks.push(
+      ...(await checkLinksInFile(filePath, links)).map(
+        (l) => `${filePath}: ${l}`,
+      ),
+    )
     process.stdout.write('\n')
   }
 
   console.log('Checking links in Vercel.json')
   failedLinks.push(
-    ...(await checkLinksInFile(
-      'vercel.json',
-      vercelConfig.redirects.map((l) => l.destination),
-    )),
+    ...(
+      await checkLinksInFile(
+        'vercel.json',
+        vercelConfig.redirects.map((l) => l.destination),
+      )
+    ).map((l) => `vercel.json: ${l}`),
   )
-
-  const dedupedFailedLinks = [...new Set(failedLinks)]
 
   if (failedLinks.length > 0) {
     console.error('\nThe following links are broken:')
-    for (const link of dedupedFailedLinks) {
+    for (const link of failedLinks) {
       console.error(link)
     }
     process.exit(1)
