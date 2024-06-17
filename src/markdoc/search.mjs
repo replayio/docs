@@ -61,9 +61,10 @@ export default function withSearch(nextConfig = {}) {
 
               let sections
               let ast = Markdoc.parse(md)
-              let keywords = ast.attributes?.frontmatter?.match(
-                /^keywords:\s*(.*?)\s*$/m,
-              )?.[1].split(/,\s+/) || []
+              let keywords =
+                ast.attributes?.frontmatter
+                  ?.match(/^keywords:\s*(.*?)\s*$/m)?.[1]
+                  .split(/,\s+/) || []
 
               if (cache.get(file)?.[0] === md) {
                 sections = cache.get(file)[1]

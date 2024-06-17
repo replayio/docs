@@ -32,8 +32,8 @@ export function DocsHeader({
 }) {
   let pathname = usePathname()
 
-  let section = flatNavigation.find((section) =>
-    section.links?.find((link) => link.href === pathname),
+  let section = flatNavigation.find(
+    (section) => section.links?.find((link) => link.href === pathname),
   )
 
   if (!title && !section) {
