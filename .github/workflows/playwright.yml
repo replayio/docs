@@ -24,11 +24,11 @@ jobs:
         with:
           node-version: lts/*
       - name: Install dependencies
-        run: npm ci
+        run: pnpm ci
       - name: Install Replay Chromium
-        run: npx replayio install
+        run: pnpx replayio install
       - name: Run Playwright tests
-        run: npx playwright test --project replay-chromium
+        run: pnpx playwright test --project replay-chromium
         env:
           BASE_URL: ${{ needs.wait-for-vercel.outputs.preview_url }}
           REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
