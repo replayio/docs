@@ -60,11 +60,15 @@ export default function withSearch(nextConfig = {}) {
               let md = fs.readFileSync(path.join(pagesDir, file), 'utf8')
 
               let sections
+              let ast = Markdoc.parse(md)
+              let keywords =
+                ast.attributes?.frontmatter
+                  ?.match(/^keywords:\s*(.*?)\s*$/m)?.[1]
+                  .split(/,\s+/) || []
 
               if (cache.get(file)?.[0] === md) {
                 sections = cache.get(file)[1]
               } else {
-                let ast = Markdoc.parse(md)
                 let title =
                   ast.attributes?.frontmatter?.match(
                     /^title:\s*(.*?)\s*$/m,
@@ -74,7 +78,7 @@ export default function withSearch(nextConfig = {}) {
                 cache.set(file, [md, sections])
               }
 
-              return { url, sections }
+              return { url, sections, keywords }
             })
 
             // When this file is imported within the application
@@ -87,7 +91,7 @@ export default function withSearch(nextConfig = {}) {
                 document: {
                   id: 'url',
                   index: 'content',
-                  store: ['title', 'pageTitle'],
+                  store: ['title', 'pageTitle', 'keywords'],
                 },
                 context: {
                   resolution: 9,
@@ -98,12 +102,12 @@ export default function withSearch(nextConfig = {}) {
 
               let data = ${JSON.stringify(data)}
 
-              for (let { url, sections } of data) {
+              for (let { url, sections, keywords } of data) {
                 for (let [title, hash, content] of sections) {
                   sectionIndex.add({
                     url: url + (hash ? ('#' + hash) : ''),
                     title,
-                    content: [title, ...content].join('\\n'),
+                    content: [title, ...keywords, ...content ].join('\\n'),
                     pageTitle: hash ? sections[0][0] : undefined,
                   })
                 }

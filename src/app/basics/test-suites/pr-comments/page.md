@@ -1,5 +1,6 @@
 ---
 title: Pull Request Comments
+keywords: PR, PR Comments, GitHub
 description: Pull Request Comments show updated results of your test run with links to replays and the Test Suite Dashboard, all from the pull request in GitHub.
 image: /images/pr-comment.png
 ---
