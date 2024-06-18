@@ -12,17 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: volta-cli/action@v1
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8
+      - uses: volta-cli/action@v4
         with:
           node-version: 20.12.0
 
       - name: Install packages
-        run: npm install
+        run: pnpm install
       - name: Lint
-        run: npm run lint
+        run: pnpm run lint
       - name: Next Build (because it's more strict)
-        run: npm run build
+        run: pnpm run build
         env:
           NEXT_PUBLIC_SITE_URL: 'https://replay.io'
       - name: Check formatting
-        run: npm run prettier:ci
+        run: pnpm run prettier:ci
