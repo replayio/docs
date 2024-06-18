@@ -7,6 +7,7 @@
     "dev": "next dev & npm run sync -- -w",
     "links": "bun ./scripts/checkLinks.ts",
     "lint": "next lint",
+    "preinstall": "npx only-allow pnpm",
     "prettier": "prettier . --write",
     "prettier:ci": "prettier . --check",
     "start": "next start",
