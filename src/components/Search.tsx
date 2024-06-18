@@ -22,7 +22,11 @@ import { Dialog } from '@headlessui/react'
 import clsx from 'clsx'
 import { type Result } from '@/markdoc/search.mjs'
 
-import { flatNavigation, navigation } from '@/lib/navigation'
+import { flatNavigation } from '@/lib/navigation'
+import { track } from '@vercel/analytics'
+
+let timer: number | Timer | undefined
+const waitTime = 500
 
 type EmptyObject = Record<string, never>
 
@@ -160,7 +164,6 @@ function SearchResult({
   query: string
 }) {
   let id = useId()
-  let pathname = usePathname()
 
   let sectionTitle = flatNavigation.find((section) =>
     section.links?.find((link) => link.href === result.url.split('#')[0]),
@@ -267,6 +270,12 @@ const SearchInput = forwardRef<
           autocompleteState.status === 'stalled' ? 'pr-11' : 'pr-4',
         )}
         {...inputProps}
+        onKeyUp={() => {
+          clearTimeout(timer)
+          timer = setTimeout(() => {
+            track('search', { searchQuery: inputProps.value })
+          }, waitTime)
+        }}
         onKeyDown={(event) => {
           if (
             event.key === 'Escape' &&
