@@ -502,7 +502,11 @@
     },
     {
       "source": "/reference/get-help/contact-community",
-      "destination": "/"
+      "destination": "/discord"
+    },
+    {
+      "source": "/resources/get-help/contact-community",
+      "destination": "/discord"
     },
     {
       "source": "/reference/get-help/experimental-features",
@@ -1072,6 +1076,42 @@
     {
       "source": "/reference/test-runners/playwright/examples",
       "destination": "/learn/examples/playwright"
+    },
+    {
+      "source": "/resources/comparisons/sentry-vs-replay",
+      "destination": "/learn/comparisons/devtools"
+    },
+    {
+      "source": "/basics/test-suites/runs-view",
+      "destination": "/basics/test-suites/recent-runs"
+    },
+    {
+      "source": "/resources/comparisons/playwright-trace-viewer-vs-replay-devtools",
+      "destination": "/learn/comparisons/playwright"
+    },
+    {
+      "source": "/resources/get-help/limitations",
+      "destination": "/"
+    },
+    {
+      "source": "/basics/replay-teams/managing-replays",
+      "destination": "/reference/replay-teams/managing-replays"
+    },
+    {
+      "source": "/basics/time-travel-devtools/live-console-logs",
+      "destination": "/basics/replay-devtools/browser-devtools/console"
+    },
+    {
+      "source": "/docs/react-c5c42fe645fa45eb89d96f896e6a1b31",
+      "destination": "/basics/replay-devtools/framework-devtools/react-panel"
+    },
+    {
+      "source": "/reference/test-runners/cypress-io",
+      "destination": "/reference/test-runners/cypress-io/overview"
+    },
+    {
+      "source": "/test-runners/cypress-io",
+      "destination": "/reference/test-runners/cypress-io/overview"
     }
   ],
   "rewrites": [

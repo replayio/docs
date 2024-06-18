@@ -129,7 +129,7 @@ Replays need to be uploaded so the browser can be replayed in the Replay Cloud. 
 {% quick-link
   title="Test Suites Analytics"
   icon="treeview"
-  href="/basics/test-suites/runs-view"
+  href="/basics/test-suites/recent-runs"
   description="Stay on top of your Test Suite's health."
 /%}
 
