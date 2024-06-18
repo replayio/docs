@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: lts/*
       - name: Install dependencies
-        run: pnpm ci
+        run: pnpm i
       - name: Install Replay Chromium
         run: pnpx replayio install
       - name: Run Playwright tests
