@@ -31,7 +31,7 @@ jobs:
       - name: Install Replay Chromium
         run: pnpx replayio install
       - name: Run Playwright tests
-        run: pnpx playwright test --project replay-chromium
+        run: pnpm test
         env:
           BASE_URL: ${{ needs.wait-for-vercel.outputs.preview_url }}
           REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}

@@ -12,7 +12,7 @@
     "prettier:ci": "prettier . --check",
     "start": "next start",
     "sync": "npx next-video sync -d ./src/videos",
-    "test": "playwright test"
+    "test": "playwright test --project replay-chromium"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
