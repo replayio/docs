@@ -30,7 +30,7 @@ When you open a replay, you're able to inspect your application with Replay DevT
   mini=true
   title="Timeline Annotation"
   icon="timeline"
-  href="/basics/time-travel-devtools/timeline-annotation"
+  href="/basics/replay-devtools/time-travel-devtools/timeline-annotation"
 /%}
 
 {% quick-link
