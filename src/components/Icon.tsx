@@ -112,7 +112,7 @@ export const icons = {
   video: VideocamSharp,
   redux: ReduxIcon,
   vercel: Vercel,
-  uploadicon: UploadIcon
+  uploadicon: UploadIcon,
 }
 
 export const iconStyles = {

@@ -6,7 +6,7 @@ title: GitHub actions with Cypress
 These instructions assume that you have already [set up your Cypress project](/basics/getting-started/record-your-cypress-tests).
 {% /callout %}
 
-This example uses [Cypress GitHub Action](https://github.com/cypress-io/github-action) that provides dependency installation, built-in caching, and multiple options for advanced workflow configuration. For recording your test, the `replay-chromium` browser needs to be passed as a browser. 
+This example uses [Cypress GitHub Action](https://github.com/cypress-io/github-action) that provides dependency installation, built-in caching, and multiple options for advanced workflow configuration. For recording your test, the `replay-chromium` browser needs to be passed as a browser.
 
 ```yaml {% fileName=".github/workflows/e2e.yml" highlight=["11-19"] lineNumbers=true %}
 name: End-to-end tests
@@ -31,14 +31,14 @@ Running with Replay browser will create your replays. These are stored locally o
 
 {% quick-links title="Learn more" %}
 
-{% quick-link 
-  title="Upload strategies" 
+{% quick-link
+  title="Upload strategies"
   icon="uploadicon"
   description="There are different strategies for uploading your replays such as uploading  only on test flakes or failures."
    href="/reference/ci-workflows/upload-strategies"
 /%}
-{% quick-link 
-  title="GitHub upload action" 
+{% quick-link
+  title="GitHub upload action"
   icon="github"
   description="GitHub upload action takes care of uploading your recordings during your CI test runs on GitHub. It enables you to filter the recordings you upload to Replay App."
    href="/reference/ci-workflows/github-action-upload"

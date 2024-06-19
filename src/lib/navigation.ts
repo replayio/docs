@@ -312,7 +312,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         {
           title: 'GitHub upload action',
           href: '/reference/ci-workflows/github-action-upload',
-        }
+        },
       ],
     },
     {

@@ -1,10 +1,12 @@
 ---
 title: GitHub upload action
 ---
+
 GitHub upload action takes care of uploading your recordings during your CI test runs on GitHub. It enables you to filter the recordings you upload to Replay App.
 
 {% tabs labels=["cypress", "playwright"] %}
 {% tab %}
+
 ```yaml {% fileName=".github/workflows/e2e.yml" highlight=["15-19"] lineNumbers=true %}
 name: End-to-end tests
 on: push
@@ -26,8 +28,10 @@ jobs:
         with:
           api-key: ${{ secrets.REPLAY_API_KEY }}
 ```
+
 {% /tab %}
 {% tab %}
+
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true  highlight=["19-23"] %}
 name: End-to-end tests
 on:
@@ -53,6 +57,7 @@ jobs:
         with:
           api-key: ${{ secrets.REPLAY_API_KEY }}
 ```
+
 {% /tab %}
 {% /tabs %}
 
@@ -62,8 +67,8 @@ Make sure to set `if: ${{ always() }}` so that this step is always executed, eve
 
 {% quick-links title="Learn more" %}
 
-{% quick-link 
-  title="Upload strategies" 
+{% quick-link
+  title="Upload strategies"
   icon="uploadicon"
   description="There are different strategies for uploading your replays such as uploading  only on test flakes or failures."
    href="/reference/ci-workflows/upload-strategies"
