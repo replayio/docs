@@ -28,7 +28,7 @@ title: Frequently asked questions
 
 - All logs
 - DEBUG=cypress:launcher:browsers RECORD_REPLAY_VERBOSE=1
-  {% /table %}
+{% /table %}
 
 ## How do I group tests ran in a matrix or across multiple runners into the same test run?
 
