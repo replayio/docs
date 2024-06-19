@@ -55,6 +55,7 @@ import { PauseIcon } from './icons/PauseIcon'
 import { VideocamSharp } from './icons/VideocamSharp'
 import { ReduxIcon } from './icons/ReduxIcon'
 import { Vercel } from './icons/Vercel'
+import { UploadIcon } from './icons/UploadIcon'
 
 export const icons = {
   bracketscurly: BracketsCurlyIcon,
@@ -111,6 +112,7 @@ export const icons = {
   video: VideocamSharp,
   redux: ReduxIcon,
   vercel: Vercel,
+  uploadicon: UploadIcon,
 }
 
 export const iconStyles = {
