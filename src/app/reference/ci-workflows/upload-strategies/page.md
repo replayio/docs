@@ -234,6 +234,8 @@ export default config;
 
 ## Using GitHub Action
 
+Alternatively, you can upload your replays in a separate step using our [GitHub upload action](https://github.com/replayio/action-upload). To filter which replays to upload, you can use [JSONata filtering functions](https://docs.jsonata.org/higher-order-functions#filter).
+
 ```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true highlight=[19] %}
 name: Replay tests
 on:
