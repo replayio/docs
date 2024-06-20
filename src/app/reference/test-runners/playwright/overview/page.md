@@ -20,13 +20,6 @@ npx playwright test --project replay-chromium
 /%}
 
 {% quick-link
-  title="Recording options"
-  icon="record"
-  href="/reference/test-runners/playwright/playwright-core"
-  description="Use the Replay browser to record Playwright core tests"
-/%}
-
-{% quick-link
   title="GitHub Actions"
   icon="github"
   href="/reference/test-runners/playwright/github-actions"
