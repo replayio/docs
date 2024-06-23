@@ -72,7 +72,7 @@ export default defineConfig({
       replayPlugin(on, config, {
         apiKey: process.env.REPLAY_API_KEY,
         upload: {
-          statusThreshold: "failed"
+          statusThreshold: 'failed',
         },
       })
       return config
@@ -126,14 +126,13 @@ export default defineConfig({
       replayPlugin(on, config, {
         apiKey: process.env.REPLAY_API_KEY,
         upload: {
-          statusThreshold: "failed-and-flaky"
+          statusThreshold: 'failed-and-flaky',
         },
       })
       return config
     },
   },
 })
-
 ```
 
 {% /tab %}
@@ -169,10 +168,11 @@ export default config;
 ## Upload only for the primary branch
 
 Many CI providers provide an environment variable that references the current branch name.
-* [CircleCI](https://circleci.com/docs/2.0/env-vars/#built-in-environment-variables): `$CIRCLE_BRANCH`
-* [GitLab](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html): `$CI_COMMIT_REF_NAME`
-* [Semaphore](https://docs.semaphoreci.com/ci-cd-environment/environment-variables/): `$SEMAPHORE_GIT_BRANCH`
-* [Travis](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables): `$TRAVIS_BRANCH`
+
+- [CircleCI](https://circleci.com/docs/2.0/env-vars/#built-in-environment-variables): `$CIRCLE_BRANCH`
+- [GitLab](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html): `$CI_COMMIT_REF_NAME`
+- [Semaphore](https://docs.semaphoreci.com/ci-cd-environment/environment-variables/): `$SEMAPHORE_GIT_BRANCH`
+- [Travis](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables): `$TRAVIS_BRANCH`
 
 GitHub [stores this value in a default variable](https://docs.github.com/en/actions/learn-github-actions/variables) named `GITHUB_BASE_REF` that can be passed along as [part of a Workflow](https://docs.github.com/en/actions/learn-github-actions/environment-variables) and then referenced in the Playwright config, e.g.:
 
@@ -186,7 +186,7 @@ export default defineConfig({
       const on = wrapOn(cyOn)
       replayPlugin(on, config, {
         apiKey: process.env.REPLAY_API_KEY,
-        upload: process.env.BRANCH_NAME === "main"
+        upload: process.env.BRANCH_NAME === 'main',
       })
       return config
     },
@@ -244,7 +244,6 @@ export default defineConfig({
     },
   },
 })
-
 ```
 
 {% /tab %}
@@ -293,14 +292,13 @@ export default defineConfig({
         apiKey: process.env.REPLAY_API_KEY,
         upload: {
           minimizeUploads: true,
-          statusThreshold: "failed",
+          statusThreshold: 'failed',
         },
       })
       return config
     },
   },
 })
-
 ```
 
 {% /tab %}
