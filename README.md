@@ -13,13 +13,15 @@ Docs are built with:
 ## Installation
 
 ```bash
-npm i
+pnpm install
 ```
 
 ## Local development
 
+Note that Node 18 is currently required to run this web server successfully.
+
 ```
-npm run dev
+pnpm run dev
 ```
 
 ## Issues
