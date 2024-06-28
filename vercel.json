@@ -1116,6 +1116,10 @@
     {
       "source": "/docs/setting-up-a-team-f5bd9ee853814d6f84e23fb535066199#4913df9eb7384a94a23ccbf335189370",
       "destination": "/reference/ci-workflows/generate-api-key"
+    },
+    {
+      "source": "/reference/api-keys",
+      "destination": "/reference/ci-workflows/generate-api-key"
     }
   ],
   "rewrites": [
