@@ -7,28 +7,21 @@ description: When you run tests and create recordings, they are stored locally. 
 While uploading just failed test is good for saving resources, our recommendation is to upload both failed and passed tests so that you can compare them. This can be really useful for debugging purposes.
 {% /callout %}
 
-## Upload failed tests only
+## Upload all tests
 
-By default, all test replays are uploaded no matter the result. If you want to upload only the failed recordings, you can use the `filter` property in the plugin configuration:
+To upload all test replays no matter the result, set the `upload` option to true.
 
 {% tabs labels=["cypress", "playwright"] %}
 {% tab %}
 
-```js
+```js {% fileName="cypress.config.js" highlight=[7] %}
 export default defineConfig({
   e2e: {
     setupNodeEvents(cyOn, config) {
       const on = wrapOn(cyOn)
       replayPlugin(on, config, {
-        upload: true,
         apiKey: process.env.REPLAY_API_KEY,
-        filter: function (recording) {
-          // upload runtime crashes and any failed tests
-          return (
-            recording.status === 'crashed' ||
-            recording.metadata.test.result === 'failed'
-          )
-        },
+        upload: true,
       })
       return config
     },
@@ -39,7 +32,7 @@ export default defineConfig({
 {% /tab %}
 {% tab %}
 
-```js
+```js {% fileName="playwright.config.js" highlight=[7] %}
 import { replayDevices, replayReporter } from "@replayio/playwright";
 
 const config: PlaywrightTestConfig = {
@@ -47,13 +40,6 @@ const config: PlaywrightTestConfig = {
     replayReporter({
       apiKey: process.env.REPLAY_API_KEY,
       upload: true,
-      filter: function (recording) {
-        // upload runtime crashes and any failed tests
-        return (
-          recording.status === "crashed" ||
-          recording.metadata.test.result === "failed"
-        );
-      },
     }),
     ["line"],
   ],
@@ -64,32 +50,29 @@ const config: PlaywrightTestConfig = {
     },
   ],
 };
+
 export default config;
 ```
 
 {% /tab %}
 {% /tabs %}
 
-## Upload failed and flaky Cypress tests
+## Upload failed tests only
 
-By default, all test replays are uploaded no matter the result. If you want to upload failed and flaky tests, you can use the `filter` property in the plugin configuration:
+Use the advanced upload options to upload only the failed recordings:
 
-```js
+{% tabs labels=["cypress", "playwright"] %}
+{% tab %}
+
+```js {% fileName="cypress.config.js" highlight=[7,8,9] %}
 export default defineConfig({
   e2e: {
     setupNodeEvents(cyOn, config) {
       const on = wrapOn(cyOn)
       replayPlugin(on, config, {
-        upload: true,
         apiKey: process.env.REPLAY_API_KEY,
-        filter: function (recording) {
-          // upload runtime crashes and recordings with any tests that failed
-          return (
-            recording.status === 'crashed' ||
-            recording.metadata.test.tests.some(
-              (test) => test.result === 'failed',
-            )
-          )
+        upload: {
+          statusThreshold: 'failed',
         },
       })
       return config
@@ -97,24 +80,164 @@ export default defineConfig({
   },
 })
 ```
+
+{% /tab %}
+{% tab %}
+
+```js {% fileName="playwright.config.js" highlight=[7,8,9] %}
+import { replayDevices, replayReporter } from "@replayio/playwright";
+
+const config: PlaywrightTestConfig = {
+  reporter: [
+    replayReporter({
+      apiKey: process.env.REPLAY_API_KEY,
+      upload: {
+          statusThreshold: "failed"
+        },
+    }),
+    ["line"],
+  ],
+  projects: [
+    {
+      name: "replay-chromium",
+      use: { ...replayDevices["Replay Chromium"] },
+    },
+  ],
+};
+
+export default config;
+```
+
+{% /tab %}
+{% /tabs %}
+
+## Upload failed and flaky tests
+
+Use the advanced upload options to upload failed and flaky test recordings:
+
+{% tabs labels=["cypress", "playwright"] %}
+{% tab %}
+
+```js {% fileName="cypress.config.js" highlight=[7,8,9] %}
+export default defineConfig({
+  e2e: {
+    setupNodeEvents(cyOn, config) {
+      const on = wrapOn(cyOn)
+      replayPlugin(on, config, {
+        apiKey: process.env.REPLAY_API_KEY,
+        upload: {
+          statusThreshold: 'failed-and-flaky',
+        },
+      })
+      return config
+    },
+  },
+})
+```
+
+{% /tab %}
+{% tab %}
+
+```js {% fileName="playwright.config.js" highlight=[7,8,9] %}
+import { replayDevices, replayReporter } from "@replayio/playwright";
+
+const config: PlaywrightTestConfig = {
+  reporter: [
+    replayReporter({
+      apiKey: process.env.REPLAY_API_KEY,
+      upload: {
+          statusThreshold: "failed-and-flaky"
+        },
+    }),
+    ["line"],
+  ],
+  projects: [
+    {
+      name: "replay-chromium",
+      use: { ...replayDevices["Replay Chromium"] },
+    },
+  ],
+};
+
+export default config;
+```
+
+{% /tab %}
+{% /tabs %}
 
 ## Upload only for the primary branch
 
-The recording metadata includes some details about the source control including the repository and branch name which can also be used to filter your uploads. The example below uploads all recordings from the `main` branch:
+Many CI providers provide an environment variable that references the current branch name.
+
+- [CircleCI](https://circleci.com/docs/2.0/env-vars/#built-in-environment-variables): `$CIRCLE_BRANCH`
+- [GitLab](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html): `$CI_COMMIT_REF_NAME`
+- [Semaphore](https://docs.semaphoreci.com/ci-cd-environment/environment-variables/): `$SEMAPHORE_GIT_BRANCH`
+- [Travis](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables): `$TRAVIS_BRANCH`
+
+GitHub [stores this value in a default variable](https://docs.github.com/en/actions/learn-github-actions/variables) named `GITHUB_BASE_REF` that can be passed along as [part of a Workflow](https://docs.github.com/en/actions/learn-github-actions/environment-variables) and then referenced in the Playwright config, e.g.:
 
 {% tabs labels=["cypress", "playwright"] %}
 {% tab %}
 
-```js
+```js {% fileName="cypress.config.js" highlight=[7] %}
 export default defineConfig({
   e2e: {
     setupNodeEvents(cyOn, config) {
       const on = wrapOn(cyOn)
       replayPlugin(on, config, {
-        upload: true,
         apiKey: process.env.REPLAY_API_KEY,
-        filter: function (recording) {
-          return recording.metadata.source.branch === 'main'
+        upload: process.env.BRANCH_NAME === 'main',
+      })
+      return config
+    },
+  },
+})
+```
+
+{% /tab %}
+{% tab %}
+
+```js {% fileName="playwright.config.js" highlight=[7] %}
+import { replayDevices, replayReporter } from "@replayio/playwright";
+
+const config: PlaywrightTestConfig = {
+  reporter: [
+    replayReporter({
+      apiKey: process.env.REPLAY_API_KEY,
+      upload: process.env.BRANCH_NAME === "main"
+    }),
+    ["line"],
+  ],
+  projects: [
+    {
+      name: "replay-chromium",
+      use: { ...replayDevices["Replay Chromium"] },
+    },
+  ],
+};
+
+export default config;
+```
+
+{% /tab %}
+{% /tabs %}
+
+## Reducing the number of uploaded recordings
+
+Use the advanced upload options to reduce the number of recordings that are uploaded. When this option is enabled, only one recording will be uploaded for any passing or failing test. (Two recordings will be uploaded for a flaky test.)
+
+{% tabs labels=["cypress", "playwright"] %}
+{% tab %}
+
+```js {% fileName="cypress.config.js" highlight=[7,8,9] %}
+export default defineConfig({
+  e2e: {
+    setupNodeEvents(cyOn, config) {
+      const on = wrapOn(cyOn)
+      replayPlugin(on, config, {
+        apiKey: process.env.REPLAY_API_KEY,
+        upload: {
+          minimizeUploads: true,
         },
       })
       return config
@@ -126,17 +249,16 @@ export default defineConfig({
 {% /tab %}
 {% tab %}
 
-```js
+```js {% fileName="playwright.config.js" highlight=[7,8,9] %}
 import { replayDevices, replayReporter } from "@replayio/playwright";
 
 const config: PlaywrightTestConfig = {
   reporter: [
     replayReporter({
       apiKey: process.env.REPLAY_API_KEY,
-      upload: true,
-      filter: function (recording) {
-        return recording.metadata.source.branch === "main";
-      },
+      upload: {
+          minimizeUploads: true,
+        },
     }),
     ["line"],
   ],
@@ -147,41 +269,30 @@ const config: PlaywrightTestConfig = {
     },
   ],
 };
+
 export default config;
 ```
 
 {% /tab %}
 {% /tabs %}
 
-## Upload some passing runs
+## Combining options
 
-If you've adopted one the configurations above but would also like to periodically upload all replays for a test run, you can add a condition to the filter that returns `true` for a given test run id. This is only one possible implementation of this approach and you're welcome to adopt others such as using external environment variables.
+You can combine advanced upload options to e.g. only upload a single recording and only for a failing test.
 
 {% tabs labels=["cypress", "playwright"] %}
 {% tab %}
 
-```js
-const convertStringToInt = (string) =>
-  string.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
-
+```js {% fileName="cypress.config.js" highlight=[7,8,9,10] %}
 export default defineConfig({
   e2e: {
     setupNodeEvents(cyOn, config) {
       const on = wrapOn(cyOn)
       replayPlugin(on, config, {
-        upload: true,
         apiKey: process.env.REPLAY_API_KEY,
-        filter: function (recording) {
-          // randomly upload 10% of all test runs
-          if (convertStringToInt(r.metadata.test.run.id) % 10 === 1) {
-            return true
-          }
-
-          // upload runtime crashes and any failed tests
-          return (
-            recording.status === 'crashed' ||
-            recording.metadata.test.result === 'failed'
-          )
+        upload: {
+          minimizeUploads: true,
+          statusThreshold: 'failed',
         },
       })
       return config
@@ -193,29 +304,17 @@ export default defineConfig({
 {% /tab %}
 {% tab %}
 
-```js
+```js {% fileName="playwright.config.js" highlight=[7,8,9,10] %}
 import { replayDevices, replayReporter } from "@replayio/playwright";
-
-const convertStringToInt = string =>
-  string.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0);
 
 const config: PlaywrightTestConfig = {
   reporter: [
     replayReporter({
       apiKey: process.env.REPLAY_API_KEY,
-      upload: true,
-      filter: function (recording) {
-        // randomly upload 10% of all test runs
-        if (convertStringToInt(r.metadata.test.run.id) % 10 === 1) {
-          return true;
-        }
-
-        // upload runtime crashes and any failed tests
-        return (
-          recording.status === "crashed" ||
-          recording.metadata.test.result === "failed"
-        );
-      },
+      upload: {
+          minimizeUploads: true,
+          statusThreshold: "failed",
+        },
     }),
     ["line"],
   ],
@@ -226,38 +325,9 @@ const config: PlaywrightTestConfig = {
     },
   ],
 };
+
 export default config;
 ```
 
 {% /tab %}
 {% /tabs %}
-
-## Using GitHub Action
-
-Alternatively, you can upload your replays in a separate step using our [GitHub upload action](https://github.com/replayio/action-upload). To filter which replays to upload, you can use [JSONata filtering functions](https://docs.jsonata.org/higher-order-functions#filter).
-
-```yml {% fileName=".github/workflows/e2e.yml" lineNumbers=true highlight=[19] %}
-name: Replay tests
-on:
-  pull_request:
-  push:
-    branches: [main]
-jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Install dependencies
-        run: npm ci
-      - name: Install Replay Chromium
-        run: npx replayio install
-      - name: Run Playwright tests with Replay Browser
-        run: npx playwright test --project replay-chromium --reporter=@replayio/playwright/reporter,line
-      - name: Upload replays
-        if: ${{ always() }}
-        uses: replayio/action-upload@v0.5.1
-        with:
-          api-key: ${{ secrets.REPLAY_API_KEY }}
-          filter: ${{ 'function($v) { $v.metadata.test.result = "failed" }' }}
-```
