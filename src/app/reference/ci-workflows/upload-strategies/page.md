@@ -92,8 +92,8 @@ const config: PlaywrightTestConfig = {
     replayReporter({
       apiKey: process.env.REPLAY_API_KEY,
       upload: {
-          statusThreshold: "failed"
-        },
+        statusThreshold: "failed"
+      },
     }),
     ["line"],
   ],
@@ -146,8 +146,8 @@ const config: PlaywrightTestConfig = {
     replayReporter({
       apiKey: process.env.REPLAY_API_KEY,
       upload: {
-          statusThreshold: "failed-and-flaky"
-        },
+        statusThreshold: "failed-and-flaky"
+      },
     }),
     ["line"],
   ],
@@ -234,8 +234,8 @@ const config: PlaywrightTestConfig = {
     replayReporter({
       apiKey: process.env.REPLAY_API_KEY,
       upload: {
-          minimizeUploads: true,
-        },
+        minimizeUploads: true,
+      },
     }),
     ["line"],
   ],
@@ -253,59 +253,3 @@ export default config;
 {% callout %}
 Note this option is only available for tests recorded with Playwright
 {% /callout %}
-
-## Combining options
-
-You can combine advanced upload options to e.g. only upload a single recording and only for a failing test.
-
-{% tabs labels=["cypress", "playwright"] %}
-{% tab %}
-
-```js {% fileName="cypress.config.js" highlight=[7,8,9,10] %}
-export default defineConfig({
-  e2e: {
-    setupNodeEvents(cyOn, config) {
-      const on = wrapOn(cyOn)
-      replayPlugin(on, config, {
-        apiKey: process.env.REPLAY_API_KEY,
-        upload: {
-          minimizeUploads: true,
-          statusThreshold: 'failed',
-        },
-      })
-      return config
-    },
-  },
-})
-```
-
-{% /tab %}
-{% tab %}
-
-```js {% fileName="playwright.config.js" highlight=[7,8,9,10] %}
-import { replayDevices, replayReporter } from "@replayio/playwright";
-
-const config: PlaywrightTestConfig = {
-  reporter: [
-    replayReporter({
-      apiKey: process.env.REPLAY_API_KEY,
-      upload: {
-          minimizeUploads: true,
-          statusThreshold: "failed",
-        },
-    }),
-    ["line"],
-  ],
-  projects: [
-    {
-      name: "replay-chromium",
-      use: { ...replayDevices["Replay Chromium"] },
-    },
-  ],
-};
-
-export default config;
-```
-
-{% /tab %}
-{% /tabs %}
