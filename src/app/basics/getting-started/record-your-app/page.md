@@ -87,14 +87,6 @@ You can always upload replays later via the `replayio upload` command. Read more
 
 {% /accordion-item %}
 
-{% accordion-item title="When will the Replay browser be a standalone application?" %}
-
-We are excited to release the Replay browser as a standalone application that you can download directly, log into, and start recording in a couple of months.
-
-In the interim, if you would prefer downloading a browser directly, you can use the [Replay Firefox](/reference/replay-runtimes/replay-firefox) browser.
-
-{% /accordion-item %}
-
 {% accordion-item title="Why do I need to log in to Replay?" %}
 
 Replays need to be uploaded so the browser can be replayed in the Replay Cloud. See [How time travel works](/basics/time-travel/how-does-time-travel-work) for more information.
