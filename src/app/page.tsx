@@ -24,7 +24,7 @@ const cards: CardAttributes[] = [
   {
     icon: 'replay',
     title: 'Record your first replay',
-    content: 'Record your app with with the Replay browser in under a minute.',
+    content: 'Record your app with the Replay browser in under a minute.',
     href: '/basics/getting-started/record-your-app',
   },
   {
