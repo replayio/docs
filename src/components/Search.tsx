@@ -20,7 +20,7 @@ import {
 } from '@algolia/autocomplete-core'
 import { Dialog } from '@headlessui/react'
 import clsx from 'clsx'
-import { type Result } from '@/markdoc/search.mjs'
+import { type Result } from '@/lib/search.mjs'
 
 import { flatNavigation } from '@/lib/navigation'
 import { track } from '@vercel/analytics'
@@ -91,7 +91,7 @@ function useAutocomplete({
         navigate,
       },
       getSources({ query }) {
-        return import('@/markdoc/search.mjs').then(({ search }) => {
+        return import('@/lib/search.mjs').then(({ search }) => {
           return [
             {
               sourceId: 'documentation',

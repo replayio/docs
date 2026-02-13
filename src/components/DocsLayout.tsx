@@ -1,19 +1,16 @@
-import { type Node } from '@markdoc/markdoc'
+import { headers } from 'next/headers'
 
 import { DocsHeader } from '@/components/DocsHeader'
 import { PrevNextLinks } from '@/components/PrevNextLinks'
 import { Prose } from '@/components/Prose'
 import { TableOfContents } from '@/components/TableOfContents'
-import { collectSections } from '@/lib/sections'
+import { getDocumentTitle } from '@/lib/getDocumentTitle'
 
 export function DocsLayout({
   children,
-  documentTitle,
   frontmatter: { title, description, image, imageHeight, badge },
-  nodes,
 }: {
   children: React.ReactNode
-  documentTitle: string
   frontmatter: {
     title?: string
     description?: string
@@ -21,9 +18,10 @@ export function DocsLayout({
     imageHeight?: number
     badge?: string
   }
-  nodes: Array<Node>
 }) {
-  let tableOfContents = collectSections(nodes)
+  const heads = headers()
+  const pathname = heads.get('x-pathname')
+  const documentTitle = getDocumentTitle(pathname ?? '')
 
   return (
     <>
@@ -46,7 +44,7 @@ export function DocsLayout({
           <PrevNextLinks />
         </div>
       </div>
-      <TableOfContents tableOfContents={tableOfContents} />
+      <TableOfContents />
     </>
   )
 }

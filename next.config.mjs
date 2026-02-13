@@ -1,10 +1,28 @@
 import { withNextVideo } from 'next-video/process'
-import withMarkdoc from '@markdoc/next.js'
-import withSearch from './src/markdoc/search.mjs'
+import createMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm'
+import remarkFrontmatter from 'remark-frontmatter'
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
+import rehypeSlug from 'rehype-slug'
+import remarkCodeMeta from './src/lib/remark-code-meta.mjs'
+import withSearch from './src/lib/search.mjs'
+
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [
+      remarkGfm,
+      remarkFrontmatter,
+      [remarkMdxFrontmatter, { name: 'frontmatter' }],
+      remarkCodeMeta,
+    ],
+    rehypePlugins: [rehypeSlug],
+  },
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['js', 'jsx', 'md', 'ts', 'tsx'],
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   productionBrowserSourceMaps: true,
 
   async redirects() {
@@ -18,7 +36,6 @@ const nextConfig = {
   },
 }
 
-export default withNextVideo(
-  withSearch(withMarkdoc({ schemaPath: './src/markdoc' })(nextConfig)),
-  { folder: 'src/videos' },
-)
+export default withNextVideo(withSearch(withMDX(nextConfig)), {
+  folder: 'src/videos',
+})

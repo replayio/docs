@@ -5,7 +5,17 @@
       "WebFetch",
       "Bash(git:*)",
       "Bash(grep:*)",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm remove:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm lint:*)",
+      "Skill(replay-cli)",
+      "Bash(lsof:*)",
+      "Skill(replay-mcp)",
+      "Bash(npx:*)",
+      "Bash(npm search:*)",
+      "Bash(npm view:*)"
     ]
   }
 }

@@ -1,0 +1,58 @@
+---
+title: Playwright Overview
+---
+
+import { DocsLayout } from '@/components/DocsLayout'
+
+export default ({ children }) => (
+  <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>
+)
+
+Using the [Playwright Chrome driver](/reference/replay-runtimes/replay-chrome), you're able to easily integrate Replay into your Playwright tests:
+
+<Icon icon="playwright" className="mb-1 mr-1 inline-block h-5 w-6" />
+Playwright:
+
+```sh
+npx playwright test --project replay-chromium
+```
+
+<QuickLinks title="Read more" description="Integrate Replay into your Playwright test debugging process by adding it to your CI workflow.">
+
+<QuickLink
+
+title="Record your Playwright tests"
+
+icon="playwright"
+
+href="/basics/getting-started/record-your-playwright-tests"
+
+description="Learn how to get started with Playwright and Replay"
+
+/>
+
+<QuickLink
+
+title="GitHub Actions"
+
+icon="github"
+
+href="/reference/test-runners/playwright/github-actions"
+
+description="See how you can record all of your Playwright tests in GitHub Actions"
+
+/>
+
+<QuickLink
+
+title="Other CI Providers"
+
+icon="timeline"
+
+href="/reference/test-runners/playwright/other-ci-providers"
+
+description="Record your Playwright tests using other CI providers."
+
+/>
+
+</QuickLinks>

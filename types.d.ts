@@ -1,6 +1,6 @@
 import { type SearchOptions } from 'flexsearch'
 
-declare module '@/markdoc/search.mjs' {
+declare module '@/lib/search.mjs' {
   export type Result = {
     url: string
     title: string

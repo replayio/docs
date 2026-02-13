@@ -4,19 +4,52 @@ import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 
-import { type Section, type Subsection } from '@/lib/sections'
 import BackToTop from './BackToTop'
 import { useParams } from 'next/navigation'
 
-export function TableOfContents({
-  tableOfContents,
-}: {
-  tableOfContents: Array<Section>
-}) {
-  const params = useParams()
-  let [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)
+type Subsection = {
+  id: string
+  title: string
+}
 
-  let getHeadings = useCallback((tableOfContents: Array<Section>) => {
+type Section = {
+  id: string
+  title: string
+  children: Subsection[]
+}
+
+export function TableOfContents() {
+  const params = useParams()
+  let [tableOfContents, setTableOfContents] = useState<Section[]>([])
+  let [currentSection, setCurrentSection] = useState<string>('')
+
+  useEffect(() => {
+    const article = document.querySelector('article')
+    if (!article) return
+
+    const headings = article.querySelectorAll('h2[id], h3[id]')
+    const sections: Section[] = []
+
+    headings.forEach((heading) => {
+      const id = heading.id
+      const title = heading.textContent || ''
+      const level = heading.tagName.toLowerCase()
+
+      if (level === 'h2') {
+        sections.push({ id, title, children: [] })
+      } else if (level === 'h3' && sections.length > 0) {
+        sections[sections.length - 1].children.push({ id, title })
+      }
+    })
+
+    setTableOfContents(sections)
+    if (sections.length > 0) {
+      const hash = window.location.hash.replace('#', '')
+      setCurrentSection(hash || sections[0].id)
+    }
+  }, [params])
+
+  let getHeadings = useCallback((tableOfContents: Section[]) => {
     return tableOfContents
       .flatMap((node) => [node.id, ...node.children.map((child) => child.id)])
       .map((id) => {
@@ -36,10 +69,10 @@ export function TableOfContents({
     if (tableOfContents.length === 0) return
 
     const headings = getHeadings(tableOfContents)
+    if (headings.length === 0) return
     let ignoreScrollUpdate = false
 
     function findRightSection() {
-      // Ignore scroll updates immediately after a hash change
       if (ignoreScrollUpdate) {
         ignoreScrollUpdate = false
         return
@@ -66,14 +99,13 @@ export function TableOfContents({
     return () => {
       window.removeEventListener('scroll', findRightSection)
     }
-    // params is dependecy to trigger update from hash change
   }, [getHeadings, tableOfContents, params])
 
   function isActive(section: Section | Subsection) {
     if (section.id === currentSection) {
       return true
     }
-    if (!section.children) {
+    if (!('children' in section) || !section.children) {
       return false
     }
     return section.children.findIndex(isActive) > -1
