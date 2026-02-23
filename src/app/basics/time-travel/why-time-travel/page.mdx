@@ -3,12 +3,6 @@ title: Why time travel?
 description: Web applications are growing increasingly ambitious and their reliability and performance has never been more important. Traditional browser DevTools and debugging techniques are insufficient. Here are just a few of the problems with legacy approaches and how time travel debugging address them.
 ---
 
-import { DocsLayout } from '@/components/DocsLayout'
-
-export default ({ children }) => (
-  <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>
-)
-
 ## Perfect reproducibility
 
 Problems in complex web applications often depend on particular network, timing, and ephemeral state. The same steps performed in the same environment, under seemingly similar conditions, might **never** reproduce the problem, because not all of the contributing factors are known or controllable.

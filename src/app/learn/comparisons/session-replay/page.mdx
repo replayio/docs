@@ -2,12 +2,6 @@
 title: How Runtime Replay compares with Session Replay
 ---
 
-import { DocsLayout } from '@/components/DocsLayout'
-
-export default ({ children }) => (
-  <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>
-)
-
 There are many Session Replay tools like Cypress Replay, Playwright Trace Viewer, Jam.dev, and FullStory that use RRWeb and similar JS Libraries. These tools are able to record a video of the session and serialize Network Requests and Console logs.
 
 These tools are useful for seeing how folks are using your application in production and recording simple bug reports and failing tests. These tools are not a substitute for debugging your application with Chrome DevTools and print statements.

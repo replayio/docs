@@ -5,12 +5,6 @@ description: The Replay Protocol is useful for creating programmatic debugging s
 image: /images/protocol.png
 ---
 
-import { DocsLayout } from '@/components/DocsLayout'
-
-export default ({ children }) => (
-  <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>
-)
-
 ## [Replay Protocol](https://replay.io/protocol)
 
 - [Authentication. ](https://static.replay.io/protocol/tot/Authentication)The Authentication domain defines a command for authenticating the current user.
@@ -58,7 +52,6 @@ function fetchNetworkResponseBody(recordingId: string) {
 
       await client.sendCommand("Network.findRequests", {}, sessionId);
     }
-
 
     await fetchRequests();
   });

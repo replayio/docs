@@ -5,6 +5,7 @@ import remarkFrontmatter from 'remark-frontmatter'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 import rehypeSlug from 'rehype-slug'
 import remarkCodeMeta from './src/lib/remark-code-meta.mjs'
+import remarkDocsLayout from './src/lib/remark-docs-layout.mjs'
 import withSearch from './src/lib/search.mjs'
 
 const withMDX = createMDX({
@@ -15,6 +16,7 @@ const withMDX = createMDX({
       remarkFrontmatter,
       [remarkMdxFrontmatter, { name: 'frontmatter' }],
       remarkCodeMeta,
+      remarkDocsLayout,
     ],
     rehypePlugins: [rehypeSlug],
   },

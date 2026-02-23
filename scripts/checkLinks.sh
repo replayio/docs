@@ -13,9 +13,9 @@ BASE_URL="${BASE_URL:-http://localhost:3000}"
 PARALLEL=${PARALLEL:-20}
 
 EXCLUDE_PAGES=(
-  "./src/app/test-runners/cypress-io/panel.md"
-  "./src/app/test-runners/cypress-io/dashboard.md"
-  "./src/app/test-runners/_archive/jest.md"
+  "./src/app/test-runners/cypress-io/panel.mdx"
+  "./src/app/test-runners/cypress-io/dashboard.mdx"
+  "./src/app/test-runners/_archive/jest.mdx"
 )
 
 EXCLUDE_URLS=(
@@ -63,7 +63,7 @@ is_excluded_domain() {
   return 1
 }
 
-# Step 1: Collect all links from all page.md files
+# Step 1: Collect all links from all page.mdx files
 echo "Collecting links..."
 
 FILE_COUNT=0
@@ -78,7 +78,7 @@ while IFS= read -r file; do
         echo "${file}	${link}"
       done >> "$ALL_LINKS" || true
 
-done < <(find ./src/app -name "page.md" -type f | sort)
+done < <(find ./src/app -name "page.mdx" -type f | sort)
 
 # Add vercel.json redirect destinations
 jq -r '.redirects[].destination' vercel.json | while IFS= read -r dest; do

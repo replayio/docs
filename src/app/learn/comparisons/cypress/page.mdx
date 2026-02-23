@@ -2,12 +2,6 @@
 title: How Runtime Replay compares with Cypress Test Replay
 ---
 
-import { DocsLayout } from '@/components/DocsLayout'
-
-export default ({ children }) => (
-  <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>
-)
-
 Cypress Test Replay is built on top of [RRWeb](https://github.com/rrweb-io/rrweb), a popular Session Replay tool which records the DOM, Console logs, and Network Requests. Replay DevTools is built on top of Replay’s Chrome based browser which is able to record and deterministically replay web applications.
 
 This means that when you’re debugging in Replay DevTools you’re able to add retroactive print statements and inspect your applications with Browser DevTools as if the test is running locally on your computer.

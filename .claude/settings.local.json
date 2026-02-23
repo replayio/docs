@@ -15,7 +15,9 @@
       "Skill(replay-mcp)",
       "Bash(npx:*)",
       "Bash(npm search:*)",
-      "Bash(npm view:*)"
+      "Bash(npm view:*)",
+      "Bash(node:*)",
+      "Bash(npm run build:*)"
     ]
   }
 }

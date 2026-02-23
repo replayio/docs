@@ -5,12 +5,6 @@ description: Pull Request Comments show updated results of your test run with li
 image: /images/pr-comment.png
 ---
 
-import { DocsLayout } from '@/components/DocsLayout'
-
-export default ({ children }) => (
-  <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>
-)
-
 ## Overview
 
 Once you have your test suites integrated with Replay in CI, you can add our bot to your GitHub repository. The bot will leave comments on PRs with a summary of the most recent test run.

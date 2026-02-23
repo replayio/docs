@@ -3,12 +3,6 @@ title: Selenium
 description: Because Replay Browser lets you record anything that happens inside it, you can simply just point your test script to the Replay Browser binary and you are all set up.
 ---
 
-import { DocsLayout } from '@/components/DocsLayout'
-
-export default ({ children }) => (
-  <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>
-)
-
 <Steps>
 
 ## Install Replay package
@@ -154,9 +148,10 @@ description="Test Suite Dashboard helps you stay on top of your test suite healt
 
 </QuickLinks>
 
-{/\* ## Continuous integration
+## Continuous integration
+
 To run your project on CI, you'll simply follow the same steps as described above. In addition to running your tests and uploading your replays, you need to make sure that your CI environment is set up properly.
 
 ### CircleCI
 
-CircleCI keeps your workflows simple thanks to CircleCI Orbs. These help you set up your testing environment, install dependencies and properly cache resources. \*/}
+CircleCI keeps your workflows simple thanks to CircleCI Orbs. These help you set up your testing environment, install dependencies and properly cache resources.

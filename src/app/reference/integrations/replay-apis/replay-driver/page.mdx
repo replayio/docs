@@ -4,12 +4,6 @@ description: The Replay Driver is a dynamically linked library which can be load
 image: /images/chrome.png
 ---
 
-import { DocsLayout } from '@/components/DocsLayout'
-
-export default ({ children }) => (
-  <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>
-)
-
 ## Overview
 
 In order to use the driver, the target application first loads the driver into memory via `dlopen` and use `dlsym` to look up the various methods described below. The target first calls `RecordReplayAttach`, and finishes the recording with `RecordReplayFinishRecording` . Between calls to these methods, the other methods below can be used to interact with the driver.

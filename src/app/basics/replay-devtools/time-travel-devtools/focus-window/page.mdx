@@ -2,12 +2,6 @@
 title: Bisect the problem
 ---
 
-import { DocsLayout } from '@/components/DocsLayout'
-
-export default ({ children }) => (
-  <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>
-)
-
 One of the best ways to solve a difficult problem without breaking a sweat is to turn it into a bisection problem. This typically works by finding a commit in git which you know is good, a commit which you know is bad, finding the first commit that has the problem, and then cutting it down until, you have the smallest changeset which reproduces the problem.
 
 The challenge is that very few debugging problems can be turned into bisection problems. There are a couple of reasons for this. First every time you run the program, you’ll get slightly different results, so it’s difficult to bisect reliably. Second, it’s very difficult to confidently compare two points in time across runs and confidently reduce the search window.
