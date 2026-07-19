@@ -1,0 +1,53 @@
+---
+title: Test a URL
+description: Run a one-time QA check on any web app URL. Paste a link and get a bug report in minutes. Nothing to install, no test knowledge required.
+---
+
+## Setup
+
+### Enter your URL
+
+Paste the URL of a running web application. You can use:
+
+- A production URL (`https://your-app.com`)
+- A staging or preview deployment (`https://pr-123.preview.vercel.app`)
+- A localhost URL via the reverse proxy (`http://localhost:3000`). See the setup guide on qa.replay.io.
+- Any publicly accessible web app
+
+If you provide a GitHub repository URL, you will be prompted to connect a repo instead. See [Connect a Repo](/basics/replay-qa/connect-a-repo).
+
+### Add instructions
+
+You can provide additional context through the "Need to tell me something else?" button. This can include:
+
+- **What to test**: specific flows, pages, or features
+- **Login credentials**: authentication details for the application
+- **Maximum budget**: how much the run should spend
+
+### Wait for results
+
+Replay QA explores the application, writes tests, runs them, and compiles a bug report. The first run takes a few minutes and runs in the background.
+
+<ReportContent />
+
+<PublicAppsSection />
+
+<ModeComparison />
+
+<QuickLinks title="Related">
+
+<QuickLink
+  title="Connect a GitHub Repo"
+  icon="github"
+  href="/basics/replay-qa/connect-a-repo"
+  description="Convert a one-time check into continuous QA."
+/>
+
+<QuickLink
+  title="Replay QA Overview"
+  icon="link"
+  href="/basics/replay-qa/overview"
+  description="Overview of Replay QA features and workflow."
+/>
+
+</QuickLinks>

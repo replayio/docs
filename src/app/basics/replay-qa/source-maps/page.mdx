@@ -3,23 +3,23 @@ title: Publishing with source maps
 description: How source maps improve Replay QA's root cause analysis and suggested fixes, and how to configure your build to publish them.
 ---
 
-When you build a web app for production, your source code is compiled, bundled, and often minified. The browser runs the transformed output — not the code you wrote. Source maps are files that connect that compiled output back to your original source.
+When you build a web app for production, your source code is compiled, bundled, and often minified. The browser runs the transformed output, not the code you wrote. Source maps connect that compiled output back to your original source.
 
-Replay QA runs against your deployed app. When source maps are available, every analysis Replay performs — from tracing a failure through the call stack to pinpointing the line that caused a bug — can reference your original code. Without them, Replay is working with minified identifiers and compiled output.
+Replay QA runs against your deployed app. When source maps are available, Replay can reference your original code for every analysis it performs, from tracing a failure through the call stack to pinpointing the line that caused a bug. Without source maps, Replay works with minified identifiers and compiled output.
 
 ## What source maps unlock in Replay QA
 
-**More precise root cause analysis.** When Replay time-travels a failing test recording, it traces the execution chain back to the source. With source maps, that trace cites your actual component names, function names, and file paths — not `a()`, `b()`, or `chunk-abc123.js`.
+**More precise root cause analysis.** When Replay time-travels a failing test recording, it traces the execution chain back to the source. With source maps, that trace uses your actual component names, function names, and file paths instead of `a()`, `b()`, or `chunk-abc123.js`.
 
 **Actionable suggested fixes.** Bug reports include suggested fixes with file and line references. Source maps ensure those references point to the right place in your codebase, so a coding agent or developer can act on them directly.
 
-**Full React analysis.** Replay QA's React analysis layer — render tracking, performance profiling, effect analysis, render cause tracing — works by instrumenting specific functions inside React's source code. This requires readable function names. React 19 ships with sourcemaps that make this work automatically. React 18.3 requires a small extra step (see below).
+**Full React analysis.** Replay QA's React analysis layer works by instrumenting specific functions inside React's source code. This includes render tracking, performance profiling, effect analysis, and render cause tracing. It requires readable function names. React 19 ships with source maps that make this work automatically. React 18.3 requires a small extra step (see below).
 
-**Better test generation.** When Replay QA writes Playwright tests for your app, it can reference selectors and interactions tied to real component names and code paths rather than opaque compiled output.
+**Better test generation.** When Replay QA writes Playwright tests for your app, it can reference selectors and interactions tied to real component names and code paths instead of opaque compiled output.
 
 ## Configuring your build
 
-### Publicly served source maps — simplest, works automatically
+### Publicly served source maps (simplest, works automatically)
 
 If your app serves source maps publicly alongside the JS files, Replay QA discovers and uses them automatically via the `sourceMappingURL` references embedded in each bundle. No upload step needed.
 
@@ -66,7 +66,7 @@ module.exports = {
 
 Deploy with these settings and Replay QA will pick up the source maps on its own.
 
-### Private source maps — for apps that don't expose source to end users
+### Private source maps (for apps that don't expose source to end users)
 
 If you want source maps available to Replay but don't want to expose them publicly (a common production concern), upload them to Replay ahead of time:
 
@@ -82,7 +82,7 @@ npx replayio upload-source-maps --group <version-or-sha> <buildOutputDir>
 
 Set `REPLAY_API_KEY` in your environment so the CLI can authenticate. API keys are available in [Team Settings](/reference/ci-workflows/generate-api-key). For Webpack, the [`@replayio/sourcemap-upload-webpack-plugin`](https://www.npmjs.com/package/@replayio/sourcemap-upload-webpack-plugin) handles upload automatically as part of the build. See the [Uploading source maps reference](/reference/replay-cli/source-maps) for full details.
 
-### React 18.3 — extra step required
+### React 18.3 extra step
 
 React 19 ships unminified production artifacts, so standard source maps work. React 18 shipped pre-minified builds with no source maps, which means Replay cannot read the internal function names it needs for React analysis.
 

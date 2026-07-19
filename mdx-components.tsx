@@ -11,6 +11,9 @@ import { Icon } from '@/components/Icon'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
 import { SnapshotsVsReplay } from '@/components/SnapshotsVsReplay'
 import { Steps } from '@/components/Steps'
+import { ReportContent } from '@/components/qa/ReportContent'
+import { PublicAppsSection } from '@/components/qa/PublicAppsSection'
+import { ModeComparison } from '@/components/qa/ModeComparison'
 import { Tab, Tabs } from '@/components/Tabs'
 import { TwoColumns } from '@/components/TwoColumns'
 import { Video } from '@/components/Video'
@@ -33,6 +36,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Basic,
     Button,
     SnapshotsVsReplay,
+    ReportContent,
+    PublicAppsSection,
+    ModeComparison,
     pre: ({ children, ...props }: React.ComponentPropsWithoutRef<'pre'>) => {
       const codeEl = children as React.ReactElement<Record<string, unknown>>
 

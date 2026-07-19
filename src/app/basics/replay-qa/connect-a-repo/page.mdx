@@ -1,0 +1,68 @@
+---
+title: Connect a GitHub Repo
+description: Set up continuous QA for your team. Connect your GitHub repo and Replay QA runs on every change. No test suite, no pipeline configuration.
+---
+
+Connecting a GitHub repo lets Replay QA run continuously. It can run on every main branch update, every pull request, or both. You do not need an existing Playwright suite or pipeline configuration.
+
+## Setup
+
+### Add your repo URL
+
+Go to [qa.replay.io/new](https://qa.replay.io/new) and paste your GitHub repository URL.
+
+### Authenticate with GitHub
+
+Sign in with your GitHub account. One team member can complete the setup.
+
+### Replay QA app installs
+
+The Replay QA GitHub App installs on your repository. It does not need access to an existing test suite.
+
+### Choose a run cadence
+
+Select when Replay QA runs:
+
+- **On every main branch update**: a full QA pass runs on each push to `main`.
+- **On every pull request**: QA runs against the PR branch. Results are posted to the PR.
+- **Both**: runs on both main branch updates and pull requests.
+
+## Results
+
+### On pull requests
+
+Root cause and a suggested fix are posted as a comment on the pull request.
+
+### On main-branch runs
+
+Results are available in the Replay QA dashboard, with links to recordings and the full bug report.
+
+<ReportContent />
+
+<PublicAppsSection />
+
+<ModeComparison />
+
+## Limitations
+
+- GitHub repos only. GitLab and Bitbucket support is planned.
+- Replay QA tests the running application. It does not run unit tests or static analysis.
+- Private repos require the Replay QA GitHub App to have the necessary permissions.
+
+<QuickLinks title="Related">
+
+<QuickLink
+  title="Test a URL"
+  icon="wifi"
+  href="/basics/replay-qa/test-a-url"
+  description="Run a one-time QA check on any web app URL."
+/>
+
+<QuickLink
+  title="Replay QA Overview"
+  icon="link"
+  href="/basics/replay-qa/overview"
+  description="Overview of Replay QA features and workflow."
+/>
+
+</QuickLinks>

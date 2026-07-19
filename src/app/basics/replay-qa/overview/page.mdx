@@ -1,60 +1,104 @@
 ---
 title: Replay QA Overview
-description: An autonomous app testing tool that explores your web app, writes tests, captures Replay recordings, and delivers root cause analysis and suggested fixes for every bug it finds.
+description: A testing tool that explores your web app, writes tests, records sessions with Replay, and delivers root cause analysis with suggested fixes for every bug it finds.
 ---
 
-Replay QA is an autonomous app testing tool built on Replay's time-travel debugging engine. Point it at a web app and it explores the application, discovers user journeys, writes Playwright tests, executes them while capturing full runtime recordings, and uncovers bugs — delivering a detailed root cause analysis and suggested fix for every issue it finds.
+Replay QA is a testing tool that uses Replay's time-travel debugging to find bugs in web applications. You point it at a web app and it explores the application, discovers user flows, writes Playwright tests, runs them while recording, and reports any bugs it finds with a root cause analysis and suggested fix.
 
 There are three ways to use Replay QA depending on your workflow.
 
-**A few tips for best results:**
+**Tips for best results:**
 
-1. **React-based apps work best.** Replay QA has deep React support — component tree inspection, render tracing, and effect analysis — that significantly improves the depth of bug reports for React apps.
+1. **React-based apps work best.** Replay QA has deep React support, including component tree inspection, render tracing, and effect analysis. These features improve the depth of bug reports for React apps.
 2. **Publish your app with source maps.** When source maps are available, Replay QA traces failures back to your original source code rather than compiled output, producing root cause analyses and suggested fixes that reference the right files and line numbers. [Learn more](/basics/replay-qa/source-maps)
 
-## Stand-alone
+## How it works
+
+### Create a project
+
+Go to [qa.replay.io/new](https://qa.replay.io/new) and provide either a [live project URL](/basics/replay-qa/test-a-url) or a [GitHub repository URL](/basics/replay-qa/connect-a-repo). Replay QA uses this as the starting point for testing.
+
+### Explore
+
+Replay QA navigates your application by clicking through pages, opening menus, and filling in forms. It maps the journeys users can take through the app. For applications with accounts and checkout flows, it attempts signup, login, cart interactions, and payment.
+
+### Test
+
+Each journey runs in a real browser. Replay QA writes Playwright tests for each flow as it goes. You do not need a test suite or configuration upfront.
+
+### Record
+
+Every test session is recorded with the Replay time-travel debugger. You can replay the exact moment a bug occurred, inspect network requests, read console output, and trace execution.
+
+## Ways to use Replay QA
+
+### Test a URL
 
 Give Replay QA a URL. It takes it from there.
 
-Replay QA autonomously navigates your application, discovers user journeys, and generates Playwright tests. It then executes those tests using Replay Browser — capturing a full runtime recording of every interaction. When it uncovers a bug or unexpected behavior, it time-travels the recording to trace the failure back to its root cause, and delivers a detailed analysis with a suggested fix.
+Replay QA autonomously navigates your application, discovers user journeys, and generates Playwright tests. It then executes those tests using Replay Browser and captures a full runtime recording of every interaction. When it finds a bug or unexpected behavior, it time-travels the recording to trace the failure back to its root cause and delivers an analysis with a suggested fix.
 
-This requires no existing test suite, no configuration, and no manual reproduction steps.
+You do not need an existing test suite, configuration, or manual reproduction steps.
 
 <Button href="https://qa.replay.io">Launch Replay QA</Button>
 
-## Ask your coding agent
+### Connect a GitHub Repo
 
-Give your coding agent the prompt below and it will use the Replay QA REST API to create a new project for your app, poll for status as Replay QA explores and tests the application, and ingest the resulting bug reports — each packaged with the runtime context and root cause detail your agent needs to go straight to a fix. It keeps looping until no open bugs remain.
+Connecting a GitHub repo lets Replay QA run continuously. It can run on every main branch update, every pull request, or both. You do not need an existing Playwright suite or pipeline configuration.
+
+Root cause and a suggested fix are posted as a comment on the pull request. Results are also available in the Replay QA dashboard, with links to recordings and the full bug report.
+
+### Ask your coding agent
+
+Give your coding agent the prompt below and it will use the Replay QA REST API to create a new project for your app, poll for status as Replay QA explores and tests the application, and read the resulting bug reports. Each report includes runtime context and root cause detail your agent needs to go straight to a fix. It keeps looping until no open bugs remain.
 
 ```text
 Set up a continuous QA loop for the app we're building using Replay QA (https://loop-qa.replay.io).
 
-Drive everything through the REST API at https://loop-qa.replay.io/api/v1 — read the OpenAPI spec at /api/v1/openapi.json first; it documents the full workflow. Authenticate with my API token ("Authorization: Bearer lqa_..."), asking me for it if needed.
+Drive everything through the REST API at https://loop-qa.replay.io/api/v1. Read the OpenAPI spec at /api/v1/openapi.json first. It documents the full workflow. Authenticate with my API token ("Authorization: Bearer lqa_..."), asking me for it if needed.
 
 Your job:
-1. Create a QA project for the running app — give it the target_url and a short note on the key flows. If the app is only reachable from this machine (e.g. http://localhost:3000), enable the reverse proxy and follow the spec's setup steps.
-2. Let QA run — poll the project status and don't kick off explorations or test runs yourself; QA drives those.
+1. Create a QA project for the running app. Give it the target_url and a short note on the key flows. If the app is only reachable from this machine (for example, http://localhost:3000), enable the reverse proxy and follow the spec's setup steps.
+2. Let QA run. Poll the project status. Do not start explorations or test runs yourself. QA handles those.
 3. For each open bug, read its full root-caused report and apply the fix directly in the codebase, then mark it fixed via the API.
 4. Keep looping until no open bugs remain.
 ```
 
-## Integrated into your CI pipeline
+## Project settings
 
-Install our GitHub bot (CI Agent) and configure your test suite to record with Replay. From that point, every test run in CI produces a Replay runtime recording. When a test fails, the CI Agent time-travels the recording, and posts a comment directly on the pull request with:
+### Polish passes
 
-- A plain-language root cause explanation
-- A trace showing the execution chain from symptom to cause
-- A suggested code fix with file and line references
+Replay QA can run additional polish passes alongside functional testing. Each pass checks a specific category and can be toggled on or off for each project.
 
-No reproduction steps. No log archaeology. The evidence is already in the recording.
+| Pass                | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| Network Performance | Checks for slow API responses, large payloads, and excessive requests.         |
+| React Rendering     | Identifies unnecessary re-renders and component performance issues.            |
+| Layout Shift        | Detects elements that move after page load, causing cumulative layout shifts.  |
+| Accessibility       | Audits for missing ARIA labels, contrast issues, and keyboard navigation gaps. |
+| Glitches            | Looks for visual artifacts, flickering, and broken animations.                 |
+| User Experience     | Evaluates form validation feedback, loading states, and error handling.        |
+| UI Details          | Checks alignment, spacing, and visual consistency across pages.                |
 
-See [GitHub Actions setup](/basics/getting-started/record-your-playwright-tests/github-actions) to configure Replay in your workflow, and [PR Comments](/basics/test-suites/pr-comments) to install the GitHub bot.
+### Design document
+
+Replay QA can test against a design document that describes the intended behavior of your application. Provide details about what your app does, its main features, key user flows, and any specific expectations QA should test against. The more detail you provide, the better QA can target its testing.
+
+### Logins
+
+You can add or change multiple sets of login credentials. They are saved as the project login variables and used to test signed-in areas.
+
+### Issue tracking
+
+File bugs directly to your issue tracker. Each issue includes the full report: root cause, steps to reproduce, screenshots, and the Replay recording.
+
+Supports **GitHub Issues**, **Jira**, and **Linear**. Configure the integration in your project settings to pick where QA should file the bugs it finds.
 
 ## How Replay's time-travel engine works
 
-All three modes share the same foundation: **deterministic browser recordings** captured by Replay Browser. Unlike video or snapshots, a Replay recording captures the full browser runtime — every DOM change, every network request, every line of JavaScript execution.
+All three modes share the same foundation: **deterministic browser recordings** captured by Replay Browser. Unlike video or snapshots, a Replay recording captures the full browser runtime, including every DOM change, network request, and line of JavaScript execution.
 
-That means any point in a test run can be inspected retroactively: add console logs, evaluate expressions, examine call stacks, trace render behavior — all without re-running the test.
+This means you can inspect any point in a test run retroactively. You can add console logs, evaluate expressions, examine call stacks, and trace render behavior without re-running the test.
 
 [Learn more about how time-travel debugging works →](/basics/time-travel/why-time-travel)
 
@@ -82,33 +126,26 @@ After a test failure, the CI Agent posts a comment with the root cause in plain 
 
 <AccordionItem title="Does using Replay Browser slow down my CI test runs?">
 
-No. Replay Browser is built on Chromium — the same engine as Chrome — and records the runtime with minimal overhead. Recordings are uploaded asynchronously after the run completes.
+No. Replay Browser is built on Chromium, the same engine as Chrome, and records the runtime with minimal overhead. Recordings are uploaded asynchronously after the run completes.
 
 </AccordionItem>
 
 </Accordion>
 
-<QuickLinks title="Get started" description="Choose the Replay QA workflow that fits how you build.">
+<QuickLinks title="Get started" description="Choose how to use Replay QA.">
 
 <QuickLink
-  title="Run Replay QA stand-alone"
-  icon="rocket"
-  href="/basics/getting-started/record-your-app"
-  description="Point Replay QA at a URL and let it find bugs autonomously."
+  title="Test a URL"
+  icon="wifi"
+  href="/basics/replay-qa/test-a-url"
+  description="Paste a link and get a bug report in minutes."
 />
 
 <QuickLink
-  title="Set up the CI Agent"
-  icon="pullrequest"
-  href="/basics/getting-started/record-your-playwright-tests/github-actions"
-  description="Get root cause analysis and suggested fixes posted directly on every failing PR."
-/>
-
-<QuickLink
-  title="Replay MCP"
-  icon="terminal"
-  href="/basics/replay-mcp/overview"
-  description="Connect time-travel debugging to your coding agent in the IDE."
+  title="Connect a GitHub Repo"
+  icon="github"
+  href="/basics/replay-qa/connect-a-repo"
+  description="Set up continuous QA that runs on every change."
 />
 
 </QuickLinks>

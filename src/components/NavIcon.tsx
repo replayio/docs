@@ -67,6 +67,7 @@ import { IntegrationsIcon } from './icons/IntegrationsIcon'
 import { FrameworksIcon } from './icons/FrameworksIcon'
 import { AdditionalContent } from './icons/AdditionalContent'
 import { MCPIcon } from './icons/MCPIcon'
+import { QAIcon } from './icons/QAIcon'
 
 import { EmptyIcon } from './icons/EmptyIcon'
 import { OtherCiProviders } from './icons/OtherCiProviders'
@@ -149,6 +150,7 @@ export const icons = {
   beaker: BeakerIcon,
   additionalcontent: AdditionalContent,
   mcp: MCPIcon,
+  qa: QAIcon,
 }
 export function NavIcon({
   icon = 'file',

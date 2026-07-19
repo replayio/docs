@@ -7,14 +7,20 @@ export function QuickLinks({
   title,
   description,
   mini,
+  className,
 }: {
   children: React.ReactNode
   title: string
   description: string
   mini?: boolean
+  className?: string
 }) {
   return (
-    <div className={mini ? 'mt-12' : 'mt-12 rounded-xl py-8 '}>
+    <div
+      className={
+        (mini ? 'mt-12' : 'mt-12 rounded-xl py-8 ') + (className ?? '')
+      }
+    >
       {title && (
         <div className="font-display text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
           {title}
