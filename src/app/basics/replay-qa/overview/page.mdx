@@ -24,6 +24,17 @@ This requires no existing test suite, no configuration, and no manual reproducti
 
 <Button href="https://qa.replay.io">Launch Replay QA</Button>
 
+## Connect to a GitHub repo
+
+Connect Replay QA directly to a GitHub repository and let it test every change as it lands. From your Replay QA project, install the GitHub App and authorize the repository you want to test — no CI configuration or workflow files required.
+
+Once connected, Replay QA watches the repo and automatically kicks off a new test run whenever code changes:
+
+- **On every push to `main`** — Replay QA explores the latest version of your app and runs its tests against it, so regressions are caught the moment they merge.
+- **On every pull request** — each PR triggers its own test run, and Replay QA reports what it finds back on the PR before the change is merged.
+
+For each run, Replay QA captures full Replay recordings, time-travels any failure back to its root cause, and delivers a detailed analysis with a suggested fix — right where you're already reviewing code.
+
 ## Ask your coding agent
 
 Give your coding agent the prompt below and it will use the Replay QA REST API to create a new project for your app, poll for status as Replay QA explores and tests the application, and ingest the resulting bug reports — each packaged with the runtime context and root cause detail your agent needs to go straight to a fix. It keeps looping until no open bugs remain.
@@ -39,17 +50,6 @@ Your job:
 3. For each open bug, read its full root-caused report and apply the fix directly in the codebase, then mark it fixed via the API.
 4. Keep looping until no open bugs remain.
 ```
-
-## Connected to a GitHub repo
-
-Connect Replay QA directly to a GitHub repository and let it test every change as it lands. From your Replay QA project, install the GitHub App and authorize the repository you want to test — no CI configuration or workflow files required.
-
-Once connected, Replay QA watches the repo and automatically kicks off a new test run whenever code changes:
-
-- **On every push to `main`** — Replay QA explores the latest version of your app and runs its tests against it, so regressions are caught the moment they merge.
-- **On every pull request** — each PR triggers its own test run, and Replay QA reports what it finds back on the PR before the change is merged.
-
-For each run, Replay QA captures full Replay recordings, time-travels any failure back to its root cause, and delivers a detailed analysis with a suggested fix — right where you're already reviewing code.
 
 ## Integrated into your CI pipeline
 
