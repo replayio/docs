@@ -43,6 +43,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/',
+        destination: '/basics/replay-qa/overview',
+        permanent: false,
+      },
+      {
         source: '/getting-started/record-your-first-replay',
         destination: '/quickstart',
         permanent: true,

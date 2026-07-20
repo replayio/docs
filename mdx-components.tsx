@@ -14,12 +14,14 @@ import { Steps } from '@/components/Steps'
 import { Tab, Tabs } from '@/components/Tabs'
 import { TwoColumns } from '@/components/TwoColumns'
 import { Video } from '@/components/Video'
+import { YouTube } from '@/components/YouTube'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     Callout,
     Figure,
     Video,
+    YouTube,
     Steps,
     Tabs,
     Tab,
