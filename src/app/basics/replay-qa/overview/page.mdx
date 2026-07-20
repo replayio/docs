@@ -3,6 +3,8 @@ title: Replay QA Overview
 description: An autonomous app testing tool that explores your web app, writes tests, captures Replay recordings, and delivers root cause analysis and suggested fixes for every bug it finds.
 ---
 
+<YouTube id="1yKkDy313rM" title="Replay QA overview" />
+
 Replay QA is an autonomous app testing tool built on Replay's time-travel debugging engine. Point it at a web app and it explores the application, discovers user journeys, writes Playwright tests, executes them while capturing full runtime recordings, and uncovers bugs — delivering a detailed root cause analysis and suggested fix for every issue it finds.
 
 There are three ways to use Replay QA depending on your workflow.
@@ -37,6 +39,17 @@ Your job:
 3. For each open bug, read its full root-caused report and apply the fix directly in the codebase, then mark it fixed via the API.
 4. Keep looping until no open bugs remain.
 ```
+
+## Connected to a GitHub repo
+
+Connect Replay QA directly to a GitHub repository and let it test every change as it lands. From your Replay QA project, install the GitHub App and authorize the repository you want to test — no CI configuration or workflow files required.
+
+Once connected, Replay QA watches the repo and automatically kicks off a new test run whenever code changes:
+
+- **On every push to `main`** — Replay QA explores the latest version of your app and runs its tests against it, so regressions are caught the moment they merge.
+- **On every pull request** — each PR triggers its own test run, and Replay QA reports what it finds back on the PR before the change is merged.
+
+For each run, Replay QA captures full Replay recordings, time-travels any failure back to its root cause, and delivers a detailed analysis with a suggested fix — right where you're already reviewing code.
 
 ## Integrated into your CI pipeline
 
