@@ -58,6 +58,7 @@ The runner script owns the app-to-Replay tunnel for the full lifetime of the tes
 - wait for `{"event":"heartbeat","ready":true}` before starting QA
 - call `replayqa ci` with the current repository, PR number, head SHA, branch, and workflow run ID
 - poll `/projects/{project_id}/ci-runs/status` until `terminal` is `true`
+- retry transient status request failures without closing the app or tunnel
 - call `replayqa ci-cancel` from `SIGINT`/`SIGTERM` cleanup so a superseded GitHub job does not leave work running
 - stop the complete proxy process tree only after QA is terminal
 
@@ -100,6 +101,7 @@ jobs:
       REPLAYQA_CLI_VERSION: '0.2.4'
       REPLAYQA_PROXY_TIMEOUT_MS: '300000'
       REPLAYQA_RUN_TIMEOUT_MS: '3600000'
+      REPLAYQA_STATUS_MAX_FAILURES: '5'
       REPLAYQA_GITHUB_REPOSITORY: ${{ github.repository }}
       REPLAYQA_GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
       REPLAYQA_GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
