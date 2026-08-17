@@ -24,6 +24,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           href: '/basics/replay-qa/overview',
         },
         {
+          title: 'CI integration with FRPC',
+          href: '/basics/replay-qa/frpc-ci',
+        },
+        {
           title: 'Publishing with source maps',
           href: '/basics/replay-qa/source-maps',
         },
