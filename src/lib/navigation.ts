@@ -24,6 +24,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           href: '/basics/replay-qa/overview',
         },
         {
+          title: 'Testing a localhost app',
+          href: '/basics/replay-qa/localhost',
+        },
+        {
           title: 'CI integration with FRPC',
           href: '/basics/replay-qa/frpc-ci',
         },
