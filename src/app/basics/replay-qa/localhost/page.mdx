@@ -1,0 +1,120 @@
+---
+title: Testing a localhost app
+description: Connect Replay QA to a web app running on your computer with the managed reverse proxy.
+---
+
+Use the Replay QA reverse proxy to test a development build that is only available on your computer, such as `http://localhost:3000`. The Replay QA CLI creates an outbound tunnel from your computer so Replay QA can reach the app without deploying it or exposing it directly to the public internet.
+
+<Callout type="note">
+
+This guide is for testing interactively from your development computer. To test a localhost build inside GitHub Actions, use the [CI integration with FRPC](/basics/replay-qa/frpc-ci) instead.
+
+</Callout>
+
+## How it works
+
+1. You start the app on your computer.
+2. You create a Replay QA project using the app's localhost URL and enable the reverse proxy.
+3. `replayqa proxy` opens an authenticated tunnel from your computer to Replay QA.
+4. Replay QA starts testing after both the tunnel and the local app are ready.
+5. You leave the app and proxy running for the entire test run.
+
+Requests reach the app from your computer, so the proxy uses the same local network, DNS, and VPN access that you do.
+
+## Prerequisites
+
+- The app is running and loads in a browser on this computer
+- The app has a stable local URL, such as `http://localhost:3000`
+- A Replay QA account
+- Node.js and `npx` on the computer running the app
+
+## Connect your app
+
+<Steps>
+
+### Start the app
+
+Run your normal development command and leave it running. For example:
+
+```sh
+npm run dev
+```
+
+Open the exact URL you plan to test and confirm that it loads before continuing:
+
+```sh
+curl --fail http://localhost:3000
+```
+
+Use the app's actual port in place of `3000`.
+
+### Create a Replay QA project
+
+Open [Replay QA](https://qa.replay.io), create a project, and enter the exact local URL you verified, including the `http://` scheme and port.
+
+When Replay QA identifies the URL as local or private, choose the reverse proxy setup. The project will display a CLI command containing the correct project ID and Replay QA URL for that project.
+
+### Connect the reverse proxy
+
+Copy the CLI command from Replay QA and run it in a second terminal on the same computer as the app. It will look like this:
+
+```sh
+npx --yes replayqa proxy \
+  --project <project-id> \
+  --qa-url <replay-qa-origin>
+```
+
+Use the complete command supplied by the project instead of replacing its project ID or `--qa-url` values yourself.
+
+If the CLI asks you to authenticate, sign in and then run the copied proxy command again:
+
+```sh
+npx --yes replayqa login
+```
+
+### Wait for Replay QA to become ready
+
+Leave the proxy terminal open while it checks the tunnel and local target. Replay QA starts testing automatically once the connection reports ready.
+
+Do not stop the development server or the proxy while Replay QA is exploring the app or running tests. Closing either process disconnects the test browser from the app.
+
+</Steps>
+
+## Apps that use additional local or private hosts
+
+The proxy allows the project's target host by default. If the app also needs another local API, private hostname, or VPN-only service, add only the required hosts to the copied command:
+
+```sh
+npx --yes replayqa proxy \
+  --project <project-id> \
+  --qa-url <replay-qa-origin> \
+  --allow "api.internal.example,auth.internal.example"
+```
+
+Keep this list narrow so the tunnel does not expose unrelated hosts that your computer can reach.
+
+## Troubleshooting
+
+### The proxy is connected, but Replay QA is not ready
+
+Confirm that the exact project URL still loads on the computer running the proxy. Check that the port has not changed and that the development server has not stopped.
+
+```sh
+curl --fail http://localhost:3000
+```
+
+### The CLI cannot connect or start its managed dependencies
+
+Run the built-in diagnostic, then retry the proxy command copied from Replay QA:
+
+```sh
+npx --yes replayqa doctor --fix --project <project-id>
+```
+
+### The page loads, but an API or asset does not
+
+Check the failing request's hostname. If it is another local, private, or VPN-only host, add that hostname with `--allow`. Also confirm that the computer running the proxy can reach it directly.
+
+### The CLI asks you to sign in again
+
+Run `npx --yes replayqa login`, complete authentication, and restart the copied proxy command. Keep it running until Replay QA finishes.
