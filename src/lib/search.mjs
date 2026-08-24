@@ -5,23 +5,9 @@ import matter from 'gray-matter'
 import * as path from 'path'
 import { createLoader } from 'simple-functional-loader'
 import * as url from 'url'
+import { isHiddenPath } from './visibility-paths.mjs'
 
 const __filename = url.fileURLToPath(import.meta.url)
-
-/** Match pages kept live for direct URLs but omitted from sidebar / sitemap. */
-const HIDDEN_FROM_SEARCH_PREFIXES = [
-  '/basics/getting-started/record-your-cypress-tests',
-  '/basics/replay-devtools/framework-devtools/cypress-timeline',
-  '/learn/examples/cypress-io',
-  '/learn/comparisons/cypress',
-]
-
-function isHiddenFromSearchUrl(url) {
-  const pathOnly = url.split('#')[0]
-  return HIDDEN_FROM_SEARCH_PREFIXES.some(
-    (p) => pathOnly === p || pathOnly.startsWith(`${p}/`),
-  )
-}
 
 function extractSections(content) {
   const slugify = slugifyWithCounter()
@@ -111,7 +97,7 @@ export default function withSearch(nextConfig = {}) {
 
                 return { url: fileUrl, sections, keywords }
               })
-              .filter((item) => !isHiddenFromSearchUrl(item.url))
+              .filter((item) => !isHiddenPath(item.url))
 
             // When this file is imported within the application
             // the following module is loaded:

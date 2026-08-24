@@ -66,22 +66,6 @@ module.exports = {
 
 Deploy with these settings and Replay QA will pick up the source maps on its own.
 
-### Private source maps — for apps that don't expose source to end users
-
-If you want source maps available to Replay but don't want to expose them publicly (a common production concern), upload them to Replay ahead of time:
-
-1. Configure your build to emit source maps (same settings above)
-2. Upload them to Replay using the CLI after the build:
-
-```sh
-npm run build
-npx replayio upload-source-maps --group <version-or-sha> <buildOutputDir>
-```
-
-3. Strip or omit the `sourceMappingURL` comment from your build output so the maps aren't publicly reachable
-
-Set `REPLAY_API_KEY` in your environment so the CLI can authenticate. API keys are available in [Team Settings](/reference/ci-workflows/generate-api-key). For Webpack, the [`@replayio/sourcemap-upload-webpack-plugin`](https://www.npmjs.com/package/@replayio/sourcemap-upload-webpack-plugin) handles upload automatically as part of the build. See the [Uploading source maps reference](/reference/replay-cli/source-maps) for full details.
-
 ### React 18.3 — extra step required
 
 React 19 ships unminified production artifacts, so standard source maps work. React 18 shipped pre-minified builds with no source maps, which means Replay cannot read the internal function names it needs for React analysis.
@@ -100,7 +84,7 @@ Check which bundler or framework is in use (Next.js, Vite, Webpack, etc.) and ap
 - Vite: set `build.sourcemap: true` in vite.config.js
 - Webpack: set `devtool: 'source-map'` in webpack.config.js
 
-Replay QA discovers publicly served source maps automatically — no upload step is needed unless we specifically want to keep source maps private.
+Replay QA discovers publicly served source maps automatically — no upload step is needed.
 
 If the project uses React 18.3 (not React 19), also install @acemarke/react-prod-sourcemaps and configure it per the package README, so Replay can instrument React internals for component analysis.
 

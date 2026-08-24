@@ -6,7 +6,9 @@ import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
 import { Logo, Logomark } from '@/components/Logo'
+import { useShowHidden } from '@/components/HiddenPagesToggle'
 import { MobileNavigation } from '@/components/MobileNavigation'
+import { HiddenPagesToggle } from '@/components/HiddenPagesToggle'
 import { Navigation } from '@/components/Navigation'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
@@ -115,6 +117,8 @@ function SubheaderNavigationLink({
 }
 
 function SubheaderNavigation() {
+  const [showHidden] = useShowHidden()
+
   return (
     <div className="h-pages-nav border-b border-gray-200/80 bg-white dark:border-zinc-800/80 dark:bg-black">
       <div className="container px-0">
@@ -123,18 +127,15 @@ function SubheaderNavigation() {
             name={'Basics'}
             isDefault={true}
             baseHref={'/basics'}
-            href={'/basics/time-travel/why-time-travel'}
+            href={'/basics/replay-qa/overview'}
           />
-          {/* <SubheaderNavigationLink
-            name={'Learn'}
-            baseHref={'/learn'}
-            href={'/learn/replay-course'}
-          /> */}
-          <SubheaderNavigationLink
-            name={'Reference'}
-            baseHref={'/reference'}
-            href={'/reference/test-runners/overview'}
-          />
+          {showHidden && (
+            <SubheaderNavigationLink
+              name={'Reference'}
+              baseHref={'/reference'}
+              href={'/reference/test-runners/overview'}
+            />
+          )}
         </nav>
       </div>
     </div>
@@ -199,8 +200,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* Sidebar — flush against the left edge, wide enough to keep nav
             items on a single line without wrapping. */}
         <aside className="hidden self-stretch border-r border-gray-200/80 bg-white dark:border-zinc-800/80 dark:bg-black lg:relative lg:block lg:flex-none">
-          <div className="sticky top-[6rem] h-[calc(100vh-6rem)] w-80 overflow-y-auto overflow-x-hidden px-5 py-8 xl:w-[22rem] xl:px-6">
-            <Navigation />
+          <div className="sticky top-[6rem] flex h-[calc(100vh-6rem)] w-80 flex-col xl:w-[22rem]">
+            <div className="flex-1 overflow-y-auto overflow-x-hidden px-5 py-8 xl:px-6">
+              <Navigation />
+            </div>
+            <div
+              className="group/sidebar-footer shrink-0 border-t border-gray-100 bg-gray-50/70 px-3 py-2 dark:border-zinc-800/80 dark:bg-zinc-950/50 xl:px-6"
+              data-testid="sidebar-footer"
+            >
+              <HiddenPagesToggle />
+            </div>
           </div>
         </aside>
 

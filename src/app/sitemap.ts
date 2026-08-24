@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 
 import { flatNavigation, NavigationItem } from '@/lib/navigation'
 import { getSiteOrigin } from '@/lib/agentReadiness'
+import { isVisibleNavItem } from '@/lib/visibility'
 
 /**
  * /sitemap.xml
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = []
 
   function visit(item: NavigationItem) {
+    if (!isVisibleNavItem(item)) return
     if (item.href && !seen.has(item.href)) {
       seen.add(item.href)
       urls.push({

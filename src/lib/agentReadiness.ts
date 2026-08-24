@@ -4,6 +4,10 @@
  *
  * Centralized so we can reason about the "machine-readable surface" of the
  * docs site in one place rather than chasing strings across a dozen files.
+ *
+ * Hidden doc paths (everything outside /basics/replay-qa) are additionally
+ * hard-blocked in middleware: known AI agent User-Agents receive 404. See
+ * src/lib/agent-bots.mjs and blockHiddenFromAgent in middleware.ts.
  */
 
 export const SITE_NAME = 'Replay Docs'
@@ -49,6 +53,4 @@ export const REPLAY_PUBLIC = {
 export const MARKDOWN_MIRRORS: Record<string, string> = {
   '/': '/agent/index.md',
   '/basics': '/agent/basics.md',
-  '/learn': '/agent/learn.md',
-  '/reference': '/agent/reference.md',
 }
