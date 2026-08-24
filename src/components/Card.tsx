@@ -6,12 +6,19 @@ export interface CardAttributes {
   content: string
   icon: keyof typeof icons
   href: string
+  testId?: string
 }
 
 /** Resource card — matches Replay app dashboard (icon tile + title + muted description). */
-export default function Card({ title, content, icon, href }: CardAttributes) {
+export default function Card({
+  title,
+  content,
+  icon,
+  href,
+  testId,
+}: CardAttributes) {
   return (
-    <Link href={href} className="group flex h-full min-w-0">
+    <Link href={href} className="flex h-full min-w-0" data-testid={testId}>
       <div className="flex h-full w-full gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-gray-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700 dark:hover:bg-zinc-900/80">
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gray-100 dark:bg-zinc-800">
           <Icon
