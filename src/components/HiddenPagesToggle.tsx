@@ -120,7 +120,9 @@ export function HiddenPagesToggle({ className }: { className?: string }) {
         ) : (
           <EyeIcon className="h-3.5 w-3.5 shrink-0 opacity-70" />
         )}
-        <span>{showHidden ? 'Hide Internal Pages' : 'Show Internal Pages'}</span>
+        <span>
+          {showHidden ? 'Hide Internal Pages' : 'Show Internal Pages'}
+        </span>
       </button>
     </div>
   )

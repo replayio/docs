@@ -31,7 +31,8 @@ export function isHiddenPath(pathname) {
   if (!normalized) return false
 
   const inDocSection = DOC_SECTION_PREFIXES.some(
-    (prefix) => normalized === prefix.slice(0, -1) || normalized.startsWith(prefix),
+    (prefix) =>
+      normalized === prefix.slice(0, -1) || normalized.startsWith(prefix),
   )
   if (!inDocSection) return false
 

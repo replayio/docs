@@ -2,34 +2,26 @@ name: Playwright Tests
 on: [pull_request]
 
 jobs:
-  wait-for-vercel:
-    name: Wait for vercel
-    runs-on: ubuntu-latest
-    steps:
-      - name: Wait for Vercel preview deployment to be ready
-        uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
-        id: wait
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          max_timeout: 120
-    outputs:
-      preview_url: ${{ steps.wait.outputs.url }}
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    needs: [wait-for-vercel]
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: 20.12.0
+          cache: pnpm
       - name: Install dependencies
         run: pnpm i
+      - name: Build site
+        run: pnpm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: 'https://docs.replay.io'
       - name: Install Replay Chromium
         run: pnpx replayio install
       - name: Run Playwright tests
         run: pnpm test
         env:
-          BASE_URL: ${{ needs.wait-for-vercel.outputs.preview_url }}
+          BASE_URL: http://127.0.0.1:3000
           REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
