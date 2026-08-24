@@ -45,9 +45,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         const fileName = codeProps.fileName as string | undefined
         const lineNumbers = codeProps.lineNumbers as boolean | undefined
         const rawHighlight = codeProps.highlight as
-          | string
-          | string[]
-          | undefined
+          string | string[] | undefined
         const highlight =
           typeof rawHighlight === 'string'
             ? (JSON.parse(rawHighlight) as string[])
