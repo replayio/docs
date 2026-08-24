@@ -69,7 +69,7 @@ function Header() {
               <DiscordIcon className="h-6 w-6 fill-gray-400 group-hover:fill-gray-500 dark:group-hover:fill-gray-300" />
             </Link>
             <Link
-              href="https://app.replay.io"
+              href="https://qa.replay.io"
               className="group hidden items-center rounded-full border border-gray-900 bg-transparent px-4 py-1.5 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-900 hover:text-white dark:border-zinc-600 dark:text-zinc-100 dark:hover:border-zinc-100 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 lg:inline-flex"
               aria-label="Replay"
             >
