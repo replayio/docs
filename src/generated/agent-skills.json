@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/cloudflare/agent-skills-discovery-rfc/main/schema/index.schema.json",
   "version": "0.2.0",
   "site": "https://docs.replay.io",
-  "generatedAt": "2026-04-29T16:04:31.423Z",
+  "generatedAt": "2026-08-24T20:32:03.932Z",
   "skills": [
     {
       "name": "replay-cli",

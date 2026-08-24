@@ -4,7 +4,9 @@ import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
 import { navigation, NavigationItem } from '@/lib/navigation'
+import { filterNavigation } from '@/lib/visibility'
 import { Disclosure } from '@headlessui/react'
+import { useShowHidden } from './HiddenPagesToggle'
 import { Icon } from './Icon'
 import { NavIcon } from './NavIcon'
 import styles from './Navigation.module.css'
@@ -176,7 +178,10 @@ export function Navigation({
 }) {
   let pathname = usePathname()
   let initialRoute = pathname.split('/')[1] as
-    'basics' | 'learn' | 'reference' | undefined
+    | 'basics'
+    | 'learn'
+    | 'reference'
+    | undefined
   if (
     !initialRoute ||
     !['basics', 'learn', 'reference'].includes(initialRoute)
@@ -184,7 +189,11 @@ export function Navigation({
     initialRoute = 'basics'
   }
 
-  const localizedNavigation = navigation[initialRoute] ?? []
+  const [showHidden] = useShowHidden()
+  const localizedNavigation = filterNavigation(
+    navigation[initialRoute] ?? [],
+    showHidden,
+  )
 
   return (
     <nav className={clsx('text-base', className)}>

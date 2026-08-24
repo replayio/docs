@@ -2,25 +2,18 @@
 
 Canonical URL: https://docs.replay.io/
 
-Replay is the first deterministic browser. Once a bug or flaky test is captured,
-anyone can inspect it with browser DevTools without having to reproduce it
-locally.
+Replay QA is an autonomous app testing tool built on Replay's time-travel
+debugging engine. Point it at a web app and it explores the application,
+discovers user journeys, writes Playwright tests, executes them while capturing
+full runtime recordings, and delivers root cause analysis and suggested fixes
+for every bug it finds.
 
-The docs homepage prioritizes **CI/CD** (Playwright in GitHub Actions and other
-providers), **Replay MCP** (agents inspecting recordings), and the **Chrome
-extension**, in that order. Time-travel **DevTools** remain the inspection layer
-for any recording—they are not the primary narrative.
+This documentation site is the canonical reference for Replay QA. Start here:
 
-This documentation site is the canonical reference for using Replay. The
-top-level sections are:
-
-- [Basics](https://docs.replay.io/basics) — getting started, recording your
-  app, recording Playwright test suites, time-travel debugging, Replay
-  DevTools, and the Test Suite Dashboard.
-- [Learn](https://docs.replay.io/learn) — guided tutorials, framework-specific
-  examples, and conceptual deep-dives on how Replay works.
-- [Reference](https://docs.replay.io/reference) — exhaustive reference for the
-  Replay APIs, the Replay Protocol, the Replay CLI, and supported test runners.
+- [Replay QA overview](https://docs.replay.io/basics/replay-qa/overview)
+- [CI integration with FRPC](https://docs.replay.io/basics/replay-qa/frpc-ci)
+- [Publishing with source maps](https://docs.replay.io/basics/replay-qa/source-maps)
+- [Basics section index](https://docs.replay.io/basics)
 
 ## Machine-readable surfaces
 
@@ -30,7 +23,7 @@ top-level sections are:
   Playwright, MCP)
 - `/.well-known/openid-configuration` — OAuth/OIDC discovery for the Replay
   authentication tenant
-- `/sitemap.xml` — full URL inventory
+- `/sitemap.xml` — URL inventory for public Replay QA documentation
 - `/robots.txt` — crawl + AI-bot policy with `Content-Signal`
 
 ## Content usage
@@ -42,6 +35,7 @@ not be ingested into model training corpora.
 ## Contact
 
 - Product site: https://www.replay.io
+- Replay QA: https://qa.replay.io
 - App: https://app.replay.io
 - Discord: https://replay.io/discord
 - GitHub: https://github.com/replayio

@@ -6,6 +6,7 @@ import { usePathname, useSearchParams } from 'next/navigation'
 import { Dialog } from '@headlessui/react'
 
 import { Logomark } from '@/components/Logo'
+import { HiddenPagesToggle } from '@/components/HiddenPagesToggle'
 import { Navigation } from '@/components/Navigation'
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -82,20 +83,27 @@ export function MobileNavigation() {
         className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-gray-900/50 pr-10 backdrop-blur lg:hidden"
         aria-label="Navigation"
       >
-        <Dialog.Panel className="min-h-full w-full max-w-xs border-r border-gray-200 bg-white px-4 pb-12 pt-5 dark:border-zinc-800 dark:bg-black sm:px-6">
-          <div className="flex items-center">
-            <button
-              type="button"
-              onClick={() => close()}
-              aria-label="Close navigation"
-            >
-              <CloseIcon className="h-6 w-6 stroke-gray-500" />
-            </button>
-            <Link href="/" className="ml-6" aria-label="Home page">
-              <Logomark className="h-9 w-9 fill-rose-500" />
-            </Link>
+        <Dialog.Panel className="flex h-[100dvh] max-h-[100dvh] w-full max-w-xs flex-col overflow-hidden border-r border-gray-200 bg-white dark:border-zinc-800 dark:bg-black sm:max-w-xs">
+          <div className="shrink-0 px-4 pt-5 sm:px-6">
+            <div className="flex items-center">
+              <button
+                type="button"
+                onClick={() => close()}
+                aria-label="Close navigation"
+              >
+                <CloseIcon className="h-6 w-6 stroke-gray-500" />
+              </button>
+              <Link href="/" className="ml-6" aria-label="Home page">
+                <Logomark className="h-9 w-9 fill-rose-500" />
+              </Link>
+            </div>
           </div>
-          <Navigation className="mt-5 px-1" onLinkClick={onLinkClick} />
+          <div className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain px-4 sm:px-6">
+            <Navigation className="mt-5 px-1" onLinkClick={onLinkClick} />
+          </div>
+          <div className="group/sidebar-footer shrink-0 border-t border-gray-100 bg-gray-50/70 px-4 py-4 pb-8 dark:border-zinc-800/80 dark:bg-zinc-950/50 sm:px-6">
+            <HiddenPagesToggle />
+          </div>
         </Dialog.Panel>
       </Dialog>
     </>
