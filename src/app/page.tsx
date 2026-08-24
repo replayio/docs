@@ -69,11 +69,6 @@ export default function Page() {
             content={content}
             icon={icon}
             href={href}
-            testId={
-              href === '/basics/replay-qa/overview'
-                ? 'home-replay-qa-overview'
-                : undefined
-            }
           />
         ))}
       </div>
