@@ -60,6 +60,10 @@ export function GET() {
   // Default rules apply to every UA that doesn't match a more specific block.
   lines.push('User-agent: *')
   lines.push('Allow: /')
+  lines.push('Allow: /basics/replay-qa/')
+  lines.push('Disallow: /basics/')
+  lines.push('Disallow: /learn/')
+  lines.push('Disallow: /reference/')
   lines.push('Disallow: /api/')
   lines.push('Disallow: /_next/')
   lines.push('Disallow: /agent/') // markdown mirrors are reached via Accept-negotiation
@@ -69,6 +73,10 @@ export function GET() {
   for (const bot of allowedBots) {
     lines.push(`User-agent: ${bot}`)
     lines.push('Allow: /')
+    lines.push('Allow: /basics/replay-qa/')
+    lines.push('Disallow: /basics/')
+    lines.push('Disallow: /learn/')
+    lines.push('Disallow: /reference/')
     lines.push('Disallow: /api/')
     lines.push('Disallow: /_next/')
     lines.push('')

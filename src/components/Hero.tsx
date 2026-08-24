@@ -18,38 +18,37 @@ export function Hero() {
                 />
               )}
               <p className="font-display text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                Replay documentation
+                Replay QA documentation
               </p>
               <p className="mt-1 text-sm font-medium uppercase tracking-[0.14em] text-gray-500 dark:text-zinc-500">
-                CI &amp; agents first
+                Autonomous app testing
               </p>
               <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-zinc-400">
-                Record Playwright runs in CI, close the loop on failures from
-                the PR, and give your coding agent full runtime context through
-                Replay MCP. Everything here is built on the same deterministic,
-                time-travel recordings that power Replay DevTools—we are
-                doubling down on agentic workflows and less manual digging.
+                Replay QA explores your web app, discovers user journeys, writes
+                Playwright tests, and delivers root cause analysis for every bug
+                it finds — all powered by Replay&apos;s time-travel debugging
+                engine.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
-                  href="/basics/getting-started/record-your-playwright-tests/github-actions"
+                  href="/basics/replay-qa/overview"
                   className="inline-flex items-center rounded-full bg-gray-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
                 >
-                  Playwright + GitHub Actions
+                  Replay QA overview
                 </a>
                 <a
-                  href="/basics/replay-mcp/overview"
+                  href="https://qa.replay.io"
                   className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-900 transition-colors hover:border-gray-400 hover:bg-gray-50 dark:border-zinc-600 dark:text-zinc-100 dark:hover:border-zinc-500 dark:hover:bg-zinc-900"
                 >
-                  Replay MCP
+                  Launch Replay QA
                 </a>
               </div>
               <p className="mt-4 text-sm text-gray-500 dark:text-zinc-500">
                 <a
-                  href="/basics/getting-started/record-your-app"
+                  href="/basics/replay-qa/frpc-ci"
                   className="font-medium text-gray-700 underline decoration-gray-400 underline-offset-2 hover:text-gray-900 dark:text-zinc-300 dark:decoration-zinc-600 dark:hover:text-white"
                 >
-                  Quickstart: record your app in the Replay browser
+                  CI integration with FRPC
                 </a>
               </p>
             </div>

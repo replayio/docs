@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-test('home page redirects to the Replay QA overview', async ({ page }) => {
+test('root redirects to Replay QA overview', async ({ page }) => {
   await page.goto('/')
   await expect(page).toHaveURL(/\/basics\/replay-qa\/overview/)
   await expect(

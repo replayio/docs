@@ -4,7 +4,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
-import { NavigationItem, navigation, flatNavigation } from '@/lib/navigation'
+import { NavigationItem, flatNavigation } from '@/lib/navigation'
+import { isVisibleNavItem } from '@/lib/visibility'
+import { useShowHidden } from '@/components/HiddenPagesToggle'
 
 function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -76,10 +78,15 @@ function flattenNavigation(navigation: NavigationItem[]): NavigationItem[] {
 const allLinks = flattenNavigation(flatNavigation)
 export function PrevNextLinks() {
   const pathname = usePathname()
+  const [showHidden] = useShowHidden()
 
-  const linkIndex = allLinks.findIndex((link) => link.href === pathname)
-  const previousPage = linkIndex > -1 ? allLinks[linkIndex - 1] : null
-  const nextPage = linkIndex > -1 ? allLinks[linkIndex + 1] : null
+  const links = showHidden
+    ? allLinks
+    : allLinks.filter((link) => link.href && isVisibleNavItem(link))
+
+  const linkIndex = links.findIndex((link) => link.href === pathname)
+  const previousPage = linkIndex > -1 ? links[linkIndex - 1] : null
+  const nextPage = linkIndex > -1 ? links[linkIndex + 1] : null
 
   if (!nextPage && !previousPage) {
     return null
