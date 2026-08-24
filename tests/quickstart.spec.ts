@@ -2,8 +2,11 @@ import { test, expect } from '@playwright/test'
 
 test('home page links to Replay QA overview', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('link', { name: 'Replay QA overview' }).click()
+  // Use the guide card link — the hero CTA sits under the sticky header and
+  // isn't reliably clickable in automated tests.
+  await page.locator('a.group[href="/basics/replay-qa/overview"]').click()
   await expect(page).toHaveURL(/.*\/basics\/replay-qa\/overview/)
-  const heading = page.getByRole('heading', { name: 'Replay QA Overview' })
-  await expect(heading).toBeVisible()
+  await expect(
+    page.getByRole('heading', { name: 'Replay QA Overview' }),
+  ).toBeVisible()
 })
