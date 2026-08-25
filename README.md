@@ -8,7 +8,7 @@ Docs are built with:
 
 - [NextJS](https://nextjs.org/)
 - [Tailwind](https://tailwindcss.com/)
-- [FlexSearch][https://github.com/nextapps-de/flexsearch]
+- [FlexSearch](https://github.com/nextapps-de/flexsearch)
 
 ## Installation
 
