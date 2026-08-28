@@ -53,6 +53,20 @@ function Header() {
             <Search />
           </div>
           <div className="relative flex basis-0 items-center justify-end gap-6 sm:gap-8 md:flex-grow">
+            <a
+              href="https://www.producthunt.com/products/replayio?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-replay-qa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:block"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="Replay QA - Replay QA tells you what is broken before your users do | Product Hunt"
+                width={250}
+                height={54}
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1186303&theme=neutral&t=1784570145347"
+              />
+            </a>
             <ThemeSelector className="relative z-30" />
             <Link
               href="https://github.com/replayio"
