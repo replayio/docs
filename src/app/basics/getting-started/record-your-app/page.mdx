@@ -70,7 +70,7 @@ This opens the Replay Browser. Interact with your app to reproduce the issue, th
 
 <Callout type="note">
 
-**Agent-driven recording:** If you're working with an AI coding agent, it can trigger recordings for you using the `replay-cli` skill. Install skills with `npx @replayio/replay skills add` and ask your agent to record your app.
+**Agent-driven recording:** If you're working with an AI coding agent, it can trigger recordings for you using the `replay-cli` skill. Install it with `npx skills add https://github.com/replayio/skills --skill 'replay-cli'` and ask your agent to record your app.
 
 </Callout>
 
@@ -106,21 +106,43 @@ Recordings from E2E tests have the same 100% fidelity as manual Replay Browser r
 
 <Steps>
 
-## Configure your test runner
+## Install the Replay Playwright plugin
 
-Add the Replay plugin to your Playwright configuration. See the detailed setup guide:
+```sh
+npm i -D @replayio/playwright
+npx replayio install
+```
 
-- [Record Playwright tests](/basics/getting-started/record-your-playwright-tests)
+## Add the Replay browser to your Playwright config
 
-## View recordings in CI
+```ts fileName="playwright.config.ts"
+import { defineConfig } from '@playwright/test'
+import { devices as replayDevices, replayReporter } from '@replayio/playwright'
 
-Once configured, every test run produces recordings that are uploaded automatically. Failed tests show up in the [Test Suite Dashboard](/basics/test-suites/overview) with links to inspect each recording.
+export default defineConfig({
+  reporter: [
+    replayReporter({
+      apiKey: process.env.REPLAY_API_KEY,
+      upload: true,
+    }),
+    ['line'],
+  ],
+  projects: [
+    {
+      name: 'replay-chromium',
+      use: { ...replayDevices['Replay Chromium'] },
+    },
+  ],
+})
+```
+
+`REPLAY_API_KEY` is an [app.replay.io API key](/reference/ci-workflows/generate-api-key). Each test run then uploads a recording per test, and the reporter prints the recording URLs.
 
 </Steps>
 
 <Callout type="note">
 
-**Agent-driven setup:** AI coding agents can help configure test recording using the `replay-playwright` skill. Install skills with `npx @replayio/replay skills add`.
+**Agent-driven setup:** AI coding agents can configure test recording for you using the `replay-playwright` skill. Install it with `npx skills add https://github.com/replayio/skills --skill 'replay-playwright'`.
 
 </Callout>
 
@@ -145,10 +167,10 @@ A recording is a snapshot of your app's runtime. Once it's uploaded, you can inv
 />
 
 <QuickLink
-  title="Automate with the Protocol API"
-  icon="jumptocode"
-  href="/reference/integrations/replay-apis/replay-protocol"
-  description="Use the Replay Protocol directly for custom integrations, scripts, and automated analysis."
+  title="Replay CLI reference"
+  icon="terminal"
+  href="/reference/replay-cli/commands"
+  description="Every replayio command: install and update the browser, record, list and upload recordings, upload source maps."
 />
 
 </QuickLinks>
@@ -160,7 +182,7 @@ A recording is a snapshot of your app's runtime. Once it's uploaded, you can inv
 <AccordionItem title="Which method should I use?">
 
 - **Debugging a specific bug you can reproduce?** Use the **Replay Browser** for maximum fidelity, or the **Chrome Extension** if you don't want to switch browsers.
-- **Debugging intermittent test failures?** Set up **Playwright/E2E recording** in CI so you automatically have recordings when tests fail.
+- **Debugging a failing Playwright test?** Set up **Playwright recording** so every run produces a recording you can inspect instead of re-running the test.
 - **Working with an AI coding agent?** Any method works — once the recording is uploaded, the agent can inspect it via MCP regardless of how it was created.
 
 </AccordionItem>

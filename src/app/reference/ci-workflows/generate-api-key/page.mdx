@@ -1,7 +1,16 @@
 ---
 title: Generate API key
-description: Your API key authenticates you with Replay App and allows you to record test runs and automatically upload replays to the Replay App.
+description: Create an app.replay.io API key for uploading recordings and source maps from the CLI, the Playwright plugin, and CI, and for authenticating Replay MCP.
 ---
+
+Replay has two separate credentials. Make sure you are creating the right one:
+
+| Credential                | Created at                                           | Used by                                                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **app.replay.io API key** | [app.replay.io](https://app.replay.io) team settings | The `replayio` CLI, the `@replayio/playwright` plugin, `replayio upload-source-maps`, CI upload workflows, and the `Authorization` header when connecting to [Replay MCP](/basics/replay-mcp/quickstart) |
+| **Replay QA API token**   | [qa.replay.io](https://qa.replay.io) Settings > API  | The Replay QA REST API and Replay QA's MCP server. Not interchangeable with the key above                                                                                                                |
+
+This page covers the app.replay.io API key.
 
 ## Creating a new API key
 
@@ -33,7 +42,7 @@ Save Locally: Store the API key in a secure location on your local machine, such
 <Tab>
 
 ```sh
-export REPLAY_APP_API_KEY=<Your-API-Key>
+export REPLAY_API_KEY=<Your-API-Key>
 ```
 
 </Tab>
@@ -41,7 +50,7 @@ export REPLAY_APP_API_KEY=<Your-API-Key>
 <Tab>
 
 ```sh
-set REPLAY_APP_API_KEY=<Your-API-Key>
+set REPLAY_API_KEY=<Your-API-Key>
 ```
 
 </Tab>

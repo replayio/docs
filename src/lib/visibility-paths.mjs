@@ -5,7 +5,15 @@
  * visibility.ts for the Next.js runtime.
  */
 
-export const VISIBLE_PREFIXES = ['/basics/replay-qa']
+export const VISIBLE_PREFIXES = [
+  '/basics/replay-qa',
+  '/basics/replay-mcp',
+  '/basics/getting-started/record-your-app',
+  '/basics/time-travel/how-does-time-travel-work',
+  '/reference/replay-cli',
+  '/reference/ci-workflows/generate-api-key',
+  '/reference/integrations/frameworks-libraries/react-sourcemaps',
+]
 
 /** Doc sections that may contain hidden pages. */
 const DOC_SECTION_PREFIXES = ['/basics/', '/learn/', '/reference/']
@@ -24,7 +32,7 @@ function matchesVisiblePrefix(pathname) {
 
 /**
  * True when a path lives under /basics/, /learn/, or /reference/ but is not
- * part of the visible Replay QA surface.
+ * under one of VISIBLE_PREFIXES.
  */
 export function isHiddenPath(pathname) {
   const normalized = normalizePath(pathname)

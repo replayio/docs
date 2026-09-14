@@ -5,7 +5,7 @@ import { REPLAY_PUBLIC, getSiteOrigin } from '@/lib/agentReadiness'
 /**
  * /.well-known/mcp/server-card.json
  *
- * Advertises the Replay MCP server (https://mcp.replay.io). Schema follows
+ * Advertises the Replay MCP server (REPLAY_PUBLIC.mcpServer). Schema follows
  * the SEP-1649 server-card draft:
  *   https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127
  *

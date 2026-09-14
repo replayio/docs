@@ -26,11 +26,23 @@ export function isVisibleNavItem(item: NavigationItem): boolean {
   return itemHasVisibleHref(item)
 }
 
-/** Filter a nav tree, optionally keeping hidden sections when showHidden is on. */
+function filterVisible(items: NavigationItem[]): NavigationItem[] {
+  return items.flatMap((item) => {
+    if (!itemHasVisibleHref(item)) return []
+    if (!item.links) return [item]
+    return [{ ...item, links: filterVisible(item.links) }]
+  })
+}
+
+/**
+ * Filter a nav tree at every level, optionally keeping hidden sections when
+ * showHidden is on. A section survives only if it or a descendant is visible,
+ * and its hidden children are removed.
+ */
 export function filterNavigation(
   items: NavigationItem[],
   showHidden: boolean,
 ): NavigationItem[] {
   if (showHidden) return items
-  return items.filter(isVisibleNavItem)
+  return filterVisible(items)
 }

@@ -13,6 +13,10 @@
       "destination": "/basics/getting-started/record-your-app"
     },
     {
+      "source": "/basics/replay-chrome-extension/getting-started",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
       "source": "/legal",
       "destination": "https://www.replay.io/terms-of-service"
     },

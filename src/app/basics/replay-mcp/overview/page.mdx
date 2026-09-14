@@ -215,12 +215,13 @@ Error: Timed out 15000ms waiting for
 Recordings of minified production code are much harder for agents (and humans) to understand. Use development builds when recording, or ensure source maps are available. This lets agents read meaningful variable names, function names, and original source code.
 
 <Callout type="note">
-  **React 18.3 users:** React analysis tools (render tracking, component
-  inspection, performance profiling) require production sourcemaps for React
-  itself. You'll need to add the `@acemarke/react-prod-sourcemaps` build plugin.
+  **React apps:** React analysis tools (render tracking, component inspection,
+  performance profiling) work without any source maps for React itself, but
+  results are better with your application's source maps, and best on React 19.
   See [React Version
   Support](/reference/integrations/frameworks-libraries/react-sourcemaps) for
-  setup instructions.
+  details, including the `@acemarke/react-prod-sourcemaps` fallback for React
+  18.
 </Callout>
 
 ### Understand execution points

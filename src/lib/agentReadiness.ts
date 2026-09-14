@@ -5,9 +5,9 @@
  * Centralized so we can reason about the "machine-readable surface" of the
  * docs site in one place rather than chasing strings across a dozen files.
  *
- * Hidden doc paths (everything outside /basics/replay-qa) are additionally
- * hard-blocked in middleware: known AI agent User-Agents receive 404. See
- * src/lib/agent-bots.mjs and blockHiddenFromAgent in middleware.ts.
+ * Hidden doc paths (see VISIBLE_PREFIXES in visibility-paths.mjs) are served
+ * with noindex headers and disallowed in robots.txt, but remain reachable by
+ * direct URL.
  */
 
 export const SITE_NAME = 'Replay Docs'
@@ -40,7 +40,7 @@ export const REPLAY_PUBLIC = {
   api: 'https://api.replay.io',
   protocolDocs: 'https://static.replay.io/protocol/tot/',
   protocolWs: 'wss://dispatch.replay.io',
-  mcpServer: 'https://mcp.replay.io',
+  mcpServer: 'https://dispatch.replay.io/nut/mcp',
   authIssuer: 'https://webreplay.us.auth0.com/',
   graphql: 'https://api.replay.io/v1/graphql',
 } as const
@@ -53,4 +53,5 @@ export const REPLAY_PUBLIC = {
 export const MARKDOWN_MIRRORS: Record<string, string> = {
   '/': '/agent/index.md',
   '/basics': '/agent/basics.md',
+  '/reference': '/agent/reference.md',
 }

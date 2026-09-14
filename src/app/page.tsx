@@ -27,6 +27,23 @@ const cards: CardAttributes[] = [
   },
 ]
 
+const debuggingCards: CardAttributes[] = [
+  {
+    icon: 'terminal',
+    title: 'Debug with your agent (Replay MCP)',
+    content:
+      'Connect Claude Code, Cursor, or any MCP client to a Replay recording and let your agent inspect the exact execution that failed.',
+    href: '/basics/replay-mcp/quickstart',
+  },
+  {
+    icon: 'record',
+    title: 'Record your app',
+    content:
+      'Make a recording of your own app with the Replay CLI, then debug it with Replay DevTools or your agent.',
+    href: '/basics/getting-started/record-your-app',
+  },
+]
+
 const miniCards: CardAttributes[] = [
   {
     icon: 'replay',
@@ -63,6 +80,20 @@ export default function Page() {
       </h2>
       <div className="grid grid-cols-1 gap-4 pb-12 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map(({ href, content, icon, title }) => (
+          <Card
+            key={href}
+            title={title}
+            content={content}
+            icon={icon}
+            href={href}
+          />
+        ))}
+      </div>
+      <h2 className="pb-8 text-2xl font-semibold text-gray-900 dark:text-white">
+        Debugging with Replay
+      </h2>
+      <div className="grid grid-cols-1 gap-4 pb-12 sm:grid-cols-2">
+        {debuggingCards.map(({ href, content, icon, title }) => (
           <Card
             key={href}
             title={title}
