@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 import { MARKDOWN_MIRRORS } from '@/lib/agentReadiness'
+import { isAiAgent } from '@/lib/agent-bots.mjs'
 import { isHiddenPath } from '@/lib/visibility-paths.mjs'
 
 /**
@@ -76,9 +77,31 @@ function negotiateMarkdown(
   return response
 }
 
+function blockHiddenFromAgent(
+  request: NextRequest,
+  pathname: string,
+): NextResponse | null {
+  if (!isHiddenPath(pathname)) return null
+  const userAgent = request.headers.get('user-agent') ?? ''
+  if (!isAiAgent(userAgent)) return null
+
+  return new NextResponse('Not Found', {
+    status: 404,
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'X-Robots-Tag': 'noindex, nofollow, noarchive',
+      'Cache-Control': 'private, no-store',
+    },
+  })
+}
+
 export function middleware(request: NextRequest) {
   const url = new URL(request.url)
   const pathname = url.pathname
+
+  // ────────────── Hard block: hidden docs are 404 for AI agents ──────────────
+  const blocked = blockHiddenFromAgent(request, pathname)
+  if (blocked) return blocked
 
   // ────────────── Markdown content negotiation ──────────────
   const md = negotiateMarkdown(request, pathname)
