@@ -4,19 +4,18 @@ title: How to record
 
 Everything in Replay starts with a recording. A recording captures your application's runtime so you can inspect it after the fact — add console logs, inspect variables, step through code — without having to reproduce the bug again.
 
-There are three ways to make a recording, each suited to different workflows.
+There are two ways to make a recording.
 
-| Method                   | Best for                         | Fidelity                                    | How it works                                 |
-| ------------------------ | -------------------------------- | ------------------------------------------- | -------------------------------------------- |
-| **Replay Browser + CLI** | Maximum fidelity, manual repro   | 100% — records actual execution             | Records at the runtime level                 |
-| **Chrome Extension**     | Quick capture, no browser switch | High — re-executes against captured session | Records from within the page                 |
-| **Playwright / E2E**     | CI, automated test suites        | 100% — records test execution               | Configures test runner to use Replay Browser |
+| Method                   | Best for                                     | How it works                                                     |
+| ------------------------ | -------------------------------------------- | ---------------------------------------------------------------- |
+| **Replay Browser + CLI** | Reproducing a bug by hand, or via your agent | Launches Replay Browser on a URL and uploads on close            |
+| **Playwright**           | CI and automated test suites                 | The `@replayio/playwright` reporter runs tests in Replay Browser |
+
+Both record at the browser runtime level, so the recording is an exact capture of what executed.
 
 ## Replay Browser + CLI
 
-The Replay Browser is a custom browser that records at the runtime level — every instruction your code executes is captured exactly as it happened. This gives you 100% faithful recordings with perfect time-travel debugging.
-
-The Replay CLI manages installing the latest Replay Browser version, lets you start Replay Browser to record specific pages, and uploads recordings to your Replay account.
+The Replay CLI installs the Replay Browser, launches it on a URL you choose, and uploads recordings to your Replay account.
 
 <Steps>
 
@@ -74,35 +73,9 @@ This opens the Replay Browser. Interact with your app to reproduce the issue, th
 
 </Callout>
 
-## Chrome Extension
+## Playwright
 
-The Chrome Extension lets you record without leaving your normal browser. It captures your session from within the page — network responses, user interactions, DOM updates — and re-executes your code against that captured data. You get full time-travel debugging with access to all the same tools.
-
-The tradeoff: since network requests are served from captured responses rather than hitting real servers, exact timing of async operations may differ slightly from your original session. The recording itself is a 100% accurate capture of the re-execution — but the re-execution is a simulation that may not be perfectly identical to what ran in your browser. For the vast majority of debugging scenarios, this is more than sufficient.
-
-<Steps>
-
-## Install the extension
-
-Install the [Replay Chrome Extension](https://chromewebstore.google.com/detail/replay/cdaleegmpcklipdahgmmbmgcpnjfghok) from the Chrome Web Store.
-
-## Record your session
-
-Click the Replay extension icon, hit **Start Recording**, reproduce the issue in your app, then click **Stop and Save**. The extension uploads your session and gives you a link to inspect it.
-
-</Steps>
-
-<Callout type="note">
-
-The extension also includes a built-in agent that can answer initial questions about your recording right away, before you even open the full DevTools.
-
-</Callout>
-
-## Playwright / E2E Tests
-
-For automated test suites, you can configure Playwright to record every test run using the Replay Browser. This is ideal for CI — tests run automatically, and when something fails, you get a full time-travel recording of what happened on that CI machine without having to reproduce it locally.
-
-Recordings from E2E tests have the same 100% fidelity as manual Replay Browser recordings.
+For automated test suites, configure Playwright to run tests in Replay Browser and upload a recording of each test. When a test fails in CI you get a recording of what happened on that machine instead of having to reproduce it locally.
 
 <Steps>
 
@@ -146,9 +119,13 @@ export default defineConfig({
 
 </Callout>
 
+## Chrome extension
+
+The [Replay Debugger Chrome extension](https://chromewebstore.google.com/detail/replay-debugger/lkbmpddckbjbfaekcjacjgpehgaaijhh) records from inside your regular Chrome by capturing the page's inputs and re-executing your code against them. It is convenient when you cannot switch browsers, but the re-execution can differ from the original session in timing-sensitive code. Prefer the CLI when you can.
+
 ## Once you have a recording
 
-A recording is a snapshot of your app's runtime. Once it's uploaded, you can investigate it in several ways:
+Once a recording is uploaded, you can investigate it in several ways:
 
 <QuickLinks title="What's next?">
 
@@ -181,9 +158,9 @@ A recording is a snapshot of your app's runtime. Once it's uploaded, you can inv
 
 <AccordionItem title="Which method should I use?">
 
-- **Debugging a specific bug you can reproduce?** Use the **Replay Browser** for maximum fidelity, or the **Chrome Extension** if you don't want to switch browsers.
+- **Debugging a specific bug you can reproduce?** Use the **Replay Browser + CLI**, or ask your agent to do it with the `replay-cli` skill.
 - **Debugging a failing Playwright test?** Set up **Playwright recording** so every run produces a recording you can inspect instead of re-running the test.
-- **Working with an AI coding agent?** Any method works — once the recording is uploaded, the agent can inspect it via MCP regardless of how it was created.
+- **Working with an AI coding agent?** Any method works. Once the recording is uploaded, the agent can inspect it through Replay MCP regardless of how it was created.
 
 </AccordionItem>
 
@@ -201,7 +178,7 @@ Recordings are uploaded to the Replay Cloud where the runtime can be replayed fo
 
 <AccordionItem title="Can I record any website?">
 
-The Replay Browser and Chrome Extension can record any web application, including localhost, staging, and production URLs. For E2E recording, your test suite needs to be configured to use the Replay browser runtime.
+Replay Browser can record any web application, including localhost, staging, and production URLs. For Playwright recording, the test project has to use the Replay Chromium device as shown above.
 
 </AccordionItem>
 

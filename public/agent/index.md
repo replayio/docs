@@ -21,6 +21,8 @@ This documentation site is the canonical reference for Replay QA. Start here:
 Replay QA is built on Replay's recording and time-travel debugging engine. The
 same engine is available directly to developers and their coding agents:
 
+- [Debugging with Replay](https://docs.replay.io/basics/debugging/overview)
+  — overview of the record → investigate workflow and how it relates to Replay QA.
 - [Replay MCP](https://docs.replay.io/basics/replay-mcp/overview) — an MCP
   server (`https://dispatch.replay.io/nut/mcp`) that lets an AI agent inspect
   a recording: sources, console, network, React state, and execution over time.

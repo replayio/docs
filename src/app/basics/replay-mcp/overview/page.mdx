@@ -184,6 +184,18 @@ The universal endpoint above works with any recording. Every tool accepts a `rec
 
 There is also a per-recording endpoint at `https://dispatch.replay.io/nut/recording/<recording-id>/mcp`. Tools on this endpoint do not take a `recordingId`, because the recording is fixed by the URL. Use it when a script or CI job hands the agent a single recording and you want a smaller tool surface. The configuration is the same as above with the URL swapped.
 
+## Agent skills
+
+Skills are Markdown instruction files your agent loads on demand. Replay publishes them at [github.com/replayio/skills](https://github.com/replayio/skills/tree/main/skills), and `npx skills add https://github.com/replayio/skills --skill '<name>'` installs one at a time.
+
+| Skill               | What it teaches the agent                                                                       |
+| ------------------- | ----------------------------------------------------------------------------------------------- |
+| `replay-mcp`        | Which Replay MCP tools to call, in what order, to investigate a recording                       |
+| `replay-cli`        | Install `replayio`, record a URL in Replay Browser, upload, and list recordings                 |
+| `replay-playwright` | Add the `@replayio/playwright` reporter to a Playwright project and run tests in Replay Browser |
+
+The same files are served from this site at [`/.well-known/agent-skills/index.json`](/.well-known/agent-skills/index.json) for agents that discover skills automatically.
+
 ## Tips
 
 ### Use development builds or source maps

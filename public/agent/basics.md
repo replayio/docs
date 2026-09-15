@@ -21,9 +21,14 @@ each bug it finds.
   `/api/v1/openapi.json`) and MCP server (`https://qa.replay.io/api/mcp`) for
   creating projects, reading bug reports, and marking fixes. Auth: `lqa_` token
   from Settings > API, or OAuth sign-in for MCP.
-  — every bug links to a Replay recording; open it in Replay DevTools or via Replay MCP.
 
 Launch Replay QA: https://qa.replay.io
+
+## Debugging with Replay
+
+- [Overview](https://docs.replay.io/basics/debugging/overview) — record your
+  app, then investigate with a coding agent through Replay MCP or by hand in
+  Replay DevTools. Same engine as Replay QA, used directly.
 
 ## Replay MCP
 

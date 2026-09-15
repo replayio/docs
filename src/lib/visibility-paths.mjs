@@ -7,11 +7,13 @@
 
 export const VISIBLE_PREFIXES = [
   '/basics/replay-qa',
+  '/basics/debugging',
   '/basics/replay-mcp',
   '/basics/getting-started/record-your-app',
   '/reference/replay-mcp',
   '/reference/time-travel/how-does-time-travel-work',
   '/reference/replay-cli',
+  '/reference/replay-runtimes/replay-node',
   '/reference/api-keys',
   '/reference/integrations/frameworks-libraries/react-sourcemaps',
 ]

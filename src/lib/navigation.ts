@@ -47,6 +47,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       defaultOpen: true,
       links: [
         {
+          title: 'Overview',
+          href: '/basics/debugging/overview',
+        },
+        {
           title: 'Replay MCP',
           href: '/basics/replay-mcp/overview',
         },
@@ -221,17 +225,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
       ],
     },
-    {
-      title: 'Time Travel',
-      icon: 'rocket',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Why time travel?',
-          href: '/basics/time-travel/why-time-travel',
-        },
-      ],
-    },
   ],
   reference: [
     {
@@ -321,10 +314,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         {
           title: 'Replay Firefox',
           href: '/reference/replay-runtimes/replay-firefox',
-        },
-        {
-          title: 'Replay Node',
-          href: '/reference/replay-runtimes/replay-node',
         },
       ],
     },

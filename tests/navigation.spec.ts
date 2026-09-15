@@ -31,6 +31,23 @@ test('navigation shows Replay MCP and How to record by default', async ({
   ).not.toBeVisible()
 })
 
+test('reference tab opens on the Debugging with Replay section', async ({
+  page,
+}) => {
+  await page.goto('/reference/replay-mcp/tools')
+  const nav = page.locator('nav')
+  await expect(
+    nav.getByText('Debugging with Replay', { exact: true }),
+  ).toBeVisible()
+  await expect(
+    nav.getByText('MCP tools reference', { exact: true }),
+  ).toBeVisible()
+  await expect(
+    nav.getByText('How does time travel work?', { exact: true }),
+  ).toBeVisible()
+  await expect(nav.getByText('Replay Teams', { exact: true })).not.toBeVisible()
+})
+
 test('hidden children of a partially visible section stay hidden', async ({
   page,
 }) => {

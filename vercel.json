@@ -238,7 +238,7 @@
     },
     {
       "source": "/getting-started/introduction-to-debugging",
-      "destination": "/basics/time-travel/why-time-travel"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/getting-started/recording-your-first-replay",
@@ -310,7 +310,7 @@
     },
     {
       "source": "/getting-started/what-is-replay-io",
-      "destination": "/basics/time-travel/why-time-travel"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/learn-more/contribute",
@@ -578,7 +578,7 @@
     },
     {
       "source": "/reference/what-is-runtime-replay",
-      "destination": "/basics/time-travel/why-time-travel"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/test-suites/_archive/ci-integration/circle-ci",
@@ -762,7 +762,7 @@
     },
     {
       "source": "/time-travel-intro/why-time-travel",
-      "destination": "/basics/time-travel/why-time-travel"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/replay-devtools/browser-devtools/console",
@@ -1202,6 +1202,10 @@
     },
     {
       "source": "/basics/time-travel/how-does-time-travel-work",
+      "destination": "/reference/time-travel/how-does-time-travel-work"
+    },
+    {
+      "source": "/basics/time-travel/why-time-travel",
       "destination": "/reference/time-travel/how-does-time-travel-work"
     }
   ],

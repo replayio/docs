@@ -1,6 +1,15 @@
 ---
 title: How does time travel work?
+description: Why Replay records the browser runtime instead of the DOM, and how replaying it lets you inspect a session after the fact.
 ---
+
+## Why time travel?
+
+Bugs in web applications often depend on network timing, race conditions, and state that is gone by the time you notice the problem. Repeating the same steps may never reproduce them. Traditional debugging is a loop of adding a log, refreshing, and hoping the bug happens again.
+
+A Replay recording removes the reproduction step. Replay Browser records the inputs to the runtime, so replaying the recording re-runs exactly the same execution. Any bug that was recorded once can be inspected as many times as needed, by anyone with the link. When you add a console log to a line that already ran, the messages appear as if they had always been there. This is also what makes it possible for a coding agent, through Replay MCP, or for Replay QA, to analyze a failure without a human reproducing it first.
+
+## Runtime Replay versus Session Replay
 
 The most common question we get is “how is time travel (or Runtime Replay) different from Session Replay?” At a high level, Session Replay tools replay the DOM and Runtime Replay tools re-run the runtime so that you can inspect the session with browser DevTools. That's a lot to unpack. Lets dive in!
 
