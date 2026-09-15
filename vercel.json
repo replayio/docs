@@ -13,6 +13,14 @@
       "destination": "/basics/getting-started/record-your-app"
     },
     {
+      "source": "/basics/replay-chrome-extension/getting-started",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/basics/replay-mcp/quickstart",
+      "destination": "/basics/replay-mcp/overview"
+    },
+    {
       "source": "/legal",
       "destination": "https://www.replay.io/terms-of-service"
     },
@@ -230,7 +238,7 @@
     },
     {
       "source": "/getting-started/introduction-to-debugging",
-      "destination": "/basics/time-travel/why-time-travel"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/getting-started/recording-your-first-replay",
@@ -302,7 +310,7 @@
     },
     {
       "source": "/getting-started/what-is-replay-io",
-      "destination": "/basics/time-travel/why-time-travel"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/learn-more/contribute",
@@ -318,11 +326,11 @@
     },
     {
       "source": "/learn-more/contribute/how-replay-works",
-      "destination": "/basics/time-travel/how-does-time-travel-work"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/learn-more/contribute/how-replay-works/how-programmatic-recordings-work",
-      "destination": "/basics/time-travel/how-does-time-travel-work"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/learn-more/contribute/how-replay-works/our-approach-for-source-maps",
@@ -366,7 +374,7 @@
     },
     {
       "source": "/learn-more/workflows",
-      "destination": "/reference/ci-workflows/generate-api-key"
+      "destination": "/reference/api-keys"
     },
     {
       "source": "/learn-more/workflows/documenting-pull-requests",
@@ -570,7 +578,7 @@
     },
     {
       "source": "/reference/what-is-runtime-replay",
-      "destination": "/basics/time-travel/why-time-travel"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/test-suites/_archive/ci-integration/circle-ci",
@@ -694,7 +702,7 @@
     },
     {
       "source": "/time-travel-intro/how-time-travel-works",
-      "destination": "/basics/time-travel/how-does-time-travel-work"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/recording-browser-tests-(beta)",
@@ -720,7 +728,6 @@
       "source": "/browser-devtools/elements-panel",
       "destination": "/basics/replay-devtools/browser-devtools/elements-panel"
     },
-
     {
       "source": "/browser-devtools/network-monitor",
       "destination": "/basics/replay-devtools/browser-devtools/network-monitor"
@@ -751,11 +758,11 @@
     },
     {
       "source": "/time-travel-intro/what-is-time-travel",
-      "destination": "/basics/time-travel/how-does-time-travel-work"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/time-travel-intro/why-time-travel",
-      "destination": "/basics/time-travel/why-time-travel"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/replay-devtools/browser-devtools/console",
@@ -895,7 +902,7 @@
     },
     {
       "source": "/ci-workflows/generate-api-key",
-      "destination": "/reference/ci-workflows/generate-api-key"
+      "destination": "/reference/api-keys"
     },
     {
       "source": "/ci-workflows/recording-strategies",
@@ -1115,11 +1122,11 @@
     },
     {
       "source": "/docs/setting-up-a-team-f5bd9ee853814d6f84e23fb535066199#4913df9eb7384a94a23ccbf335189370",
-      "destination": "/reference/ci-workflows/generate-api-key"
+      "destination": "/reference/api-keys"
     },
     {
-      "source": "/reference/api-keys",
-      "destination": "/reference/ci-workflows/generate-api-key"
+      "source": "/reference/ci-workflows/generate-api-key",
+      "destination": "/reference/api-keys"
     },
     {
       "source": "/basics/replay-devtools/mcp",
@@ -1188,6 +1195,18 @@
     {
       "source": "/reference/test-runners/cypress-io/troubleshooting-guide",
       "destination": "/basics/getting-started/record-your-cypress-tests/troubleshooting-guide"
+    },
+    {
+      "source": "/basics/replay-mcp/tools",
+      "destination": "/reference/replay-mcp/tools"
+    },
+    {
+      "source": "/basics/time-travel/how-does-time-travel-work",
+      "destination": "/reference/time-travel/how-does-time-travel-work"
+    },
+    {
+      "source": "/basics/time-travel/why-time-travel",
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     }
   ],
   "rewrites": [

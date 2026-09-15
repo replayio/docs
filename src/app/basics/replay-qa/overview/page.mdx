@@ -64,6 +64,14 @@ A Replay QA project organizes its output around the work it performed:
 
 Bug reports can be copied or downloaded as Markdown for a coding agent. After applying a fix, rerun the affected journey to verify the behavior against the same flow.
 
+When a bug includes a Replay recording of the failing run, you can hand that recording to a coding agent through [Replay MCP](/basics/replay-mcp/overview) to inspect the console, code, and network traffic from the actual failure.
+
+## Drive Replay QA from a coding agent
+
+The whole loop is available without the web app: a coding agent can create a project, wait for QA to finish, read each bug report, apply the fix, and mark the bug fixed so QA confirms it. Use the REST API from scripts and CI, or connect Claude Code, Cursor, or another MCP client to the Replay QA MCP server.
+
+[Driving Replay QA from a coding agent →](/basics/replay-qa/agent-integration)
+
 ## Test changes from GitHub
 
 Connect a repository with the Replay QA GitHub App to run QA when new application builds become available.

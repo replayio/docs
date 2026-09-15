@@ -35,6 +35,29 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           title: 'Publishing with source maps',
           href: '/basics/replay-qa/source-maps',
         },
+        {
+          title: 'Driving Replay QA from a coding agent',
+          href: '/basics/replay-qa/agent-integration',
+        },
+      ],
+    },
+    {
+      title: 'Debugging with Replay',
+      icon: 'mcp',
+      defaultOpen: true,
+      links: [
+        {
+          title: 'Overview',
+          href: '/basics/debugging/overview',
+        },
+        {
+          title: 'Replay MCP',
+          href: '/basics/replay-mcp/overview',
+        },
+        {
+          title: 'How to record',
+          href: '/basics/getting-started/record-your-app',
+        },
       ],
     },
     {
@@ -42,10 +65,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       icon: 'home',
       defaultOpen: true,
       links: [
-        {
-          title: 'How to record',
-          href: '/basics/getting-started/record-your-app',
-        },
         {
           title: 'Record your Playwright test',
           href: '/basics/getting-started/record-your-playwright-tests',
@@ -87,25 +106,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               href: '/basics/getting-started/record-your-playwright-tests/faq',
             },
           ],
-        },
-      ],
-    },
-    {
-      title: 'Replay MCP',
-      icon: 'mcp',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Overview',
-          href: '/basics/replay-mcp/overview',
-        },
-        {
-          title: 'Quickstart',
-          href: '/basics/replay-mcp/quickstart',
-        },
-        {
-          title: 'Tools Reference',
-          href: '/basics/replay-mcp/tools',
         },
       ],
     },
@@ -225,23 +225,23 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
       ],
     },
+  ],
+  reference: [
     {
-      title: 'Time Travel',
-      icon: 'rocket',
+      title: 'Debugging with Replay',
+      icon: 'mcp',
       defaultOpen: true,
       links: [
         {
-          title: 'Why time travel?',
-          href: '/basics/time-travel/why-time-travel',
+          title: 'MCP tools reference',
+          href: '/reference/replay-mcp/tools',
         },
         {
           title: 'How does time travel work?',
-          href: '/basics/time-travel/how-does-time-travel-work',
+          href: '/reference/time-travel/how-does-time-travel-work',
         },
       ],
     },
-  ],
-  reference: [
     {
       title: 'Replay Teams',
       icon: 'person',
@@ -292,14 +292,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       icon: 'settings',
       defaultOpen: true,
       links: [
-        // {
-        //   title: 'Setting up',
-        //   href: '/reference/ci-workflows/setting-up',
-        // },
-        {
-          title: 'Generate API key',
-          href: '/reference/ci-workflows/generate-api-key',
-        },
         {
           title: 'Upload strategies',
           href: '/reference/ci-workflows/upload-strategies',
@@ -323,10 +315,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           title: 'Replay Firefox',
           href: '/reference/replay-runtimes/replay-firefox',
         },
-        {
-          title: 'Replay Node',
-          href: '/reference/replay-runtimes/replay-node',
-        },
       ],
     },
     {
@@ -341,6 +329,18 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         {
           title: 'Uploading source maps',
           href: '/reference/replay-cli/source-maps',
+        },
+      ],
+    },
+    {
+      title: 'API keys and tokens',
+      icon: 'key',
+      defaultOpen: true,
+      links: [
+        {
+          title: 'API keys and tokens',
+          href: '/reference/api-keys',
+          omitFromDocumentTitle: true,
         },
       ],
     },

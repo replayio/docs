@@ -6,13 +6,21 @@ Adding a build step has lots of benefits: performance, security, new language fe
 
 Source maps exist to try and preserve the original debugging experience as best as possible.
 
+<Callout type="note" title="Which source-map setup applies to you?">
+  Uploaded source maps are used by [Replay DevTools](https://app.replay.io) for
+  recordings made with the `replayio` CLI or the Playwright plugin. Replay QA
+  and Replay MCP do not use uploaded maps; they read the maps your deployed app
+  serves through `sourceMappingURL`. For those, see [Publishing with source
+  maps](/basics/replay-qa/source-maps).
+</Callout>
+
 ## Upload Process
 
 For production use cases where sourcemaps may not be exposed publicly, we provide tooling for preemptively uploading sourcemaps to our servers so that when replays are made, they can make use of these maps and you can still debug the recordings with the original source code. We provide both a CLI command and a Webpack plugin to make integrating this into your build process as easy as possible.
 
 ### API Keys
 
-We recommend using the `REPLAY_API_KEY` environment variable to set up the API for use in all of our following examples, but each also allows passing the key directly as an argument. API Keys are available in the [Team Settings](/reference/ci-workflows/generate-api-key) modal.
+We recommend using the `REPLAY_API_KEY` environment variable to set up the API for use in all of our following examples, but each also allows passing the key directly as an argument. See [API keys and tokens](/reference/api-keys) for how to create one in your team settings.
 
 **Be sure to add the `REPLAY_API_KEY` for the workspace to the build and deployment settings for your project**, such as in Vercel or Github Actions - it needs to be available during the build step in order for the upload logic to upload successfully.
 

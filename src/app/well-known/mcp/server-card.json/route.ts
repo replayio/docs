@@ -5,7 +5,7 @@ import { REPLAY_PUBLIC, getSiteOrigin } from '@/lib/agentReadiness'
 /**
  * /.well-known/mcp/server-card.json
  *
- * Advertises the Replay MCP server (https://mcp.replay.io). Schema follows
+ * Advertises the Replay MCP server (REPLAY_PUBLIC.mcpServer). Schema follows
  * the SEP-1649 server-card draft:
  *   https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127
  *
@@ -29,7 +29,7 @@ export function GET() {
         'from any MCP-compatible AI agent. Provides tools for navigating ' +
         'sources, console messages, network requests, and DevTools state.',
       homepage: `${origin}/basics/replay-mcp/overview`,
-      documentation: `${origin}/basics/replay-mcp/quickstart`,
+      documentation: `${origin}/basics/replay-mcp/overview`,
     },
     transport: {
       type: 'streamable-http',

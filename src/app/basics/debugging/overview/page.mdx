@@ -1,0 +1,56 @@
+---
+title: Debugging with Replay
+description: Record your app once, then let a coding agent or Replay DevTools inspect exactly what happened. The same recording engine that powers Replay QA, used directly.
+---
+
+Replay QA records every test run in Replay Browser and analyzes the recording to explain a failure. You can use that same recording and analysis engine yourself, without a QA project: record your app, then inspect the recording with a coding agent through Replay MCP or by hand in Replay DevTools.
+
+A recording captures the browser's execution, not a video. Replaying it re-runs the same code with the same inputs, so anything you could have inspected while the bug was happening can be inspected afterwards: console output, variables at any point, network requests, DOM state, React renders. You can add console logs to code that already ran and see what they would have printed.
+
+## The workflow
+
+<Steps>
+
+## Record
+
+Use the `replayio` CLI to launch Replay Browser against any URL, reproduce the problem, and upload the recording. A coding agent can do this for you with the `replay-cli` skill, and Playwright suites can record every test through the `@replayio/playwright` reporter. See [How to record](/basics/getting-started/record-your-app).
+
+## Investigate with your agent
+
+Connect your agent to the Replay MCP server and hand it the recording. It can read the code that ran, evaluate expressions at any moment, list exceptions and network requests, and analyze React render behavior across the whole recording. See [Replay MCP](/basics/replay-mcp/overview) and the [MCP tools reference](/reference/replay-mcp/tools).
+
+## Or open it in Replay DevTools
+
+Every recording has a URL of the form `https://app.replay.io/recording/<recording-id>`. Opening it loads Replay DevTools: a timeline of the session with console, network, elements, and sources panels, plus React and Redux panels for apps that use them. Console logs you add there appear as if they had always been in the code.
+
+</Steps>
+
+## How this relates to Replay QA
+
+Replay QA does all three steps automatically for each journey it runs and writes the result up as a bug report. Use the tools on this page when you want to record something QA is not testing, such as a bug you can reproduce locally, or when a QA bug report includes a recording and you want your agent or your own eyes on the raw evidence. Replay MCP and the Replay QA MCP server are different servers with different credentials; see [API keys and tokens](/reference/api-keys).
+
+## Source maps
+
+Replay MCP and Replay QA read the source maps your app serves through `sourceMappingURL` comments. Replay DevTools can also use source maps you upload with `replayio upload-source-maps`. If your recording shows minified code, see [Publishing with source maps](/basics/replay-qa/source-maps) and [Uploading source maps](/reference/replay-cli/source-maps).
+
+## Node.js
+
+[Replay Node](/reference/replay-runtimes/replay-node) records Node scripts the same way Replay Browser records web pages. It is built on Node 16 and is not under active development, but it works for scripts that run on that version.
+
+<QuickLinks title="Learn more">
+
+<QuickLink
+  title="How does time travel work?"
+  icon="lightbulb"
+  href="/reference/time-travel/how-does-time-travel-work"
+  description="What Replay records, why replaying is deterministic, and how Replay DevTools answers questions in under a second."
+/>
+
+<QuickLink
+  title="Replay CLI reference"
+  icon="terminal"
+  href="/reference/replay-cli/commands"
+  description="Every replayio command: install the browser, record, list and upload recordings, upload source maps."
+/>
+
+</QuickLinks>

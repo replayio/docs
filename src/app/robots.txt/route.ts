@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 
 import { getSiteOrigin } from '@/lib/agentReadiness'
+import { VISIBLE_PREFIXES } from '@/lib/visibility-paths.mjs'
 
 /**
  * /robots.txt
@@ -52,6 +53,18 @@ export function GET() {
     'FacebookBot',
   ]
 
+  // Visible doc sections are derived from the same allow-list the nav,
+  // search index, and sitemap use, so restoring a page only requires editing
+  // VISIBLE_PREFIXES. Allow rules for a specific prefix win over the broader
+  // Disallow because RFC 9309 matches the longest path.
+  const docRules = [
+    ...VISIBLE_PREFIXES.map((prefix) => `Allow: ${prefix}/`),
+    ...VISIBLE_PREFIXES.map((prefix) => `Allow: ${prefix}$`),
+    'Disallow: /basics/',
+    'Disallow: /learn/',
+    'Disallow: /reference/',
+  ]
+
   const lines: string[] = []
   lines.push('# Replay Docs robots.txt')
   lines.push('# RFC 9309 crawl rules + AI-bot policy + Content-Signal')
@@ -60,10 +73,7 @@ export function GET() {
   // Default rules apply to every UA that doesn't match a more specific block.
   lines.push('User-agent: *')
   lines.push('Allow: /')
-  lines.push('Allow: /basics/replay-qa/')
-  lines.push('Disallow: /basics/')
-  lines.push('Disallow: /learn/')
-  lines.push('Disallow: /reference/')
+  lines.push(...docRules)
   lines.push('Disallow: /api/')
   lines.push('Disallow: /_next/')
   lines.push('Disallow: /agent/') // markdown mirrors are reached via Accept-negotiation
@@ -73,10 +83,7 @@ export function GET() {
   for (const bot of allowedBots) {
     lines.push(`User-agent: ${bot}`)
     lines.push('Allow: /')
-    lines.push('Allow: /basics/replay-qa/')
-    lines.push('Disallow: /basics/')
-    lines.push('Disallow: /learn/')
-    lines.push('Disallow: /reference/')
+    lines.push(...docRules)
     lines.push('Disallow: /api/')
     lines.push('Disallow: /_next/')
     lines.push('')

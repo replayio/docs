@@ -1,13 +1,18 @@
 ---
 title: Replay Node
-description: Replay Node is our alpha NodeJS runtime that is able to record and deterministically replay scripts in the cloud.
+description: Replay Node is an alpha Node.js runtime that records scripts so they can be replayed and inspected the same way as browser recordings.
 image: /images/Node.png
 ---
 
+<Callout type="warning">
+  Replay Node is built on Node 16 and is not under active development. It works
+  for scripts that run on that version, but newer Node releases are not
+  supported.
+</Callout>
+
 ## Basics
 
-When we started Replay, our goal was to make replayable runtimes a reality not just in the browser, but also in backends like NodeJS.
-Replay Node is currently in an alpha state and built on top of v16. With that said, folks use it today to debug programs as intense as the TypeScript compiler, so if you have a difficult NodeJS bug, feel free to give it a try.
+Replay Node applies the same recording approach as Replay Browser to Node.js. Recordings upload with the Replay CLI and open in Replay DevTools or through Replay MCP like any other recording.
 
 ---
 

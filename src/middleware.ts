@@ -36,7 +36,7 @@ function buildLinkHeader(pathname: string): string {
     `</.well-known/agent-skills/index.json>; rel="https://agentskills.io/index"; type="application/json"`,
     `</.well-known/openid-configuration>; rel="http://openid.net/specs/connect/1.0/issuer"; type="application/json"`,
     `</.well-known/oauth-protected-resource>; rel="http://www.iana.org/assignments/relation/oauth-protected-resource"; type="application/json"`,
-    `</reference/test-runners/overview>; rel="service-doc"`,
+    `</basics/replay-mcp/overview>; rel="service-doc"`,
   ]
 
   // Advertise the markdown mirror for this exact route, when one exists,

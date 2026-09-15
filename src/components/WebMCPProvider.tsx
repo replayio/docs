@@ -69,7 +69,7 @@ export function WebMCPProvider() {
         name: 'replay_docs.get_mcp_server_card',
         description:
           'Return the Replay MCP server card describing how to connect to ' +
-          'mcp.replay.io for inspecting Replay recordings.',
+          'the Replay MCP server for inspecting Replay recordings.',
         inputSchema: { type: 'object', properties: {}, required: [] },
         execute: () => fetchJson('/.well-known/mcp/server-card.json'),
       },
@@ -77,14 +77,13 @@ export function WebMCPProvider() {
         name: 'replay_docs.fetch_markdown',
         description:
           'Fetch a markdown mirror of a docs section. Pass a `path` like ' +
-          '"/", "/basics", "/learn", or "/reference".',
+          '"/", "/basics", or "/reference".',
         inputSchema: {
           type: 'object',
           properties: {
             path: {
               type: 'string',
-              description:
-                'Docs path. One of "/", "/basics", "/learn", "/reference".',
+              description: 'Docs path. One of "/", "/basics", "/reference".',
             },
           },
           required: ['path'],

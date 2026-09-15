@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
 import { Logo, Logomark } from '@/components/Logo'
-import { useShowHidden } from '@/components/HiddenPagesToggle'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { HiddenPagesToggle } from '@/components/HiddenPagesToggle'
 import { Navigation } from '@/components/Navigation'
@@ -117,8 +116,6 @@ function SubheaderNavigationLink({
 }
 
 function SubheaderNavigation() {
-  const [showHidden] = useShowHidden()
-
   return (
     <div className="h-pages-nav border-b border-gray-200/80 bg-white dark:border-zinc-800/80 dark:bg-black">
       <div className="container px-0">
@@ -129,13 +126,11 @@ function SubheaderNavigation() {
             baseHref={'/basics'}
             href={'/basics/replay-qa/overview'}
           />
-          {showHidden && (
-            <SubheaderNavigationLink
-              name={'Reference'}
-              baseHref={'/reference'}
-              href={'/reference/test-runners/overview'}
-            />
-          )}
+          <SubheaderNavigationLink
+            name={'Reference'}
+            baseHref={'/reference'}
+            href={'/reference/replay-mcp/tools'}
+          />
         </nav>
       </div>
     </div>

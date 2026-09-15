@@ -6,7 +6,7 @@ description: Which React and Next.js versions work with Replay's React features,
 Replay has two separate sets of React features:
 
 - The **[React DevTools panel](/basics/replay-devtools/framework-devtools/react-panel)** in the Replay DevTools UI lets you inspect the component tree, props, state, and hooks at any point in time. It uses sourcemaps to display original component names, but doesn't depend on specific React version support.
-- The **React analysis layer**, used by [Replay MCP](/basics/replay-mcp/overview) tools and operator pods, provides deeper instrumentation — render tracking, performance profiling, effect analysis, and render cause tracing. This layer works by instrumenting specific functions inside React's source code, which means it needs to be able to read React's original (non-minified) function names. The version compatibility and sourcemap setup on this page apply to these analysis features.
+- The **React analysis layer**, used by [Replay MCP](/basics/replay-mcp/overview) tools and Replay QA, provides deeper instrumentation — render tracking, performance profiling, effect analysis, and render cause tracing. This layer works by instrumenting specific functions inside React's source code, which means it needs to be able to read React's original (non-minified) function names. The version compatibility and sourcemap setup on this page apply to these analysis features.
 
 ## Supported Versions
 
