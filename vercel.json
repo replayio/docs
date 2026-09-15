@@ -17,6 +17,10 @@
       "destination": "/basics/getting-started/record-your-app"
     },
     {
+      "source": "/basics/replay-mcp/quickstart",
+      "destination": "/basics/replay-mcp/overview"
+    },
+    {
       "source": "/legal",
       "destination": "https://www.replay.io/terms-of-service"
     },

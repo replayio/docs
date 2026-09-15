@@ -26,8 +26,7 @@ MCP client) tools to inspect a Replay recording: source code, console output,
 network requests, React component state, and program execution at any point
 in time.
 
-- [Overview](https://docs.replay.io/basics/replay-mcp/overview)
-- [Quickstart](https://docs.replay.io/basics/replay-mcp/quickstart)
+- [Replay MCP: overview and setup](https://docs.replay.io/basics/replay-mcp/overview)
 - [Tools reference](https://docs.replay.io/basics/replay-mcp/tools)
 - Endpoint: `https://dispatch.replay.io/nut/mcp`
 - Server card: https://docs.replay.io/.well-known/mcp/server-card.json

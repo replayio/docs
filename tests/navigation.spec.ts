@@ -20,8 +20,15 @@ test('navigation shows Replay MCP and How to record by default', async ({
 }) => {
   await page.goto('/basics/replay-qa/overview')
   const nav = page.locator('nav')
+  await expect(
+    nav.getByText('Debugging with Replay', { exact: true }),
+  ).toBeVisible()
   await expect(nav.getByText('Replay MCP', { exact: true })).toBeVisible()
   await expect(nav.getByText('How to record', { exact: true })).toBeVisible()
+  await expect(nav.getByText('Quickstart', { exact: true })).not.toBeVisible()
+  await expect(
+    nav.getByText('Getting Started', { exact: true }),
+  ).not.toBeVisible()
 })
 
 test('hidden children of a partially visible section stay hidden', async ({
@@ -35,6 +42,7 @@ test('hidden children of a partially visible section stay hidden', async ({
   ).not.toBeVisible()
 
   await clickHiddenPagesToggle(page)
+  await expect(nav.getByText('Getting Started', { exact: true })).toBeVisible()
   await expect(
     nav.getByText('Record your Playwright test', { exact: true }),
   ).toBeVisible()

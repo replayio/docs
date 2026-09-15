@@ -29,7 +29,7 @@ export function GET() {
         'from any MCP-compatible AI agent. Provides tools for navigating ' +
         'sources, console messages, network requests, and DevTools state.',
       homepage: `${origin}/basics/replay-mcp/overview`,
-      documentation: `${origin}/basics/replay-mcp/quickstart`,
+      documentation: `${origin}/basics/replay-mcp/overview`,
     },
     transport: {
       type: 'streamable-http',

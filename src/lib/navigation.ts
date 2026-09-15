@@ -38,14 +38,33 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
     {
-      title: 'Getting Started',
-      icon: 'home',
+      title: 'Debugging with Replay',
+      icon: 'mcp',
       defaultOpen: true,
       links: [
+        {
+          title: 'Replay MCP',
+          href: '/basics/replay-mcp/overview',
+        },
         {
           title: 'How to record',
           href: '/basics/getting-started/record-your-app',
         },
+        {
+          title: 'MCP tools reference',
+          href: '/basics/replay-mcp/tools',
+        },
+        {
+          title: 'How does time travel work?',
+          href: '/basics/time-travel/how-does-time-travel-work',
+        },
+      ],
+    },
+    {
+      title: 'Getting Started',
+      icon: 'home',
+      defaultOpen: true,
+      links: [
         {
           title: 'Record your Playwright test',
           href: '/basics/getting-started/record-your-playwright-tests',
@@ -87,25 +106,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               href: '/basics/getting-started/record-your-playwright-tests/faq',
             },
           ],
-        },
-      ],
-    },
-    {
-      title: 'Replay MCP',
-      icon: 'mcp',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Overview',
-          href: '/basics/replay-mcp/overview',
-        },
-        {
-          title: 'Quickstart',
-          href: '/basics/replay-mcp/quickstart',
-        },
-        {
-          title: 'Tools Reference',
-          href: '/basics/replay-mcp/tools',
         },
       ],
     },
@@ -233,10 +233,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         {
           title: 'Why time travel?',
           href: '/basics/time-travel/why-time-travel',
-        },
-        {
-          title: 'How does time travel work?',
-          href: '/basics/time-travel/how-does-time-travel-work',
         },
       ],
     },

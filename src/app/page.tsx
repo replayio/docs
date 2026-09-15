@@ -33,7 +33,7 @@ const debuggingCards: CardAttributes[] = [
     title: 'Debug with your agent (Replay MCP)',
     content:
       'Connect Claude Code, Cursor, or any MCP client to a Replay recording and let your agent inspect the exact execution that failed.',
-    href: '/basics/replay-mcp/quickstart',
+    href: '/basics/replay-mcp/overview',
   },
   {
     icon: 'record',
