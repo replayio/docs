@@ -42,7 +42,9 @@ test('hidden children of a partially visible section stay hidden', async ({
   ).not.toBeVisible()
 
   await clickHiddenPagesToggle(page)
-  await expect(nav.getByText('Getting Started', { exact: true })).toBeVisible()
+  await expect(
+    nav.getByRole('button', { name: 'Getting Started' }),
+  ).toBeVisible()
   await expect(
     nav.getByText('Record your Playwright test', { exact: true }),
   ).toBeVisible()
