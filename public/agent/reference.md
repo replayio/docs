@@ -13,19 +13,29 @@ recordings and source maps to https://app.replay.io.
 - [Uploading source maps](https://docs.replay.io/reference/replay-cli/source-maps)
 - Package: https://github.com/replayio/replay-cli/tree/main/packages/replayio
 
-## API keys
+## API keys and tokens
 
-- [Generate an API key](https://docs.replay.io/reference/ci-workflows/generate-api-key)
-  — the app.replay.io team API key used by the CLI, the Playwright plugin,
-  `replayio upload-source-maps`, and the `Authorization` header for Replay MCP.
-  Replay QA uses a separate token created at https://qa.replay.io.
+- [API keys and tokens](https://docs.replay.io/reference/api-keys) — two
+  separate credentials. The app.replay.io API key is used by the CLI, the
+  Playwright plugin, `replayio upload-source-maps`, and the `Authorization`
+  header for Replay MCP. The Replay QA API token (`lqa_...`, from
+  https://qa.replay.io Settings > API) is used by the Replay QA REST API and
+  Replay QA MCP server. They are not interchangeable.
 
-## Replay MCP server
+## Replay MCP server (inspect recordings)
 
 - Endpoint: `https://dispatch.replay.io/nut/mcp`
 - Per-recording endpoint: `https://dispatch.replay.io/nut/recording/<recordingId>/mcp`
 - Server card: https://docs.replay.io/.well-known/mcp/server-card.json
 - Docs: https://docs.replay.io/basics/replay-mcp/overview
+
+## Replay QA API and MCP server (manage QA projects and bugs)
+
+- REST base URL: `https://qa.replay.io/api/v1`
+- OpenAPI spec: https://qa.replay.io/api/v1/openapi.json
+- MCP endpoint: `https://qa.replay.io/api/mcp` (OAuth sign-in or `Authorization: Bearer lqa_...`)
+- OAuth resource metadata: https://qa.replay.io/.well-known/oauth-protected-resource
+- Docs: https://docs.replay.io/basics/replay-qa/agent-integration
 
 ## Frameworks
 

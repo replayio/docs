@@ -14,6 +14,8 @@ This documentation site is the canonical reference for Replay QA. Start here:
 - [Testing a localhost app](https://docs.replay.io/basics/replay-qa/localhost)
 - [CI integration with FRPC](https://docs.replay.io/basics/replay-qa/frpc-ci)
 - [Publishing with source maps](https://docs.replay.io/basics/replay-qa/source-maps)
+- [Driving Replay QA from a coding agent](https://docs.replay.io/basics/replay-qa/agent-integration)
+  — REST API and MCP server for the full create-project → read-bugs → mark-fixed loop
 - [Basics section index](https://docs.replay.io/basics)
 
 Replay QA is built on Replay's recording and time-travel debugging engine. The

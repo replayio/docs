@@ -25,6 +25,13 @@ const cards: CardAttributes[] = [
       'Publish your app with source maps so Replay QA traces failures back to your original source code.',
     href: '/basics/replay-qa/source-maps',
   },
+  {
+    icon: 'terminal',
+    title: 'Drive Replay QA from a coding agent',
+    content:
+      'Use the REST API or MCP server to create projects, read bug reports, and confirm fixes from Claude Code, Cursor, or a script.',
+    href: '/basics/replay-qa/agent-integration',
+  },
 ]
 
 const debuggingCards: CardAttributes[] = [

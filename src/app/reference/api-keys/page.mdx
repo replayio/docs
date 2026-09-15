@@ -1,0 +1,92 @@
+---
+title: API keys and tokens
+description: Replay has two separate credentials. Learn which one each tool needs and how to create, store, and revoke them.
+---
+
+Replay has two separate credentials. They are issued by different apps and are not interchangeable.
+
+| Credential                | Created at                                           | Used by                                                                                                                                                                                                |
+| ------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **app.replay.io API key** | [app.replay.io](https://app.replay.io) team settings | The `replayio` CLI, the `@replayio/playwright` plugin, `replayio upload-source-maps`, CI upload workflows, and the `Authorization` header when connecting to [Replay MCP](/basics/replay-mcp/overview) |
+| **Replay QA API token**   | [qa.replay.io](https://qa.replay.io) Settings > API  | The [Replay QA REST API and Replay QA MCP server](/basics/replay-qa/agent-integration). Always starts with `lqa_`                                                                                      |
+
+If a request is rejected with an authentication error, the first thing to check is that the credential came from the right app.
+
+## app.replay.io API key
+
+This key authenticates anything that uploads recordings or source maps, and lets Replay MCP read recordings that belong to a team.
+
+### Create a key
+
+1. Open [app.replay.io](https://app.replay.io), open your team's settings, and go to **API Keys**.
+2. Give the key a name and the permissions it needs, then click **Add**.
+3. Copy the key. It is shown once.
+
+<Video src="generateApiKey" />
+
+<Callout type="warning" title="Keep your API key safe">
+  Copy and save the key immediately; it is not visible again after you close the
+  settings. Do not commit it to your repository.
+</Callout>
+
+### Revoke a key
+
+The team settings list every active key. Delete any key you no longer need.
+
+<Video src="deleteApiKey" />
+
+### Use the key
+
+The Replay tools all read `REPLAY_API_KEY` from the environment, and each also accepts the key as an argument or option.
+
+<Tabs labels={["macOS/Linux", "Windows"]}>
+
+<Tab>
+
+```sh
+export REPLAY_API_KEY=<Your-API-Key>
+```
+
+</Tab>
+
+<Tab>
+
+```sh
+set REPLAY_API_KEY=<Your-API-Key>
+```
+
+</Tab>
+
+</Tabs>
+
+For local development you can keep the key in a `.env` file loaded with [dotenv](https://www.npmjs.com/package/dotenv). Make sure the file is in `.gitignore`.
+
+```bash fileName=".env"
+REPLAY_API_KEY=<your_api_key>
+```
+
+In CI, store the key as a repository secret. Most providers (for example [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/variables) and [CircleCI](https://circleci.com/docs/env-vars/)) expose secrets to workflows as environment variables.
+
+For Replay MCP, pass the key as the `Authorization` header value in your MCP client configuration. See [Replay MCP](/basics/replay-mcp/overview) for per-client examples.
+
+## Replay QA API token
+
+This token authenticates the Replay QA REST API at `https://qa.replay.io/api/v1` and the Replay QA MCP server at `https://qa.replay.io/api/mcp`. It does not work with the `replayio` CLI or with Replay MCP.
+
+### Create a token
+
+1. Sign in at [qa.replay.io](https://qa.replay.io) and open **Settings**.
+2. In the **API** section, generate a token. Give each script or agent its own named token so you can revoke them independently.
+3. Copy the token. It starts with `lqa_` and is shown once.
+
+### Use the token
+
+Send it as a bearer token on every request:
+
+```
+Authorization: Bearer lqa_your_token_here
+```
+
+The token acts as the user who created it and covers every project that user can access. Tokens are listed and revoked from the same **API** section in Settings.
+
+For MCP clients that support OAuth sign-in, you can connect to the Replay QA MCP server without a token at all; see [Driving Replay QA from a coding agent](/basics/replay-qa/agent-integration).

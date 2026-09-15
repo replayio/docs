@@ -374,7 +374,7 @@
     },
     {
       "source": "/learn-more/workflows",
-      "destination": "/reference/ci-workflows/generate-api-key"
+      "destination": "/reference/api-keys"
     },
     {
       "source": "/learn-more/workflows/documenting-pull-requests",
@@ -903,7 +903,7 @@
     },
     {
       "source": "/ci-workflows/generate-api-key",
-      "destination": "/reference/ci-workflows/generate-api-key"
+      "destination": "/reference/api-keys"
     },
     {
       "source": "/ci-workflows/recording-strategies",
@@ -1123,11 +1123,11 @@
     },
     {
       "source": "/docs/setting-up-a-team-f5bd9ee853814d6f84e23fb535066199#4913df9eb7384a94a23ccbf335189370",
-      "destination": "/reference/ci-workflows/generate-api-key"
+      "destination": "/reference/api-keys"
     },
     {
-      "source": "/reference/api-keys",
-      "destination": "/reference/ci-workflows/generate-api-key"
+      "source": "/reference/ci-workflows/generate-api-key",
+      "destination": "/reference/api-keys"
     },
     {
       "source": "/basics/replay-devtools/mcp",

@@ -35,6 +35,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           title: 'Publishing with source maps',
           href: '/basics/replay-qa/source-maps',
         },
+        {
+          title: 'Driving Replay QA from a coding agent',
+          href: '/basics/replay-qa/agent-integration',
+        },
       ],
     },
     {
@@ -288,14 +292,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       icon: 'settings',
       defaultOpen: true,
       links: [
-        // {
-        //   title: 'Setting up',
-        //   href: '/reference/ci-workflows/setting-up',
-        // },
-        {
-          title: 'Generate API key',
-          href: '/reference/ci-workflows/generate-api-key',
-        },
         {
           title: 'Upload strategies',
           href: '/reference/ci-workflows/upload-strategies',
@@ -337,6 +333,18 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         {
           title: 'Uploading source maps',
           href: '/reference/replay-cli/source-maps',
+        },
+      ],
+    },
+    {
+      title: 'API keys and tokens',
+      icon: 'key',
+      defaultOpen: true,
+      links: [
+        {
+          title: 'API keys and tokens',
+          href: '/reference/api-keys',
+          omitFromDocumentTitle: true,
         },
       ],
     },

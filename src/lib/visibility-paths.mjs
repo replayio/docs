@@ -11,7 +11,7 @@ export const VISIBLE_PREFIXES = [
   '/basics/getting-started/record-your-app',
   '/basics/time-travel/how-does-time-travel-work',
   '/reference/replay-cli',
-  '/reference/ci-workflows/generate-api-key',
+  '/reference/api-keys',
   '/reference/integrations/frameworks-libraries/react-sourcemaps',
 ]
 

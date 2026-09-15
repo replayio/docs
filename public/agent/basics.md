@@ -16,6 +16,12 @@ each bug it finds.
 - [Testing a localhost app](https://docs.replay.io/basics/replay-qa/localhost)
 - [CI integration with FRPC](https://docs.replay.io/basics/replay-qa/frpc-ci)
 - [Publishing with source maps](https://docs.replay.io/basics/replay-qa/source-maps)
+- [Driving Replay QA from a coding agent](https://docs.replay.io/basics/replay-qa/agent-integration)
+  — REST API (`https://qa.replay.io/api/v1`, OpenAPI at
+  `/api/v1/openapi.json`) and MCP server (`https://qa.replay.io/api/mcp`) for
+  creating projects, reading bug reports, and marking fixes. Auth: `lqa_` token
+  from Settings > API, or OAuth sign-in for MCP.
+  — every bug links to a Replay recording; open it in Replay DevTools or via Replay MCP.
 
 Launch Replay QA: https://qa.replay.io
 
