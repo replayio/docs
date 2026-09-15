@@ -23,7 +23,7 @@ Replay QA runs against your deployed app. When source maps are available, every 
 
 **Actionable root causes.** [Bug reports](/reference/replay-qa/bug-reports) cite the file and line responsible for a failure. Source maps ensure those references point to the right place in your codebase, so a coding agent or developer can go straight to the fix.
 
-**Better React analysis.** Replay QA's React analysis layer — render tracking, performance profiling, effect analysis, render cause tracing — works without source maps for React itself. Your application's source maps let it report real component names and file locations instead of compiled identifiers. Results are best on React 19; React 18 users should upgrade if they can, or see the fallback below.
+**Better React analysis.** Replay QA's React analysis layer — render tracking, performance profiling, effect analysis, render cause tracing — works without source maps for React itself. Your application's source maps let it report real component names and file locations instead of compiled identifiers. See [React support](#react-support) below.
 
 ## Configuring your build
 
@@ -74,9 +74,11 @@ module.exports = {
 
 Deploy with these settings and Replay QA will pick up the source maps on its own.
 
-### React 18 — upgrade to React 19 if you can
+### React support
 
-React 19 ships unminified production artifacts, so standard source maps work and React analysis is most accurate. React 18 shipped pre-minified builds with no source maps. Replay's React analysis still runs against React 18, but if you cannot upgrade and want the fullest results, the [`@acemarke/react-prod-sourcemaps`](https://github.com/markerikson/react-prod-sourcemaps) package provides pre-built source maps for React 18's production artifacts and a build plugin that wires them in. See [React Version Support](/reference/integrations/frameworks-libraries/react-sourcemaps) for setup instructions.
+Replay's React analysis finds its instrumentation points by parsing the generated React code in your bundle, so it does not need React's own source maps or any extra build plugin. It supports React 18 and 19, including Next.js 13.5 through 16, across esbuild, webpack, Vite, Rollup, and Rolldown builds, minified or not. React 17 and older are not supported.
+
+Your application's source maps are still what turn `a()` in `chunk-abc123.js` into a component name and a file path, so the settings above are all you need to configure.
 
 ## Getting your coding agent to set this up
 
@@ -90,9 +92,7 @@ Check which bundler or framework is in use (Next.js, Vite, Webpack, etc.) and ap
 - Vite: set `build.sourcemap: true` in vite.config.js
 - Webpack: set `devtool: 'source-map'` in webpack.config.js
 
-Replay QA discovers publicly served source maps automatically — no upload step is needed.
-
-If the project uses React 18 (not React 19) and upgrading is not an option, also install @acemarke/react-prod-sourcemaps and configure it per the package README, so Replay's React analysis can read React's internal function names.
+Replay QA discovers publicly served source maps automatically — no upload step is needed. React itself needs no extra setup.
 
 Make the minimum changes needed — don't restructure the build config beyond what's required.
 ```

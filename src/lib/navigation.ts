@@ -165,92 +165,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
       ],
     },
-    {
-      title: 'Replay DevTools',
-      icon: 'browserdevtools',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Overview',
-          href: '/basics/replay-devtools/overview',
-        },
-        {
-          title: 'Time Travel DevTools',
-          href: '/basics/replay-devtools/time-travel-devtools/live-console-logs',
-          links: [
-            {
-              title: 'Live Console logs',
-              href: '/basics/replay-devtools/time-travel-devtools/live-console-logs',
-            },
-            {
-              title: 'Collaborative DevTools',
-              href: '/basics/replay-devtools/time-travel-devtools/collaborative-devtools',
-            },
-            {
-              title: 'Timeline annotation',
-              href: '/basics/replay-devtools/time-travel-devtools/timeline-annotation',
-            },
-            {
-              title: 'Jump to event',
-              href: '/basics/replay-devtools/time-travel-devtools/jump-to-event',
-            },
-            {
-              title: 'Focus window',
-              href: '/basics/replay-devtools/time-travel-devtools/focus-window',
-            },
-          ],
-        },
-        {
-          title: 'Framework DevTools',
-          href: '/basics/replay-devtools/framework-devtools/react-panel',
-          links: [
-            {
-              title: 'React Panel',
-              href: '/basics/replay-devtools/framework-devtools/react-panel',
-            },
-            {
-              title: 'Redux Panel',
-              href: '/basics/replay-devtools/framework-devtools/redux-panel',
-            },
-            {
-              title: 'Playwright Timeline',
-              href: '/basics/replay-devtools/framework-devtools/playwright-timeline',
-            },
-          ],
-        },
-        {
-          title: 'Browser DevTools',
-          href: '/basics/replay-devtools/browser-devtools/elements-panel',
-          links: [
-            {
-              title: 'Elements Panel',
-              href: '/basics/replay-devtools/browser-devtools/elements-panel',
-            },
-            {
-              title: 'Network Monitor',
-              href: '/basics/replay-devtools/browser-devtools/network-monitor',
-            },
-            {
-              title: 'Console Panel',
-              href: '/basics/replay-devtools/browser-devtools/console',
-            },
-
-            {
-              title: 'Source Viewer',
-              href: '/basics/replay-devtools/browser-devtools/source-viewer',
-            },
-            {
-              title: 'Pause Panel',
-              href: '/basics/replay-devtools/browser-devtools/pause-panel',
-            },
-            {
-              title: 'Replay Viewer',
-              href: '/basics/replay-devtools/browser-devtools/replay-viewer',
-            },
-          ],
-        },
-      ],
-    },
   ],
   reference: [
     {
@@ -285,6 +199,32 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           title: 'How does time travel work?',
           href: '/reference/time-travel/how-does-time-travel-work',
         },
+        {
+          title: 'Replay DevTools',
+          defaultOpen: true,
+          links: [
+            {
+              title: 'Overview',
+              href: '/reference/replay-devtools/overview',
+            },
+            {
+              title: 'Time travel tools',
+              href: '/reference/replay-devtools/time-travel-tools',
+            },
+            {
+              title: 'Browser panels',
+              href: '/reference/replay-devtools/browser-panels',
+            },
+            {
+              title: 'Framework panels',
+              href: '/reference/replay-devtools/framework-panels',
+            },
+            {
+              title: 'Sharing and teams',
+              href: '/reference/replay-devtools/sharing-and-teams',
+            },
+          ],
+        },
       ],
     },
     {
@@ -292,14 +232,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       icon: 'person',
       defaultOpen: true,
       links: [
-        // {
-        //   title: 'Setting up a team',
-        //   href: '/reference/replay-teams/setting-up-a-team',
-        // },
-        {
-          title: 'Managing replays',
-          href: '/reference/replay-teams/managing-replays',
-        },
         {
           title: 'Billing',
           href: '/reference/replay-teams/billing',
@@ -419,10 +351,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
             {
               title: 'NextJS',
               href: '/reference/integrations/frameworks-libraries/nextjs',
-            },
-            {
-              title: 'React Version Support',
-              href: '/reference/integrations/frameworks-libraries/react-sourcemaps',
             },
           ],
         },

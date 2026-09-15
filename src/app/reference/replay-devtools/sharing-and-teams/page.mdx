@@ -1,0 +1,48 @@
+---
+title: Sharing and teams
+description: Share a recording with a person or a team, move recordings between teams, create a team, and manage team API keys.
+image: /images/create-team.png
+---
+
+Recordings belong either to you or to a team. Team recordings can be opened by any team member and are where the team's API keys upload to. The **Share** button in the top right of a recording controls who else can open it.
+
+## Share a recording with a person
+
+1. Click **Share** in the top right of the recording.
+2. Type an email address into the **Add People** field.
+3. Press Enter.
+
+<Figure
+  alt="Sharing a recording"
+  src="/images/sharing.png"
+  height={10}
+  width={640}
+/>
+
+The recording URL itself carries your current position and open panels, so once someone has access, sending them the URL from your address bar shows them exactly what you were looking at. See [Collaborating on a recording](/reference/replay-devtools/time-travel-tools#collaborating-on-a-recording).
+
+## Move a recording to another team
+
+1. Click **Share** in the top right of the recording.
+2. Open the **Team** dropdown.
+3. Select the team.
+
+Recordings uploaded with a team's API key land in that team automatically.
+
+## Create a team
+
+1. Open the [Replay app](https://app.replay.io).
+2. Click **Add a new team**.
+3. Name the team.
+4. Invite members by email address or with the invite link.
+
+<Figure
+  alt="Dashboard"
+  src="/images/home-dashboard.png"
+  height={440}
+  width={870}
+/>
+
+## Team API keys
+
+A team API key uploads recordings and source maps into the team from CI or from a coding agent, and authorizes [Replay MCP](/basics/replay-mcp/overview) to read the team's recordings. Creating and using keys is covered in [API keys and tokens](/reference/api-keys). This is the `app.replay.io` API key; Replay QA uses a separate token, described on the same page.

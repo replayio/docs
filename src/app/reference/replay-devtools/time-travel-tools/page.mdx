@@ -1,0 +1,138 @@
+---
+title: Time travel tools
+description: Console logs after the fact, jumping to any event, the focus window, and comments pinned to a point in time. The Replay DevTools features that only work because the session is replayed, not live.
+---
+
+Every panel in Replay DevTools is backed by a browser that can re-run the recorded session to any point. The features on this page are the ones that come directly from that: they let you ask a question about a moment that already happened and get the answer without reproducing anything.
+
+## Add console logs on the fly
+
+Click a line of code in the Sources panel, type an expression, and press Enter. The messages appear in the Console as if the log statement had always been there. The replaying browser pauses at every time that line ran, evaluates the expression, and moves on, so you see the value at each execution, not just the latest one.
+
+<Video src="consoleLogs" />
+
+### Click to add a console log
+
+Hover on a line and click the `+` in the gutter. The editor has autocomplete and syntax checking for the variables in scope at that line.
+
+### Jump to message
+
+Each logged message has a jump button that pauses the replay at the execution that produced it, so you can inspect the rest of the application state at that point.
+
+### Prefix messages with badges
+
+Give a log a colored badge to tell its messages apart in a long Console.
+
+### Comment on messages
+
+Leave a comment on a message to bookmark that execution point. The comment links back to the line of code and the moment it ran.
+
+### Filter messages by a condition
+
+Add a condition to a log and only executions where it evaluates truthy produce a message.
+
+## Jump to an event
+
+Breakpoints show you application state at one point in time. Console logs show how state changes across time. In Replay you use both: add a log to see the pattern, then jump to the execution that looks wrong and inspect it.
+
+<Video src="visualize" />
+
+### Jump to a Console message
+
+Jump to any Console message's execution point, inspect the application state there, and evaluate expressions in the terminal.
+
+### Jump to a Playwright test step
+
+Jump from a test step's click or keypress into the event handler in your app that received it. See [Framework panels](/reference/replay-devtools/framework-panels#playwright-timeline).
+
+### Jump to a Redux dispatch
+
+Jump to the `dispatch` call for any action and inspect the state inside the thunk or handler that dispatched it.
+
+### Jump to a Network request
+
+Jump to the `fetch` call that started any request and inspect the state in the function that made it.
+
+### Hover on expressions
+
+While paused, hover an expression in the Sources panel to see its value and expand its properties.
+
+### Inspect object properties as they were
+
+Chrome DevTools shows you an object's properties as they are now when you expand it in the Console, not as they were when it was logged, because it cannot serialize the values at log time. Replay shows the values at the point in time the message was logged.
+
+### See which props triggered a render
+
+In the React panel, props, state, and hook values that changed since the previous render are highlighted. See [Framework panels](/reference/replay-devtools/framework-panels#react-panel).
+
+### Scrub through function execution
+
+When you are paused inside a function with many branches and loops, the frame timeline in the Pause panel lets you scrub through that function's execution and see the path it took.
+
+## Focus window
+
+Bisection is the fastest way to find where a value went wrong, and time travel makes a recording bisectable: every replay of the session is identical, and any two points in time can be compared. The focus window narrows the range of the recording that DevTools looks at. Console messages, hit counts, and events outside the window are hidden, so you can tighten the window step by step until only the code that corrupted the data is left.
+
+For example, a button ends up disabled because it received invalid data. The React panel shows the component rendered 20 times and the button became disabled on the fifteenth render. Set the focus window from the fourteenth render to the fifteenth, and every console log you add reports only what happened in between.
+
+<Video src="bisect" />
+
+### Set the focus window from the timeline
+
+Drag the handles on the timeline to set the window from what you see in the video.
+
+### Set the focus window from the Console
+
+Anchor the start or end of the window to a Console message from that message's menu.
+
+### Set the focus window from the Events timeline
+
+Anchor the start or end of the window to a user action.
+
+### Set the focus window from a Playwright test
+
+Opening a Playwright test recording sets the focus window to that test automatically. Use the step list to narrow it further to the steps you care about.
+
+## Comments and annotations
+
+A comment in Replay is a pin at a point in time, attached to a specific thing: a line of code at a specific execution, a Console message, a Network request, or a spot in the video. Comments support Markdown and `@`-mentions, and anyone who opens the comment is taken to the same execution point. Use them to journal an investigation, to map the path from the visible symptom back to the root cause, or to ask a teammate to look at exactly the moment you are looking at.
+
+<Video src="annotate" />
+
+### Comment on a line of code
+
+Right-click a line and choose **Add comment**, or add a console log and click **Add comment** on it. A comment left while paused on the line is attached to that execution point, so reopening it restores the application state you were looking at.
+
+### Comment on a console message
+
+Bookmarks the message so you can come back to it and inspect the state at that point.
+
+### Comment on a Network request
+
+Bookmarks the request so you can come back to its headers, bodies, and the code that sent it. The **Add comment** button is in the top right of the request details pane.
+
+### Comment in the video
+
+Click in the video player to start a comment at the current time.
+
+### Mention team members
+
+`@`-mention a teammate to notify them. Comments persist, so they can pick it up when they have time.
+
+### Add Markdown notes
+
+Comments support Markdown: code blocks, emphasis, and links. Paste a link to another recording, or to a screen recording, to reference a comparison point.
+
+## Collaborating on a recording
+
+Because the recording replays deterministically for everyone, a teammate can open it later and see exactly what you saw, paused at the same point, without a call or a reproduction on their machine.
+
+<Video src="addingAComment" />
+
+### Shareable URLs
+
+The recording URL includes the current execution point and open panels, so copying it from the address bar shares your exact view. Embed previews work in Slack, Discord, and X. To let someone outside your team open a team recording, use the Share dialog; see [Sharing and teams](/reference/replay-devtools/sharing-and-teams).
+
+### Shared console logs
+
+Console logs and breakpoints added by teammates are saved with the recording. In the Pause panel you can see theirs and turn them back on.

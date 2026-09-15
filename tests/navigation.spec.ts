@@ -76,7 +76,25 @@ test('reference tab opens on the Debugging with Replay section', async ({
   await expect(
     nav.getByText('How does time travel work?', { exact: true }),
   ).toBeVisible()
+  await expect(
+    nav.getByRole('button', { name: 'Replay DevTools' }),
+  ).toBeVisible()
+  await expect(
+    nav.getByText('Time travel tools', { exact: true }),
+  ).toBeVisible()
   await expect(nav.getByText('Replay Teams', { exact: true })).not.toBeVisible()
+})
+
+test('Replay DevTools pages expand their group', async ({ page }) => {
+  await page.goto('/reference/replay-devtools/browser-panels')
+  const nav = page.locator('nav')
+  await expect(nav.getByText('Browser panels', { exact: true })).toBeVisible()
+  await expect(
+    nav.getByText('Sharing and teams', { exact: true }),
+  ).toBeVisible()
+  await expect(
+    nav.getByText('Managing replays', { exact: true }),
+  ).not.toBeVisible()
 })
 
 test('hidden children of a partially visible section stay hidden', async ({
@@ -127,9 +145,9 @@ test('navigation expanding works for internal pages when enabled', async ({
   const nav = page.locator('nav')
 
   await clickHiddenPagesToggle(page)
-  await nav.getByText('Time Travel DevTools').click()
+  await nav.getByText('Record your Playwright test').click()
   await expect(
-    nav.getByText('Live Console logs', { exact: true }),
+    nav.getByText('Recording Playwright core', { exact: true }),
   ).toBeVisible()
 })
 

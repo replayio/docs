@@ -49,9 +49,29 @@ recordings and source maps to https://app.replay.io.
 - Reference: https://docs.replay.io/reference/replay-qa/api
 - How-to: https://docs.replay.io/basics/replay-qa/agent-integration
 
-## Frameworks
+## Replay DevTools (inspect recordings by hand)
 
-- [React version support and source maps](https://docs.replay.io/reference/integrations/frameworks-libraries/react-sourcemaps)
+Open any recording at `https://app.replay.io/recording/<recordingId>`.
+
+- [Overview](https://docs.replay.io/reference/replay-devtools/overview) —
+  opening a recording, Viewer vs DevTools mode, a first walkthrough.
+- [Time travel tools](https://docs.replay.io/reference/replay-devtools/time-travel-tools) —
+  console logs added after the fact, jump to any event, focus window,
+  comments pinned to a point in time.
+- [Browser panels](https://docs.replay.io/reference/replay-devtools/browser-panels) —
+  viewer, Console, Sources, Pause, Elements, Network.
+- [Framework panels](https://docs.replay.io/reference/replay-devtools/framework-panels) —
+  React, Redux, Playwright steps.
+- [Sharing and teams](https://docs.replay.io/reference/replay-devtools/sharing-and-teams) —
+  share a recording, move it between teams, create a team, team API keys.
+
+## React support
+
+Replay's React analysis (Replay QA, Replay MCP, and the React panel) reads
+React's generated code directly. It supports React 18 and 19, including
+Next.js 13.5 through 16, with no React source maps or extra build plugin.
+Your application's own source maps improve component and file names. See
+https://docs.replay.io/basics/replay-qa/source-maps#react-support.
 
 ## Public APIs
 
