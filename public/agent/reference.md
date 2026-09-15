@@ -24,7 +24,7 @@ recordings and source maps to https://app.replay.io.
 - [Uploading source maps](https://docs.replay.io/reference/replay-cli/source-maps)
 - Package: https://github.com/replayio/replay-cli/tree/main/packages/replayio
 
-## API keys and tokens
+## APIs and credentials
 
 - [API keys and tokens](https://docs.replay.io/reference/api-keys) — two
   separate credentials. The app.replay.io API key is used by the CLI, the
@@ -32,6 +32,13 @@ recordings and source maps to https://app.replay.io.
   header for Replay MCP. The Replay QA API token (`lqa_...`, from
   https://qa.replay.io Settings > API) is used by the Replay QA REST API and
   Replay QA MCP server. They are not interchangeable.
+- [Replay APIs](https://docs.replay.io/reference/replay-apis) — Replay MCP,
+  GraphQL, Replay Protocol, Replay Driver, and the `.well-known` discovery URLs.
+  - Replay Protocol (WebSocket, `wss://dispatch.replay.io`): https://static.replay.io/protocol/tot/
+  - GraphQL API (team metadata): `POST https://api.replay.io/v1/graphql`
+  - Replay Driver (record non-browser apps): https://static.replay.io/driver
+  - API catalog: https://docs.replay.io/.well-known/api-catalog
+  - All of the above use an app.replay.io API key as `Authorization: Bearer`.
 
 ## Replay MCP server (inspect recordings)
 
@@ -73,11 +80,21 @@ Next.js 13.5 through 16, with no React source maps or extra build plugin.
 Your application's own source maps improve component and file names. See
 https://docs.replay.io/basics/replay-qa/source-maps#react-support.
 
-## Public APIs
+## Replay Browser
 
-- Replay Protocol docs: https://static.replay.io/protocol/tot/
-- GraphQL API: https://api.replay.io/v1/graphql
-- API catalog: https://docs.replay.io/.well-known/api-catalog
+- [Replay Browser](https://docs.replay.io/reference/replay-runtimes/replay-chrome) —
+  Chromium 108 fork; Linux x86-64 and macOS; small recording overhead; WebGL
+  and Web Audio unsupported.
+- [Replay Node](https://docs.replay.io/reference/replay-runtimes/replay-node) —
+  Node 16 build, not under active development.
+
+## Security and privacy
+
+- [Security practices](https://docs.replay.io/reference/security-and-privacy/security-practices) —
+  SOC 2 Type 2 (Security, Confidentiality, Availability), isolated replay
+  containers, SSO/IAM roles, vulnerability scanning, security@replay.io.
+- [Privacy principles](https://docs.replay.io/reference/security-and-privacy/privacy-principles) —
+  private by default, no employee access, encrypted at rest, delete any time.
 
 ## Authentication
 

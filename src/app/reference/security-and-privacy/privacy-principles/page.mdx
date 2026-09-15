@@ -1,13 +1,16 @@
 ---
 title: Privacy principles
+description: The commitments Replay makes about who can see your recordings and what happens to your data.
 ---
 
-We know that in order for Replay to become your daily debugging tool we need to earn your trust. Here are a couple of our commitments:
+A recording is a complete capture of what your app did in a browser session, so it can only be useful if you trust who can see it. These are our commitments:
 
-1.  **Private by default.** You can always opt-into making replays public and sharing them with teams and collaborators, but replays default to private.
+1. **Private by default.** Recordings are private when created. You choose when to make one public or share it with a team or collaborator.
 
-2.  **No god mode.** We know it’s become common to let employees log into user accounts, so it’s important for us to state clearly that we do not have a “god” mode. The only way we can access a replay is if you share it with us.
+2. **No "god mode".** Replay employees cannot log into your account or open your recordings. The only way we can see a recording is if you share it with us.
 
-3.  **Browser privacy model.** When you’re debugging a replay, we run the browser in a secure sandbox that only trusted users can access. For more information, see our [security practices](/reference/security-and-privacy/security-practices).
+3. **Isolated replay.** When you debug a recording, the replayed browser runs in a sandbox with no live network or filesystem access, reachable only by users you have shared the recording with. See [security practices](/reference/security-and-privacy/security-practices) for how that isolation works.
 
-4.  **You own your data.** Replays are encrypted at rest and only available to trusted users. You can delete your own data at any point.
+4. **You own your data.** Recordings are encrypted at rest and available only to users you have granted access. You can delete your recordings at any time.
+
+The same applies to Replay QA: the recordings, journeys, and bug reports in a QA project are visible to that project's members. See [Replay QA bug reports](/reference/replay-qa/bug-reports) for what a report contains.

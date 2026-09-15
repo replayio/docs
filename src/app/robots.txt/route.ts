@@ -61,7 +61,6 @@ export function GET() {
     ...VISIBLE_PREFIXES.map((prefix) => `Allow: ${prefix}/`),
     ...VISIBLE_PREFIXES.map((prefix) => `Allow: ${prefix}$`),
     'Disallow: /basics/',
-    'Disallow: /learn/',
     'Disallow: /reference/',
   ]
 

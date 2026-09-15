@@ -15,12 +15,15 @@ export const VISIBLE_PREFIXES = [
   '/reference/time-travel/how-does-time-travel-work',
   '/reference/replay-devtools',
   '/reference/replay-cli',
+  '/reference/replay-runtimes/replay-chrome',
   '/reference/replay-runtimes/replay-node',
   '/reference/api-keys',
+  '/reference/replay-apis',
+  '/reference/security-and-privacy',
 ]
 
 /** Doc sections that may contain hidden pages. */
-const DOC_SECTION_PREFIXES = ['/basics/', '/learn/', '/reference/']
+const DOC_SECTION_PREFIXES = ['/basics/', '/reference/']
 
 function normalizePath(pathname) {
   if (!pathname || pathname === '/') return pathname
@@ -35,7 +38,7 @@ function matchesVisiblePrefix(pathname) {
 }
 
 /**
- * True when a path lives under /basics/, /learn/, or /reference/ but is not
+ * True when a path lives under /basics/ or /reference/ but is not
  * under one of VISIBLE_PREFIXES.
  */
 export function isHiddenPath(pathname) {

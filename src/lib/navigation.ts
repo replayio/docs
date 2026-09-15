@@ -10,7 +10,7 @@ export type NavigationItem = {
   defaultOpen?: boolean
 }
 
-type NavigationNames = 'basics' | 'learn' | 'reference'
+type NavigationNames = 'basics' | 'reference'
 
 export const navigation: Record<NavigationNames, NavigationItem[]> = {
   basics: [
@@ -201,7 +201,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
         {
           title: 'Replay DevTools',
-          defaultOpen: true,
           links: [
             {
               title: 'Overview',
@@ -228,79 +227,12 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
     {
-      title: 'Replay Teams',
-      icon: 'person',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Billing',
-          href: '/reference/replay-teams/billing',
-        },
-        {
-          title: 'Enterprise security controls',
-          href: '/reference/replay-teams/enterprise-security-controls',
-        },
-        {
-          title: 'Okta integration',
-          href: '/reference/replay-teams/okta-integration',
-        },
-      ],
-    },
-    {
-      title: 'Test Runners',
-      omitFromDocumentTitle: true,
-      icon: 'commands',
-      defaultOpen: true,
-      links: [
-        { title: 'Overview', href: '/reference/test-runners/overview' },
-        { title: 'Selenium', href: '/reference/test-runners/selenium' },
-        {
-          title: 'WebdriverIO',
-          href: '/reference/test-runners/webdriver-io',
-        },
-        {
-          title: 'Puppeteer',
-          href: '/reference/test-runners/puppeteer',
-        },
-      ],
-    },
-    {
-      title: 'CI Workflows',
-      icon: 'settings',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Upload strategies',
-          href: '/reference/ci-workflows/upload-strategies',
-        },
-        {
-          title: 'GitHub upload action',
-          href: '/reference/ci-workflows/github-action-upload',
-        },
-      ],
-    },
-    {
-      title: 'Replay Runtimes',
-      icon: 'replaychrome',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Replay Chrome',
-          href: '/reference/replay-runtimes/replay-chrome',
-        },
-        {
-          title: 'Replay Firefox',
-          href: '/reference/replay-runtimes/replay-firefox',
-        },
-      ],
-    },
-    {
       title: 'Replay CLI',
       icon: 'cli',
       defaultOpen: true,
       links: [
         {
-          title: 'Replay CLI',
+          title: 'Commands',
           href: '/reference/replay-cli/commands',
         },
         {
@@ -310,63 +242,33 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
     {
-      title: 'API keys and tokens',
+      title: 'APIs and credentials',
       icon: 'key',
       defaultOpen: true,
       links: [
         {
           title: 'API keys and tokens',
           href: '/reference/api-keys',
-          omitFromDocumentTitle: true,
+        },
+        {
+          title: 'Replay APIs',
+          href: '/reference/replay-apis',
         },
       ],
     },
     {
-      title: 'Integrations',
-      icon: 'integrations',
+      title: 'Replay Browser',
+      icon: 'replaychrome',
       defaultOpen: true,
       links: [
         {
-          title: 'Replay APIs',
-          href: '/reference/integrations/replay-apis/graphql-api',
-          links: [
-            {
-              title: 'GraphQL API',
-              href: '/reference/integrations/replay-apis/graphql-api',
-            },
-            {
-              title: 'Replay Protocol',
-              href: '/reference/integrations/replay-apis/replay-protocol',
-            },
-            {
-              title: 'Replay Driver',
-              href: '/reference/integrations/replay-apis/replay-driver',
-            },
-          ],
+          title: 'Replay Browser',
+          href: '/reference/replay-runtimes/replay-chrome',
+          omitFromDocumentTitle: true,
         },
         {
-          title: 'Frameworks & libraries',
-          href: '/reference/integrations/frameworks-libraries/nextjs',
-          links: [
-            {
-              title: 'NextJS',
-              href: '/reference/integrations/frameworks-libraries/nextjs',
-            },
-          ],
-        },
-        {
-          title: '3rd Party integrations',
-          href: '/reference/integrations/3rd-party-integrations/github-embeds',
-          links: [
-            {
-              title: 'GitHub Embeds',
-              href: '/reference/integrations/3rd-party-integrations/github-embeds',
-            },
-            {
-              title: 'Loom Embeds',
-              href: '/reference/integrations/3rd-party-integrations/loom-embeds',
-            },
-          ],
+          title: 'Replay Node',
+          href: '/reference/replay-runtimes/replay-node',
         },
       ],
     },
@@ -386,62 +288,34 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
     {
-      title: 'Additional reference',
-      icon: 'overview',
+      title: 'Internal',
+      icon: 'settings',
       defaultOpen: true,
       links: [
         {
-          title: 'Advanced settings',
-          href: '/reference/additional-content/advanced-settings',
-        },
-      ],
-    },
-  ],
-  learn: [
-    {
-      title: 'Replay course',
-      icon: 'university',
-      href: '/learn/replay-course',
-    },
-    {
-      title: 'Examples',
-      icon: 'additionalcontent',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Playwright',
-          href: '/learn/examples/playwright',
+          title: 'Enterprise security controls',
+          href: '/reference/replay-teams/enterprise-security-controls',
         },
         {
-          title: 'Next.js',
-          href: '/learn/examples/nextjs',
+          title: 'Test runners overview',
+          href: '/reference/test-runners/overview',
+        },
+        { title: 'Selenium', href: '/reference/test-runners/selenium' },
+        {
+          title: 'WebdriverIO',
+          href: '/reference/test-runners/webdriver-io',
         },
         {
-          title: 'Vercel',
-          href: '/learn/examples/vercel',
-        },
-      ],
-    },
-    {
-      title: 'Comparisons',
-      icon: 'sort',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Playwright',
-          href: '/learn/comparisons/playwright',
+          title: 'Puppeteer',
+          href: '/reference/test-runners/puppeteer',
         },
         {
-          title: `Chrome Recorder`,
-          href: '/learn/comparisons/chrome',
+          title: 'Upload strategies',
+          href: '/reference/ci-workflows/upload-strategies',
         },
         {
-          title: 'Loom',
-          href: '/learn/comparisons/loom',
-        },
-        {
-          title: 'Browser DevTools',
-          href: '/learn/comparisons/devtools',
+          title: 'GitHub upload action',
+          href: '/reference/ci-workflows/github-action-upload',
         },
       ],
     },

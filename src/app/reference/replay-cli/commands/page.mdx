@@ -1,7 +1,9 @@
 ---
-title: Replay CLI
-description: Learn how to upload, remove and view your recordings using CLI
+title: Replay CLI commands
+description: Install the replayio CLI and use it to record, list, upload, and remove recordings and to upload source maps.
 ---
+
+The `replayio` CLI installs Replay Browser, records sessions from the terminal, and uploads recordings so they can be opened in [Replay DevTools](/reference/replay-devtools/overview) or analyzed with [Replay MCP](/basics/replay-mcp/overview). For the walkthrough, see [How to record](/basics/getting-started/record-your-app); this page lists every command.
 
 ## Installation
 
@@ -64,18 +66,20 @@ Replay CLI requires you to log in when uploading your recordings. In a local env
 
 ## Available Commands
 
-| Command                                    | Arguments    | Options                                                           |
-| ------------------------------------------ | ------------ | ----------------------------------------------------------------- |
-| [`info`](#info')                           | –            | –                                                                 |
-| [`list`](#list')                           | –            | `--json`                                                          |
-| [`login`](#login)                          | –            | –                                                                 |
-| [`logout`](#logout)                        | –            | –                                                                 |
-| [`record`](#record)                        | `[url]`      | –                                                                 |
-| [`remove`](#remove)                        | `[ids...]`   | `-a`, `--all`                                                     |
-| [`update`](#update)                        | –            | –                                                                 |
-| [`upload`](#upload)                        | `[ids...]`   | –                                                                 |
-| [`upload-source-maps`](#upload-sourcemaps) | `<paths...>` | `-g`, `--group`, `-x`, `--extensions`, `-i`, `--ignore`, `--root` |
-| [`help`](#help)                            | –            | –                                                                 |
+| Command                                     | Arguments    | Options                                                           |
+| ------------------------------------------- | ------------ | ----------------------------------------------------------------- |
+| [`info`](#info)                             | –            | –                                                                 |
+| [`list`](#list)                             | –            | `--json`                                                          |
+| [`login`](#login)                           | –            | –                                                                 |
+| [`logout`](#logout)                         | –            | –                                                                 |
+| [`whoami`](#whoami)                         | –            | –                                                                 |
+| [`open`](#open)                             | `[url]`      | –                                                                 |
+| [`record`](#record)                         | `[url]`      | `--headless`                                                      |
+| [`remove`](#remove)                         | `[ids...]`   | `-a`, `--all`                                                     |
+| [`update`](#update)                         | –            | –                                                                 |
+| [`upload`](#upload)                         | `[ids...]`   | `-a`, `--all`, `--no-presigned`                                   |
+| [`upload-source-maps`](#upload-source-maps) | `<paths...>` | `-g`, `--group`, `-x`, `--extensions`, `-i`, `--ignore`, `--root` |
+| [`help`](#help)                             | –            | –                                                                 |
 
 You can pass `-h` or `--help` option into any of the commands to get more info.
 
@@ -84,11 +88,12 @@ You can pass `-h` or `--help` option into any of the commands to get more info.
 Displays information about installed Replay dependencies. This includes version of the Replay CLI package as well as the Replay Browser information.
 
 ```sh
-Currently using replayio@1.0.2
+Currently using replayio@1.8.2
 
 Replay Chromium
-• Release date: 4/11/2024
+• Release date: 8/8/2026
 • Forked version: 108.0.0
+• Build id: linux-chromium-20260808-3aefa452b8bf-33a69264625e
 ```
 
 ### list
@@ -127,6 +132,24 @@ You are now signed out but still authenticated via
 the REPLAY_API_KEY env variable
 ```
 
+### whoami
+
+Prints the account you are logged in as, or the team your `REPLAY_API_KEY` belongs to. Useful for checking which credential the CLI will upload with.
+
+---
+
+### open
+
+Launches Replay Browser with recording disabled. Use this to check that a site loads and behaves normally in Replay Browser before you record it, or when you want the browser without the recording overhead.
+
+#### Arguments
+
+| Argument | Default       | Description                   |
+| -------- | ------------- | ----------------------------- |
+| `[url]`  | `about:blank` | URL to open in Replay Browser |
+
+---
+
 ### record
 
 Launches the Replay Browser and starts recording. Recording continues until stopped in the terminal.
@@ -146,6 +169,12 @@ After recording prompt to upload the recording is displayed.
 | Argument | Default       | Description                   |
 | -------- | ------------- | ----------------------------- |
 | `[url]`  | `about:blank` | URL to open in Replay Browser |
+
+#### Options
+
+| Option       | Description                                                                        |
+| ------------ | ---------------------------------------------------------------------------------- |
+| `--headless` | Run the browser headless. Recording stops when the process is interrupted (Ctrl+C) |
 
 ---
 
@@ -185,10 +214,10 @@ Deleting the following recording(s)
 
 #### Options
 
-| Option         | Description                  |
-| -------------- | ---------------------------- |
-| –              | displays interactive menu    |
-| `--a`, `--all` | removes all local recordings |
+| Option        | Description                  |
+| ------------- | ---------------------------- |
+| –             | displays interactive menu    |
+| `-a`, `--all` | removes all local recordings |
 
 ### update
 
@@ -240,9 +269,11 @@ https://app.replay.io/recording/d1bd8025-cc11-473a-bd3d-997cb68050fa
 
 #### Options
 
-| Option | Description               |
-| ------ | ------------------------- |
-| –      | displays interactive menu |
+| Option           | Description                                                                     |
+| ---------------- | ------------------------------------------------------------------------------- |
+| –                | displays interactive menu                                                       |
+| `-a`, `--all`    | uploads all local recordings                                                    |
+| `--no-presigned` | upload without presigned URLs (slower); try this if uploads fail behind a proxy |
 
 ---
 
@@ -269,4 +300,4 @@ Uploads source-maps for a Workspace. See docs on [uploading source maps](/refere
 | `-g`, `--group` `<name>`      | The name to group this source map into, e.g. A commit SHA or release version. |
 | `-x`, `--extensions` `<exts>` | A comma-separated list of file extensions to process; default ".js,.map"      |
 | `-i`, `--ignore` `<pattern>`  | Ignore files that match this pattern                                          |
-| `-root` `<dirname>`           | The base directory to use when computing relative paths                       |
+| `--root` `<dirname>`          | The base directory to use when computing relative paths                       |

@@ -34,11 +34,11 @@
     },
     {
       "source": "/getting-started/teams-admin/billing",
-      "destination": "/reference/replay-teams/billing"
+      "destination": "https://replay.io/pricing"
     },
     {
       "source": "/test-suites/test-runners/cypress/cypress-faqs",
-      "destination": "/basics/getting-started/record-your-cypress-tests/faq"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/getting-started/replay-browser/install-chrome",
@@ -82,15 +82,15 @@
     },
     {
       "source": "/docs/contact-and-community-096224a3bca4479b982ac572dc5c81d0",
-      "destination": "/discord"
+      "destination": "https://discord.gg/Wh9w3KMr7J"
     },
     {
       "source": "/docs/billing-e01f0740cd9548f1b8725c9773b217f6",
-      "destination": "/reference/replay-teams/billing"
+      "destination": "https://replay.io/pricing"
     },
     {
       "source": "/docs/case-studies-and-comparisons-3bd958ab68234ae697cdac5904bbc36e",
-      "destination": "/learn/comparisons/playwright"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/bug-reports",
@@ -118,11 +118,11 @@
     },
     {
       "source": "/case-studies-and-comparisons/replay-vs.-chrome-recorder",
-      "destination": "/learn/comparisons/chrome"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/case-studies-and-comparisons/replay-vs.-loom",
-      "destination": "/learn/comparisons/loom"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/recording-a-web-app/(.*)",
@@ -146,11 +146,11 @@
     },
     {
       "source": "/case-studies-and-comparisons",
-      "destination": "/learn/comparisons/playwright"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/case-studies-and-comparisons#ff284e483831445ba1a6928c24afc2b5",
-      "destination": "/learn/comparisons/playwright"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/contribute",
@@ -186,11 +186,11 @@
     },
     {
       "source": "/get-help",
-      "destination": "/discord"
+      "destination": "https://discord.gg/Wh9w3KMr7J"
     },
     {
       "source": "/case-studies-and-comparisons",
-      "destination": "/learn/comparisons/playwright"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/reference/replay.io-case-studies/midnite-builds-time-travel-workflows-for-its-fast-paced-betting-platform",
@@ -198,7 +198,7 @@
     },
     {
       "source": "/test-suites/cypress",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/playwright",
@@ -254,7 +254,7 @@
     },
     {
       "source": "/getting-started/replay-browser/install-firefox",
-      "destination": "/reference/replay-runtimes/replay-firefox"
+      "destination": "/reference/replay-runtimes/replay-chrome"
     },
     {
       "source": "/getting-started/replay-browser/linux-support",
@@ -270,7 +270,7 @@
     },
     {
       "source": "/getting-started/teams-admin/billing",
-      "destination": "/reference/replay-teams/billing"
+      "destination": "https://replay.io/pricing"
     },
     {
       "source": "/getting-started/teams-admin/managing-replays",
@@ -286,7 +286,7 @@
     },
     {
       "source": "/getting-started/teams-admin/organization-features/okta-integration-with-auth0",
-      "destination": "/reference/replay-teams/okta-integration"
+      "destination": "/reference/security-and-privacy/security-practices"
     },
     {
       "source": "/getting-started/teams-admin/setting-up-a-team",
@@ -314,11 +314,11 @@
     },
     {
       "source": "/learn-more/contribute",
-      "destination": "/reference/integrations/3rd-party-integrations/github-embeds"
+      "destination": "/reference/replay-devtools/overview"
     },
     {
       "source": "/learn-more/contribute/contributing-to-replay",
-      "destination": "/reference/integrations/3rd-party-integrations/github-embeds"
+      "destination": "/reference/replay-devtools/overview"
     },
     {
       "source": "/learn-more/contribute/expanding-replay",
@@ -338,15 +338,15 @@
     },
     {
       "source": "/learn-more/contribute/replay-for-new-contributors",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/learn-more/debugging-examples",
-      "destination": "/basics/getting-started/record-your-cypress-tests/debugging-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/learn-more/debugging-examples/blog-debugging-stately-with-replay-node",
-      "destination": "/basics/getting-started/record-your-cypress-tests/debugging-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/learn-more/debugging-examples/debugging-navigation-issues",
@@ -474,35 +474,35 @@
     },
     {
       "source": "/reference/comparisons",
-      "destination": "/learn/comparisons/chrome"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/reference/comparisons/chrome-recorder-vs-replay",
-      "destination": "/learn/comparisons/chrome"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/reference/comparisons/cypress-test-replay-vs-replay-devtools",
-      "destination": "/learn/comparisons/cypress"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/reference/comparisons/live-debugging-vs-time-travel-debugging",
-      "destination": "/learn/comparisons/chrome"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/reference/comparisons/loom-vs-replay",
-      "destination": "/learn/comparisons/loom"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/reference/comparisons/playwright-trace-viewer-vs-replay-devtools",
-      "destination": "/learn/comparisons/playwright"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/reference/comparisons/sentry-vs-replay",
-      "destination": "/learn/comparisons/devtools"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/reference/comparisons/session-replay-vs-runtime-replay",
-      "destination": "/learn/comparisons/session-replay"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/reference/get-help",
@@ -510,11 +510,11 @@
     },
     {
       "source": "/reference/get-help/contact-community",
-      "destination": "/discord"
+      "destination": "https://discord.gg/Wh9w3KMr7J"
     },
     {
       "source": "/resources/get-help/contact-community",
-      "destination": "/discord"
+      "destination": "https://discord.gg/Wh9w3KMr7J"
     },
     {
       "source": "/reference/get-help/experimental-features",
@@ -542,11 +542,11 @@
     },
     {
       "source": "/reference/graphql-api",
-      "destination": "/reference/integrations/replay-apis/graphql-api"
+      "destination": "/reference/replay-apis#graphql-api"
     },
     {
       "source": "/reference/next-js",
-      "destination": "/reference/integrations/frameworks-libraries/nextjs"
+      "destination": "/basics/replay-qa/source-maps"
     },
     {
       "source": "/reference/privacy-guarantees",
@@ -586,27 +586,27 @@
     },
     {
       "source": "/test-suites/_archive/ci-integration/github-actions",
-      "destination": "/basics/getting-started/record-your-cypress-tests/github-actions"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/cypress/_archive/cypress-replays",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/cypress/configuration",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/cypress/continuous-integration",
-      "destination": "/basics/getting-started/record-your-cypress-tests/other-ci-providers"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/cypress/continuous-integration/github",
-      "destination": "/basics/getting-started/record-your-cypress-tests/github-actions"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/cypress/continuous-integration/other-ci-providers",
-      "destination": "/basics/getting-started/record-your-cypress-tests/other-ci-providers"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/cypress/dashboard",
@@ -614,23 +614,23 @@
     },
     {
       "source": "/test-suites/cypress/debugging-tips",
-      "destination": "/basics/getting-started/record-your-cypress-tests/debugging-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/cypress/faq",
-      "destination": "/basics/getting-started/record-your-cypress-tests/faq"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/cypress/installation",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/cypress/panel",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/cypress/troubleshooting-guide",
-      "destination": "/basics/getting-started/record-your-cypress-tests/faq"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-suites/features/pull-request-comments",
@@ -830,7 +830,7 @@
     },
     {
       "source": "/replay-teams/billing",
-      "destination": "/reference/replay-teams/billing"
+      "destination": "https://replay.io/pricing"
     },
     {
       "source": "/replay-teams/enterprise-security-controls",
@@ -842,7 +842,7 @@
     },
     {
       "source": "/replay-teams/okta-integration",
-      "destination": "/reference/replay-teams/okta-integration"
+      "destination": "/reference/security-and-privacy/security-practices"
     },
     {
       "source": "/replay-teams/setting-up-a-team",
@@ -870,35 +870,35 @@
     },
     {
       "source": "/comparison/chrome",
-      "destination": "/learn/comparisons/chrome"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/comparison/cypress",
-      "destination": "/learn/comparisons/cypress"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/comparison/devtools",
-      "destination": "/learn/comparisons/devtools"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/comparison/loom",
-      "destination": "/learn/comparisons/loom"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/comparison/playwright",
-      "destination": "/learn/comparisons/playwright"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/comparison/session-replay",
-      "destination": "/learn/comparisons/session-replay"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/additional-content/crash-course",
-      "destination": "/learn/replay-course"
+      "destination": "/reference/replay-devtools/overview"
     },
     {
       "source": "/additional-content/advanced-settings",
-      "destination": "/reference/additional-content/advanced-settings"
+      "destination": "/reference/replay-devtools/overview"
     },
     {
       "source": "/ci-workflows/generate-api-key",
@@ -918,27 +918,27 @@
     },
     {
       "source": "/integrations/3rd-party-integrations/github-embeds",
-      "destination": "/reference/integrations/3rd-party-integrations/github-embeds"
+      "destination": "/reference/replay-devtools/overview"
     },
     {
       "source": "/integrations/3rd-party-integrations/loom-embeds",
-      "destination": "/reference/integrations/3rd-party-integrations/loom-embeds"
+      "destination": "/reference/replay-devtools/overview"
     },
     {
       "source": "/integrations/frameworks-libraries/nextjs",
-      "destination": "/reference/integrations/frameworks-libraries/nextjs"
+      "destination": "/basics/replay-qa/source-maps"
     },
     {
       "source": "/integrations/replay-apis/graphql-api",
-      "destination": "/reference/integrations/replay-apis/graphql-api"
+      "destination": "/reference/replay-apis#graphql-api"
     },
     {
       "source": "/integrations/replay-apis/replay-driver",
-      "destination": "/reference/integrations/replay-apis/replay-driver"
+      "destination": "/reference/replay-apis#replay-driver"
     },
     {
       "source": "/integrations/replay-apis/replay-protocol",
-      "destination": "/reference/integrations/replay-apis/replay-protocol"
+      "destination": "/reference/replay-apis#replay-protocol"
     },
     {
       "source": "/replay-cli/commands",
@@ -954,7 +954,7 @@
     },
     {
       "source": "/replay-runtimes/replay-firefox",
-      "destination": "/reference/replay-runtimes/replay-firefox"
+      "destination": "/reference/replay-runtimes/replay-chrome"
     },
     {
       "source": "/replay-runtimes/replay-node",
@@ -970,31 +970,31 @@
     },
     {
       "source": "/test-runners/cypress-io/dashboard",
-      "destination": "/basics/getting-started/record-your-cypress-tests/dashboard"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/cypress-io/debugging-tests",
-      "destination": "/basics/getting-started/record-your-cypress-tests/debugging-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/cypress-io/examples",
-      "destination": "/learn/examples/cypress-io"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/cypress-io/faq",
-      "destination": "/basics/getting-started/record-your-cypress-tests/faq"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/cypress-io/getting-started",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/cypress-io/github-actions",
-      "destination": "/basics/getting-started/record-your-cypress-tests/github-actions"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/cypress-io/other-ci-providers",
-      "destination": "/basics/getting-started/record-your-cypress-tests/other-ci-providers"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/cypress-io/panel",
@@ -1002,19 +1002,19 @@
     },
     {
       "source": "/test-runners/cypress-io/record-your-first-replay",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/cypress-io/recording-options",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/reference/test-runners/cypress-io/recording-options",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/cypress-io/troubleshooting-guide",
-      "destination": "/basics/getting-started/record-your-cypress-tests/troubleshooting-guide"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/overview",
@@ -1026,7 +1026,7 @@
     },
     {
       "source": "/test-runners/playwright/examples",
-      "destination": "/learn/examples/playwright"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/playwright/faq",
@@ -1074,19 +1074,19 @@
     },
     {
       "source": "/reference/test-runners/cypress-io/getting-started",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/reference/test-runners/cypress-io/examples",
-      "destination": "/learn/examples/cypress-io"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/reference/test-runners/playwright/examples",
-      "destination": "/learn/examples/playwright"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/resources/comparisons/sentry-vs-replay",
-      "destination": "/learn/comparisons/devtools"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/basics/test-suites/runs-view",
@@ -1094,7 +1094,7 @@
     },
     {
       "source": "/resources/comparisons/playwright-trace-viewer-vs-replay-devtools",
-      "destination": "/learn/comparisons/playwright"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/resources/get-help/limitations",
@@ -1114,11 +1114,11 @@
     },
     {
       "source": "/reference/test-runners/cypress-io",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/test-runners/cypress-io",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/docs/setting-up-a-team-f5bd9ee853814d6f84e23fb535066199#4913df9eb7384a94a23ccbf335189370",
@@ -1170,31 +1170,31 @@
     },
     {
       "source": "/reference/test-runners/cypress-io/overview",
-      "destination": "/basics/getting-started/record-your-cypress-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/reference/test-runners/cypress-io/dashboard",
-      "destination": "/basics/getting-started/record-your-cypress-tests/dashboard"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/reference/test-runners/cypress-io/debugging-tests",
-      "destination": "/basics/getting-started/record-your-cypress-tests/debugging-tests"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/reference/test-runners/cypress-io/github-actions",
-      "destination": "/basics/getting-started/record-your-cypress-tests/github-actions"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/reference/test-runners/cypress-io/other-ci-providers",
-      "destination": "/basics/getting-started/record-your-cypress-tests/other-ci-providers"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/reference/test-runners/cypress-io/faq",
-      "destination": "/basics/getting-started/record-your-cypress-tests/faq"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/reference/test-runners/cypress-io/troubleshooting-guide",
-      "destination": "/basics/getting-started/record-your-cypress-tests/troubleshooting-guide"
+      "destination": "/basics/getting-started/record-your-app"
     },
     {
       "source": "/basics/replay-mcp/tools",
@@ -1287,6 +1287,122 @@
     {
       "source": "/reference/integrations/frameworks-libraries/react-sourcemaps",
       "destination": "/basics/replay-qa/source-maps#react-support"
+    },
+    {
+      "source": "/reference/integrations/frameworks-libraries/nextjs",
+      "destination": "/basics/replay-qa/source-maps"
+    },
+    {
+      "source": "/basics/getting-started/record-your-cypress-tests",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/basics/getting-started/record-your-cypress-tests/dashboard",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/basics/getting-started/record-your-cypress-tests/debugging-tests",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/basics/getting-started/record-your-cypress-tests/faq",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/basics/getting-started/record-your-cypress-tests/github-actions",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/basics/getting-started/record-your-cypress-tests/other-ci-providers",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/basics/getting-started/record-your-cypress-tests/troubleshooting-guide",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/learn/examples/cypress-io",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/learn/comparisons/cypress",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/learn/examples/playwright",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/learn/examples/vercel",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/learn/examples/nextjs",
+      "destination": "/basics/getting-started/record-your-app"
+    },
+    {
+      "source": "/learn/comparisons/chrome",
+      "destination": "/reference/time-travel/how-does-time-travel-work"
+    },
+    {
+      "source": "/learn/comparisons/devtools",
+      "destination": "/reference/time-travel/how-does-time-travel-work"
+    },
+    {
+      "source": "/learn/comparisons/loom",
+      "destination": "/reference/time-travel/how-does-time-travel-work"
+    },
+    {
+      "source": "/learn/comparisons/playwright",
+      "destination": "/reference/time-travel/how-does-time-travel-work"
+    },
+    {
+      "source": "/learn/comparisons/session-replay",
+      "destination": "/reference/time-travel/how-does-time-travel-work"
+    },
+    {
+      "source": "/learn/replay-course",
+      "destination": "/reference/replay-devtools/overview"
+    },
+    {
+      "source": "/learn",
+      "destination": "/reference/replay-devtools/overview"
+    },
+    {
+      "source": "/reference/replay-runtimes/replay-firefox",
+      "destination": "/reference/replay-runtimes/replay-chrome"
+    },
+    {
+      "source": "/reference/replay-teams/billing",
+      "destination": "https://replay.io/pricing"
+    },
+    {
+      "source": "/reference/replay-teams/okta-integration",
+      "destination": "/reference/security-and-privacy/security-practices"
+    },
+    {
+      "source": "/reference/integrations/3rd-party-integrations/github-embeds",
+      "destination": "/reference/replay-devtools/overview"
+    },
+    {
+      "source": "/reference/integrations/3rd-party-integrations/loom-embeds",
+      "destination": "/reference/replay-devtools/overview"
+    },
+    {
+      "source": "/reference/additional-content/advanced-settings",
+      "destination": "/reference/replay-devtools/overview"
+    },
+    {
+      "source": "/reference/integrations/replay-apis/graphql-api",
+      "destination": "/reference/replay-apis#graphql-api"
+    },
+    {
+      "source": "/reference/integrations/replay-apis/replay-protocol",
+      "destination": "/reference/replay-apis#replay-protocol"
+    },
+    {
+      "source": "/reference/integrations/replay-apis/replay-driver",
+      "destination": "/reference/replay-apis#replay-driver"
     }
   ],
   "rewrites": [

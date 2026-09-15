@@ -81,8 +81,36 @@ test('reference tab opens on the Debugging with Replay section', async ({
   ).toBeVisible()
   await expect(
     nav.getByText('Time travel tools', { exact: true }),
+  ).not.toBeVisible()
+  await expect(nav.getByText('Internal', { exact: true })).not.toBeVisible()
+})
+
+test('reference tab shows the consolidated sections', async ({ page }) => {
+  await page.goto('/reference/replay-apis')
+  const nav = page.locator('nav')
+  for (const section of [
+    'Replay CLI',
+    'APIs and credentials',
+    'Replay Browser',
+    'Security + Privacy',
+  ]) {
+    await expect(nav.getByRole('button', { name: section })).toBeVisible()
+  }
+  await expect(
+    nav.getByText('API keys and tokens', { exact: true }),
   ).toBeVisible()
-  await expect(nav.getByText('Replay Teams', { exact: true })).not.toBeVisible()
+  await expect(nav.getByText('Replay APIs', { exact: true })).toBeVisible()
+  await expect(nav.getByText('Replay Node', { exact: true })).toBeVisible()
+  await expect(nav.getByText('Frameworks', { exact: true })).not.toBeVisible()
+  await expect(nav.getByText('Test Runners', { exact: true })).not.toBeVisible()
+  await expect(nav.getByText('CI Workflows', { exact: true })).not.toBeVisible()
+
+  await clickHiddenPagesToggle(page)
+  await expect(nav.getByRole('button', { name: 'Internal' })).toBeVisible()
+  await expect(
+    nav.getByText('Upload strategies', { exact: true }),
+  ).toBeVisible()
+  await clickHiddenPagesToggle(page)
 })
 
 test('Replay DevTools pages expand their group', async ({ page }) => {

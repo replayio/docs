@@ -1,10 +1,9 @@
 ---
-title: Uploading source maps
+title: Uploading source maps for Replay DevTools
+description: Upload source maps at build time so recordings opened in Replay DevTools show original source, even when the maps are not served publicly.
 ---
 
-Adding a build step has lots of benefits: performance, security, new language features. One of the downsides though is that the compiled code can be obfuscated and difficult to debug.
-
-Source maps exist to try and preserve the original debugging experience as best as possible.
+Recordings capture the JavaScript the browser actually ran. If that is minified production code, Replay DevTools needs source maps to show you the original files and let you add print statements in them. Uploading the maps at build time means they never have to be served from your production site.
 
 <Callout type="note" title="Which source-map setup applies to you?">
   Uploaded source maps are used by [Replay DevTools](https://app.replay.io) for
@@ -247,8 +246,18 @@ You can see [a full working example of Next config with sourcemap deletion here]
 
 Also see the Next.js [docs on "Configuring the Build ID"](https://nextjs.org/docs/api-reference/next.config.js/configuring-the-build-id) for details on generating a consistent build ID, such as with a Git hash.
 
+With Turbopack builds, or if you prefer not to touch the webpack config, enable `productionBrowserSourceMaps` and run the CLI after `next build` instead:
+
+```json fileName="vercel.json"
+{
+  "buildCommand": "next build && npx replayio upload-source-maps --group $VERCEL_GIT_COMMIT_SHA .next/static"
+}
+```
+
+`.next/static` holds the client bundles; server bundles do not need to be uploaded.
+
 ## Debugging problems
 
-Each of these approaches will log the sourcemaps as they are uploaded so that you can validate that all of the files you expect are being detected. They each also have a verbose mode, either `logLevel: "verbose"` for the JS plugins, and `--verbose` for the CLI.
+Both the CLI and the Webpack plugin log each source map as it is uploaded, so you can check that the files you expect are being found. The Webpack plugin also has `logLevel: "verbose"`.
 
-If you're feeling particularly adventurous, you can also run these with the `DEBUG=recordreplay:sourcemap-upload` environment variable set to enable tons of debug logging, though that will likely mostly be useful to pass along to us to work with you on any issues you may face.
+For a full trace, set `DEBUG=recordreplay:sourcemap-upload` in the environment. That output is mostly useful to send to us if uploads are failing.
