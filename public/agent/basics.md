@@ -33,7 +33,7 @@ network requests, React component state, and program execution at any point
 in time.
 
 - [Replay MCP: overview and setup](https://docs.replay.io/basics/replay-mcp/overview)
-- [Tools reference](https://docs.replay.io/basics/replay-mcp/tools)
+- [Tools reference](https://docs.replay.io/reference/replay-mcp/tools)
 - Endpoint: `https://dispatch.replay.io/nut/mcp`
 - Server card: https://docs.replay.io/.well-known/mcp/server-card.json
 
@@ -46,4 +46,4 @@ in time.
 
 ## How Replay works
 
-- [How does time travel work?](https://docs.replay.io/basics/time-travel/how-does-time-travel-work)
+- [How does time travel work?](https://docs.replay.io/reference/time-travel/how-does-time-travel-work)

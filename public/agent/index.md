@@ -25,11 +25,11 @@ same engine is available directly to developers and their coding agents:
   server (`https://dispatch.replay.io/nut/mcp`) that lets an AI agent inspect
   a recording: sources, console, network, React state, and execution over time.
   The page covers setup for Claude Code, Cursor, VS Code, and Codex.
-  [Tools reference](https://docs.replay.io/basics/replay-mcp/tools)
+  [Tools reference](https://docs.replay.io/reference/replay-mcp/tools)
 - [How to record](https://docs.replay.io/basics/getting-started/record-your-app)
   — make a recording of your own app with the `replayio` CLI, then open it in
   Replay DevTools (https://app.replay.io) or hand it to your agent through MCP.
-- [How time travel works](https://docs.replay.io/basics/time-travel/how-does-time-travel-work)
+- [How time travel works](https://docs.replay.io/reference/time-travel/how-does-time-travel-work)
 - [Reference section index](https://docs.replay.io/reference) — CLI commands,
   source maps, API keys, public APIs.
 

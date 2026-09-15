@@ -129,7 +129,7 @@ function SubheaderNavigation() {
           <SubheaderNavigationLink
             name={'Reference'}
             baseHref={'/reference'}
-            href={'/reference/replay-cli/commands'}
+            href={'/reference/replay-mcp/tools'}
           />
         </nav>
       </div>

@@ -54,14 +54,6 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           title: 'How to record',
           href: '/basics/getting-started/record-your-app',
         },
-        {
-          title: 'MCP tools reference',
-          href: '/basics/replay-mcp/tools',
-        },
-        {
-          title: 'How does time travel work?',
-          href: '/basics/time-travel/how-does-time-travel-work',
-        },
       ],
     },
     {
@@ -242,6 +234,21 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     },
   ],
   reference: [
+    {
+      title: 'Debugging with Replay',
+      icon: 'mcp',
+      defaultOpen: true,
+      links: [
+        {
+          title: 'MCP tools reference',
+          href: '/reference/replay-mcp/tools',
+        },
+        {
+          title: 'How does time travel work?',
+          href: '/reference/time-travel/how-does-time-travel-work',
+        },
+      ],
+    },
     {
       title: 'Replay Teams',
       icon: 'person',

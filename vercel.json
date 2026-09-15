@@ -326,11 +326,11 @@
     },
     {
       "source": "/learn-more/contribute/how-replay-works",
-      "destination": "/basics/time-travel/how-does-time-travel-work"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/learn-more/contribute/how-replay-works/how-programmatic-recordings-work",
-      "destination": "/basics/time-travel/how-does-time-travel-work"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/learn-more/contribute/how-replay-works/our-approach-for-source-maps",
@@ -702,7 +702,7 @@
     },
     {
       "source": "/time-travel-intro/how-time-travel-works",
-      "destination": "/basics/time-travel/how-does-time-travel-work"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/recording-browser-tests-(beta)",
@@ -728,7 +728,6 @@
       "source": "/browser-devtools/elements-panel",
       "destination": "/basics/replay-devtools/browser-devtools/elements-panel"
     },
-
     {
       "source": "/browser-devtools/network-monitor",
       "destination": "/basics/replay-devtools/browser-devtools/network-monitor"
@@ -759,7 +758,7 @@
     },
     {
       "source": "/time-travel-intro/what-is-time-travel",
-      "destination": "/basics/time-travel/how-does-time-travel-work"
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     },
     {
       "source": "/time-travel-intro/why-time-travel",
@@ -1196,6 +1195,14 @@
     {
       "source": "/reference/test-runners/cypress-io/troubleshooting-guide",
       "destination": "/basics/getting-started/record-your-cypress-tests/troubleshooting-guide"
+    },
+    {
+      "source": "/basics/replay-mcp/tools",
+      "destination": "/reference/replay-mcp/tools"
+    },
+    {
+      "source": "/basics/time-travel/how-does-time-travel-work",
+      "destination": "/reference/time-travel/how-does-time-travel-work"
     }
   ],
   "rewrites": [
