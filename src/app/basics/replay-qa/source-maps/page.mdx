@@ -25,8 +25,6 @@ Replay QA runs against your deployed app. When source maps are available, every 
 
 **Better React analysis.** Replay QA's React analysis layer — render tracking, performance profiling, effect analysis, render cause tracing — works without source maps for React itself. Your application's source maps let it report real component names and file locations instead of compiled identifiers. Results are best on React 19; React 18 users should upgrade if they can, or see the fallback below.
 
-**Better test generation.** When Replay QA writes Playwright tests for your app, it can reference selectors and interactions tied to real component names and code paths rather than opaque compiled output.
-
 ## Configuring your build
 
 ### Publicly served source maps — simplest, works automatically
