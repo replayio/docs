@@ -10,7 +10,7 @@ export type NavigationItem = {
   defaultOpen?: boolean
 }
 
-type NavigationNames = 'basics' | 'learn' | 'reference'
+type NavigationNames = 'basics' | 'reference'
 
 export const navigation: Record<NavigationNames, NavigationItem[]> = {
   basics: [
@@ -24,20 +24,46 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           href: '/basics/replay-qa/overview',
         },
         {
-          title: 'Testing a localhost app',
-          href: '/basics/replay-qa/localhost',
+          title: 'How Replay QA models your app',
+          href: '/basics/replay-qa/concepts',
         },
         {
-          title: 'CI integration with FRPC',
-          href: '/basics/replay-qa/frpc-ci',
+          title: 'Getting good results',
+          href: '/basics/replay-qa/getting-good-results',
         },
         {
-          title: 'Publishing with source maps',
-          href: '/basics/replay-qa/source-maps',
+          title: 'Connect your app',
+          omitFromDocumentTitle: true,
+          defaultOpen: true,
+          links: [
+            {
+              title: 'Testing a localhost app',
+              href: '/basics/replay-qa/localhost',
+            },
+            {
+              title: 'Testing a PR build in CI',
+              href: '/basics/replay-qa/frpc-ci',
+            },
+            {
+              title: 'Continuous QA from GitHub',
+              href: '/basics/replay-qa/github',
+            },
+          ],
         },
         {
-          title: 'Driving Replay QA from a coding agent',
-          href: '/basics/replay-qa/agent-integration',
+          title: 'Work with results',
+          omitFromDocumentTitle: true,
+          defaultOpen: true,
+          links: [
+            {
+              title: 'Publishing with source maps',
+              href: '/basics/replay-qa/source-maps',
+            },
+            {
+              title: 'Driving QA from a coding agent',
+              href: '/basics/replay-qa/agent-integration',
+            },
+          ],
         },
       ],
     },
@@ -139,94 +165,27 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
         },
       ],
     },
+  ],
+  reference: [
     {
-      title: 'Replay DevTools',
-      icon: 'browserdevtools',
+      title: 'Replay QA',
+      icon: 'beaker',
       defaultOpen: true,
       links: [
         {
-          title: 'Overview',
-          href: '/basics/replay-devtools/overview',
+          title: 'API and MCP tools',
+          href: '/reference/replay-qa/api',
         },
         {
-          title: 'Time Travel DevTools',
-          href: '/basics/replay-devtools/time-travel-devtools/live-console-logs',
-          links: [
-            {
-              title: 'Live Console logs',
-              href: '/basics/replay-devtools/time-travel-devtools/live-console-logs',
-            },
-            {
-              title: 'Collaborative DevTools',
-              href: '/basics/replay-devtools/time-travel-devtools/collaborative-devtools',
-            },
-            {
-              title: 'Timeline annotation',
-              href: '/basics/replay-devtools/time-travel-devtools/timeline-annotation',
-            },
-            {
-              title: 'Jump to event',
-              href: '/basics/replay-devtools/time-travel-devtools/jump-to-event',
-            },
-            {
-              title: 'Focus window',
-              href: '/basics/replay-devtools/time-travel-devtools/focus-window',
-            },
-          ],
+          title: 'Polish passes',
+          href: '/reference/replay-qa/polish-passes',
         },
         {
-          title: 'Framework DevTools',
-          href: '/basics/replay-devtools/framework-devtools/react-panel',
-          links: [
-            {
-              title: 'React Panel',
-              href: '/basics/replay-devtools/framework-devtools/react-panel',
-            },
-            {
-              title: 'Redux Panel',
-              href: '/basics/replay-devtools/framework-devtools/redux-panel',
-            },
-            {
-              title: 'Playwright Timeline',
-              href: '/basics/replay-devtools/framework-devtools/playwright-timeline',
-            },
-          ],
-        },
-        {
-          title: 'Browser DevTools',
-          href: '/basics/replay-devtools/browser-devtools/elements-panel',
-          links: [
-            {
-              title: 'Elements Panel',
-              href: '/basics/replay-devtools/browser-devtools/elements-panel',
-            },
-            {
-              title: 'Network Monitor',
-              href: '/basics/replay-devtools/browser-devtools/network-monitor',
-            },
-            {
-              title: 'Console Panel',
-              href: '/basics/replay-devtools/browser-devtools/console',
-            },
-
-            {
-              title: 'Source Viewer',
-              href: '/basics/replay-devtools/browser-devtools/source-viewer',
-            },
-            {
-              title: 'Pause Panel',
-              href: '/basics/replay-devtools/browser-devtools/pause-panel',
-            },
-            {
-              title: 'Replay Viewer',
-              href: '/basics/replay-devtools/browser-devtools/replay-viewer',
-            },
-          ],
+          title: 'Bug reports',
+          href: '/reference/replay-qa/bug-reports',
         },
       ],
     },
-  ],
-  reference: [
     {
       title: 'Debugging with Replay',
       icon: 'mcp',
@@ -240,80 +199,30 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           title: 'How does time travel work?',
           href: '/reference/time-travel/how-does-time-travel-work',
         },
-      ],
-    },
-    {
-      title: 'Replay Teams',
-      icon: 'person',
-      defaultOpen: true,
-      links: [
-        // {
-        //   title: 'Setting up a team',
-        //   href: '/reference/replay-teams/setting-up-a-team',
-        // },
         {
-          title: 'Managing replays',
-          href: '/reference/replay-teams/managing-replays',
-        },
-        {
-          title: 'Billing',
-          href: '/reference/replay-teams/billing',
-        },
-        {
-          title: 'Enterprise security controls',
-          href: '/reference/replay-teams/enterprise-security-controls',
-        },
-        {
-          title: 'Okta integration',
-          href: '/reference/replay-teams/okta-integration',
-        },
-      ],
-    },
-    {
-      title: 'Test Runners',
-      omitFromDocumentTitle: true,
-      icon: 'commands',
-      defaultOpen: true,
-      links: [
-        { title: 'Overview', href: '/reference/test-runners/overview' },
-        { title: 'Selenium', href: '/reference/test-runners/selenium' },
-        {
-          title: 'WebdriverIO',
-          href: '/reference/test-runners/webdriver-io',
-        },
-        {
-          title: 'Puppeteer',
-          href: '/reference/test-runners/puppeteer',
-        },
-      ],
-    },
-    {
-      title: 'CI Workflows',
-      icon: 'settings',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Upload strategies',
-          href: '/reference/ci-workflows/upload-strategies',
-        },
-        {
-          title: 'GitHub upload action',
-          href: '/reference/ci-workflows/github-action-upload',
-        },
-      ],
-    },
-    {
-      title: 'Replay Runtimes',
-      icon: 'replaychrome',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Replay Chrome',
-          href: '/reference/replay-runtimes/replay-chrome',
-        },
-        {
-          title: 'Replay Firefox',
-          href: '/reference/replay-runtimes/replay-firefox',
+          title: 'Replay DevTools',
+          links: [
+            {
+              title: 'Overview',
+              href: '/reference/replay-devtools/overview',
+            },
+            {
+              title: 'Time travel tools',
+              href: '/reference/replay-devtools/time-travel-tools',
+            },
+            {
+              title: 'Browser panels',
+              href: '/reference/replay-devtools/browser-panels',
+            },
+            {
+              title: 'Framework panels',
+              href: '/reference/replay-devtools/framework-panels',
+            },
+            {
+              title: 'Sharing and teams',
+              href: '/reference/replay-devtools/sharing-and-teams',
+            },
+          ],
         },
       ],
     },
@@ -323,7 +232,7 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       defaultOpen: true,
       links: [
         {
-          title: 'Replay CLI',
+          title: 'Commands',
           href: '/reference/replay-cli/commands',
         },
         {
@@ -333,67 +242,33 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
     {
-      title: 'API keys and tokens',
+      title: 'APIs and credentials',
       icon: 'key',
       defaultOpen: true,
       links: [
         {
           title: 'API keys and tokens',
           href: '/reference/api-keys',
-          omitFromDocumentTitle: true,
+        },
+        {
+          title: 'Replay APIs',
+          href: '/reference/replay-apis',
         },
       ],
     },
     {
-      title: 'Integrations',
-      icon: 'integrations',
+      title: 'Replay Browser',
+      icon: 'replaychrome',
       defaultOpen: true,
       links: [
         {
-          title: 'Replay APIs',
-          href: '/reference/integrations/replay-apis/graphql-api',
-          links: [
-            {
-              title: 'GraphQL API',
-              href: '/reference/integrations/replay-apis/graphql-api',
-            },
-            {
-              title: 'Replay Protocol',
-              href: '/reference/integrations/replay-apis/replay-protocol',
-            },
-            {
-              title: 'Replay Driver',
-              href: '/reference/integrations/replay-apis/replay-driver',
-            },
-          ],
+          title: 'Replay Browser',
+          href: '/reference/replay-runtimes/replay-chrome',
+          omitFromDocumentTitle: true,
         },
         {
-          title: 'Frameworks & libraries',
-          href: '/reference/integrations/frameworks-libraries/nextjs',
-          links: [
-            {
-              title: 'NextJS',
-              href: '/reference/integrations/frameworks-libraries/nextjs',
-            },
-            {
-              title: 'React Version Support',
-              href: '/reference/integrations/frameworks-libraries/react-sourcemaps',
-            },
-          ],
-        },
-        {
-          title: '3rd Party integrations',
-          href: '/reference/integrations/3rd-party-integrations/github-embeds',
-          links: [
-            {
-              title: 'GitHub Embeds',
-              href: '/reference/integrations/3rd-party-integrations/github-embeds',
-            },
-            {
-              title: 'Loom Embeds',
-              href: '/reference/integrations/3rd-party-integrations/loom-embeds',
-            },
-          ],
+          title: 'Replay Node',
+          href: '/reference/replay-runtimes/replay-node',
         },
       ],
     },
@@ -413,62 +288,34 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
       ],
     },
     {
-      title: 'Additional reference',
-      icon: 'overview',
+      title: 'Internal',
+      icon: 'settings',
       defaultOpen: true,
       links: [
         {
-          title: 'Advanced settings',
-          href: '/reference/additional-content/advanced-settings',
-        },
-      ],
-    },
-  ],
-  learn: [
-    {
-      title: 'Replay course',
-      icon: 'university',
-      href: '/learn/replay-course',
-    },
-    {
-      title: 'Examples',
-      icon: 'additionalcontent',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Playwright',
-          href: '/learn/examples/playwright',
+          title: 'Enterprise security controls',
+          href: '/reference/replay-teams/enterprise-security-controls',
         },
         {
-          title: 'Next.js',
-          href: '/learn/examples/nextjs',
+          title: 'Test runners overview',
+          href: '/reference/test-runners/overview',
+        },
+        { title: 'Selenium', href: '/reference/test-runners/selenium' },
+        {
+          title: 'WebdriverIO',
+          href: '/reference/test-runners/webdriver-io',
         },
         {
-          title: 'Vercel',
-          href: '/learn/examples/vercel',
-        },
-      ],
-    },
-    {
-      title: 'Comparisons',
-      icon: 'sort',
-      defaultOpen: true,
-      links: [
-        {
-          title: 'Playwright',
-          href: '/learn/comparisons/playwright',
+          title: 'Puppeteer',
+          href: '/reference/test-runners/puppeteer',
         },
         {
-          title: `Chrome Recorder`,
-          href: '/learn/comparisons/chrome',
+          title: 'Upload strategies',
+          href: '/reference/ci-workflows/upload-strategies',
         },
         {
-          title: 'Loom',
-          href: '/learn/comparisons/loom',
-        },
-        {
-          title: 'Browser DevTools',
-          href: '/learn/comparisons/devtools',
+          title: 'GitHub upload action',
+          href: '/reference/ci-workflows/github-action-upload',
         },
       ],
     },

@@ -1,6 +1,6 @@
 ---
-title: CI integration with FRPC
-description: Run Replay QA against a pull request build inside GitHub Actions while an FRPC tunnel keeps the otherwise private app reachable.
+title: Testing a pull request build in GitHub Actions
+description: Run Replay QA against a pull request build that only exists inside a GitHub Actions job, using the Replay QA CLI to keep the private app reachable.
 ---
 
 Use this integration when a pull request build only exists inside CI—for example, a Next.js app started on `127.0.0.1:3000` in a GitHub Actions runner. The Replay QA CLI opens an authenticated FRPC tunnel to that runner, starts a test run associated with the pull request, and keeps the tunnel alive until Replay QA finishes.

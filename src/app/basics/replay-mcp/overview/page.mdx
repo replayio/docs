@@ -204,12 +204,10 @@ Recordings of minified production code are much harder for agents (and humans) t
 
 <Callout type="note">
   **React apps:** React analysis tools (render tracking, component inspection,
-  performance profiling) work without any source maps for React itself, but
-  results are better with your application's source maps, and best on React 19.
-  See [React Version
-  Support](/reference/integrations/frameworks-libraries/react-sourcemaps) for
-  details, including the `@acemarke/react-prod-sourcemaps` fallback for React
-  18.
+  performance profiling) work on React 18 and 19, including Next.js 13.5 through
+  16, without any source maps or build plugin for React itself. Your
+  application's source maps are what give the agent real component and file
+  names. See [React support](/basics/replay-qa/source-maps#react-support).
 </Callout>
 
 ### Understand execution points

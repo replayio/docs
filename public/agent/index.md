@@ -4,19 +4,27 @@ Canonical URL: https://docs.replay.io/
 
 Replay QA is an autonomous app testing tool built on Replay's time-travel
 debugging engine. Point it at a web app and it explores the application,
-discovers user journeys, writes Playwright tests, executes them while capturing
-full runtime recordings, and delivers root cause analysis and suggested fixes
-for every bug it finds.
+builds user journeys through it, runs them while capturing full runtime
+recordings, and delivers root cause analysis for every bug it finds.
 
 This documentation site is the canonical reference for Replay QA. Start here:
 
 - [Replay QA overview](https://docs.replay.io/basics/replay-qa/overview)
+- [How Replay QA models your app](https://docs.replay.io/basics/replay-qa/concepts)
+  — projects, explorations, journeys, test runs, bugs, polish passes, versions, recordings
+- [Getting good results](https://docs.replay.io/basics/replay-qa/getting-good-results)
+  — instructions, design document, logins, scope, budget, pauses, working the bug list
 - [Testing a localhost app](https://docs.replay.io/basics/replay-qa/localhost)
-- [CI integration with FRPC](https://docs.replay.io/basics/replay-qa/frpc-ci)
+- [Testing a pull request build in GitHub Actions](https://docs.replay.io/basics/replay-qa/frpc-ci)
+- [Continuous QA from GitHub](https://docs.replay.io/basics/replay-qa/github)
+  — GitHub App, main-branch and PR testing modes, PR comment and check, issue trackers
 - [Publishing with source maps](https://docs.replay.io/basics/replay-qa/source-maps)
 - [Driving Replay QA from a coding agent](https://docs.replay.io/basics/replay-qa/agent-integration)
   — REST API and MCP server for the full create-project → read-bugs → mark-fixed loop
-- [Basics section index](https://docs.replay.io/basics)
+- [Replay QA API and MCP tools](https://docs.replay.io/reference/replay-qa/api),
+  [Polish passes](https://docs.replay.io/reference/replay-qa/polish-passes),
+  [Bug reports](https://docs.replay.io/reference/replay-qa/bug-reports) — reference
+- [Guides section index](https://docs.replay.io/basics)
 
 Replay QA is built on Replay's recording and time-travel debugging engine. The
 same engine is available directly to developers and their coding agents:
@@ -25,9 +33,11 @@ same engine is available directly to developers and their coding agents:
   — overview of the record → investigate workflow and how it relates to Replay QA.
 - [Replay MCP](https://docs.replay.io/basics/replay-mcp/overview) — an MCP
   server (`https://dispatch.replay.io/nut/mcp`) that lets an AI agent inspect
-  a recording: sources, console, network, React state, and execution over time.
-  The page covers setup for Claude Code, Cursor, VS Code, and Codex.
-  [Tools reference](https://docs.replay.io/reference/replay-mcp/tools)
+  a recording: sources, console, network, user interactions, React renders and
+  performance, Redux / Zustand / TanStack Query state, Playwright steps, and
+  execution over time. The page covers setup for Claude Code, Cursor, VS Code,
+  and Codex. [Tools reference](https://docs.replay.io/reference/replay-mcp/tools)
+  lists all 30 tools; agents call `RecordingOverview` first.
 - [How to record](https://docs.replay.io/basics/getting-started/record-your-app)
   — make a recording of your own app with the `replayio` CLI, then open it in
   Replay DevTools (https://app.replay.io) or hand it to your agent through MCP.

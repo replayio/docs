@@ -1,0 +1,61 @@
+---
+title: Bug reports
+description: What a Replay QA bug report contains, how severity and status work, and the formats a report is available in.
+---
+
+Every bug Replay QA files is backed by a Replay recording of the run that found it. The report is built from that recording, so each claim in it points at evidence you can inspect.
+
+## What a report contains
+
+| Field              | Content                                                                                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Title              | The specific problem, naming the control or component involved                                                                                         |
+| Description        | The defect in general terms: what is wrong and where                                                                                                   |
+| Severity           | `critical`, `high`, `medium`, or `low` (see below)                                                                                                     |
+| Steps to reproduce | A chronology of user actions and observations, each with a screenshot from the recording and, for actions, the element interacted with                 |
+| Expected behavior  | What should have happened                                                                                                                              |
+| Actual behavior    | What the user saw instead                                                                                                                              |
+| Root cause         | Why it happened, traced through the recording to the responsible code path, with the evidence (source, console, network, React state) that supports it |
+| Causal chain       | The sequence from cause to symptom, one step at a time                                                                                                 |
+| Recording          | Links to the Replay recording of the failing run                                                                                                       |
+| Category           | The journey (functional bug) or the [polish pass](/reference/replay-qa/polish-passes) that filed it                                                    |
+
+Security findings also include an **Impact** section. Bugs found on a GitHub pull request record the pull request and version they were found in.
+
+The root cause names the mechanism and code location. Replay QA does not generate a code patch; a developer or coding agent applies the fix from the root cause.
+
+The title, description, and expected and actual behavior describe the general defect rather than the specific record it happened on, so the same report stays accurate across runs. Concrete values appear in the steps and root cause.
+
+## Severity
+
+| Level      | Meaning                                                                                         |
+| ---------- | ----------------------------------------------------------------------------------------------- |
+| `critical` | Crashes, data loss, security vulnerabilities, complete feature failure                          |
+| `high`     | Broken core functionality, severe visual bugs that block usage, WCAG A violations               |
+| `medium`   | Degraded functionality, noticeable performance issues, moderate visual bugs, WCAG AA violations |
+| `low`      | Minor cosmetic issues, console warnings, minor performance issues, enhancement suggestions      |
+
+You can change a bug's severity after it is filed.
+
+## Status
+
+| Status      | Meaning                                                             | Set by                           |
+| ----------- | ------------------------------------------------------------------- | -------------------------------- |
+| `open`      | Confirmed and not yet addressed                                     | Replay QA, or you when reopening |
+| `fixed`     | You applied a fix; Replay QA reruns the affected journey to confirm | You                              |
+| `wontfix`   | Real, but you are not going to address it                           | You                              |
+| `invalid`   | Not a real bug                                                      | You                              |
+| `pr-closed` | Found on a pull request that has since closed or merged             | Replay QA                        |
+
+A `fixed` bug that Replay QA finds again is reopened and shows as open. When a later run finds an issue that matches an existing bug, the existing bug is linked from that run instead of a duplicate being filed, so the bug list stays deduplicated across runs.
+
+## Formats
+
+- **In Replay QA**, the bug detail page shows the report with the screenshot chronology and the evidence behind each root cause step.
+- **Markdown** export from the bug page, for pasting into an issue or handing to a coding agent. The same rendering is used for issue tracker integrations.
+- **REST API and MCP**: `GET /bugs/{bug_id}` and the `get_bug` tool return the structured report. See [Replay QA API and MCP tools](/reference/replay-qa/api).
+- **Issue trackers**: projects connected to GitHub Issues, Linear, or Jira receive each bug as an issue with the full report and a link back to Replay QA.
+
+## Working a bug
+
+Read the root cause, apply the fix, and set the bug to `fixed`; Replay QA reruns the journey and reopens the bug if the problem is still there. If the report is not enough, open the recording in Replay DevTools or hand it to a coding agent through [Replay MCP](/basics/replay-mcp/overview) to inspect the failure directly. For bugs that describe intended behavior, set `invalid` and consider adding the intended behavior to the project's design document so future runs judge against it.

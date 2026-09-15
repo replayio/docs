@@ -17,8 +17,7 @@ export function GET() {
     resource: REPLAY_PUBLIC.api,
     authorization_servers: [REPLAY_PUBLIC.authIssuer],
     bearer_methods_supported: ['header'],
-    resource_documentation:
-      'https://docs.replay.io/reference/integrations/replay-apis/replay-protocol',
+    resource_documentation: 'https://docs.replay.io/reference/replay-apis',
     scopes_supported: ['openid', 'profile', 'email', 'offline_access'],
   }
 

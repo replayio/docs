@@ -1,0 +1,97 @@
+---
+title: Replay DevTools
+image: /images/react.png
+imageHeight: 433
+description: Inspect a recording by hand, with browser DevTools panels that can pause at any moment of the session.
+---
+
+Replay DevTools is the in-browser UI for inspecting a [recording](/basics/debugging/overview#what-is-a-recording). Open a recording and you get the panels you know from Chrome DevTools, with one difference: the app is not running live. A browser in the cloud replays the recorded session and can pause at any point, so you can add console logs to code that already ran, jump to the moment a request was sent, or inspect a component's props on its fifteenth render. [How does time travel work?](/reference/time-travel/how-does-time-travel-work) explains the mechanism.
+
+## Opening a recording
+
+Every recording has a URL of the form `https://app.replay.io/recording/<recording-id>`. Recordings made with the [CLI or the Playwright reporter](/basics/getting-started/record-your-app) print this URL when the upload finishes; recordings attached to a [Replay QA bug report](/reference/replay-qa/bug-reports) link to it from the report. Team recordings require you to be signed in as a team member; see [Sharing and teams](/reference/replay-devtools/sharing-and-teams).
+
+The page opens in **Viewer** mode: the video, the timeline, and the list of user events. Switch to **DevTools** mode with the toggle in the top-right corner, or select an event and click **Jump to Code**, which switches modes and pauses at the handler that ran for that event.
+
+## Your first look
+
+Suppose a purchase form failed after a click. A quick pass through the panels:
+
+<Steps>
+
+## Jump to the event
+
+In the Events timeline, find the last click before the error and click **Jump to Code**. DevTools opens paused in the event handler, with the call stack and local variables as they were at that moment.
+
+<Video src="devtoolsClickToEvent" />
+
+## Inspect the network request
+
+The handler sent a `POST` to `/api/purchase`. Open the Network panel and select the request that returned `400`.
+
+<Figure
+  alt="The network tab in the DevTools panel which shows a 400 error on the purchase"
+  src="/images/network_tab.png"
+  height={188}
+  width={550}
+/>
+
+## Compare request and response
+
+The Response tab shows the server's message, `Color is not found, received: undefined`. The Request tab shows the body the app actually sent, and it does include a color.
+
+<Figure
+  alt="The response subtab on the network request panel showing the server error message"
+  src="/images/response_body.png"
+  height={235}
+  width={450}
+/>
+
+<Figure
+  alt="The request subtab on the network request panel showing the request body with color blue"
+  src="/images/request_body.png"
+  height={235}
+  width={450}
+/>
+
+The client sent the right data and the server rejected it. That is a backend bug, and the recording URL is the bug report.
+
+</Steps>
+
+## What is in DevTools
+
+<QuickLinks>
+
+<QuickLink
+  title="Time travel tools"
+  icon="lightbulb"
+  href="/reference/replay-devtools/time-travel-tools"
+  description="Add console logs after the fact, jump to any event, narrow the focus window, and leave comments at a point in time."
+/>
+
+<QuickLink
+  title="Browser panels"
+  icon="console"
+  href="/reference/replay-devtools/browser-panels"
+  description="The viewer, Console, Sources, Pause, Elements, and Network panels, and what time travel adds to each."
+/>
+
+<QuickLink
+  title="Framework panels"
+  icon="react"
+  href="/reference/replay-devtools/framework-panels"
+  description="React component tree, Redux actions, and Playwright test steps, each with a jump to the code that ran."
+/>
+
+<QuickLink
+  title="Sharing and teams"
+  icon="settingupateam"
+  href="/reference/replay-devtools/sharing-and-teams"
+  description="Share a recording, move it to a team, create a team, and manage team API keys."
+/>
+
+</QuickLinks>
+
+## Working with a coding agent instead
+
+Everything DevTools shows is also available to an agent through [Replay MCP](/basics/replay-mcp/overview), which reads the same recording through the same replaying browser. Use DevTools when you want to look for yourself, and hand the recording ID to the agent when you want it to do the digging.

@@ -23,7 +23,7 @@ export function GET() {
         anchor: REPLAY_PUBLIC.api,
         'service-doc': [
           {
-            href: `${origin}/reference/integrations/replay-apis/replay-protocol`,
+            href: `${origin}/reference/replay-apis#replay-protocol`,
             type: 'text/html',
             title: 'Replay Protocol — reference',
           },
@@ -40,7 +40,7 @@ export function GET() {
         anchor: REPLAY_PUBLIC.graphql,
         'service-doc': [
           {
-            href: `${origin}/reference/integrations/replay-apis/replay-protocol`,
+            href: `${origin}/reference/replay-apis#graphql-api`,
             type: 'text/html',
             title: 'Replay GraphQL API — reference',
           },

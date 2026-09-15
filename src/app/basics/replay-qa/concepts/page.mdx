@@ -1,0 +1,63 @@
+---
+title: How Replay QA models your app
+description: The objects Replay QA works with — projects, explorations, journeys, test runs, bugs, polish passes, versions, and recordings — and how they relate.
+---
+
+Replay QA is built around a small set of core concepts. A **project** points at an app. An **exploration** drives the app to find out what it does and turns the important flows into **journeys**. A **test run** replays those journeys against a **version** of the app and files **bugs**, each backed by a **recording**. **Polish passes** check the same app for quality problems that are not functional bugs.
+
+Those terms show up throughout the project chat, the rest of these docs, and the [REST API and MCP tools](/reference/replay-qa/api). This page explains what each one means and how they relate.
+
+## Project
+
+One application under test. A project has a target URL (a public URL, a localhost app reached through the [reverse proxy](/basics/replay-qa/localhost), or a build inside CI), plus the guidance you give it: instructions, an optional design document, test logins, the set of enabled [polish passes](/reference/replay-qa/polish-passes), and two caps, a credit budget and a bug limit. A project can also be connected to a GitHub repository so it tests new builds on its own.
+
+A project is either active or paused. A paused project schedules nothing. Replay QA pauses a project itself when it reaches the project's credit budget or the account runs out of credits, and tells you in the project chat.
+
+## Exploration
+
+An exploration is Replay QA driving the app in a real browser, starting from the target URL and guided by the project's instructions, to discover what the app does. Its output is a set of journeys. The first exploration also identifies complex interactive features that deserve their own focused testing and creates journeys for them.
+
+Later explorations add coverage; they do not replace existing journeys. Start one after shipping a new area of the app, or ask for one scoped to a particular part of it.
+
+An exploration can end blocked when it cannot get past something: a login it does not have, an invitation or admin approval it needs, a paywall, or an app that will not load. When that happens the project chat says what was needed.
+
+## Journey
+
+A journey is one user flow through the app, with a name and a description: sign up, search for a product, check out. Journeys are what Replay QA tests repeatedly.
+
+A journey starts as a description. Once Replay QA has run it and is confident about the flow, it records concrete steps so later runs are faster and more repeatable. Until then, an agent runs the journey by following the description.
+
+Each journey has a few settings you can change:
+
+- **Start URL.** By default a journey starts at the project's target URL. Give it its own URL when the flow begins somewhere else.
+- **Session.** A journey either starts from the signed-in browser state saved during exploration or from a clean browser. Login, signup, password recovery, and public pages want a clean browser; most authenticated flows want the saved session.
+
+Every edit to a journey creates a new version of it and, if the project is active, schedules a run. When a flow changes on purpose, edit the journey rather than waiting for it to fail.
+
+## Test run
+
+A test run is one round of executing journeys in Replay Browser. Each journey run produces a Replay recording. When a step fails, Replay QA investigates in the recording before deciding whether to file a bug; a run can recover from a broken step and continue. After a journey finishes, the enabled polish passes review the same recording.
+
+A run can end with journeys that passed, journeys that found bugs, and journeys that were blocked or incomplete for reasons outside the app (rate limiting, a verification code that never arrived, an app that went down). The test run page summarizes what was covered and what got in the way.
+
+## Bug
+
+A bug is a confirmed finding from a run, tied to the journey and recording that produced it, with a severity. A bug is only filed after Replay QA has confirmed it against the recording and checked that it is not a duplicate of an existing bug.
+
+Bugs have a status. Mark a bug fixed after you ship the fix and Replay QA reruns the journey to confirm; if the problem is still there the bug reopens. Mark it invalid if it describes intended behavior. [Bug reports](/reference/replay-qa/bug-reports) covers the report's contents, severities, and statuses.
+
+## Polish pass
+
+A polish pass is a category-specific review of a run's recording: accessibility, layout shift, network performance, and so on. Passes run after each journey run and file their findings as bugs in that category. Two of them produce something other than bugs. See [Polish passes](/reference/replay-qa/polish-passes).
+
+## Version
+
+For a project connected to GitHub, a version is one build Replay QA tested: a push to the main branch or a revision of a pull request. Each version records what changed, the journeys created or updated for it, and the bugs found in it. Pull request versions report back to the pull request. See [Continuous QA from GitHub](/basics/replay-qa/github).
+
+## Recording
+
+Every journey run is backed by a [Replay recording](/basics/debugging/overview#what-is-a-recording). While the journey executes, Replay Browser captures the full browser session, so the run can be replayed and inspected later exactly as it happened. That is what lets Replay QA trace a symptom to its root cause instead of guessing, and it is what you can hand to a coding agent through [Replay MCP](/basics/replay-mcp/overview) or open yourself in [Replay DevTools](/reference/replay-devtools/overview) when a report is not enough.
+
+## The loop
+
+Explore the app to get journeys. Run the journeys to get recordings. Investigate the recordings to get bugs. Fix the bugs and mark them fixed so the journeys run again. Explore again when the app grows. With GitHub connected, every new build starts the loop over on its own.

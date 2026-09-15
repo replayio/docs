@@ -1,0 +1,90 @@
+---
+title: Framework panels
+description: React components, Redux actions, and Playwright test steps in Replay DevTools, each with a jump to the code that ran.
+image: /images/react.png
+imageHeight: 433
+---
+
+When a recording contains a React app, a Redux store, or a Playwright test, Replay DevTools adds a panel for it. Each panel shows the framework's own view of what happened and lets you jump from a component, action, or test step to the moment in the code where it ran.
+
+## React panel
+
+The React panel is similar to the React DevTools browser extension, with the difference that it can show any render in the recording, not just the current one. It works with React 18 and 19 and does not need React's own source maps; your application's source maps give it original component names.
+
+### Select a component with the picker
+
+Pick a component by clicking its rendered output in the video.
+
+### Inspect the component tree
+
+Browse the tree at the current point in time. Higher-order components are highlighted on the right.
+
+### Search for components
+
+Press `cmd+f` or click into the search field to find a component by name.
+
+### Inspect props, state, and hooks
+
+Props, state, and hook values are shown with the same object formatting as the Console, with a jump to any function value's definition.
+
+### Jump to definition
+
+The jump button in the top right opens the component's source.
+
+### See what changed since the last render
+
+Because Replay can compare a render with the previous one, props, state, and hook values that changed are highlighted in yellow. This tells you directly which input caused the render you are looking at.
+
+### Hook values instead of hook indexes
+
+The extension shows hooks by index. Replay collects enough during replay to show each hook's current value and the function that declared it.
+
+### Original component names
+
+Component names are source-mapped, so minified production bundles still show the names from your source.
+
+<Video src="reactPanelCourse" autoplay={false} />
+
+## Redux panel
+
+The Redux panel has the features of the Redux DevTools extension plus the ability to jump to the code that dispatched each action.
+
+### Actions
+
+- The actions dispatched during the recording, in order, with a filter by type.
+- The action payload.
+- The state after each dispatch, and the diff from the state before it.
+
+### Jump to dispatch
+
+Redux DevTools can move the app to the state after a dispatch. Replay can pause at the `dispatch` call itself, inside the thunk, saga, or event handler that made it, with that code's local state available.
+
+### Any value in the store
+
+Redux DevTools can only serialize and replay plain objects. Because Replay re-runs the app to reach each dispatch, the panel shows whatever was actually in the store, including class instances, Maps, and other non-serializable values.
+
+## Playwright timeline
+
+For recordings of Playwright tests, the Playwright panel lists the test steps, like Playwright's Trace Viewer, and links each step to the moment it ran in the app.
+
+### Inspect test steps
+
+Select a step to move to the point in time when it executed.
+
+### Inspect step source
+
+The selected step's source location in the test file is shown alongside it.
+
+### Jump to code
+
+**Jump to code** on a step seeks from the step's action, such as a click or fill, into the event handler in your app that received it. This is the fastest way to start on a flaky test: go from the failing assertion to the app code that ran just before it.
+
+<Callout type="replay">
+  [Open this recording](https://replay.help/playwright-flake-debug) for a
+  walkthrough of a flaky Playwright test, from the failing step to the root
+  cause.
+</Callout>
+
+<Video src="playwrightDebugging" autoplay={false} />
+
+Recording Playwright tests is covered in [How to record](/basics/getting-started/record-your-app). For agent-driven analysis of the same recordings, see the `PlaywrightSteps` tool in the [MCP tools reference](/reference/replay-mcp/tools#test-analysis).

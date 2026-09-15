@@ -5,7 +5,11 @@ description: Record your app once, then let a coding agent or Replay DevTools in
 
 Replay QA records every test run in Replay Browser and analyzes the recording to explain a failure. You can use that same recording and analysis engine yourself, without a QA project: record your app, then inspect the recording with a coding agent through Replay MCP or by hand in Replay DevTools.
 
-A recording captures the browser's execution, not a video. Replaying it re-runs the same code with the same inputs, so anything you could have inspected while the bug was happening can be inspected afterwards: console output, variables at any point, network requests, DOM state, React renders. You can add console logs to code that already ran and see what they would have printed.
+## What is a recording?
+
+A recording is a capture of everything the browser's JavaScript engine took as input while your app ran: network responses, user events, timers, random numbers, and the rest. It is not a video and not a series of DOM snapshots. Replaying it feeds the same inputs to the same code, so the app runs again exactly as it did, and can be paused at any point. Anything you could have inspected while the bug was happening can be inspected afterwards: console output, variables at any moment, network requests, DOM state, React renders. You can add console logs to code that already ran and see what they would have printed.
+
+Every recording has a URL of the form `https://app.replay.io/recording/<recording-id>`. That URL is what you open in [Replay DevTools](/reference/replay-devtools/overview), what you hand to an agent connected to [Replay MCP](/basics/replay-mcp/overview), and what a [Replay QA bug report](/reference/replay-qa/bug-reports) links to as its evidence. [How does time travel work?](/reference/time-travel/how-does-time-travel-work) covers the mechanism in more depth.
 
 ## The workflow
 
@@ -21,7 +25,7 @@ Connect your agent to the Replay MCP server and hand it the recording. It can re
 
 ## Or open it in Replay DevTools
 
-Every recording has a URL of the form `https://app.replay.io/recording/<recording-id>`. Opening it loads Replay DevTools: a timeline of the session with console, network, elements, and sources panels, plus React and Redux panels for apps that use them. Console logs you add there appear as if they had always been in the code.
+Open the recording URL to load [Replay DevTools](/reference/replay-devtools/overview): a timeline of the session with console, network, elements, and sources panels, plus React and Redux panels for apps that use them. Console logs you add there appear as if they had always been in the code.
 
 </Steps>
 
@@ -44,6 +48,13 @@ Replay MCP and Replay QA read the source maps your app serves through `sourceMap
   icon="lightbulb"
   href="/reference/time-travel/how-does-time-travel-work"
   description="What Replay records, why replaying is deterministic, and how Replay DevTools answers questions in under a second."
+/>
+
+<QuickLink
+  title="Replay DevTools reference"
+  icon="console"
+  href="/reference/replay-devtools/overview"
+  description="Time travel tools, browser panels, framework panels, and sharing recordings with a team."
 />
 
 <QuickLink

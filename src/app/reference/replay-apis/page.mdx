@@ -1,0 +1,123 @@
+---
+title: Replay APIs
+description: Endpoints and discovery URLs for programmatic access to Replay recordings, metadata, and the Replay MCP server.
+---
+
+Replay exposes a few programmatic surfaces. Which one you want depends on what you are automating:
+
+| You want to                                                        | Use                                                    |
+| ------------------------------------------------------------------ | ------------------------------------------------------ |
+| Let a coding agent inspect a recording                             | [Replay MCP](#replay-mcp)                              |
+| Drive Replay QA (projects, journeys, bugs) from a script or agent  | [Replay QA REST API and MCP](/reference/replay-qa/api) |
+| Fetch recordings, team members, or comments for a team             | [GraphQL API](#graphql-api)                            |
+| Open a debugging session against a recording and query it directly | [Replay Protocol](#replay-protocol)                    |
+| Record a non-browser application                                   | [Replay Driver](#replay-driver)                        |
+
+All of these except Replay QA authenticate with an [app.replay.io API key](/reference/api-keys) sent as `Authorization: Bearer <key>`. Replay QA uses its own `lqa_` token; see the [QA API reference](/reference/replay-qa/api#authentication).
+
+## Replay MCP
+
+The Replay MCP server lets an MCP client (Claude Code, Cursor, Codex, and others) analyze a recording with the same time-travel data Replay DevTools uses.
+
+|             |                                                                                  |
+| ----------- | -------------------------------------------------------------------------------- |
+| Endpoint    | `https://dispatch.replay.io/nut/mcp`                                             |
+| Transport   | Streamable HTTP                                                                  |
+| Server card | [`/.well-known/mcp/server-card.json`](/.well-known/mcp/server-card.json)         |
+| Setup       | [Replay MCP overview](/basics/replay-mcp/overview#connect-the-replay-mcp-server) |
+| Tools       | [MCP tools reference](/reference/replay-mcp/tools)                               |
+
+## GraphQL API
+
+The GraphQL API covers team and user metadata: recordings in a team, team members, and comments on a recording. It does not expose the contents of a recording; use the Replay Protocol or Replay MCP for that.
+
+|          |                                         |
+| -------- | --------------------------------------- |
+| Endpoint | `POST https://api.replay.io/v1/graphql` |
+| Auth     | `Authorization: Bearer <api key>`       |
+| Body     | `{ "query": "...", "variables": {} }`   |
+
+```js
+const resp = await fetch('https://api.replay.io/v1/graphql', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${process.env.REPLAY_API_KEY}`,
+  },
+  body: JSON.stringify({ query, variables: {} }),
+})
+const json = await resp.json()
+if (json.errors) {
+  throw new Error(json.errors[0].message)
+}
+```
+
+## Replay Protocol
+
+The Replay Protocol is the WebSocket API that Replay DevTools and Replay MCP are built on. A client creates a session for a recording, then sends commands against that session to pause at points in time, evaluate expressions, read sources, list network requests, and so on.
+
+|                  |                                                                             |
+| ---------------- | --------------------------------------------------------------------------- |
+| WebSocket        | `wss://dispatch.replay.io`                                                  |
+| Docs             | [static.replay.io/protocol](https://static.replay.io/protocol/tot/)         |
+| TypeScript types | [`@replayio/protocol`](https://www.npmjs.com/package/@replayio/protocol)    |
+| Examples         | [replayio/Protocol-Examples](https://github.com/Replayio/Protocol-Examples) |
+
+Domains:
+
+- [Authentication](https://static.replay.io/protocol/tot/Authentication) — authenticate the connection with an API key.
+- [Recording](https://static.replay.io/protocol/tot/Recording) — manage recordings.
+- [Session](https://static.replay.io/protocol/tot/Session) — create and use a session for a recording.
+- [Pause](https://static.replay.io/protocol/tot/Pause) — inspect program state at a point in time.
+- [Debugger](https://static.replay.io/protocol/tot/Debugger) — sources, breakpoints, stepping, execution points.
+- [Console](https://static.replay.io/protocol/tot/Console) — console messages.
+- [DOM](https://static.replay.io/protocol/tot/DOM) and [CSS](https://static.replay.io/protocol/tot/CSS) — DOM tree and computed styles at a point in time.
+- [Network](https://static.replay.io/protocol/tot/Network) — requests, responses, and bodies.
+- [Graphics](https://static.replay.io/protocol/tot/Graphics) — screenshots and paint data.
+- [Target](https://static.replay.io/protocol/tot/Target) and [Internal](https://static.replay.io/protocol/tot/Internal) — used by recorders and for diagnostics.
+
+A short example that lists the network requests in a recording, using the `createSession` helper from the examples repo:
+
+```ts
+import { createSession } from './create-session'
+import type { RequestInfo, RequestEventInfo } from '@replayio/protocol'
+
+function fetchRequests(recordingId: string) {
+  return createSession(
+    { apiKey, recordingId },
+    async (client, { sessionId }) => {
+      const requests: RequestInfo[] = []
+      const events: RequestEventInfo[] = []
+
+      client.addEventListener('Network.requests', (resp) => {
+        requests.push(...resp.requests)
+        events.push(...resp.events)
+      })
+
+      await client.sendCommand('Network.findRequests', {}, sessionId)
+      return { requests, events }
+    },
+  )
+}
+```
+
+For most analysis tasks, [Replay MCP](/reference/replay-mcp/tools) already wraps the protocol calls you would otherwise write by hand.
+
+## Replay Driver
+
+The Replay Driver is the native library that Replay Browser loads to capture a recording. Applications that are not browsers can load it themselves (`dlopen` and `dlsym`), call `RecordReplayAttach` early in process startup with the dispatch address (`wss://dispatch.replay.io`) and a build ID, and call `RecordReplayFinishRecording` when done. The recording then uploads and can be inspected with the Replay Protocol or Replay DevTools.
+
+This is a low-level integration path and is not needed for web apps, Playwright tests, or Node. See the [Replay Driver docs](https://static.replay.io/driver) for the full function list.
+
+## Discovery URLs
+
+This docs site publishes machine-readable descriptions of the surfaces above:
+
+| URL                                                                              | Contents                                   |
+| -------------------------------------------------------------------------------- | ------------------------------------------ |
+| [`/.well-known/mcp/server-card.json`](/.well-known/mcp/server-card.json)         | Replay MCP server card                     |
+| [`/.well-known/api-catalog`](/.well-known/api-catalog)                           | Catalog of Replay APIs (RFC 9727)          |
+| [`/.well-known/agent-skills/index.json`](/.well-known/agent-skills/index.json)   | Agent skills for Replay MCP and Replay QA  |
+| [`/.well-known/oauth-protected-resource`](/.well-known/oauth-protected-resource) | OAuth resource metadata for the MCP server |
+
+The site root, `/basics`, and `/reference` also serve a markdown index when requested with `Accept: text/markdown`.

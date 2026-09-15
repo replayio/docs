@@ -1,0 +1,218 @@
+---
+title: Browser panels
+description: The Replay DevTools panels that mirror Chrome DevTools, and what time travel adds to each one.
+image: /images/console.png
+imageHeight: 392
+---
+
+Replay DevTools has the panels you would expect from a browser's developer tools. Each one works the way you are used to, and each gains something from the fact that the session can be replayed to any point. The short videos on this page are from the [Replay course](https://replay.help/course).
+
+## Replay viewer
+
+The viewer is the default mode when you open a recording: the video of the session, the timeline under it, and the list of events.
+
+### Video timeline
+
+Press the play button or `space` to play the recording as a video, or drag the playhead to any point.
+
+### Events timeline
+
+User interactions and page navigations, in order. Click a row to move the playhead to that moment, or click **Jump to Code** to switch to DevTools mode paused in the JavaScript handler for that event.
+
+### Comments
+
+Click in the video to leave a visual comment at the current time. See [Comments and annotations](/reference/replay-devtools/time-travel-tools#comments-and-annotations).
+
+### Recording info
+
+The info panel shows the URL, author, creation date, and access settings for the recording. See [Sharing and teams](/reference/replay-devtools/sharing-and-teams).
+
+### Jump to code
+
+When something goes wrong, a click or key press usually happened right before it. The hard part is knowing which component handled it. **Jump to Code** on that event is usually the right place to start.
+
+<Video src="timelineCourse" autoplay={false} />
+
+## Console
+
+### Add live console logs
+
+Hover over a line in the Sources panel, click the `+`, type an expression, and save. The messages appear in the Console as if they had always been there. See [Add console logs on the fly](/reference/replay-devtools/time-travel-tools#add-console-logs-on-the-fly).
+
+### Evaluate expressions
+
+While paused, evaluate any expression in the terminal at the bottom of the Console. Evaluations run in the replaying browser and cannot change the recording, so there is nothing to corrupt.
+
+### Add console message prefixes
+
+Give a log a colored badge so its messages stand out.
+
+### Filter console messages
+
+Use the filter input at the top to show only messages matching a string.
+
+### Search console messages
+
+Press `cmd+f` to search without hiding the other messages.
+
+### View messages from node modules
+
+Messages from `node_modules` are hidden by default. Turn them on under **Node modules** in the Console sidebar.
+
+### View console message timestamps
+
+Timestamps are hidden by default. Turn them on under **Timestamps** in the Console sidebar.
+
+### Jump to console messages
+
+Click a message's jump button to pause at the execution that logged it. The replaying browser pauses there, repaints, and lets you evaluate expressions.
+
+### Expand object properties
+
+When you expand an object in Chrome's Console you see its properties as they are now, not as they were when it was logged. Replay shows the values at the exact point the message was logged.
+
+### Anchor the focus window to a message
+
+Set the start or end of the [focus window](/reference/replay-devtools/time-travel-tools#focus-window) to a Console message to narrow the recording to the range around it.
+
+### View JS event handlers
+
+To see which function handled a click, scroll, or WebSocket message, choose the event listener category in the Console sidebar and log the handlers.
+
+<Video src="consoleLogsCourse" autoplay={false} />
+
+## Sources
+
+The Sources panel has the navigation features you would expect from an editor, plus hit counts that tell you what actually ran.
+
+### Full text search
+
+Press `cmd+shift+f` or click the search icon in the toolbar to search every source in the recording. Supports include and exclude paths and regular expressions. Results in code that never executed are dimmed.
+
+### Search in file
+
+Press `cmd+f` to search the file you are viewing.
+
+### Outline
+
+Press `cmd+shift+o` or open the outline in the toolbar to list the functions in the current file, with the number of times each was called.
+
+### File explorer
+
+Press `cmd+p` or open the explorer in the toolbar to browse the sources loaded during the recording. A recording can span several page loads and include source maps, so the same original file can appear under more than one page.
+
+### Jump to generated location
+
+Replay shows original source when a source map is available, and pretty-prints minified code otherwise. Right-click and choose **Jump to generated location**, or **View generated source** in the footer, to see the code the browser actually ran.
+
+### Source map explorer
+
+If a mapping looks wrong, the source map explorer in the footer shows how the original and generated code line up.
+
+### Hit counts
+
+Every line shows how many times it ran. That tells you at a glance which branches executed and how many messages a console log on that line will produce.
+
+### Add console logs
+
+Hover the gutter and click `+`. See [Add console logs on the fly](/reference/replay-devtools/time-travel-tools#add-console-logs-on-the-fly).
+
+### Jump to a line's next or previous execution
+
+Hold `⌘` or `⌘ + ⇧` and click a line's hit count to seek to the next or previous time it ran. You can also set a breakpoint and use resume or rewind in the Pause panel, but with several breakpoints set you cannot tell in advance which one you will hit.
+
+<Video src="sourceCourse" autoplay={false} />
+
+## Pause panel
+
+The Pause panel is what you see when the replay is paused at a point in the code: the stack, the scopes, and the controls for moving through time.
+
+### Call stack
+
+The frames that led to the current pause. Select any frame and step forward or backward from there.
+
+### Scopes
+
+Local and enclosing scope values at the current pause.
+
+### Stepping and resuming
+
+Step over, in, and out, forward and backward. Resume and rewind to the next or previous breakpoint. Because you can always go back, stepping too far costs one click instead of a reload.
+
+### Breakpoints
+
+The breakpoints you and your teammates have set in this recording.
+
+### Print statements
+
+The console logs you and your teammates have added to this recording.
+
+### Function timeline
+
+Scrub through the current function's execution and see the path it took. Useful for functions with many branches and loops.
+
+### Async call stacks
+
+In a live debugger, frames before an `await`, `setTimeout`, or `fetch` boundary are listed but their variables are gone, because those frames have been garbage collected. In Replay you can select a frame from before the async boundary, and the replaying browser goes back to it and shows its scope.
+
+## Elements
+
+### Select elements with the picker
+
+The picker highlights the DOM element under your cursor in the video and selects it in the tree.
+
+### Inspect applied rules and computed properties
+
+The sidebar lists the selectors that apply to the element in precedence order, linked to the original CSS files when source maps are present, and the computed layout properties.
+
+### Search for elements
+
+Search the markup by attribute or text. Toggle the badge to the right of the search field to search by XPath instead.
+
+<Figure
+  alt="Elements panel search"
+  src="/images/elements-panel-search.png"
+  width={800}
+  height={300}
+/>
+
+### View element event listeners
+
+The event listeners tab lists the handlers attached to the element, with a jump to where each is defined.
+
+### Jump to React component
+
+In development builds of React apps, a panel in the bottom right shows the component that rendered the selected element.
+
+<Video src="elementsPanelCourse" autoplay={false} />
+
+## Network
+
+### Filter by request type
+
+Click the filter button at the top left and pick the types to show: Fetch, Image, WebSocket, JavaScript, and so on.
+
+### Filter by path
+
+Type in the search field at the top of the list.
+
+### Jump to the request
+
+The jump button on a request pauses at the `fetch` call that sent it, with the calling function's state available.
+
+<Figure
+  alt="The network tab with a fast-forward button"
+  src="/images/network-jump.png"
+  height={231}
+  width={414}
+/>
+
+### Request details
+
+1. **Headers**: request and response headers, status code, and general information.
+2. **Request**: the request body.
+3. **Response**: the response body.
+4. **Stack trace**: where the request was made, with links into the Sources panel.
+5. **Timings**: timing breakdown for the request.
+
+<Video src="networkPanelCourse" autoplay={false} />

@@ -24,10 +24,10 @@ export function Hero() {
                 Autonomous app testing
               </p>
               <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-zinc-400">
-                Replay QA explores your web app, discovers user journeys, writes
-                Playwright tests, and delivers root cause analysis for every bug
-                it finds — all powered by Replay&apos;s time-travel debugging
-                engine.
+                Replay QA explores your web app, builds journeys through it,
+                runs them in Replay Browser, and delivers root cause analysis
+                for every bug it finds — all powered by Replay&apos;s
+                time-travel debugging engine.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
@@ -48,7 +48,7 @@ export function Hero() {
                   href="/basics/replay-qa/frpc-ci"
                   className="font-medium text-gray-700 underline decoration-gray-400 underline-offset-2 hover:text-gray-900 dark:text-zinc-300 dark:decoration-zinc-600 dark:hover:text-white"
                 >
-                  CI integration with FRPC
+                  Testing a PR build in CI
                 </a>
               </p>
             </div>

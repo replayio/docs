@@ -4,6 +4,17 @@ Canonical URL: https://docs.replay.io/reference
 
 Commands, endpoints, and settings for the Replay platform.
 
+## Replay QA
+
+- [API and MCP tools](https://docs.replay.io/reference/replay-qa/api) —
+  endpoints, authentication, MCP tool list, REST resources, bug statuses.
+- [Polish passes](https://docs.replay.io/reference/replay-qa/polish-passes) —
+  the category-specific reviews (accessibility, layout shift, glitches, network
+  performance, React rendering, SEO, UX, UI details, security, Sightmap) and
+  which need extra setup.
+- [Bug reports](https://docs.replay.io/reference/replay-qa/bug-reports) —
+  fields in a report, severity levels, status lifecycle, export formats.
+
 ## Replay CLI
 
 The `replayio` CLI installs the Replay browser, records sessions, and uploads
@@ -13,7 +24,7 @@ recordings and source maps to https://app.replay.io.
 - [Uploading source maps](https://docs.replay.io/reference/replay-cli/source-maps)
 - Package: https://github.com/replayio/replay-cli/tree/main/packages/replayio
 
-## API keys and tokens
+## APIs and credentials
 
 - [API keys and tokens](https://docs.replay.io/reference/api-keys) — two
   separate credentials. The app.replay.io API key is used by the CLI, the
@@ -21,6 +32,13 @@ recordings and source maps to https://app.replay.io.
   header for Replay MCP. The Replay QA API token (`lqa_...`, from
   https://qa.replay.io Settings > API) is used by the Replay QA REST API and
   Replay QA MCP server. They are not interchangeable.
+- [Replay APIs](https://docs.replay.io/reference/replay-apis) — Replay MCP,
+  GraphQL, Replay Protocol, Replay Driver, and the `.well-known` discovery URLs.
+  - Replay Protocol (WebSocket, `wss://dispatch.replay.io`): https://static.replay.io/protocol/tot/
+  - GraphQL API (team metadata): `POST https://api.replay.io/v1/graphql`
+  - Replay Driver (record non-browser apps): https://static.replay.io/driver
+  - API catalog: https://docs.replay.io/.well-known/api-catalog
+  - All of the above use an app.replay.io API key as `Authorization: Bearer`.
 
 ## Replay MCP server (inspect recordings)
 
@@ -35,17 +53,48 @@ recordings and source maps to https://app.replay.io.
 - OpenAPI spec: https://qa.replay.io/api/v1/openapi.json
 - MCP endpoint: `https://qa.replay.io/api/mcp` (OAuth sign-in or `Authorization: Bearer lqa_...`)
 - OAuth resource metadata: https://qa.replay.io/.well-known/oauth-protected-resource
-- Docs: https://docs.replay.io/basics/replay-qa/agent-integration
+- Reference: https://docs.replay.io/reference/replay-qa/api
+- How-to: https://docs.replay.io/basics/replay-qa/agent-integration
 
-## Frameworks
+## Replay DevTools (inspect recordings by hand)
 
-- [React version support and source maps](https://docs.replay.io/reference/integrations/frameworks-libraries/react-sourcemaps)
+Open any recording at `https://app.replay.io/recording/<recordingId>`.
 
-## Public APIs
+- [Overview](https://docs.replay.io/reference/replay-devtools/overview) —
+  opening a recording, Viewer vs DevTools mode, a first walkthrough.
+- [Time travel tools](https://docs.replay.io/reference/replay-devtools/time-travel-tools) —
+  console logs added after the fact, jump to any event, focus window,
+  comments pinned to a point in time.
+- [Browser panels](https://docs.replay.io/reference/replay-devtools/browser-panels) —
+  viewer, Console, Sources, Pause, Elements, Network.
+- [Framework panels](https://docs.replay.io/reference/replay-devtools/framework-panels) —
+  React, Redux, Playwright steps.
+- [Sharing and teams](https://docs.replay.io/reference/replay-devtools/sharing-and-teams) —
+  share a recording, move it between teams, create a team, team API keys.
 
-- Replay Protocol docs: https://static.replay.io/protocol/tot/
-- GraphQL API: https://api.replay.io/v1/graphql
-- API catalog: https://docs.replay.io/.well-known/api-catalog
+## React support
+
+Replay's React analysis (Replay QA, Replay MCP, and the React panel) reads
+React's generated code directly. It supports React 18 and 19, including
+Next.js 13.5 through 16, with no React source maps or extra build plugin.
+Your application's own source maps improve component and file names. See
+https://docs.replay.io/basics/replay-qa/source-maps#react-support.
+
+## Replay Browser
+
+- [Replay Browser](https://docs.replay.io/reference/replay-runtimes/replay-chrome) —
+  Chromium 108 fork; Linux x86-64 and macOS; small recording overhead; WebGL
+  and Web Audio unsupported.
+- [Replay Node](https://docs.replay.io/reference/replay-runtimes/replay-node) —
+  Node 16 build, not under active development.
+
+## Security and privacy
+
+- [Security practices](https://docs.replay.io/reference/security-and-privacy/security-practices) —
+  SOC 2 Type 2 (Security, Confidentiality, Availability), isolated replay
+  containers, SSO/IAM roles, vulnerability scanning, security@replay.io.
+- [Privacy principles](https://docs.replay.io/reference/security-and-privacy/privacy-principles) —
+  private by default, no employee access, encrypted at rest, delete any time.
 
 ## Authentication
 

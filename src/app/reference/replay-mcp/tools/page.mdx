@@ -3,54 +3,70 @@ title: Tools Reference
 description: Complete reference for all Replay MCP tools available to AI agents.
 ---
 
-This page documents every tool available through the Replay MCP server. Tools are grouped by category, with typical investigation workflows for each.
+This page documents every tool exposed by the Replay MCP server at `https://dispatch.replay.io/nut/mcp`, the server that lets a coding agent inspect a Replay recording. To connect an agent to it, see [Connect the Replay MCP server](/basics/replay-mcp/overview#connect-the-replay-mcp-server). This is a different server from the Replay QA MCP server, which manages QA projects and bugs; that one is documented under [Replay QA API and MCP tools](/reference/replay-qa/api).
 
-Agents discover these tools automatically when connected to the MCP server. You don't need to memorize them — but understanding what's available helps you give better prompts and understand what your agent is doing during an investigation.
+Agents discover these tools automatically once connected. You do not need to memorize them, but knowing what is available helps you write better prompts and follow what your agent is doing during an investigation. Tools are grouped by category below, with a typical investigation workflow for each.
+
+Most tools take a `recordingId` and many take a `mode`. Where a tool has modes, `summary` is the starting point and the other modes drill into detail. Every tool that returns events also returns execution points, which the Code Inspection tools accept as input.
+
+## Start here
+
+| Tool                  | Purpose                                                                                                                                                                                                        |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **RecordingOverview** | One-call summary of a recording: test results, errors, environment, network activity, React render performance, a key screenshot timestamp, and suggested next steps. Agents call this first on any recording. |
+
+<Callout type="note">
+  The first RecordingOverview call on a recording that has not been analyzed
+  before can take three to four minutes while the initial data is computed.
+  Later calls are fast.
+</Callout>
 
 ## Source Code & Console
 
-These tools help agents orient themselves within a recording — browsing files, reading code, viewing output, and seeing what the app looked like visually.
+These tools help agents orient themselves within a recording — browsing files, reading code, viewing output, and seeing what the app looked like.
 
-| Tool                | Purpose                                                                                                                                                |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **ListSources**     | List all source files in the recording. Supports glob filtering to narrow results.                                                                     |
-| **ReadSource**      | Read source code centered on a specific line, annotated with which statements actually executed during the recording.                                  |
-| **SearchSources**   | Regex search across all source files, with results annotated to show which matches are in code that actually ran.                                      |
-| **ConsoleMessages** | View all console log, warn, and error messages from the recording.                                                                                     |
-| **Screenshot**      | List all available screenshot timestamps, or fetch a screenshot at a specific moment showing visual state, mouse position, and recent mouse movements. |
+| Tool                 | Purpose                                                                                                                                                                                                                 |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ListSources**      | List the source files in the recording, with optional glob filtering.                                                                                                                                                   |
+| **ReadSource**       | Read up to 50 lines of source centered on a line, annotated with which statements executed during the recording.                                                                                                        |
+| **SearchSources**    | Regex search across all source files, with results annotated to show which matches are in code that ran. Playwright test runner code runs in Node and is not in the browser recording; use PlaywrightSteps for it.      |
+| **ConsoleMessages**  | Console output (`log`, `warn`, `error`, and so on). `summary` mode gives counts and the last errors and warnings; `messages` mode browses the full list with level and text filters. Console errors are not exceptions. |
+| **UserInteractions** | Clicks and key presses. `summary` mode gives counts, time range, and an activity timeline; `interactions` mode lists them chronologically with execution points.                                                        |
+| **Screenshot**       | List available screenshot timestamps, or fetch a screenshot at a timestamp with mouse position and recent movement. RecordingOverview suggests a key timestamp.                                                         |
+| **Annotations**      | Timestamped records attached by the runtime and integrations (Cypress, Playwright, React DevTools, network, localStorage). Call with no arguments to list kinds and counts; pass a `kind` to read them.                 |
 
 ### Typical workflow
 
-An agent investigating a bug will often start here: check **ConsoleMessages** for errors or unexpected output, use **SearchSources** to find relevant code, then **ReadSource** to examine it in detail. **Screenshot** helps correlate code behavior with what the user actually saw on screen. **ListSources** is useful when the agent needs to discover what files exist in the recording (source paths in recordings can differ from local paths due to source maps and build tools).
+After RecordingOverview, an agent checks **ConsoleMessages** for errors or unexpected output, uses **UserInteractions** to reconstruct what the user did, then **SearchSources** to find the relevant code and **ReadSource** to examine it. **Screenshot** correlates code behavior with what the user saw. **ListSources** helps when source paths in the recording differ from local paths because of source maps and build tools.
 
 ## Code Inspection
 
-These tools let agents inspect application state at specific moments during execution — examining variables, evaluating expressions, and understanding call paths.
+These tools inspect application state at specific moments during execution — variables, expressions, and call paths.
 
-| Tool               | Purpose                                                                                                                                                                                                     |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **DescribePoint**  | Describe application state at a specific execution point — variables in scope, code context, and optionally the full dependency chain showing how execution reached that point.                             |
-| **Evaluate**       | Evaluate any JavaScript expression at a specific execution point. Like running code in the DevTools console, but at any moment in the recording.                                                            |
-| **GetStack**       | Get the call stack at an execution point — see which functions called which to reach that moment.                                                                                                           |
-| **Logpoint**       | Set a virtual breakpoint at a source location and evaluate an expression at every hit. Returns up to 20 results, letting the agent observe how a value changes across multiple executions of the same code. |
-| **InspectElement** | Get size, layout, DOM ancestry, and render information for a DOM element, identified by CSS selector or element reference.                                                                                  |
+| Tool               | Purpose                                                                                                                                                                                                                               |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **DescribePoint**  | Describe application state at an execution point: the containing function with executed and not-executed lines marked, variable values, and timestamps. `dependencyChain=true` traces the causal chain back to the originating event. |
+| **Evaluate**       | Evaluate a synchronous JavaScript expression at an execution point. Like the DevTools console, but at any moment in the recording. Promises and async functions cannot be inspected.                                                  |
+| **GetStack**       | Get the call stack at an execution point.                                                                                                                                                                                             |
+| **Logpoint**       | Evaluate an expression at every hit of a source line (up to 20), optionally narrowed to a point range or a column. Shows how a value changes across executions of the same code.                                                      |
+| **InspectElement** | Size, layout, DOM ancestry, and render point for a DOM element. Expensive; agents use it sparingly and prefer ReactComponentTree for structure.                                                                                       |
 
 ### Typical workflow
 
-After finding suspicious code with SearchSources, an agent will use **Logpoint** to see how values change at that location across the recording. When a specific hit looks wrong, it uses **DescribePoint** to understand the full context, **Evaluate** to test hypotheses ("what would this expression return here?"), and **GetStack** to see how execution arrived there. **InspectElement** is useful for layout or rendering bugs where the agent needs to understand DOM structure.
+After finding suspicious code with SearchSources, an agent uses **Logpoint** to see how values change at that location. When a hit looks wrong, it uses **DescribePoint** for full context, **Evaluate** to test hypotheses ("what would this expression return here?"), and **GetStack** to see how execution arrived there. **InspectElement** is for layout or rendering bugs where DOM structure matters.
 
 ## Error Analysis
 
-Quick ways to find what went wrong.
+Quick ways to find what went wrong. RecordingOverview already includes an error summary; these give the detail.
 
-| Tool                  | Purpose                                                                                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| **UncaughtException** | Find all uncaught JavaScript exceptions in the recording, with stack traces and execution points.                                |
-| **ReactException**    | Find exceptions that caused React to unmount — error boundary triggers, fatal render errors, and similar React-specific crashes. |
+| Tool                  | Purpose                                                                                                   |
+| --------------------- | --------------------------------------------------------------------------------------------------------- |
+| **UncaughtException** | Uncaught runtime exceptions (errors not caught by `try`/`catch`), with stack traces and execution points. |
+| **ReactException**    | Exceptions that caused React to unmount: error boundary crashes and render-phase errors.                  |
 
 ### Typical workflow
 
-These are often the **first tools an agent reaches for** when debugging a crash or error. **UncaughtException** catches any unhandled errors. **ReactException** specifically finds errors that broke the React component tree. Both return execution points that the agent can then investigate further with Code Inspection tools.
+These are often the first tools an agent reaches for when debugging a crash. **UncaughtException** covers any unhandled error; **ReactException** finds errors that broke the React tree. Both return execution points for the Code Inspection tools.
 
 <Callout type="note">
   ReactException only works with recordings of React applications.
@@ -58,65 +74,78 @@ These are often the **first tools an agent reaches for** when debugging a crash 
 
 ## Network & Storage
 
-Inspect external communication and client-side data persistence.
+Inspect external communication and client-side persistence.
 
-| Tool               | Purpose                                                                                                                                                                       |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **NetworkRequest** | List all HTTP requests, or get detailed information about a specific request including headers, body, status, and timing. Supports filtering by URL substring and time range. |
-| **LocalStorage**   | View all localStorage read and write operations that occurred during the recording.                                                                                           |
+| Tool               | Purpose                                                                                                                                                                                                                           |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **NetworkRequest** | `summary` mode gives totals, failed and slow counts, status distribution, and top domains. `requests` mode browses a paginated table filterable by URL and time range. Request detail includes headers, body, status, and timing. |
+| **LocalStorage**   | `summary` mode groups localStorage accesses by key with counts, final values, and timing. `operations` mode lists every access chronologically.                                                                                   |
 
 ### Typical workflow
 
-When investigating data-related bugs, an agent checks **NetworkRequest** to see if API calls returned unexpected data, failed, or were slow. Filtering by URL helps focus on specific endpoints. **LocalStorage** reveals client-side state persistence issues — stale cached values, missing keys, or unexpected overwrites.
+For data bugs, an agent checks **NetworkRequest** for API calls that failed, were slow, or returned unexpected data, filtering by URL to focus on an endpoint. **LocalStorage** reveals stale cached values, missing keys, and unexpected overwrites.
 
 ## React Analysis
 
-A deep set of tools for understanding React application behavior — from component tree structure down to individual fiber render causes. This is one of Replay MCP's most powerful feature areas.
+Tools for understanding React application behavior, from component tree structure down to why a single fiber re-rendered.
 
-| Tool                    | Purpose                                                                                                                                   |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **ReactComponentTree**  | View the React component hierarchy at any point in the recording. Can focus on a specific component to see its ancestors and descendants. |
-| **GetPointComponent**   | Identify which React component was being rendered at a specific execution point.                                                          |
-| **DescribeComponent**   | Get the full render history of a named component — every time it rendered, what props it had, and what triggered each render.             |
-| **ReactRenders**        | Multi-mode render analysis tool (see detailed breakdown below).                                                                           |
-| **DescribeReactRender** | Trace a specific render trigger back through the dependency chain to find the root cause, with component render counts.                   |
+| Tool                         | Purpose                                                                                                                                                                                                                                                           |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ReactComponentTree**       | The mounted component tree at a point in time. `summary` gives counts and top-level structure; `tree` is a paginated, depth-limited hierarchy; `subtree` focuses on one component's ancestors and descendants. Filters by name and hides noise such as providers. |
+| **GetPointComponent**        | The React component being rendered at an execution point.                                                                                                                                                                                                         |
+| **ReactRenders**             | Multi-mode render analysis (see below).                                                                                                                                                                                                                           |
+| **ReactPerformanceInsights** | Runs every deterministic React performance check and returns prioritized findings with user-visible impact, timing, affected components, and suggested actions. Detects heavy commits (over 50ms), render loops, expensive state updates, and more.               |
 
 ### ReactRenders: deep render analysis
 
-ReactRenders is the most feature-rich tool in the MCP server. It supports multiple analysis modes that let agents progressively drill into render behavior:
+ReactRenders is the most feature-rich tool in the MCP server. Its modes let agents drill progressively into render behavior:
 
-- **Summary mode** — a recording-wide overview of render activity. How many commits, which components rendered most, overall render patterns. This is the starting point for any React performance investigation.
-- **Commits mode** — a paginated list of every React commit (batch of renders). Shows what changed in each commit and when it happened.
-- **Commit detail** — drill into a single commit to see exactly which components rendered and why.
-- **Waste ranking** — components ranked by wasted renders (renders that produced no visible DOM changes). This directly identifies performance optimization opportunities.
-- **Component mode** — view a single component's render history across all commits. Shows how a specific component behaved over the entire recording.
-- **Commit fibers** — list all fiber instances of a component within a specific commit. Useful when a component renders multiple times in one commit.
-- **Fiber cause** — the deepest drill level. Shows exactly why a specific fiber instance re-rendered — which prop changed, which state update fired, which context value shifted.
+- **summary** — a recording-wide overview of commits and render time. The starting point for any React performance investigation.
+- **waste-rank** — components ranked by wasted renders (renders that produced no visible change). Directly identifies optimization targets.
+- **commits** — a paginated chronological list of every React commit (batch of renders).
+- **commit** — detail for one commit: which components rendered and why.
+- **trigger-detail** — the dependency chain (click, network response, dispatch) that triggered a commit.
+- **component** — one component's render history across all commits.
+- **fiber** — every render of one fiber instance, optionally with prop values at each render.
+- **commit-fibers** — all fiber instances of a component within one commit.
+- **fiber-cause** — the deepest level: why one fiber instance re-rendered — which prop changed, which state update fired, which context value shifted.
 
-A typical React performance investigation flows: **summary** → **waste ranking** → pick a component → **component mode** → pick a commit → **commit fibers** → **fiber cause** to find the root trigger.
-
-All modes support time and execution point range filtering, so agents can focus on specific parts of the recording.
+A typical React performance investigation flows **summary** → **waste-rank** → **component** → **commit-fibers** → **fiber-cause**. All modes accept time and execution point ranges.
 
 ### Typical workflow
 
-For debugging React issues, agents start with **ReactComponentTree** to understand the app structure, then use **ReactRenders** in summary mode to get the big picture. For render bugs, **DescribeComponent** shows a specific component's full history. For performance work, the waste-rank → fiber-cause drill-down path in **ReactRenders** is the most direct route to finding unnecessary re-renders. **DescribeReactRender** traces a specific render trigger back to its origin — useful when the cause of a re-render isn't obvious.
+For a performance audit, agents start with **ReactPerformanceInsights** and follow its findings into **ReactRenders**. For a rendering bug, **ReactComponentTree** shows the structure at the moment in question, **ReactRenders** in `component` mode shows that component's history, and `trigger-detail` or `fiber-cause` shows what set the render off.
 
 <Callout type="note">
   All React tools require the recording to contain a React application. The
   agent will receive an error if it tries to use these on a non-React recording.
 </Callout>
 
+## State Libraries
+
+Instrumented analysis of common state management libraries. Each tool's `summary` mode lists what the recording contains; the other modes step through events and inspect state at a specific event.
+
+| Tool                | Purpose                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **ReduxActions**    | Redux and Redux Toolkit dispatches. `summary` gives action type frequency; `actions` browses dispatches; `action-detail` shows timing, selector stats, component render timings, and dispatch origin; `impact` reports render impact with recommendations; `state-shape` lists the state tree's keys and types; `action-state` shows state values at a dispatch, narrowed with a `path` such as `auth.user`. |
+| **ZustandStores**   | Zustand stores. `summary` lists stores and `setState` counts; `store-events` browses calls chronologically; `store-state` shows the updater, incoming changes, merged result, and previous state at one call.                                                                                                                                                                                                |
+| **TanStackQueries** | TanStack Query (React Query) cache events. `summary` gives lifecycle stats per query; `query-events` shows one query's timeline; `query-timeline` shows all queries chronologically; `query-state` shows cached data at an event.                                                                                                                                                                            |
+
+### Typical workflow
+
+For a "the UI shows the wrong data" bug in a Redux app, an agent runs **ReduxActions** `state-shape` to learn the tree, `actions` to find the dispatch near the symptom, then `action-state` with a `path` to see what the store held. `impact` turns a slow interaction into a list of the renders a dispatch caused. The same pattern applies to **ZustandStores** and **TanStackQueries**.
+
 ## Test Analysis
 
 Tools for investigating Playwright test recordings.
 
-| Tool                | Purpose                                                                                                                                                                                      |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **PlaywrightSteps** | List all steps from a Playwright test with timestamps, stack traces, and error information. Optionally drill into a specific step to see the inspector protocol commands that were executed. |
+| Tool                | Purpose                                                                                                                                                                                                                                        |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **PlaywrightSteps** | `summary` gives each test's pass/fail status and duration; `steps` lists a test's steps (use `failedOnly=true` to focus on failures); `step-detail` shows the inspector protocol commands for one step; `test-source` reads the test's source. |
 
 ### Typical workflow
 
-When debugging a failed Playwright test, the agent uses **PlaywrightSteps** to find which step failed and what error occurred. It can then drill into that step's protocol commands, use **Screenshot** to see the visual state at the failure, and switch to Code Inspection tools to understand why the expected element or condition wasn't met.
+For a failed Playwright test, the agent uses **PlaywrightSteps** to find the failing step and its error, reads the test with `test-source`, uses **Screenshot** to see the page at the failure, and switches to the Code Inspection tools to understand why the expected element or condition was not met.
 
 <Callout type="note">
   PlaywrightSteps only works with recordings created from Playwright test runs.
@@ -124,21 +153,21 @@ When debugging a failed Playwright test, the agent uses **PlaywrightSteps** to f
 
 ## Performance Profiling
 
-Tools for understanding where execution time is spent.
+Tools for understanding where execution time is spent. Each accepts begin and end execution points to focus on a range.
 
-| Tool                  | Purpose                                                                                                                                                                                      |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **ProfileStatements** | Profile JavaScript statement execution between two points. Produces a flat profile and call tree showing statement hit counts per function — which code paths ran the most.                  |
-| **ProfileGraph**      | Profile dependency graph entries (React fiber renders, effect calls) between two points. Groups results by source and ranks by execution amount — shows what React work dominated execution. |
-| **ExecutionDelay**    | Analyze per-function execution delays in a source file. Computes how long each function took based on source length and breakpoint timing.                                                   |
-| **ProfileSampling**   | Low-level native engine stack sampling. This profiles the Replay runtime itself, not the recorded application — primarily useful for internal debugging of replay performance.               |
+| Tool                  | Purpose                                                                                                                                                                                          |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **ProfileStatements** | Profile JavaScript statement execution between two points: a flat profile and call tree of statement hits per function.                                                                          |
+| **ProfileGraph**      | Profile dependency graph entries (React fiber renders, effect calls) between two points, grouped by source and ranked by execution amount. Shows what React work dominated.                      |
+| **ExecutionDelay**    | Per-function execution delays within one source file, computed from source length and the delay before each function's first breakpoint executes.                                                |
+| **ProfileSampling**   | Stack sampling of the native replay engine itself between two points. This profiles the Replay runtime, not the recorded application; it is mainly for internal debugging of replay performance. |
 
 ### Typical workflow
 
-For JavaScript performance issues, **ProfileStatements** identifies hot code paths — functions that executed the most statements. **ProfileGraph** is specifically valuable for React apps, showing which renders and effects consumed the most execution. **ExecutionDelay** gives a per-function view within a specific file. These tools accept optional begin/end execution points to focus on a specific time range rather than the entire recording.
+For JavaScript performance issues, **ProfileStatements** identifies hot code paths. **ProfileGraph** is the React-specific view of which renders and effects consumed the most execution. **ExecutionDelay** gives a per-function view within one file. For React apps, **ReactPerformanceInsights** is usually the faster first step.
 
 ## Utility
 
-| Tool             | Purpose                                                                                                                                                                                        |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **GetPointLink** | Generate a shareable `app.replay.io` URL for a specific execution point. Useful for creating links that others can open in Replay DevTools to see the exact moment the agent is investigating. |
+| Tool             | Purpose                                                                                                                                               |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **GetPointLink** | Generate a shareable `app.replay.io` URL for an execution point, so a person can open Replay DevTools at the exact moment the agent is investigating. |
