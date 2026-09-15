@@ -8,7 +8,7 @@ Everything you can do in the Replay QA web app is also available to scripts and 
 - **REST API** at `https://qa.replay.io/api/v1`. Use it from scripts, CI jobs, or an agent that can run `curl`.
 - **MCP server** at `https://qa.replay.io/api/mcp`. Use it from Claude Code, Cursor, Codex, or any MCP client so the agent can call Replay QA directly as tools.
 
-Both expose the same projects, bugs, journeys, test runs, and explorations. Pick whichever fits how your agent works. This page covers the workflow, authentication, and setup. The [OpenAPI spec](https://qa.replay.io/api/v1/openapi.json) is the complete endpoint reference.
+Both expose the same projects, bugs, journeys, test runs, and explorations. Pick whichever fits how your agent works. This page covers the workflow, authentication, and setup. [Replay QA API and MCP tools](/reference/replay-qa/api) lists the endpoints and tools, and the [OpenAPI spec](https://qa.replay.io/api/v1/openapi.json) is the complete endpoint reference.
 
 <Callout type="note" title="Which credential?">
   Replay QA uses its own API token, which starts with `lqa_`. It is not the same
@@ -22,7 +22,7 @@ The intended workflow for a coding agent keeping an app bug-free:
 
 1. **Create a project** for the running app. Pass its URL and a short note on the flows that matter most. Optionally include a design document describing what the app should do.
 2. **Let QA run.** Poll the project status until explorations and test runs finish. Replay QA drives exploration and testing itself; the agent does not need to start its own explorations or test runs.
-3. **Read the bugs.** List open bugs and fetch each one. Every bug includes reproduction steps, expected versus actual behavior, a screenshot chronology, and a root-cause analysis traced through the Replay recording down to the responsible code. The agent does not need to debug; it reads the report and applies the fix it points to.
+3. **Read the bugs.** List open bugs and fetch each one. Every [bug report](/reference/replay-qa/bug-reports) includes reproduction steps, expected versus actual behavior, a screenshot chronology, and a root-cause analysis traced through the Replay recording down to the responsible code. The agent does not need to debug; it reads the root cause and writes the fix.
 4. **Mark each fix.** Setting a bug to `fixed` automatically reruns the affected journey to confirm the fix. Use `wontfix` to dismiss a bug or `invalid` if it is not a real bug.
 5. **Loop.** Go back to polling status and keep going until no open bugs remain.
 
@@ -96,20 +96,7 @@ VS Code uses the same shape under a top-level `servers` key in `.vscode/mcp.json
 
 The Settings page in Replay QA shows the same commands with your site URL filled in.
 
-### Tools
-
-The MCP server exposes tools for the same objects as the REST API:
-
-| Area         | Tools                                                                                                                                                                            |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Projects     | `list_projects`, `get_project`, `get_project_status`, `create_project`, `update_project_settings`, `set_project_flags`, `set_project_status`, `update_project_login_credentials` |
-| Bugs         | `list_bugs`, `get_bug`, `set_bug_status`                                                                                                                                         |
-| Test runs    | `list_test_runs`, `get_test_run`, `get_test_run_logs`, `cancel_test_runs`, `edit_journey_queue`, `clear_project_queue`                                                           |
-| Journeys     | `list_journeys`, `get_journey`                                                                                                                                                   |
-| Explorations | `list_explorations`, `get_exploration`, `get_exploration_logs`                                                                                                                   |
-| Account      | `get_credit_usage`, `get_credit_usage_day`, `manage_project_members`, `configure_completion_email`                                                                               |
-
-Ask the agent to list the tools for current descriptions and parameters.
+The server exposes tools for projects, bugs, test runs, journeys, explorations, and account settings. The full list is in [Replay QA API and MCP tools](/reference/replay-qa/api).
 
 Example prompt:
 
@@ -143,9 +130,9 @@ curl -X POST https://qa.replay.io/api/v1/projects \
   }'
 ```
 
-The response includes the project ID and a link to the project dashboard. `budget` caps how many credits the project may spend; it defaults to 20, which is a thorough pass. Around 10 is a smoke test and 50 or more gives broad coverage.
+The response includes the project ID and a link to the project dashboard. `budget` caps how many credits the project may spend; it defaults to 20, which is a thorough pass.
 
-Other endpoints cover journeys, explorations, test runs, credit usage, project members, GitHub pull-request runs, and app versions. The [OpenAPI spec](https://qa.replay.io/api/v1/openapi.json) lists them all with request and response shapes, and any OpenAPI-aware agent or client can load it directly.
+The other resources, and the full set of bug statuses, are listed in [Replay QA API and MCP tools](/reference/replay-qa/api).
 
 ## Apps only reachable from your machine
 
@@ -155,4 +142,4 @@ If the app runs on `localhost` or a private network, create the project with `us
 npx --yes replayqa proxy --project <project_id>
 ```
 
-The create response includes a `reverse_proxy_setup_url` you can poll for tunnel status. [Testing a localhost app](/basics/replay-qa/localhost) explains the proxy in detail, and [CI integration with FRPC](/basics/replay-qa/frpc-ci) covers builds that only exist inside GitHub Actions.
+The create response includes a `reverse_proxy_setup_url` you can poll for tunnel status. [Testing a localhost app](/basics/replay-qa/localhost) explains the proxy in detail, and [Testing a pull request build in GitHub Actions](/basics/replay-qa/frpc-ci) covers builds that only exist inside a CI job.

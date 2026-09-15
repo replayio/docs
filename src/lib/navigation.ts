@@ -24,20 +24,34 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           href: '/basics/replay-qa/overview',
         },
         {
-          title: 'Testing a localhost app',
-          href: '/basics/replay-qa/localhost',
+          title: 'Connect your app',
+          omitFromDocumentTitle: true,
+          defaultOpen: true,
+          links: [
+            {
+              title: 'Testing a localhost app',
+              href: '/basics/replay-qa/localhost',
+            },
+            {
+              title: 'Testing a PR build in CI',
+              href: '/basics/replay-qa/frpc-ci',
+            },
+          ],
         },
         {
-          title: 'CI integration with FRPC',
-          href: '/basics/replay-qa/frpc-ci',
-        },
-        {
-          title: 'Publishing with source maps',
-          href: '/basics/replay-qa/source-maps',
-        },
-        {
-          title: 'Driving Replay QA from a coding agent',
-          href: '/basics/replay-qa/agent-integration',
+          title: 'Work with results',
+          omitFromDocumentTitle: true,
+          defaultOpen: true,
+          links: [
+            {
+              title: 'Publishing with source maps',
+              href: '/basics/replay-qa/source-maps',
+            },
+            {
+              title: 'Driving QA from a coding agent',
+              href: '/basics/replay-qa/agent-integration',
+            },
+          ],
         },
       ],
     },
@@ -227,6 +241,25 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
     },
   ],
   reference: [
+    {
+      title: 'Replay QA',
+      icon: 'beaker',
+      defaultOpen: true,
+      links: [
+        {
+          title: 'API and MCP tools',
+          href: '/reference/replay-qa/api',
+        },
+        {
+          title: 'Polish passes',
+          href: '/reference/replay-qa/polish-passes',
+        },
+        {
+          title: 'Bug reports',
+          href: '/reference/replay-qa/bug-reports',
+        },
+      ],
+    },
     {
       title: 'Debugging with Replay',
       icon: 'mcp',

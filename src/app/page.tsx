@@ -8,14 +8,14 @@ const cards: CardAttributes[] = [
     icon: 'replay',
     title: 'Replay QA overview',
     content:
-      'Autonomous app testing that explores your web app, writes Playwright tests, captures recordings, and delivers root cause analysis.',
+      'Autonomous app testing that explores your web app, builds and runs journeys, captures recordings, and delivers root cause analysis.',
     href: '/basics/replay-qa/overview',
   },
   {
     icon: 'github',
-    title: 'CI integration with FRPC',
+    title: 'Test a pull request build in GitHub Actions',
     content:
-      'Run Replay QA against every change in your pipeline with the FRPC CI integration.',
+      'Run Replay QA against a pull request build that only exists inside your CI job.',
     href: '/basics/replay-qa/frpc-ci',
   },
   {

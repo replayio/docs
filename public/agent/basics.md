@@ -1,26 +1,36 @@
-# Replay Docs — Basics
+# Replay Docs — Guides
 
 Canonical URL: https://docs.replay.io/basics
 
-The Basics section covers **Replay QA**, the autonomous app testing product,
+The Guides section covers **Replay QA**, the autonomous app testing product,
 and the underlying recording and debugging tools for developers who want to
 use them directly.
 
 ## Replay QA
 
-Point Replay QA at a web app and it explores the application, writes
-Playwright tests, records every run, and delivers root cause analysis for
+Point Replay QA at a web app and it explores the application, builds
+journeys through it, records every run, and delivers root cause analysis for
 each bug it finds.
 
 - [Overview](https://docs.replay.io/basics/replay-qa/overview)
+
+Connect your app:
+
 - [Testing a localhost app](https://docs.replay.io/basics/replay-qa/localhost)
-- [CI integration with FRPC](https://docs.replay.io/basics/replay-qa/frpc-ci)
+- [Testing a pull request build in GitHub Actions](https://docs.replay.io/basics/replay-qa/frpc-ci)
+
+Work with results:
+
 - [Publishing with source maps](https://docs.replay.io/basics/replay-qa/source-maps)
 - [Driving Replay QA from a coding agent](https://docs.replay.io/basics/replay-qa/agent-integration)
   — REST API (`https://qa.replay.io/api/v1`, OpenAPI at
   `/api/v1/openapi.json`) and MCP server (`https://qa.replay.io/api/mcp`) for
   creating projects, reading bug reports, and marking fixes. Auth: `lqa_` token
   from Settings > API, or OAuth sign-in for MCP.
+
+Reference: [API and MCP tools](https://docs.replay.io/reference/replay-qa/api),
+[Polish passes](https://docs.replay.io/reference/replay-qa/polish-passes),
+[Bug reports](https://docs.replay.io/reference/replay-qa/bug-reports).
 
 Launch Replay QA: https://qa.replay.io
 

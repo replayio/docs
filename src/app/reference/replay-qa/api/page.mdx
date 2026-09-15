@@ -1,0 +1,79 @@
+---
+title: Replay QA API and MCP tools
+description: Endpoints, authentication, MCP tool list, and the REST resources behind the Replay QA web app.
+---
+
+Replay QA exposes the same projects, bugs, journeys, test runs, and explorations through a REST API and an MCP server. This page lists what is there. For the workflow and client setup, see [Driving Replay QA from a coding agent](/basics/replay-qa/agent-integration).
+
+## Endpoints
+
+| Interface               | URL                                                                                                                 |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| REST base URL           | `https://qa.replay.io/api/v1`                                                                                       |
+| OpenAPI spec            | [`https://qa.replay.io/api/v1/openapi.json`](https://qa.replay.io/api/v1/openapi.json) (no authentication required) |
+| MCP server              | `https://qa.replay.io/api/mcp` (streamable HTTP)                                                                    |
+| OAuth resource metadata | `https://qa.replay.io/.well-known/oauth-protected-resource`                                                         |
+
+The OpenAPI spec is the complete endpoint reference, with request and response shapes. Any OpenAPI-aware client or agent can load it directly.
+
+## Authentication
+
+Both interfaces accept a Replay QA API token as a bearer token:
+
+```
+Authorization: Bearer lqa_your_token_here
+```
+
+Tokens start with `lqa_` and are created in Replay QA under **Settings > API**. The MCP server also supports OAuth sign-in, so MCP clients can connect by URL alone and authenticate in the browser on first use.
+
+<Callout type="note" title="Which credential?">
+  This token is not the app.replay.io API key used by the `replayio` CLI and
+  Replay MCP. See [API keys and tokens](/reference/api-keys) for the difference.
+</Callout>
+
+## MCP tools
+
+| Area         | Tools                                                                                                                                                                            |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Projects     | `list_projects`, `get_project`, `get_project_status`, `create_project`, `update_project_settings`, `set_project_flags`, `set_project_status`, `update_project_login_credentials` |
+| Bugs         | `list_bugs`, `get_bug`, `set_bug_status`                                                                                                                                         |
+| Test runs    | `list_test_runs`, `get_test_run`, `get_test_run_logs`, `cancel_test_runs`, `edit_journey_queue`, `clear_project_queue`                                                           |
+| Journeys     | `list_journeys`, `get_journey`                                                                                                                                                   |
+| Explorations | `list_explorations`, `get_exploration`, `get_exploration_logs`                                                                                                                   |
+| Account      | `get_credit_usage`, `get_credit_usage_day`, `manage_project_members`, `configure_completion_email`                                                                               |
+
+Tool descriptions and parameters come from the server. Ask your agent to list the tools, or call `tools/list`, for the current set.
+
+## REST resources
+
+The requests behind the continuous QA loop:
+
+| Step                  | Request                                                                                                       |
+| --------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Create a project      | `POST /projects` with `target_url`, `instructions`, optional `design_document`, `budget`, `use_reverse_proxy` |
+| Poll status           | `GET /projects/{project_id}/status`                                                                           |
+| List open bugs        | `GET /projects/{project_id}/bugs?status=open`                                                                 |
+| Read a bug            | `GET /bugs/{bug_id}`                                                                                          |
+| Change a bug's status | `PATCH /bugs/{bug_id}` with `{"status": "fixed"}`                                                             |
+
+Other resources cover journeys (including a per-journey `target_url`), explorations, test runs, credit usage, project members, GitHub pull request runs, and app versions.
+
+### Bug statuses and severities
+
+Statuses you can set: `open`, `fixed`, `wontfix`, `invalid`. Setting `fixed` reruns the affected journey so Replay QA can confirm the fix; a bug that reappears is reopened and shows as open again. Replay QA also sets a few statuses itself, such as `pr-closed` for bugs found on a pull request that has since closed.
+
+Severities: `critical`, `high`, `medium`, `low`. See [Bug reports](/reference/replay-qa/bug-reports) for what each level means and what a report contains.
+
+### Budget
+
+`budget` caps how many credits a project may spend. The default of 20 is a thorough pass; around 10 is a smoke test and 50 or more gives broad coverage.
+
+### Reverse proxy fields
+
+Creating a project with `use_reverse_proxy: true` starts it gated: no tests run until a tunnel connects. The create response includes a `reverse_proxy_setup_url` you can poll for tunnel status. Connect the tunnel from a machine that can reach the app:
+
+```sh
+npx --yes replayqa proxy --project <project_id>
+```
+
+[Testing a localhost app](/basics/replay-qa/localhost) covers the proxy in detail.

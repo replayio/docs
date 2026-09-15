@@ -121,7 +121,7 @@ function SubheaderNavigation() {
       <div className="container px-0">
         <nav className="flex h-full items-center gap-6">
           <SubheaderNavigationLink
-            name={'Basics'}
+            name={'Guides'}
             isDefault={true}
             baseHref={'/basics'}
             href={'/basics/replay-qa/overview'}
@@ -129,7 +129,7 @@ function SubheaderNavigation() {
           <SubheaderNavigationLink
             name={'Reference'}
             baseHref={'/reference'}
-            href={'/reference/replay-mcp/tools'}
+            href={'/reference/replay-qa/api'}
           />
         </nav>
       </div>

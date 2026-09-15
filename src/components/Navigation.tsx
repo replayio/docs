@@ -11,6 +11,11 @@ import { Icon } from './Icon'
 import { NavIcon } from './NavIcon'
 import styles from './Navigation.module.css'
 
+function containsPathname(item: NavigationItem, pathname: string): boolean {
+  if (item.href && pathname.includes(item.href)) return true
+  return item.links?.some((link) => containsPathname(link, pathname)) ?? false
+}
+
 function Badge({ type }: { type: string }) {
   const icon = type === 'experimental' ? 'beaker' : 'wifi'
   return (
@@ -85,13 +90,7 @@ function ItemLinkDisclosure({
       defaultOpen={Boolean(
         item.defaultOpen ||
         (pathname !== '/' &&
-          item.links?.find((link) => {
-            return link.links
-              ? // sublinks
-                link.links.find((l) => l.href?.includes(pathname))
-              : // links
-                link.href?.includes(pathname)
-          })),
+          item.links?.some((link) => containsPathname(link, pathname))),
       )}
     >
       {({ open }) => (

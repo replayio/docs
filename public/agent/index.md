@@ -4,19 +4,21 @@ Canonical URL: https://docs.replay.io/
 
 Replay QA is an autonomous app testing tool built on Replay's time-travel
 debugging engine. Point it at a web app and it explores the application,
-discovers user journeys, writes Playwright tests, executes them while capturing
-full runtime recordings, and delivers root cause analysis and suggested fixes
-for every bug it finds.
+builds user journeys through it, runs them while capturing full runtime
+recordings, and delivers root cause analysis for every bug it finds.
 
 This documentation site is the canonical reference for Replay QA. Start here:
 
 - [Replay QA overview](https://docs.replay.io/basics/replay-qa/overview)
 - [Testing a localhost app](https://docs.replay.io/basics/replay-qa/localhost)
-- [CI integration with FRPC](https://docs.replay.io/basics/replay-qa/frpc-ci)
+- [Testing a pull request build in GitHub Actions](https://docs.replay.io/basics/replay-qa/frpc-ci)
 - [Publishing with source maps](https://docs.replay.io/basics/replay-qa/source-maps)
 - [Driving Replay QA from a coding agent](https://docs.replay.io/basics/replay-qa/agent-integration)
   — REST API and MCP server for the full create-project → read-bugs → mark-fixed loop
-- [Basics section index](https://docs.replay.io/basics)
+- [Replay QA API and MCP tools](https://docs.replay.io/reference/replay-qa/api),
+  [Polish passes](https://docs.replay.io/reference/replay-qa/polish-passes),
+  [Bug reports](https://docs.replay.io/reference/replay-qa/bug-reports) — reference
+- [Guides section index](https://docs.replay.io/basics)
 
 Replay QA is built on Replay's recording and time-travel debugging engine. The
 same engine is available directly to developers and their coding agents:

@@ -1,6 +1,6 @@
 ---
 title: Publishing with source maps
-description: How source maps improve Replay QA's root cause analysis and suggested fixes, and how to configure your build to publish them.
+description: How source maps improve Replay QA's root cause analysis, and how to configure your build to publish them.
 ---
 
 When you build a web app for production, your source code is compiled, bundled, and often minified. The browser runs the transformed output — not the code you wrote. Source maps are files that connect that compiled output back to your original source.
@@ -21,7 +21,7 @@ Replay QA runs against your deployed app. When source maps are available, every 
 
 **More precise root cause analysis.** When Replay time-travels a failing test recording, it traces the execution chain back to the source. With source maps, that trace cites your actual component names, function names, and file paths — not `a()`, `b()`, or `chunk-abc123.js`.
 
-**Actionable suggested fixes.** Bug reports include suggested fixes with file and line references. Source maps ensure those references point to the right place in your codebase, so a coding agent or developer can act on them directly.
+**Actionable root causes.** [Bug reports](/reference/replay-qa/bug-reports) cite the file and line responsible for a failure. Source maps ensure those references point to the right place in your codebase, so a coding agent or developer can go straight to the fix.
 
 **Better React analysis.** Replay QA's React analysis layer — render tracking, performance profiling, effect analysis, render cause tracing — works without source maps for React itself. Your application's source maps let it report real component names and file locations instead of compiled identifiers. Results are best on React 19; React 18 users should upgrade if they can, or see the fallback below.
 

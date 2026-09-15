@@ -6,8 +6,33 @@ test('navigation shows Replay QA pages by default', async ({ page }) => {
   await expect(nav.getByText('Replay QA', { exact: true })).toBeVisible()
   await expect(nav.getByText('Overview', { exact: true }).first()).toBeVisible()
   await expect(
-    nav.getByText('CI integration with FRPC', { exact: true }),
+    nav.getByText('Testing a PR build in CI', { exact: true }),
   ).toBeVisible()
+})
+
+test('nested groups expand for the current page', async ({ page }) => {
+  await page.goto('/basics/replay-qa/source-maps')
+  const nav = page.locator('nav')
+  await expect(
+    nav.getByRole('button', { name: 'Work with results' }),
+  ).toBeVisible()
+  await expect(
+    nav.getByText('Publishing with source maps', { exact: true }),
+  ).toBeVisible()
+  await expect(
+    nav.getByText('Driving QA from a coding agent', { exact: true }),
+  ).toBeVisible()
+})
+
+test('reference tab opens on the Replay QA section', async ({ page }) => {
+  await page.goto('/reference/replay-qa/api')
+  const nav = page.locator('nav')
+  await expect(nav.getByText('Replay QA', { exact: true })).toBeVisible()
+  await expect(
+    nav.getByText('API and MCP tools', { exact: true }),
+  ).toBeVisible()
+  await expect(nav.getByText('Polish passes', { exact: true })).toBeVisible()
+  await expect(nav.getByText('Bug reports', { exact: true })).toBeVisible()
 })
 
 async function clickHiddenPagesToggle(page: import('@playwright/test').Page) {

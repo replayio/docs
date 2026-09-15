@@ -4,6 +4,17 @@ Canonical URL: https://docs.replay.io/reference
 
 Commands, endpoints, and settings for the Replay platform.
 
+## Replay QA
+
+- [API and MCP tools](https://docs.replay.io/reference/replay-qa/api) —
+  endpoints, authentication, MCP tool list, REST resources, bug statuses.
+- [Polish passes](https://docs.replay.io/reference/replay-qa/polish-passes) —
+  the category-specific reviews (accessibility, layout shift, glitches, network
+  performance, React rendering, SEO, UX, UI details, security, Sightmap) and
+  which need extra setup.
+- [Bug reports](https://docs.replay.io/reference/replay-qa/bug-reports) —
+  fields in a report, severity levels, status lifecycle, export formats.
+
 ## Replay CLI
 
 The `replayio` CLI installs the Replay browser, records sessions, and uploads
@@ -35,7 +46,8 @@ recordings and source maps to https://app.replay.io.
 - OpenAPI spec: https://qa.replay.io/api/v1/openapi.json
 - MCP endpoint: `https://qa.replay.io/api/mcp` (OAuth sign-in or `Authorization: Bearer lqa_...`)
 - OAuth resource metadata: https://qa.replay.io/.well-known/oauth-protected-resource
-- Docs: https://docs.replay.io/basics/replay-qa/agent-integration
+- Reference: https://docs.replay.io/reference/replay-qa/api
+- How-to: https://docs.replay.io/basics/replay-qa/agent-integration
 
 ## Frameworks
 

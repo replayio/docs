@@ -1,0 +1,42 @@
+---
+title: Polish passes
+description: The category-specific reviews Replay QA can run on each test run's recording, what each one reports, and which ones need extra setup.
+---
+
+A polish pass is a focused review of a test run's recording for one class of issue. Functional testing asks "does the journey work?"; polish passes ask "is it slow, inaccessible, visually broken, or unsafe?" Each pass can be turned on or off per project.
+
+## Available passes
+
+| Pass                | What it reports                                                                                                      |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Network performance | Slow requests, large payloads, and waterfall issues                                                                  |
+| React rendering     | Unnecessary re-renders and performance bottlenecks in React apps                                                     |
+| Layout shift        | Elements that shift unexpectedly during load                                                                         |
+| Accessibility       | WCAG violations and other accessibility issues                                                                       |
+| Glitches            | Visual glitches, flickers, and rendering artifacts                                                                   |
+| User experience     | Interaction and usability problems                                                                                   |
+| SEO                 | Titles, descriptions, canonicals, robots directives, and crawlable navigation                                        |
+| UI details          | Complex UI features that need their own detailed testing                                                             |
+| Security            | Exposed secrets, unsafe requests, and missing access controls                                                        |
+| Sightmap            | A document of the app's views, components, and API requests for coding agents ([sightmap.org](https://sightmap.org)) |
+
+The set of passes changes over time. The project settings show the current list.
+
+## How passes run
+
+After each journey run finishes, Replay QA reviews that run's recording with every enabled pass. A pass first collects candidate findings from the recording, drops ones that duplicate an existing bug, then confirms each remaining candidate before filing it. Confirmed findings become bugs with the pass name as their category, alongside the functional bugs from the journey itself. See [Bug reports](/reference/replay-qa/bug-reports) for what a filed bug contains.
+
+Two passes produce something other than bugs:
+
+- **UI details** identifies complex interactive features (editors, drag-and-drop, multi-step forms) and creates dedicated journeys for them, so later test runs cover those features in depth. It also runs after the initial exploration.
+- **Sightmap** produces a document describing the app rather than filing bugs.
+
+## Passes that need extra setup
+
+- **React rendering** only reports on React applications. Enable it when the app uses React; publishing [source maps](/basics/replay-qa/source-maps) improves what it can name.
+- **Security** runs active probes against the app, so it only runs against apps you own. Enable security testing in the project settings and complete ownership verification, which means serving a verification file containing the project's nonce at the path Replay QA gives you. Until verification passes, the pass is skipped and the project records a warning explaining why. Security testing does not run against emulated or cloned targets.
+- **SEO** is for public pages. It is not useful on signed-in application screens.
+
+## Choosing passes
+
+Start with the passes that match how the app is used: layout shift, glitches, and user experience for any web app; accessibility if you have compliance requirements; network performance for data-heavy screens; React rendering for React apps; SEO for marketing and content pages. Turn off passes that do not apply so the bug list stays focused. You can change the set at any time; the next test runs use the new set.

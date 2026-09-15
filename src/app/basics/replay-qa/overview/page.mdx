@@ -17,7 +17,7 @@ You do not need an existing test suite or a list of reproduction steps. Replay Q
 2. **Create journeys.** Replay QA saves meaningful flows—such as signing up, searching, or checking out—as journeys that can be tested again.
 3. **Run the journeys.** Test runs exercise those journeys in Replay Browser and capture a deterministic runtime recording of what happened.
 4. **Investigate findings.** When a run uncovers a problem, Replay QA uses the recording to trace the symptom back to its root cause.
-5. **Report actionable bugs.** Each confirmed bug includes the observed behavior, evidence, root cause analysis, and a suggested fix.
+5. **Report actionable bugs.** Each confirmed bug includes the observed behavior, evidence, and a root cause analysis that points at the responsible code.
 
 The project remains useful after its first pass. Start another exploration to expand coverage, rerun journeys after a change, or connect GitHub to test new deployments continuously.
 
@@ -39,9 +39,9 @@ The same setup can reach internal hostnames and services available through your 
 
 ### A build inside CI
 
-If the application only exists inside a GitHub Actions runner, keep the app and tunnel alive for the complete test run with the FRPC CI integration.
+If the application only exists inside a GitHub Actions runner, the Replay QA CLI can open a tunnel from the runner and keep the app reachable for the complete test run.
 
-[Run Replay QA against a private CI build →](/basics/replay-qa/frpc-ci)
+[Test a pull request build in GitHub Actions →](/basics/replay-qa/frpc-ci)
 
 ## Build useful coverage
 
@@ -51,18 +51,18 @@ You can shape what Replay QA tests without writing browser automation.
 - **A design document** gives QA a source of truth for intended behavior.
 - **Test logins and variables** let journeys cover authenticated areas without putting credentials into test steps or bug reports.
 - **Additional explorations** discover new journeys as the product grows.
-- **Polish passes** check journeys for focused classes of issues, including user experience, accessibility, visual behavior, layout stability, and network performance.
+- **Polish passes** review each run for focused classes of issues, including accessibility, layout stability, visual glitches, network performance, React rendering, SEO, and security. See the [list of polish passes](/reference/replay-qa/polish-passes).
 
 ## Review test results
 
 A Replay QA project organizes its output around the work it performed:
 
 - **Overview** summarizes current QA activity, open bugs, recent test runs, and explored journeys.
-- **Bugs** collects confirmed findings and their severity, evidence, root cause analysis, and suggested fix.
+- **Bugs** collects confirmed findings with their severity, evidence, and root cause analysis.
 - **Test Runs** shows each round of journey execution and the result of every journey it exercised.
 - **User Sessions** captures submitted sessions when a project is configured to accept them.
 
-Bug reports can be copied or downloaded as Markdown for a coding agent. After applying a fix, rerun the affected journey to verify the behavior against the same flow.
+Bug reports can be copied or downloaded as Markdown for a coding agent. After applying a fix, mark the bug fixed; Replay QA reruns the affected journey to verify it and reopens the bug if the problem is still there. The [bug report reference](/reference/replay-qa/bug-reports) describes each field, severity level, and status.
 
 When a bug includes a Replay recording of the failing run, you can hand that recording to a coding agent through [Replay MCP](/basics/replay-mcp/overview) to inspect the console, code, and network traffic from the actual failure.
 
@@ -111,7 +111,19 @@ Yes. Configure a test login or allow Replay QA to register a test account. If QA
 
 <AccordionItem title="What does a bug report include?">
 
-A confirmed bug includes a description of the observed behavior, supporting runtime evidence and screenshots, root cause analysis, and a suggested fix. The underlying Replay recording preserves the browser execution that produced the finding.
+A confirmed bug includes a description of the observed behavior, reproduction steps with screenshots, expected versus actual behavior, and a root cause analysis with the evidence behind it. The underlying Replay recording preserves the browser execution that produced the finding. See [Bug reports](/reference/replay-qa/bug-reports) for the full list of fields.
+
+</AccordionItem>
+
+<AccordionItem title="Does Replay QA write a fix for me?">
+
+No. The bug report identifies the root cause and the code responsible; a developer or coding agent writes the fix. Mark the bug fixed and Replay QA reruns the journey to confirm it.
+
+</AccordionItem>
+
+<AccordionItem title="Why did Replay QA report something that is intended behavior?">
+
+Set the bug to invalid so it is not reported again, and add the intended behavior to the project's design document or instructions so future runs judge against it.
 
 </AccordionItem>
 

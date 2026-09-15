@@ -7,6 +7,7 @@
 
 export const VISIBLE_PREFIXES = [
   '/basics/replay-qa',
+  '/reference/replay-qa',
   '/basics/debugging',
   '/basics/replay-mcp',
   '/basics/getting-started/record-your-app',
