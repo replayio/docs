@@ -9,7 +9,7 @@ Those terms show up throughout the project chat, the rest of these docs, and the
 
 ## Project
 
-One application under test. A project has a target URL (a public URL, a localhost app reached through the [reverse proxy](/basics/replay-qa/localhost), or a build inside CI), plus the guidance you give it: instructions, an optional design document, test logins, and the set of enabled [polish passes](/reference/replay-qa/polish-passes). A project can also be connected to a GitHub repository so it tests new builds on its own.
+One application under test. A project has a target URL (a public URL, a localhost app reached through the [reverse proxy](/basics/replay-qa/localhost), or a build inside CI), plus the guidance you give it: instructions, an optional design document, test logins, the set of enabled [polish passes](/reference/replay-qa/polish-passes), and two caps, a credit budget and a bug limit. A project can also be connected to a GitHub repository so it tests new builds on its own.
 
 A project is either active or paused. A paused project schedules nothing. Replay QA pauses a project itself when it reaches the project's credit budget or the account runs out of credits, and tells you in the project chat.
 

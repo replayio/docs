@@ -64,31 +64,37 @@ The check's conclusion depends on the **require approval** setting.
 - **Off** (default): the check reports failure when bugs are found and neutral otherwise. It never blocks a merge.
 - **On**: the check reports success only for a clean run and failure when bugs are found. Mark it as a required status check in the repository's branch protection to block merges until Replay QA is satisfied.
 
+Require approval is set through the [REST API](/reference/replay-qa/api) as the `requireApproval` field of the project's GitHub settings.
+
 ## Send bugs to your issue tracker
 
 Replay QA can file each confirmed bug as an issue. The filed issue contains the full [bug report](/reference/replay-qa/bug-reports) as Markdown and a link back to the bug in Replay QA.
 
-Ask the project chat to set up an issue tracker. It supports:
+There are two ways to file to GitHub Issues, and one each for Linear and Jira.
 
-| Tracker       | What you provide                                                                      |
-| ------------- | ------------------------------------------------------------------------------------- |
-| GitHub Issues | A personal access token with issue write access to the repository                     |
-| Linear        | A Linear API key and the team to file into                                            |
-| Jira          | The Jira site URL, the project key, and the email and API token of the filing account |
+**Issues on the connected repository.** When you connect a repository during project setup and choose GitHub Issues as the bug destination, Replay QA files issues through the GitHub App installation. No extra credential is needed. This is the **file GitHub issues** setting on the GitHub connection (`fileIssues` in the API).
 
-Bugs found from that point on are filed as they are confirmed. Bugs the tracker already has are not filed again.
+**Any tracker, configured from the chat.** Ask the project chat to set up an issue tracker. It opens a panel where you pick the provider, enter its target and credential, and test the connection:
+
+| Tracker       | What you provide                                                                                                |
+| ------------- | --------------------------------------------------------------------------------------------------------------- |
+| GitHub Issues | The repository URL and a personal access token with `repo` (or Issues: read and write) scope on that repository |
+| Linear        | A Linear API key and the team ID to file into                                                                   |
+| Jira          | The Jira site URL, the project key, the email of the filing account, and its API token                          |
+
+Bugs found from that point on are filed as they are confirmed. A rediscovery of a bug that is already on file is recorded against the existing bug and does not create a new issue.
 
 <Callout type="warning">
-  The GitHub connection also has an older **file GitHub issues** toggle. Do not
-  turn it on alongside a GitHub Issues tracker configured through the chat, or
-  each bug is filed twice.
+  Do not enable both GitHub paths for the same project. A project with **file
+  GitHub issues** on and a GitHub Issues tracker configured from the chat files
+  every bug twice.
 </Callout>
 
 ## Hosting notes
 
 - **Vercel** and **Netlify** both report preview and production deployments to GitHub, so "Listen to GitHub events" works for both main-branch and pull request testing.
 - Other hosts: if the host creates GitHub Deployments with an environment URL, use "Listen to GitHub events". If it does not, use "Detect main branch deployments" with the production URL for the main branch; pull request testing needs a deployment or status from the host.
-- Preview deployments behind password protection or single sign-on are not reachable. Give Replay QA a bypass, or disable protection on previews for the test project.
+- The deployment URL has to be reachable from the internet without a password in front of it. Application logins are fine; give them to Replay QA as [test logins](/basics/replay-qa/getting-good-results#give-it-a-way-in).
 
 ## Limitations
 

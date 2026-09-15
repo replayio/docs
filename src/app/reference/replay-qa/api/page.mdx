@@ -58,6 +58,10 @@ The requests behind the continuous QA loop:
 
 Other resources cover journeys (including a per-journey `target_url`), explorations, test runs, credit usage, project members, GitHub pull request runs, and app versions.
 
+### GitHub settings
+
+A project's GitHub connection is a `github` object on the project. Send `null` to disconnect. Fields: `repoUrl` (required), `mainBranch` (default `main`), `mainBranchTesting` (`none`, `detect`, `events`), `mainBranchDeploymentUrl` (polled when `mainBranchTesting` is `detect`), `prTesting` (`none`, `events`), `fileIssues` (file confirmed bugs as GitHub issues through the App installation), and `requireApproval` (the pull request check succeeds only on a clean run). See [Continuous QA from GitHub](/basics/replay-qa/github) for what the modes do.
+
 ### Bug statuses and severities
 
 Statuses you can set: `open`, `fixed`, `wontfix`, `invalid`. Setting `fixed` reruns the affected journey so Replay QA can confirm the fix; a bug that reappears is reopened and shows as open again. Replay QA also sets a few statuses itself, such as `pr-closed` for bugs found on a pull request that has since closed.

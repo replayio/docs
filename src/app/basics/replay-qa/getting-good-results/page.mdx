@@ -5,7 +5,7 @@ description: What to tell Replay QA about your app, how to give it access, and h
 
 Replay QA works without configuration: give it a URL and it explores. The quality of what comes back depends on what it knows about the app and whether it can get in. This page is the guidance that matters most, in the order you will need it.
 
-Everything below is configured through the project chat or the project settings. Ask the chat to change a setting and it will do it, or ask for a form when the setting involves credentials.
+Everything below is configured through the project chat. Ask the chat to change a setting and it will do it, or ask for a form when the setting involves credentials. The **Project settings** panel shows the current values (status, budget, bug limit, polish passes, security testing, design document, app URL) so you can see what the project is running with. Only the project owner can change them.
 
 ## Tell it what the app is for
 
@@ -32,7 +32,9 @@ Use a dedicated test environment or test tenant where you can. Replay QA submits
 
 On a large app, start narrow. Exploration offers focus areas: authentication, onboarding, dashboard, checkout and payments, search and filters, forms and inputs, settings, navigation. Pick the two or three where a bug would hurt most, let the first round finish, then start another exploration for the next area.
 
-The project **budget** caps how many credits the project spends. The default is a thorough pass; lower it for a smoke test on a small app, raise it for broad coverage on a large one. When the budget is reached the project pauses and the chat tells you.
+The project **budget** caps how many credits the project spends. The default is a thorough pass; lower it for a smoke test on a small app, raise it for broad coverage on a large one. When the budget is reached the project pauses and the chat tells you; reply with a new budget, or use the paused banner on the project overview, to resume.
+
+The **bug limit** caps how many bugs QA files before it stops. On a first pass of an app that has never been tested, a low limit keeps the list reviewable; raise it once you have worked through the first batch.
 
 ## Pick polish passes deliberately
 
@@ -42,13 +44,13 @@ Turn on the [polish passes](/reference/replay-qa/polish-passes) that match the a
 
 Replay QA stops and asks in the project chat when it cannot continue on its own. The common reasons:
 
-| What it needs                                 | What to do                                                                                    |
-| --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| A login                                       | Provide credentials, or tell it to register its own account                                   |
-| An invitation, admin approval, or paid access | Grant it to the test account, or scope that area out                                          |
-| A file or record the flow requires            | Upload it, or describe where to get one                                                       |
-| More budget                                   | Raise the project budget, or wait for the next billing cycle if the account is out of credits |
-| The app was unreachable                       | Check the deployment or the tunnel, then tell it to try again                                 |
+| What it needs                                 | What to do                                                                                                     |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| A login                                       | Provide credentials, or tell it to register its own account                                                    |
+| An invitation, admin approval, or paid access | Grant it to the test account, or scope that area out                                                           |
+| A file or record the flow requires            | Upload it, or describe where to get one                                                                        |
+| More budget                                   | Tell the chat a new budget or use the paused banner; if the account itself is out of credits, upgrade the plan |
+| The app was unreachable                       | Check the deployment or the tunnel, then tell it to try again                                                  |
 
 Rate limits and CAPTCHAs also stop runs. Turn them off for the test environment or allow-list Replay QA's traffic.
 
