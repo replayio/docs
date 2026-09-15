@@ -33,9 +33,11 @@ same engine is available directly to developers and their coding agents:
   — overview of the record → investigate workflow and how it relates to Replay QA.
 - [Replay MCP](https://docs.replay.io/basics/replay-mcp/overview) — an MCP
   server (`https://dispatch.replay.io/nut/mcp`) that lets an AI agent inspect
-  a recording: sources, console, network, React state, and execution over time.
-  The page covers setup for Claude Code, Cursor, VS Code, and Codex.
-  [Tools reference](https://docs.replay.io/reference/replay-mcp/tools)
+  a recording: sources, console, network, user interactions, React renders and
+  performance, Redux / Zustand / TanStack Query state, Playwright steps, and
+  execution over time. The page covers setup for Claude Code, Cursor, VS Code,
+  and Codex. [Tools reference](https://docs.replay.io/reference/replay-mcp/tools)
+  lists all 30 tools; agents call `RecordingOverview` first.
 - [How to record](https://docs.replay.io/basics/getting-started/record-your-app)
   — make a recording of your own app with the `replayio` CLI, then open it in
   Replay DevTools (https://app.replay.io) or hand it to your agent through MCP.

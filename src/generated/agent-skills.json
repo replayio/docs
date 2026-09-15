@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/cloudflare/agent-skills-discovery-rfc/main/schema/index.schema.json",
   "version": "0.2.0",
   "site": "https://docs.replay.io",
-  "generatedAt": "2026-09-15T18:38:59.651Z",
+  "generatedAt": "2026-09-15T19:11:44.237Z",
   "skills": [
     {
       "name": "replay-cli",
@@ -16,7 +16,7 @@
       "type": "agent-skill",
       "description": "Use Replay MCP to inspect the contents of https://replay.io recordings.",
       "url": "https://docs.replay.io/.well-known/agent-skills/replay-mcp/SKILL.md",
-      "sha256": "72c4be2183864c0f569223487b43cd088acc68f48fc38544e1a4d3a665c9880a"
+      "sha256": "c4727afefd5196ab339fb0960d6231b42ae09efbd66e3ae4bb788885974860b9"
     },
     {
       "name": "replay-playwright",

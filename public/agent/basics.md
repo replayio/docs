@@ -54,11 +54,13 @@ Launch Replay QA: https://qa.replay.io
 
 An MCP server that gives AI agents (Claude Code, Cursor, Codex, VS Code, any
 MCP client) tools to inspect a Replay recording: source code, console output,
-network requests, React component state, and program execution at any point
-in time.
+network requests, user interactions, React renders and performance findings,
+Redux / Zustand / TanStack Query state, Playwright steps, and program execution
+at any point in time.
 
 - [Replay MCP: overview and setup](https://docs.replay.io/basics/replay-mcp/overview)
-- [Tools reference](https://docs.replay.io/reference/replay-mcp/tools)
+- [Tools reference](https://docs.replay.io/reference/replay-mcp/tools) — all 30
+  tools by category; `RecordingOverview` is the entry point
 - Endpoint: `https://dispatch.replay.io/nut/mcp`
 - Server card: https://docs.replay.io/.well-known/mcp/server-card.json
 
