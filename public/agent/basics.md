@@ -13,11 +13,21 @@ journeys through it, records every run, and delivers root cause analysis for
 each bug it finds.
 
 - [Overview](https://docs.replay.io/basics/replay-qa/overview)
+- [How Replay QA models your app](https://docs.replay.io/basics/replay-qa/concepts)
+  — the objects: project, exploration, journey, test run, bug, polish pass,
+  version, recording
+- [Getting good results](https://docs.replay.io/basics/replay-qa/getting-good-results)
+  — what to put in instructions and the design document, test logins vs
+  self-registration, scoping, budget, why QA pauses, working the bug list
 
 Connect your app:
 
 - [Testing a localhost app](https://docs.replay.io/basics/replay-qa/localhost)
 - [Testing a pull request build in GitHub Actions](https://docs.replay.io/basics/replay-qa/frpc-ci)
+- [Continuous QA from GitHub](https://docs.replay.io/basics/replay-qa/github)
+  — GitHub App; main-branch modes (detect deployment URL / GitHub events); PR
+  testing with an in-place comment and a "Replay QA" check; require-approval;
+  issue filing to GitHub Issues, Linear, Jira
 
 Work with results:
 

@@ -10,8 +10,14 @@ recordings, and delivers root cause analysis for every bug it finds.
 This documentation site is the canonical reference for Replay QA. Start here:
 
 - [Replay QA overview](https://docs.replay.io/basics/replay-qa/overview)
+- [How Replay QA models your app](https://docs.replay.io/basics/replay-qa/concepts)
+  — projects, explorations, journeys, test runs, bugs, polish passes, versions, recordings
+- [Getting good results](https://docs.replay.io/basics/replay-qa/getting-good-results)
+  — instructions, design document, logins, scope, budget, pauses, working the bug list
 - [Testing a localhost app](https://docs.replay.io/basics/replay-qa/localhost)
 - [Testing a pull request build in GitHub Actions](https://docs.replay.io/basics/replay-qa/frpc-ci)
+- [Continuous QA from GitHub](https://docs.replay.io/basics/replay-qa/github)
+  — GitHub App, main-branch and PR testing modes, PR comment and check, issue trackers
 - [Publishing with source maps](https://docs.replay.io/basics/replay-qa/source-maps)
 - [Driving Replay QA from a coding agent](https://docs.replay.io/basics/replay-qa/agent-integration)
   — REST API and MCP server for the full create-project → read-bugs → mark-fixed loop

@@ -1,0 +1,75 @@
+---
+title: Getting good results
+description: What to tell Replay QA about your app, how to give it access, and how to work the results so each round gets more useful.
+---
+
+Replay QA works without configuration: give it a URL and it explores. The quality of what comes back depends on what it knows about the app and whether it can get in. This page is the guidance that matters most, in the order you will need it.
+
+Everything below is configured through the project chat or the project settings. Ask the chat to change a setting and it will do it, or ask for a form when the setting involves credentials.
+
+## Tell it what the app is for
+
+**Instructions** steer exploration and testing. Say who the users are, which flows matter most, and what to leave alone. Good instructions look like:
+
+> This is a B2B invoicing app. Focus on creating and sending invoices, and on the payment page. Skip the marketing pages. Do not send email to real addresses.
+
+Bad instructions are generic ("test everything") or contain secrets. Put credentials in test logins, not in instructions.
+
+**The design document** describes how the app is supposed to behave. Replay QA judges findings against it, so it is the fastest way to stop reports about deliberate behavior. It can be a product spec, a feature list with expected behavior, or notes you write as false positives come in. Keep it about intent, not implementation.
+
+## Give it a way in
+
+If the app has a login wall, Replay QA needs either an account or permission to create one.
+
+- **Test logins.** Provide an email or username and password. Provide several for several roles (admin, member, viewer) and say in the instructions which is which. Logins are stored as project variables and referenced by name, so they do not appear in journey steps or bug reports.
+- **Self-registration.** Replay QA can sign up for its own account when the app allows it. It has a project email inbox and can complete email verification codes on its own.
+
+Prefer real test accounts for anything that needs seeded data or elevated roles. Prefer self-registration when you want signup and onboarding tested.
+
+Use a dedicated test environment or test tenant where you can. Replay QA submits forms, creates records, and triggers whatever the app does when a user acts.
+
+## Scope the first pass
+
+On a large app, start narrow. Exploration offers focus areas: authentication, onboarding, dashboard, checkout and payments, search and filters, forms and inputs, settings, navigation. Pick the two or three where a bug would hurt most, let the first round finish, then start another exploration for the next area.
+
+The project **budget** caps how many credits the project spends. The default is a thorough pass; lower it for a smoke test on a small app, raise it for broad coverage on a large one. When the budget is reached the project pauses and the chat tells you.
+
+## Pick polish passes deliberately
+
+Turn on the [polish passes](/reference/replay-qa/polish-passes) that match the app and turn off the rest so the bug list stays focused. React rendering is only useful on React apps. SEO is for public pages. Security requires ownership verification before it runs. The rest apply to most web apps.
+
+## When Replay QA pauses
+
+Replay QA stops and asks in the project chat when it cannot continue on its own. The common reasons:
+
+| What it needs                                 | What to do                                                                                    |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| A login                                       | Provide credentials, or tell it to register its own account                                   |
+| An invitation, admin approval, or paid access | Grant it to the test account, or scope that area out                                          |
+| A file or record the flow requires            | Upload it, or describe where to get one                                                       |
+| More budget                                   | Raise the project budget, or wait for the next billing cycle if the account is out of credits |
+| The app was unreachable                       | Check the deployment or the tunnel, then tell it to try again                                 |
+
+Rate limits and CAPTCHAs also stop runs. Turn them off for the test environment or allow-list Replay QA's traffic.
+
+## Work the bug list
+
+Read the root cause first. Each [bug report](/reference/replay-qa/bug-reports) traces the failure through the recording to the responsible code, so most fixes start from the report rather than from reproducing the bug by hand.
+
+After shipping a fix, set the bug to fixed. Replay QA reruns the affected journey to confirm and reopens the bug if the problem is still there.
+
+For a finding that describes intended behavior, set it to invalid and add the intended behavior to the design document or instructions so future runs judge against it. For a real problem you are not going to address, use wontfix.
+
+For a coding agent, copy the report as Markdown, or let the agent run the whole loop through the [REST API or MCP server](/basics/replay-qa/agent-integration). When the report is not enough, open the recording in Replay DevTools or hand it to the agent through [Replay MCP](/basics/replay-mcp/overview).
+
+## Keep coverage current
+
+- **Start another exploration** after shipping a new area. Explorations add journeys; they do not remove existing ones.
+- **Edit a journey** when a flow changes on purpose. Saving an edit reruns it.
+- **Give a journey its own start URL** when it does not begin at the project's target URL.
+- **Set the session** on journeys that must start signed out (login, signup, recovery) to a clean browser.
+- **Connect GitHub** so every new build is tested without anyone starting a run. See [Continuous QA from GitHub](/basics/replay-qa/github).
+
+## Publish source maps
+
+Root cause analysis names files and lines. With source maps served alongside the app, those are your source files rather than minified bundles. See [Publishing with source maps](/basics/replay-qa/source-maps).

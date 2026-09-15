@@ -8,6 +8,12 @@ test('navigation shows Replay QA pages by default', async ({ page }) => {
   await expect(
     nav.getByText('Testing a PR build in CI', { exact: true }),
   ).toBeVisible()
+  await expect(
+    nav.getByText('Getting good results', { exact: true }),
+  ).toBeVisible()
+  await expect(
+    nav.getByText('Continuous QA from GitHub', { exact: true }),
+  ).toBeVisible()
 })
 
 test('nested groups expand for the current page', async ({ page }) => {

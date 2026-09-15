@@ -11,6 +11,8 @@ You do not need an existing test suite or a list of reproduction steps. Replay Q
 
 <Button href="https://qa.replay.io">Launch Replay QA</Button>
 
+New here? Read [how Replay QA models your app](/basics/replay-qa/concepts) for the vocabulary, then [Getting good results](/basics/replay-qa/getting-good-results) for what to tell it before the first run.
+
 ## How Replay QA works
 
 1. **Explore the app.** An AI agent drives the application in a real browser to discover its screens, actions, and important workflows.
@@ -79,6 +81,10 @@ Connect a repository with the Replay QA GitHub App to run QA when new applicatio
 - **Main branch:** test a known deployment URL when a new main-branch deployment goes live.
 - **Pull requests:** test preview deployments reported by GitHub and post the result back to the pull request.
 
+Bugs can also be filed to GitHub Issues, Linear, or Jira as they are confirmed.
+
+[Continuous QA from GitHub →](/basics/replay-qa/github)
+
 GitHub is optional. A project can test a public URL or a reverse-proxied local app without connecting a repository.
 
 ## Get better root cause analysis
@@ -123,13 +129,31 @@ No. The bug report identifies the root cause and the code responsible; a develop
 
 <AccordionItem title="Why did Replay QA report something that is intended behavior?">
 
-Set the bug to invalid so it is not reported again, and add the intended behavior to the project's design document or instructions so future runs judge against it.
+Set the bug to invalid so it is not reported again, and add the intended behavior to the project's design document or instructions so future runs judge against it. See [Getting good results](/basics/replay-qa/getting-good-results).
+
+</AccordionItem>
+
+<AccordionItem title="Replay QA stopped and is asking me for something. What now?">
+
+It pauses when it cannot continue on its own: a login it lacks, an invitation or approval the test account needs, or a project that reached its credit budget. The project chat says what it needs. [When Replay QA pauses](/basics/replay-qa/getting-good-results#when-replay-qa-pauses) lists the common cases.
+
+</AccordionItem>
+
+<AccordionItem title="A journey broke after I changed the UI. What should I do?">
+
+If the flow changed on purpose, edit the journey to match; saving it schedules a rerun. If a whole area changed, start another exploration for it. See [Journey](/basics/replay-qa/concepts#journey).
 
 </AccordionItem>
 
 <AccordionItem title="Do I have to connect GitHub?">
 
-No. Connect GitHub when you want QA to react to main-branch or pull-request deployments. Manual and localhost projects work without a repository connection.
+No. Connect GitHub when you want QA to react to main-branch or pull-request deployments. Manual and localhost projects work without a repository connection. See [Continuous QA from GitHub](/basics/replay-qa/github).
+
+</AccordionItem>
+
+<AccordionItem title="What uses credits?">
+
+Explorations, journey runs, and polish passes spend credits; each project has a budget that caps its spend. Plans and credit amounts are on the [pricing page](https://replay.io/pricing).
 
 </AccordionItem>
 

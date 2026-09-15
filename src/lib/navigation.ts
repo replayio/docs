@@ -24,6 +24,14 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           href: '/basics/replay-qa/overview',
         },
         {
+          title: 'How Replay QA models your app',
+          href: '/basics/replay-qa/concepts',
+        },
+        {
+          title: 'Getting good results',
+          href: '/basics/replay-qa/getting-good-results',
+        },
+        {
           title: 'Connect your app',
           omitFromDocumentTitle: true,
           defaultOpen: true,
@@ -35,6 +43,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
             {
               title: 'Testing a PR build in CI',
               href: '/basics/replay-qa/frpc-ci',
+            },
+            {
+              title: 'Continuous QA from GitHub',
+              href: '/basics/replay-qa/github',
             },
           ],
         },

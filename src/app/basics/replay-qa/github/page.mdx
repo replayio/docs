@@ -1,0 +1,95 @@
+---
+title: Continuous QA from GitHub
+description: Connect a GitHub repository so Replay QA tests every main-branch deployment and pull request preview, reports back on the pull request, and files bugs to your issue tracker.
+---
+
+Without GitHub, you start rounds of testing yourself. With a repository connected, Replay QA tests each new build as it goes live, attributes journeys and bugs to the build that introduced them, and reports on pull requests.
+
+<Callout type="note">
+  This page is for builds that have a URL Replay QA can reach: a production
+  deployment or a preview deployment from Vercel, Netlify, or a similar host. If
+  the build only exists inside a GitHub Actions job, see [Testing a pull request
+  build in GitHub Actions](/basics/replay-qa/frpc-ci).
+</Callout>
+
+## What you get
+
+- A **version** for every tested build, listing what changed, the journeys created or updated, and the bugs found.
+- **Main-branch testing** whenever a new deployment of the default branch is live.
+- **Pull request testing** on each revision, with results posted to the pull request as a comment and a check.
+- Optional **issue filing** so each bug lands in GitHub Issues, Linear, or Jira.
+
+## Prerequisites
+
+- A GitHub repository for the app.
+- The Replay QA GitHub App installed on that repository. Someone with admin rights on the repository has to approve the installation; the project's GitHub settings show the install link once a repository is set.
+- A way for Replay QA to know when a build is live (below).
+
+## Connect the repository
+
+Tell the project chat to connect a GitHub repository, or set it in the project settings. You provide the repository URL and confirm the default branch, then choose how main-branch and pull request testing should run.
+
+### Main-branch testing
+
+| Mode                           | What it does                                                                                                                                                               |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| None                           | The main branch is not tested automatically.                                                                                                                               |
+| Detect main branch deployments | You give Replay QA the deployment URL. It watches that URL and starts a round when a new build goes live. Use this when your host does not report deployments to GitHub.   |
+| Listen to GitHub events        | Replay QA starts a round when GitHub reports a deployment of the default branch. Vercel, Netlify, and other hosts that create GitHub Deployments work without extra setup. |
+
+Main-branch rounds may create, update, or remove the project's journeys, because the main branch is the app.
+
+### Pull request testing
+
+| Mode                    | What it does                                                                                                              |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| None                    | Pull requests are not tested.                                                                                             |
+| Listen to GitHub events | Each pull request revision is tested against its preview deployment, and the results are posted back to the pull request. |
+
+Replay QA learns the preview URL from the GitHub Deployment for the commit, or from a commit status that carries a preview URL, which is how Netlify reports previews. Hosts that do neither need to publish a GitHub Deployment with an environment URL.
+
+## What happens on a pull request
+
+1. You push to the pull request. Replay QA records a new version and waits for the preview deployment.
+2. When the preview is live, it runs the project's journeys against it. Pull request rounds may add journeys for the change; they do not modify the project's existing journeys. Journeys added on a pull request are shown with that pull request.
+3. Replay QA posts one comment on the pull request and edits it in place as results come in, and reports a **Replay QA** check on the commit.
+4. Another push supersedes the running round. Closing the pull request cancels it.
+
+Bugs found on a pull request are tied to that version. When the pull request closes, its open bugs move to the `pr-closed` status so they do not linger in the project's bug list.
+
+### Require approval
+
+The check's conclusion depends on the **require approval** setting.
+
+- **Off** (default): the check reports failure when bugs are found and neutral otherwise. It never blocks a merge.
+- **On**: the check reports success only for a clean run and failure when bugs are found. Mark it as a required status check in the repository's branch protection to block merges until Replay QA is satisfied.
+
+## Send bugs to your issue tracker
+
+Replay QA can file each confirmed bug as an issue. The filed issue contains the full [bug report](/reference/replay-qa/bug-reports) as Markdown and a link back to the bug in Replay QA.
+
+Ask the project chat to set up an issue tracker. It supports:
+
+| Tracker       | What you provide                                                                      |
+| ------------- | ------------------------------------------------------------------------------------- |
+| GitHub Issues | A personal access token with issue write access to the repository                     |
+| Linear        | A Linear API key and the team to file into                                            |
+| Jira          | The Jira site URL, the project key, and the email and API token of the filing account |
+
+Bugs found from that point on are filed as they are confirmed. Bugs the tracker already has are not filed again.
+
+<Callout type="warning">
+  The GitHub connection also has an older **file GitHub issues** toggle. Do not
+  turn it on alongside a GitHub Issues tracker configured through the chat, or
+  each bug is filed twice.
+</Callout>
+
+## Hosting notes
+
+- **Vercel** and **Netlify** both report preview and production deployments to GitHub, so "Listen to GitHub events" works for both main-branch and pull request testing.
+- Other hosts: if the host creates GitHub Deployments with an environment URL, use "Listen to GitHub events". If it does not, use "Detect main branch deployments" with the production URL for the main branch; pull request testing needs a deployment or status from the host.
+- Preview deployments behind password protection or single sign-on are not reachable. Give Replay QA a bypass, or disable protection on previews for the test project.
+
+## Limitations
+
+GitHub is the only supported repository host. GitLab and Bitbucket are not supported.
