@@ -6,13 +6,19 @@ test('navigation shows Replay QA pages by default', async ({ page }) => {
   await expect(nav.getByText('Replay QA', { exact: true })).toBeVisible()
   await expect(nav.getByText('Overview', { exact: true }).first()).toBeVisible()
   await expect(
-    nav.getByText('Testing a PR build in CI', { exact: true }),
+    nav.getByText('Testing a PR build in GitHub Actions', { exact: true }),
+  ).toBeVisible()
+  await expect(
+    nav.getByText('Testing a PR build in CircleCI', { exact: true }),
   ).toBeVisible()
   await expect(
     nav.getByText('Getting good results', { exact: true }),
   ).toBeVisible()
   await expect(
     nav.getByText('Continuous QA from GitHub', { exact: true }),
+  ).toBeVisible()
+  await expect(
+    nav.getByText('Using Replay QA in Obvious', { exact: true }),
   ).toBeVisible()
 })
 

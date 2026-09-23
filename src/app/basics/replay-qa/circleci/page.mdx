@@ -1,0 +1,135 @@
+---
+title: Testing a pull request build in CircleCI
+description: Set up the Replay QA CLI in CircleCI to test pull request builds that are only available inside a CI job.
+---
+
+Use the Replay QA CLI when the pull request build only exists inside a CircleCI job, such as an app listening on `127.0.0.1:3000`. The CLI opens a reverse-proxy tunnel from the runner, starts a Replay QA run linked to the GitHub pull request, and keeps the app reachable until the run finishes.
+
+<Callout type="note">
+
+If the pull request has a public preview URL that Replay QA can reach, connect the repository through [Continuous QA from GitHub](/basics/replay-qa/github) instead. For the GitHub Actions version of the private-build setup, see [Testing a pull request build in GitHub Actions](/basics/replay-qa/frpc-ci).
+
+</Callout>
+
+## How the workflow works
+
+1. CircleCI checks out and builds the pull request.
+2. A guard script checks that the build belongs to an open, ready-for-review pull request from the same repository and is still on the current commit. Ineligible branch builds stop before running QA.
+3. CircleCI starts the app on a known local port and waits for it to respond.
+4. The Replay QA CLI opens a CI-owned reverse-proxy tunnel and waits for its ready heartbeat.
+5. The CLI starts a pull-request run with the repository, PR number, commit SHA, branch, and CircleCI workflow identity.
+6. The job polls until Replay QA reports a terminal result. The app and tunnel stay running for the whole test.
+
+## Prerequisites
+
+- A CircleCI project connected to GitHub with CircleCI's GitHub OAuth integration
+- A Replay QA account and a durable [Replay QA API token](/reference/api-keys#replay-qa-api-token)
+- A reverse-proxy Replay QA project for this CI integration
+- An app start command that serves the build on a known port in the CircleCI job
+
+## Set up CircleCI
+
+<Steps>
+
+### Connect the GitHub repository
+
+Add the repository to CircleCI using the **GitHub OAuth** integration, then copy the example's `.circleci/config.yml` into your app repository. The example reads `CIRCLE_PULL_REQUEST`; CircleCI's GitHub App integration does not provide the same variable and is not a drop-in replacement for this configuration.
+
+In CircleCI project settings, keep **Build forked pull requests** and **Pass secrets to builds from forked pull requests** disabled. The job needs a Replay QA API token, so it should only run code from trusted branches in your repository. You can optionally enable **Auto-cancel redundant workflows**; the Replay QA API also replaces the earlier in-flight revision when a newer run starts for the same PR.
+
+### Create a reverse-proxy project
+
+Create a dedicated project for the local app URL in this CI workflow. Set `REPLAY_QA_API_KEY` to a token created in Replay QA Settings → API, then run:
+
+```sh
+export REPLAY_QA_API_KEY="lqa_your_token"
+
+npx --yes replayqa@0.2.4 create-project \
+  --name "My app · CircleCI" \
+  --target-url http://127.0.0.1:3000 \
+  --reverse-proxy \
+  --instructions "Test the app's important user flows."
+```
+
+Use the local port that your CircleCI job will start. Save the project ID returned by the command; you will add it to CircleCI as `REPLAY_QA_PROJECT_ID`. If you also run the [GitHub Actions example](https://github.com/replayio/replayqa-cli-in-ci), create a separate reverse-proxy project for each CI integration so their proxies do not compete for one project.
+
+### Add CircleCI environment variables
+
+In **Project Settings → Environment Variables**, add:
+
+| Variable               | Value                                                                                 |
+| ---------------------- | ------------------------------------------------------------------------------------- |
+| `REPLAY_QA_API_KEY`    | The durable Replay QA API token. It must be able to access the reverse-proxy project. |
+| `REPLAY_QA_PROJECT_ID` | The reverse-proxy project ID returned by `create-project`.                            |
+
+Keep the token in CircleCI's environment variables; do not commit it to `.replay/config.json` or your workflow. The example pins the Replay QA CLI to `0.2.4`; update that version deliberately after validating a newer release.
+
+### Add the CI configuration and runner
+
+Use the example's [`config.yml`](https://github.com/replayio/replay-qa-in-circle-ci/blob/main/.circleci/config.yml), [`run-replayqa-ci.mjs`](https://github.com/replayio/replay-qa-in-circle-ci/blob/main/scripts/run-replayqa-ci.mjs), and [`check-circleci-pr.mjs`](https://github.com/replayio/replay-qa-in-circle-ci/blob/main/scripts/check-circleci-pr.mjs) as the reference implementation. Add the runner to your app repository and expose it through a package script:
+
+```json fileName="package.json"
+{
+  "scripts": {
+    "qa:ci": "node scripts/run-replayqa-ci.mjs"
+  }
+}
+```
+
+Update the app's build, start, readiness URL, and local port in `.circleci/config.yml`. The checked-in example runs `npm run check` on `main`; on other branches it validates the pull request, starts the built app in the background, and runs `npm run qa:ci` only when the PR is eligible. GitHub's public API verifies the PR state without an additional token; an API error fails the check instead of skipping validation.
+
+The runner reads CircleCI's repository, pull request, commit, and workflow variables to create the PR-linked run. It also uses the workflow ID and build number together so a job rerun has a distinct identity. Set `REPLAYQA_PROMPT` in CircleCI if you want the run to focus on specific flows.
+
+### Start a pipeline for an eligible pull request
+
+Open a same-repository pull request, mark it ready for review, then push a commit or trigger a new pipeline for its branch. Draft pull requests, forks, closed pull requests, and old commit revisions skip Replay QA. If the PR was created after the branch pipeline ran, or you just marked it ready, trigger a new pipeline so CircleCI rechecks eligibility.
+
+</Steps>
+
+## Keep the job alive while QA runs
+
+Replay QA can take up to an hour. The example gives its QA command a 70-minute outer timeout and sets CircleCI's no-output timeout to 75 minutes, so the CircleCI plan must allow a job of that length. The runner:
+
+- waits for `replayqa proxy --ci --json` to emit a heartbeat with `ready: true` before starting QA
+- starts the run with `replayqa ci`, then polls its workflow-owned status while the tunnel remains connected
+- cancels the matching Replay QA run if CircleCI sends `SIGINT` or `SIGTERM`
+- treats a terminal status other than `completed` as a failed job
+
+The job stores the app and Replay QA logs in the CircleCI **Artifacts** tab, including when QA fails. A hard runner termination cannot guarantee that the remote run is cancelled, so review and cancel a run in Replay QA if the runner disappears unexpectedly.
+
+## Run QA after a production deployment
+
+The example also has an optional `replayqa-production` job in its [`config.yml`](https://github.com/replayio/replay-qa-in-circle-ci/blob/main/.circleci/config.yml), driven by [`run-replayqa-production.mjs`](https://github.com/replayio/replay-qa-in-circle-ci/blob/main/scripts/run-replayqa-production.mjs). It uses a normal public Replay QA project configured with the production URL, not the reverse-proxy project above. Create that project with the CLI, or configure an existing production project:
+
+```sh
+export REPLAY_QA_API_KEY="lqa_your_token"
+
+npx --yes replayqa@0.2.4 create-project \
+  --name "My app · Production" \
+  --target-url https://app.example.com \
+  --instructions "Smoke-test the important production flows."
+```
+
+Add these CircleCI project environment variables:
+
+| Variable                          | Value                                                                 |
+| --------------------------------- | --------------------------------------------------------------------- |
+| `REPLAY_QA_PRODUCTION_PROJECT_ID` | The public production project's ID.                                   |
+| `REPLAY_QA_PRODUCTION_URL`        | Its public URL, which must match the project's configured target URL. |
+
+The existing `REPLAY_QA_API_KEY` must be able to access both Replay QA projects. After your deployment provider reports a successful production deployment, trigger CircleCI with the boolean pipeline parameter `run-production-qa: true`. You can do this through the CircleCI UI or a deployment webhook that calls the CircleCI API. Do not trigger it just because a commit was pushed; that could test the previous deployment.
+
+The production job checks that the URL is reachable, then asks Replay QA to start an exploration and prints recent test runs. **A successful CircleCI job means the request was accepted; it does not mean the QA run found no bugs.** Review the run in Replay QA. The URL must be public to Replay's browsers; deployment protection that returns `401` or `403` prevents the job from reaching it.
+
+## Verify the integration
+
+Open a ready-for-review pull request from a branch in the same repository and confirm that:
+
+- CircleCI runs the PR QA job and keeps it active while Replay QA tests the app
+- the CircleCI Artifacts tab contains app and proxy logs
+- Replay QA shows a run with source **CircleCI** linked to the expected pull request and commit
+- pushing a newer revision replaces the earlier in-flight Replay QA run for that PR
+
+For a complete working example, see [`replayio/replay-qa-in-circle-ci`](https://github.com/replayio/replay-qa-in-circle-ci).
+
+CircleCI references: [built-in variables](https://circleci.com/docs/reference/variables/), [configuration](https://circleci.com/docs/reference/configuration-reference/), and [triggering pipelines with parameters](https://circleci.com/docs/guides/orchestrate/pipeline-variables/).
