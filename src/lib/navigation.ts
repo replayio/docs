@@ -67,6 +67,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               title: 'Driving QA from a coding agent',
               href: '/basics/replay-qa/agent-integration',
             },
+            {
+              title: 'Using Replay QA in Obvious',
+              href: '/basics/replay-qa/obvious',
+            },
           ],
         },
       ],
