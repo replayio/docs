@@ -41,9 +41,7 @@ The same setup can reach internal hostnames and services available through your 
 
 ### A build inside CI
 
-If the application only exists inside a GitHub Actions runner, the Replay QA CLI can open a tunnel from the runner and keep the app reachable for the complete test run.
-
-[Test a pull request build in GitHub Actions →](/basics/replay-qa/frpc-ci)
+If the application only exists inside a CI runner, the Replay QA CLI can open a tunnel from the runner and keep the app reachable for the complete test run. Follow the setup for [GitHub Actions](/basics/replay-qa/frpc-ci) or [CircleCI](/basics/replay-qa/circleci).
 
 ## Build useful coverage
 
@@ -176,10 +174,17 @@ Explorations, journey runs, and polish passes spend credits; each project has a 
 />
 
 <QuickLink
-  title="Test a private CI build"
+  title="Test a GitHub Actions build"
   icon="pullrequest"
   href="/basics/replay-qa/frpc-ci"
-  description="Keep a GitHub Actions build reachable for a complete Replay QA run."
+  description="Keep a private pull request build reachable for Replay QA."
+/>
+
+<QuickLink
+  title="Test a CircleCI build"
+  icon="pullrequest"
+  href="/basics/replay-qa/circleci"
+  description="Run Replay QA against a private pull request build in CircleCI."
 />
 
 </QuickLinks>

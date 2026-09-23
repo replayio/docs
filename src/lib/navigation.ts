@@ -41,8 +41,12 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               href: '/basics/replay-qa/localhost',
             },
             {
-              title: 'Testing a PR build in CI',
+              title: 'Testing a PR build in GitHub Actions',
               href: '/basics/replay-qa/frpc-ci',
+            },
+            {
+              title: 'Testing a PR build in CircleCI',
+              href: '/basics/replay-qa/circleci',
             },
             {
               title: 'Continuous QA from GitHub',
