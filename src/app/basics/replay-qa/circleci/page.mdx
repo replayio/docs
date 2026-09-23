@@ -57,10 +57,10 @@ Use the local port that your CircleCI job will start. Save the project ID return
 
 In **Project Settings → Environment Variables**, add:
 
-| Variable | Value |
-| --- | --- |
-| `REPLAY_QA_API_KEY` | The durable Replay QA API token. It must be able to access the reverse-proxy project. |
-| `REPLAY_QA_PROJECT_ID` | The reverse-proxy project ID returned by `create-project`. |
+| Variable               | Value                                                                                 |
+| ---------------------- | ------------------------------------------------------------------------------------- |
+| `REPLAY_QA_API_KEY`    | The durable Replay QA API token. It must be able to access the reverse-proxy project. |
+| `REPLAY_QA_PROJECT_ID` | The reverse-proxy project ID returned by `create-project`.                            |
 
 Keep the token in CircleCI's environment variables; do not commit it to `.replay/config.json` or your workflow. The example pins the Replay QA CLI to `0.2.4`; update that version deliberately after validating a newer release.
 
@@ -112,10 +112,10 @@ npx --yes replayqa@0.2.4 create-project \
 
 Add these CircleCI project environment variables:
 
-| Variable | Value |
-| --- | --- |
-| `REPLAY_QA_PRODUCTION_PROJECT_ID` | The public production project's ID. |
-| `REPLAY_QA_PRODUCTION_URL` | Its public URL, which must match the project's configured target URL. |
+| Variable                          | Value                                                                 |
+| --------------------------------- | --------------------------------------------------------------------- |
+| `REPLAY_QA_PRODUCTION_PROJECT_ID` | The public production project's ID.                                   |
+| `REPLAY_QA_PRODUCTION_URL`        | Its public URL, which must match the project's configured target URL. |
 
 The existing `REPLAY_QA_API_KEY` must be able to access both Replay QA projects. After your deployment provider reports a successful production deployment, trigger CircleCI with the boolean pipeline parameter `run-production-qa: true`. You can do this through the CircleCI UI or a deployment webhook that calls the CircleCI API. Do not trigger it just because a commit was pushed; that could test the previous deployment.
 
