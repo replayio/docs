@@ -251,7 +251,7 @@ For a complete working Next.js example, see [`replayio/replayqa-cli-in-ci`](http
 
 ## Run QA after a production deployment
 
-The same example has a separate [production workflow](https://github.com/replayio/replayqa-cli-in-ci/blob/main/.github/workflows/production.yml) and [runner](https://github.com/replayio/replayqa-cli-in-ci/blob/main/scripts/run-replayqa-production.mjs). This path uses a normal Replay QA project configured with the public production URL, rather than the reverse-proxy project used for the private pull request build. Set `REPLAY_QA_API_KEY` to a Replay QA API token and create that project with the CLI:
+The same example has a separate [production workflow](https://github.com/replayio/replayqa-cli-in-ci/blob/main/.github/workflows/production.yml) and [runner](https://raw.githubusercontent.com/replayio/replayqa-cli-in-ci/main/scripts/run-replayqa-production.mjs). This path uses a normal Replay QA project configured with the public production URL, rather than the reverse-proxy project used for the private pull request build. Set `REPLAY_QA_API_KEY` to a Replay QA API token and create that project with the CLI:
 
 ```sh
 export REPLAY_QA_API_KEY="lqa_your_token"

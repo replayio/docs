@@ -1,7 +1,6 @@
 ---
 title: Using Replay QA in Obvious
 description: Connect the Replay QA workspace connector in Obvious with OAuth.
-image: /images/replay-qa-obvious-connectors.png
 ---
 
 Connect Replay QA to your Obvious workspace by installing the Replay QA connector and authorizing your Replay QA account with OAuth.
@@ -30,8 +29,80 @@ width={1315}
 
 On the **Replay QA** connector card, click **Connect**.
 
+<Figure
+
+alt="Obvious's Connect MCP Server dialog with the Replay QA server URL, OAuth browser authentication selected, and the Authorize button."
+
+src="/images/replay-qa-obvious-mcp-authorize.png"
+
+height={1924}
+
+width={3352}
+
+/>
+
 ## Authorize Replay QA with OAuth
 
 Follow the OAuth prompts to sign in to the Replay QA account you want to connect and authorize Obvious to use it. When authorization completes, Obvious finishes connecting the Replay QA connector to your workspace.
+
+<Figure
+
+alt="Obvious confirms the Replay QA MCP server connection succeeded after OAuth authorization."
+
+src="/images/replay-qa-obvious-mcp-connected.png"
+
+height={1930}
+
+width={3352}
+
+/>
+
+## Ask Replay QA to test your app
+
+In the Obvious chat, ask: `Use the Replay QA mcp server to test this app`.
+
+<Figure
+
+alt="An Obvious chat asks Replay QA to test the app, with the Replay QA project dashboard open beside it."
+
+src="/images/replay-qa-obvious-mcp-test.png"
+
+height={1768}
+
+width={3072}
+
+/>
+
+## Watch the QA run in Obvious
+
+Replay QA embeds an iframe on the right-hand side of Obvious. Use it to watch the QA run's progress as it tests your app.
+
+<Figure
+
+alt="The Replay QA dashboard embedded on the right-hand side of Obvious, showing the app recording and QA results."
+
+src="/images/replay-qa-obvious-run-progress.png"
+
+height={1760}
+
+width={3072}
+
+/>
+
+## Ask Obvious to fix Replay QA bugs
+
+After a Replay QA run reports bugs, ask Obvious to retrieve and fix them. For example: `Can you grab all of the bugs from Replay QA and fix them?` Obvious can inspect the findings, update your app, and ask Replay QA to rerun affected journeys to verify the fixes.
+
+<Figure
+
+alt="An Obvious chat reports that all seven Replay QA bugs are fixed; the dashboard shows zero open bugs and seven resolved bugs."
+
+src="/images/replay-qa-obvious-fix-bugs.png"
+
+height={1926}
+
+width={3358}
+
+/>
 
 </Steps>
