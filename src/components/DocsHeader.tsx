@@ -20,14 +20,12 @@ function Badge({ badge }: { badge: string }) {
 
 export function DocsHeader({
   description,
-  documentTitle,
   image,
   title,
   imageHeight,
   badge,
 }: {
   description?: string
-  documentTitle: string
   image?: string
   title?: string
   imageHeight?: number
@@ -45,7 +43,6 @@ export function DocsHeader({
 
   return (
     <header className="space-y-2">
-      <title>{documentTitle}</title>
       {navigation && section?.title && (
         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary/80 dark:text-primary">
           {section?.title}

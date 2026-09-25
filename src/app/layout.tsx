@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
+import { getSiteOrigin } from '@/lib/agentReadiness'
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react'
 
 import '@/styles/tailwind.css'
@@ -31,27 +32,31 @@ const virgil = localFont({
   variable: '--font-virgil',
 })
 
-const ogImage = '/images/og-image.png'
+const ogImage = '/replayQA_og-image.png'
+const title = 'Replay QA — AI wrote the app. Replay QA finds what broke.'
+const description =
+  'Connect a GitHub repo for continuous testing, or drop in a URL to test on demand. Replay QA finds real bugs and gives your coding agent the root cause and fix.'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(getSiteOrigin()),
   title: {
     template: '%s - Docs',
-    default: 'Replay docs',
+    default: title,
   },
-  description:
-    'Replay is the first deterministic browser. Once a bug or flaky test is captured, anyone can inspect it with Browser DevTools without having to replicate it locally.',
+  description,
   openGraph: {
-    title: 'Replay - Browser DevTools from the future.',
-    description:
-      'Investigate bugs and flaky tests with perfect reproducibility.',
-    images: [{ url: ogImage, width: 1200, height: 630 }],
+    type: 'website',
+    title,
+    description,
+    images: [{ url: ogImage, width: 1200, height: 642 }],
   },
   twitter: {
+    card: 'summary_large_image',
     site: '@replayio',
-    title: 'Replay - Browser DevTools from the future.',
-    description:
-      'Investigate bugs and flaky tests with perfect reproducibility.',
+    title,
+    description,
     creator: '@replayio',
-    images: [{ url: ogImage, width: 1200, height: 630 }],
+    images: [{ url: ogImage, width: 1200, height: 642 }],
   },
 }
 

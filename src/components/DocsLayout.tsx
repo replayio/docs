@@ -1,10 +1,7 @@
-import { headers } from 'next/headers'
-
 import { DocsHeader } from '@/components/DocsHeader'
 import { PrevNextLinks } from '@/components/PrevNextLinks'
 import { Prose } from '@/components/Prose'
 import { TableOfContents } from '@/components/TableOfContents'
-import { getDocumentTitle } from '@/lib/getDocumentTitle'
 
 export function DocsLayout({
   children,
@@ -19,10 +16,6 @@ export function DocsLayout({
     badge?: string
   }
 }) {
-  const heads = headers()
-  const pathname = heads.get('x-pathname')
-  const documentTitle = getDocumentTitle(pathname ?? '')
-
   return (
     <>
       <div
@@ -33,7 +26,6 @@ export function DocsLayout({
           <article className="w-full min-w-0 grow break-words px-4 sm:px-6 lg:mr-8 lg:max-w-3xl lg:pl-16">
             <DocsHeader
               description={description}
-              documentTitle={documentTitle}
               imageHeight={imageHeight}
               image={image}
               badge={badge}

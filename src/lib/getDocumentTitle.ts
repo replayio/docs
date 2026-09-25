@@ -1,6 +1,9 @@
 import assert from 'assert'
 import { NavigationItem, navigation, flatNavigation } from './navigation'
 
+/** Returned when `pathname` has no matching navigation entry. */
+export const DEFAULT_DOCUMENT_TITLE = 'Replay docs'
+
 export function getDocumentTitle(pathname: string) {
   let queue: Array<
     NavigationItem & {
@@ -40,5 +43,5 @@ export function getDocumentTitle(pathname: string) {
     }
   }
 
-  return 'Replay docs'
+  return DEFAULT_DOCUMENT_TITLE
 }

@@ -24,6 +24,8 @@ export default function remarkDocsLayout() {
 
     const importCode = `import { DocsLayout } from '@/components/DocsLayout'`
     const exportCode = `export default ({ children }) => <DocsLayout frontmatter={frontmatter}>{children}</DocsLayout>`
+    const metadataImportCode = `import { getDocsMetadata } from '@/lib/docsMetadata'`
+    const metadataExportCode = `export function generateMetadata() { return getDocsMetadata() }`
 
     tree.children.unshift(
       {
@@ -35,6 +37,16 @@ export default function remarkDocsLayout() {
         type: 'mdxjsEsm',
         value: exportCode,
         data: { estree: parse(exportCode) },
+      },
+      {
+        type: 'mdxjsEsm',
+        value: metadataImportCode,
+        data: { estree: parse(metadataImportCode) },
+      },
+      {
+        type: 'mdxjsEsm',
+        value: metadataExportCode,
+        data: { estree: parse(metadataExportCode) },
       },
     )
   }
