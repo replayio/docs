@@ -52,6 +52,12 @@ function Header() {
             <Search />
           </div>
           <div className="relative flex basis-0 items-center justify-end gap-6 sm:gap-8 md:flex-grow">
+            <Link
+              href="https://replay.io"
+              className="hidden text-sm font-medium text-gray-500 transition-colors hover:text-gray-800 dark:text-zinc-400 dark:hover:text-zinc-200 lg:inline"
+            >
+              Replay QA
+            </Link>
             <ThemeSelector className="relative z-30" />
             <Link
               href="https://github.com/replayio"
