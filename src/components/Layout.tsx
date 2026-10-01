@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
+import { ArrowUpRightIcon } from '@heroicons/react/16/solid'
 
 import { Logo, Logomark } from '@/components/Logo'
 import { MobileNavigation } from '@/components/MobileNavigation'
@@ -47,17 +48,21 @@ function Header() {
               <Logomark className="h-7 w-7 fill-rose-500 lg:hidden" />
               <Logo className="hidden h-6 w-auto lg:block" />
             </Link>
+            <a
+              href="https://replay.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-6 hidden items-center gap-1 border-l border-gray-200 pl-6 text-sm font-medium text-gray-500 transition-colors hover:text-gray-800 dark:border-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200 lg:inline-flex"
+            >
+              Replay QA
+              <ArrowUpRightIcon className="h-4 w-4" aria-hidden="true" />
+              <span className="sr-only">(opens in a new tab)</span>
+            </a>
           </div>
           <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
             <Search />
           </div>
           <div className="relative flex basis-0 items-center justify-end gap-6 sm:gap-8 md:flex-grow">
-            <Link
-              href="https://replay.io"
-              className="hidden text-sm font-medium text-gray-500 transition-colors hover:text-gray-800 dark:text-zinc-400 dark:hover:text-zinc-200 lg:inline"
-            >
-              Replay QA
-            </Link>
             <ThemeSelector className="relative z-30" />
             <Link
               href="https://github.com/replayio"
