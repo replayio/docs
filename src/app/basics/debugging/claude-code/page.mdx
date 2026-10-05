@@ -1,0 +1,169 @@
+---
+title: Replay in Claude Code
+description: Install the Replay plugin for Claude Code to record agent browser runs in Replay Chromium and watch each one live, then scrub through it, right in the conversation.
+---
+
+The Replay plugin for Claude Code bundles what an agent needs to test your app with Replay:
+
+- a skill that drives [Replay Chromium](/reference/replay-runtimes/replay-chrome) with `playwright-cli`
+- hooks that upload the recordings
+- [Replay MCP](/basics/replay-mcp/overview) for debugging them
+- **inline live players**: every browser the agent opens appears in the conversation, live while it runs and scrubbable once it closes
+- **Replay MCP cards**: each debugging step Claude takes with Replay MCP is shown as a compact card of the evidence it used
+
+## Install
+
+<Steps>
+
+## Install Replay Chromium and sign in
+
+The plugin records with the `replayio` CLI. Install Replay Chromium and sign in once:
+
+```sh
+npx @replayio/replay install
+replayio login
+```
+
+If you skip signing in, recordings stay on your machine. When Claude needs to upload one, it starts the sign-in for you and waits for you to confirm you have signed in.
+
+## Install the plugin from the Replay marketplace
+
+Add Replay's plugin marketplace to Claude Code, then install the `replayio` plugin from it:
+
+<Tabs labels={["Terminal", "Inside Claude Code"]}>
+
+<Tab>
+
+```sh
+claude plugin marketplace add replayio/plugins
+claude plugin install replayio@replayio
+```
+
+</Tab>
+
+<Tab>
+
+```
+/plugin marketplace add replayio/plugins
+/plugin install replayio@replayio
+```
+
+</Tab>
+
+</Tabs>
+
+The plugin is installed for your user, so it is available in every project. Start a new `claude` session, or run `/reload-plugins` in an open one, to load it. To update it later, run `claude plugin update replayio@replayio`.
+
+## Turn on function hooks for the players and cards
+
+The live players and Replay MCP cards are a Claude Code hooks module, which needs function hooks enabled. Add this to `~/.claude/settings.json`:
+
+```json fileName="~/.claude/settings.json"
+{
+  "env": { "CLAUDE_CODE_ENABLE_FUNCTION_HOOKS": "1" }
+}
+```
+
+Recording, uploading and Replay MCP work without it. Only the players and cards need it.
+
+## Install ffmpeg to save videos (optional)
+
+The players replay in the Replay Chromium you installed in the first step, so watching and scrubbing need nothing else. To save recordings as MP4 files, install [ffmpeg](https://ffmpeg.org):
+
+<Tabs labels={["macOS", "Debian / Ubuntu"]}>
+
+<Tab>
+
+```sh
+brew install ffmpeg
+```
+
+</Tab>
+
+<Tab>
+
+```sh
+sudo apt-get install ffmpeg
+```
+
+</Tab>
+
+</Tabs>
+
+## Start Claude Code in a supported terminal
+
+The inline picture uses the [kitty graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/). Run `claude` in [Ghostty](https://ghostty.org) or [kitty](https://sw.kovidgoyal.net/kitty/). In other terminals, the player row shows its controls and an **Open in browser** button instead of the picture.
+
+</Steps>
+
+<Callout type="note" title="Function hooks are an early API">
+  Function hooks are an early Claude Code API and can change between releases.
+  If an update breaks the players, the rest of the plugin keeps working.
+</Callout>
+
+## Watch the agent's browser live
+
+Ask Claude to test something in the browser, for example _"Open http://localhost:3000, sign up, and check the dashboard loads."_ When the agent opens a browser with `playwright-cli`, the result of that command becomes a player:
+
+- **While the browser runs**, the player follows the page live: clicks, typing, navigation, and the cursor. Errors the page throws appear under the picture.
+- **When the agent closes the browser**, the player stops on the last frame and turns into a scrubbable recording.
+
+Each browser session gets its own player, attached to the command that opened it, so you can scroll back through a long conversation and replay any of them.
+
+## Scrub through a recording
+
+| Control           | What it does                                                                                             |
+| ----------------- | -------------------------------------------------------------------------------------------------------- |
+| Seek bar          | Click or drag to jump to that moment. After clicking it, Space plays or pauses and ← / → step 5 seconds. |
+| ⏮ / −10s / +10s  | Jump to the start, or back or forward 10 seconds.                                                        |
+| ▶ Play / ❚❚ Pause | Play from the current position. Idle stretches are skipped.                                              |
+| ▶ Replay so far   | While the browser is still running, scrub what has been recorded so far.                                 |
+| Open in browser   | Open the full player in your browser, with a seek bar and 1×–8× speed.                                   |
+
+## Debug the Replay recording
+
+The live player shows what the page looked like. To see why it behaved that way, use the Replay recording that Replay Chromium made of the same session. When the browser closes, the plugin finds that recording and links it under the player:
+
+- **⇪ Upload** uploads it if the plugin's hooks have not already done so. Sign in first with `replayio login`.
+- **Open in Replay** opens it in [Replay DevTools](/reference/replay-devtools/overview).
+- **Debug with Claude** puts a prompt in your composer that asks Claude to investigate the recording with [Replay MCP](/basics/replay-mcp/overview).
+
+A session run in a browser other than Replay Chromium, or without `RECORD_ALL_CONTENT=1`, has no Replay recording, and the player says so.
+
+## See what Replay MCP found
+
+When Claude debugs a recording with [Replay MCP](/basics/replay-mcp/overview), each tool call appears as a card in the conversation instead of raw text. Every card shows:
+
+- **A header:** the tool name, a one-line summary, and whether the result covers the whole recording, one execution point, a source file, a component, a request or a profile.
+- **A first view:** the key facts and one piece of evidence. That can be a console table, the call stack, the source with hit counts per line, a render-cost chart, or the final screenshot.
+- **Sections you open on demand:** the data Claude consumed, related events, and the raw output.
+- **Buttons:** open the recording in Replay, hand Claude the obvious next step (for example _Describe this point_, _Inspect commit #66_ or _Fix the expression_), or copy the output.
+
+The cards are built from the same output Claude reads, so they show exactly the evidence it used. Every Replay MCP tool has its own card. A tool that found nothing, such as **UncaughtException** in a recording without exceptions, says so plainly.
+
+## Save a recording as a video
+
+Claude makes no video unless you ask for one. Every browser session gets its live player and, in Replay Chromium, a Replay recording. When you want a video file, there are two ways:
+
+- **From a player:** click **⤓ Save video**, or run `/replayio save <session-name>` (or `/replayio save latest`) in Claude Code. This writes `<start>-<session>.mp4`, a 15 fps video with idle stretches over two seconds shortened, and `<start>-<session>.rrweb.json`, the raw [rrweb](https://github.com/rrweb-io/rrweb) events that any rrweb player can load. Both go to `.replay/live/` in your project.
+- **From the browser itself:** ask Claude for a video when you ask it to test something. It then also records the real browser window to an MP4 as it runs.
+
+## Find older recordings
+
+Every recording is kept under `~/.claude/replayio-live/`. Players stay playable after you restart Claude Code or resume the conversation.
+
+- `/replayio` lists recordings from every session, newest first, with a link to play each one.
+- `/replayio library` opens a page in your browser with every recording. For each one it shows the rrweb stream (play it, download it as `.rrweb.json`, or save it as an MP4) next to its Replay recording (open it in Replay, or upload it).
+
+## How the live players work
+
+When the agent runs a `playwright-cli … open` command, the plugin adds the [Replay session recorder](https://www.npmjs.com/package/@replayio-app-building/session-recorder) to every page in that browser session. The recorder captures rrweb DOM events along with network, storage and websocket activity, and streams them to a small server the plugin runs on `127.0.0.1`. That server stores the recording and replays it in a headless Replay Chromium, with recording turned off. Claude Code shows the replayed frames in the conversation.
+
+The live player is a view of the page, not a Replay recording. Time-travel debugging uses the linked Replay recording; see [Debug the Replay recording](#debug-the-replay-recording).
+
+## Troubleshooting
+
+- **No player appears.** Check that `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS` is `1` in the environment `claude` was started with, and that the agent opened the browser with `playwright-cli` from a Bash command. `/replayio` reports whether the plugin's local server is running.
+- **The row shows controls but no picture.** Your terminal does not support kitty graphics. Use **Open in browser**, or switch to Ghostty or kitty.
+- **"No browser found for the inline player".** Replay Chromium is missing. Run `npx @replayio/replay install`, or set `REPLAY_LIVE_CHROME` to another Chromium-based browser binary.
+- **Save video fails.** Install ffmpeg and make sure it is on your `PATH`.

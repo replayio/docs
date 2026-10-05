@@ -89,6 +89,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
           href: '/basics/replay-mcp/overview',
         },
         {
+          title: 'Replay in Claude Code',
+          href: '/basics/debugging/claude-code',
+        },
+        {
           title: 'How to record',
           href: '/basics/getting-started/record-your-app',
         },
