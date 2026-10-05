@@ -23,15 +23,35 @@ npx @replayio/replay install
 replayio login
 ```
 
-## Add the plugin to your project
+If you skip signing in, recordings stay on your machine. When Claude needs to upload one, it starts the sign-in for you and waits for you to confirm you have signed in.
 
-From your project's root directory, run:
+## Install the plugin from the Replay marketplace
+
+Add Replay's plugin marketplace to Claude Code, then install the `replayio` plugin from it:
+
+<Tabs labels={["Terminal", "Inside Claude Code"]}>
+
+<Tab>
 
 ```sh
-npx shadcn@latest add replayio/plugins/claude-pro
+claude plugin marketplace add replayio/plugins
+claude plugin install replayio@replayio
 ```
 
-This installs the plugin into `.claude/skills/replayio/`, and its worker and critic subagents into `.claude/agents/`. Claude Code loads it the next time you start `claude` in this directory. To load it explicitly for one session, run `claude --plugin-dir .claude/skills/replayio`.
+</Tab>
+
+<Tab>
+
+```
+/plugin marketplace add replayio/plugins
+/plugin install replayio@replayio
+```
+
+</Tab>
+
+</Tabs>
+
+The plugin is installed for your user, so it is available in every project. Start a new `claude` session, or run `/reload-plugins` in an open one, to load it. To update it later, run `claude plugin update replayio@replayio`.
 
 ## Turn on function hooks for the live players
 
@@ -111,12 +131,10 @@ A session run in a browser other than Replay Chromium, or without `RECORD_ALL_CO
 
 ## Save a recording as a video
 
-Click **⤓ Save video** on a player, or run `/replayio save <session-name>` in Claude Code. This writes two files to `.replay/live/` in your project, named after the session's start time and session name:
+Claude makes no video unless you ask for one. Every browser session gets its live player and, in Replay Chromium, a Replay recording. When you want a video file, there are two ways:
 
-- `<start>-<session>.mp4`: a 15 fps video, with idle stretches over two seconds shortened.
-- `<start>-<session>.rrweb.json`: the raw [rrweb](https://github.com/rrweb-io/rrweb) events, which any rrweb player can load.
-
-Use `/replayio save latest` to save the most recent session.
+- **From a player:** click **⤓ Save video**, or run `/replayio save <session-name>` (or `/replayio save latest`) in Claude Code. This writes `<start>-<session>.mp4`, a 15 fps video with idle stretches over two seconds shortened, and `<start>-<session>.rrweb.json`, the raw [rrweb](https://github.com/rrweb-io/rrweb) events that any rrweb player can load. Both go to `.replay/live/` in your project.
+- **From the browser itself:** ask Claude for a video when you ask it to test something. It then also records the real browser window to an MP4 as it runs.
 
 ## Find older recordings
 
