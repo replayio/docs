@@ -9,6 +9,7 @@ The Replay plugin for Claude Code bundles what an agent needs to test your app w
 - hooks that upload the recordings
 - [Replay MCP](/basics/replay-mcp/overview) for debugging them
 - **inline live players**: every browser the agent opens appears in the conversation, live while it runs and scrubbable once it closes
+- **Replay MCP cards**: each debugging step Claude takes with Replay MCP is shown as a compact card of the evidence it used
 
 ## Install
 
@@ -53,9 +54,9 @@ claude plugin install replayio@replayio
 
 The plugin is installed for your user, so it is available in every project. Start a new `claude` session, or run `/reload-plugins` in an open one, to load it. To update it later, run `claude plugin update replayio@replayio`.
 
-## Turn on function hooks for the live players
+## Turn on function hooks for the players and cards
 
-The live players are a Claude Code hooks module, which needs function hooks enabled. Add this to `~/.claude/settings.json`:
+The live players and Replay MCP cards are a Claude Code hooks module, which needs function hooks enabled. Add this to `~/.claude/settings.json`:
 
 ```json fileName="~/.claude/settings.json"
 {
@@ -63,7 +64,7 @@ The live players are a Claude Code hooks module, which needs function hooks enab
 }
 ```
 
-Recording, uploading and Replay MCP work without it. Only the players need it.
+Recording, uploading and Replay MCP work without it. Only the players and cards need it.
 
 ## Install ffmpeg to save videos (optional)
 
@@ -128,6 +129,17 @@ The live player shows what the page looked like. To see why it behaved that way,
 - **Debug with Claude** puts a prompt in your composer that asks Claude to investigate the recording with [Replay MCP](/basics/replay-mcp/overview).
 
 A session run in a browser other than Replay Chromium, or without `RECORD_ALL_CONTENT=1`, has no Replay recording, and the player says so.
+
+## See what Replay MCP found
+
+When Claude debugs a recording with [Replay MCP](/basics/replay-mcp/overview), each tool call appears as a card in the conversation instead of raw text. Every card shows:
+
+- **A header:** the tool name, a one-line summary, and whether the result covers the whole recording, one execution point, a source file, a component, a request or a profile.
+- **A first view:** the key facts and one piece of evidence. That can be a console table, the call stack, the source with hit counts per line, a render-cost chart, or the final screenshot.
+- **Sections you open on demand:** the data Claude consumed, related events, and the raw output.
+- **Buttons:** open the recording in Replay, hand Claude the obvious next step (for example _Describe this point_, _Inspect commit #66_ or _Fix the expression_), or copy the output.
+
+The cards are built from the same output Claude reads, so they show exactly the evidence it used. Every Replay MCP tool has its own card. A tool that found nothing, such as **UncaughtException** in a recording without exceptions, says so plainly.
 
 ## Save a recording as a video
 
