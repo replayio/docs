@@ -33,10 +33,7 @@ Work with results:
 
 - [Publishing with source maps](https://docs.replay.io/basics/replay-qa/source-maps)
 - [Driving Replay QA from a coding agent](https://docs.replay.io/basics/replay-qa/agent-integration)
-  — REST API (`https://qa.replay.io/api/v1`, OpenAPI at
-  `/api/v1/openapi.json`) and MCP server (`https://qa.replay.io/api/mcp`) for
-  creating projects, reading bug reports, and marking fixes. Auth: `lqa_` token
-  from Settings > API, or OAuth sign-in for MCP.
+  — the agent entry point is https://docs.replay.io/llms.txt.
 
 Reference: [API and MCP tools](https://docs.replay.io/reference/replay-qa/api),
 [Polish passes](https://docs.replay.io/reference/replay-qa/polish-passes),

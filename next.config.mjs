@@ -37,6 +37,11 @@ const nextConfig = {
         source: '/.well-known/:path*',
         destination: '/well-known/:path*',
       },
+      // The agent entry point (https://llmstxt.org) is the root markdown index.
+      {
+        source: '/llms.txt',
+        destination: '/agent/index.md',
+      },
     ]
   },
 
@@ -44,6 +49,10 @@ const nextConfig = {
     return [
       {
         source: '/',
+        // Markdown requests stay on / so middleware can serve the root mirror.
+        missing: [
+          { type: 'header', key: 'accept', value: '.*text/(x-)?markdown.*' },
+        ],
         destination: '/basics/replay-qa/overview',
         permanent: false,
       },

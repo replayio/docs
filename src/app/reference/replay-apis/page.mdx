@@ -13,7 +13,7 @@ Replay exposes a few programmatic surfaces. Which one you want depends on what y
 | Open a debugging session against a recording and query it directly | [Replay Protocol](#replay-protocol)                    |
 | Record a non-browser application                                   | [Replay Driver](#replay-driver)                        |
 
-All of these except Replay QA authenticate with an [app.replay.io API key](/reference/api-keys) sent as `Authorization: Bearer <key>`. Replay QA uses its own `lqa_` token; see the [QA API reference](/reference/replay-qa/api#authentication).
+All of these except Replay QA authenticate with an [app.replay.io API key](/reference/api-keys) sent as `Authorization: Bearer <key>`. Replay QA uses its own credentials; see [API keys and tokens](/reference/api-keys#replay-qa-api-token).
 
 ## Replay MCP
 
@@ -117,7 +117,7 @@ This docs site publishes machine-readable descriptions of the surfaces above:
 | -------------------------------------------------------------------------------- | ------------------------------------------ |
 | [`/.well-known/mcp/server-card.json`](/.well-known/mcp/server-card.json)         | Replay MCP server card                     |
 | [`/.well-known/api-catalog`](/.well-known/api-catalog)                           | Catalog of Replay APIs (RFC 9727)          |
-| [`/.well-known/agent-skills/index.json`](/.well-known/agent-skills/index.json)   | Agent skills for Replay MCP and Replay QA  |
+| [`/.well-known/agent-skills/index.json`](/.well-known/agent-skills/index.json)   | Replay agent skills (CLI, Playwright, MCP) |
 | [`/.well-known/oauth-protected-resource`](/.well-known/oauth-protected-resource) | OAuth resource metadata for the MCP server |
 
-The site root, `/basics`, and `/reference` also serve a markdown index when requested with `Accept: text/markdown`.
+The site root, `/basics`, and `/reference` also serve a markdown index when requested with `Accept: text/markdown`. [`/llms.txt`](/llms.txt) serves the same root index and is the entry point for coding agents.

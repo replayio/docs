@@ -43,6 +43,9 @@ export const REPLAY_PUBLIC = {
   mcpServer: 'https://dispatch.replay.io/nut/mcp',
   authIssuer: 'https://webreplay.us.auth0.com/',
   graphql: 'https://api.replay.io/v1/graphql',
+  qaApi: 'https://qa.replay.io/api/v1',
+  qaOpenApi: 'https://qa.replay.io/api/v1/openapi.json',
+  qaMcpServer: 'https://qa.replay.io/api/mcp',
 } as const
 
 /**

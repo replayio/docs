@@ -8,7 +8,7 @@ Replay has two separate credentials. They are issued by different apps and are n
 | Credential                | Created at                                           | Used by                                                                                                                                                                                                |
 | ------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **app.replay.io API key** | [app.replay.io](https://app.replay.io) team settings | The `replayio` CLI, the `@replayio/playwright` plugin, `replayio upload-source-maps`, CI upload workflows, and the `Authorization` header when connecting to [Replay MCP](/basics/replay-mcp/overview) |
-| **Replay QA API token**   | [qa.replay.io](https://qa.replay.io) Settings > API  | The [Replay QA REST API and Replay QA MCP server](/basics/replay-qa/agent-integration). Always starts with `lqa_`                                                                                      |
+| **Replay QA API token**   | [qa.replay.io](https://qa.replay.io) Settings > API  | The Replay QA REST API, the Replay QA MCP server, and the `replayqa` CLI in CI (`REPLAY_QA_API_KEY`). Always starts with `lqa_`                                                                        |
 
 If a request is rejected with an authentication error, the first thing to check is that the credential came from the right app.
 
@@ -71,12 +71,12 @@ For Replay MCP, pass the key as the `Authorization` header value in your MCP cli
 
 ## Replay QA API token
 
-This token authenticates the Replay QA REST API at `https://qa.replay.io/api/v1` and the Replay QA MCP server at `https://qa.replay.io/api/mcp`. It does not work with the `replayio` CLI or with Replay MCP.
+This token authenticates the Replay QA REST API at `https://qa.replay.io/api/v1`, the Replay QA MCP server at `https://qa.replay.io/api/mcp`, and the `replayqa` CLI. It does not work with the `replayio` CLI or with Replay MCP, and an app.replay.io API key does not work with Replay QA.
 
 ### Create a token
 
-1. Sign in at [qa.replay.io](https://qa.replay.io) and open **Settings**.
-2. In the **API** section, generate a token. Give each script or agent its own named token so you can revoke them independently.
+1. Sign in at [qa.replay.io](https://qa.replay.io) and open **Settings > API**.
+2. Enter a token name and click **Create token**. Give each script or agent its own named token so you can revoke them independently.
 3. Copy the token. It starts with `lqa_` and is shown once.
 
 ### Use the token
@@ -87,6 +87,13 @@ Send it as a bearer token on every request:
 Authorization: Bearer lqa_your_token_here
 ```
 
+For the `replayqa` CLI, set it as `REPLAY_QA_API_KEY`.
+
 The token acts as the user who created it and covers every project that user can access. Tokens are listed and revoked from the same **API** section in Settings.
 
-For MCP clients that support OAuth sign-in, you can connect to the Replay QA MCP server without a token at all; see [Driving Replay QA from a coding agent](/basics/replay-qa/agent-integration).
+### Signing in without a token
+
+- **MCP clients** that support OAuth sign-in connect to the Replay QA MCP server by URL alone; see [Driving Replay QA from a coding agent](/basics/replay-qa/agent-integration).
+- **The `replayqa` CLI** on your own machine uses your Replay browser login: run `replayqa login` (or `replayio login`, which shares the same login).
+
+Use a token for CI and scripts, where no browser is available.
