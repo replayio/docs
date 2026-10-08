@@ -12,21 +12,29 @@
 
 export const SITE_NAME = 'Replay Docs'
 
+const CANONICAL_ORIGIN = 'https://docs.replay.io'
+
 /**
  * Resolve the canonical site origin.
  *
  * Priority:
- *   1) Explicit env override (set this in production / preview deploys).
- *   2) Vercel system env (`VERCEL_URL`) for preview deploys.
- *   3) Sensible defaults: localhost in dev, the public docs URL otherwise.
+ *   1) Explicit env override.
+ *   2) Production: the project's production domain (`VERCEL_PROJECT_PRODUCTION_URL`), never the
+ *      per-deployment `VERCEL_URL`.
+ *   3) Preview: the deployment's own URL (`VERCEL_URL`).
+ *   4) localhost in dev, the canonical docs URL otherwise.
  */
 export function getSiteOrigin(): string {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL
   if (explicit) return explicit.replace(/\/$/, '')
+  if (process.env.VERCEL_ENV === 'production') {
+    const production = process.env.VERCEL_PROJECT_PRODUCTION_URL
+    return production ? `https://${production}` : CANONICAL_ORIGIN
+  }
   const vercel = process.env.VERCEL_URL
   if (vercel) return `https://${vercel}`
   if (process.env.NODE_ENV === 'development') return 'http://localhost:3000'
-  return 'https://docs.replay.io'
+  return CANONICAL_ORIGIN
 }
 
 /**
