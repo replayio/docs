@@ -1,46 +1,39 @@
 ---
 title: Driving Replay QA from a coding agent
-description: Use the Replay QA REST API or MCP server to let a coding agent create projects, read bug reports, and confirm fixes without opening the web app.
+description: Hand your coding agent one link so it can create Replay QA projects, read bug reports, and confirm fixes without opening the web app.
 ---
 
-Everything you can do in the Replay QA web app is also available to scripts and coding agents. There are two interfaces:
+Your coding agent (Claude Code, Cursor, Codex, …) can do everything you can do in the Replay QA web app. You do not need to learn the API yourself. Give your agent this prompt:
 
-- **REST API** at `https://qa.replay.io/api/v1`. Use it from scripts, CI jobs, or an agent that can run `curl`.
-- **MCP server** at `https://qa.replay.io/api/mcp`. Use it from Claude Code, Cursor, Codex, or any MCP client so the agent can call Replay QA directly as tools.
+{/* Mirror of AGENT_PROMPT in replayio/loop-qa src/lib/docs.ts (pinned by scripts/check-agent-prompt.ts); keep identical. */}
 
-Both expose the same projects, bugs, journeys, test runs, and explorations. Pick whichever fits how your agent works. This page covers the workflow, authentication, and setup. [Replay QA API and MCP tools](/reference/replay-qa/api) lists the endpoints and tools, and the [OpenAPI spec](https://qa.replay.io/api/v1/openapi.json) is the complete endpoint reference.
+```prompt
+Use Replay QA to test and fix this app. Start at https://docs.replay.io/llms.txt and follow it.
+```
+
+[`llms.txt`](/llms.txt) is the entry point for agents. It links the Replay QA CLI workflow, the REST API (OpenAPI spec), the MCP server, the published agent skills, and these docs. Each of those describes itself, so the agent always reads the current version.
 
 <Callout type="note" title="Which credential?">
-  Replay QA uses its own API token, which starts with `lqa_`. It is not the same
-  as the app.replay.io API key used by the `replayio` CLI and Replay MCP. See
-  [API keys and tokens](/reference/api-keys) for the difference.
+  Your agent signs in with your Replay login, an `lqa_` Replay QA API token, or
+  MCP OAuth sign-in, depending on how it connects. See [API keys and
+  tokens](/reference/api-keys).
 </Callout>
 
 ## The continuous QA loop
 
-The intended workflow for a coding agent keeping an app bug-free:
+What the agent does with it:
 
-1. **Create a project** for the running app. Pass its URL and a short note on the flows that matter most. Optionally include a design document describing what the app should do.
-2. **Let QA run.** Poll the project status until explorations and test runs finish. Replay QA drives exploration and testing itself; the agent does not need to start its own explorations or test runs.
-3. **Read the bugs.** List open bugs and fetch each one. Every [bug report](/reference/replay-qa/bug-reports) includes reproduction steps, expected versus actual behavior, a screenshot chronology, and a root-cause analysis traced through the Replay recording down to the responsible code. The agent does not need to debug; it reads the root cause and writes the fix.
-4. **Mark each fix.** Setting a bug to `fixed` automatically reruns the affected journey to confirm the fix. Use `wontfix` to dismiss a bug or `invalid` if it is not a real bug.
-5. **Loop.** Go back to polling status and keep going until no open bugs remain.
+1. **Create a project** for the running app, with a short note on the flows that matter most. Optionally include a design document describing what the app should do.
+2. **Let QA run.** Replay QA drives exploration and testing itself; the agent waits until it finishes.
+3. **Read the bugs.** Every [bug report](/reference/replay-qa/bug-reports) includes reproduction steps, expected versus actual behavior, a screenshot chronology, and a root-cause analysis traced through the Replay recording down to the responsible code. The agent does not need to debug; it reads the root cause and writes the fix.
+4. **Mark each fix.** Replay QA reruns the affected journey to confirm it.
+5. **Loop** until no open bugs remain.
 
 If the bug report is not enough, the agent can open the linked recording with [Replay MCP](/basics/replay-mcp/overview) and inspect the failure directly.
 
-## Get an API token
-
-1. Sign in at [qa.replay.io](https://qa.replay.io) and open **Account settings**.
-2. In the **API** section, enter a token name and click **Create token**. Create one token per script or agent so each can be revoked on its own; creating a token leaves existing tokens active.
-3. Copy the token. It starts with `lqa_` and is shown once.
-
-Pass it as a bearer token on every request:
-
-```
-Authorization: Bearer lqa_your_token_here
-```
-
 ## Connect an MCP client
+
+Agents that prefer tools over HTTP calls can add the Replay QA MCP server. Most agents can run this setup themselves.
 
 <Tabs labels={["Claude Code (sign-in)", "Claude Code (token)", "Cursor / VS Code", "Other"]}>
 
@@ -94,52 +87,12 @@ VS Code uses the same shape under a top-level `servers` key in `.vscode/mcp.json
 
 </Tabs>
 
-The Settings page in Replay QA shows the same commands with your site URL filled in.
-
-The server exposes tools for projects, bugs, test runs, journeys, explorations, and account settings. The full list is in [Replay QA API and MCP tools](/reference/replay-qa/api).
-
-Example prompt:
-
-```prompt
-Use the Replay QA MCP server to create a project for https://staging.example.com,
-focused on signup and checkout. Wait for it to finish, then read every open bug,
-fix each one in this repo, and mark it fixed.
-```
-
-## Use the REST API
-
-The base URL is `https://qa.replay.io/api/v1`. All endpoints take the bearer token above and return JSON.
-
-The endpoints behind the loop:
-
-| Step             | Request                                                                                  |
-| ---------------- | ---------------------------------------------------------------------------------------- |
-| Create a project | `POST /projects` with `target_url`, `instructions`, optional `design_document`, `budget` |
-| Poll status      | `GET /projects/{project_id}/status`                                                      |
-| List open bugs   | `GET /projects/{project_id}/bugs?status=open`                                            |
-| Read a bug       | `GET /bugs/{bug_id}`                                                                     |
-| Mark a fix       | `PATCH /bugs/{bug_id}` with `{"status": "fixed"}`                                        |
-
-```sh
-curl -X POST https://qa.replay.io/api/v1/projects \
-  -H "Authorization: Bearer $REPLAY_QA_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "target_url": "https://staging.example.com",
-    "instructions": "Focus on signup, login, and checkout."
-  }'
-```
-
-The response includes the project ID and a link to the project dashboard. `budget` caps how many credits the project may spend; it defaults to 20, which is a thorough pass.
-
-The other resources, and the full set of bug statuses, are listed in [Replay QA API and MCP tools](/reference/replay-qa/api).
+The server lists its tools through MCP `tools/list`.
 
 ## Apps only reachable from your machine
 
-If the app runs on `localhost` or a private network, create the project with `use_reverse_proxy: true` (or the `create_project` tool's equivalent). The project starts gated and does not run tests until a tunnel is connected. Then run the Replay QA CLI on a machine that can reach the app:
+For an app on `localhost` or a private network, the agent connects it through the Replay QA CLI's reverse proxy. [Testing a localhost app](/basics/replay-qa/localhost) explains the proxy. For CI builds, see [GitHub Actions](/basics/replay-qa/frpc-ci) or [CircleCI](/basics/replay-qa/circleci).
 
-```sh
-npx --yes replayqa proxy --project <project_id>
-```
+## Missing something?
 
-The create response includes a `reverse_proxy_setup_url` you can poll for tunnel status. [Testing a localhost app](/basics/replay-qa/localhost) explains the proxy in detail. For CI builds, see [GitHub Actions](/basics/replay-qa/frpc-ci) or [CircleCI](/basics/replay-qa/circleci).
+If Replay QA lacks something you or your agent need, tell us on [Discord](/discord).

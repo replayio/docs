@@ -26,7 +26,7 @@ pnpm run dev
 
 ## Issues
 
-If you find any issues, feel free to open a [new issue](https://github.com/replayio/docs/issues/new) or contact us [via Discord](https://replay.io/discord).
+If you find any issues, feel free to open a [new issue](https://github.com/replayio/docs/issues/new) or contact us [via Discord](https://www.replay.io/discord).
 
 ## Running the tests
 

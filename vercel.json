@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/discord",
-      "destination": "https://discord.gg/Wh9w3KMr7J"
+      "destination": "https://www.replay.io/discord"
     },
     {
       "source": "/getting-started/recording-your-first-replay",
@@ -82,7 +82,7 @@
     },
     {
       "source": "/docs/contact-and-community-096224a3bca4479b982ac572dc5c81d0",
-      "destination": "https://discord.gg/Wh9w3KMr7J"
+      "destination": "https://www.replay.io/discord"
     },
     {
       "source": "/docs/billing-e01f0740cd9548f1b8725c9773b217f6",
@@ -186,7 +186,7 @@
     },
     {
       "source": "/get-help",
-      "destination": "https://discord.gg/Wh9w3KMr7J"
+      "destination": "https://www.replay.io/discord"
     },
     {
       "source": "/case-studies-and-comparisons",
@@ -510,11 +510,11 @@
     },
     {
       "source": "/reference/get-help/contact-community",
-      "destination": "https://discord.gg/Wh9w3KMr7J"
+      "destination": "https://www.replay.io/discord"
     },
     {
       "source": "/resources/get-help/contact-community",
-      "destination": "https://discord.gg/Wh9w3KMr7J"
+      "destination": "https://www.replay.io/discord"
     },
     {
       "source": "/reference/get-help/experimental-features",

@@ -63,6 +63,33 @@ export function GET() {
           },
         ],
       },
+      {
+        anchor: REPLAY_PUBLIC.qaApi,
+        'service-doc': [
+          {
+            href: `${origin}/basics/replay-qa/agent-integration`,
+            type: 'text/html',
+            title: 'Driving Replay QA from a coding agent',
+          },
+        ],
+        'service-desc': [
+          {
+            href: REPLAY_PUBLIC.qaOpenApi,
+            type: 'application/vnd.oai.openapi+json',
+            title: 'Replay QA OpenAPI spec',
+          },
+        ],
+      },
+      {
+        anchor: REPLAY_PUBLIC.qaMcpServer,
+        'service-doc': [
+          {
+            href: `${origin}/basics/replay-qa/agent-integration`,
+            type: 'text/html',
+            title: 'Driving Replay QA from a coding agent',
+          },
+        ],
+      },
     ],
   }
 

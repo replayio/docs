@@ -39,15 +39,14 @@ You can change a bug's severity after it is filed.
 
 ## Status
 
-| Status      | Meaning                                                             | Set by                           |
-| ----------- | ------------------------------------------------------------------- | -------------------------------- |
-| `open`      | Confirmed and not yet addressed                                     | Replay QA, or you when reopening |
-| `fixed`     | You applied a fix; Replay QA reruns the affected journey to confirm | You                              |
-| `wontfix`   | Real, but you are not going to address it                           | You                              |
-| `invalid`   | Not a real bug                                                      | You                              |
-| `pr-closed` | Found on a pull request that has since closed or merged             | Replay QA                        |
+| Status    | Meaning                                                  | Set by                                      |
+| --------- | -------------------------------------------------------- | ------------------------------------------- |
+| `open`    | Confirmed and not yet addressed                          | Replay QA, or you when reopening            |
+| `fixed`   | A fix was applied; Replay QA reruns the affected journey | You, or Replay QA when a PR merges          |
+| `wontfix` | Real, but not going to be addressed                      | You, or Replay QA when a PR closes unmerged |
+| `invalid` | Not a real bug                                           | You                                         |
 
-A `fixed` bug that Replay QA finds again is reopened and shows as open. When a later run finds an issue that matches an existing bug, the existing bug is linked from that run instead of a duplicate being filed, so the bug list stays deduplicated across runs.
+A `fixed` bug stays fixed: if the problem comes back, Replay QA files it as a new bug. When a later run finds an issue that matches an existing `open`, `wontfix`, or `invalid` bug, the existing bug is linked from that run instead of a duplicate being filed, so the bug list stays deduplicated across runs. The [OpenAPI spec](https://qa.replay.io/api/v1/openapi.json) carries the authoritative status definitions.
 
 ## Formats
 
@@ -58,4 +57,4 @@ A `fixed` bug that Replay QA finds again is reopened and shows as open. When a l
 
 ## Working a bug
 
-Read the root cause, apply the fix, and set the bug to `fixed`; Replay QA reruns the journey and reopens the bug if the problem is still there. If the report is not enough, open the recording in Replay DevTools or hand it to a coding agent through [Replay MCP](/basics/replay-mcp/overview) to inspect the failure directly. For bugs that describe intended behavior, set `invalid` and consider adding the intended behavior to the project's design document so future runs judge against it.
+Read the root cause, apply the fix, and set the bug to `fixed`; Replay QA reruns the journey and files a new bug if the problem is still there. If the report is not enough, open the recording in Replay DevTools or hand it to a coding agent through [Replay MCP](/basics/replay-mcp/overview) to inspect the failure directly. For bugs that describe intended behavior, set `invalid` and consider adding the intended behavior to the project's design document so future runs judge against it.

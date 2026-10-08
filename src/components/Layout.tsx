@@ -10,6 +10,7 @@ import { Logo, Logomark } from '@/components/Logo'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { HiddenPagesToggle } from '@/components/HiddenPagesToggle'
 import { Navigation } from '@/components/Navigation'
+import { REPLAY_PUBLIC } from '@/lib/agentReadiness'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 
@@ -72,7 +73,7 @@ function Header() {
               <GitHubIcon className="h-6 w-6 fill-gray-400 group-hover:fill-gray-500 dark:group-hover:fill-gray-300" />
             </Link>
             <Link
-              href="https://replay.io/discord"
+              href={REPLAY_PUBLIC.discord}
               className="group"
               aria-label="Discord"
             >

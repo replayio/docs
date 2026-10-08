@@ -7,6 +7,27 @@ debugging engine. Point it at a web app and it explores the application,
 builds user journeys through it, runs them while capturing full runtime
 recordings, and delivers root cause analysis for every bug it finds.
 
+## Use Replay QA (for coding agents)
+
+Each link below describes itself; read it instead of relying on prior knowledge.
+
+Default: run the CLI skill. Use the REST API or MCP server only when the CLI cannot run.
+
+- Test-and-fix workflow: run `npx --yes replayqa@latest skill` and follow the
+  workflow it prints.
+- REST API: https://qa.replay.io/api/v1/openapi.json — every endpoint, field,
+  bug status, and the intended agent loop.
+- MCP server: `https://qa.replay.io/api/mcp` (streamable HTTP) — tools via MCP
+  `tools/list`; client setup in
+  [Driving Replay QA from a coding agent](https://docs.replay.io/basics/replay-qa/agent-integration).
+- Credentials: [API keys and tokens](https://docs.replay.io/reference/api-keys)
+- Agent skills:
+  [Fix a QA-reported GitHub issue](https://qa.replay.io/api/v1/skills/fix-qa-bug/SKILL.md),
+  [Replay QA GitHub App](https://qa.replay.io/api/v1/skills/github-app/SKILL.md)
+- Missing a capability? Tell the Replay team on Discord: https://www.replay.io/discord
+
+## Documentation
+
 This documentation site is the canonical reference for Replay QA. Start here:
 
 - [Replay QA overview](https://docs.replay.io/basics/replay-qa/overview)
@@ -67,5 +88,5 @@ not be ingested into model training corpora.
 - Product site: https://www.replay.io
 - Replay QA: https://qa.replay.io
 - App: https://app.replay.io
-- Discord: https://replay.io/discord
+- Discord: https://www.replay.io/discord
 - GitHub: https://github.com/replayio
