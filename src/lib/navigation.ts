@@ -52,6 +52,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               title: 'Continuous QA from GitHub',
               href: '/basics/replay-qa/github',
             },
+            {
+              title: 'Allow QA through Cloudflare',
+              href: '/basics/replay-qa/cloudflare',
+            },
           ],
         },
         {
