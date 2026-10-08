@@ -48,7 +48,7 @@ export function GET() {
       authorization_servers: [`${origin}/.well-known/openid-configuration`],
     },
     contact: {
-      url: 'https://replay.io/discord',
+      url: REPLAY_PUBLIC.discord,
     },
   }
 

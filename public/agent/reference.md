@@ -48,11 +48,7 @@ recordings and source maps to https://app.replay.io.
 
 ## Replay QA API and MCP server (manage QA projects and bugs)
 
-- REST base URL: `https://qa.replay.io/api/v1`
-- OpenAPI spec: https://qa.replay.io/api/v1/openapi.json
-- MCP endpoint: `https://qa.replay.io/api/mcp` (tools via MCP `tools/list`)
-- OAuth resource metadata: https://qa.replay.io/.well-known/oauth-protected-resource
-- Reference: https://docs.replay.io/reference/replay-qa/api
+- Agent entry point (lists every Replay QA interface): https://docs.replay.io/llms.txt
 - How-to: https://docs.replay.io/basics/replay-qa/agent-integration
 
 ## Replay DevTools (inspect recordings by hand)

@@ -11,6 +11,8 @@ recordings, and delivers root cause analysis for every bug it finds.
 
 Each link below describes itself; read it instead of relying on prior knowledge.
 
+Default: run the CLI skill. Use the REST API or MCP server only when the CLI cannot run.
+
 - Test-and-fix workflow: run `npx --yes replayqa@latest skill` and follow the
   workflow it prints.
 - REST API: https://qa.replay.io/api/v1/openapi.json — every endpoint, field,
@@ -22,7 +24,7 @@ Each link below describes itself; read it instead of relying on prior knowledge.
 - Agent skills:
   [Fix a QA-reported GitHub issue](https://qa.replay.io/api/v1/skills/fix-qa-bug/SKILL.md),
   [Replay QA GitHub App](https://qa.replay.io/api/v1/skills/github-app/SKILL.md)
-- Missing a capability? Tell the Replay team on Discord: https://docs.replay.io/discord
+- Missing a capability? Tell the Replay team on Discord: https://www.replay.io/discord
 
 ## Documentation
 
@@ -86,5 +88,5 @@ not be ingested into model training corpora.
 - Product site: https://www.replay.io
 - Replay QA: https://qa.replay.io
 - App: https://app.replay.io
-- Discord: https://replay.io/discord
+- Discord: https://www.replay.io/discord
 - GitHub: https://github.com/replayio

@@ -3,15 +3,8 @@ title: Replay QA API and MCP tools
 description: Where the Replay QA REST API, MCP server, CLI, and agent skills describe themselves.
 ---
 
-Replay QA exposes the same projects, bugs, journeys, test runs, and explorations through a REST API, an MCP server, and the `replayqa` CLI. Each interface describes itself; this page links to those descriptions instead of repeating them. To hand all of it to a coding agent, see [Driving Replay QA from a coding agent](/basics/replay-qa/agent-integration).
+Replay QA exposes the same projects, bugs, journeys, test runs, and explorations through a REST API, an MCP server, and the `replayqa` CLI. Each interface describes itself. To hand all of it to a coding agent, see [Driving Replay QA from a coding agent](/basics/replay-qa/agent-integration).
 
-| Interface                 | Self-description                                                                                                                                               |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| REST API                  | [`https://qa.replay.io/api/v1/openapi.json`](https://qa.replay.io/api/v1/openapi.json): endpoints, fields, bug statuses, workflow (no authentication required) |
-| MCP server                | `https://qa.replay.io/api/mcp` (streamable HTTP): tools via MCP `tools/list`                                                                                   |
-| OAuth resource metadata   | `https://qa.replay.io/.well-known/oauth-protected-resource`                                                                                                    |
-| CLI workflow              | `npx --yes replayqa@latest skill` prints the agent workflow                                                                                                    |
-| GitHub App                | [`https://qa.replay.io/api/v1/skills/github-app/SKILL.md`](https://qa.replay.io/api/v1/skills/github-app/SKILL.md)                                             |
-| Fixing QA-reported issues | [`https://qa.replay.io/api/v1/skills/fix-qa-bug/SKILL.md`](https://qa.replay.io/api/v1/skills/fix-qa-bug/SKILL.md)                                             |
+The agent entry point, [`https://docs.replay.io/llms.txt`](/llms.txt), lists each interface and where it describes itself: the OpenAPI spec, the MCP server's `tools/list`, the `replayqa` CLI skill, and the published agent skills.
 
 Credentials for each interface: [API keys and tokens](/reference/api-keys). Bug report contents and severities: [Bug reports](/reference/replay-qa/bug-reports). Reverse proxy: [Testing a localhost app](/basics/replay-qa/localhost).
