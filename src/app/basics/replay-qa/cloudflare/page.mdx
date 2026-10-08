@@ -1,0 +1,48 @@
+---
+title: Allow Replay QA through Cloudflare
+description: Disable Cloudflare bot challenges for your test environment, with a screenshot of the Super Bot Fight Mode settings.
+---
+
+When Cloudflare returns a verification page instead of your app, Replay QA pauses and shows an access warning in project chat. Follow this guide to make the test environment accessible, then select **Protection updated — retry** in the warning.
+
+## Find the bot protection settings
+
+1. Open your Cloudflare dashboard and select the domain that serves the **blocked page** shown in the warning. If the app redirects to a different sign-in domain, check that domain's Cloudflare settings.
+2. Open **Security → Settings**.
+3. Search for **bot fight mode**, or filter by **Bot traffic**.
+
+The next step depends on whether your domain uses **Bot fight mode** or **Super Bot fight mode**.
+
+## Super Bot Fight Mode
+
+On Pro and Business plans, open **Configurations** on the **Super Bot fight mode** row. The configuration panel has separate controls for different categories of traffic.
+
+<Figure
+  src="/images/cloudflare-super-bot-fight-mode.png"
+  alt="Cloudflare Super Bot fight mode configuration: Definitely automated traffic and Likely automated traffic are both set to Allow, Verified bots is enabled, and the three other switches are off."
+  width={2938}
+  height={1490}
+/>
+
+To disable Super Bot Fight Mode for this domain:
+
+1. Set **Definitely automated traffic** to **Allow**, then click its **Apply** button.
+2. Set **Likely automated traffic** to **Allow**, then click its **Apply** button. Some plans do not show this category.
+3. Keep **Verified bots** enabled so verified bots are allowed.
+4. Turn **Javascript Detections**, **Static resource protection**, and **Optimize for WordPress** off.
+
+The screenshot shows this configuration already applied. There is no single off switch in this version of the panel. Cloudflare also documents these steps in its [Super Bot Fight Mode guide](https://developers.cloudflare.com/bots/get-started/super-bot-fight-mode/#disable-super-bot-fight-mode).
+
+For an exception limited to a QA hostname, use a **WAF custom rule** with the **Skip** action and select **Super Bot Fight Mode** as the product to skip. Match your test hostname, for example `http.host eq "qa.example.com"`. See [Cloudflare's Skip rule instructions](https://developers.cloudflare.com/waf/custom-rules/skip/).
+
+## Bot Fight Mode
+
+If the settings show ordinary **Bot fight mode**, turn its switch **off**. This setting applies to the whole domain. A WAF Skip rule cannot bypass ordinary Bot Fight Mode; see [Cloudflare's Bot Fight Mode guide](https://developers.cloudflare.com/bots/get-started/bot-fight-mode/#disable-bot-fight-mode).
+
+## If the challenge still appears
+
+If automated traffic is already allowed, another rule may be issuing the challenge. Open **Security → Analytics → Events**, find a challenged request to the blocked hostname, and inspect its **Service** and rule details. Adjust the rule that issued the challenge for your test environment. Turning off Super Bot Fight Mode does not disable unrelated WAF or rate-limit rules.
+
+An embedded Turnstile widget on your app's signup or login form is configured by your app. Use both Cloudflare's [always-pass test sitekey and matching test secret](https://developers.cloudflare.com/turnstile/troubleshooting/testing/) in the test environment, then redeploy.
+
+Return to Replay QA and select **Protection updated — retry** while the run is waiting. QA reloads the page to check access. If the waiting request has expired, start another run.
