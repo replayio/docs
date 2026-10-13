@@ -56,6 +56,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               title: 'Allow QA through Cloudflare',
               href: '/basics/replay-qa/cloudflare',
             },
+            {
+              title: 'Testing protected Vercel previews',
+              href: '/basics/replay-qa/vercel',
+            },
           ],
         },
         {
