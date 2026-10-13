@@ -1,0 +1,63 @@
+---
+title: Testing protected Vercel previews
+description: Give Replay QA access to protected Vercel pull request previews using an automation bypass secret.
+---
+
+Replay QA can test Vercel previews that require Vercel Authentication or a deployment password. Configure an automation bypass secret so QA can reach the deployment while protection stays enabled for other visitors.
+
+When QA encounters a protected preview, it pauses and shows **Vercel deployment protection** in project chat. The warning names the blocked preview and includes a private field for the automation bypass secret. Use the steps below to configure access and resume the waiting run.
+
+## Create a Vercel automation bypass secret
+
+1. Open the **Vercel project** that owns the blocked preview.
+2. Open **Settings → Deployment Protection**.
+3. Find **Protection Bypass for Automation** and create a dedicated secret for Replay QA.
+4. Copy the secret value.
+
+Vercel supports automation bypass on all plans. Creating a secret requires the appropriate Vercel team or project role; see [Vercel's automation bypass guide](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation#permissions-for-protection-bypass-for-automation).
+
+<Callout type="note">
+  The secret grants access to all deployments in that Vercel project, including
+  production. Use a dedicated secret that you can revoke independently. This is
+  deployment access; the app can still require its own sign-in and verification
+  code.
+</Callout>
+
+## Add the secret to Replay QA
+
+If QA is already waiting at the protection screen:
+
+1. Return to the project's chat in Replay QA.
+2. Paste the value into **Vercel automation bypass secret** in the access warning.
+3. Select **Save secret and retry**.
+
+To configure access before the next run:
+
+1. Open **Project settings → Integrations**.
+2. Find **Vercel preview access** and select **Set up bypass**.
+3. Paste the secret into **Automation bypass secret** and select **Save secret**.
+
+Only the Replay QA project owner or an admin can save or change deployment access. Use the private form; do not paste the secret into an ordinary chat message, an app password field, or the preview URL.
+
+The same saved secret is reused for future previews belonging to this Vercel project. Connect the app's repository to test previews automatically; see [Continuous QA from GitHub](/basics/replay-qa/github).
+
+## Retry the protected preview
+
+Saving the secret resumes waiting Vercel requests. QA reloads the preview and checks access again. A successful bypass reaches the app; an app login or one-time-code challenge can then request its own credentials separately.
+
+The waiting request expires within ten minutes, and may expire earlier when the run's time budget ends. If the run has already stopped, save the secret in settings and start another run. An incorrect or revoked secret leaves the preview blocked.
+
+## Rotate or remove access
+
+Use **Replace secret** or **Remove secret** on the **Vercel preview access** card in project settings. Removing it from Replay QA stops future use by this Replay QA project; revoke the secret in Vercel to invalidate the credential itself.
+
+After changing the secret in Vercel, follow [Vercel's redeployment instructions](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation#configuring-protection-bypass-for-automation), update the saved value in Replay QA, and retry the current preview.
+
+## If the preview is still blocked
+
+- Check that the secret belongs to the Vercel project that owns the blocked URL.
+- Check that it has not been revoked and that the preview uses the updated deployment configuration.
+- If the page is the app's own login, supply app credentials separately. A Vercel bypass secret is not an app password or an authenticator code.
+- Vercel's active attack mitigations can still block automation even with a valid secret; see [what the bypass does not override](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation#what-doesnt-get-bypassed).
+
+For a Cloudflare verification page, use [Allow Replay QA through Cloudflare](/basics/replay-qa/cloudflare).
