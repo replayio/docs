@@ -1,0 +1,101 @@
+---
+title: Watching Replay QA live in Claude Code
+description: Stream Replay QA explorations and journey runs into Claude Code as live rrweb players, and open a canvas that shows every journey of a project at once.
+---
+
+Replay QA runs its browsers in the cloud, so while an exploration or a journey is running, the only thing your coding agent sees is a status. The Replay QA plugin for Claude Code changes that: what the QA agent's browser is doing streams into your conversation, live.
+
+- **Inline players.** When your agent starts an exploration, re-tests a bug fix, or reports a missed bug, the result of that call becomes a player showing the page as Replay QA sees it, with the QA agent's narration, while it runs. Once the run ends you can scrub through it.
+- **A canvas.** `/replayqa canvas` opens every journey of the project as a grid of players. Journeys that are running stream live, in parallel. Finished journeys show their latest run and load when you click them.
+
+Both work from the same stream the Replay QA web app uses to draw its own player.
+
+## Install
+
+<Steps>
+
+## Install the plugin
+
+Add the Replay marketplace to Claude Code, then install the `replay-qa` plugin from it:
+
+```sh
+claude plugin marketplace add replayio/plugins
+claude plugin install replay-qa@replayio
+```
+
+Start a new `claude` session, or run `/reload-plugins` in an open one. The plugin uses the same sign-in as the `replayio` CLI, so run `npx replayio login` first if you have not. You can also use a Replay QA API token; see [API keys and tokens](/reference/api-keys).
+
+## Turn on function hooks
+
+The live views are a Claude Code hooks module, which needs function hooks enabled. Add this to `~/.claude/settings.json`:
+
+```json fileName="~/.claude/settings.json"
+{
+  "env": { "CLAUDE_CODE_ENABLE_FUNCTION_HOOKS": "1" }
+}
+```
+
+The scripts and slash commands work without it. Only the live views need it.
+
+## Use a terminal that can show images
+
+The players are drawn with the [kitty graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/). Run `claude` in [Ghostty](https://ghostty.org) or [kitty](https://sw.kovidgoyal.net/kitty/). In other terminals the row shows its controls and an **Open in browser** button instead of the picture.
+
+## Install Replay Chromium
+
+The relay replays the streams in a headless Replay Chromium:
+
+```sh
+npx @replayio/replay install
+```
+
+</Steps>
+
+<Callout type="note" title="Function hooks are an early API">
+  Function hooks are an early Claude Code API and can change between releases.
+  If an update breaks the live views, the rest of the plugin keeps working.
+</Callout>
+
+## Watch an exploration
+
+Ask Claude to start one, for example _"Start a Replay QA exploration of the checkout flow."_ The result of the `start-exploration` call is a live player: the page the QA agent is working in, the step it is on, and any error it hits. When the exploration ends the player stops on its last frame and you can scrub through it with the seek bar or **−10s / +10s**.
+
+Other calls that start work get a player too:
+
+- Marking a bug fixed (`mark-bug … fixed`) makes Replay QA re-test the affected journey. The player follows that new run.
+- Reporting a missed bug (`report-missing-bug`) creates an investigation journey, which streams the same way.
+- Starting work through the [Replay QA MCP server](/basics/replayqa/agent-integration#connect-an-mcp-client) works the same as the scripts.
+
+Starting work also makes the plugin _follow_ the project. From then on, every exploration and journey run that starts on it, whoever started it, is picked up and streams automatically.
+
+## Open the canvas
+
+`/replayqa canvas` opens a pane with every journey of the project:
+
+- Running explorations and journey runs come first and stream live, all at once.
+- Each finished journey shows its latest run. Click a tile to load and replay it.
+- The header shows how many are live and how many journeys passed, found bugs, or failed.
+
+**Open in browser** opens the same canvas in a tab, with larger tiles and the full recording behind each one.
+
+| Command                      | What it does                                                      |
+| ---------------------------- | ----------------------------------------------------------------- |
+| `/replayqa canvas [project]` | Open the canvas pane and follow the project.                      |
+| `/replayqa live`             | List what is streaming right now.                                 |
+| `/replayqa open [recording]` | Open a player in your browser.                                    |
+| `/replayqa follow [project]` | Stream every run that starts on the project. `unfollow` stops it. |
+
+The plugin finds the project from the `.replay/config.json` that Replay QA keeps in your repository. Pass a project id to use another one.
+
+## What to expect
+
+- A live player is a few seconds behind the QA agent. The recorder in the QA browser sends its events about every two seconds.
+- A finished run is fetched once and saved in `~/.claude/replay-qa-live/`, so opening it again is instant. A long run takes a while the first time: the API returns the recording in small pages, and a 20-minute journey can take around half a minute.
+- The streams are read through a small server the plugin runs on `127.0.0.1`. Nothing is sent anywhere else.
+
+## Troubleshooting
+
+- **No player appears.** Check that `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS` is `1` in the environment `claude` was started with, and that the call that started the work succeeded. `/replayqa live` reports whether the plugin's local server is running.
+- **"run `replayio login`".** The plugin could not find a Replay QA token. Sign in, or export `REPLAY_QA_API_KEY`.
+- **A tile says "Waiting for the first frame".** The QA browser has not produced a page yet. Queued journeys show nothing until a worker picks them up.
+- **The row shows controls but no picture.** Your terminal does not support kitty graphics. Use **Open in browser**, or switch to Ghostty or kitty.
