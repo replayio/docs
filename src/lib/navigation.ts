@@ -68,6 +68,10 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               href: '/basics/replay-qa/agent-integration',
             },
             {
+              title: 'Watching QA live in Claude Code',
+              href: '/basics/replay-qa/claude-code',
+            },
+            {
               title: 'Using Replay QA in Obvious',
               href: '/basics/replay-qa/obvious',
             },
