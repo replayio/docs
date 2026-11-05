@@ -3,6 +3,17 @@ title: Driving Replay QA from a coding agent
 description: Hand your coding agent one link so it can create Replay QA projects, read bug reports, and confirm fixes without opening the web app.
 ---
 
+## Install a plugin
+
+For Codex or Claude Code, install the Replay QA plugin to get project setup, bug-fix workflows, and an interactive dashboard in your agent:
+
+- [Install Replay QA in Codex](/basics/replay-qa/codex)
+- [Install Replay QA in Claude Code](/basics/replay-qa/claude-code)
+
+The plugins include the Replay QA MCP connection. You do not need to add that server separately when using a plugin. In Claude Code, `/replayqa` is the only visible plugin command; in Codex, ask to open Replay QA for your folder.
+
+## Use another coding agent
+
 Your coding agent (Claude Code, Cursor, Codex, …) can do everything you can do in the Replay QA web app. You do not need to learn the API yourself. Give your agent this prompt:
 
 {/* Mirror of AGENT_PROMPT in replayio/loop-qa src/lib/docs.ts (pinned by scripts/check-agent-prompt.ts); keep identical. */}
@@ -33,7 +44,7 @@ If the bug report is not enough, the agent can open the linked recording with [R
 
 ## Connect an MCP client
 
-Agents that prefer tools over HTTP calls can add the Replay QA MCP server. Most agents can run this setup themselves.
+If you are not using a plugin, you can add the Replay QA MCP server directly. Most agents can run this setup themselves. This connects the tools without installing the plugin's skill or dashboard entry point.
 
 <Tabs labels={["Claude Code (sign-in)", "Claude Code (token)", "Cursor / VS Code", "Other"]}>
 

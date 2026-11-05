@@ -1,0 +1,95 @@
+---
+title: Install Replay QA in Codex
+description: Install the Replay QA plugin in Codex, connect your Replay account, and open your project's dashboard in the conversation.
+---
+
+The Replay QA plugin lets Codex open your project's dashboard, inspect bugs and recordings, request testing, and verify fixes. Install it from the [Replay plugin marketplace](https://github.com/replayio/plugins).
+
+## Before you start
+
+You need:
+
+- A Replay account. QA runs use your Replay QA plan or credits.
+- A current version of Codex with plugin support and the `codex` command available in your terminal.
+- Node.js 18 or newer for the `replayqa` CLI used by the plugin.
+- An app reachable by Replay QA. For a local app, the plugin can help you [connect localhost](/basics/replay-qa/localhost).
+
+## Install the plugin
+
+Run these commands in your terminal:
+
+```sh
+codex plugin marketplace add https://github.com/replayio/plugins --ref main
+codex plugin add replay-qa@replayio-plugins
+```
+
+The first command adds Replay's marketplace. The second installs **Replay QA**, including its skill and MCP connection. Start a new Codex chat after installation so it loads the plugin, and confirm that **Replay QA** is enabled in the Plugins view.
+
+<Figure
+  src="/images/replay-qa-codex-plugin.png"
+  alt="Replay QA installed in Codex's Plugins view, showing Open plugin, the Replay QA MCP server, and its QA skill."
+  width={3164}
+  height={2070}
+/>
+
+<Callout type="note" title="Choose Replay QA">
+  The marketplace also includes a plugin named `replayio` for recording and
+  debugging with Replay. Install `replay-qa` for the QA dashboard and testing
+  workflows on this page.
+</Callout>
+
+## Connect your Replay account
+
+Open **Replay QA** in Codex's Plugins view and connect it if prompted. Complete the Replay sign-in flow in your browser using the account that owns or can access your QA projects.
+
+The plugin connects to `https://qa.replay.io/api/mcp` through OAuth. You do not need to copy an API token into Codex settings. When the server supports sharing its sign-in, Codex can also use that connection to authenticate the CLI. If the CLI still asks for a login, follow its browser sign-in instructions; see [API keys and tokens](/reference/api-keys).
+
+## Open your project's dashboard
+
+Open a chat in your app's folder and ask:
+
+```prompt
+Open Replay QA for this folder.
+```
+
+The plugin checks the folder's Replay QA configuration. A single linked project opens its dashboard; multiple linked projects let you choose which one to open. If no project is linked, the plugin helps identify the app and set it up. Existing project links are stored in `.replay/config.json`.
+
+Where Codex supports interactive MCP Apps, the dashboard opens in the conversation. You can navigate bugs, journeys, test runs, and recordings. The selected page supplies context when you ask about "this bug" or "this project."
+
+<Figure
+  src="/images/replay-qa-codex-bug-context.png"
+  alt="A Replay QA bug report and recording open in Codex, with a conversation using the selected bug's context to explain the failure."
+  width={3164}
+  height={2070}
+/>
+
+Opening the dashboard does not start a QA run.
+
+## Ask Codex to run QA or fix bugs
+
+Use normal language. For example:
+
+```prompt
+Use Replay QA to test https://staging.example.com. Focus on sign-in, creating a note, editing it, and making sure it survives a refresh.
+```
+
+Or, for an existing project:
+
+```prompt
+Read the open bugs in this Replay QA project, fix them, and mark each fix for verification.
+```
+
+Codex can read the reports, change your app, and mark bugs fixed. Marking a bug fixed asks Replay QA to retry the affected journey. See [the continuous QA loop](/basics/replay-qa/agent-integration#the-continuous-qa-loop) for the full workflow.
+
+## Update or reconnect
+
+Refresh the marketplace and install its current Replay QA version:
+
+```sh
+codex plugin marketplace upgrade replayio-plugins
+codex plugin add replay-qa@replayio-plugins
+```
+
+Start a new chat to load the updated plugin. If the connection has expired, reconnect **Replay QA** in the Plugins view.
+
+If you previously installed a local demo or another copy of Replay QA, disable that older copy and keep the marketplace plugin enabled. For a project-access error, check that you signed in with an account that can access the selected project.

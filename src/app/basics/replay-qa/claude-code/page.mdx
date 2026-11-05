@@ -1,0 +1,135 @@
+---
+title: Install Replay QA in Claude Code
+description: Install the Replay QA plugin in Claude Code, sign in, and use the /replayqa command to open an interactive project dashboard.
+---
+
+The Replay QA plugin gives Claude Code an interactive project dashboard and the guidance to run QA, read bug reports, fix your app, and verify the fixes. Its single visible slash command is `/replayqa`; ask Claude in normal language when you want it to perform QA work.
+
+## Before you start
+
+You need a Replay account. QA runs use your Replay QA plan or credits.
+
+For the interactive terminal dashboard, you also need:
+
+- A current Claude Code build with function hooks, enabled as shown below.
+- Node.js 22 or newer for the local browser relay.
+- A terminal that supports kitty graphics, such as Ghostty or kitty.
+- Replay Chromium or another supported Chromium-based browser installed on your machine.
+
+The agent can also work with publicly reachable production, staging, and PR-preview URLs. For local apps, it can help you [connect localhost](/basics/replay-qa/localhost).
+
+## Install the plugin
+
+Run these commands in your terminal:
+
+```sh
+claude plugin marketplace add replayio/plugins
+claude plugin install replay-qa@replayio
+```
+
+This adds Replay's marketplace and installs **Replay QA**, including its MCP server and background QA skill. The skill is available to Claude automatically and does not add another slash-menu entry.
+
+<Callout type="note" title="Choose Replay QA">
+  The separate `replayio` plugin is for recording and debugging with Replay. You
+  do not need it to use the Replay QA dashboard.
+</Callout>
+
+## Enable the interactive dashboard
+
+If you do not already have Replay Chromium or a supported Chromium browser, install Replay Chromium:
+
+```sh
+npx @replayio/replay@0.22.12 install
+```
+
+Start Claude Code from your app's folder with function hooks enabled:
+
+```sh
+CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 claude
+```
+
+To keep hooks enabled for future sessions, merge this entry into `~/.claude/settings.json`, preserving your other settings:
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_ENABLE_FUNCTION_HOOKS": "1"
+  }
+}
+```
+
+Restart Claude Code after installing the plugin or changing this setting.
+
+## Sign in to Replay QA
+
+Run `/mcp` in Claude Code. Select the plugin's **replay-qa** server and complete the Replay sign-in flow in your browser. Claude may show its full server name as `plugin:replay-qa:replay-qa`.
+
+Then run:
+
+```text
+/replayqa
+```
+
+If the selected project needs authentication, the pane shows **Connect Replay QA**, **Sign in with browser**, and **Retry**:
+
+- **Connect Replay QA** opens the MCP menu so you can authenticate the correct connection. The plugin retries the project after the menu closes.
+- **Sign in with browser** runs Replay's CLI login in your normal browser and refreshes the project when sign-in finishes. You can also start this flow with `/replayqa login`.
+- **Retry** checks again after you finish signing in elsewhere.
+
+A separate MCP server named `replay` is for Replay's debugger. Reconnecting it does not sign you in to the Replay QA dashboard.
+
+## Open your project's dashboard
+
+`/replayqa` follows the folder where Claude Code is running:
+
+- With one linked project, it opens that project's dashboard.
+- With several linked projects, it shows a project selector.
+- With no linked project, it shows setup options for the apps it finds.
+
+You can also open a specific project by passing its ID or dashboard URL:
+
+```text
+/replayqa proj_your_project
+```
+
+The terminal pane displays the actual project dashboard. Click, type, scroll, and resize the pane to use it. **Open in browser** opens the dashboard in your normal browser, which uses its own browser login.
+
+<Figure
+  src="/images/replay-qa-claude-code-dashboard.png"
+  alt="Claude Code authenticates the Replay QA MCP server and opens the project's interactive dashboard beside the conversation using /replayqa."
+  width={3164}
+  height={2070}
+/>
+
+Opening the dashboard does not start a QA run.
+
+## Ask Claude to run QA or fix bugs
+
+Ask in normal language; no additional slash commands are needed. For example:
+
+```prompt
+Use Replay QA to test this app. Focus on sign-in, creating a note, editing it, and making sure it survives a refresh.
+```
+
+Or, for an existing project:
+
+```prompt
+Read the open Replay QA bugs, fix them, and mark each fix for verification.
+```
+
+Claude uses the background skill and the CLI to work with your project. Explorations and journey runs can also appear as inline recording players. See [the continuous QA loop](/basics/replay-qa/agent-integration#the-continuous-qa-loop) for the full workflow.
+
+## Keep the plugin updated
+
+In Claude Code, open `/plugin`, choose **Marketplaces**, select **replayio**, and enable auto-update. Third-party marketplaces do not enable auto-update by default.
+
+To update manually, run:
+
+```sh
+claude plugin marketplace update replayio
+claude plugin update replay-qa@replayio
+```
+
+Restart Claude Code to load the update. If an older installation still shows `/replay-qa:*` shortcuts, update the plugin: `/replayqa` is the current plugin's only visible entry point.
+
+If `/replayqa` is missing, check that the plugin is enabled and that you launched a build with function hooks enabled. If the picture is unavailable, check Node.js, your terminal's graphics support, and your installed Chromium browser; you can still use **Open in browser**.
