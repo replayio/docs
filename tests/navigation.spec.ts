@@ -17,23 +17,30 @@ test('navigation shows Replay QA pages by default', async ({ page }) => {
   await expect(
     nav.getByText('Continuous QA from GitHub', { exact: true }),
   ).toBeVisible()
-  await expect(
-    nav.getByText('Using Replay QA in Obvious', { exact: true }),
-  ).toBeVisible()
+  await expect(nav.getByText('Obvious', { exact: true })).toBeVisible()
 })
 
 test('nested groups expand for the current page', async ({ page }) => {
   await page.goto('/basics/replay-qa/source-maps')
   const nav = page.locator('nav')
   await expect(
-    nav.getByRole('button', { name: 'Work with results' }),
+    nav.getByRole('button', { name: 'Connect your app' }),
   ).toBeVisible()
   await expect(
     nav.getByText('Publishing with source maps', { exact: true }),
   ).toBeVisible()
+  await page.goto('/basics/replay-qa/agent-integration')
   await expect(
-    nav.getByText('Driving QA from a coding agent', { exact: true }),
+    nav.getByRole('button', { name: 'Work with your agent' }),
   ).toBeVisible()
+  for (const agent of [
+    'Claude Code',
+    'Codex',
+    'Obvious',
+    'Other MCP clients',
+  ]) {
+    await expect(nav.getByText(agent, { exact: true })).toBeVisible()
+  }
 })
 
 test('reference tab opens on the Replay QA section', async ({ page }) => {

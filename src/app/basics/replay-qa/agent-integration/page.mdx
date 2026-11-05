@@ -1,20 +1,103 @@
 ---
-title: Driving Replay QA from a coding agent
-description: Hand your coding agent one link so it can create Replay QA projects, read bug reports, and confirm fixes without opening the web app.
+title: Connect Replay QA to an MCP client
+description: Connect any compatible MCP client to Replay QA with OAuth, browse your projects, and let your coding agent read bugs and verify fixes.
 ---
 
-## Install a plugin
+Connect Replay QA to a coding agent or another MCP client to browse projects, read bug reports, request testing, and verify fixes.
 
-For Codex or Claude Code, install the Replay QA plugin to get project setup, bug-fix workflows, and an interactive dashboard in your agent:
+## Use a plugin or connector
 
-- [Install Replay QA in Codex](/basics/replay-qa/codex)
-- [Install Replay QA in Claude Code](/basics/replay-qa/claude-code)
+For these agents, follow their dedicated setup guides:
 
-The plugins include the Replay QA MCP connection. You do not need to add that server separately when using a plugin. In Claude Code, `/replayqa` is the only visible plugin command; in Codex, ask to open Replay QA for your folder.
+- [Claude Code](/basics/replay-qa/claude-code)
+- [Codex](/basics/replay-qa/codex)
+- [Obvious](/basics/replay-qa/obvious)
 
-## Use another coding agent
+The Codex and Claude Code plugins include the MCP connection and QA workflow guidance. You do not need to add the server separately when using a plugin.
 
-Your coding agent (Claude Code, Cursor, Codex, …) can do everything you can do in the Replay QA web app. You do not need to learn the API yourself. Give your agent this prompt:
+## Connect another MCP client
+
+You need a Replay account and a client that supports remote MCP servers over Streamable HTTP. QA runs use your Replay QA plan or credits.
+
+| Setting        | Value                          |
+| -------------- | ------------------------------ |
+| Name           | `replay-qa`                    |
+| Server URL     | `https://qa.replay.io/api/mcp` |
+| Transport      | Streamable HTTP                |
+| Authentication | OAuth browser sign-in          |
+
+1. Open your client's MCP settings and add a remote HTTP server using the URL above.
+2. Start or connect the server. When your client requests authentication, complete the Replay sign-in flow in your browser.
+3. Return to the client and ask it to list your Replay QA projects. The connection uses the projects your signed-in account can access.
+
+For example, ask:
+
+```prompt
+Show my Replay QA projects. Do not start a QA run.
+```
+
+The server advertises its tools through MCP `tools/list`. Clients that support MCP Apps can also display the interactive dashboard; other clients can use the tool responses to read project details and results.
+
+### Configuration examples
+
+<Tabs labels={["Cursor", "VS Code", "Other clients"]}>
+
+<Tab>
+
+Add this server to `.cursor/mcp.json`, merging it with any existing servers:
+
+```json fileName=".cursor/mcp.json"
+{
+  "mcpServers": {
+    "replay-qa": {
+      "url": "https://qa.replay.io/api/mcp"
+    }
+  }
+}
+```
+
+Connect it in Cursor's MCP settings and complete OAuth sign-in. See [Cursor's MCP setup guide](https://cursor.com/docs/mcp) for its current configuration options.
+
+</Tab>
+
+<Tab>
+
+Add this server to `.vscode/mcp.json`, merging it with any existing servers:
+
+```json fileName=".vscode/mcp.json"
+{
+  "servers": {
+    "replay-qa": {
+      "type": "http",
+      "url": "https://qa.replay.io/api/mcp"
+    }
+  }
+}
+```
+
+Start the server from VS Code's MCP controls and complete OAuth sign-in. See [VS Code's MCP setup guide](https://code.visualstudio.com/docs/agent-customization/mcp-servers).
+
+</Tab>
+
+<Tab>
+
+Add `https://qa.replay.io/api/mcp` as a remote MCP server. Select Streamable HTTP if the client asks for a transport, then authenticate with OAuth.
+
+Clients that request the OAuth discovery URL can use `https://qa.replay.io/.well-known/oauth-protected-resource`.
+
+</Tab>
+
+</Tabs>
+
+### Clients without OAuth support
+
+If your client supports HTTP headers but not OAuth, create an `lqa_` Replay QA API token and configure an `Authorization: Bearer <token>` header in the client's credential settings. See [API keys and tokens](/reference/api-keys) for how to create the right token.
+
+A Replay debugger API key is not a Replay QA API token. Keep tokens out of shared configuration files and chat messages.
+
+## Give your coding agent the QA workflow
+
+A direct MCP connection exposes the tools. To give a coding agent the current setup and testing workflow, use this prompt:
 
 {/* Mirror of AGENT_PROMPT in replayio/loop-qa src/lib/docs.ts (pinned by scripts/check-agent-prompt.ts); keep identical. */}
 
@@ -23,12 +106,6 @@ Use Replay QA to test and fix this app. Start at https://docs.replay.io/llms.txt
 ```
 
 [`llms.txt`](/llms.txt) is the entry point for agents. It links the Replay QA CLI workflow, the REST API (OpenAPI spec), the MCP server, the published agent skills, and these docs. Each of those describes itself, so the agent always reads the current version.
-
-<Callout type="note" title="Which credential?">
-  Your agent signs in with your Replay login, an `lqa_` Replay QA API token, or
-  MCP OAuth sign-in, depending on how it connects. See [API keys and
-  tokens](/reference/api-keys).
-</Callout>
 
 ## The continuous QA loop
 
@@ -41,64 +118,6 @@ What the agent does with it:
 5. **Loop** until no open bugs remain.
 
 If the bug report is not enough, the agent can open the linked recording with [Replay MCP](/basics/replay-mcp/overview) and inspect the failure directly.
-
-## Connect an MCP client
-
-If you are not using a plugin, you can add the Replay QA MCP server directly. Most agents can run this setup themselves. This connects the tools without installing the plugin's skill or dashboard entry point.
-
-<Tabs labels={["Claude Code (sign-in)", "Claude Code (token)", "Cursor / VS Code", "Other"]}>
-
-<Tab>
-
-The server supports OAuth sign-in, so you can add it by URL without a token. Your client opens a browser sign-in the first time, and the connection then covers every project you have access to.
-
-```sh
-claude mcp add --transport http replay-qa https://qa.replay.io/api/mcp
-```
-
-</Tab>
-
-<Tab>
-
-```sh
-claude mcp add replay-qa\
- --transport http https://qa.replay.io/api/mcp\
- --header "Authorization: Bearer lqa_your_token_here"
-```
-
-</Tab>
-
-<Tab>
-
-```json fileName=".cursor/mcp.json"
-{
-  "mcpServers": {
-    "replay-qa": {
-      "type": "streamable-http",
-      "url": "https://qa.replay.io/api/mcp",
-      "headers": {
-        "Authorization": "Bearer lqa_your_token_here"
-      }
-    }
-  }
-}
-```
-
-VS Code uses the same shape under a top-level `servers` key in `.vscode/mcp.json`.
-
-</Tab>
-
-<Tab>
-
-- **URL:** `https://qa.replay.io/api/mcp`
-- **Transport:** HTTP (streamable)
-- **Auth:** OAuth (discovery at `https://qa.replay.io/.well-known/oauth-protected-resource`) or `Authorization: Bearer lqa_...`
-
-</Tab>
-
-</Tabs>
-
-The server lists its tools through MCP `tools/list`.
 
 ## Apps only reachable from your machine
 

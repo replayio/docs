@@ -60,32 +60,32 @@ export const navigation: Record<NavigationNames, NavigationItem[]> = {
               title: 'Testing protected Vercel previews',
               href: '/basics/replay-qa/vercel',
             },
-          ],
-        },
-        {
-          title: 'Work with results',
-          omitFromDocumentTitle: true,
-          defaultOpen: true,
-          links: [
             {
               title: 'Publishing with source maps',
               href: '/basics/replay-qa/source-maps',
             },
+          ],
+        },
+        {
+          title: 'Work with your agent',
+          omitFromDocumentTitle: true,
+          defaultOpen: true,
+          links: [
             {
-              title: 'Driving QA from a coding agent',
-              href: '/basics/replay-qa/agent-integration',
-            },
-            {
-              title: 'Install in Codex',
-              href: '/basics/replay-qa/codex',
-            },
-            {
-              title: 'Install in Claude Code',
+              title: 'Claude Code',
               href: '/basics/replay-qa/claude-code',
             },
             {
-              title: 'Using Replay QA in Obvious',
+              title: 'Codex',
+              href: '/basics/replay-qa/codex',
+            },
+            {
+              title: 'Obvious',
               href: '/basics/replay-qa/obvious',
+            },
+            {
+              title: 'Other MCP clients',
+              href: '/basics/replay-qa/agent-integration',
             },
           ],
         },
