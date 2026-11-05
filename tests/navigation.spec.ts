@@ -17,9 +17,7 @@ test('navigation shows Replay QA pages by default', async ({ page }) => {
   await expect(
     nav.getByText('Continuous QA from GitHub', { exact: true }),
   ).toBeVisible()
-  await expect(
-    nav.getByText('Obvious', { exact: true }),
-  ).toBeVisible()
+  await expect(nav.getByText('Obvious', { exact: true })).toBeVisible()
 })
 
 test('nested groups expand for the current page', async ({ page }) => {
@@ -35,7 +33,12 @@ test('nested groups expand for the current page', async ({ page }) => {
   await expect(
     nav.getByRole('button', { name: 'Work with your agent' }),
   ).toBeVisible()
-  for (const agent of ['Claude Code', 'Codex', 'Obvious', 'Other MCP clients']) {
+  for (const agent of [
+    'Claude Code',
+    'Codex',
+    'Obvious',
+    'Other MCP clients',
+  ]) {
     await expect(nav.getByText(agent, { exact: true })).toBeVisible()
   }
 })
