@@ -14,7 +14,6 @@ For the interactive terminal dashboard, you also need:
 - A current Claude Code build with function hooks, enabled as shown below.
 - Node.js 22 or newer for the local browser relay.
 - A terminal that supports kitty graphics, such as Ghostty or kitty.
-- Replay Chromium or another supported Chromium-based browser installed on your machine.
 
 The agent can also work with publicly reachable production, staging, and PR-preview URLs. For local apps, it can help you [connect localhost](/basics/replay-qa/localhost).
 
@@ -35,12 +34,6 @@ This adds Replay's marketplace and installs **Replay QA**, including its MCP ser
 </Callout>
 
 ## Enable the interactive dashboard
-
-If you do not already have Replay Chromium or a supported Chromium browser, install Replay Chromium:
-
-```sh
-npx @replayio/replay@0.22.12 install
-```
 
 Start Claude Code from your app's folder with function hooks enabled:
 
@@ -132,4 +125,4 @@ claude plugin update replay-qa@replayio
 
 Restart Claude Code to load the update. If an older installation still shows `/replay-qa:*` shortcuts, update the plugin: `/replayqa` is the current plugin's only visible entry point.
 
-If `/replayqa` is missing, check that the plugin is enabled and that you launched a build with function hooks enabled. If the picture is unavailable, check Node.js, your terminal's graphics support, and your installed Chromium browser; you can still use **Open in browser**.
+If `/replayqa` is missing, check that the plugin is enabled and that you launched a build with function hooks enabled. If the picture is unavailable, check Node.js and your terminal's graphics support; you can still use **Open in browser**.
