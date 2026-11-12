@@ -1,18 +1,20 @@
 ---
 title: Replay Node
-description: Replay Node is an alpha Node.js runtime that records scripts so they can be replayed and inspected the same way as browser recordings.
+description: Replay Node is a Node.js 26 runtime for Linux that records scripts and servers so they can be replayed and inspected the same way as browser recordings.
 image: /images/Node.png
 ---
 
-<Callout type="warning">
-  Replay Node is built on Node 16 and is not under active development. It works
-  for scripts that run on that version, but newer Node releases are not
-  supported.
-</Callout>
-
 ## Basics
 
-Replay Node applies the same recording approach as Replay Browser to Node.js. Recordings upload with the Replay CLI and open in Replay DevTools or through Replay MCP like any other recording.
+Replay Node is a build of Node.js that records everything a Node process does: scripts, servers, test runners, and build tools. It applies the same recording approach as Replay Browser to Node.js. Recordings upload with the Replay CLI and open in Replay DevTools or through Replay MCP like any other recording.
+
+The current release is based on Node 26.13.1.
+
+| Platform     | Supported |
+| ------------ | --------- |
+| Linux x86-64 | Yes       |
+| macOS        | No        |
+| Windows      | No        |
 
 ---
 
@@ -23,16 +25,20 @@ Replay Node applies the same recording approach as Replay Browser to Node.js. Re
 Install the [Replay Node](https://www.npmjs.com/package/@replayio/node) package globally:
 
 ```sh
-npm i @replayio/node --global
+npm i -g @replayio/node
 ```
+
+This installs the `replay-node` command. The first time you run it, it downloads the Replay Node runtime to `~/.replay/node/node`.
 
 ## Record your script
 
 Use `replay-node` in the same way that you would use `node` to run your script:
 
 ```sh
-replay-node <script>
+replay-node <script> [args]
 ```
+
+Each run creates one recording, which is saved when the process exits. To record a server, start it with `replay-node`, make the requests you want to capture, then stop it with Ctrl+C.
 
 ## Upload your replay
 
@@ -42,29 +48,56 @@ Upload your recordings with the [Replay CLI](/reference/replay-cli/commands):
 replayio upload
 ```
 
+`replayio list` shows your local recordings, including Node recordings, with the script name as the title.
+
 ## View your replay
 
 The CLI will upload your replays and provide you with a link to view them.
 
 ```sh
-The following recording(s) will be uploaded:
- 8a5ab266…  test.js    Now  31.0ms  Recorded
-
 Uploaded recordings
- ✔  8a5ab266…  test.js  Now  31.0ms  (uploaded)
+ ✔  8a5ab266…  script.js  Now  31.0ms  (uploaded)
 
 View recording at:
 https://app.replay.io/recording/8a5ab266-96ec-47d5-a56a-2b49fa2b999b
 ```
 
+Open the link in [Replay DevTools](/reference/replay-devtools/overview), or give the recording ID to an agent that uses [Replay MCP](/basics/replay-mcp/overview).
+
 </Steps>
+
+## Updating Replay Node
+
+`replay-node` only downloads the runtime when `~/.replay/node/node` is missing. It does not check for new releases on its own. Run this to update to the latest release:
+
+```sh
+replay-node --update
+```
+
+If you installed Replay Node before the Node 26 release, run `replay-node --update` once to replace the older runtime.
 
 ## FAQ
 
 ### How do I use Replay Node with TypeScript?
 
-Replay Node supports an `--exec` flag that lets you execute Node scripts like `ts-node`.
+Replay Node 26 runs TypeScript files directly with Node's built-in type stripping:
 
 ```sh
-replay-node --exec ts-node <script>
+replay-node script.ts
 ```
+
+This works the same as in regular Node: [type stripping](https://nodejs.org/api/typescript.html#type-stripping) only removes type annotations. Files that use TypeScript features that need code generation, such as `enum` and `namespace`, fail with `ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX`. Compile those files to JavaScript with `tsc` first, then record the output with `replay-node`.
+
+### How do I record a command that starts Node itself?
+
+Use `--exec` for tools such as `npm`, `npx`, or a test runner that start their own Node processes:
+
+```sh
+replay-node --exec npm start
+```
+
+`--exec` puts Replay Node first on your `PATH` and runs the command. Every Node process it starts is recorded separately, including the `npm` process itself. Use `replayio upload` to choose the recordings you want.
+
+### Where are recordings stored?
+
+Recordings are saved in `~/.replay`, where `replayio list` and `replayio upload` find them. Set the `RECORD_REPLAY_DIRECTORY` environment variable to use a different directory.

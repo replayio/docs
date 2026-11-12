@@ -81,7 +81,8 @@ https://docs.replay.io/basics/replay-qa/source-maps#react-support.
   Chromium 108 fork; Linux x86-64 and macOS; small recording overhead; WebGL
   and Web Audio unsupported.
 - [Replay Node](https://docs.replay.io/reference/replay-runtimes/replay-node) —
-  Node 16 build, not under active development.
+  Node 26 build for Linux. Records scripts and servers; `replay-node script.ts`
+  runs TypeScript via type stripping. Update with `replay-node --update`.
 
 ## Security and privacy
 
